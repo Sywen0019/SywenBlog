@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-09-15 · B00 作业基线与任务目录
+
+- 落地 B00–B06 / E01–E06 / Backlog；明确 Gitee 与公开 HTTPS 均为作业完成要求。
+- 更新 Plan、DESIGN_SPEC v1.1、29章规划相关章节与新增DOM契约；增强默认Deferred。
+- 核对：工作区起始干净，Gitee/GitHub main均为59ce56f；无Netlify环境凭据，托管继续核对，不将远端读取当作发布通过。
+
+
 按时间倒序记录项目变更：日期、变更摘要与验证结果。功能与验收依据见 [PROJECT_PLAN.html](PROJECT_PLAN.html)、[DESIGN_SPEC.md](DESIGN_SPEC.md) 与 [Plan.md](Plan.md)。
 
 ## 2026-09-15 · T04 修订：网点装饰修正（像素复验发现）

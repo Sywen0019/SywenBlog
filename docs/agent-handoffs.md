@@ -280,3 +280,12 @@ T05（Home 与 Blog 静态视觉实现）。接手者注意：
 - 首页前三篇与 Blog 四篇的日期／摘要／标签由 T05 冻结；日期元素请使用现有 `.post-entry__date`（≥768px 自动进入日期窄列），内容要素放在 `.post-entry__content` 内或直接作为条目子元素。
 - 空状态头像与筛选区状态已就绪：`#blog-filters`、`#blog-results`、`#blog-empty` 默认 `hidden`，JS 初始化成功后显示；不要用 `display` 规则覆盖 `hidden`。
 - 两主题截图与禁用脚本证据可直接复用 `docs/evidence/t04/`，但 VC1 必须重新截图。
+
+
+## 2026-09-15 B/E 基线修订与新增 DOM 契约（当前有效）
+
+用户批准的新 Plan.md / DESIGN_SPEC.md v1.1 替代旧全量首发和模型调度。历史记录不改写。B00–B06当前执行，E01–E06 Deferred。当前执行者Codex；复杂美术按Astra/Codex内置出图，豆包只在E类外部交接。
+
+保留全部既有ID/data标记。新增类：post-entry__content/meta、hero__eyebrow、hero-art--desk、hero-art__picture、section-header__number、about-intro__copy、post-table-scroll、post-figure、post-nav__label。装饰aria-hidden。hero-desk-640.webp / hero-desk-1280.webp 是待B02产出路径，文件存在后才接入；picture设置固有4:3比例。
+
+B04加载：theme.js于CSS前同步；posts-data.js→site.js→仅Blog的blog.js均defer。不加载reading/context-menu。Sywen提供posts/categories、resolveUrl(path)、createPostEntry(post, headingLevel)、getTheme()/toggleTheme()。列表渲染成功才显示筛选并隐藏静态索引，失败保持静态。

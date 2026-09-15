@@ -183,7 +183,7 @@ td code { background:none; padding:0; }
 <p>版本：v1.0<br/>
 项目：漫画线稿风个人博客<br/>
 定位：Web 前端课程作业，同时作为可持续维护的个人网站<br/>
-时间预算：一周，约 15～20 小时<br/>
+时间预算：作业基线剩余 18～24 小时；增强按余量<br/>
 本文仅定义后续实施方案；当前不创建文件、不实现功能、不执行部署。</p>
 </blockquote>
 
@@ -196,7 +196,7 @@ td code { background:none; padding:0; }
 <ul>
 <li>全中文界面与正文，保留英文品牌名称。</li>
 <li>副标题采用“代码 · 科研 · 生活”。</li>
-<li>使用原创示例内容与抽象线稿，不等待个人头像或外部素材。</li>
+<li>使用原创示例内容与抽象线稿，以书桌 Hero 奠定漫画基调，不等待增强素材库。</li>
 <li>首发四类页面、四篇文章，覆盖全部分类。</li>
 <li>HTML、CSS、原生 JavaScript，无后端、无构建依赖。</li>
 <li>Gitee 保存代码和提交历史，独立静态托管平台提供公开网址。</li>
@@ -209,7 +209,7 @@ td code { background:none; padding:0; }
 <li>通过搜索、组合筛选、主题存储、滚动交互和右键菜单展示真实 JavaScript 能力。</li>
 <li>支持桌面、平板、手机和基本键盘操作。</li>
 <li>新增文章只需复制文章模板、编写正文、登记元数据。</li>
-<li>在 20 小时以内优先完成可提交版本，增强功能不阻塞交付。</li>
+<li>按 B00–B06 优先完成可提交版本，增强功能不阻塞交付。</li>
 </ol>
 </section><section aria-labelledby="section-03" class="plan-section"><h2 id="section-03" tabindex="-1">3. Non-Goals｜非目标</h2>
 <p>本期不包含：</p>
@@ -224,54 +224,7 @@ td code { background:none; padding:0; }
 <li>强制长按右键菜单、页面转场系统。</li>
 <li>自定义域名购买及自动部署流水线。</li>
 </ul>
-</section><section aria-labelledby="section-04" class="plan-section"><h2 id="section-04" tabindex="-1">4. Course Requirements Mapping｜课程要求映射</h2>
-<div aria-label="课程要求映射表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table><caption class="sr-only">课程要求映射 · 表格 1</caption>
-<thead>
-<tr>
-<th scope="col">课程要求</th>
-<th scope="col">项目实现</th>
-<th scope="col">验收证据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>自选网站主题</td>
-<td>漫画线稿风个人博客</td>
-<td>首页、视觉规范、README</td>
-</tr>
-<tr>
-<td>HTML</td>
-<td>七个独立 HTML 页面，语义化结构</td>
-<td>页面源码、浏览器直接访问</td>
-</tr>
-<tr>
-<td>CSS</td>
-<td>设计变量、布局、主题、响应式、状态样式</td>
-<td>两种主题和不同宽度截图</td>
-</tr>
-<tr>
-<td>JavaScript</td>
-<td>搜索、筛选、主题、滚动、菜单</td>
-<td>可复现的现场演示流程</td>
-</tr>
-<tr>
-<td>Git</td>
-<td>按阶段真实提交</td>
-<td>连续、可解释的提交历史</td>
-</tr>
-<tr>
-<td>Gitee</td>
-<td>提交完整源码及说明</td>
-<td>无需登录即可查看的仓库地址</td>
-</tr>
-<tr>
-<td>网站网址</td>
-<td>HTTPS 静态网站</td>
-<td>可打开的首页及文章深链接</td>
-</tr>
-</tbody>
-</table></div>
-</section><section aria-labelledby="section-05" class="plan-section"><h2 id="section-05" tabindex="-1">5. Target Users｜目标用户</h2>
+</section><section aria-labelledby="section-04" class="plan-section"><h2 id="section-04" tabindex="-1">4. Course Requirements Mapping｜课程要求映射</h2><p>2026-09-15 作业基线修订，按最新用户确认：HTML 七页、CSS 布局与主题、JavaScript 主题切换/搜索分类、Git 阶段历史、Gitee 源码、公开 HTTPS 网站，以及书桌 Hero 美术基调。基线完成只以 B06 和 VC1-B 为准。</p><ul><li>HTML/CSS：源码、七页导航和响应式截图。</li><li>JavaScript：主题、组合筛选、无结果/重置及降级演示。</li><li>Git/Gitee：真实里程碑、远端提交与可检查源码。</li><li>公开网站：HTTPS 首页及四篇文章深链接，版本对应。</li></ul></section><section aria-labelledby="section-05" class="plan-section"><h2 id="section-05" tabindex="-1">5. Target Users｜目标用户</h2>
 <div aria-label="目标用户表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table><caption class="sr-only">目标用户 · 表格 2</caption>
 <thead>
 <tr>
@@ -301,7 +254,7 @@ td code { background:none; padding:0; }
 <p>默认阅读语言为中文。专业术语可以保留英文，但按钮、提示、空状态和辅助标签使用中文。</p>
 </section><section aria-labelledby="section-06" class="plan-section"><h2 id="section-06" tabindex="-1">6. Design Principles｜设计原则</h2>
 <ul>
-<li><strong>80% 简约排版，20% 漫画趣味。</strong></li>
+<li><strong>70% 简约排版，30% 漫画趣味；Hero 可为 60/40。</strong></li>
 <li>正文用留白与层级组织，漫画框用于强调少数内容。</li>
 <li>首页允许更活泼，文章页主动降低装饰密度。</li>
 <li>大部分文章条目使用分割线，不逐条套厚边卡片。</li>
@@ -310,7 +263,7 @@ td code { background:none; padding:0; }
 <li>所有核心页面均可通过正常导航到达。</li>
 <li>时间不足时削减装饰和增强功能，不削减核心交互的边界处理。</li>
 </ul>
-</section><section aria-labelledby="section-07" class="plan-section"><h2 id="section-07" tabindex="-1">7. Visual Identity｜视觉识别</h2>
+</section><section aria-labelledby="section-07" class="plan-section"><h2 id="section-07" tabindex="-1">7. Visual Identity｜视觉识别</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <p><strong>品牌名称：</strong> Sywen's Space<br/>
 <strong>副标题：</strong> 代码 · 科研 · 生活<br/>
 <strong>首页主标题：</strong> 你好，我是 Sywen！</p>
@@ -333,7 +286,7 @@ td code { background:none; padding:0; }
 <li>不使用现成动漫角色或来源不明图片。</li>
 <li>原创素材及外部素材来源记录在 README。</li>
 </ul>
-</section><section aria-labelledby="section-08" class="plan-section"><h2 id="section-08" tabindex="-1">8. Color / Typography / Line / Shadow System｜设计系统</h2>
+</section><section aria-labelledby="section-08" class="plan-section"><h2 id="section-08" tabindex="-1">8. Color / Typography / Line / Shadow System｜设计系统</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <h3>8.1 色彩</h3>
 <div aria-label="设计系统表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table><caption class="sr-only">设计系统 · 表格 3</caption>
 <thead>
@@ -475,7 +428,7 @@ td code { background:none; padding:0; }
 </code></pre>
 <p>首发共七个 HTML 页面：三个顶层页面、四个文章页面。</p>
 <p>全部使用真实 HTML 文件路径，不引入 SPA 路由或服务器重写规则。</p>
-</section><section aria-labelledby="section-10" class="plan-section"><h2 id="section-10" tabindex="-1">10. Home Page Specification｜首页规格</h2>
+</section><section aria-labelledby="section-10" class="plan-section"><h2 id="section-10" tabindex="-1">10. Home Page Specification｜首页规格</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <p>页面顺序固定为：</p>
 <ol>
 <li>Header。</li>
@@ -513,7 +466,7 @@ td code { background:none; padding:0; }
 <li>保持兴趣：AI、动画与游戏。</li>
 </ul>
 <p>以上为明确可替换的示例状态，不包装成已经完成的项目经历。</p>
-</section><section aria-labelledby="section-11" class="plan-section"><h2 id="section-11" tabindex="-1">11. Blog Page Specification｜文章列表页规格</h2>
+</section><section aria-labelledby="section-11" class="plan-section"><h2 id="section-11" tabindex="-1">11. Blog Page Specification｜文章列表页规格</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <p>页面结构：</p>
 <ul>
 <li>页面标题与简短说明。</li>
@@ -550,7 +503,7 @@ td code { background:none; padding:0; }
 <li>输入更新后使用 <code>history.replaceState</code> 同步 URL，不为每个字符生成历史记录。</li>
 <li>若本地文件环境不允许更新历史，仅停止 URL 同步，筛选继续正常运行。</li>
 </ul>
-</section><section aria-labelledby="section-12" class="plan-section"><h2 id="section-12" tabindex="-1">12. Post Page Specification｜文章详情页规格</h2>
+</section><section aria-labelledby="section-12" class="plan-section"><h2 id="section-12" tabindex="-1">12. Post Page Specification｜文章详情页规格</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <p>页面顺序：</p>
 <ol>
 <li>返回文章列表。</li>
@@ -579,7 +532,7 @@ td code { background:none; padding:0; }
 </ul>
 <p>阅读进度采用顶部 2px 实线，具体计算见第 16 节。</p>
 <p>首发不设置侧栏和 TOC；桌面预留的留白用于阅读，不填满。P1 若实现目录，桌面放右侧，窄屏改为正文前折叠目录。</p>
-</section><section aria-labelledby="section-13" class="plan-section"><h2 id="section-13" tabindex="-1">13. About Page Specification｜关于页规格</h2>
+</section><section aria-labelledby="section-13" class="plan-section"><h2 id="section-13" tabindex="-1">13. About Page Specification｜关于页规格</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <p>顺序固定为：</p>
 <ul>
 <li>关于我。</li>
@@ -620,7 +573,7 @@ td code { background:none; padding:0; }
 <li>文章页同时提供正文上方的“返回文章列表”。</li>
 </ul>
 <p>Footer 包含品牌、年份、课程项目说明及返回文章入口。最终加入真实 Gitee 仓库链接。</p>
-</section><section aria-labelledby="section-15" class="plan-section"><h2 id="section-15" tabindex="-1">15. Custom Context Menu Specification｜自定义右键菜单规格</h2>
+</section><section aria-labelledby="section-15" class="plan-section"><h2 id="section-15" tabindex="-1">15. Custom Context Menu Specification｜自定义右键菜单规格</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <h3>15.1 启用范围</h3>
 <p>仅在 <code>(hover: hover) and (pointer: fine)</code> 条件下启用，作为桌面增强。</p>
 <p>只有准备显示自定义菜单时才调用 <code>preventDefault()</code>。以下场景保留浏览器原生菜单：</p>
@@ -735,7 +688,7 @@ td code { background:none; padding:0; }
 <li>输入框保留原生右键菜单。</li>
 </ul>
 <p><code>file://</code> 模式不尝试复制本地磁盘路径，提示“请在公开网站中复制可分享链接”。</p>
-</section><section aria-labelledby="section-16" class="plan-section"><h2 id="section-16" tabindex="-1">16. JavaScript Feature Requirements｜JavaScript 功能规格</h2>
+</section><section aria-labelledby="section-16" class="plan-section"><h2 id="section-16" tabindex="-1">16. JavaScript Feature Requirements｜JavaScript 功能规格</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <div aria-label="JavaScript 功能规格表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table><caption class="sr-only">JavaScript 功能规格 · 表格 6</caption>
 <thead>
 <tr>
@@ -818,7 +771,7 @@ td code { background:none; padding:0; }
 <li>结果数量采用延迟约 300ms 的礼貌播报；视觉列表即时更新。</li>
 <li>复制成功等短消息使用统一状态区，不弹出浏览器 <code>alert()</code>。</li>
 </ul>
-</section><section aria-labelledby="section-17" class="plan-section"><h2 id="section-17" tabindex="-1">17. Responsive Design｜响应式设计</h2>
+</section><section aria-labelledby="section-17" class="plan-section"><h2 id="section-17" tabindex="-1">17. Responsive Design｜响应式设计</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <p>断点：</p>
 <ul>
 <li>Mobile：小于 768px。</li>
@@ -1121,7 +1074,7 @@ td code { background:none; padding:0; }
 <li>页面模块只在目标页面加载或检查目标元素后初始化。</li>
 </ul>
 <p>无需生产依赖、包管理器或打包器。本地可直接打开页面查看；完整功能验收使用本地静态 HTTP 服务和正式 HTTPS 网站。</p>
-</section><section aria-labelledby="section-21" class="plan-section"><h2 id="section-21" tabindex="-1">21. Recommended File Structure｜推荐目录结构</h2>
+</section><section aria-labelledby="section-21" class="plan-section"><h2 id="section-21" tabindex="-1">21. Recommended File Structure｜推荐目录结构</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <pre aria-label="目录结构，可横向滚动" tabindex="0"><code class="language-text">Sywen-Blog/
 ├── index.html
 ├── blog.html
@@ -1173,7 +1126,7 @@ td code { background:none; padding:0; }
 <li><code>.gitignore</code> 排除操作系统文件、编辑器缓存、临时服务文件和凭据。</li>
 </ul>
 <p>推荐里程碑提交在第 24 节给出。README 和验收记录应与代码一起持续更新。</p>
-</section><section aria-labelledby="section-23" class="plan-section"><h2 id="section-23" tabindex="-1">23. Deployment Strategy｜部署策略</h2>
+</section><section aria-labelledby="section-23" class="plan-section"><h2 id="section-23" tabindex="-1">23. Deployment Strategy｜部署策略</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <h3>23.1 部署要求</h3>
 <ul>
 <li>公开 HTTPS 地址。</li>
@@ -1198,373 +1151,7 @@ td code { background:none; padding:0; }
 <li>若发布版本出现问题，重新部署上一可用提交。</li>
 <li>不为本项目新增监控服务；提交前和演示前分别做公开网址冒烟检查。</li>
 </ul>
-</section><section aria-labelledby="section-24" class="plan-section"><h2 id="section-24" tabindex="-1">24. Development Phases｜开发阶段</h2>
-<p>以下以 <strong>18 小时开发＋2 小时缓冲</strong> 估算。每日完成的工作均及时提交和推送。</p>
-<div aria-label="开发阶段表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table class="phase-table"><caption class="sr-only">开发阶段 · 表格 12</caption>
-<thead>
-<tr>
-<th scope="col">阶段／预算</th>
-<th scope="col">目标与主要文件</th>
-<th scope="col">主要任务</th>
-<th scope="col">验收条件</th>
-<th scope="col">推荐 Git Commit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Phase 0／1h</td>
-<td>冻结需求；计划、README、<code>.gitignore</code></td>
-<td>保存本计划，初始化 Git／Gitee，确认素材和部署账户</td>
-<td>范围确定，首个提交可推送，无个人内容依赖</td>
-<td><code>docs: define project scope and delivery plan</code></td>
-</tr>
-<tr>
-<td>Phase 1／1h</td>
-<td>HTML 骨架；顶层页面、文章骨架</td>
-<td>语义结构、公共导航、相对链接、跳转入口；验证最小部署</td>
-<td>页面互通，文章深链接可访问</td>
-<td><code>feat: add semantic pages and global navigation</code></td>
-</tr>
-<tr>
-<td>Phase 2／2h</td>
-<td>漫画视觉系统；三个 CSS 文件、Hero SVG</td>
-<td>字体、色彩、边框、按钮、列表和线稿</td>
-<td>首页局部形成明确风格，两套主题变量齐备</td>
-<td><code>style: establish manga editorial visual system</code></td>
-</tr>
-<tr>
-<td>Phase 3／2h</td>
-<td>首页、文章列表、关于；数据文件</td>
-<td>完成内容区块、四篇元数据、静态降级索引</td>
-<td>页面信息完整，无空链接、无商城式布局</td>
-<td><code>feat: build home blog and about content</code></td>
-</tr>
-<tr>
-<td>Phase 4／2h</td>
-<td>四篇文章；<code>posts/</code>、正文图片</td>
-<td>编写示例正文，完成代码、引用、图片和相邻文章导航</td>
-<td>四篇可读，头部信息与数据一致</td>
-<td><code>feat: add four sample articles and reading layouts</code></td>
-</tr>
-<tr>
-<td>Phase 5／3h</td>
-<td>核心交互；主题、列表、阅读模块</td>
-<td>搜索与分类、URL 状态、存储、返回顶部、进度</td>
-<td>组合筛选、刷新主题、滚动行为通过检查</td>
-<td><code>feat: add filtering theme and reading interactions</code></td>
-</tr>
-<tr>
-<td>Phase 6／2h</td>
-<td>右键菜单模块与样式</td>
-<td>上下文策略、定位、共享动作、复制降级、键盘</td>
-<td>边角、Esc、Tab、选区和输入框测试通过</td>
-<td><code>feat: add accessible desktop context menu</code></td>
-</tr>
-<tr>
-<td>Phase 7／2h</td>
-<td>响应式与可访问性；全站</td>
-<td>各宽度、焦点、语义、对比度、减少动态效果</td>
-<td>手机无页面溢出，键盘完成核心流程</td>
-<td><code>fix: improve responsive layouts and accessibility</code></td>
-</tr>
-<tr>
-<td>Phase 8／2h</td>
-<td>打磨与测试；验收记录</td>
-<td>跨浏览器、异常状态、链接与资源、视觉密度检查</td>
-<td>P0 全部通过，无阻塞缺陷</td>
-<td><code>test: verify core flows and refine visual details</code></td>
-</tr>
-<tr>
-<td>Phase 9／1h</td>
-<td>Gitee、部署、README</td>
-<td>发布正式版本、记录双网址、截图与演示流程、打标签</td>
-<td>从干净副本可复现，公开网址可访问</td>
-<td><code>docs: finalize deployment and course submission</code></td>
-</tr>
-</tbody>
-</table></div>
-<p>建议日程：第 1 天 Phase 0～1，第 2 天 Phase 2，第 3 天 Phase 3～4，第 4 天 Phase 5，第 5 天 Phase 6，第 6 天 Phase 7，第 7 天 Phase 8～9。</p>
-<p>缓冲优先用于菜单边界、浏览器差异和部署问题。没有稳定余量时不启动 P1。</p>
-</section><section aria-labelledby="section-25" class="plan-section"><h2 id="section-25" tabindex="-1">25. P0 / P1 / P2 Scope｜功能优先级</h2>
-<h3>P0：必须实现</h3>
-<ul>
-<li>首页、文章列表、关于、四篇文章。</li>
-<li>完整漫画线稿视觉与原创抽象插画。</li>
-<li>搜索、分类及组合结果状态。</li>
-<li>浅色／深色主题与存储降级。</li>
-<li>返回顶部和阅读进度。</li>
-<li>桌面自定义菜单及完整基础键盘行为。</li>
-<li>复制链接及失败降级。</li>
-<li>响应式、基本可访问性。</li>
-<li>真实 Git 过程、Gitee、公开网站和 README。</li>
-</ul>
-<h3>P1：核心验收通过后再考虑</h3>
-<p>按顺序评估，不默认纳入一周承诺：</p>
-<ol>
-<li>自定义 404 页面：低成本改善迷路体验，但需验证托管平台实际返回规则。</li>
-<li>文章目录：只有文章增长到多个章节、约 1500 字以上时增加。</li>
-<li>本地收藏：存储文章 ID，在列表提供“仅看收藏”；清楚说明仅保存在当前浏览器。</li>
-</ol>
-<h3>P2：有余力再实现</h3>
-<ul>
-<li>今日状态／短句：本地精选内容，不调用外部 API。</li>
-<li>纯装饰的 Hover 漫画标注。</li>
-<li>小型、无声音的彩蛋。</li>
-</ul>
-<p>主动降级：</p>
-<ul>
-<li>打字机效果：静态标题已满足表达需求，本期不做。</li>
-<li>Article Like：无后端无法提供可信公共统计，本期不做。</li>
-<li>页面漫画转场：增加跨页及动态效果维护成本，本期不做。</li>
-<li>角色动画与鼠标跟随：偏离阅读目标，本期不做。</li>
-</ul>
-</section><section aria-labelledby="section-26" class="plan-section"><h2 id="section-26" tabindex="-1">26. Acceptance Criteria｜验收标准</h2>
-<h3>26.1 内容与视觉</h3>
-<ul>
-<li>七个页面均能直接打开，无死链接和占位 CTA。</li>
-<li>四个分类各至少一篇文章。</li>
-<li>首页显示最新三篇，文章页元数据一致。</li>
-<li>首页可辨识纸张、线稿、杂志排版和少量旁白。</li>
-<li>文章正文没有背景装饰干扰。</li>
-<li>深色主题不存在残留白底控件或不可见边框。</li>
-</ul>
-<h3>26.2 功能测试</h3>
-<div aria-label="验收标准表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table><caption class="sr-only">验收标准 · 表格 13</caption>
-<thead>
-<tr>
-<th scope="col">场景</th>
-<th scope="col">预期结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>搜标题、摘要或标签</td>
-<td>返回正确文章</td>
-</tr>
-<tr>
-<td>输入大小写变体和前后空格</td>
-<td>结果一致</td>
-</tr>
-<tr>
-<td>输入两个关键词</td>
-<td>同时满足才显示</td>
-</tr>
-<tr>
-<td>搜索后切换分类</td>
-<td>两条件共同生效，输入保留</td>
-</tr>
-<tr>
-<td>无结果后重置</td>
-<td>恢复全部四篇</td>
-</tr>
-<tr>
-<td>URL 携带分类和关键词</td>
-<td>初始界面与结果一致</td>
-</tr>
-<tr>
-<td>存储正常时刷新主题</td>
-<td>选择保持</td>
-</tr>
-<tr>
-<td>存储失败</td>
-<td>当前页仍可切换，无未捕获异常</td>
-</tr>
-<tr>
-<td>滚动到顶部／中部／底部</td>
-<td>进度约为 0／50／100%，不越界</td>
-</tr>
-<tr>
-<td>页面不足一屏</td>
-<td>不除零，显示 100%</td>
-</tr>
-<tr>
-<td>减少动态效果</td>
-<td>无非必要位移和平滑滚动</td>
-</tr>
-<tr>
-<td>Clipboard 成功／失败</td>
-<td>成功提示或可操作的手动复制面板</td>
-</tr>
-</tbody>
-</table></div>
-<h3>26.3 右键菜单专项</h3>
-<ul>
-<li>视口四角打开均不越界。</li>
-<li>重复右键只有一个菜单实例，并更新位置。</li>
-<li>菜单操作、外部点击、Esc、滚动、Resize 均按规定关闭。</li>
-<li>输入框、可编辑区、选中文本、链接、图片保留原生菜单。</li>
-<li>Shift 右键保留原生菜单。</li>
-<li>键盘按钮可以打开菜单；方向键、Home／End、Enter、Space、Tab、Esc 正常。</li>
-<li>菜单关闭后焦点位置合理，隐藏菜单不在 Tab 顺序中。</li>
-<li>触摸设备没有强制长按拦截。</li>
-<li>手机无需菜单也可完成导航和主题切换。</li>
-</ul>
-<h3>26.4 兼容与质量</h3>
-<ul>
-<li>本机 Chrome、Edge 完整测试，Firefox 检查核心交互。</li>
-<li>至少一个真实手机浏览器检查导航、搜索、正文和主题。</li>
-<li>不具备真实设备条件时明确记录未验证项。</li>
-<li>指定视口无页面横向溢出；键盘可遍历所有正常操作。</li>
-<li>检查 HTML 结构、控制台错误、资源 404 和实际对比度。</li>
-<li>禁用 JavaScript 后仍能从静态索引进入文章。</li>
-<li><code>file://</code> 下可阅读并使用不依赖安全上下文的交互。</li>
-<li>子目录 HTTP 部署下资源和文章导航正确。</li>
-<li>首页资源目标不超过 500KB，不加载远程字体与运行时框架。</li>
-</ul>
-<p>以可复现的行为测试为主，不新增测试框架。异常状态使用开发者工具或临时测试夹具验证，夹具不进入生产页面。</p>
-<h3>26.5 课程演示顺序</h3>
-<ol>
-<li>展示首页及漫画视觉。</li>
-<li>分类筛选，再输入关键词，演示组合条件和无结果。</li>
-<li>切换主题并刷新。</li>
-<li>进入文章，演示进度和返回顶部。</li>
-<li>右键打开菜单，展示边缘定位和复制。</li>
-<li>在搜索框或选中文本上右键，展示保留原生能力。</li>
-<li>使用键盘打开并操作菜单。</li>
-<li>展示手机布局、Gitee 提交历史和公开网址。</li>
-</ol>
-</section><section aria-labelledby="section-27" class="plan-section"><h2 id="section-27" tabindex="-1">27. Risks and Trade-offs｜风险与取舍</h2>
-<div aria-label="风险与取舍表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table><caption class="sr-only">风险与取舍 · 表格 14</caption>
-<thead>
-<tr>
-<th scope="col">风险／取舍</th>
-<th scope="col">应对</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>一周内内容和功能过多</td>
-<td>四篇起步文章、零 P1 承诺、2 小时缓冲</td>
-</tr>
-<tr>
-<td>右键菜单覆盖用户习惯</td>
-<td>限定普通桌面区域，保留选择、链接和编辑场景</td>
-</tr>
-<tr>
-<td>菜单键盘实现耗时</td>
-<td>单层结构、无子菜单，单独保留两小时开发及后续测试</td>
-</tr>
-<tr>
-<td>无模板导致公共 HTML 重复</td>
-<td>七页规模接受重复，README 提供同步检查清单</td>
-</tr>
-<tr>
-<td>元数据和正文重复</td>
-<td>发布前核对标题、日期、分类和阅读时间</td>
-</tr>
-<tr>
-<td>本地文件存储行为不一致</td>
-<td>本地文件用于预览，HTTP／HTTPS 用于完整验收</td>
-</tr>
-<tr>
-<td>剪贴板权限或环境限制</td>
-<td>明确失败处理和手动复制</td>
-</tr>
-<tr>
-<td>静态托管在课程网络不可访问</td>
-<td>尽早试部署，并保留第二平台候选</td>
-</tr>
-<tr>
-<td>深色主题失去纸张感</td>
-<td>使用深灰表面、浅线条与克制强调色</td>
-</tr>
-<tr>
-<td>漫画元素过量</td>
-<td>限制首屏装饰数量，文章页取消纹理</td>
-</tr>
-<tr>
-<td>示例内容降低真实性</td>
-<td>显式标识，不编造经历，后续逐篇替换</td>
-</tr>
-<tr>
-<td>手动部署漏传文件</td>
-<td>从已提交版本准备发布目录，记录部署提交</td>
-</tr>
-<tr>
-<td>长期文章规模增长</td>
-<td>当前优先低门槛，增长后再评估生成器</td>
-</tr>
-</tbody>
-</table></div>
-</section><section aria-labelledby="section-28" class="plan-section"><h2 id="section-28" tabindex="-1">28. Design Review｜方案审查</h2>
-<div aria-label="方案审查表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table><caption class="sr-only">方案审查 · 表格 15</caption>
-<thead>
-<tr>
-<th scope="col">审查问题</th>
-<th scope="col">判断</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>漫画风是否足够明确？</td>
-<td>是。通过刊头、2px 线条、硬阴影、书桌分镜、旁白和稀疏网点共同建立。</td>
-</tr>
-<tr>
-<td>是否会显得幼稚？</td>
-<td>风险可控。不使用萌系人物堆叠、表情铺满或大面积糖果色，保持成熟排版。</td>
-</tr>
-<tr>
-<td>是否过度设计？</td>
-<td>已控制。无卡片墙、无转场系统、无动态图标体系；只保留一幅主线稿。</td>
-</tr>
-<tr>
-<td>是否符合个人博客定位？</td>
-<td>是。首页认识作者，列表发现内容，文章页阅读，关于页补充背景。</td>
-</tr>
-<tr>
-<td>JS 是否足以满足课程要求？</td>
-<td>是。覆盖 DOM、事件、状态组合、Storage、滚动计算、定位和键盘处理。</td>
-</tr>
-<tr>
-<td>Context Menu 是否真正有价值？</td>
-<td>有限但明确。为桌面提供搜索、主题、复制和导航捷径，也是课程交互展示点；不承担唯一入口。</td>
-</tr>
-<tr>
-<td>是否存在可访问性问题？</td>
-<td>菜单和动态列表风险最高，已要求键盘、焦点恢复、状态播报和原生场景豁免，实施后必须验证。</td>
-</tr>
-<tr>
-<td>能否在课程周期完成？</td>
-<td>以具备基础前端能力为前提，18 小时实施加 2 小时缓冲可作为目标；不得同时承诺增强功能。</td>
-</tr>
-</tbody>
-</table></div>
-<p>审查结论：按本计划实施 P0。视觉优先打磨首页、文章列表和正文排版；菜单优先完成正确行为，再处理装饰。</p>
-</section><section aria-labelledby="section-29" class="plan-section"><h2 id="section-29" tabindex="-1">29. Scope Review｜范围终审</h2>
-<h3>Must Have</h3>
-<ul>
-<li>四类页面与四篇原创示例文章。</li>
-<li>全中文界面、漫画线稿视觉、良好正文阅读体验。</li>
-<li>搜索、分类、主题持久化、返回顶部、阅读进度。</li>
-<li>有边界、有键盘支持的桌面右键菜单。</li>
-<li>移动端正常导航与响应式布局。</li>
-<li>基本可访问性和异常降级。</li>
-<li>Gitee 仓库、真实提交历史、公开 HTTPS 网站、README。</li>
-</ul>
-<h3>Should Have</h3>
-<ul>
-<li>自定义 404 页面。</li>
-<li>内容增长后添加文章目录。</li>
-<li>核心稳定且仍有时间时添加本地收藏。</li>
-</ul>
-<p>这些项目不影响 P0 交付，不默认占用本周预算。</p>
-<h3>Could Have</h3>
-<ul>
-<li>本地短句。</li>
-<li>少量 Hover 标注。</li>
-<li>一个不影响阅读的彩蛋。</li>
-</ul>
-<h3>Won't Have</h3>
-<ul>
-<li>后端、账号、评论、数据库和 CMS。</li>
-<li>框架迁移和复杂构建。</li>
-<li>云端收藏与公共点赞统计。</li>
-<li>首屏打字机、页面转场、鼠标跟随、背景音乐。</li>
-<li>触摸长按自定义菜单。</li>
-<li>为凑页面数量添加空内容。</li>
-<li>为动漫视觉引入无授权素材。</li>
-<li>在核心验收未通过前扩展功能。</li>
-</ul></section>
+</section><section aria-labelledby="section-24" class="plan-section"><h2 id="section-24" tabindex="-1">24. Development Phases｜开发阶段</h2><p>当前已完成 T00/T01/T02/T04。剩余实施改为 B00 发布通路 → B01 内容 → B02 Hero/VC0 → B03 视觉融合 → B04 核心 JS → B05 VC1-B → B06 Gitee/HTTPS 交付。剩余18–24h含2h缓冲。出图等待时可做独立工作，发布阻塞不能伪报通过。</p><p><strong>B06 Passed ══ 作业完成，可停止并提交。</strong></p><p>之后 E01小画、E02About/转场、E03阅读、E04复制/菜单、E05状态精修、E06增强验收发布默认Deferred；每次领取一包，先考虑6–12h。36–48h是完整增强参考，不是必须耗尽额度。</p><p>详细任务卡：<a href="docs/tasks/00-index.md">任务总索引</a>；接口与预算：<a href="Plan.md">实施计划</a>。</p></section><section aria-labelledby="section-25" class="plan-section"><h2 id="section-25" tabindex="-1">25. P0 / P1 / P2 Scope｜功能优先级</h2><h3>B：作业必须</h3><p>七页完整内容、CSS、主题与搜索分类JS、Git/Gitee、公开HTTPS、书桌Hero、响应式/基本可访问性、可复核证据。</p><h3>E：基线后按余量</h3><p>完整插画库、About专属新图、返回顶部、进度、复制降级、自定义菜单、额外状态图和精修。正文不因增强牺牲可读性。</p><h3>Backlog</h3><p>404、施工页、季节主题、逐篇封面、更多角色和大量贴纸。</p></section><section aria-labelledby="section-26" class="plan-section"><h2 id="section-26" tabindex="-1">26. Acceptance Criteria｜验收标准</h2><h3>VC0</h3><p>Hero在1440/390浅深页面中实际看图，身份、构图、入口和手机清晰度通过。</p><h3>VC1-B 作业验收</h3><p>七页内容与链接、CSS/主题、搜索分类、无JS/初始化失败/存储失败、键盘、320/390/768/1440与断点、200%缩放、图片失败、相对路径、Gitee源码和HTTPS深链接。Edge/Chrome主流程、Firefox核心；真实手机未执行如实记录。</p><p>初始资源≤800KB、滚动全部≤1.2MB目标；输出同版本截图与报告，部署commit与推送分别记录。</p><h3>VC2</h3><p>仅对实际新增增强进行视觉及功能回归，不以未做E类阻止作业提交。</p></section><section aria-labelledby="section-27" class="plan-section"><h2 id="section-27" tabindex="-1">27. Risks and Trade-offs｜风险与取舍</h2><ul><li>发布账号/网络先核对；缺失只阻塞发布，不阻止本地推进。</li><li>Hero只做两候选和必要修订，复杂角色归Astra/Codex；简单素材交豆包外部执行，基线不等待完整素材库。</li><li>每阶段真实提交和推送，不重写历史；可回退基线。</li><li>超预算先停E类和无效重复生成，不省核心功能边界验证。</li></ul></section><section aria-labelledby="section-28" class="plan-section"><h2 id="section-28" tabindex="-1">28. Design Review｜方案审查</h2><p>新版终审：已完成工程继续复用；B06划作业完成线；视觉不仅检查旧尺寸，还需实际看图确认漫画基调。完整资产体系与所有菜单功能不是作业前置。</p></section><section aria-labelledby="section-29" class="plan-section"><h2 id="section-29" tabindex="-1">29. Scope Review｜范围终审</h2><p>范围终审：本次授权执行B00–B06，E类登记Deferred、Backlog不启动。Git/Gitee/公开HTTPS及可用JS必须兑现；外部受阻和未验证项如实记录。所有任务以2026-09-15最新Plan.md和DESIGN_SPEC.md v1.1为准。</p></section>
 <footer class="doc-footer"><span>Sywen's Space · 项目计划 v1.0 · 完整 29 章</span><a class="back-link" href="#top">返回文档顶部 ↑</a></footer>
 </main>
 </div>
