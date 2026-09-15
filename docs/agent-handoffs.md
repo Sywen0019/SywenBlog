@@ -254,7 +254,11 @@ T02（角色 WebP 与 favicon）、T04（Tokens 与公共组件）。接手者�
 3. 主题与对比度实测：浅色 正文/纸 14.02:1、辅助文字/纸 5.75:1、按钮 12.35:1、面板 15.15:1；深色 12.02／7.91／7.96／10.78 —— 全部 ≥4.5:1（大字与关键控件门槛为 3:1）。静态把 `data-theme` 置为 `dark` 后 `--color-paper` 立即变为 `#202223`。
 4. 组件状态实测：次按钮 Hover（真实 `mouseMoved`）由 surface 变 accent；主 CTA 按下位移 2px、阴影由 4px 降为 2px；当前导航 700＋2px 下划线、其余 400 无下划线；输入框高 46px、2px ink、4px 圆角、聚焦 3px 轮廓；分类按钮选中 accent＋700 且 `aria-pressed="true"`；空状态头像 80×80 且位于重置按钮之后。
 5. 键盘与禁用脚本：首个 Tab 焦点为 `.skip-link`（3px 轮廓／4px 偏移、视口内可见），Enter 后焦点落到 `#main`；Edge `--disable-javascript` 下三张截图显示样式、导航、静态索引与图片全部可用，增强控件不可见。
-6. 首次渲染检查发现 5 项偏差并已修复：`.container` 内容列 1056px（应 1120px，曾把 gutter 计入上限）、About 桌面两列错位、About 角色图 360px 超过 300px 上限（`--about-art-height` 未被引用）、Tablet 角色图未落到 300px 档、Post 头部＋正文 804px 超过 740px；另把网点直径由 2px 修正为 1px（`--dot-size` 被当作半径使用），并把胶带改为跨角放置。修复后全部复测通过。
+6. 首次渲染检查发现 5 项偏差并已修复：`.container` 内容列 1056px（应 1120px，曾把 gutter 计入上限）、About 桌面两列错位、About 角色图 360px 超过 300px 上限（`--about-art-height` 未被引用）、Tablet 角色图未落到 300px 档、Post 头部＋正文 804px 超过 740px；另把网点直径由 2px 修正为 1px、并把胶带改为跨角放置。
+7. 像素级复验（直接测量截图，见 [像素复验](evidence/t04/pixel-verification.md)）：上列偏差与胶带跨角、深色标题色、移动端隐藏装饰、空状态顺序均已按预期渲染（内容列 1120px、About/Hero/Tablet 角色图 300/360/300px、胶带 8/8px 与 24/24px 跨角、深色 h1 为逐字节 `#F2EEE5`、390px 无装饰）。
+8. 像素复验发现网点的第二次缺陷并已修复：`radial-gradient(ink .5px, transparent .5px)` 在 8px 瓦片内不覆盖任何像素中心，网点**完全不可见**（该区 0 个非纸色像素）。当前实现为「同色 radial-gradient 背景 ＋ 8×8 SVG mask（圆心 (4,4)、r=0.5）＋ 显式 `mask-size: var(--dot-gap)`」，颜色由 `background-color: var(--color-ink)` 经 mask 着色以跟随主题。复测：8px 间隔、每 64×64 片 64 点、浅色 `rgb(242,238,229)`／深色 `rgb(37,38,39)`，均等于 `#F2EEE5` 以 `--dot-opacity` 0.08 与纸色的混色结果。
+   - 复现时的两条约束（改动前务必先读）：① mask 的 SVG 必须与 `mask-size` 同为 8×8；只用 1×1 的 SVG 会把圆缩放到整块瓦片，网点铺满约 78% 面积。② 不要退回纯 `radial-gradient`；8px 瓦片中心距最近像素中心 0.707px，0.5px 半径不覆盖任何像素中心。
+   - 已知容差：`--dot-size` 声明 1px，Edge 153 在 1× 缩放下实测渲染为 2×2 设备像素的均匀网点；`opacity .08` 下为极淡斑点，保留现状并留给 VC1 复核（2×2 瓦片方案会渲染成 4×4 色块且混色不均，更差）。
 
 ### 6. 未验证项与已知问题
 

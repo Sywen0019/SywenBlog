@@ -811,9 +811,27 @@ a.tag:hover {
   display: block;
   width: var(--dot-area-size);
   height: var(--dot-area-size);
-  /* --dot-size 是网点直径（DESIGN_SPEC §8、§16.2） */
+  /*
+    --dot-size 是网点直径（DESIGN_SPEC §8、§16.2）：1 像素实心点，--dot-gap 为 8px 间隔。
+    mask 是 8×8 的 SVG，圆画在 (4,4) 半径 0.5，恰好覆盖该像素中心。
+    两个必须同时成立的约束（都经浏览器实测确认）：
+    1) mask-size 必须显式等于 8px，与 SVG 固有尺寸一致；若只写 1×1 的 SVG，
+       圆会被缩放到整个瓦片，网点会铺满约 78% 面积。
+    2) 不用纯 radial-gradient：8px 瓦片中心到最近像素中心有 0.707px 距离，
+       0.5px 半径的硬色标圆不覆盖任何像素中心，网点会完全不可见。
+    背景仍保留同色 radial-gradient 作为 mask 不受支持时的降级。
+    颜色由 background-color 提供，SVG 只作白色遮罩，网点因此跟随主题 ink 变量。
+    实测：Edge 153 在 1× 缩放下渲染为 2×2 设备像素的均匀网点（见 docs/evidence/t04/pixel-verification.md）。
+  */
+  background-color: var(--color-ink);
   background-image: radial-gradient(var(--color-ink) calc(var(--dot-size) / 2), transparent calc(var(--dot-size) / 2));
   background-size: var(--dot-gap) var(--dot-gap);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='.5' fill='%23fff'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='.5' fill='%23fff'/%3E%3C/svg%3E");
+  -webkit-mask-size: var(--dot-gap) var(--dot-gap);
+  mask-size: var(--dot-gap) var(--dot-gap);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
   opacity: var(--dot-opacity);
   pointer-events: none;
 }

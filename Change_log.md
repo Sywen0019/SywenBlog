@@ -2,6 +2,14 @@
 
 按时间倒序记录项目变更：日期、变更摘要与验证结果。功能与验收依据见 [PROJECT_PLAN.html](PROJECT_PLAN.html)、[DESIGN_SPEC.md](DESIGN_SPEC.md) 与 [Plan.md](Plan.md)。
 
+## 2026-09-15 · T04 修订：网点装饰修正（像素复验发现）
+
+- 像素级复验（直接测量截图）发现 `hero-art__dots` 的网点**完全不可见**：`radial-gradient(ink .5px, transparent .5px)` 在 8px 瓦片内不覆盖任何像素中心（0 个非纸色像素）。
+- 修正为「同色 `radial-gradient` 背景 ＋ 8×8 SVG mask（圆心 (4,4)、r=0.5）＋ 显式 `mask-size: var(--dot-gap)`」，颜色由 `background-color: var(--color-ink)` 经 mask 着色，网点因此跟随主题变量。`css/components.css` 的 `.hero-art__dots` 内已注明两条必须同时成立的约束，避免退回已知失效写法。
+- 复测（Edge 153 headless + CDP 重新截图后逐像素测量）：8px 间隔、每 64×64 片 64 点、共 6.25% 覆盖；浅色网点 `rgb(242,238,229)`、深色 `rgb(37,38,39)`，均与 `#F2EEE5` 以 `--dot-opacity` 0.08 与纸色的混色结果逐字节相符。
+- 同步重拍全部 12 张两主题截图与 3 张禁用 JavaScript 截图（`docs/evidence/t04/`），并重跑静态审计与渲染检查（24 个场景 + 12 个边界场景全部 PASS，异常计数 0）。
+- 已知容差（非阻塞，留 VC1）：`--dot-size` 声明 1px，实测渲染为 2×2 设备像素；1×1 的 mask 会被缩放到整块瓦片、2×2 瓦片会渲染成 4×4 色块，故保留当前几何。新增像素复验记录与测量脚本 `docs/evidence/t04/pixel-verification.md`、`dots-pixel-check.mjs`。
+
 ## 2026-09-15 · Stage 2 视觉基础（T04 Tokens、公共组件与响应式）
 
 - 新增 `css/base.css`（Token 注册表、浅深主题与系统跟随、移动优先响应式 Token、重置与排版、焦点、跳转链接、辅助技术工具类、减少动态效果）、`css/components.css`（增强控件、刊头与导航、按钮族与表单控件、分类／标签／结果工具、文章条目、旁白面板、角色图框与装饰、状态块、菜单项、正文骨架）、`css/pages.css`（容器与外壳、Home／Blog／Post／About 布局骨架）。

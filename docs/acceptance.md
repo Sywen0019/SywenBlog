@@ -77,17 +77,20 @@
 | D-03 | About 角色图 360px 超过 300px 上限（`--about-art-height` 未被任何规则引用） | §9.2、§16.1 | `.hero-art .art-frame__image` 用 `--hero-art-height`、`.about-hero-art .art-frame__image` 用 `--about-art-height` | 300px，通过 |
 | D-04 | Tablet 档未定义角色图高度覆盖，768～1023px 仍为 220px | §14、§16.1 | `768px` 媒体查询补 `--hero-art-height: 300px`、`--about-art-height: 240px`、`--status-art-height: 240px` | 768px Hero 160×300／About 128×240，通过 |
 | D-05 | Post 文章头部与正文实测 804px，超过 740px 阅读列 | §6.1、§11.3 | `.post` 与 `.post-back` 使用 `--width-reading`，不再叠加 gutter | ≥1024px 头部与正文均 740px，通过 |
-| D-06 | 网点实测直径 2px（`--dot-size` 被当作半径使用） | §8、§16.2 | `radial-gradient(... calc(var(--dot-size) / 2) ...)` | 图案为 `radial-gradient(rgb(36,36,36) 0.5px, transparent 0.5px)`，直径 1px，通过 |
+| D-06 | 网点实测直径 2px（`--dot-size` 被当作半径使用） | §8、§16.2 | 第一次修正为 `radial-gradient(... calc(var(--dot-size)/2) ...)`；像素复测发现该写法在 8px 瓦片内不覆盖任何像素中心，网点**完全不可见**（0 个非纸色像素）。改为 8×8 SVG mask（圆心 (4,4)、r=0.5）＋显式 `mask-size: var(--dot-gap)`，颜色由 `background-color: var(--color-ink)` 经 mask 提供 | 8px 间隔、每片 64 点、浅色 `rgb(242,238,229)`、深色 `rgb(37,38,39)`（均与 `#F2EEE5` @ 8% 的混色逐字节相符）。实测渲染为 2×2 设备像素；因 `--dot-size` 声明 1px，该差异记为 VC1 复核项 |
 | D-07 | 胶带整体位于图框外约 8px | §8 | 改为偏移半个尺寸，跨图框右上角 | 胶带 48×16 跨角放置，通过 |
 
 证据：
 
 - [渲染报告](evidence/t04/render-report.txt)（场景矩阵、边界、主题、组件状态、键盘、汇总与截图清单）
 - [渲染检查原始数据](evidence/t04/render-checks.json)（36 个场景的完整计算样式与几何测量）
+- [像素级复验](evidence/t04/pixel-verification.md)（直接从截图测量：内容列、角色图高度、网点颜色与间隔、胶带跨角、深色标题色、移动端装饰、空状态顺序）
 - 截图：`home-1440-light.png`、`home-1440-dark.png`、`home-768-light.png`、`home-390-light.png`、`home-390-dark.png`、`home-320-light.png`、`blog-1440-light.png`、`blog-390-dark.png`、`about-1440-light.png`、`about-390-light.png`、`post-1440-light.png`、`post-390-light.png`、`blog-preview-empty-1440-light.png`、`focus-skip-link-1440-light.png`、`home-nojs-1440-light.png`、`home-nojs-390-light.png`、`post-nojs-1440-light.png`（均位于 `docs/evidence/t04/`）
-- 脚本：`docs/evidence/t04/audit.mjs`（静态审计）、`docs/evidence/t04/render-checks.mjs`（Edge headless + CDP 渲染检查）
+- 脚本：`docs/evidence/t04/audit.mjs`（静态审计）、`docs/evidence/t04/render-checks.mjs`（Edge headless + CDP 渲染检查）、`docs/evidence/t04/html-check.mjs`（HTML 结构）、`docs/evidence/t04/dots-pixel-check.mjs`（网点像素测量）
 
 未验证项：Chrome／Firefox／真实手机未执行（OB-03）；观感类判据与 VC1 正式视觉结论未执行（OB-04）；本机 Edge 在沙箱内启动 headless 时崩溃，浏览器检查在放宽沙箱后完成，属环境限制而非产品缺陷。
+
+已知容差（非阻塞，留 VC1）：网点声明 `--dot-size: 1px`，Edge 153 在 1× 缩放下实测渲染为 2×2 设备像素的均匀网点；直接按 1×1 制作的 mask 会被缩放到整块瓦片（铺满约 78% 面积），2×2 瓦片则会渲染成 4×4 色块且混色不均，因此保留当前几何并在 VC1 复核。
 
 ---
 
