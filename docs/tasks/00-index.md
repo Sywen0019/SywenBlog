@@ -7,7 +7,7 @@
 |任务|状态|任务卡|
 |---|---|---|
 |B00 作业要求与发布通路|Running|[B00](01-baseline/b00.md)|
-|B01 七页内容与链接|Ready|[B01](01-baseline/b01.md)|
+|B01 七页内容与链接|Passed|[B01](01-baseline/b01.md)|
 |B02 美术基调与 Hero|Ready|[B02](01-baseline/b02.md)|
 |B03 基线视觉融合|Ready|[B03](01-baseline/b03.md)|
 |B04 核心 JavaScript|Ready|[B04](01-baseline/b04.md)|

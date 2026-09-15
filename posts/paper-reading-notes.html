@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>一次论文阅读如何留下可复用笔记 · Sywen's Space</title>
-<meta name="description" content="整理一套简单的论文阅读记录方式：先写问题，再记方法与结论，最后留下仍不清楚的地方。">
+<meta name="description" content="把论文笔记从摘抄改成问题、证据与局限的连接。通过三次阅读逐步建立地图，保留页码和图号，为下一次验证、复现与讨论留下入口。">
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/pages.css">
@@ -41,14 +41,27 @@
 
     <article class="post" data-post-id="paper-reading-notes">
       <header class="post-header">
-        <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=research">科研</a></p>
+        <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=research">科研</a><time class="post-meta__date" datetime="2026-09-15">2026-09-15</time><span class="post-meta__time">约 2 分钟</span></p>
         <h1 class="page-title">一次论文阅读如何留下可复用笔记</h1>
         <p class="post-demo-note">示例文章</p>
       </header>
       <div class="post-body">
-        <p>读论文容易读完就忘，笔记的价值在于留下之后还能复用的结构，而不只是把原文抄一遍。</p>
-        <p>这篇整理一套简单的记录方式：先写下读这篇论文要回答的问题，再分别记录方法与结论，最后留下仍然不清楚的地方。</p>
+        <p>论文读完后，最容易留下的是一串句子：作者提出了什么，模型叫什么，结果看起来如何。可当下一周想复用这些信息时，摘抄常常无法回答“这个结论靠什么成立”。一份可复用的笔记，应该帮助未来的自己回到问题、证据与限制之间，而不只是回到摘要。</p>
+<h2>第一遍，先建立地图</h2>
+<p>先看标题、摘要、章节和主要图表，写下研究问题、输入输出与作者声称的贡献。此时允许有很多空白，不急着把每个术语解释完整。把不理解的词列在旁边，并标明它出现在什么位置，后面再判断哪些值得深入。</p>
+<p>第一遍结束时，用自己的话写三句：它要解决什么问题；主要改动在哪里；哪些证据值得第二遍检查。如果只能照抄摘要，说明地图还不够清楚，可以回看问题设定，而不是直接进入公式推导。</p>
+<h2>第二遍，顺着证据走</h2>
+<p>阅读方法和实验时，每看到一个结论，就寻找支撑它的图、表、定义或推导。在笔记旁保留页码、章节名和图号。PDF 阅读器页码可能与论文印刷页码不同，最好写清采用哪一种，避免下次寻找时反复翻页。</p>
+<blockquote><p>把“作者报告的结果”“自己的解释”和“尚未验证的猜想”分开写。</p></blockquote>
+<p>例如，一张表显示某个数据集上的指标更高，只能先记录这个比较条件下的结果。它是否来自方法本身，是否依赖额外数据或计算量，还需要检查设置。不要把局部比较直接扩写成“普遍更好”，也不要把没有消融的推测写成已证实机制。</p>
+<h2>第三遍，只深入当前需要的部分</h2>
+<p>不是每篇论文都需要逐行精读。准备复现时，可以深入预处理、超参数和评估流程；准备讨论理论时，可以重做关键推导；只是了解方向时，保留明确的问题与证据入口可能已经足够。阅读深度应该回应当前任务，而不是为了完成一个形式上的三遍流程。</p>
+<h2>一页可继续使用的结构</h2>
+<ol><li>问题与适用条件：什么输入，期待什么输出。</li><li>方法变化：与比较对象相比，真正改了哪一步。</li><li>证据位置：图表、章节及页码，写出比较条件。</li><li>局限与疑问：哪些假设未被验证，哪些信息缺失。</li><li>下一步：一个能实际执行的检查或小实验。</li></ol>
+<p>最后加一段自己的重述，并保留原论文地址和版本。隔几天只看这页笔记，试着向别人解释方法。如果解释中出现断点，就把断点变成下一次阅读的问题。笔记的价值不在于一次写得完整，而在于它能把下一次工作接起来。</p>
       </div>
+      <ul class="tag-list" aria-label="文章标签"><li><a class="tag" href="../blog.html?q=%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB">论文阅读</a></li><li><a class="tag" href="../blog.html?q=%E7%A7%91%E7%A0%94">科研</a></li><li><a class="tag" href="../blog.html?q=%E7%AC%94%E8%AE%B0">笔记</a></li></ul>
+      <nav class="post-nav" aria-label="相邻文章"><a href="./leave-some-space.html"><span class="post-nav__label">上一篇 · 更早</span>给学习留一点空白</a><a href="./dom-search-notes.html"><span class="post-nav__label">下一篇 · 更新</span>原生 JavaScript 搜索与筛选笔记</a></nav>
     </article>
 
   </div>

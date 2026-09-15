@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>原生 JavaScript 搜索与筛选笔记 · Sywen's Space</title>
-<meta name="description" content="不依赖框架实现列表搜索与分类筛选：输入即时匹配标题、摘要与标签，再用 DOM API 渲染结果。">
+<meta name="description" content="用一个小型文章列表拆解搜索流程：整理数据、组合条件、创建 DOM，再处理中文输入与失败降级。让交互保持简单，也让没有脚本的页面依然可读。">
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/pages.css">
@@ -41,14 +41,36 @@
 
     <article class="post" data-post-id="dom-search-notes">
       <header class="post-header">
-        <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=coding">编程</a></p>
+        <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=coding">编程</a><time class="post-meta__date" datetime="2026-09-15">2026-09-15</time><span class="post-meta__time">约 2 分钟</span></p>
         <h1 class="page-title">原生 JavaScript 搜索与筛选笔记</h1>
         <p class="post-demo-note">示例文章</p>
       </header>
       <div class="post-body">
-        <p>这个站点的文章列表用原生 JavaScript 完成搜索与分类筛选：输入变化时即时匹配标题、摘要与标签，再把结果渲染成列表。</p>
-        <p>这篇笔记整理其中的取舍，包括为什么用 DOM API 与 textContent 而不是拼接 HTML，以及在中文输入法组合输入期间如何处理输入事件。</p>
+        <p>一个只有四篇文章的博客，不需要搜索服务也能提供好用的筛选。最重要的不是代码有多短，而是每一步都能单独解释：数据来自哪里，哪些条件生效，结果如何显示，以及脚本失败时读者还能做什么。下面是这个站点使用的思路。</p>
+<h2>先把文章当成数据</h2>
+<p>每篇文章登记标题、摘要、分类和标签。搜索只检查这些字段，正文继续留在 HTML 中。这样既不用下载所有文章才能开始搜索，也能让摘要成为真实的阅读线索。Home 的最近文章、Blog 的索引与文章头部需要同步，不能各自维护互相矛盾的日期。</p>
+<h2>让条件组合有明确含义</h2>
+<p>搜索前去掉首尾空白，将拉丁字母转成小写，再按空白拆成关键词。“JavaScript DOM”表示两个词都应匹配；分类是另一个同时成立的条件。切换分类保留关键词，删除关键词保留分类，“重置筛选”才清空两者。读者不需要猜按钮背后还做了什么。</p>
+<pre><code>const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+const matches = posts.filter((post) =&gt; {
+  const text = [post.title, post.summary, ...post.tags].join(' ').toLowerCase();
+  return (category === 'all' || post.category === category)
+    &amp;&amp; words.every((word) =&gt; text.includes(word));
+});</code></pre>
+<p>这段示例只说明匹配规则，不包含页面初始化与错误恢复。实际实现还要检查分类是否合法，以及数据是否准备好，才能切换读者看到的列表。</p>
+<figure class="post-figure"><img src="../assets/images/search-flow.svg" width="680" height="180" alt="搜索流程：输入关键词与分类，按全部条件匹配，显示结果数量和文章列表" loading="lazy"><figcaption>输入、匹配与显示分开，便于分别核对。</figcaption></figure>
+<h2>创建节点，不拼接用户输入</h2>
+<p>使用 createElement 创建标题和链接，用 textContent 放入文字。关键词只参与比较，不进入 HTML 字符串。文章地址来自站点登记的数据，并通过相对站点根路径解析；这让网站放在子目录时也能打开文章。页面初始化完成前，静态索引一直保留。</p>
+<blockquote><p>渐进增强的目标是：脚本成功时多一些便利，失败时仍然有文章可读。</p></blockquote>
+<h2>给中文输入留出过程</h2>
+<p>中文输入法会经历拼音组合与选字。如果每个中间状态都立即刷新结果，会出现列表闪动和不必要的数量播报。组合输入期间先保留当前列表，组合结束后再匹配；普通输入仍即时更新。结果变化不移动焦点，读者可以继续输入。</p>
+<div class="post-table-scroll" role="region" aria-label="筛选行为对照表" tabindex="0"><table><caption>值得单独检查的三种情况</caption><thead><tr><th scope="col">操作</th><th scope="col">应有结果</th></tr></thead><tbody><tr><td>选择分类</td><td>保留当前关键词</td></tr><tr><td>没有匹配</td><td>说明原因并提供重置入口</td></tr><tr><td>脚本初始化失败</td><td>继续显示静态文章索引</td></tr></tbody></table></div>
+<h2>最后用失败场景检查设计</h2>
+<p>试一次多词搜索、一次未知分类、一次无结果，再禁用脚本刷新页面。还可以直接打开带 q 和 category 的网址，确认刷新后状态能恢复。小网站不必引入复杂框架，但这些简单检查能避免“演示时能用，换个入口就坏”的问题。</p>
+<p>参考：<a href="https://dom.spec.whatwg.org/#dom-node-textcontent">DOM 标准中的 textContent</a>与<a href="https://w3c.github.io/uievents/#events-compositionevents">UI Events 组合输入事件</a>。</p>
       </div>
+      <ul class="tag-list" aria-label="文章标签"><li><a class="tag" href="../blog.html?q=JavaScript">JavaScript</a></li><li><a class="tag" href="../blog.html?q=DOM">DOM</a></li><li><a class="tag" href="../blog.html?q=%E5%89%8D%E7%AB%AF">前端</a></li></ul>
+      <nav class="post-nav" aria-label="相邻文章"><a href="./paper-reading-notes.html"><span class="post-nav__label">上一篇 · 更早</span>一次论文阅读如何留下可复用笔记</a><a href="./attention-intuition.html"><span class="post-nav__label">下一篇 · 更新</span>用直觉理解注意力机制</a></nav>
     </article>
 
   </div>

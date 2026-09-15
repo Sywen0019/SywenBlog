@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>用直觉理解注意力机制 · Sywen's Space</title>
-<meta name="description" content="用最小例子说明注意力机制中查询、键与值的关系，先建立直觉，再看公式。">
+<meta name="description" content="从阅读一句话时如何寻找线索出发，理解 Query、Key 和 Value 的分工。先建立加权汇总的直觉，再区分这个比喻能解释什么、不能解释什么。">
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/components.css">
 <link rel="stylesheet" href="../css/pages.css">
@@ -41,14 +41,28 @@
 
     <article class="post" data-post-id="attention-intuition">
       <header class="post-header">
-        <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=ai">人工智能</a></p>
+        <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=ai">人工智能</a><time class="post-meta__date" datetime="2026-09-15">2026-09-15</time><span class="post-meta__time">约 2 分钟</span></p>
         <h1 class="page-title">用直觉理解注意力机制</h1>
         <p class="post-demo-note">示例文章</p>
       </header>
       <div class="post-body">
-        <p>注意力机制的直觉是：处理一句话时，为每个位置判断它应该关注哪些位置。查询、键和值把这件事拆成三步，再用加权求和得到结果。</p>
-        <p>这篇笔记用最小例子整理这套对应关系，先建立直觉，再看公式。</p>
+        <p>读一句话时，我们并不会给每个词同样多的注意。例如“杯子放不进行李箱，因为它太小了”，理解“它”时，需要回头比较杯子和行李箱。这个例子可以帮助我们接近注意力机制：当前位置的表示，会根据当前需要，从其他位置取回不同分量的信息。它不是在模拟一个人完整的理解过程，而是一种可学习的信息汇总方式。</p>
+<h2>先把问题拆成三件事</h2>
+<p>可以把 Query 想成“我正在寻找什么”，Key 想成“我能提供哪些线索”，Value 想成“真正要取回的内容”。模型将输入表示分别变换为这三组向量，再比较 Query 与各个 Key 的匹配程度。这里的线索不是程序员手写的词义标签，而是训练过程中得到的数值表示。</p>
+<p>类比图书馆会更容易想象：问题像检索请求，索引帮助定位，而书里的内容才是最后读到的信息。但这个比喻有边界。模型并不真的打开一本书，向量也没有一套固定、可直接翻译成人类语言的含义。</p>
+<h2>从匹配程度到加权汇总</h2>
+<p>在缩放点积注意力中，Query 和 Key 的点积形成分数，缩放与 softmax 将分数转换为权重，随后用这些权重汇总 Value。同一组输入，面对不同的 Query，可以得到不同的汇总结果；因此它比“把所有位置简单平均”更灵活。</p>
+<blockquote><p>理解时先抓住一个问题：这个位置，为了形成新的表示，需要从哪些位置借用信息？</p></blockquote>
+<p>如果暂时把三个位置的权重设为 0.6、0.3、0.1，输出就是对应三个 Value 按这些比例相加。这只是算术示例，不是模型真实的测量结果。权重大小会随输入、层和注意力头而变化，不能直接当成某个词重要性的最终结论。</p>
+<h2>多头不是重复做同一道题</h2>
+<p>多头注意力允许多组不同的投影并行形成表示，再将结果组合。不同的头有机会捕捉不同关系，但不能事先保证某个头只负责语法、另一个只负责情绪。这样的命名如果没有进一步实验，只能算便于记忆的猜想。</p>
+<h2>给下一遍阅读留下入口</h2>
+<ul><li>画出 Q、K、V 的形状，检查哪两个维度参与相乘。</li><li>区分注意力权重和输出向量，避免把两者混为一谈。</li><li>再看位置编码、残差连接和前馈层，理解注意力在整个模型中的位置。</li></ul>
+<p>这一页先停在直觉层面。下一步可以用三个很短的向量手算一次权重与加权和，再回到原论文核对完整公式。把“看懂了一张示意图”和“能够复现一次计算”分开，通常能更准确地知道自己理解到了哪里。</p>
+<p>继续阅读：<a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>（Vaswani 等，2017）。</p>
       </div>
+      <ul class="tag-list" aria-label="文章标签"><li><a class="tag" href="../blog.html?q=AI">AI</a></li><li><a class="tag" href="../blog.html?q=Transformer">Transformer</a></li><li><a class="tag" href="../blog.html?q=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">学习笔记</a></li></ul>
+      <nav class="post-nav" aria-label="相邻文章"><a href="./dom-search-notes.html"><span class="post-nav__label">上一篇 · 更早</span>原生 JavaScript 搜索与筛选笔记</a></nav>
     </article>
 
   </div>

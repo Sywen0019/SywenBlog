@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="180" viewBox="0 0 680 180" role="img" aria-labelledby="title desc">
+  <title id="title">文章筛选流程</title><desc id="desc">关键词与分类经过条件匹配，形成文章结果和数量。</desc>
+  <rect width="680" height="180" fill="#f7f3ea"/>
+  <g fill="#fffcf5" stroke="#242424" stroke-width="2"><rect x="16" y="44" width="180" height="92" rx="4"/><rect x="250" y="44" width="180" height="92" rx="4"/><rect x="484" y="44" width="180" height="92" rx="4"/></g>
+  <g stroke="#242424" stroke-width="2" fill="none"><path d="M202 90h40m-8-7 8 7-8 7M436 90h40m-8-7 8 7-8 7"/></g>
+  <g font-family="sans-serif" text-anchor="middle" fill="#242424"><text x="106" y="82" font-size="20">输入条件</text><text x="106" y="112" font-size="15">关键词 + 分类</text><text x="340" y="82" font-size="20">同时匹配</text><text x="340" y="112" font-size="15">标题 · 摘要 · 标签</text><text x="574" y="82" font-size="20">显示结果</text><text x="574" y="112" font-size="15">文章列表 + 数量</text></g>
+</svg>
