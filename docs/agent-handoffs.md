@@ -86,7 +86,7 @@ T01（本文件下方记录）、T02。接手者注意：CSS 与 JS 尚不存在
 
 ### 2. 基础版本
 
-- 起始 commit：T00 里程碑提交（见 `docs/acceptance.md` 记录的完整哈希）。
+- 起始 commit：`b267dc326cf5cb303f856be467692d00ff3493b0`（`docs: define implementation baseline and delivery checklist`）。
 - 输入：`Plan.md` 第一部分「页面、样式与资产架构」、`PROJECT_PLAN.html` §7、§9～§14、§19.3、§20.3、§21。
 
 ### 3. 实际修改文件
@@ -110,6 +110,7 @@ T01（本文件下方记录）、T02。接手者注意：CSS 与 JS 尚不存在
 
 - `<html lang="zh-CN" data-site-root="…" data-page="…">`；顶层页 `data-site-root="./"`，文章页 `data-site-root="../"`。
 - `data-page` 取值：`home`、`blog`、`about`、`post`；文章页额外 `data-post="<slug>"`，与 `posts-data.js` 的 `slug` 一致。
+- 当前页标记：顶层页在对应导航项使用 `aria-current="page"`；文章页属于“文章”分区而非该页面本身，使用 `aria-current="true"`。两者在每页各出现一次。
 
 **路径**
 
@@ -141,7 +142,16 @@ T01（本文件下方记录）、T02。接手者注意：CSS 与 JS 尚不存在
 
 **data 属性**：`data-category`、`data-category-count`、`data-post-id`；后续菜单豁免区域使用 `data-menu-exempt`。
 
-**类名**（kebab-case，BEM-lite）：`.skip-link`、`.container`、`.site-header(#__inner)`、`.brand(#__name/__tagline)`、`.site-nav(#__list/__item/__link)`、`.site-tools`、`.theme-toggle`、`.menu-toggle`、`.site-main`、`.page-header`、`.page-title`、`.page-intro`、`.site-footer(#__inner/__brand/__note/__links/__copyright)`、`.button(--primary/--secondary/--quiet)`、`.category-list`、`.category-link`、`.category-button`、`.category-count`、`.tag-list`、`.tag`、`.post-list`、`.post-entry(#__category/__title/__link/__summary/__date/__more)`、`.blog-search`、`.field(#__label/__input)`、`.result-bar(#__count)`、`.note-panel(#__list/__item/__label/__text)`、`.status-notice`、`.copy-panel`、`.context-menu(#__group/__item/__progress)`、`.reading-progress`、`.back-to-top`、`.empty-state(#__title/__text)`、`.hero(#__text/__title/__intro/__actions)`、`.hero-art(#__frame/__image/__caption)`、`.art-frame`、`.home-section`、`.section-header(#__link)`、`.post(#__inner)`、`.post-back`、`.post-header`、`.post-meta`、`.post-demo-note`、`.post-body`、`.post-nav`、`.faq-list(#__label)`。
+**类名**（kebab-case，BEM-lite，均已在七页中使用）：`.skip-link`、`.container`、`.site-header(#__inner)`、`.site-title`、`.brand(#__name/__tagline)`、`.site-nav(#__list/__item/__link)`、`.site-tools`、`.theme-toggle`、`.menu-toggle`、`.site-main`、`.page-header`、`.page-title`、`.page-intro`、`.site-footer(#__inner/__brand/__note/__links/__copyright)`、`.button(--primary/--secondary/--quiet)`、`.category-list(#__item)`、`.category-link`、`.category-button`、`.category-count`、`.tag-list`、`.tag`、`.post-list`、`.post-entry(#__category/__title/__link/__summary/__date/__more)`、`.blog-filters`、`.blog-search`、`.field(#__label/__input)`、`.result-bar(#__count)`、`.blog-results`、`.note-panel(#__list/__item/__label/__text)`、`.status-notice`、`.copy-panel`、`.context-menu(#__group/__item/__progress)`、`.reading-progress`、`.back-to-top`、`.empty-state(#__title/__text)`、`.hero(#__text/__title/__intro/__actions)`、`.hero-art(#__frame/__image/__caption)`、`.art-frame`、`.home-section`、`.section-header(#__title/__link)`、`.about-section`、`.text-list`、`.post`、`.post-back`、`.post-header`、`.post-meta(#__category/__date/__time)`、`.post-demo-note`、`.post-body`、`.post-nav`、`.faq-list(#__question/__answer/__label)`。
+
+后续任务只使用上表类名做样式钩子；新增状态类沿用 `.is-…` 形式或 `aria-*` 属性，不重命名既有类名。
+
+**T04 需要在七页插入的资源引用与标记**（本轮未加入，避免引用不存在的文件）：
+
+- 三个样式表：`<link rel="stylesheet" href="<root>/css/base.css">`、`components.css`、`pages.css`；以及 `<link rel="icon" href="<root>/assets/icons/favicon.svg" type="image/svg+xml">`。
+- Home Hero：`.hero-art` 图框（`character-front-upper.webp`，固有 320×600，空替代文本）与旁白“学习中，持续更新。”（`.hero-art__caption`）。
+- About：同一角色图（替代文本“Sywen 的漫画角色形象：短发、红框眼镜和格纹衬衫”）。
+- Blog 无结果状态：`.empty-state` 头像（`character-front-avatar.webp`，固有 225×225），位于文案与重置操作之后。
 
 **公共 HTML 同步清单**（七份文件必须一致，除 `aria-current`、相对根、页面标题／描述／正文外）：跳转链接、Header 块、Footer 块、五个增强控件挂载点、后续加入的 CSS 链接与脚本加载顺序。
 
@@ -149,11 +159,19 @@ T01（本文件下方记录）、T02。接手者注意：CSS 与 JS 尚不存在
 
 ### 5. 自检步骤与结果
 
-见 `docs/acceptance.md`「阶段 1」：结构检查、链接解析、本地 HTTP 200、禁用 JS 结构性确认。
+详见 `docs/acceptance.md`「阶段 1 执行输出」。摘要：
+
+- 结构检查（临时脚本，经 stdin 运行）：七页 `lang`／`data-site-root`／`data-page` 正确，各 1 个 `h1`，标题与描述七页唯一，跳转链接指向 `#main`，七个增强控件均带 `hidden`，无 `<script>`／样式表／`<img>` —— PASS。
+- 链接解析：全部内部 `href`（含 `?category=`）目标存在，无死链，无未知分类，文章页统一 `../` —— PASS。
+- 本地 HTTP：七页均 200 且返回字节与工作区文件 SHA256 一致，UTF-8 正常，404 反向确认通过 —— PASS。
+- Header／Footer 七页一致性：除 `aria-current` 与相对根外完全一致 —— PASS。
+- 复检修正：首轮发现文章页缺少当前分区标记，已在四篇文章页补 `aria-current="true"` 后复检通过。
 
 ### 6. 未验证项与已知问题
 
 - 文章页状态条（日期、阅读时间）、标签、相邻文章、完整正文属于 T05～T07，本轮未写入，以免产生失实或返工元数据。
+- Home「最近文章」与 Blog 静态索引当前采用四篇文章的登记顺序（人工智能、编程、科研、生活），Home 取前三篇。T05 冻结日期后必须按“日期倒序，同日按 `id` 升序”复核该顺序；若最终日期不同，需要同步调整 Home 前三篇与 Blog 列表顺序。
+- 文章页的 `meta description` 为按主题撰写的临时描述，T05 冻结摘要后需与实际摘要保持一致。
 - 文章页现有 2～3 句开篇段是 T01 骨架文本，T06／T07 定稿正文时替换。
 - 页面未引用 CSS、JS、图片与 favicon：这些文件尚不存在，引用会产生 404；资源引用由 T04 统一加入。
 - 无阻塞后续任务的已知问题。

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-site-root="./" data-page="about">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于 · Sywen's Space</title>
+<meta name="description" content="Sywen's Space 的作者介绍、学习方向、兴趣、最近在做与三组常见问答。">
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden></div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">代码 · 科研 · 生活</span></a></p>
+    <div class="site-tools">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
+    </div>
+    <nav class="site-nav" aria-label="主导航">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="./index.html">首页</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="./blog.html">文章</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="./about.html" aria-current="page">关于</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main" id="main" tabindex="-1">
+  <div class="container">
+
+    <header class="page-header">
+      <h1 class="page-title">关于</h1>
+      <p class="page-intro">这里是我和这个站点的简单介绍，以及正在学习的方向。</p>
+    </header>
+
+    <section class="about-section" aria-labelledby="about-me-title">
+      <h2 id="about-me-title">关于我</h2>
+      <p>我在学习数据科学、人工智能与编程，用这个站点记录学习过程、科研思考和生活片段。</p>
+      <p>站内文章目前都是示例内容，用于展示页面结构和阅读体验；没有提供的学校、地区、邮箱与社交账号不会出现在这里。</p>
+    </section>
+
+    <section class="about-section" aria-labelledby="about-study-title">
+      <h2 id="about-study-title">学习方向</h2>
+      <ul class="text-list">
+        <li>正在学习：Transformer 与注意力机制的基本原理。</li>
+        <li>正在练习：原生 JavaScript 与浏览器基础，尽量不依赖框架。</li>
+        <li>正在整理：论文阅读方法与可复用的笔记结构。</li>
+      </ul>
+    </section>
+
+    <section class="about-section" aria-labelledby="about-interest-title">
+      <h2 id="about-interest-title">兴趣</h2>
+      <ul class="text-list">
+        <li>人工智能与机器学习。</li>
+        <li>动画与漫画线稿风格。</li>
+        <li>游戏与交互设计。</li>
+      </ul>
+    </section>
+
+    <section class="about-section" aria-labelledby="about-now-title">
+      <h2 id="about-now-title">最近在做</h2>
+      <div class="note-panel">
+        <ul class="note-panel__list">
+          <li class="note-panel__item">
+            <p class="note-panel__label">正在学习</p>
+            <p class="note-panel__text">理解 Transformer。</p>
+          </li>
+          <li class="note-panel__item">
+            <p class="note-panel__label">正在整理</p>
+            <p class="note-panel__text">学习与阅读笔记。</p>
+          </li>
+          <li class="note-panel__item">
+            <p class="note-panel__label">保持兴趣</p>
+            <p class="note-panel__text">AI、动画与游戏。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about-section" aria-labelledby="about-faq-title">
+      <h2 id="about-faq-title">常见问答</h2>
+      <dl class="faq-list">
+        <dt class="faq-list__question"><span class="faq-list__label">问</span>这里主要写些什么？</dt>
+        <dd class="faq-list__answer"><span class="faq-list__label">答</span>记录人工智能、编程、科研学习与生活片段的中文笔记，目前全部为示例内容。</dd>
+        <dt class="faq-list__question"><span class="faq-list__label">问</span>为什么选择漫画线稿风？</dt>
+        <dd class="faq-list__answer"><span class="faq-list__label">答</span>用纸色、线条和留白组织内容，让长文保持清晰的阅读节奏，同时留一点漫画杂志的气息。</dd>
+        <dt class="faq-list__question"><span class="faq-list__label">问</span>这些文章会持续更新吗？</dt>
+        <dd class="faq-list__answer"><span class="faq-list__label">答</span>会随学习进度逐步补充；没有完成的部分不会提前标记为完成。</dd>
+      </dl>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner container">
+    <p class="site-footer__brand">Sywen's Space · 代码 · 科研 · 生活</p>
+    <p class="site-footer__note">课程项目示例网站，站内四篇文章均为示例内容，会随学习进度更新。</p>
+    <nav class="site-footer__links" aria-label="页脚导航">
+      <a href="./index.html">首页</a>
+      <a href="./blog.html">文章</a>
+      <a href="./about.html">关于</a>
+      <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
+    </nav>
+    <p class="site-footer__copyright">© 2026 Sywen's Space</p>
+  </div>
+</footer>
+
+<p class="status-notice" id="site-notice" role="status" aria-live="polite" hidden></p>
+<div class="copy-panel" id="copy-panel" hidden></div>
+<div class="context-menu" id="context-menu" role="menu" aria-label="页面快捷菜单" hidden></div>
+<button type="button" class="back-to-top" id="back-to-top" hidden>返回顶部</button>
+
+</body>
+</html>

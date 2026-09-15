@@ -47,7 +47,59 @@
 
 ### 阶段 1 执行输出
 
-（由 T01 执行后写入；内容为实际命令输出摘要，不含推测。）
+日期：2026-09-15｜方式：本地 HTTP 服务（`py -m http.server 8000 --bind 127.0.0.1`）+ 临时结构检查脚本（经 stdin 运行，未落盘）
+
+**1. 页面结构与元数据**
+
+```text
+页面                                       链接  h1  script  css  img
+index.html                                  19   1       0    0    0
+blog.html                                   13   1       0    0    0
+about.html                                   9   1       0    0    0
+posts/attention-intuition.html              11   1       0    0    0
+posts/dom-search-notes.html                 11   1       0    0    0
+posts/paper-reading-notes.html              11   1       0    0    0
+posts/leave-some-space.html                 11   1       0    0    0
+
+Header 一致性: 一致
+Footer 一致性: 一致
+标题/描述唯一性: 通过
+结果: PASS
+```
+
+- 七页均为 `lang="zh-CN"`，`data-site-root` 与页面层级一致（顶层 `./`、文章页 `../`），`data-page` 分别为 `home`／`blog`／`about`／`post`。
+- 每页恰好 1 个 `h1`；每页 `<title>` 与 `meta description` 各 1 个且七页互不重复。
+- 每页首个链接均为指向 `#main` 的跳转链接，`#main` 存在且 `tabindex="-1"`。
+- 每页均含七个增强控件挂载点（`#reading-progress`、`#theme-toggle`、`#quick-menu-button`、`#back-to-top`、`#site-notice`、`#copy-panel`、`#context-menu`），全部带 `hidden` 属性。
+- 阶段 1 页面含 0 个 `<script>`、0 个样式表引用、0 个 `<img>`：无脚本依赖，禁用 JS 时导航与四篇静态索引完全可用；不引用尚不存在的资源，因此无 404。
+- 当前页标记：顶层页 `aria-current="page"`，文章页在“文章”导航项使用 `aria-current="true"`（当前分区而非当前页面本身）。
+
+**2. 链接解析**
+
+- 逐页解析全部内部 `href`（含 `?category=` 与锚点），目标文件与锚点均存在，无死链。
+- 分类查询参数仅出现 `ai`／`coding`／`research`／`life`，未出现未知分类。
+- 文章页全部使用 `../` 上级相对路径，未出现域名根路径或硬编码域名。
+- Header 块与 Footer 块在七页中除 `aria-current` 与相对根外完全一致。
+
+**3. 本地 HTTP**
+
+```text
+/index.html                    200 text/html  6145 bytes
+/blog.html                     200 text/html  5922 bytes
+/about.html                    200 text/html  5908 bytes
+/posts/attention-intuition.html    200 text/html  3508 bytes
+/posts/dom-search-notes.html       200 text/html  3608 bytes
+/posts/paper-reading-notes.html    200 text/html  3571 bytes
+/posts/leave-some-space.html       200 text/html  3399 bytes
+/posts/missing.html            404（反向确认服务与路径解析正常）
+```
+
+- 七个页面的响应字节与工作区文件 SHA256 完全一致，且均以 UTF-8 正常解码，服务过程无脚本错误。
+- 说明：`py -m http.server` 的 `Content-Type` 不含 `charset`，浏览器按页面内 `<meta charset="utf-8">` 解析，中文显示正常；部署平台以 HTTPS 响应头为准，不作为缺陷记录。
+
+**4. 记录修正**
+
+- 首次检查发现文章页缺少当前分区标记，已为四篇文章页的“文章”导航项补 `aria-current="true"`，复检通过。该问题只影响状态表达，未影响导航可用性。
 
 ---
 

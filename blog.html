@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-site-root="./" data-page="blog">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文章 · Sywen's Space</title>
+<meta name="description" content="Sywen's Space 的文章列表，四篇示例文章覆盖人工智能、编程、科研与生活，可按标题、摘要或标签搜索并筛选分类。">
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden></div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">代码 · 科研 · 生活</span></a></p>
+    <div class="site-tools">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
+    </div>
+    <nav class="site-nav" aria-label="主导航">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="./index.html">首页</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="./blog.html" aria-current="page">文章</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="./about.html">关于</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main" id="main" tabindex="-1">
+  <div class="container">
+
+    <header class="page-header">
+      <h1 class="page-title">文章</h1>
+      <p class="page-intro">四篇示例文章覆盖人工智能、编程、科研与生活，可以按标题、摘要或标签搜索，也可以只看某一类。</p>
+    </header>
+
+    <div class="blog-filters" id="blog-filters" hidden>
+      <form class="blog-search" id="search-form" role="search" action="./blog.html" method="get">
+        <label class="field__label" for="search-input">搜索文章</label>
+        <input class="field__input" id="search-input" name="q" type="search" placeholder="搜索标题、摘要或标签" autocomplete="off">
+      </form>
+      <ul class="category-list category-list--filter" id="blog-categories">
+        <li class="category-list__item"><button type="button" class="category-button" data-category="all" aria-pressed="true">全部</button></li>
+        <li class="category-list__item"><button type="button" class="category-button" data-category="ai" aria-pressed="false">人工智能</button></li>
+        <li class="category-list__item"><button type="button" class="category-button" data-category="coding" aria-pressed="false">编程</button></li>
+        <li class="category-list__item"><button type="button" class="category-button" data-category="research" aria-pressed="false">科研</button></li>
+        <li class="category-list__item"><button type="button" class="category-button" data-category="life" aria-pressed="false">生活</button></li>
+      </ul>
+      <div class="result-bar">
+        <p class="result-bar__count" id="result-count" role="status" aria-live="polite"></p>
+        <button type="button" class="button button--quiet" id="reset-filters">重置筛选</button>
+      </div>
+    </div>
+
+    <div class="blog-results" id="blog-results" hidden></div>
+
+    <section class="empty-state" id="blog-empty" hidden aria-labelledby="empty-title">
+      <h2 class="empty-state__title" id="empty-title">没找到匹配的文章</h2>
+      <p class="empty-state__text">试试其他关键词，或重置筛选。</p>
+      <button type="button" class="button button--secondary" id="empty-reset">重置筛选</button>
+    </section>
+
+    <ol class="post-list" id="blog-static-list">
+      <li class="post-entry">
+        <p class="post-entry__category">人工智能</p>
+        <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/attention-intuition.html">用直觉理解注意力机制</a></h2>
+      </li>
+      <li class="post-entry">
+        <p class="post-entry__category">编程</p>
+        <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/dom-search-notes.html">原生 JavaScript 搜索与筛选笔记</a></h2>
+      </li>
+      <li class="post-entry">
+        <p class="post-entry__category">科研</p>
+        <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/paper-reading-notes.html">一次论文阅读如何留下可复用笔记</a></h2>
+      </li>
+      <li class="post-entry">
+        <p class="post-entry__category">生活</p>
+        <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/leave-some-space.html">给学习留一点空白</a></h2>
+      </li>
+    </ol>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner container">
+    <p class="site-footer__brand">Sywen's Space · 代码 · 科研 · 生活</p>
+    <p class="site-footer__note">课程项目示例网站，站内四篇文章均为示例内容，会随学习进度更新。</p>
+    <nav class="site-footer__links" aria-label="页脚导航">
+      <a href="./index.html">首页</a>
+      <a href="./blog.html">文章</a>
+      <a href="./about.html">关于</a>
+      <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
+    </nav>
+    <p class="site-footer__copyright">© 2026 Sywen's Space</p>
+  </div>
+</footer>
+
+<p class="status-notice" id="site-notice" role="status" aria-live="polite" hidden></p>
+<div class="copy-panel" id="copy-panel" hidden></div>
+<div class="context-menu" id="context-menu" role="menu" aria-label="页面快捷菜单" hidden></div>
+<button type="button" class="back-to-top" id="back-to-top" hidden>返回顶部</button>
+
+</body>
+</html>
