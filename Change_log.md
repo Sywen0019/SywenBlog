@@ -2,6 +2,14 @@
 
 按时间倒序记录项目变更：日期、变更摘要与验证结果。功能与验收依据见 [PROJECT_PLAN.html](PROJECT_PLAN.html)、[DESIGN_SPEC.md](DESIGN_SPEC.md) 与 [Plan.md](Plan.md)。
 
+## 2026-09-15 · T00／T01 复验与 T02 指定视觉资产派生
+
+- T00／T01 复验通过：五张原图哈希不变、忽略规则有效、基线与远端可追溯；七页 HTTP 内容一致，元数据唯一、公共 Header/Footer 一致，Edge 禁用 JavaScript 后导航、跳到正文焦点和隐藏控件均通过。
+- 新增两张原图确定性裁切 WebP（Pillow 10.4.0 / libwebp 1.3.2，quality=90、method=6）：上身图 320×600、28,910 字节；头像 225×225、8,900 字节。保持规范坐标，无重绘或缩放。
+- 新增 24×24、2px 描边 S 标识 favicon（315 字节）；16／32px 实际渲染检查通过。角色原图／派生图并排核对通过，浏览器解码及资产 HTTP 检查通过。
+- 验收证据保存于 `docs/evidence/t02/`；同步验收、交接、README、计划状态和 AGENTS 当前事实。旧会话图片能力限制仅保留为历史记录。
+- T02 Passed，T04 Ready。T03 公开 HTTPS 仍未验证；Stage 1／Stage 2 不标记全部完成。页面资源接入保留给 T04。
+
 ## 2026-09-15 · Stage 1 七页语义骨架与路径契约（T01）
 
 - 新增七个页面：`index.html`（Hero、最近三篇文章、四类入口及数量、最近在做）、`blog.html`（标题说明、筛选工具、动态结果容器、无结果状态、四篇静态索引）、`about.html`（关于我、学习方向、兴趣、最近在做、三组静态问答）与 `posts/` 下四篇文章页。

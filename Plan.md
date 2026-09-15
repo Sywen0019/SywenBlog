@@ -1,8 +1,8 @@
 # Sywen’s Space 前端实施与 Agent 调度计划
 
 日期：2026-09-15  
-状态：计划已落盘；尚未开始前端实施。  
-本文包含已批准的 Implementation Baseline 与其任务拆分、模型调度细化。落盘不代表任何开发阶段已完成。
+状态：T00、T01 已完成并复验，T02 已完成；T03 部署未验证，T04 可开始。
+本文包含已批准的 Implementation Baseline 与其任务拆分、模型调度细化。以下基线调查描述保留历史语境；实际任务状态与验收证据见 docs/agent-handoffs.md 和 docs/acceptance.md。
 
 ## 文档导航
 

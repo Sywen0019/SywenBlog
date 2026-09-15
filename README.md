@@ -4,11 +4,11 @@
 
 ## 当前状态
 
-已完成 **Stage 0（执行基线与工程准备）** 与 **Stage 1（七页语义骨架）**：
+已完成 **Stage 0（T00）**、**T01 七页语义骨架** 与 **T02 指定视觉资产派生**。Stage 1 的 T03 部署仍未验证，Stage 2 的 T04 样式基础可开始：
 
 - 七个语义化 HTML 页面可独立访问：`index.html`、`blog.html`、`about.html` 与 `posts/` 下四篇文章页。
 - 公共 Header／Footer、静态文章入口、站点根标记、跳转链接与增强控件挂载位置已建立；禁用 JavaScript 时导航与文章索引仍可用。
-- 尚无 CSS、JavaScript、派生图片与 favicon，页面为无样式状态，且不引用这些尚不存在的资源；它们属于 Stage 2 及以后的 T02、T04、T10～T14。
+- 两张角色 WebP 与 favicon 已生成并验收；T04 负责页面资源接入。尚无 CSS、JavaScript，页面仍为无样式静态骨架。
 - 尚无公开部署地址与自动化测试；不引入构建步骤、生产依赖或测试框架。
 
 完整阶段划分见 [前端实施计划](Plan.md)。
@@ -19,6 +19,7 @@
 Sywen-Blog/
 ├── index.html blog.html about.html     # 顶层页面
 ├── posts/                              # 四篇文章页
+├── assets/                             # 两张角色 WebP 与 SVG favicon
 ├── docs/                               # 执行记录（交接、验收、视觉检查点）
 ├── 参考素材/                            # 五张参考 PNG（不参与网页加载）
 ├── PROJECT_PLAN.html                   # 功能与验收规划（29 章）

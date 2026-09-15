@@ -1,0 +1,102 @@
+{
+  "browser": "Microsoft Edge 153.0.4234.32",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "results": [
+    {
+      "file": "index.html",
+      "http": 200,
+      "bytes": 6145,
+      "skipFocus": "main",
+      "hiddenControls": "PASS",
+      "navigation": "PASS",
+      "javascript": false
+    },
+    {
+      "file": "blog.html",
+      "http": 200,
+      "bytes": 5922,
+      "skipFocus": "main",
+      "hiddenControls": "PASS",
+      "navigation": "PASS",
+      "javascript": false
+    },
+    {
+      "file": "about.html",
+      "http": 200,
+      "bytes": 5908,
+      "skipFocus": "main",
+      "hiddenControls": "PASS",
+      "navigation": "PASS",
+      "javascript": false
+    },
+    {
+      "file": "posts/attention-intuition.html",
+      "http": 200,
+      "bytes": 3508,
+      "skipFocus": "main",
+      "hiddenControls": "PASS",
+      "navigation": "PASS",
+      "javascript": false
+    },
+    {
+      "file": "posts/dom-search-notes.html",
+      "http": 200,
+      "bytes": 3608,
+      "skipFocus": "main",
+      "hiddenControls": "PASS",
+      "navigation": "PASS",
+      "javascript": false
+    },
+    {
+      "file": "posts/leave-some-space.html",
+      "http": 200,
+      "bytes": 3399,
+      "skipFocus": "main",
+      "hiddenControls": "PASS",
+      "navigation": "PASS",
+      "javascript": false
+    },
+    {
+      "file": "posts/paper-reading-notes.html",
+      "http": 200,
+      "bytes": 3571,
+      "skipFocus": "main",
+      "hiddenControls": "PASS",
+      "navigation": "PASS",
+      "javascript": false
+    }
+  ],
+  "uniqueMetadata": true,
+  "commonHeaderFooter": true,
+  "missingPage": 404,
+  "assets": [
+    {
+      "file": "assets/images/character-front-upper.webp",
+      "status": 200,
+      "contentType": "application/octet-stream"
+    },
+    {
+      "file": "assets/images/character-front-avatar.webp",
+      "status": 200,
+      "contentType": "application/octet-stream"
+    },
+    {
+      "file": "assets/icons/favicon.svg",
+      "status": 200,
+      "contentType": "image/svg+xml"
+    }
+  ],
+  "webpBrowserDecode": [
+    [
+      320,
+      600
+    ],
+    [
+      225,
+      225
+    ]
+  ]
+}
