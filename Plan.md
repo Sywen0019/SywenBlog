@@ -58,6 +58,6 @@ VC0：1440/390 浅深 Hero 实际看图。VC1-B：七页内容、角色对照、
 
 Hero 单个选用 WebP ≤300KB，首页冷缓存初始 ≤800KB、完整滚动 ≤1.2MB 为目标；Hero 不懒加载，图片固有尺寸与稳定占位。超目标先优化裁切、编码、请求尺寸，再记录实际影响。
 
-Gitee 为源码提交入口；Netlify 首选，缺少条件时使用原定 GitHub Pages 备选。仅发布 index.html/blog.html/about.html/posts/css/js/assets 和部署说明性元文件，不发布参考图、候选、文档、凭据。无构建依赖，不做 SPA 重写。部署 commit、Gitee commit 和公开核验分别记录，不用推送成功代替部署成功。
+Gitee 为源码提交入口；正式发布通路为 Cloudflare Pages 连接 GitHub 仓库的 `main` 分支（构建命令 `bash scripts/build-site.sh`，输出目录 `dist`，见 [部署说明](docs/deployment.md)）；Netlify 与 GitHub Pages 保留为历史备选。仅发布 index.html/blog.html/about.html/posts/css/js/assets 和部署说明性元文件，不发布参考图、候选、文档、凭据。网站本体无构建依赖，`dist/` 仅为发布白名单拷贝，不做 SPA 重写。部署 commit、Gitee commit 和公开核验分别记录，不用推送成功代替部署成功。
 
 任务卡见 docs/tasks/00-index.md；旧编号映射、实际状态与证据以任务卡、交接、验收为准。

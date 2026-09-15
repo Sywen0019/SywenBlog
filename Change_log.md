@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-09-15 · 部署配置：Cloudflare Pages 自动部署
+
+- 新增 `scripts/build-site.sh`：清理并重建 `dist/`，按白名单复制三个顶层页面与 `css/`、`js/`、`posts/`、`assets/`；`index.html` 缺失即失败，可选目录缺失只记录不失败。
+- 新增 `.gitattributes`（`*.sh` 固定 LF）与 `docs/deployment.md`（发布链路、Dashboard 参数、日常发布流程）；`.gitignore` 补充 `.tmp*` 忽略本地临时脚本。
+- `dist/` 保持不提交，由构建过程生成；开发文档、参考素材与证据不进入发布产物。
+- 验证：本地 `bash scripts/build-site.sh` 通过；发布产物引用闭合检查 0 缺失（大小写精确）；7 个页面与全部静态资源 HTTP 200，未收录的开发文档返回 404；未发现密钥、本地绝对路径或 `file://` 引用。
+
+
 ## 2026-09-15 · B02/B03 主视觉与静态融合
 
 - 内置出图两候选，采用书桌Hero B；保存提示词、资源哈希与VC0截图，母版不上线。

@@ -1,0 +1,2 @@
+# 构建脚本在 Cloudflare Pages（Ubuntu）与本地 Git Bash 中执行，必须保持 LF 换行。
+*.sh text eol=lf
