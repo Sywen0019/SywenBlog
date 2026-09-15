@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sywen's Space｜代码 · 科研 · 生活</title>
 <meta name="description" content="Sywen's Space 是一个漫画线稿风的中文个人博客，记录人工智能、编程、科研学习与生活片段。">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/components.css">
+<link rel="stylesheet" href="./css/pages.css">
+<link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
+<noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
 </head>
 <body>
 
@@ -41,6 +46,17 @@
           <a class="button button--secondary" href="./about.html">关于我</a>
         </div>
       </div>
+      <figure class="hero-art">
+        <div class="hero-art__frame">
+          <span class="hero-art__tape" aria-hidden="true"></span>
+          <div class="art-frame">
+            <img class="art-frame__image" src="./assets/images/character-front-upper.webp" width="320" height="600" alt="" decoding="async">
+            <span class="art-frame__fallback">Sywen</span>
+          </div>
+        </div>
+        <span class="hero-art__dots" aria-hidden="true"></span>
+        <figcaption class="hero-art__caption">学习中，持续更新。</figcaption>
+      </figure>
     </section>
 
     <section class="home-section" aria-labelledby="recent-title">
@@ -65,7 +81,9 @@
     </section>
 
     <section class="home-section" aria-labelledby="categories-title">
-      <h2 class="section-header__title" id="categories-title">分类</h2>
+      <div class="section-header">
+        <h2 class="section-header__title" id="categories-title">分类</h2>
+      </div>
       <ul class="category-list" id="home-categories">
         <li class="category-list__item"><a class="category-link" href="./blog.html?category=ai">人工智能 <span class="category-count" data-category-count="ai">1</span> 篇</a></li>
         <li class="category-list__item"><a class="category-link" href="./blog.html?category=coding">编程 <span class="category-count" data-category-count="coding">1</span> 篇</a></li>
@@ -75,7 +93,9 @@
     </section>
 
     <section class="home-section" aria-labelledby="now-title">
-      <h2 class="section-header__title" id="now-title">最近在做</h2>
+      <div class="section-header">
+        <h2 class="section-header__title" id="now-title">最近在做</h2>
+      </div>
       <div class="note-panel">
         <ul class="note-panel__list">
           <li class="note-panel__item">

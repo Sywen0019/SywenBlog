@@ -4,12 +4,13 @@
 
 ## 当前状态
 
-已完成 **Stage 0（T00）**、**T01 七页语义骨架** 与 **T02 指定视觉资产派生**。Stage 1 的 T03 部署仍未验证，Stage 2 的 T04 样式基础可开始：
+已完成 **Stage 0（T00）**、**T01 七页语义骨架**、**T02 指定视觉资产派生** 与 **Stage 2 的 T04 视觉基础**。Stage 1 的 T03 部署仍未验证，Stage 3 的 T05 可开始：
 
 - 七个语义化 HTML 页面可独立访问：`index.html`、`blog.html`、`about.html` 与 `posts/` 下四篇文章页。
 - 公共 Header／Footer、静态文章入口、站点根标记、跳转链接与增强控件挂载位置已建立；禁用 JavaScript 时导航与文章索引仍可用。
-- 两张角色 WebP 与 favicon 已生成并验收；T04 负责页面资源接入。尚无 CSS、JavaScript，页面仍为无样式静态骨架。
-- 尚无公开部署地址与自动化测试；不引入构建步骤、生产依赖或测试框架。
+- 三个样式表已建立完整 Token 注册表、浅深主题与基础响应式：纸色界面、1px／2px 线条层级、硬阴影按钮、角色图框与装饰预算、740px 阅读列。
+- 两张角色 WebP 与 favicon 已接入：Home Hero（跨角胶带、网点、旁白）、About 角色图、Blog 空状态方形头像。
+- 尚无 JavaScript；文章日期、摘要、标签、正文与筛选交互分别由 T05～T08、T10～T14 补齐。尚无公开部署地址与自动化测试；不引入构建步骤、生产依赖或测试框架。
 
 完整阶段划分见 [前端实施计划](Plan.md)。
 
@@ -19,14 +20,19 @@
 Sywen-Blog/
 ├── index.html blog.html about.html     # 顶层页面
 ├── posts/                              # 四篇文章页
+├── css/                                # base.css（Tokens 与主题）／components.css／pages.css
 ├── assets/                             # 两张角色 WebP 与 SVG favicon
-├── docs/                               # 执行记录（交接、验收、视觉检查点）
+├── docs/                               # 执行记录（交接、验收、视觉检查点、证据）
 ├── 参考素材/                            # 五张参考 PNG（不参与网页加载）
 ├── PROJECT_PLAN.html                   # 功能与验收规划（29 章）
 ├── DESIGN_SPEC.md                      # 视觉设计规范
 ├── Plan.md                             # 实施基线与任务调度
 └── Change_log.md                       # 变更记录
 ```
+
+## 主题契约
+
+浅色与深色由根元素属性切换：`<html data-theme="light">` 或 `<html data-theme="dark">`。未设置该属性时跟随系统 `prefers-color-scheme`，无脚本时同样跟随系统。三个样式表按 `base.css` → `components.css` → `pages.css` 顺序加载，文章页使用 `../` 上级相对路径。
 
 ## 本地预览
 

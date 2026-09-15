@@ -2,6 +2,15 @@
 
 按时间倒序记录项目变更：日期、变更摘要与验证结果。功能与验收依据见 [PROJECT_PLAN.html](PROJECT_PLAN.html)、[DESIGN_SPEC.md](DESIGN_SPEC.md) 与 [Plan.md](Plan.md)。
 
+## 2026-09-15 · Stage 2 视觉基础（T04 Tokens、公共组件与响应式）
+
+- 新增 `css/base.css`（Token 注册表、浅深主题与系统跟随、移动优先响应式 Token、重置与排版、焦点、跳转链接、辅助技术工具类、减少动态效果）、`css/components.css`（增强控件、刊头与导航、按钮族与表单控件、分类／标签／结果工具、文章条目、旁白面板、角色图框与装饰、状态块、菜单项、正文骨架）、`css/pages.css`（容器与外壳、Home／Blog／Post／About 布局骨架）。
+- 七页加入三个样式表与 favicon 引用及 `<noscript>` 隐藏脚本控件；Home 加入角色图框（跨角胶带＋1px 网点＋旁白「学习中，持续更新。」），About 加入同一角色图（规范替代文本、仅胶带），Blog 空状态加入方形头像。
+- 主题契约冻结为根元素 `data-theme="light|dark"`；未设置时由 `:root:not([data-theme])` 跟随系统。本轮不加入头部内联主题脚本，留给 T11 的 `theme.js`，避免形成第二套主题写入逻辑。
+- 验证：静态审计 14 项 PASS（无悬空 `var()`、80 项 Token 取值与 §4／§5／§16 一致、断点仅 768／1024px）；Edge 153 headless + CDP 渲染检查 24 个页面×视口场景与 12 个断点边界场景全部 PASS，横向溢出、资源错误、脚本与控制台错误、隐藏项异常均为 0；实测对比度浅色 14.02／5.75／12.35／15.15、深色 12.02／7.91／7.96／10.78；首页本地资源 76,746 字节（74.9KB，目标 ≤500KB）；禁用 JavaScript 三页截图样式、导航、静态索引与图片可用。
+- 首次渲染检查发现并以像素证据修复 7 项偏差：容器内容列 1056px→1120px、About 桌面两列错位、About 角色图 360px→300px（`--about-art-height` 此前未被引用）、Tablet 档角色图 220px→300px、Post 头部＋正文 804px→740px、网点直径 2px→1px、胶带由框外改为跨角。
+- 证据保存于 `docs/evidence/t04/`（审计与渲染脚本、`render-checks.json`、`render-report.txt`、17 张截图）；同步验收、交接、README 与 AGENTS 当前事实。T04 Passed，Stage 2 任务集（T02＋T04）完成；T03 公开 HTTPS 仍未验证。
+
 ## 2026-09-15 · T00／T01 复验与 T02 指定视觉资产派生
 
 - T00／T01 复验通过：五张原图哈希不变、忽略规则有效、基线与远端可追溯；七页 HTTP 内容一致，元数据唯一、公共 Header/Footer 一致，Edge 禁用 JavaScript 后导航、跳到正文焦点和隐藏控件均通过。

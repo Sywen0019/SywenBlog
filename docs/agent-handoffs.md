@@ -22,7 +22,7 @@
 | T01 七页语义骨架与路径契约 | DeepSeek | Passed | T00 提交 | 见 T01 |
 | T02 指定视觉资产派生 | Codex | Passed | `2866ce8` | 见 T02 |
 | T03 最小版本部署验证 | — | Blocked（外部阻塞，用户决定延期） | — | 见「延期与未开始任务」 |
-| T04 Tokens、公共组件与响应式基础 | — | Ready | T02 提交 | T01／T02 前置验收通过 |
+| T04 Tokens、公共组件与响应式基础 | DeepSeek | Passed | `4f91102` | 见 T04 |
 
 ---
 
@@ -188,7 +188,7 @@ T02（角色 WebP 与 favicon）、T04（Tokens 与公共组件）。接手者�
 |---|---|---|
 | T02 指定视觉资产派生 | Passed | 已于 2026-09-15 完成，见 T02 交接。原会话缺少图片输入能力是历史限制，当前会话已完成目视核对。 |
 | T03 最小版本部署验证 | Blocked | 外部阻塞：本环境无 Netlify 登录态／令牌，且用户决定本轮先完成 T00／T01。未产生任何部署地址，不得记为通过。后续在 T22 前关闭。 |
-| T04 Tokens、公共组件与响应式基础 | Ready | T01／T02 已通过。负责三个 CSS 文件、七页样式挂钩与资源引用、浅深主题变量与基础响应式。 |
+| T04 Tokens、公共组件与响应式基础 | Passed | 已于 2026-09-15 完成，见 T04 交接。三个 CSS 文件与七页资源引用已落地；Stage 2 任务集（T02＋T04）完成。 |
 
 ## T02 — 指定视觉资产派生
 
@@ -199,3 +199,80 @@ T02（角色 WebP 与 favicon）、T04（Tokens 与公共组件）。接手者�
 5. **验证**：五张原图哈希未变；格式、尺寸、预算、原图／派生图目视对照通过，裁切无需微调；favicon XML 与 16／32px 渲染通过。Edge 禁用 JS 的七页 HTTP、静态导航、跳转焦点、控件隐藏、公共结构与元数据检查通过。详见 [验收记录](acceptance.md)最新章节和其中证据链接。
 6. **限制**：T03 HTTPS 部署继续未验证；本地服务器 WebP MIME 为 application/octet-stream，但 Edge 图片解码通过，正式部署时核验 image/webp。当前视觉核对不替代 VC1／VC2。先前“模型不支持图片输入”仅适用于原会话。
 7. **下一任务**：T04 Ready，沿用既定资源路径与固有宽高，负责七页引用；页面不提前引用资产。`search-flow.svg` 属于 T06。Stage 2 尚未整体完成。
+
+---
+
+## T04 — Tokens、公共组件与响应式基础
+
+**模型：** DeepSeek｜**状态：** Passed｜**原阶段：** Stage 2
+
+### 2. 基础版本
+
+- 起始 commit：`4f91102`（`feat: derive character assets and verify T00 T01`）；起始工作区干净，`origin/main` 一致（`git rev-list --left-right --count origin/main...main` 为 `0 0`）。
+- 输入：`DESIGN_SPEC.md` §3～§10、§12.1、§14～§16；`Plan.md` 一·2／一·4 与 T04 任务卡；T01「DOM 约定与路径契约」；T02「资产接口」。
+
+### 3. 实际修改文件
+
+| 文件 | 摘要 |
+|---|---|
+| `css/base.css` | 新增。Token 注册表（颜色与主题、字体与字号、行高字重、间距、宽度、响应式尺寸、线条／圆角／阴影、焦点、控件、菜单提示、装饰、动效、层级）、三套主题块、移动优先响应式 Token、重置与基础排版、`.icon`、`.sr-only`、跳转链接、焦点、减少动态效果 |
+| `css/components.css` | 新增。增强控件（阅读进度、返回顶部、状态提示、复制面板、菜单容器）、刊头与导航、按钮族与表单控件、分类／标签／结果工具、文章条目（摘要动作列）、旁白面板与文本分组、问答、分类入口、角色图框与装饰、状态块、菜单项、正文骨架 |
+| `css/pages.css` | 新增。容器与主内容／页脚外壳、页面标题区、Home（Hero 3:2、区块节奏、分类入口）、Blog、Post（740px 阅读列）、About（桌面介绍左、角色右） |
+| 七页 HTML | 加入三个样式表与 favicon 链接、`<noscript>` 隐藏脚本控件；Home 加 Hero 角色图框（胶带＋网点＋旁白）、分类与「最近在做」补齐 `.section-header`；About 加角色图（含规范替代文本、单胶带）与 `about-intro` 栅格标记；Blog 空状态加头像 |
+| `docs/evidence/t04/` | 新增静态审计脚本、渲染检查脚本（Edge headless + CDP）、`render-checks.json`、`render-report.txt`、12 张两主题截图、空状态与聚焦截图、3 张禁用 JavaScript 截图 |
+| `docs/acceptance.md`／`docs/agent-handoffs.md`／`Change_log.md`／`README.md`／`AGENTS.md` | 验收结果、交接、变更记录与当前事实同步 |
+
+未改动：既有 id、`data-*`、类名与 Header／Footer 文本；无 `js/`、无 `posts-data.js`、无 `search-flow.svg`（分别属于 T10～T14、T05、T06）。
+
+### 4. CSS 与 DOM 契约（后续任务沿用）
+
+**新增类名（T04 首次定义，不得重命名）**
+
+- 图像框：`.art-frame`、`.art-frame__image`、`.art-frame__fallback`、`.art-frame--avatar`（预留）。
+- Home Hero：`.hero-art`、`.hero-art__frame`、`.hero-art__caption`、`.hero-art__tape`、`.hero-art__dots`；About 复用并加 `.about-hero-art`。
+- About 栅格：`.about-intro` + `.about-intro__second-column`（角色图列，`grid-row: 1 / span 3`）。
+- 其他：`.empty-state__avatar`、`.stat-list`／`.stat`／`.stat__link`／`.stat__count`、`.post-entry__content`、`.field`／`.field__input`、`.result-bar__count`、`.context-menu__group`／`__item`／`__progress`、`.copy-panel__title`／`__actions`、`.icon`／`.icon--hidden`、`.sr-only`。
+- 当前导航用 `[aria-current]` 属性选择器表达 700＋2px 下划线，不新增状态类。
+
+**主题契约（T11 实现 `theme.js` 时遵守）**
+
+- 属性：根元素 `<html data-theme="light|dark">`；未设置＝未主动选择。
+- CSS 层级：`:root` 浅色默认 → `:root[data-theme="light"]` → `:root[data-theme="dark"]` → `@media (prefers-color-scheme: dark) { :root:not([data-theme]) }`（放最后，保证系统跟随优先于默认浅色）。
+- `color-scheme` 只在显式主题下声明；无脚本时由媒体查询跟随系统主题。
+- 本轮**未加入**头部内联主题脚本：避免与 T11 的 `theme.js` 形成第二套主题写入逻辑。T11 需决定是否加最小提前设置脚本（加则须与本契约的属性和取值一致）。
+- 主题切换过渡只作用于 `html, body` 的 `color`／`background-color`（180ms）；截图或测量前需等待 ≥300ms 或临时关闭过渡。
+- 减少动态效果下 `--motion-*` 为 0ms、`--press-shift*` 为 0px、`--decoration-angle` 为 0deg。
+
+**响应式 Token**：`768px` 与 `1024px` 两个断点（另有一处 `max-width: 767px` 隐藏移动端装饰）。`--gutter` 16／24／32px；`--hero-art-height` 220／300／360px；`--about-art-height` 220／240／300px；`--status-art-height` 220／240／240px；`--entry-date-width` 88／88／112px；`--section-gap` 48／48／64px；`--hero-gap` 24／24／48px；`--avatar-size` 64／80／80px。
+
+**布局不变量（已实测）**：`.container` 内容列 = `min(1120px, 视口可用宽 − 2×gutter)`；`--width-site`／`--width-reading` 是**内容**宽度上限，实现时必须用 `calc(var(--width-site) + 2 * var(--gutter))` 计入 gutter；Post 头部与正文同为 740px。`.post-entry` 在 ≥768px 为 `日期列 + 内容列` 栅格，内容要素可包在 `.post-entry__content` 或直接作为条目子元素（两种都已在组件层适配）。角色图用 `aspect-ratio: 320 / 600` + `object-fit: contain` + `max-width: 100%`，因此窄屏下图片宽小于固有 320px 时按比例缩小，不拉伸。
+
+### 5. 自检步骤与结果
+
+1. 静态审计（`docs/evidence/t04/audit.mjs`）：无悬空 `var()`（93 个自定义属性、90 个被引用）；浅色默认块与显式浅色块一致、深色显式块与系统跟随块一致；Token 取值 80 项与 §4／§5／§16 逐项匹配；Mobile／Tablet／Desktop 覆盖值正确；断点仅 768／1024px；无 `transition: all`、无全局 `overflow-x: hidden`；七页资源引用顺序、`data-site-root`／`data-page`、`noscript`、示例与替代文本全部正确 —— PASS。
+2. 浏览器渲染检查（Edge 153.0.4234.32 headless + CDP，24 个页面×视口场景 + 12 个断点边界场景）：横向溢出 0、越界元素 0、资源错误 0、图片问题 0、隐藏项异常 0、脚本错误 0、控制台错误 0、布局偏差 0 —— PASS。详见 [渲染报告](evidence/t04/render-report.txt)。
+3. 主题与对比度实测：浅色 正文/纸 14.02:1、辅助文字/纸 5.75:1、按钮 12.35:1、面板 15.15:1；深色 12.02／7.91／7.96／10.78 —— 全部 ≥4.5:1（大字与关键控件门槛为 3:1）。静态把 `data-theme` 置为 `dark` 后 `--color-paper` 立即变为 `#202223`。
+4. 组件状态实测：次按钮 Hover（真实 `mouseMoved`）由 surface 变 accent；主 CTA 按下位移 2px、阴影由 4px 降为 2px；当前导航 700＋2px 下划线、其余 400 无下划线；输入框高 46px、2px ink、4px 圆角、聚焦 3px 轮廓；分类按钮选中 accent＋700 且 `aria-pressed="true"`；空状态头像 80×80 且位于重置按钮之后。
+5. 键盘与禁用脚本：首个 Tab 焦点为 `.skip-link`（3px 轮廓／4px 偏移、视口内可见），Enter 后焦点落到 `#main`；Edge `--disable-javascript` 下三张截图显示样式、导航、静态索引与图片全部可用，增强控件不可见。
+6. 首次渲染检查发现 5 项偏差并已修复：`.container` 内容列 1056px（应 1120px，曾把 gutter 计入上限）、About 桌面两列错位、About 角色图 360px 超过 300px 上限（`--about-art-height` 未被引用）、Tablet 角色图未落到 300px 档、Post 头部＋正文 804px 超过 740px；另把网点直径由 2px 修正为 1px（`--dot-size` 被当作半径使用），并把胶带改为跨角放置。修复后全部复测通过。
+
+### 6. 未验证项与已知问题
+
+- Chrome、Firefox 与真实手机未执行（沿用 OB-03）：本轮只完成 Edge headless。VC1 的正式视觉判定不因本轮截图豁免。
+- 本会话模型不支持图片输入：截图由像素直方图／包围盒／行列剖面程序化测量，观感类判据（是否像卡片墙、文字是否拥挤、角色姿态）未由人眼确认，留给 VC1。
+- 本机 Edge 在沙箱内启动 headless 并附加 DevTools 会崩溃（`0x80000003`），浏览器检查在放宽沙箱后执行；该环境限制不影响产品代码。
+- 已知设计判断保留项：结果工具行的「重置筛选」使用无阴影按钮，以避免 §11.2「状态块无厚边框／工具行不喧宾夺主」与 §7 默认阴影冲突；该变体在 `components.css` 中有注释说明。
+- 首页分类入口在 Mobile 下为 42px 高的文本链接（规范 44px 针对常规操作目标，文本链接以行高与间隔保障阅读）。
+- Home「最近文章」目前只有分类与标题，日期列、摘要与阅读入口由 T05 按冻结元数据补齐；文章页的日期、阅读时间、标签、相邻文章与复杂正文块由 T06／T07 补齐。
+- `search-flow.svg`（T06）、`js/*`（T10～T14）尚未存在，页面未引用，因此无 404。
+- 无阻塞后续任务的已知问题。
+
+### 7. 下一任务
+
+T05（Home 与 Blog 静态视觉实现）。接手者注意：
+
+- 沿用本文「CSS 与 DOM 契约」，不要重命名既有类名；新增状态类用 `.is-…` 或 `aria-*`。
+- 三个 CSS 文件是共享文件：T05 只能在其页面分区内继续补充，改动共享区段前先合并 T04 提交。
+- 首页前三篇与 Blog 四篇的日期／摘要／标签由 T05 冻结；日期元素请使用现有 `.post-entry__date`（≥768px 自动进入日期窄列），内容要素放在 `.post-entry__content` 内或直接作为条目子元素。
+- 空状态头像与筛选区状态已就绪：`#blog-filters`、`#blog-results`、`#blog-empty` 默认 `hidden`，JS 初始化成功后显示；不要用 `display` 规则覆盖 `hidden`。
+- 两主题截图与禁用脚本证据可直接复用 `docs/evidence/t04/`，但 VC1 必须重新截图。

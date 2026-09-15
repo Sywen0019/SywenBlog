@@ -42,6 +42,53 @@
 - 验收脚本首次使用宽泛 `header` 选择器遇到页面多个 header，改为 `.site-header`；资产直接导航触发下载后改用 HTTP 请求核对字节并单独验证图片解码。均为测试方法修正，无产品源码修复。
 - 本次仅资产局部视觉验收，不代替七页静态视觉 VC1。T04 接入资源，T06 制作搜索流程图。
 
+### 阶段 2 · T04 Tokens、公共组件与响应式基础
+
+日期：2026-09-15｜执行者：DeepSeek｜基础版本：`4f91102`｜浏览器：Microsoft Edge 153.0.4234.32（headless=new + CDP）｜方式：本地 HTTP（`py -m http.server 8123 --bind 127.0.0.1`）＋ 静态审计脚本 ＋ 渲染检查脚本（均经 stdin 运行，不落盘）
+
+结论：**T04 Passed**。静态审计 14 项全部 PASS；渲染检查 24 个页面×视口场景与 12 个断点边界场景全部 PASS，异常计数均为 0；首次渲染检查发现的 5 项偏差已修复并复测通过。
+
+| 编号 | 检查项 | 步骤 | 预期 | 实际 | 结果 |
+|---|---|---|---|---|---|
+| S2-01 | Token 完整性 | 抽取 CSS 全部 `var(--x)` 与自定义属性定义 | 无悬空引用 | 93 个自定义属性、90 个被引用，悬空 0（`--status-art-height`、`--notice-width`、`--z-content` 为注册表预留） | 通过 |
+| S2-02 | Token 取值对应规范 | 逐项比对 §4／§5／§16 注册表 | 取值一致 | 80 项逐一匹配；Mobile／Tablet／Desktop 覆盖值正确 | 通过 |
+| S2-03 | 浅深主题成对映射 | 比对 `:root`、`:root[data-theme="light"]`、`:root[data-theme="dark"]`、系统跟随块 | 三套颜色集合一致 | 12 个颜色 Token 在三块中集合一致、浅深成对 | 通过 |
+| S2-04 | 静态切换根主题 | 运行时把 `documentElement.data-theme` 置为 `dark` | 深色变量立即生效 | 每个场景的 `--color-paper` 由 `#F7F3EA` 变为 `#202223`，`color-scheme` 变为 `dark` | 通过 |
+| S2-05 | 对比度 | 用 `getComputedStyle` 实测前景／背景色计算 WCAG 比值 | 普通文字 ≥4.5:1，大字／关键控件 ≥3:1 | 浅色 14.02／5.75／12.35／15.15；深色 12.02／7.91／7.96／10.78 | 通过 |
+| S2-06 | 组件状态齐备 | 真实 `mouseMoved`／`mousePressed` 与属性状态检查 | 默认、Hover、Pressed、Focus、选中、异常状态可辨 | 次按钮 Hover 转 accent；主 CTA 按下位移 2px、阴影 4px→2px；当前导航 700＋2px 下划线，其余 400 无线；分类按钮选中 accent＋700＋`aria-pressed`；输入框聚焦 3px 轮廓 | 通过 |
+| S2-07 | 横向溢出 | 320／360／390／768／1024／1440px 与 767／768／1023／1024px 边界 | 无整体横向溢出 | 36 个场景 `scrollWidth === clientWidth`，越界元素 0 | 通过 |
+| S2-08 | 内容列与阅读列 | 实测容器内容宽与正文段宽 | 内容列 ≤1120px（不含 gutter）；正文与文章头部 ≤740px | 1440px 下内容列 1120px；Post 头部与正文在 ≥1024px 均为 740px | 通过 |
+| S2-09 | 角色图尺寸与比例 | 实测显示尺寸与固有尺寸 | 不超过 Hero 220／300／360px、About 220／240／300px；不拉伸 | 320px 117×220、768px Hero 160×300／About 128×240、1024px 以上 Hero 192×360／About 160×300；固有尺寸始终 320×600 | 通过 |
+| S2-10 | 装饰预算 | 检查胶带、网点、旁白与移动端隐藏 | Home 一角色＋两小装饰；About 仅胶带；≤767px 全部隐藏 | 1440px Home 胶带 48×16（跨图框角）、网点 64×64（1px 圆点／8px 间隔）；About 仅胶带；320～390px 两者 `display:none` | 通过 |
+| S2-11 | 图像框与深色纸面 | 检查图框样式与深色下角色纸面 | 2px ink 边框、8px surface 内边距、0 圆角；深色保留插画自身纸面 | 图框 2px／8px／0px；图片背景 `#FFFFFF`、`object-fit: contain`、`aspect-ratio: 320/600`；深色截图普通控件无残留白底 | 通过 |
+| S2-12 | 空状态顺序 | 临时移除 `hidden` 后测量（不写入产品文件） | 标题、说明、重置按钮在前，头像在后 | 头像 80×80（固有 225×225）位于按钮之后；状态块 `max-width: 640px`；七个控件高度均 46px | 通过 |
+| S2-13 | 焦点与跳转链接 | Tab → Enter，检查轮廓与落点 | 跳转链接首个聚焦、可见可辨；Enter 后进入主内容 | 首焦点 `A.skip-link`，3px 轮廓／4px 偏移、视口内可见；Enter 后焦点为 `MAIN#main` | 通过 |
+| S2-14 | 语义与隐藏控件 | 检查 `role`、按钮元素与 `hidden` 生效 | 导航保持链接语义；隐藏控件不进入 Tab 顺序 | `role="menu"` 仅菜单容器一处；增强控件均为 `<button>` 且 `display: none`；`[hidden]` 有保护规则 | 通过 |
+| S2-15 | 资源与预算 | 七页与三类资源 HTTP 检查；统计首页本地资源字节 | 无 404；首页资源 ≤500KB | 页面／CSS／favicon／两张 WebP 全部 200 且字节与磁盘一致；首页本地资源 76,746 字节（74.9KB，未压缩） | 通过 |
+| S2-16 | 禁用 JavaScript | Edge `--disable-javascript` 截图三页 | 样式、导航、静态索引、图片可用，增强控件不显示 | 三张截图确认可用，未出现不可操作的增强控件 | 通过 |
+| S2-17 | 控制台与脚本错误 | 捕获 `Runtime.exceptionThrown`、`Log.entryAdded`、`Network.loadingFailed` | 无异常 | 36 个场景全部为 0 | 通过 |
+
+#### 首次渲染检查发现并修复的偏差
+
+| 编号 | 现象 | 规范依据 | 修复 | 复测 |
+|---|---|---|---|---|
+| D-01 | 内容列实测 1056px，小于规范的 1120px（把 gutter 计入了内容上限） | §6.1、§16.1 | `.container` 改为 `max-width: calc(var(--width-site) + 2 * var(--gutter))` | 1440px 下 1120px，通过 |
+| D-02 | About 桌面两列未成立：介绍文本进入第二列，角色图掉到第二行 | §9.2、§11.4 | 角色图栅格项加 `grid-row: 1 / span 3` 与 `align-self: center`，文本自然落入第一列 | 1024／1440px 介绍与角色并排，通过 |
+| D-03 | About 角色图 360px 超过 300px 上限（`--about-art-height` 未被任何规则引用） | §9.2、§16.1 | `.hero-art .art-frame__image` 用 `--hero-art-height`、`.about-hero-art .art-frame__image` 用 `--about-art-height` | 300px，通过 |
+| D-04 | Tablet 档未定义角色图高度覆盖，768～1023px 仍为 220px | §14、§16.1 | `768px` 媒体查询补 `--hero-art-height: 300px`、`--about-art-height: 240px`、`--status-art-height: 240px` | 768px Hero 160×300／About 128×240，通过 |
+| D-05 | Post 文章头部与正文实测 804px，超过 740px 阅读列 | §6.1、§11.3 | `.post` 与 `.post-back` 使用 `--width-reading`，不再叠加 gutter | ≥1024px 头部与正文均 740px，通过 |
+| D-06 | 网点实测直径 2px（`--dot-size` 被当作半径使用） | §8、§16.2 | `radial-gradient(... calc(var(--dot-size) / 2) ...)` | 图案为 `radial-gradient(rgb(36,36,36) 0.5px, transparent 0.5px)`，直径 1px，通过 |
+| D-07 | 胶带整体位于图框外约 8px | §8 | 改为偏移半个尺寸，跨图框右上角 | 胶带 48×16 跨角放置，通过 |
+
+证据：
+
+- [渲染报告](evidence/t04/render-report.txt)（场景矩阵、边界、主题、组件状态、键盘、汇总与截图清单）
+- [渲染检查原始数据](evidence/t04/render-checks.json)（36 个场景的完整计算样式与几何测量）
+- 截图：`home-1440-light.png`、`home-1440-dark.png`、`home-768-light.png`、`home-390-light.png`、`home-390-dark.png`、`home-320-light.png`、`blog-1440-light.png`、`blog-390-dark.png`、`about-1440-light.png`、`about-390-light.png`、`post-1440-light.png`、`post-390-light.png`、`blog-preview-empty-1440-light.png`、`focus-skip-link-1440-light.png`、`home-nojs-1440-light.png`、`home-nojs-390-light.png`、`post-nojs-1440-light.png`（均位于 `docs/evidence/t04/`）
+- 脚本：`docs/evidence/t04/audit.mjs`（静态审计）、`docs/evidence/t04/render-checks.mjs`（Edge headless + CDP 渲染检查）
+
+未验证项：Chrome／Firefox／真实手机未执行（OB-03）；观感类判据与 VC1 正式视觉结论未执行（OB-04）；本机 Edge 在沙箱内启动 headless 时崩溃，浏览器检查在放宽沙箱后完成，属环境限制而非产品缺陷。
+
 ---
 
 ## 阶段 0 · 执行基线与工程准备（T00）
@@ -141,7 +188,7 @@ Footer 一致性: 一致
 | OB-01 | Gitee 推送认证 | 默认 TLS 后端报 `schannel: AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS (0x8009030e)`；改用 `-c http.sslBackend=openssl` 后读操作正常；`push --dry-run` 在默认沙箱下凭据助手无法启动（`sh.exe: couldn't create signal pipe, Win32 error 5`），随后报 `could not read Username for 'https://gitee.com'` | 曾一度只阻塞远端推送，不阻塞本地实施与提交 | **已关闭（2026-09-15）**：同一推送命令在放宽沙箱后成功（凭据助手可正常启动并使用已保存凭据），`8747276..8a42ddb` 已推送到 `origin/main`，后续文档记录提交同样推送成功，`git rev-list --left-right --count origin/main...main` 为 `0 0`。后续推送继续使用 `git -c http.sslBackend=openssl push origin main` |
 | OB-02 | Netlify 最小部署（T03） | 本环境无 Netlify 登录态或访问令牌；用户决定本轮先完成 T00／T01 | 阻塞 Stage 1 的 T03 与最终公开网址验收 | 不执行部署、不生成发布目录、不填写任何地址；在 T22 前关闭 |
 | OB-03 | 真实设备与浏览器矩阵 | 本阶段无可视界面，未进行 Chrome／Edge／Firefox 与手机检查 | 不影响 Stage 0～1 | Stage 7～8（T15／T16）执行，未执行前保持“未验证” |
-| OB-04 | 视觉检查点 VC1／VC2 | Stage 0～1 无静态视觉产物 | 不影响 Stage 0～1 | 见 `docs/visual-review.md`，状态“未执行” |
+| OB-04 | 视觉检查点 VC1／VC2 | Stage 0～1 无静态视觉产物 | 不影响 Stage 0～1 | 见 `docs/visual-review.md`。T04 已完成像素级工程自检（见上）与两主题截图，但 VC1 为正式视觉门槛，须在 T07／T08 完成后由指定视觉模型执行；自检结论不替代 VC1 |
 
 ## 已知问题（不阻塞）
 

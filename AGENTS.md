@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-Sywen's Space is a manga line-art personal blog built with native HTML, CSS, and JavaScript. `PROJECT_PLAN.html` holds the 29-section specification, `DESIGN_SPEC.md` the visual rules, `Plan.md` the implementation baseline, and `参考素材/` five reference PNGs that are never published. T01 has established the seven semantic HTML pages, and T02 has added two character WebP assets and an SVG favicon. `css/` and `js/` are not created yet; T03 deployment remains unverified and T04 handles asset references.
+Sywen's Space is a manga line-art personal blog built with native HTML, CSS, and JavaScript. `PROJECT_PLAN.html` holds the 29-section specification, `DESIGN_SPEC.md` the visual rules, `Plan.md` the implementation baseline, and `参考素材/` five reference PNGs that are never published. T01 established the seven semantic HTML pages, T02 added two character WebP assets and an SVG favicon, and T04 (Stage 2) added the three stylesheets, the light/dark theme contract, and the page-level asset references. `js/` is not created yet; T03 deployment remains unverified and T05 owns the Home/Blog visual completion.
 
 Follow the planned structure when adding code:
 

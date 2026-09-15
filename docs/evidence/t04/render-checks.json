@@ -1,0 +1,3601 @@
+{
+  "generatedAt": "2026-09-15T12:53:44.676Z",
+  "base": "http://127.0.0.1:8123",
+  "scenarios": [
+    {
+      "page": "home",
+      "width": 320,
+      "title": "Sywen's Space｜代码 · 科研 · 生活",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 305,
+      "clientWidth": 305,
+      "wideElements": [],
+      "h1": "你好，我是 Sywen！",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 117,
+        "h": 220,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 84,
+        "y": 450,
+        "w": 137,
+        "h": 240
+      },
+      "heroText": {
+        "x": 16,
+        "y": 183,
+        "w": 273,
+        "h": 243
+      },
+      "heroArtBox": {
+        "x": 16,
+        "y": 450,
+        "w": 273,
+        "h": 282
+      },
+      "heroTape": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "heroDots": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 305,
+        "contentWidth": 273
+      },
+      "viewportClientWidth": 305,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": {
+        "text": "学习中，持续更新。",
+        "color": "rgb(98, 95, 89)",
+        "size": "14px"
+      },
+      "heroTitleSize": 34,
+      "pageTitleSize": null,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 305,
+        "h": 151
+      },
+      "navRect": {
+        "x": 16,
+        "y": 90,
+        "w": 273,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": 46,
+        ".category-link": 42,
+        ".post-entry__link": 27
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "237px",
+      "tapeDisplay": "none",
+      "dotsDisplay": "none",
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "home",
+      "width": 360,
+      "title": "Sywen's Space｜代码 · 科研 · 生活",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 345,
+      "clientWidth": 345,
+      "wideElements": [],
+      "h1": "你好，我是 Sywen！",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 117,
+        "h": 220,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 104,
+        "y": 401,
+        "w": 137,
+        "h": 240
+      },
+      "heroText": {
+        "x": 16,
+        "y": 152,
+        "w": 313,
+        "h": 225
+      },
+      "heroArtBox": {
+        "x": 16,
+        "y": 401,
+        "w": 313,
+        "h": 282
+      },
+      "heroTape": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "heroDots": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 345,
+        "contentWidth": 313
+      },
+      "viewportClientWidth": 345,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": {
+        "text": "学习中，持续更新。",
+        "color": "rgb(98, 95, 89)",
+        "size": "14px"
+      },
+      "heroTitleSize": 37.3468,
+      "pageTitleSize": null,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 345,
+        "h": 120
+      },
+      "navRect": {
+        "x": 16,
+        "y": 59,
+        "w": 313,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": 46,
+        ".category-link": 42,
+        ".post-entry__link": 27
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "277px",
+      "tapeDisplay": "none",
+      "dotsDisplay": "none",
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "title": "Sywen's Space｜代码 · 科研 · 生活",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "wideElements": [],
+      "h1": "你好，我是 Sywen！",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 117,
+        "h": 220,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 119,
+        "y": 407,
+        "w": 137,
+        "h": 240
+      },
+      "heroText": {
+        "x": 16,
+        "y": 152,
+        "w": 343,
+        "h": 231
+      },
+      "heroArtBox": {
+        "x": 16,
+        "y": 407,
+        "w": 343,
+        "h": 282
+      },
+      "heroTape": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "heroDots": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 375,
+        "contentWidth": 343
+      },
+      "viewportClientWidth": 375,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": {
+        "text": "学习中，持续更新。",
+        "color": "rgb(98, 95, 89)",
+        "size": "14px"
+      },
+      "heroTitleSize": 39.8572,
+      "pageTitleSize": null,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 375,
+        "h": 120
+      },
+      "navRect": {
+        "x": 16,
+        "y": 59,
+        "w": 343,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": 46,
+        ".category-link": 42,
+        ".post-entry__link": 27
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "307px",
+      "tapeDisplay": "none",
+      "dotsDisplay": "none",
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "title": "Sywen's Space｜代码 · 科研 · 生活",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "24px",
+        "heroArtHeight": "300px",
+        "entryDateWidth": "88px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 753,
+      "clientWidth": 753,
+      "wideElements": [],
+      "h1": "你好，我是 Sywen！",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 160,
+        "h": 300,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 503,
+        "y": 125,
+        "w": 180,
+        "h": 320
+      },
+      "heroText": {
+        "x": 24,
+        "y": 160,
+        "w": 409,
+        "h": 291
+      },
+      "heroArtBox": {
+        "x": 457,
+        "y": 125,
+        "w": 272,
+        "h": 362
+      },
+      "heroTape": {
+        "x": 659,
+        "y": 117,
+        "w": 48,
+        "h": 17
+      },
+      "heroDots": {
+        "x": 677,
+        "y": 435,
+        "w": 64,
+        "h": 64
+      },
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "24px",
+        "clientWidth": 753,
+        "contentWidth": 705
+      },
+      "viewportClientWidth": 753,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": {
+        "text": "学习中，持续更新。",
+        "color": "rgb(98, 95, 89)",
+        "size": "14px"
+      },
+      "heroTitleSize": 60,
+      "pageTitleSize": null,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 753,
+        "h": 93
+      },
+      "navRect": {
+        "x": 367,
+        "y": 24,
+        "w": 346,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": 46,
+        ".category-link": 42,
+        ".post-entry__link": 30
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "653px",
+      "tapeDisplay": "block",
+      "dotsDisplay": "block",
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "home",
+      "width": 1024,
+      "title": "Sywen's Space｜代码 · 科研 · 生活",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1009,
+      "clientWidth": 1009,
+      "wideElements": [],
+      "h1": "你好，我是 Sywen！",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 192,
+        "h": 360,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 692,
+        "y": 141,
+        "w": 212,
+        "h": 380
+      },
+      "heroText": {
+        "x": 32,
+        "y": 206,
+        "w": 538,
+        "h": 291
+      },
+      "heroArtBox": {
+        "x": 618,
+        "y": 141,
+        "w": 359,
+        "h": 422
+      },
+      "heroTape": {
+        "x": 879,
+        "y": 133,
+        "w": 48,
+        "h": 17
+      },
+      "heroDots": {
+        "x": 925,
+        "y": 511,
+        "w": 64,
+        "h": 64
+      },
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1009,
+        "contentWidth": 945
+      },
+      "viewportClientWidth": 1009,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": {
+        "text": "学习中，持续更新。",
+        "color": "rgb(98, 95, 89)",
+        "size": "14px"
+      },
+      "heroTitleSize": 60,
+      "pageTitleSize": null,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1009,
+        "h": 93
+      },
+      "navRect": {
+        "x": 383,
+        "y": 24,
+        "w": 570,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": 46,
+        ".category-link": 42,
+        ".post-entry__link": 30
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "281.656px 281.672px 281.656px",
+      "tapeDisplay": "block",
+      "dotsDisplay": "block",
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "title": "Sywen's Space｜代码 · 科研 · 生活",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "wideElements": [],
+      "h1": "你好，我是 Sywen！",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 192,
+        "h": 360,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 952,
+        "y": 141,
+        "w": 212,
+        "h": 380
+      },
+      "heroText": {
+        "x": 153,
+        "y": 256,
+        "w": 643,
+        "h": 193
+      },
+      "heroArtBox": {
+        "x": 844,
+        "y": 141,
+        "w": 429,
+        "h": 422
+      },
+      "heroTape": {
+        "x": 1140,
+        "y": 133,
+        "w": 48,
+        "h": 17
+      },
+      "heroDots": {
+        "x": 1220,
+        "y": 511,
+        "w": 64,
+        "h": 64
+      },
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1184,
+        "contentWidth": 1120
+      },
+      "viewportClientWidth": 1425,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": {
+        "text": "学习中，持续更新。",
+        "color": "rgb(98, 95, 89)",
+        "size": "14px"
+      },
+      "heroTitleSize": 60,
+      "pageTitleSize": null,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1425,
+        "h": 93
+      },
+      "navRect": {
+        "x": 503,
+        "y": 24,
+        "w": 745,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": 46,
+        ".category-link": 42,
+        ".post-entry__link": 30
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "340px 340px 340px",
+      "tapeDisplay": "block",
+      "dotsDisplay": "block",
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "blog",
+      "width": 320,
+      "title": "文章 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 305,
+      "clientWidth": 305,
+      "wideElements": [],
+      "h1": "文章",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 305,
+        "contentWidth": 273
+      },
+      "viewportClientWidth": 305,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 30.001,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 305,
+        "h": 151
+      },
+      "navRect": {
+        "x": 16,
+        "y": 90,
+        "w": 273,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=none",
+        "blog-results=none",
+        "blog-empty=none"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": 27
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-avatar.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": false,
+      "staticListVisible": true,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "blog",
+      "width": 360,
+      "title": "文章 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 345,
+      "clientWidth": 345,
+      "wideElements": [],
+      "h1": "文章",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 345,
+        "contentWidth": 313
+      },
+      "viewportClientWidth": 345,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 30.683,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 345,
+        "h": 120
+      },
+      "navRect": {
+        "x": 16,
+        "y": 59,
+        "w": 313,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=none",
+        "blog-results=none",
+        "blog-empty=none"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": 27
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-avatar.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": false,
+      "staticListVisible": true,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "blog",
+      "width": 390,
+      "title": "文章 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "wideElements": [],
+      "h1": "文章",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 375,
+        "contentWidth": 343
+      },
+      "viewportClientWidth": 375,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 31.1945,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 375,
+        "h": 120
+      },
+      "navRect": {
+        "x": 16,
+        "y": 59,
+        "w": 343,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=none",
+        "blog-results=none",
+        "blog-empty=none"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": 27
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-avatar.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": false,
+      "staticListVisible": true,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "blog",
+      "width": 768,
+      "title": "文章 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "24px",
+        "heroArtHeight": "300px",
+        "entryDateWidth": "88px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 753,
+      "clientWidth": 753,
+      "wideElements": [],
+      "h1": "文章",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "24px",
+        "clientWidth": 753,
+        "contentWidth": 705
+      },
+      "viewportClientWidth": 753,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 37.6394,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 753,
+        "h": 93
+      },
+      "navRect": {
+        "x": 367,
+        "y": 24,
+        "w": 346,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=none",
+        "blog-results=none",
+        "blog-empty=none"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": 30
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-avatar.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": false,
+      "staticListVisible": true,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "blog",
+      "width": 1024,
+      "title": "文章 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1009,
+      "clientWidth": 1009,
+      "wideElements": [],
+      "h1": "文章",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1009,
+        "contentWidth": 945
+      },
+      "viewportClientWidth": 1009,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 42,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1009,
+        "h": 93
+      },
+      "navRect": {
+        "x": 383,
+        "y": 24,
+        "w": 570,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=none",
+        "blog-results=none",
+        "blog-empty=none"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": 30
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-avatar.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": false,
+      "staticListVisible": true,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "blog",
+      "width": 1440,
+      "title": "文章 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "wideElements": [],
+      "h1": "文章",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1184,
+        "contentWidth": 1120
+      },
+      "viewportClientWidth": 1425,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 42,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1425,
+        "h": 93
+      },
+      "navRect": {
+        "x": 503,
+        "y": 24,
+        "w": 745,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=none",
+        "blog-results=none",
+        "blog-empty=none"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": 30
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-avatar.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": false,
+      "staticListVisible": true,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "about",
+      "width": 320,
+      "title": "关于 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 305,
+      "clientWidth": 305,
+      "wideElements": [],
+      "h1": "关于",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 117,
+        "h": 220,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 84,
+        "y": 589,
+        "w": 137,
+        "h": 240
+      },
+      "heroText": null,
+      "heroArtBox": {
+        "x": 16,
+        "y": 589,
+        "w": 273,
+        "h": 247
+      },
+      "heroTape": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "heroDots": null,
+      "aboutGrid": {
+        "display": "block",
+        "columns": "none",
+        "textCol": 16,
+        "artCol": 16,
+        "textRow": 356,
+        "artRow": 589,
+        "textInRow1": true,
+        "sameBand": true,
+        "sideBySide": false,
+        "artSize": "273x247"
+      },
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 305,
+        "contentWidth": 273
+      },
+      "viewportClientWidth": 305,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 30.001,
+      "bodyTextSize": 16,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": "block",
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 305,
+        "h": 151
+      },
+      "navRect": {
+        "x": 16,
+        "y": 90,
+        "w": 273,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "237px",
+      "tapeDisplay": "none",
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "about",
+      "width": 360,
+      "title": "关于 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 345,
+      "clientWidth": 345,
+      "wideElements": [],
+      "h1": "关于",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 117,
+        "h": 220,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 104,
+        "y": 533,
+        "w": 137,
+        "h": 240
+      },
+      "heroText": null,
+      "heroArtBox": {
+        "x": 16,
+        "y": 533,
+        "w": 313,
+        "h": 247
+      },
+      "heroTape": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "heroDots": null,
+      "aboutGrid": {
+        "display": "block",
+        "columns": "none",
+        "textCol": 16,
+        "artCol": 16,
+        "textRow": 327,
+        "artRow": 533,
+        "textInRow1": true,
+        "sameBand": true,
+        "sideBySide": false,
+        "artSize": "313x247"
+      },
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 345,
+        "contentWidth": 313
+      },
+      "viewportClientWidth": 345,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 30.683,
+      "bodyTextSize": 16,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": "block",
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 345,
+        "h": 120
+      },
+      "navRect": {
+        "x": 16,
+        "y": 59,
+        "w": 313,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "277px",
+      "tapeDisplay": "none",
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "about",
+      "width": 390,
+      "title": "关于 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "wideElements": [],
+      "h1": "关于",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 117,
+        "h": 220,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 119,
+        "y": 507,
+        "w": 137,
+        "h": 240
+      },
+      "heroText": null,
+      "heroArtBox": {
+        "x": 16,
+        "y": 507,
+        "w": 343,
+        "h": 247
+      },
+      "heroTape": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "heroDots": null,
+      "aboutGrid": {
+        "display": "block",
+        "columns": "none",
+        "textCol": 16,
+        "artCol": 16,
+        "textRow": 327,
+        "artRow": 507,
+        "textInRow1": true,
+        "sameBand": true,
+        "sideBySide": false,
+        "artSize": "343x247"
+      },
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 375,
+        "contentWidth": 343
+      },
+      "viewportClientWidth": 375,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 31.1945,
+      "bodyTextSize": 16,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": "block",
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 375,
+        "h": 120
+      },
+      "navRect": {
+        "x": 16,
+        "y": 59,
+        "w": 343,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "307px",
+      "tapeDisplay": "none",
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "about",
+      "width": 768,
+      "title": "关于 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "24px",
+        "heroArtHeight": "300px",
+        "entryDateWidth": "88px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 753,
+      "clientWidth": 753,
+      "wideElements": [],
+      "h1": "关于",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 128,
+        "h": 240,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 303,
+        "y": 415,
+        "w": 148,
+        "h": 260
+      },
+      "heroText": null,
+      "heroArtBox": {
+        "x": 24,
+        "y": 415,
+        "w": 705,
+        "h": 267
+      },
+      "heroTape": {
+        "x": 426,
+        "y": 406,
+        "w": 48,
+        "h": 17
+      },
+      "heroDots": null,
+      "aboutGrid": {
+        "display": "block",
+        "columns": "none",
+        "textCol": 24,
+        "artCol": 24,
+        "textRow": 288,
+        "artRow": 415,
+        "textInRow1": true,
+        "sameBand": true,
+        "sideBySide": false,
+        "artSize": "705x267"
+      },
+      "containerPadding": {
+        "paddingLeft": "24px",
+        "clientWidth": 753,
+        "contentWidth": 705
+      },
+      "viewportClientWidth": 753,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 37.6394,
+      "bodyTextSize": 16,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": "block",
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 753,
+        "h": 93
+      },
+      "navRect": {
+        "x": 367,
+        "y": 24,
+        "w": 346,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "653px",
+      "tapeDisplay": "block",
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "about",
+      "width": 1024,
+      "title": "关于 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1009,
+      "clientWidth": 1009,
+      "wideElements": [],
+      "h1": "关于",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 160,
+        "h": 300,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 708,
+        "y": 258,
+        "w": 180,
+        "h": 320
+      },
+      "heroText": null,
+      "heroArtBox": {
+        "x": 708,
+        "y": 258,
+        "w": 180,
+        "h": 327
+      },
+      "heroTape": {
+        "x": 863,
+        "y": 250,
+        "w": 48,
+        "h": 17
+      },
+      "heroDots": null,
+      "aboutGrid": {
+        "display": "grid",
+        "columns": "538.188px 358.797px",
+        "textCol": 32,
+        "artCol": 708,
+        "textRow": 366,
+        "artRow": 258,
+        "textInRow1": false,
+        "sameBand": true,
+        "sideBySide": true,
+        "artSize": "180x327"
+      },
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1009,
+        "contentWidth": 945
+      },
+      "viewportClientWidth": 1009,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 42,
+      "bodyTextSize": 16,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": "grid",
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1009,
+        "h": 93
+      },
+      "navRect": {
+        "x": 383,
+        "y": 24,
+        "w": 570,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "281.656px 281.672px 281.656px",
+      "tapeDisplay": "block",
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "about",
+      "width": 1440,
+      "title": "关于 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "wideElements": [],
+      "h1": "关于",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 160,
+        "h": 300,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 968,
+        "y": 258,
+        "w": 180,
+        "h": 320
+      },
+      "heroText": null,
+      "heroArtBox": {
+        "x": 968,
+        "y": 258,
+        "w": 180,
+        "h": 327
+      },
+      "heroTape": {
+        "x": 1124,
+        "y": 250,
+        "w": 48,
+        "h": 17
+      },
+      "heroDots": null,
+      "aboutGrid": {
+        "display": "grid",
+        "columns": "643.188px 428.797px",
+        "textCol": 153,
+        "artCol": 968,
+        "textRow": 375,
+        "artRow": 258,
+        "textInRow1": false,
+        "sameBand": true,
+        "sideBySide": true,
+        "artSize": "180x327"
+      },
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1184,
+        "contentWidth": 1120
+      },
+      "viewportClientWidth": 1425,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 42,
+      "bodyTextSize": 16,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": "grid",
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1425,
+        "h": 93
+      },
+      "navRect": {
+        "x": 503,
+        "y": 24,
+        "w": 745,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "340px 340px 340px",
+      "tapeDisplay": "block",
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "post",
+      "width": 320,
+      "title": "原生 JavaScript 搜索与筛选笔记 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 305,
+      "clientWidth": 305,
+      "wideElements": [],
+      "h1": "原生 JavaScript 搜索与筛选笔记",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 305,
+        "contentWidth": 273
+      },
+      "viewportClientWidth": 305,
+      "postParagraphWidth": 273,
+      "postHeaderWidth": 273,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 30.001,
+      "bodyTextSize": 17,
+      "postBodyMaxWidth": "740px",
+      "postBodyWidth": 273,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 305,
+        "h": 151
+      },
+      "navRect": {
+        "x": 16,
+        "y": 90,
+        "w": 273,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "post",
+      "width": 360,
+      "title": "原生 JavaScript 搜索与筛选笔记 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 345,
+      "clientWidth": 345,
+      "wideElements": [],
+      "h1": "原生 JavaScript 搜索与筛选笔记",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 345,
+        "contentWidth": 313
+      },
+      "viewportClientWidth": 345,
+      "postParagraphWidth": 313,
+      "postHeaderWidth": 313,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 30.683,
+      "bodyTextSize": 17,
+      "postBodyMaxWidth": "740px",
+      "postBodyWidth": 313,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 345,
+        "h": 120
+      },
+      "navRect": {
+        "x": 16,
+        "y": 59,
+        "w": 313,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "post",
+      "width": 390,
+      "title": "原生 JavaScript 搜索与筛选笔记 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "16px",
+        "heroArtHeight": "220px",
+        "entryDateWidth": "88px",
+        "textBody": "17px",
+        "textH2": "24px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "wideElements": [],
+      "h1": "原生 JavaScript 搜索与筛选笔记",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "16px",
+        "clientWidth": 375,
+        "contentWidth": 343
+      },
+      "viewportClientWidth": 375,
+      "postParagraphWidth": 343,
+      "postHeaderWidth": 343,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 31.1945,
+      "bodyTextSize": 17,
+      "postBodyMaxWidth": "740px",
+      "postBodyWidth": 343,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 375,
+        "h": 120
+      },
+      "navRect": {
+        "x": 16,
+        "y": 59,
+        "w": 343,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "post",
+      "width": 768,
+      "title": "原生 JavaScript 搜索与筛选笔记 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "24px",
+        "heroArtHeight": "300px",
+        "entryDateWidth": "88px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "wideElements": [],
+      "h1": "原生 JavaScript 搜索与筛选笔记",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "24px",
+        "clientWidth": 768,
+        "contentWidth": 720
+      },
+      "viewportClientWidth": 768,
+      "postParagraphWidth": 720,
+      "postHeaderWidth": 720,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 37.6394,
+      "bodyTextSize": 18,
+      "postBodyMaxWidth": "740px",
+      "postBodyWidth": 720,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 768,
+        "h": 93
+      },
+      "navRect": {
+        "x": 367,
+        "y": 24,
+        "w": 361,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "post",
+      "width": 1024,
+      "title": "原生 JavaScript 搜索与筛选笔记 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "wideElements": [],
+      "h1": "原生 JavaScript 搜索与筛选笔记",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1024,
+        "contentWidth": 960
+      },
+      "viewportClientWidth": 1024,
+      "postParagraphWidth": 740,
+      "postHeaderWidth": 740,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 42,
+      "bodyTextSize": 18,
+      "postBodyMaxWidth": "740px",
+      "postBodyWidth": 740,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1024,
+        "h": 93
+      },
+      "navRect": {
+        "x": 383,
+        "y": 24,
+        "w": 585,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "page": "post",
+      "width": 1440,
+      "title": "原生 JavaScript 搜索与筛选笔记 · Sywen's Space",
+      "lang": "zh-CN",
+      "theme": null,
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "wideElements": [],
+      "h1": "原生 JavaScript 搜索与筛选笔记",
+      "h1Overflow": false,
+      "heroArt": null,
+      "artFrame": null,
+      "heroText": null,
+      "heroArtBox": null,
+      "heroTape": null,
+      "heroDots": null,
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1184,
+        "contentWidth": 1120
+      },
+      "viewportClientWidth": 1440,
+      "postParagraphWidth": 740,
+      "postHeaderWidth": 740,
+      "heroCaption": null,
+      "heroTitleSize": null,
+      "pageTitleSize": 42,
+      "bodyTextSize": 18,
+      "postBodyMaxWidth": "740px",
+      "postBodyWidth": 740,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 93
+      },
+      "navRect": {
+        "x": 511,
+        "y": 24,
+        "w": 745,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": null,
+        ".category-link": null,
+        ".post-entry__link": null
+      },
+      "failedResources": [],
+      "imgSrcs": [],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": null,
+      "tapeDisplay": null,
+      "dotsDisplay": null,
+      "themeAppliedPaper": "#202223",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ],
+  "themes": {
+    "light": {
+      "title": "Sywen's Space｜代码 · 科研 · 生活",
+      "lang": "zh-CN",
+      "theme": "light",
+      "colorScheme": "light",
+      "tokens": {
+        "paper": "#F7F3EA",
+        "ink": "#242424",
+        "muted": "#625F59",
+        "accent": "#D9E8EC",
+        "note": "#F0E1AC",
+        "surface": "#FFFCF5",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(247, 243, 234)",
+      "bodyColor": "rgb(36, 36, 36)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "wideElements": [],
+      "h1": "你好，我是 Sywen！",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 192,
+        "h": 360,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 952,
+        "y": 141,
+        "w": 212,
+        "h": 380
+      },
+      "heroText": {
+        "x": 153,
+        "y": 256,
+        "w": 643,
+        "h": 193
+      },
+      "heroArtBox": {
+        "x": 844,
+        "y": 141,
+        "w": 429,
+        "h": 422
+      },
+      "heroTape": {
+        "x": 1140,
+        "y": 133,
+        "w": 48,
+        "h": 17
+      },
+      "heroDots": {
+        "x": 1220,
+        "y": 511,
+        "w": 64,
+        "h": 64
+      },
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1184,
+        "contentWidth": 1120
+      },
+      "viewportClientWidth": 1425,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": {
+        "text": "学习中，持续更新。",
+        "color": "rgb(98, 95, 89)",
+        "size": "14px"
+      },
+      "heroTitleSize": 60,
+      "pageTitleSize": null,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(98, 95, 89)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1425,
+        "h": 93
+      },
+      "navRect": {
+        "x": 503,
+        "y": 24,
+        "w": 745,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": 46,
+        ".category-link": 42,
+        ".post-entry__link": 30
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "340px 340px 340px",
+      "tapeDisplay": "block",
+      "dotsDisplay": "block",
+      "button": {
+        "bg": "rgb(217, 232, 236)",
+        "color": "rgb(36, 36, 36)"
+      },
+      "panel": {
+        "bg": "rgb(255, 252, 245)",
+        "color": "rgb(36, 36, 36)"
+      },
+      "navCurrent": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(36, 36, 36)",
+        "weight": "700",
+        "decoration": "underline"
+      },
+      "categoryButton": {
+        "bg": null
+      },
+      "focusProbe": true,
+      "contrast": {
+        "bodyOnPaper": 14.02,
+        "mutedOnPaper": 5.75,
+        "buttonInkOnAccent": 12.35,
+        "inkOnSurface": 15.15
+      }
+    },
+    "dark": {
+      "title": "Sywen's Space｜代码 · 科研 · 生活",
+      "lang": "zh-CN",
+      "theme": "dark",
+      "colorScheme": "dark",
+      "tokens": {
+        "paper": "#202223",
+        "ink": "#F2EEE5",
+        "muted": "#BBB6AC",
+        "accent": "#344B53",
+        "note": "#50482E",
+        "surface": "#292C2E",
+        "gutter": "32px",
+        "heroArtHeight": "360px",
+        "entryDateWidth": "112px",
+        "textBody": "18px",
+        "textH2": "28px",
+        "space6": "24px"
+      },
+      "bodyBg": "rgb(32, 34, 35)",
+      "bodyColor": "rgb(227, 223, 215)",
+      "bodyFont": "-apple-system, BlinkMacSystemFont, \"Sego",
+      "overflowX": false,
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "wideElements": [],
+      "h1": "你好，我是 Sywen！",
+      "h1Overflow": false,
+      "heroArt": {
+        "natural": "320x600",
+        "w": 192,
+        "h": 360,
+        "complete": true,
+        "bg": "rgb(255, 255, 255)",
+        "maxW": "100%"
+      },
+      "artFrame": {
+        "x": 952,
+        "y": 141,
+        "w": 212,
+        "h": 380
+      },
+      "heroText": {
+        "x": 153,
+        "y": 256,
+        "w": 643,
+        "h": 193
+      },
+      "heroArtBox": {
+        "x": 844,
+        "y": 141,
+        "w": 429,
+        "h": 422
+      },
+      "heroTape": {
+        "x": 1140,
+        "y": 133,
+        "w": 48,
+        "h": 17
+      },
+      "heroDots": {
+        "x": 1220,
+        "y": 511,
+        "w": 64,
+        "h": 64
+      },
+      "aboutGrid": null,
+      "containerPadding": {
+        "paddingLeft": "32px",
+        "clientWidth": 1184,
+        "contentWidth": 1120
+      },
+      "viewportClientWidth": 1425,
+      "postParagraphWidth": null,
+      "postHeaderWidth": null,
+      "heroCaption": {
+        "text": "学习中，持续更新。",
+        "color": "rgb(187, 182, 172)",
+        "size": "14px"
+      },
+      "heroTitleSize": 60,
+      "pageTitleSize": null,
+      "bodyTextSize": null,
+      "postBodyMaxWidth": null,
+      "postBodyWidth": null,
+      "aboutIntroDisplay": null,
+      "footerNoteColor": "rgb(187, 182, 172)",
+      "navLinkCount": 3,
+      "navLinkHeight": 44,
+      "headerRect": {
+        "x": 0,
+        "y": 0,
+        "w": 1425,
+        "h": 93
+      },
+      "navRect": {
+        "x": 503,
+        "y": 24,
+        "w": 745,
+        "h": 44
+      },
+      "hiddenCheck": [
+        "theme-toggle=none",
+        "quick-menu-button=none",
+        "reading-progress=none",
+        "back-to-top=none",
+        "site-notice=none",
+        "copy-panel=none",
+        "context-menu=none",
+        "blog-filters=absent",
+        "blog-results=absent",
+        "blog-empty=absent"
+      ],
+      "minHeights": {
+        ".site-nav__link": 44,
+        ".button--primary": 46,
+        ".category-link": 42,
+        ".post-entry__link": 30
+      },
+      "failedResources": [],
+      "imgSrcs": [
+        "./assets/images/character-front-upper.webp"
+      ],
+      "stylesheets": [
+        "http://127.0.0.1:8123/css/base.css",
+        "http://127.0.0.1:8123/css/components.css",
+        "http://127.0.0.1:8123/css/pages.css"
+      ],
+      "emptyStateVisible": null,
+      "staticListVisible": null,
+      "noteCols": "340px 340px 340px",
+      "tapeDisplay": "block",
+      "dotsDisplay": "block",
+      "button": {
+        "bg": "rgb(52, 75, 83)",
+        "color": "rgb(242, 238, 229)"
+      },
+      "panel": {
+        "bg": "rgb(41, 44, 46)",
+        "color": "rgb(229, 225, 217)"
+      },
+      "navCurrent": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(242, 238, 229)",
+        "weight": "700",
+        "decoration": "underline"
+      },
+      "categoryButton": {
+        "bg": null
+      },
+      "focusProbe": true,
+      "contrast": {
+        "bodyOnPaper": 12.02,
+        "mutedOnPaper": 7.91,
+        "buttonInkOnAccent": 7.96,
+        "inkOnSurface": 10.78
+      }
+    }
+  },
+  "focusFirstTab": {
+    "tag": "A",
+    "cls": "skip-link",
+    "text": "跳到主要内容",
+    "outlineWidth": "3px",
+    "outlineOffset": "4px",
+    "outlineColor": "rgb(36, 36, 36)",
+    "transform": "none",
+    "visibleInViewport": true,
+    "screenshot": "focus-skip-link-1440-light.png"
+  },
+  "componentStates": {
+    "primaryDefault": {
+      "bg": "rgb(217, 232, 236)",
+      "shadow": "rgb(36, 36, 36) 4px 4px 0px 0px",
+      "radius": "4px"
+    },
+    "secondaryDefault": {
+      "bg": "rgb(255, 252, 245)",
+      "shadow": "rgb(36, 36, 36) 3px 3px 0px 0px"
+    },
+    "categoryLinkDefault": {
+      "color": "rgb(36, 36, 36)",
+      "decoration": "none"
+    },
+    "navCurrent": {
+      "weight": "700",
+      "decoration": "underline",
+      "thickness": "2px"
+    },
+    "navOther": {
+      "weight": "400",
+      "decoration": "none"
+    },
+    "tape": {
+      "w": "48px",
+      "h": "16px",
+      "transform": "matrix(0.999848, -0.0174524, 0.0174524, 0.999848, 0, 0)",
+      "bg": "rgb(217, 232, 236)",
+      "pointer": "none",
+      "ariaHidden": "true"
+    },
+    "dots": {
+      "w": "64px",
+      "h": "64px",
+      "image": "radial-gradient(rgb(36, 36, 36) 0.5px, rgba(0, 0, 0, 0) 0.5px)",
+      "opacity": "0.08",
+      "ariaHidden": "true",
+      "pointer": "none"
+    },
+    "frame": {
+      "border": "2px",
+      "padding": "8px",
+      "radius": "0px",
+      "bg": "rgb(255, 252, 245)"
+    },
+    "image": {
+      "bg": "rgb(255, 255, 255)",
+      "objFit": "contain",
+      "ratio": "320 / 600"
+    },
+    "focusOutline": {
+      "width": "3px",
+      "offset": "0px"
+    },
+    "primaryShadow": "rgb(36, 36, 36) 4px 4px 0px 0px"
+  },
+  "blogStates": {
+    "selected": {
+      "bg": "rgb(217, 232, 236)",
+      "weight": "700",
+      "ariaPressed": "true"
+    },
+    "unselected": {
+      "bg": "rgb(247, 243, 234)",
+      "weight": "600",
+      "border": "2px"
+    },
+    "input": {
+      "h": 46,
+      "bg": "rgb(255, 252, 245)",
+      "border": "2px",
+      "radius": "4px",
+      "maxWidth": "560px",
+      "outline": "3px"
+    },
+    "resetHeight": 46,
+    "searchWidth": 1120
+  },
+  "interaction": {
+    "secondaryBg": "rgb(255, 252, 245)",
+    "navCurrentWeight": "700",
+    "navCurrentDecor": "underline",
+    "navCurrentThickness": "2px",
+    "navOtherWeight": "400",
+    "navOtherDecor": "none",
+    "h1Color": "rgb(36, 36, 36)",
+    "h2Color": "rgb(36, 36, 36)",
+    "bodyColor": "rgb(36, 36, 36)",
+    "buttons": "theme-toggle,quick-menu-button,back-to-top",
+    "menuRoles": 1,
+    "links": 19,
+    "afterHover": "rgb(217, 232, 236)",
+    "pressed": {
+      "transform": "matrix(1, 0, 0, 1, 2, 2)",
+      "shadow": "rgb(36, 36, 36) 2px 2px 0px 0px"
+    },
+    "afterSkip": {
+      "tag": "MAIN",
+      "id": "main",
+      "hash": "#main",
+      "scrollY": 93
+    }
+  },
+  "emptyStatePreview": {
+    "filtersDisplay": "block",
+    "avatarRect": {
+      "w": 80,
+      "h": 80,
+      "natural": "225x225"
+    },
+    "emptyDisplay": "block",
+    "emptyMaxWidth": "640px",
+    "tapTargets": [
+      46,
+      46,
+      46,
+      46,
+      46,
+      46,
+      46
+    ],
+    "screenshot": "blog-preview-empty-1440-light.png",
+    "tampered": false
+  },
+  "screenshots": [
+    {
+      "page": "home",
+      "width": 390,
+      "theme": "light",
+      "file": "home-390-light.png"
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "theme": "dark",
+      "file": "home-390-dark.png"
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "theme": "light",
+      "file": "home-1440-light.png"
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "theme": "dark",
+      "file": "home-1440-dark.png"
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "theme": "light",
+      "file": "home-768-light.png"
+    },
+    {
+      "page": "home",
+      "width": 320,
+      "theme": "light",
+      "file": "home-320-light.png"
+    },
+    {
+      "page": "blog",
+      "width": 1440,
+      "theme": "light",
+      "file": "blog-1440-light.png"
+    },
+    {
+      "page": "blog",
+      "width": 390,
+      "theme": "dark",
+      "file": "blog-390-dark.png"
+    },
+    {
+      "page": "about",
+      "width": 1440,
+      "theme": "light",
+      "file": "about-1440-light.png"
+    },
+    {
+      "page": "about",
+      "width": 390,
+      "theme": "light",
+      "file": "about-390-light.png"
+    },
+    {
+      "page": "post",
+      "width": 1440,
+      "theme": "light",
+      "file": "post-1440-light.png"
+    },
+    {
+      "page": "post",
+      "width": 390,
+      "theme": "light",
+      "file": "post-390-light.png"
+    }
+  ],
+  "boundaries": [
+    {
+      "page": "home",
+      "width": 767,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 720,
+      "heroArt": "117x220",
+      "postParagraphWidth": null,
+      "aboutGrid": null,
+      "heroOverlap": false,
+      "failedResources": 0
+    },
+    {
+      "page": "about",
+      "width": 767,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 720,
+      "heroArt": "117x220",
+      "postParagraphWidth": null,
+      "aboutGrid": {
+        "display": "block",
+        "sideBySide": false
+      },
+      "heroOverlap": null,
+      "failedResources": 0
+    },
+    {
+      "page": "post",
+      "width": 767,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 735,
+      "heroArt": null,
+      "postParagraphWidth": 735,
+      "aboutGrid": null,
+      "heroOverlap": null,
+      "failedResources": 0
+    },
+    {
+      "page": "home",
+      "width": 768,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 705,
+      "heroArt": "160x300",
+      "postParagraphWidth": null,
+      "aboutGrid": null,
+      "heroOverlap": false,
+      "failedResources": 0
+    },
+    {
+      "page": "about",
+      "width": 768,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 705,
+      "heroArt": "128x240",
+      "postParagraphWidth": null,
+      "aboutGrid": {
+        "display": "block",
+        "sideBySide": false
+      },
+      "heroOverlap": null,
+      "failedResources": 0
+    },
+    {
+      "page": "post",
+      "width": 768,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 720,
+      "heroArt": null,
+      "postParagraphWidth": 720,
+      "aboutGrid": null,
+      "heroOverlap": null,
+      "failedResources": 0
+    },
+    {
+      "page": "home",
+      "width": 1023,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 960,
+      "heroArt": "160x300",
+      "postParagraphWidth": null,
+      "aboutGrid": null,
+      "heroOverlap": false,
+      "failedResources": 0
+    },
+    {
+      "page": "about",
+      "width": 1023,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 960,
+      "heroArt": "128x240",
+      "postParagraphWidth": null,
+      "aboutGrid": {
+        "display": "block",
+        "sideBySide": false
+      },
+      "heroOverlap": null,
+      "failedResources": 0
+    },
+    {
+      "page": "post",
+      "width": 1023,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 975,
+      "heroArt": null,
+      "postParagraphWidth": 740,
+      "aboutGrid": null,
+      "heroOverlap": null,
+      "failedResources": 0
+    },
+    {
+      "page": "home",
+      "width": 1024,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 945,
+      "heroArt": "192x360",
+      "postParagraphWidth": null,
+      "aboutGrid": null,
+      "heroOverlap": false,
+      "failedResources": 0
+    },
+    {
+      "page": "about",
+      "width": 1024,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 945,
+      "heroArt": "160x300",
+      "postParagraphWidth": null,
+      "aboutGrid": {
+        "display": "grid",
+        "sideBySide": true
+      },
+      "heroOverlap": null,
+      "failedResources": 0
+    },
+    {
+      "page": "post",
+      "width": 1024,
+      "overflowX": false,
+      "wideElements": [],
+      "contentWidth": 960,
+      "heroArt": null,
+      "postParagraphWidth": 740,
+      "aboutGrid": null,
+      "heroOverlap": null,
+      "failedResources": 0
+    }
+  ],
+  "summary": {
+    "total": 24,
+    "overflowX": [],
+    "wideElements": [],
+    "failedResources": [],
+    "imageIssues": [],
+    "hiddenIssues": [],
+    "smallTargets": [],
+    "scriptErrors": [],
+    "consoleErrors": [],
+    "layout": []
+  }
+}
