@@ -19,7 +19,7 @@
 
 <header class="site-header">
   <div class="site-header__inner container">
-    <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">代码 · 科研 · 生活</span></a></p>
+    <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Code · Research · Life</span></a></p>
     <div class="site-tools">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
       <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
@@ -39,29 +39,32 @@
 
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__text">
-        <h1 class="hero__title" id="hero-title">你好，我是 Sywen！</h1>
+        <p class="hero__eyebrow">A NOTEBOOK IN PROGRESS</p>
+        <h1 class="hero__title" id="hero-title">你好，<br>我是 <span>Sywen!</span></h1>
         <p class="hero__intro">这里记录我对数据科学、人工智能与编程的学习，也收藏一些科研思考和生活碎片。</p>
         <div class="hero__actions">
           <a class="button button--primary" href="./blog.html">阅读文章</a>
           <a class="button button--secondary" href="./about.html">关于我</a>
         </div>
       </div>
-      <figure class="hero-art">
+      <figure class="hero-art hero-art--desk">
         <div class="hero-art__frame">
           <span class="hero-art__tape" aria-hidden="true"></span>
           <div class="art-frame">
-            <img class="art-frame__image" src="./assets/images/character-front-upper.webp" width="320" height="600" alt="" decoding="async">
+            <picture class="hero-art__picture">
+              <img class="art-frame__image" src="./assets/images/hero-desk-1280.webp" srcset="./assets/images/hero-desk-640.webp 640w, ./assets/images/hero-desk-1280.webp 1280w" sizes="(min-width: 1024px) 520px, (min-width: 768px) 46vw, calc(100vw - 48px)" width="1280" height="960" alt="" decoding="async" fetchpriority="high">
+            </picture>
             <span class="art-frame__fallback">Sywen</span>
           </div>
         </div>
         <span class="hero-art__dots" aria-hidden="true"></span>
-        <figcaption class="hero-art__caption">学习中，持续更新。</figcaption>
+        <figcaption class="hero-art__caption">一页代码，一点灵感。慢慢记录，持续生长。</figcaption>
       </figure>
     </section>
 
     <section class="home-section" aria-labelledby="recent-title">
       <div class="section-header">
-        <h2 class="section-header__title" id="recent-title">最近文章</h2>
+        <h2 class="section-header__title" id="recent-title"><span class="section-header__number" aria-hidden="true">01</span>最近文章</h2>
         <a class="section-header__link" href="./blog.html">查看全部文章</a>
       </div>
       <ol class="post-list" id="home-recent">
@@ -94,7 +97,7 @@
 
     <section class="home-section" aria-labelledby="categories-title">
       <div class="section-header">
-        <h2 class="section-header__title" id="categories-title">分类</h2>
+        <h2 class="section-header__title" id="categories-title"><span class="section-header__number" aria-hidden="true">02</span>分类</h2>
       </div>
       <ul class="category-list" id="home-categories">
         <li class="category-list__item"><a class="category-link" href="./blog.html?category=ai">人工智能 <span class="category-count" data-category-count="ai">1</span> 篇</a></li>
@@ -106,7 +109,7 @@
 
     <section class="home-section" aria-labelledby="now-title">
       <div class="section-header">
-        <h2 class="section-header__title" id="now-title">最近在做</h2>
+        <h2 class="section-header__title" id="now-title"><span class="section-header__number" aria-hidden="true">03</span>最近在做</h2>
       </div>
       <div class="note-panel">
         <ul class="note-panel__list">
@@ -132,7 +135,7 @@
 <footer class="site-footer">
   <div class="site-footer__inner container">
     <p class="site-footer__brand">Sywen's Space · 代码 · 科研 · 生活</p>
-    <p class="site-footer__note">课程项目示例网站，站内四篇文章均为示例内容，会随学习进度更新。</p>
+    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。四篇文章均为示例。</p>
     <nav class="site-footer__links" aria-label="页脚导航">
       <a href="./index.html">首页</a>
       <a href="./blog.html">文章</a>

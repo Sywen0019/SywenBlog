@@ -43,3 +43,6 @@ __pycache__/
 .idea/
 .vscode/
 *.code-workspace
+
+# Local art candidates and masters; selected web exports are committed
+/art-work/

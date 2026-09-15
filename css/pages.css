@@ -258,9 +258,192 @@
   /* 介绍文本按自然顺序落入第一列；角色图固定第二列并纵向居中，不进入文本行（§11.4、§9.2） */
   .about-intro > .about-intro__second-column {
     grid-column: 2;
-    grid-row: 1 / span 3;
+    grid-row: 1;
     margin-top: 0;
     align-self: center;
     justify-self: center;
+  }
+}
+
+/* B03: manuscript-like page rhythm; imagery stays inside the Hero panel. */
+.hero {
+  padding-block: var(--space-6) var(--space-8);
+}
+
+.hero__eyebrow {
+  margin-bottom: var(--space-6);
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.hero__title {
+  font-size: clamp(38px, 5vw, 60px);
+  letter-spacing: -0.035em;
+  line-height: 1.22;
+}
+
+.hero__title span {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-brand);
+  font-style: italic;
+  letter-spacing: -0.02em;
+  box-shadow: inset 0 -0.14em var(--color-accent);
+}
+
+.hero__intro {
+  max-width: 29em;
+  margin-block: var(--space-6);
+  line-height: 1.85;
+}
+
+.hero-art--desk {
+  margin: var(--space-8) var(--space-2) 0;
+}
+
+.hero-art--desk .hero-art__frame,
+.hero-art--desk .art-frame,
+.hero-art__picture {
+  display: block;
+  width: 100%;
+}
+
+.hero-art--desk .art-frame {
+  padding: var(--space-2);
+  background: var(--color-surface);
+  box-shadow: 6px 6px 0 var(--color-accent);
+}
+
+.hero-art--desk .art-frame__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--color-paper);
+}
+
+.hero-art--desk .hero-art__tape {
+  display: block;
+  width: 64px;
+  height: 20px;
+  inset-inline-end: 16px;
+  transform: rotate(-8deg);
+}
+
+.hero-art--desk .hero-art__dots {
+  inset-inline-end: 0;
+  inset-block-end: 12px;
+}
+
+.hero-art--desk .hero-art__caption {
+  margin-top: var(--space-6);
+  font-size: 12px;
+}
+
+.section-header {
+  padding-bottom: var(--space-4);
+  border-bottom: var(--line-thin) solid var(--color-ink);
+}
+
+.section-header__number {
+  display: inline-block;
+  margin-inline-end: var(--space-3);
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+#home-categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+#home-categories li {
+  margin: 0;
+}
+
+#home-categories .category-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  height: 100%;
+  border: 1px solid var(--color-rule);
+  text-decoration: none;
+}
+
+#home-categories .category-link:hover {
+  background: var(--color-accent);
+  border-color: var(--color-ink);
+}
+
+.note-panel {
+  border-width: 1px;
+  border-top-width: 2px;
+}
+
+.page-header {
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.blog-filters {
+  margin-bottom: var(--space-8);
+}
+
+.about-intro__copy h2 {
+  margin-bottom: var(--space-6);
+}
+
+.about-intro__copy p {
+  line-height: 1.85;
+}
+
+.about-section:not(.about-intro) {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-rule);
+}
+
+.post-back {
+  display: block;
+}
+
+.site-footer__inner {
+  align-items: start;
+  padding-block: var(--space-8);
+}
+
+.site-footer__note {
+  max-width: 28em;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+
+  .hero-art--desk {
+    margin: 0 var(--space-2);
+  }
+
+  #home-categories {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    gap: var(--space-12);
+    padding-block: var(--space-8) var(--space-12);
+  }
+
+  .hero-art--desk {
+    max-width: 520px;
   }
 }

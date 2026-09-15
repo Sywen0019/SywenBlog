@@ -1,0 +1,16 @@
+[
+  {
+    "file": "assets\\images\\hero-desk-640.webp",
+    "width": 640,
+    "height": 480,
+    "bytes": 42696,
+    "sha256": "81fc4431b369b74909f4660de7212a39716cdad1440b75c988eac0127fcffefe"
+  },
+  {
+    "file": "assets\\images\\hero-desk-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "bytes": 144680,
+    "sha256": "8f321c1f083a47ce40fd30fd526b587c7d3962b2d5449152024ad0c7ab8d470c"
+  }
+]
