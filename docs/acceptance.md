@@ -107,7 +107,7 @@ Footer 一致性: 一致
 
 | 编号 | 项目 | 现象与证据 | 影响 | 处理 |
 |---|---|---|---|---|
-| OB-01 | Gitee 推送认证 | 默认 TLS 后端报 `schannel: AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS (0x8009030e)`；改用 `-c http.sslBackend=openssl` 后读操作正常；`push --dry-run` 在默认沙箱下凭据助手无法启动（`sh.exe: couldn't create signal pipe, Win32 error 5`），随后报 `could not read Username for 'https://gitee.com'` | 曾一度只阻塞远端推送，不阻塞本地实施与提交 | **已关闭（2026-09-15）**：同一推送命令在放宽沙箱后成功（凭据助手可正常启动并使用已保存凭据），`main` 已推送至 `8a42ddb`，本地与远端一致。后续推送继续使用 `git -c http.sslBackend=openssl push origin main` |
+| OB-01 | Gitee 推送认证 | 默认 TLS 后端报 `schannel: AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS (0x8009030e)`；改用 `-c http.sslBackend=openssl` 后读操作正常；`push --dry-run` 在默认沙箱下凭据助手无法启动（`sh.exe: couldn't create signal pipe, Win32 error 5`），随后报 `could not read Username for 'https://gitee.com'` | 曾一度只阻塞远端推送，不阻塞本地实施与提交 | **已关闭（2026-09-15）**：同一推送命令在放宽沙箱后成功（凭据助手可正常启动并使用已保存凭据），`8747276..8a42ddb` 已推送到 `origin/main`，后续文档记录提交同样推送成功，`git rev-list --left-right --count origin/main...main` 为 `0 0`。后续推送继续使用 `git -c http.sslBackend=openssl push origin main` |
 | OB-02 | Netlify 最小部署（T03） | 本环境无 Netlify 登录态或访问令牌；用户决定本轮先完成 T00／T01 | 阻塞 Stage 1 的 T03 与最终公开网址验收 | 不执行部署、不生成发布目录、不填写任何地址；在 T22 前关闭 |
 | OB-03 | 真实设备与浏览器矩阵 | 本阶段无可视界面，未进行 Chrome／Edge／Firefox 与手机检查 | 不影响 Stage 0～1 | Stage 7～8（T15／T16）执行，未执行前保持“未验证” |
 | OB-04 | 视觉检查点 VC1／VC2 | Stage 0～1 无静态视觉产物 | 不影响 Stage 0～1 | 见 `docs/visual-review.md`，状态“未执行” |

@@ -70,7 +70,7 @@
 ### 6. 未验证项与已知问题
 
 - Netlify 账号与公开 HTTPS 条件未验证：本环境无登录态，且用户决定本轮只实施 T00／T01 → T03 记为外部阻塞并延期。
-- Git 推送认证：已在放宽沙箱权限后验证通过，`main` 推送至 `8a42ddb`，本地与远端一致；默认沙箱下凭据助手无法启动（OB-01 已关闭）。
+- Git 推送认证：已在放宽沙箱权限后验证通过；Stage 0／Stage 1 里程碑与后续文档提交均推送成功，`git rev-list --left-right --count origin/main...main` 为 `0 0`。默认沙箱下凭据助手无法启动（OB-01 已关闭）。
 - 已知问题（不扩大修改范围）：仓库无 `.gitattributes`，Git 提示 `LF will be replaced by CRLF`。`.gitattributes` 不在 T00 允许修改清单内，本轮不新增，仅记录，供后续任务决定。
 - 不影响后续任务：以上均不阻塞 T01 及 Stage 2。
 

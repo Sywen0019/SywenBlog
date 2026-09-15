@@ -10,7 +10,7 @@
 - 页面不引用任何 CSS、JS、图片与 favicon，因此禁用 JavaScript 时导航、静态索引与正文开篇段完全可用，且不产生资源 404。
 - 验证：结构检查通过（七页各 1 个 `h1`、标题与描述唯一、跳转链接有效、控件默认隐藏、无脚本依赖）；链接解析无死链、无未知分类、文章页统一 `../`；本地 HTTP 七页均 200 且响应字节与工作区文件 SHA256 一致；Header／Footer 七页一致。
 - 首轮检查发现文章页缺少当前分区标记，已补 `aria-current="true"` 后复检通过。
-- 推送：`git -c http.sslBackend=openssl push origin main` 成功（`8747276..8a42ddb`），远端 `main` 与本地一致。
+- 推送：`git -c http.sslBackend=openssl push origin main` 成功（`8747276..8a42ddb`），随后的文档记录提交同样推送成功。
 - 未验证：T03 最小部署按用户决定延期（外部阻塞），无公开地址。
 
 ## 2026-09-15 · Stage 0 执行基线与工程准备（T00）
