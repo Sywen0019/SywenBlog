@@ -24,7 +24,7 @@
 | S0-03 | 忽略规则有效 | `git check-ignore -v docs/acceptance.md 参考素材/角色三视图.png posts` | 交付文件不被忽略；凭据与环境文件被忽略 | `docs/`、`参考素材/`、后续 `posts/` 均未被忽略；`.gitignore` 覆盖 `.env*`、`credentials.json`、`*.pem`、`*.key`、`.ssh/` | 通过 |
 | S0-04 | 仓库无凭据 | 检查新增文件内容与跟踪文件清单 | 无账号、令牌、私钥、本地密钥路径 | 未发现任何凭据类内容 | 通过 |
 | S0-05 | 远端只读可用 | `git -c http.sslBackend=openssl ls-remote origin` | 返回 `refs/heads/main` | 返回 `8747276b513f29d3a87b037dda40322d5ab3d2ad refs/heads/main` | 通过 |
-| S0-06 | 远端写入可用 | `git -c http.sslBackend=openssl push --dry-run origin main` | 认证成功且无需交互登录 | 见「外部阻塞与未验证项」OB-01 | 未验证 |
+| S0-06 | 远端写入可用 | `git -c http.sslBackend=openssl push origin main` | 认证成功并完成推送 | 首次在默认沙箱下失败（见 OB-01 复现记录）；放宽沙箱后推送成功：`8747276..8a42ddb main -> main`，`ls-remote` 返回 `refs/heads/main = 8a42ddb583fbcb06d7669c8615e3929de4adea11`，本地与远端 `ahead/behind = 0 0` | 通过 |
 | S0-07 | 托管账户条件 | 检查 Netlify 登录态与课程网络条件 | 具备可部署账户，或明确记录缺失 | 本环境无 Netlify 登录态／令牌；用户决定本轮只实施 T00／T01 | 未验证（外部阻塞 OB-02） |
 | S0-08 | 执行记录落盘 | 检查 `docs/` | 三份记录存在且可续写 | `docs/agent-handoffs.md`、`docs/acceptance.md`、`docs/visual-review.md` 已建立 | 通过 |
 
@@ -107,7 +107,7 @@ Footer 一致性: 一致
 
 | 编号 | 项目 | 现象与证据 | 影响 | 处理 |
 |---|---|---|---|---|
-| OB-01 | Gitee 推送认证 | 默认 TLS 后端报 `schannel: AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS (0x8009030e)`；改用 `-c http.sslBackend=openssl` 后读操作正常；`push --dry-run` 在禁用终端提示时凭据助手无法启动（`sh.exe: couldn't create signal pipe, Win32 error 5`），随后报 `could not read Username for 'https://gitee.com'` | 只阻塞远端推送，不阻塞本地实施与提交 | 提交后以放宽沙箱权限的同一命令重试一次；结果记入本文件。仍失败则保留本地提交并把推送交给 T21／T22 |
+| OB-01 | Gitee 推送认证 | 默认 TLS 后端报 `schannel: AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS (0x8009030e)`；改用 `-c http.sslBackend=openssl` 后读操作正常；`push --dry-run` 在默认沙箱下凭据助手无法启动（`sh.exe: couldn't create signal pipe, Win32 error 5`），随后报 `could not read Username for 'https://gitee.com'` | 曾一度只阻塞远端推送，不阻塞本地实施与提交 | **已关闭（2026-09-15）**：同一推送命令在放宽沙箱后成功（凭据助手可正常启动并使用已保存凭据），`main` 已推送至 `8a42ddb`，本地与远端一致。后续推送继续使用 `git -c http.sslBackend=openssl push origin main` |
 | OB-02 | Netlify 最小部署（T03） | 本环境无 Netlify 登录态或访问令牌；用户决定本轮先完成 T00／T01 | 阻塞 Stage 1 的 T03 与最终公开网址验收 | 不执行部署、不生成发布目录、不填写任何地址；在 T22 前关闭 |
 | OB-03 | 真实设备与浏览器矩阵 | 本阶段无可视界面，未进行 Chrome／Edge／Firefox 与手机检查 | 不影响 Stage 0～1 | Stage 7～8（T15／T16）执行，未执行前保持“未验证” |
 | OB-04 | 视觉检查点 VC1／VC2 | Stage 0～1 无静态视觉产物 | 不影响 Stage 0～1 | 见 `docs/visual-review.md`，状态“未执行” |
