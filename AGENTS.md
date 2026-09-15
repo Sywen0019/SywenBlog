@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-Sywen's Space is a planned manga line-art personal blog using native HTML, CSS, and JavaScript. Currently, `PROJECT_PLAN.html` contains the 29-section specification, and `参考素材/` contains four reference PNGs. Read the plan before implementing features; the application directories do not exist yet.
+Sywen's Space is a manga line-art personal blog built with native HTML, CSS, and JavaScript. `PROJECT_PLAN.html` holds the 29-section specification, `DESIGN_SPEC.md` the visual rules, `Plan.md` the implementation baseline, and `参考素材/` five reference PNGs that are never published. Stage 1 establishes the seven semantic HTML pages; `css/`, `js/`, and `assets/` are not created yet.
 
 Follow the planned structure when adding code:
 
@@ -10,7 +10,8 @@ Follow the planned structure when adding code:
 - `css/`: `base.css` for foundations and themes, `components.css` for shared controls, `pages.css` for page layouts.
 - `js/`: classic scripts organized by feature, including `theme.js`, `posts-data.js`, `site.js`, `blog.js`, `reading.js`, and `context-menu.js`.
 - `assets/images/` and `assets/icons/`: published artwork; keep reference material in `参考素材/`.
-- `docs/acceptance.md`: planned manual verification record.
+- `docs/`: execution records — `agent-handoffs.md` for task handoffs and the frozen DOM/path contract, `acceptance.md` for manual verification results, `visual-review.md` for the VC1/VC2 checkpoints.
+- `Change_log.md`: project change log, newest entries first.
 
 ## Build, Test, and Development Commands
 
@@ -27,12 +28,16 @@ Preserve existing formatting in the plan. For new files, use two-space indentati
 
 Use CSS custom properties for themes and Grid/Flexbox for layout. Isolate scripts with closures and expose shared functionality only through `window.Sywen`. Keep headers and footers in HTML. Use relative asset paths so subdirectory deployments work. Host core assets locally.
 
+Enhanced controls that require JavaScript (theme toggle, quick menu, back to top, reading progress, notices, copy panel, context menu) ship with the `hidden` attribute and are revealed by their own module, so pages stay fully usable without scripts. Keep the ids, class names, `data-*` attributes, and path conventions frozen in `docs/agent-handoffs.md`; rename them only by updating that contract first.
+
 ## Testing Guidelines
 
 No test framework, test naming convention, or coverage threshold is established. Follow section 26 of the plan and record results in `docs/acceptance.md` as implementation proceeds. Check navigation, article deep links, search/category combinations, theme persistence and storage failures, reading progress, clipboard fallback, keyboard access, responsive layouts, and reduced motion.
 
 ## Commit & Pull Request Guidelines
 
-No Git history is available. Follow the plan's small, verifiable commits with prefixes such as `docs:`, `feat:`, and `style:`. Example: `feat: add semantic pages and global navigation`.
+The repository has real history on `main` with `origin` at Gitee; keep that history truthful. Follow the plan's small, verifiable milestone commits with prefixes such as `docs:`, `feat:`, and `style:`. Example: `feat: add semantic pages and global navigation`. Never squash staged work into one final commit and never rewrite history.
 
 When using pull requests, describe the change, reference the relevant plan section or issue, list verification performed, and include screenshots for visual changes. Update documentation alongside implementation and exclude credentials and temporary files.
+
+For future project changes, update `Change_log.md` with the date, a concise description of the change, and relevant verification results. Keep entries in reverse chronological order.

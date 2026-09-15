@@ -29,3 +29,13 @@ $RECYCLE.BIN/
 .cache/
 __pycache__/
 *.py[cod]
+
+# 发布目录与打包产物（从已提交版本另行准备，不入库）
+/release/
+/dist/
+*.zip
+
+# 编辑器缓存与本地设置
+.idea/
+.vscode/
+*.code-workspace
