@@ -2,7 +2,13 @@
 
 ## 当前基线验收 · 2026-09-16
 
-B00–B05 完成，B06 线上验收进行中。以下 T 阶段条目保留历史；当前证据以本节及 docs/evidence/baseline/ 为准。
+B00–B06 完成，作业基线已达到。以下 T 阶段条目保留历史；当前证据以本节及 docs/evidence/baseline/ 为准。
+
+### B06 · Passed
+
+正式网站 https://sywen-blog.pages.dev/，源提交655e8c4已推送Gitee并由GitHub main自动部署。version.json源提交与预期一致；[线上文件核对](evidence/baseline/deployment-checks.json)25项通过，[三浏览器线上交互](evidence/baseline/public-checks.json)15项通过。七页、全部20个源码发布文件字节与Git一致；不存在的文章/资源及非发布文档返回404。Cloudflare会将.html地址规范化到无扩展名地址，深链接和相对资源照常可用。
+
+[演示录像](evidence/baseline/baseline-demo.webm)已录制；README与[交付记录](delivery.md)包含检查入口。当前已关闭的阻塞不因后续文档提交重新打开；新部署的源版本以线上version.json为准，文档提交不改变网站运行时文件。
 
 ### B04/B05 · Passed
 
@@ -20,7 +26,7 @@ B00–B05 完成，B06 线上验收进行中。以下 T 阶段条目保留历史
 ### 历史阻塞的当前状态
 
 - OB-01：已关闭，阶段提交已正常推送Gitee。
-- OB-02：Netlify不再是正式路径；用户确认Cloudflare公开地址，B06核验后关闭。
+- OB-02：已关闭；Netlify不再是正式路径，Cloudflare公开地址已按B06核验。
 - OB-03：三浏览器桌面/模拟移动已完成，真实手机仍未验证。
 - OB-04：新VC0和VC1-B已关闭；增强VC2保持Deferred。
 

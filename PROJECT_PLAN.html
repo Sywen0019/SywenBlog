@@ -1122,36 +1122,15 @@ td code { background:none; padding:0; }
 <li>每完成可验收阶段即提交，修复可以追加独立提交。</li>
 <li>不重写历史伪造开发过程，不把全部工作合并为一次最终提交。</li>
 <li>每天工作结束推送到 Gitee。</li>
-<li>正式交付打 <code>v1.0.0</code> 标签，记录对应公开部署。</li>
+<li>正式交付打 <code>coursework-baseline</code> 标签，记录对应公开部署。</li>
 <li><code>.gitignore</code> 排除操作系统文件、编辑器缓存、临时服务文件和凭据。</li>
 </ul>
 <p>推荐里程碑提交在第 24 节给出。README 和验收记录应与代码一起持续更新。</p>
-</section><section aria-labelledby="section-23" class="plan-section"><h2 id="section-23" tabindex="-1">23. Deployment Strategy｜部署策略</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
-<h3>23.1 部署要求</h3>
-<ul>
-<li>公开 HTTPS 地址。</li>
-<li>支持直接访问 <code>.html</code> 文章深链接。</li>
-<li>无服务端、无构建命令。</li>
-<li>所有核心资源本地托管，不依赖外部字体或运行时 CDN。</li>
-<li>发布内容与 Gitee 某个明确提交一致。</li>
-<li>从课程演示使用的网络检查可访问性。</li>
-<li>README 同时提供仓库网址和网站网址。</li>
-</ul>
-<h3>23.2 首选与备选</h3>
-<p><strong>首选：Gitee 源码仓库＋Netlify 手动部署。</strong></p>
-<p>从已提交版本准备纯静态发布目录，上传页面和资源。Netlify 官方支持手动部署，且手动部署不运行构建命令，符合本项目需求。<a href="https://docs.netlify.com/deploy/create-deploys/">Netlify 创建部署说明</a></p>
-<p><strong>备选：Gitee 主仓库＋GitHub 镜像＋GitHub Pages。</strong></p>
-<p>仅在首选平台无法完成账号设置或课程网络访问验收时使用。GitHub Pages 可以托管仓库中的 HTML、CSS 和 JavaScript；Gitee 仍保留完整提交历史并作为课程提交地址。<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">GitHub Pages 官方说明</a></p>
-<p>不将 Gitee Pages 的可用性作为交付前提，也不承诺任何候选服务永久免费。实际执行阶段检查当时账户限制和网络访问情况。</p>
-<h3>23.3 发布与回退</h3>
-<ul>
-<li>Phase 0 完成账户及访问条件检查，Phase 1 上传最小页面验证。</li>
-<li>最终从 <code>v1.0.0</code> 对应提交发布。</li>
-<li>保存部署地址、发布时间和提交标识。</li>
-<li>若发布版本出现问题，重新部署上一可用提交。</li>
-<li>不为本项目新增监控服务；提交前和演示前分别做公开网址冒烟检查。</li>
-</ul>
-</section><section aria-labelledby="section-24" class="plan-section"><h2 id="section-24" tabindex="-1">24. Development Phases｜开发阶段</h2><p>当前已完成 T00/T01/T02/T04。剩余实施改为 B00 发布通路 → B01 内容 → B02 Hero/VC0 → B03 视觉融合 → B04 核心 JS → B05 VC1-B → B06 Gitee/HTTPS 交付。剩余18–24h含2h缓冲。出图等待时可做独立工作，发布阻塞不能伪报通过。</p><p><strong>B06 Passed ══ 作业完成，可停止并提交。</strong></p><p>之后 E01小画、E02About/转场、E03阅读、E04复制/菜单、E05状态精修、E06增强验收发布默认Deferred；每次领取一包，先考虑6–12h。36–48h是完整增强参考，不是必须耗尽额度。</p><p>详细任务卡：<a href="docs/tasks/00-index.md">任务总索引</a>；接口与预算：<a href="Plan.md">实施计划</a>。</p></section><section aria-labelledby="section-25" class="plan-section"><h2 id="section-25" tabindex="-1">25. P0 / P1 / P2 Scope｜功能优先级</h2><h3>B：作业必须</h3><p>七页完整内容、CSS、主题与搜索分类JS、Git/Gitee、公开HTTPS、书桌Hero、响应式/基本可访问性、可复核证据。</p><h3>E：基线后按余量</h3><p>完整插画库、About专属新图、返回顶部、进度、复制降级、自定义菜单、额外状态图和精修。正文不因增强牺牲可读性。</p><h3>Backlog</h3><p>404、施工页、季节主题、逐篇封面、更多角色和大量贴纸。</p></section><section aria-labelledby="section-26" class="plan-section"><h2 id="section-26" tabindex="-1">26. Acceptance Criteria｜验收标准</h2><h3>VC0</h3><p>Hero在1440/390浅深页面中实际看图，身份、构图、入口和手机清晰度通过。</p><h3>VC1-B 作业验收</h3><p>七页内容与链接、CSS/主题、搜索分类、无JS/初始化失败/存储失败、键盘、320/390/768/1440与断点、200%缩放、图片失败、相对路径、Gitee源码和HTTPS深链接。Edge/Chrome主流程、Firefox核心；真实手机未执行如实记录。</p><p>初始资源≤800KB、滚动全部≤1.2MB目标；输出同版本截图与报告，部署commit与推送分别记录。</p><h3>VC2</h3><p>仅对实际新增增强进行视觉及功能回归，不以未做E类阻止作业提交。</p></section><section aria-labelledby="section-27" class="plan-section"><h2 id="section-27" tabindex="-1">27. Risks and Trade-offs｜风险与取舍</h2><ul><li>发布账号/网络先核对；缺失只阻塞发布，不阻止本地推进。</li><li>Hero只做两候选和必要修订，复杂角色归Astra/Codex；简单素材交豆包外部执行，基线不等待完整素材库。</li><li>每阶段真实提交和推送，不重写历史；可回退基线。</li><li>超预算先停E类和无效重复生成，不省核心功能边界验证。</li></ul></section><section aria-labelledby="section-28" class="plan-section"><h2 id="section-28" tabindex="-1">28. Design Review｜方案审查</h2><p>新版终审：已完成工程继续复用；B06划作业完成线；视觉不仅检查旧尺寸，还需实际看图确认漫画基调。完整资产体系与所有菜单功能不是作业前置。</p></section><section aria-labelledby="section-29" class="plan-section"><h2 id="section-29" tabindex="-1">29. Scope Review｜范围终审</h2><p>范围终审：本次授权执行B00–B06，E类登记Deferred、Backlog不启动。Git/Gitee/公开HTTPS及可用JS必须兑现；外部受阻和未验证项如实记录。所有任务以2026-09-15最新Plan.md和DESIGN_SPEC.md v1.1为准。</p></section>
+</section><section aria-labelledby="section-23" class="plan-section"><h2 id="section-23" tabindex="-1">23. Deployment Strategy｜部署策略</h2><p><strong>正式通路：</strong>Gitee保存源码与完整历史；GitHub main触发Cloudflare Pages，构建命令<code>bash scripts/build-site.sh</code>，输出目录<code>dist</code>。这是白名单拷贝，不编译、不引入网站运行依赖。</p>
+<p>2026-09-16，<a href="https://sywen-blog.pages.dev/">sywen-blog.pages.dev</a>的七页、资源、主题与搜索分类已验收。<a href="https://sywen-blog.pages.dev/version.json">version.json</a>记录源提交，文件内容与Git逐项比对。</p>
+<h3>发布与回退</h3><ul><li>先完成阶段检查和真实提交，再推送Gitee与GitHub。</li><li>仅发布七页、css/js/posts/assets及版本/错误响应元文件；参考图、母版、文档和凭据不发布。</li><li>保留coursework-baseline标签；出现问题可重新部署已验证基线，不重写历史。</li><li>最小404响应关闭Cloudflare默认SPA回落；完整插画404保持Backlog。</li></ul>
+<p>本次从当前工作网络完成公开HTTPS检查，课堂现场网络与真实手机未验证。GitHub Pages和Netlify仅为历史备选，当前不更新。实际配置与证据见<a href="docs/deployment.md">部署说明</a>和<a href="docs/delivery.md">交付记录</a>。</p>
+</section><section aria-labelledby="section-24" class="plan-section"><h2 id="section-24" tabindex="-1">24. Development Phases｜开发阶段</h2><p>截至2026-09-16，T00/T01/T02/T04历史保留，B00–B06全部完成。执行顺序为 B00 发布通路 → B01 内容 → B02 Hero/VC0 → B03 视觉融合 → B04 核心 JS → B05 VC1-B → B06 Gitee/HTTPS 交付。基线原估算18–24h含2h缓冲，当前已交付。出图等待时可做独立工作，发布阻塞不能伪报通过。</p><p><strong>B06 Passed ══ 作业完成，可停止并提交。</strong></p><p>之后 E01小画、E02About/转场、E03阅读、E04复制/菜单、E05状态精修、E06增强验收发布默认Deferred；每次领取一包，先考虑6–12h。36–48h是完整增强参考，不是必须耗尽额度。</p><p>详细任务卡：<a href="docs/tasks/00-index.md">任务总索引</a>；接口与预算：<a href="Plan.md">实施计划</a>。</p></section><section aria-labelledby="section-25" class="plan-section"><h2 id="section-25" tabindex="-1">25. P0 / P1 / P2 Scope｜功能优先级</h2><h3>B：作业必须</h3><p>七页完整内容、CSS、主题与搜索分类JS、Git/Gitee、公开HTTPS、书桌Hero、响应式/基本可访问性、可复核证据。</p><h3>E：基线后按余量</h3><p>完整插画库、About专属新图、返回顶部、进度、复制降级、自定义菜单、额外状态图和精修。正文不因增强牺牲可读性。</p><h3>Backlog</h3><p>专属插画404、施工页、季节主题、逐篇封面、更多角色和大量贴纸。发布所需的最小404错误响应不属于该增强设计。</p></section><section aria-labelledby="section-26" class="plan-section"><h2 id="section-26" tabindex="-1">26. Acceptance Criteria｜验收标准</h2><h3>VC0</h3><p>Hero在1440/390浅深页面中实际看图，身份、构图、入口和手机清晰度通过。</p><h3>VC1-B 作业验收</h3><p>七页内容与链接、CSS/主题、搜索分类、无JS/初始化失败/存储失败、键盘、320/390/768/1440与断点、200%缩放、图片失败、相对路径、Gitee源码和HTTPS深链接。Edge/Chrome主流程、Firefox核心；真实手机未执行如实记录。</p><p>初始资源≤800KB、滚动全部≤1.2MB目标；输出同版本截图与报告，部署commit与推送分别记录。</p><h3>VC2</h3><p>仅对实际新增增强进行视觉及功能回归，不以未做E类阻止作业提交。</p></section><section aria-labelledby="section-27" class="plan-section"><h2 id="section-27" tabindex="-1">27. Risks and Trade-offs｜风险与取舍</h2><ul><li>发布账号/网络先核对；缺失只阻塞发布，不阻止本地推进。</li><li>Hero只做两候选和必要修订，复杂角色归Astra/Codex；简单素材交豆包外部执行，基线不等待完整素材库。</li><li>每阶段真实提交和推送，不重写历史；可回退基线。</li><li>超预算先停E类和无效重复生成，不省核心功能边界验证。</li></ul></section><section aria-labelledby="section-28" class="plan-section"><h2 id="section-28" tabindex="-1">28. Design Review｜方案审查</h2><p>新版终审：已完成工程继续复用；B06划作业完成线；视觉不仅检查旧尺寸，还需实际看图确认漫画基调。完整资产体系与所有菜单功能不是作业前置。</p></section><section aria-labelledby="section-29" class="plan-section"><h2 id="section-29" tabindex="-1">29. Scope Review｜范围终审</h2><p>范围终审：本次授权执行B00–B06，E类登记Deferred、Backlog不启动。Git/Gitee/公开HTTPS及可用JS必须兑现；外部受阻和未验证项如实记录。所有任务以2026-09-16当前Plan.md和DESIGN_SPEC.md v1.1为准；正式交付与演示见docs/delivery.md。</p></section>
 <footer class="doc-footer"><span>Sywen's Space · 项目计划 v1.0 · 完整 29 章</span><a class="back-link" href="#top">返回文档顶部 ↑</a></footer>
 </main>
 </div>

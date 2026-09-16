@@ -1,6 +1,6 @@
 # 任务总索引与作业完成线
 
-当前作业基线：**未完成**。只有 B06 与全部基线阻塞关闭才可改为完成。
+当前作业基线：**已完成（2026-09-16）**。B00–B06 与基线阻塞全部关闭，可停止并提交。[交付入口与版本](../delivery.md)；正式网站 https://sywen-blog.pages.dev/ 。
 
 顺序：B00 → B01 → B02 / VC0 → B03 → B04 → B05 / VC1-B → B06。
 
@@ -12,9 +12,9 @@
 |B03 基线视觉融合|Passed|[B03](01-baseline/b03.md)|
 |B04 核心 JavaScript|Passed|[B04](01-baseline/b04.md)|
 |B05 作业基线验收|Passed|[B05](01-baseline/b05.md)|
-|B06 Gitee 与正式公开交付|Ready|[B06](01-baseline/b06.md)|
+|B06 Gitee 与正式公开交付|Passed|[B06](01-baseline/b06.md)|
 
-════════ 作业完成基线：B06 Passed 后可停止并提交 ════════
+════════ 作业完成基线：已达到，可停止并提交 ════════
 
 - [E01 文章小画体系](02-after-baseline/e01.md)：Deferred。
 - [E02 About 与转场](02-after-baseline/e02.md)：Deferred。
@@ -24,6 +24,6 @@
 - [E06 增强版验收发布](02-after-baseline/e06.md)：Deferred。
 
 - [Backlog](03-backlog/README.md)：Deferred。
-- 基线剩余预算 18–24h；之后先考虑 6–12h，不自动花完 36–48h。
+- 基线原估算18–24h，当前已完成；不将Agent运行时间冒充人工等效工时。之后先考虑6–12h，不自动花完36–48h。
 - T00/T01/T02/T04 保留历史 Passed。B00 外部阻塞只阻止 B06，不阻止独立本地工作。
 - 任务状态与证据每阶段更新；Git/Gitee 推送和公开网站验收分开记录。

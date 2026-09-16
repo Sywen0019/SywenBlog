@@ -2,7 +2,7 @@
 
 ## 当前交接摘要 · 2026-09-16
 
-B00–B05 已完成；当前执行 B06，E01–E06 全部 Deferred。站点运行时源码里程碑 e3191ba，正式发布走 Cloudflare https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的候选 D；旧 B 仅历史记录。
+B00–B06 已完成，可停止并提交；E01–E06 全部 Deferred。运行时里程碑 e3191ba，部署修正655e8c4已在线验收。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的 D；旧 B 仅历史记录。交付版本、演示与后续边界见 delivery.md。
 
 theme/site/blog 已接入，保留 ID/data 契约与静态降级；reading/context-menu 未接入。新报告见 evidence/baseline/checks.json，158 项通过，VC0/VC1-B 当前结论见 visual-review.md。下方 T 阶段内容仅是历史，不得用其中“尚无 JS/待 T05”等旧状态覆盖本摘要。
 
