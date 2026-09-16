@@ -2,6 +2,10 @@
 
 修订日期：2026-09-15。本文件记录 Sywen's Space 的正式发布通路与 Cloudflare Pages 配置。
 
+2026-09-16 更新：用户确认正式地址为 [sywen-blog.pages.dev](https://sywen-blog.pages.dev/)。构建额外输出 `version.json`（源提交/构建时间）及最小 `404.html`（纠正缺失路径回落首页的默认行为）。带人物的完整 404 设计仍在 Backlog，不纳入基线。
+
+Cloudflare 无顶层 404.html 时默认按 SPA 回落首页；此站为原生多页面，需明确返回缺失状态。依据：[Cloudflare Serving Pages](https://developers.cloudflare.com/pages/configuration/serving-pages/)。
+
 ## 发布链路
 
 ```text
@@ -82,7 +86,7 @@ Windows 上 `bash` 来自 Git for Windows（例如 `Z:\Git\Git\bin\bash.exe`）�
 
 - 构建环境为 Ubuntu 22.04 x86_64，自带 `bash` 与 coreutils。
 - 仓库根目录没有 `package.json`，不会触发依赖安装。
-- 不需要 `.nojekyll`、`_redirects`、`_headers`，也不需要 Workers 或 Functions。
+- 不需要 `.nojekyll`、`_redirects`、`_headers`，也不需要 Workers 或 Functions；构建产生最小 `404.html` 关闭 SPA 默认回落。
 - 首次部署会分配 `https://<project>.pages.dev`，自带 HTTPS。
 - GitHub 上还存在旧镜像分支 `codex/pages`，其中没有 `scripts/build-site.sh`。建议在 **Settings → Builds & deployments → Preview deployments → Branch control** 选择 `None`（或 Custom branches 只保留 `main`），避免该分支产生失败的预览构建。
 

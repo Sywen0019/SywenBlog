@@ -72,5 +72,14 @@ case "$commit" in ''|*[!0-9a-fA-F]*) fail 'invalid source commit';; esac
 published_at=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
 printf '{"source_commit":"%s","published_at":"%s"}\n' "$commit" "$published_at" > "$dist/version.json"
 
+# Cloudflare otherwise treats missing paths as a SPA and serves the homepage.
+# This plain hosting response is not the deferred illustrated 404 feature.
+cat > "$dist/404.html" <<'HTML'
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>页面未找到 · Sywen's Space</title>
+<main><h1>页面未找到</h1><p>这个地址没有对应的页面。</p><a href="https://sywen-blog.pages.dev/">返回首页</a></main></html>
+HTML
+
 count=$(find "$dist" -type f | wc -l | tr -d ' ')
 log "done: $count files in dist/"
