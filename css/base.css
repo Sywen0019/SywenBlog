@@ -108,6 +108,8 @@
   --notice-width: 360px;
   --copy-panel-width: 420px;
   --float-edge-gap: 16px;
+  /* 页脚为右下角浮动控件预留的空间（§16.2：不覆盖最后一行链接或正文） */
+  --footer-reserve: 32px;
 
   /* 装饰预算（§8） */
   --tape-width: 48px;

@@ -44,6 +44,12 @@
   line-height: var(--leading-meta);
 }
 
+/* 返回顶部就绪后为右下角浮动按钮留出空间，避免覆盖页脚最后一行（§16.2）。
+   由 reading.js 给 <html> 加 has-reading，无脚本时不改变基线留白。 */
+html.has-reading .site-footer__inner {
+  padding-block-end: calc(var(--space-16) + var(--footer-reserve) + env(safe-area-inset-bottom, 0px));
+}
+
 .site-footer__brand,
 .site-footer__note,
 .site-footer__copyright,

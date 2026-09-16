@@ -26,11 +26,15 @@
   inline-size: 100%;
   block-size: 2px;
   background-color: var(--color-ink);
+  transform: scaleX(0);
   transform-origin: left center;
   z-index: var(--z-progress);
+  /* 2px 的进度线不拦截指针（reading.js 写入 scaleX 与 aria-valuenow） */
+  pointer-events: none;
 }
 
-/* 返回顶部（§12.1）：至少 44×44px，距边缘 16px 并考虑安全区 */
+/* 返回顶部（§12.1）：至少 44×44px，距边缘 16px 并考虑安全区。
+   滚动超过 480px 前不可见、不可点击；reading.js 只切换 is-visible 状态类。 */
 #back-to-top,
 .back-to-top {
   position: fixed;
@@ -52,8 +56,20 @@
   font-weight: var(--weight-medium);
   line-height: var(--leading-ui);
   cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   transition: background-color var(--motion-fast) var(--motion-ease),
-    color var(--motion-fast) var(--motion-ease);
+    color var(--motion-fast) var(--motion-ease),
+    opacity var(--motion-fast) var(--motion-ease),
+    visibility var(--motion-fast) var(--motion-ease);
+}
+
+#back-to-top.is-visible,
+.back-to-top.is-visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #back-to-top:hover,
