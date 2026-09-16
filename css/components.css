@@ -541,6 +541,31 @@ a.tag:hover {
   font-size: var(--text-ui);
 }
 
+/* E01 带缩略条目（手机）：日期通栏在上，缩略在左、内容在右 */
+.post-entry--with-thumb {
+  display: grid;
+  grid-template-columns: var(--entry-thumb-w) minmax(0, 1fr);
+  column-gap: var(--space-3);
+  row-gap: var(--space-2);
+  align-items: start;
+}
+
+.post-entry--with-thumb .post-entry__date {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.post-entry--with-thumb .post-entry__thumb {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.post-entry--with-thumb .post-entry__content {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+}
+
 /* Tablet/Desktop：日期窄列 + 内容宽列 */
 @media (min-width: 768px) {
   .post-entry {
@@ -568,6 +593,24 @@ a.tag:hover {
   .post-entry__summary,
   .post-entry__more {
     grid-column: 2;
+  }
+
+  /* E01 带缩略条目（桌面）：缩略 | 日期窄列 | 内容宽列 */
+  .post-entry--with-thumb {
+    grid-template-columns: var(--entry-thumb-w) var(--entry-date-width) minmax(0, 1fr);
+  }
+
+  .post-entry--with-thumb .post-entry__thumb {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .post-entry--with-thumb .post-entry__date {
+    grid-column: 2;
+  }
+
+  .post-entry--with-thumb .post-entry__content {
+    grid-column: 3;
   }
 }
 
@@ -738,6 +781,41 @@ a.tag:hover {
   width: var(--avatar-size);
   height: var(--avatar-size);
   aspect-ratio: 1;
+}
+
+/* E01 分类小画图框：无内边距、1px 细线、4:3 填满；暖纸底随成图，深色下不反色 */
+.art-frame--thumb,
+.art-frame--category {
+  flex: none;
+  padding: 0;
+  overflow: hidden;
+  border: var(--line-thin) solid var(--color-rule);
+  border-radius: var(--radius-small);
+  background-color: var(--color-art-paper);
+}
+
+.art-frame--thumb {
+  width: var(--entry-thumb-w);
+  height: var(--entry-thumb-h);
+}
+
+.art-frame--category {
+  width: var(--category-art-w);
+  height: var(--category-art-h);
+}
+
+.art-frame--thumb .art-frame__image,
+.art-frame--category .art-frame__image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* 小画加载失败时收起整个图框，文字与链接保持完整（小画不使用 Sywen 文本回退） */
+.art-frame--thumb.is-failed,
+.art-frame--category.is-failed {
+  display: none;
 }
 
 /* 无脚本时的图框文字回退；脚本成功加载图片后由增强样式隐藏 */

@@ -4,15 +4,18 @@
   site.categories = [
   {
     "id": "study",
-    "name": "学业"
+    "name": "学业",
+    "image": "assets/images/cat-study.webp"
   },
   {
     "id": "life",
-    "name": "生活"
+    "name": "生活",
+    "image": "assets/images/cat-life.webp"
   },
   {
     "id": "favorites",
-    "name": "我喜欢的"
+    "name": "我喜欢的",
+    "image": "assets/images/cat-favorites.webp"
   }
 ];
   site.posts = [

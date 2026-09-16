@@ -72,7 +72,7 @@
     else window.scrollTo(0, 0);
   };
 
-  site.createPostEntry = function (post, headingLevel) {
+  site.createPostEntry = function (post, headingLevel, options) {
     const category = site.categories.find((item) => item.id === post.category);
     if (!category || typeof post.title !== 'string' || typeof post.summary !== 'string'
         || !Array.isArray(post.tags) || !post.tags.every((tag) => typeof tag === 'string')
@@ -82,6 +82,25 @@
     const entry = document.createElement('li');
     entry.className = 'post-entry';
     entry.dataset.postId = post.slug;
+    // E01：分类小画是按分类复用的装饰缩略（无人物、空替代文本），仅调用方要求时渲染。
+    const withThumb = Boolean(options && options.thumbnail && category.image);
+    if (withThumb) entry.classList.add('post-entry--with-thumb');
+    let thumb = null;
+    if (withThumb) {
+      thumb = document.createElement('span');
+      thumb.className = 'art-frame art-frame--thumb post-entry__thumb';
+      thumb.setAttribute('aria-hidden', 'true');
+      const thumbImg = document.createElement('img');
+      thumbImg.className = 'art-frame__image';
+      thumbImg.src = site.resolveUrl(category.image);
+      thumbImg.alt = '';
+      thumbImg.width = 640;
+      thumbImg.height = 480;
+      thumbImg.loading = 'lazy';
+      thumbImg.decoding = 'async';
+      thumb.append(thumbImg);
+      watchImage(thumbImg);
+    }
     const date = document.createElement('time');
     date.className = 'post-entry__date';
     date.dateTime = post.date;
@@ -107,6 +126,7 @@
     summary.textContent = post.summary;
     content.append(label, heading, summary);
     entry.append(date, content);
+    if (thumb) entry.prepend(thumb);
     return entry;
   };
 
@@ -126,7 +146,9 @@
     }
   } catch (_) { /* Existing article links remain available. */ }
 
-  document.querySelectorAll('img').forEach((img) => {
+  // 图片加载状态：成功隐藏 Sywen 文本回退，失败隐藏破损图标并显示短文本。
+  // 抽成函数，供 createPostEntry 动态生成的分类缩略图复用。
+  function watchImage(img) {
     function update() {
       const failed = img.naturalWidth === 0;
       img.classList.toggle('is-failed', failed);
@@ -138,5 +160,6 @@
     img.addEventListener('load', update);
     img.addEventListener('error', update);
     if (img.complete) update();
-  });
+  }
+  document.querySelectorAll('img').forEach(watchImage);
 })();

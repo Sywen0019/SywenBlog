@@ -82,6 +82,11 @@
   --about-art-height: 220px;
   --status-art-height: 180px;
   --avatar-size: 64px;
+  /* E01 分类小画：Blog 条目缩略（手机档）与首页分类卡固定小图，均为 4:3 */
+  --entry-thumb-w: 80px;
+  --entry-thumb-h: 60px;
+  --category-art-w: 96px;
+  --category-art-h: 72px;
 
   /* 线条、圆角、阴影（§7、§16.2） */
   --line-thin: 1px;
@@ -205,6 +210,9 @@
     --text-code: 15px;
     --text-brand: 28px;
     --avatar-size: 80px;
+    /* E01 Blog 条目缩略桌面档 128×96（§11 Blog） */
+    --entry-thumb-w: 128px;
+    --entry-thumb-h: 96px;
   }
 }
 
