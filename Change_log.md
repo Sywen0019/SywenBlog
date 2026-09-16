@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-09-16 · E03 简单阅读增强（返回顶部与阅读进度）
+
+- 新增 `js/reading.js`：按 §16.3 计算页面滚动进度（贴顶 2px 墨线，`aria-valuenow` 同步，不设 `aria-live`），按 §16.2 在滚动 480px 后显示「返回顶部」，点击或键盘执行后先回到顶部再聚焦主标题；`prefers-reduced-motion` 下即时滚动。通过 `Sywen.getReadingProgress()` 暴露当前值，供后续菜单复用。
+- 七页统一在 `site.js`（Blog 在 `blog.js`）之后以 `defer` 加载；控件仍带 `hidden`，初始化成功才揭示，失败与禁用脚本时页面保持原基线。
+- 页脚按 §16.2 预留浮动按钮空间（`html.has-reading` + `--footer-reserve`），实测两档视口下按钮与页脚内容矩形零相交；共享样式只新增状态类，未改既有类名。
+- 新增可复验检查 `docs/evidence/e03/reading-checks.mjs`（含自写 PNG 解码对照）：Edge 153／Chrome 152／Firefox 155 各 18 项、0 失败；与 B05 基线同视口逐像素对照，忽略顶部进度线后差异为 0。
+- 基线回归 `node scripts/check-baseline.mjs` 收紧后 158 项通过、0 失败；`shot()` 增加一次重试以规避本机偶发截图写入失败（不改变截图参数与断言）。
+- 本地提交，未推送、未部署；VC2 与线上增强版仍属 E06。
+
 ## 2026-09-16 · B06 作业基线交付
 
 - 用户确认正式地址 https://sywen-blog.pages.dev/；655e8c4部署版本的线上文件/路径25项及三浏览器核心15项全部通过。
