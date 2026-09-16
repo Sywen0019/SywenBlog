@@ -950,6 +950,24 @@ a.tag:hover {
   margin-top: var(--space-6);
 }
 
+/* 降级面板内的字段与说明（§15.6）：复用 .field__label／.field__input 的既有规格，
+   这里只补面板内的排布与只读长地址的折行，不重写 46px／2px／4px 的控件尺寸。 */
+.copy-panel__field {
+  margin-bottom: var(--space-4);
+}
+
+.copy-panel__input {
+  inline-size: 100%;
+  font-size: var(--text-meta);
+}
+
+.copy-panel__note {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--text-meta);
+  line-height: var(--leading-meta);
+}
+
 /* ==========================================================================
    9. 文章正文骨架（完整正文块由 T06 补充，沿用同一 Token）
    ========================================================================== */

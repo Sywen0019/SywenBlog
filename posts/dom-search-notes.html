@@ -95,7 +95,17 @@ const matches = posts.filter((post) =&gt; {
 </footer>
 
 <p class="status-notice" id="site-notice" role="status" aria-live="polite" hidden></p>
-<div class="copy-panel" id="copy-panel" hidden></div>
+<div class="copy-panel" id="copy-panel" role="dialog" aria-labelledby="copy-panel-title" tabindex="-1" hidden>
+  <h2 class="copy-panel__title" id="copy-panel-title">手动复制链接</h2>
+  <div class="copy-panel__field">
+    <label class="field__label" for="copy-panel-input">可分享地址</label>
+    <input class="field__input copy-panel__input" id="copy-panel-input" type="text" readonly spellcheck="false" autocomplete="off">
+  </div>
+  <p class="copy-panel__note" id="copy-panel-note">自动复制不可用，请按 Ctrl/Cmd+C 手动复制，或按 Esc 关闭。</p>
+  <div class="copy-panel__actions">
+    <button type="button" class="button button--quiet" id="copy-panel-close">关闭</button>
+  </div>
+</div>
 <div class="context-menu" id="context-menu" role="menu" aria-label="页面快捷菜单" hidden></div>
 <button type="button" class="back-to-top" id="back-to-top" hidden>返回顶部</button>
 

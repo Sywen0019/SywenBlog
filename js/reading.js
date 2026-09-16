@@ -114,6 +114,8 @@
     }
 
     site.updateReadingProgress = schedule;
+    // §20.2：菜单等调用者的「返回顶部」必须走同一实现，不复制滚动与焦点逻辑。
+    site.requestTop = toTop;
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
     window.addEventListener('load', schedule);
