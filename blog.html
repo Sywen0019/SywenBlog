@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>文章 · Sywen's Space</title>
-<meta name="description" content="Sywen's Space 的文章列表，四篇示例文章覆盖人工智能、编程、科研与生活，可按标题、摘要或标签搜索并筛选分类。">
+<meta name="description" content="Sywen's Space 的文章列表，四篇示例文章记录学业与生活，后续将加入美食、游戏和动漫等兴趣杂谈，可按标题、摘要或标签搜索并筛选分类。">
 <script src="./js/theme.js"></script>
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/components.css">
@@ -25,7 +25,7 @@
 
 <header class="site-header">
   <div class="site-header__inner container">
-    <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Code · Research · Life</span></a></p>
+    <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
     <div class="site-tools">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
       <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
@@ -45,7 +45,7 @@
 
     <header class="page-header">
       <h1 class="page-title">文章</h1>
-      <p class="page-intro">四篇示例文章覆盖人工智能、编程、科研与生活，可以按标题、摘要或标签搜索，也可以只看某一类。</p>
+      <p class="page-intro">四篇示例文章分为学业与生活两类，之后也会加入我喜欢的内容；可以按标题、摘要或标签搜索，也可以只看某一类。</p>
     </header>
 
     <div class="blog-filters" id="blog-filters" hidden>
@@ -55,10 +55,9 @@
       </form>
       <ul class="category-list category-list--filter" id="blog-categories">
         <li class="category-list__item"><button type="button" class="category-button" data-category="all" aria-pressed="true">全部</button></li>
-        <li class="category-list__item"><button type="button" class="category-button" data-category="ai" aria-pressed="false">人工智能</button></li>
-        <li class="category-list__item"><button type="button" class="category-button" data-category="coding" aria-pressed="false">编程</button></li>
-        <li class="category-list__item"><button type="button" class="category-button" data-category="research" aria-pressed="false">科研</button></li>
+        <li class="category-list__item"><button type="button" class="category-button" data-category="study" aria-pressed="false">学业</button></li>
         <li class="category-list__item"><button type="button" class="category-button" data-category="life" aria-pressed="false">生活</button></li>
+        <li class="category-list__item"><button type="button" class="category-button" data-category="favorites" aria-pressed="false">我喜欢的</button></li>
       </ul>
       <div class="result-bar">
         <p class="result-bar__count" id="result-count" role="status" aria-live="polite"></p>
@@ -79,7 +78,7 @@
         <li class="post-entry" data-post-id="attention-intuition">
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">人工智能 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
+            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
             <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/attention-intuition.html">用直觉理解注意力机制</a></h2>
             <p class="post-entry__summary">从阅读一句话时如何寻找线索出发，理解 Query、Key 和 Value 的分工。先建立加权汇总的直觉，再区分这个比喻能解释什么、不能解释什么。</p>
           </div>
@@ -87,7 +86,7 @@
         <li class="post-entry" data-post-id="dom-search-notes">
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">编程 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
+            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
             <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/dom-search-notes.html">原生 JavaScript 搜索与筛选笔记</a></h2>
             <p class="post-entry__summary">用一个小型文章列表拆解搜索流程：整理数据、组合条件、创建 DOM，再处理中文输入与失败降级。让交互保持简单，也让没有脚本的页面依然可读。</p>
           </div>
@@ -95,7 +94,7 @@
         <li class="post-entry" data-post-id="paper-reading-notes">
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">科研 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
+            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
             <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/paper-reading-notes.html">一次论文阅读如何留下可复用笔记</a></h2>
             <p class="post-entry__summary">把论文笔记从摘抄改成问题、证据与局限的连接。通过三次阅读逐步建立地图，保留页码和图号，为下一次验证、复现与讨论留下入口。</p>
           </div>
@@ -115,7 +114,7 @@
 
 <footer class="site-footer">
   <div class="site-footer__inner container">
-    <p class="site-footer__brand">Sywen's Space · 代码 · 科研 · 生活</p>
+    <p class="site-footer__brand">Sywen's Space · 学业 · 生活 · 我喜欢的</p>
     <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。四篇文章均为示例。</p>
     <nav class="site-footer__links" aria-label="页脚导航">
       <a href="./index.html">首页</a>

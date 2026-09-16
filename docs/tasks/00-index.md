@@ -4,6 +4,8 @@
 
 顺序：B00 → B01 → B02 / VC0 → B03 → B04 → B05 / VC1-B → B06。
 
+分类调整：**已本地完成，待发布（2026-09-16）**。学业／生活／我喜欢的对应 study／life／favorites，当前篇数 3／1／0；见 [验收记录](../acceptance.md)与 [本地检查报告](../evidence/baseline/checks.json)。下次发布由 [E06](02-after-baseline/e06.md)核验，不重新打开 B00–B06；[E01](02-after-baseline/e01.md)后续按三类小画执行，仍 Deferred。
+
 |任务|状态|任务卡|
 |---|---|---|
 |B00 作业要求与发布通路|Passed|[B00](01-baseline/b00.md)|

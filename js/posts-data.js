@@ -3,20 +3,16 @@
   const site = window.Sywen = window.Sywen || {};
   site.categories = [
   {
-    "id": "ai",
-    "name": "人工智能"
-  },
-  {
-    "id": "coding",
-    "name": "编程"
-  },
-  {
-    "id": "research",
-    "name": "科研"
+    "id": "study",
+    "name": "学业"
   },
   {
     "id": "life",
     "name": "生活"
+  },
+  {
+    "id": "favorites",
+    "name": "我喜欢的"
   }
 ];
   site.posts = [
@@ -25,7 +21,7 @@
     "slug": "attention-intuition",
     "title": "用直觉理解注意力机制",
     "summary": "从阅读一句话时如何寻找线索出发，理解 Query、Key 和 Value 的分工。先建立加权汇总的直觉，再区分这个比喻能解释什么、不能解释什么。",
-    "category": "ai",
+    "category": "study",
     "tags": [
       "AI",
       "Transformer",
@@ -41,7 +37,7 @@
     "slug": "dom-search-notes",
     "title": "原生 JavaScript 搜索与筛选笔记",
     "summary": "用一个小型文章列表拆解搜索流程：整理数据、组合条件、创建 DOM，再处理中文输入与失败降级。让交互保持简单，也让没有脚本的页面依然可读。",
-    "category": "coding",
+    "category": "study",
     "tags": [
       "JavaScript",
       "DOM",
@@ -57,7 +53,7 @@
     "slug": "paper-reading-notes",
     "title": "一次论文阅读如何留下可复用笔记",
     "summary": "把论文笔记从摘抄改成问题、证据与局限的连接。通过三次阅读逐步建立地图，保留页码和图号，为下一次验证、复现与讨论留下入口。",
-    "category": "research",
+    "category": "study",
     "tags": [
       "论文阅读",
       "科研",

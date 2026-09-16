@@ -15,11 +15,11 @@ try {
   await p.locator('#theme-toggle').click();
   await p.goto('https://sywen-blog.pages.dev/blog.html'); await pause();
   await p.locator('#search-input').fill('JavaScript DOM'); await pause();
-  await p.locator('[data-category="coding"]').click(); await pause();
+  await p.locator('[data-category="study"]').click(); await pause();
   await p.locator('[data-category="life"]').click(); await pause();
   await p.locator('#empty-reset').click(); await pause();
   await p.locator('#search-input').fill('论文');
-  await p.locator('[data-category="research"]').click(); await pause();
+  await p.locator('[data-category="study"]').click(); await pause();
   await p.reload(); await pause();
   await p.locator('#blog-results .post-entry__link').click(); await pause();
 } finally {

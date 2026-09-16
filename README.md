@@ -1,8 +1,8 @@
 # Sywen's Space
 
-原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Code · Research · Life。
+原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Study · Life · Favorites。
 
-**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E03（返回顶部与阅读进度）已在本地完成并通过检查，E01／E02／E04／E05／E06 保持 Deferred。
+**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E03／E04（阅读增强、复制与快捷菜单）已在本地完成并通过检查，E01／E02／E05／E06 保持 Deferred。
 
 - [访问网站](https://sywen-blog.pages.dev/)
 - [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
@@ -22,6 +22,8 @@
 
 四篇文章标为示例，不冒充科研成果。作者的计算机专业与设备习惯来自本人说明。
 
+当前本地一级分类为「学业／生活／我喜欢的」（`study`／`life`／`favorites`），文章数量为 3／1／0；旧 `ai`、`coding`、`research` 查询参数会兼容到 `study`。线上地址仍按现有发布流程更新。
+
 ## 本地预览
 
 无需安装前端依赖，不需要编译：
@@ -40,9 +42,9 @@ py -m http.server 8000 --bind 127.0.0.1
 - `scripts/`：发布、验收、录像；`docs/`：任务、交接、美术、验收和证据。
 - `PROJECT_PLAN.html` / `Plan.md` / `DESIGN_SPEC.md`：规格、当前B/E计划和视觉边界。
 
-主题优先级为保存的有效选择→系统→浅色，存储键 `sywen.theme`；存储失败时仍可当页切换。搜索按空白拆分、多词AND，与分类同时生效；保留 `q` / `category` 和中文组合输入。列表准备成功才隐藏静态索引，失败仍可读。
+主题优先级为保存的有效选择→系统→浅色，存储键 `sywen.theme`；存储失败时仍可当页切换。搜索按空白拆分、多词AND，与分类同时生效；保留 `q` / `category` 和中文组合输入，旧 `ai`／`coding`／`research` 分类参数映射到 `study`。列表准备成功才隐藏静态索引，失败仍可读。
 
-资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。返回顶部与顶部阅读进度已实施（E03，`js/reading.js`）；复制与快捷菜单未实施，相关控件继续隐藏。
+资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。返回顶部与顶部阅读进度已实施（E03，`js/reading.js`），复制与快捷菜单已实施（E04，`js/context-menu.js`）。
 
 ## 验收与复现
 

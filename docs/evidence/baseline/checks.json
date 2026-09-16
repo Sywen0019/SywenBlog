@@ -1,30 +1,30 @@
 {
-  "baseCommit": "fddead528471be085946b61252161fc0674a653c",
+  "baseCommit": "3a4a8e5febca7bd2a85aa770756b2d8bd2d3bde2",
   "sourceFilesSha256": {
-    "about.html": "48a31e4e6acd037d3295fd32c72f2bcacc9f16f56bd59686efe75c72a23a5ffc",
+    "about.html": "4666b36442aa9f285694d7996f8fbb91c4c4bdfd639197c6ebbde80f8d7fae4a",
     "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
     "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
     "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
-    "assets/images/hero-desk-1280.webp": "5f65ba72011cfd3879a1f9a2b47e1e78cc124bf7ab099f0059db4109b910dce4",
-    "assets/images/hero-desk-640.webp": "353f99348022af821974dcd1c8f922efbc4704a454c28380a03d6bf25b768ee5",
+    "assets/images/hero-desk-1280.webp": "437a4db0633276fcd13a2c62f3e897ea511639ea82e5b10c2955602ba10cda54",
+    "assets/images/hero-desk-640.webp": "9d5418b2b4f55f9f2c6d72decd23c829d4919d43463bdb8ceeb357081c471615",
     "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
-    "blog.html": "fcca9f320dbd63cc501685623911f52230be692bf617fd329c11ebbcaba30869",
+    "blog.html": "69f087f5ecb3f3569fc2699e7b88a48ea6b3e2fbb999c323b44b268fad0c0481",
     "css/base.css": "0a8d95a0cf7f0963b5b63b284076336c5d20e78505594a638a721666628177e5",
     "css/components.css": "772997163d1c64b66e965933080baa1a1d735560527bce982d536b1074b17d13",
     "css/pages.css": "1c70ff6635781482acc12e3e85cb9dbda6cfaba4c665458e997fcf871597c1aa",
-    "index.html": "00be5b07fe714686694799597d7961168efccf36806a5f7a2b17fb6978c6758c",
-    "js/blog.js": "d2099590e3f730f1b57b265ee3a412bef41d12911c01bc03ea9b39e875c1c989",
-    "js/context-menu.js": "e641c1815eb9522e304e2788c6b76038f5f8992bc5c543cf2a5cd8972604a6f3",
-    "js/posts-data.js": "6e7b2f6427cd07888d13ec35ac0716d57bfd8834b21a44a96a2f870acfc5713d",
+    "index.html": "9f2195228a607248ddd4e2212ff35afc2bef5e43ea57e41b253a3a0d61cd1e18",
+    "js/blog.js": "2512df3f961e17a1e492aaf9a67ef15b055d80de1ab7b2d89ee56923c3bead39",
+    "js/context-menu.js": "b0be4b97d6bb396b3be0a29b14da5ccf8cdf159b0b34f5a0836c0e84d2526b14",
+    "js/posts-data.js": "cc45e2d8b6f311355d994193681c3d9842a11943f93e9d623fb731a93b899139",
     "js/reading.js": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
     "js/site.js": "eee7e694178e04936576c269cc66ece5bb6923220c8a1f492f04772a758735e1",
     "js/theme.js": "ad877786a2e8007e5a4892470fe60d30876f8de8320306337cc20139f278dcff",
-    "posts/attention-intuition.html": "d0b465088b6f1eb7a1dfca40f97345be4c12e51652dc57d36b58e3f9d326c2ee",
-    "posts/dom-search-notes.html": "2fc006f7f3dbf6d219db7a5644fc521d450d3560cd758c75a932aa4ccb72c5f8",
-    "posts/leave-some-space.html": "423b2901c0692d66841a839c921151d88ef5b53a137da01dbe8690763a1ca7b7",
-    "posts/paper-reading-notes.html": "a6eb10ffe6ced17c8fe7509d90fe4f3e38f97030d26fb83947a71eba1d42042c"
+    "posts/attention-intuition.html": "835187222dbceda4cd8f3ace799d2a5f4af97d9f7416559a21e2e8d1e8b1100e",
+    "posts/dom-search-notes.html": "1678c3377622858a23d90d69d112ca9451d6c77a0f41031c88b4b6c3361a7846",
+    "posts/leave-some-space.html": "aff51db428cae94e8116ee1c60487832605473515bbdf44632c835e1c9580de1",
+    "posts/paper-reading-notes.html": "071afc1a5ca13c8eded4af951778b5a2da597481ddeafca47931e9d60ef3b9b8"
   },
-  "at": "2026-09-16T07:25:39.010Z",
+  "at": "2026-09-16T08:55:49.926Z",
   "mode": "full",
   "checks": [
     {
@@ -34,6 +34,10 @@
     },
     {
       "name": "Edge: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Edge: legacy category parameters map to study",
       "pass": true
     },
     {
@@ -52,7 +56,7 @@
       "name": "All seven pages: local targets and unique headings",
       "pass": true,
       "detail": {
-        "internalTargets": 30
+        "internalTargets": 29
       }
     },
     {
@@ -619,8 +623,8 @@
       "name": "Cold-cache homepage transfer and slow loading",
       "pass": true,
       "detail": {
-        "initialSubresourcesBytes": 133502,
-        "totalSubresourcesBytes": 133502
+        "initialSubresourcesBytes": 138323,
+        "totalSubresourcesBytes": 138323
       }
     },
     {
@@ -634,6 +638,10 @@
     },
     {
       "name": "Chrome: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Chrome: legacy category parameters map to study",
       "pass": true
     },
     {
@@ -655,6 +663,10 @@
     },
     {
       "name": "Firefox: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Firefox: legacy category parameters map to study",
       "pass": true
     },
     {
@@ -693,12 +705,13 @@
     "home-nojs-390-dark.png",
     "home-image-failed-390.png",
     "keyboard-focus.png",
-    "blog-empty-390-dark.png"
+    "blog-empty-390-dark.png",
+    "blog-favorites-empty-390-dark.png"
   ],
   "limitations": [
     "No physical phone test; mobile and 200% layout checks are browser emulations."
   ],
-  "baseUrl": "http://127.0.0.1:47816/",
-  "passed": 158,
+  "baseUrl": "http://127.0.0.1:32435/",
+  "passed": 161,
   "failed": 0
 }

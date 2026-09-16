@@ -8,6 +8,8 @@ theme/site/blog/reading/context-menu 已全部接入，保留 ID/data 契约与�
 
 当前冻结补充：hero-desk-640/1280.webp 已产出（D）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；发布白名单含 `js/`，因此 reading.js 与 context-menu.js 会随下次构建进入 dist，但 E04 本身不推送、不部署（留给 E06）。
 
+当前分类契约：一级分类按 `study`（学业）、`life`（生活）、`favorites`（我喜欢的）排列；现有三篇学习示例使用 `study`，生活随笔使用 `life`，`favorites` 可为空。Blog 兼容旧 `?category=ai|coding|research`，统一映射并规范化为 `?category=study`；未知分类回到全部。标签仍是独立搜索字段，旧“科研”等标签不因一级分类迁移而删除。
+
 ---
 
 本文件是 Plan.md §2.2 规定的统一交接记录 H 的索引与正文，只作为执行记录，不增加产品功能或运行时依赖。
@@ -152,7 +154,7 @@ T01（本文件下方记录）、T02。接手者注意：CSS 与 JS 尚不存在
 | `#blog-static-list` | Blog | 静态索引，动态列表成功初始化后隐藏 |
 | `#blog-empty` | Blog | 无结果状态（默认 `hidden`） |
 
-**data 属性**：`data-category`、`data-category-count`、`data-post-id`；后续菜单豁免区域使用 `data-menu-exempt`。
+**data 属性**：`data-category`（`all`、`study`、`life`、`favorites`）、`data-category-count`（`study`、`life`、`favorites`）、`data-post-id`；后续菜单豁免区域使用 `data-menu-exempt`。旧 URL 分类值 `ai`、`coding`、`research` 仅作为兼容输入，不再写入新入口。
 
 **类名**（kebab-case，BEM-lite，均已在七页中使用）：`.skip-link`、`.container`、`.site-header(#__inner)`、`.site-title`、`.brand(#__name/__tagline)`、`.site-nav(#__list/__item/__link)`、`.site-tools`、`.theme-toggle`、`.menu-toggle`、`.site-main`、`.page-header`、`.page-title`、`.page-intro`、`.site-footer(#__inner/__brand/__note/__links/__copyright)`、`.button(--primary/--secondary/--quiet)`、`.category-list(#__item)`、`.category-link`、`.category-button`、`.category-count`、`.tag-list`、`.tag`、`.post-list`、`.post-entry(#__category/__title/__link/__summary/__date/__more)`、`.blog-filters`、`.blog-search`、`.field(#__label/__input)`、`.result-bar(#__count)`、`.blog-results`、`.note-panel(#__list/__item/__label/__text)`、`.status-notice`、`.copy-panel`、`.context-menu(#__group/__item/__progress)`、`.reading-progress`、`.back-to-top`、`.empty-state(#__title/__text)`、`.hero(#__text/__title/__intro/__actions)`、`.hero-art(#__frame/__image/__caption)`、`.art-frame`、`.home-section`、`.section-header(#__title/__link)`、`.about-section`、`.text-list`、`.post`、`.post-back`、`.post-header`、`.post-meta(#__category/__date/__time)`、`.post-demo-note`、`.post-body`、`.post-nav`、`.faq-list(#__question/__answer/__label)`。
 

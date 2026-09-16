@@ -176,7 +176,7 @@ td code { background:none; padding:0; }
 <header class="doc-cover">
 <p class="eyebrow"><span>规划定稿 · v1.0</span></p>
 <p class="cover-title" aria-hidden="true">Sywen's Space<br>项目计划</p>
-<p class="cover-subtitle">漫画线稿风个人博客 · 代码 · 科研 · 生活</p>
+<p class="cover-subtitle">漫画线稿风个人博客 · 学业 · 生活 · 我喜欢的</p>
 <ul class="cover-facts" aria-label="计划摘要"><li>一周 · 15～20 小时</li><li>四类页面 · 四篇文章</li><li>原生 HTML / CSS / JavaScript</li></ul>
 <h1 class="source-title">PROJECT_PLAN.md — Sywen's Space 项目计划</h1>
 <blockquote>
@@ -190,14 +190,14 @@ td code { background:none; padding:0; }
 <p class="archive-note">归档说明：以下完整保留原计划的 29 个章节。原文中的“当前”及工作区状态指计划制定时；本文件仅为 HTML 文档归档，博客功能尚未实现。</p>
 </header>
 <section aria-labelledby="section-01" class="plan-section"><h2 id="section-01" tabindex="-1">1. Project Overview｜项目概述</h2>
-<p><strong>Sywen's Space</strong> 是一个以中文内容为主的静态个人博客，围绕人工智能、编程、科研学习和生活记录展开。</p>
+<p><strong>Sywen's Space</strong> 是一个以中文内容为主的静态个人博客，按学业（AI、Coding、Research、课程与学习笔记）、生活（个人近况）和我喜欢的（美食、游戏、动漫等杂谈）三个方向记录。</p>
 <p>视觉采用“漫画杂志与个人手账”的方向：米白纸张、深色线条、杂志式目录、少量旁白框与原创抽象线稿。通过排版和线条建立个人风格，不依赖大量动漫人物。</p>
 <p>已确认的实施基线：</p>
 <ul>
 <li>全中文界面与正文，保留英文品牌名称。</li>
-<li>副标题采用“代码 · 科研 · 生活”。</li>
+<li>副标题采用“学业 · 生活 · 我喜欢的”，Header 英文短句为“Study · Life · Favorites”。</li>
 <li>使用原创示例内容与抽象线稿，以书桌 Hero 奠定漫画基调，不等待增强素材库。</li>
-<li>首发四类页面、四篇文章，覆盖全部分类。</li>
+<li>保留 Home、Blog、About、Post 四类页面及四篇示例文章；当前学业三篇、生活一篇，我喜欢的允许为空，不要求各分类都有文章。</li>
 <li>HTML、CSS、原生 JavaScript，无后端、无构建依赖。</li>
 <li>Gitee 保存代码和提交历史，独立静态托管平台提供公开网址。</li>
 </ul>
@@ -265,11 +265,11 @@ td code { background:none; padding:0; }
 </ul>
 </section><section aria-labelledby="section-07" class="plan-section"><h2 id="section-07" tabindex="-1">7. Visual Identity｜视觉识别</h2><p><strong>修订说明：</strong>以下规格以最新 <a href="Plan.md">B/E 实施计划</a>与 <a href="DESIGN_SPEC.md">视觉规范 v1.1</a>为准；菜单、阅读增强和完整插画库属于基线后任务，旧尺寸/预算冲突由新版替代。</p>
 <p><strong>品牌名称：</strong> Sywen's Space<br/>
-<strong>副标题：</strong> 代码 · 科研 · 生活<br/>
+<strong>副标题：</strong> 学业 · 生活 · 我喜欢的<br/>
 <strong>首页主标题：</strong> 你好，我是 Sywen！</p>
 <p>建议简介：</p>
 <blockquote>
-<p>这里记录我对数据科学、人工智能与编程的学习，也收藏一些科研思考和生活碎片。</p>
+<p>我是一名计算机专业学生。这里记录学业中的探索、生活里的近况，也聊聊喜欢的美食、游戏和动漫。</p>
 </blockquote>
 <p>此文案属于可替换的初稿，不添加学校、学历、职务、获奖或研究成果等未经提供的信息。</p>
 <p>视觉母题：</p>
@@ -414,7 +414,7 @@ td code { background:none; padding:0; }
 <pre aria-label="目录结构，可横向滚动" tabindex="0"><code class="language-text">首页 index.html
 ├── 最近文章 → 文章详情
 ├── 查看全部文章 → blog.html
-├── 分类入口 → blog.html?category=ai 等
+├── 分类入口 → blog.html?category=study、life、favorites
 └── 关于我 → about.html
 
 文章 blog.html
@@ -457,7 +457,7 @@ td code { background:none; padding:0; }
 <li>使用水平分割线，不使用三列卡片。</li>
 </ul>
 <h3>分类入口</h3>
-<p>显示“人工智能、编程、科研、生活”四个链接及文章数量，跳转到已选中分类的文章页。</p>
+<p>依次显示“学业、生活、我喜欢的”三个链接及文章数量，当前为 3／1／0，跳转到已选中分类的文章页；空分类入口仍可点击。</p>
 <h3>最近在做</h3>
 <p>采用一个旁白框，三行内容：</p>
 <ul>
@@ -478,7 +478,7 @@ td code { background:none; padding:0; }
 </ul>
 <p>分类界面使用：</p>
 <blockquote>
-<p>全部 / 人工智能 / 编程 / 科研 / 生活</p>
+<p>全部 / 学业 / 生活 / 我喜欢的</p>
 </blockquote>
 <p>行为规则：</p>
 <ul>
@@ -499,7 +499,8 @@ td code { background:none; padding:0; }
 <p>查询状态：</p>
 <ul>
 <li>支持 <code>q</code> 和 <code>category</code> URL 参数。</li>
-<li>未知分类回退“全部”。</li>
+<li>旧 <code>ai</code>／<code>coding</code>／<code>research</code> 分类参数映射并规范化为 <code>study</code>，保留搜索词；未知分类回退“全部”。</li>
+<li>选择“我喜欢的”且无关键词、无文章时，显示“这里还没有文章”及“之后在这里记录喜欢的美食、游戏、动漫，还有一些杂谈。”；有关键词的零结果使用通用搜索无结果提示，保留重置筛选入口。</li>
 <li>输入更新后使用 <code>history.replaceState</code> 同步 URL，不为每个字符生成历史记录。</li>
 <li>若本地文件环境不允许更新历史，仅停止 URL 同步，筛选继续正常运行。</li>
 </ul>
@@ -706,7 +707,7 @@ td code { background:none; padding:0; }
 <tr>
 <td>分类</td>
 <td>按钮事件、状态切换、与搜索组合</td>
-<td>未知 URL 分类恢复全部</td>
+<td>旧 ai／coding／research 映射为 study；未知 URL 分类恢复全部</td>
 </tr>
 <tr>
 <td>主题</td>
@@ -946,7 +947,7 @@ td code { background:none; padding:0; }
 <tr>
 <td><code>category</code></td>
 <td>string</td>
-<td><code>ai</code>／<code>coding</code>／<code>research</code>／<code>life</code></td>
+<td><code>study</code>（学业）／<code>life</code>（生活）／<code>favorites</code>（我喜欢的）</td>
 </tr>
 <tr>
 <td><code>tags</code></td>
@@ -970,7 +971,7 @@ td code { background:none; padding:0; }
 </tr>
 </tbody>
 </table></div>
-<p>分类中文名称由统一映射表提供；<code>all</code> 只属于筛选状态，不是文章分类。</p>
+<p>分类中文名称由统一映射表提供；<code>all</code> 只属于筛选状态，不是文章分类。每篇只归属一个一级分类，学业暂不细分，已有标签保留为独立搜索字段。</p>
 <p>阅读时间初稿按中文正文约 400 字／分钟估算，最低一分钟，发布前人工复核，代码较多时适当增加。</p>
 <h3>19.3 首发文章</h3>
 <div aria-label="数据模型表格；窄屏可横向滚动" class="table-scroll" role="region" tabindex="0"><table><caption class="sr-only">数据模型 · 表格 10</caption>
@@ -983,17 +984,17 @@ td code { background:none; padding:0; }
 </thead>
 <tbody>
 <tr>
-<td>人工智能</td>
+<td>学业</td>
 <td>用直觉理解注意力机制</td>
 <td><code>attention-intuition.html</code></td>
 </tr>
 <tr>
-<td>编程</td>
+<td>学业</td>
 <td>原生 JavaScript 搜索与筛选笔记</td>
 <td><code>dom-search-notes.html</code></td>
 </tr>
 <tr>
-<td>科研</td>
+<td>学业</td>
 <td>一次论文阅读如何留下可复用笔记</td>
 <td><code>paper-reading-notes.html</code></td>
 </tr>
@@ -1130,7 +1131,7 @@ td code { background:none; padding:0; }
 <p>2026-09-16，<a href="https://sywen-blog.pages.dev/">sywen-blog.pages.dev</a>的七页、资源、主题与搜索分类已验收。<a href="https://sywen-blog.pages.dev/version.json">version.json</a>记录源提交，文件内容与Git逐项比对。</p>
 <h3>发布与回退</h3><ul><li>先完成阶段检查和真实提交，再推送Gitee与GitHub。</li><li>仅发布七页、css/js/posts/assets及版本/错误响应元文件；参考图、母版、文档和凭据不发布。</li><li>保留coursework-baseline标签；出现问题可重新部署已验证基线，不重写历史。</li><li>最小404响应关闭Cloudflare默认SPA回落；完整插画404保持Backlog。</li></ul>
 <p>本次从当前工作网络完成公开HTTPS检查，课堂现场网络与真实手机未验证。GitHub Pages和Netlify仅为历史备选，当前不更新。实际配置与证据见<a href="docs/deployment.md">部署说明</a>和<a href="docs/delivery.md">交付记录</a>。</p>
-</section><section aria-labelledby="section-24" class="plan-section"><h2 id="section-24" tabindex="-1">24. Development Phases｜开发阶段</h2><p>截至2026-09-16，T00/T01/T02/T04历史保留，B00–B06全部完成。执行顺序为 B00 发布通路 → B01 内容 → B02 Hero/VC0 → B03 视觉融合 → B04 核心 JS → B05 VC1-B → B06 Gitee/HTTPS 交付。基线原估算18–24h含2h缓冲，当前已交付。出图等待时可做独立工作，发布阻塞不能伪报通过。</p><p><strong>B06 Passed ══ 作业完成，可停止并提交。</strong></p><p>之后 E01小画、E02About/转场、E03阅读、E04复制/菜单、E05状态精修、E06增强验收发布默认Deferred；每次领取一包，先考虑6–12h。36–48h是完整增强参考，不是必须耗尽额度。</p><p>详细任务卡：<a href="docs/tasks/00-index.md">任务总索引</a>；接口与预算：<a href="Plan.md">实施计划</a>。</p></section><section aria-labelledby="section-25" class="plan-section"><h2 id="section-25" tabindex="-1">25. P0 / P1 / P2 Scope｜功能优先级</h2><h3>B：作业必须</h3><p>七页完整内容、CSS、主题与搜索分类JS、Git/Gitee、公开HTTPS、书桌Hero、响应式/基本可访问性、可复核证据。</p><h3>E：基线后按余量</h3><p>完整插画库、About专属新图、返回顶部、进度、复制降级、自定义菜单、额外状态图和精修。正文不因增强牺牲可读性。</p><h3>Backlog</h3><p>专属插画404、施工页、季节主题、逐篇封面、更多角色和大量贴纸。发布所需的最小404错误响应不属于该增强设计。</p></section><section aria-labelledby="section-26" class="plan-section"><h2 id="section-26" tabindex="-1">26. Acceptance Criteria｜验收标准</h2><h3>VC0</h3><p>Hero在1440/390浅深页面中实际看图，身份、构图、入口和手机清晰度通过。</p><h3>VC1-B 作业验收</h3><p>七页内容与链接、CSS/主题、搜索分类、无JS/初始化失败/存储失败、键盘、320/390/768/1440与断点、200%缩放、图片失败、相对路径、Gitee源码和HTTPS深链接。Edge/Chrome主流程、Firefox核心；真实手机未执行如实记录。</p><p>初始资源≤800KB、滚动全部≤1.2MB目标；输出同版本截图与报告，部署commit与推送分别记录。</p><h3>VC2</h3><p>仅对实际新增增强进行视觉及功能回归，不以未做E类阻止作业提交。</p></section><section aria-labelledby="section-27" class="plan-section"><h2 id="section-27" tabindex="-1">27. Risks and Trade-offs｜风险与取舍</h2><ul><li>发布账号/网络先核对；缺失只阻塞发布，不阻止本地推进。</li><li>Hero只做两候选和必要修订，复杂角色归Astra/Codex；简单素材交豆包外部执行，基线不等待完整素材库。</li><li>每阶段真实提交和推送，不重写历史；可回退基线。</li><li>超预算先停E类和无效重复生成，不省核心功能边界验证。</li></ul></section><section aria-labelledby="section-28" class="plan-section"><h2 id="section-28" tabindex="-1">28. Design Review｜方案审查</h2><p>新版终审：已完成工程继续复用；B06划作业完成线；视觉不仅检查旧尺寸，还需实际看图确认漫画基调。完整资产体系与所有菜单功能不是作业前置。</p></section><section aria-labelledby="section-29" class="plan-section"><h2 id="section-29" tabindex="-1">29. Scope Review｜范围终审</h2><p>范围终审：本次授权执行B00–B06，E类登记Deferred、Backlog不启动。Git/Gitee/公开HTTPS及可用JS必须兑现；外部受阻和未验证项如实记录。所有任务以2026-09-16当前Plan.md和DESIGN_SPEC.md v1.1为准；正式交付与演示见docs/delivery.md。</p></section>
+</section><section aria-labelledby="section-24" class="plan-section"><h2 id="section-24" tabindex="-1">24. Development Phases｜开发阶段</h2><p>截至2026-09-16，T00/T01/T02/T04历史保留，B00–B06全部完成。执行顺序为 B00 发布通路 → B01 内容 → B02 Hero/VC0 → B03 视觉融合 → B04 核心 JS → B05 VC1-B → B06 Gitee/HTTPS 交付。基线原估算18–24h含2h缓冲，当前已交付。出图等待时可做独立工作，发布阻塞不能伪报通过。</p><p><strong>B06 Passed ══ 作业完成，可停止并提交。</strong></p><p>E03阅读与E04复制/菜单已本地通过；E01三类小画、E02About/转场、E05状态精修、E06增强验收发布仍为Deferred。分类调整已本地完成、待发布，当前篇数为3／1／0，证据见<a href="docs/acceptance.md">验收记录</a>；每次领取一包，先考虑6–12h。36–48h是完整增强参考，不是必须耗尽额度。</p><p>详细任务卡：<a href="docs/tasks/00-index.md">任务总索引</a>；接口与预算：<a href="Plan.md">实施计划</a>。</p></section><section aria-labelledby="section-25" class="plan-section"><h2 id="section-25" tabindex="-1">25. P0 / P1 / P2 Scope｜功能优先级</h2><h3>B：作业必须</h3><p>七页完整内容、CSS、主题与搜索分类JS、Git/Gitee、公开HTTPS、书桌Hero、响应式/基本可访问性、可复核证据。</p><h3>E：基线后按余量</h3><p>完整插画库、About专属新图、返回顶部、进度、复制降级、自定义菜单、额外状态图和精修。正文不因增强牺牲可读性。</p><h3>Backlog</h3><p>专属插画404、施工页、季节主题、逐篇封面、更多角色和大量贴纸。发布所需的最小404错误响应不属于该增强设计。</p></section><section aria-labelledby="section-26" class="plan-section"><h2 id="section-26" tabindex="-1">26. Acceptance Criteria｜验收标准</h2><h3>VC0</h3><p>Hero在1440/390浅深页面中实际看图，身份、构图、入口和手机清晰度通过。</p><h3>VC1-B 作业验收</h3><p>七页内容与链接、CSS/主题、搜索分类、无JS/初始化失败/存储失败、键盘、320/390/768/1440与断点、200%缩放、图片失败、相对路径、Gitee源码和HTTPS深链接。Edge/Chrome主流程、Firefox核心；真实手机未执行如实记录。</p><p>初始资源≤800KB、滚动全部≤1.2MB目标；输出同版本截图与报告，部署commit与推送分别记录。</p><h3>VC2</h3><p>仅对实际新增增强及分类调整进行视觉和功能回归：核对三类计数、组合筛选、旧链接映射、空状态、静态降级及公开版本一致性，更新线上演示；不以未做E类阻止作业提交。</p></section><section aria-labelledby="section-27" class="plan-section"><h2 id="section-27" tabindex="-1">27. Risks and Trade-offs｜风险与取舍</h2><ul><li>发布账号/网络先核对；缺失只阻塞发布，不阻止本地推进。</li><li>Hero只做两候选和必要修订，复杂角色归Astra/Codex；简单素材交豆包外部执行，基线不等待完整素材库。</li><li>每阶段真实提交和推送，不重写历史；可回退基线。</li><li>超预算先停E类和无效重复生成，不省核心功能边界验证。</li></ul></section><section aria-labelledby="section-28" class="plan-section"><h2 id="section-28" tabindex="-1">28. Design Review｜方案审查</h2><p>新版终审：已完成工程继续复用；B06划作业完成线；视觉不仅检查旧尺寸，还需实际看图确认漫画基调。完整资产体系与所有菜单功能不是作业前置。</p></section><section aria-labelledby="section-29" class="plan-section"><h2 id="section-29" tabindex="-1">29. Scope Review｜范围终审</h2><p>范围终审：B00–B06已完成；E03／E04已本地通过，E01／E02／E05／E06仍Deferred，Backlog不启动。分类调整已本地完成，公开发布留给E06。Git/Gitee/公开HTTPS及可用JS必须兑现；外部受阻和未验证项如实记录。所有任务以2026-09-16当前Plan.md和DESIGN_SPEC.md v1.1为准；正式交付与演示见docs/delivery.md。</p></section>
 <footer class="doc-footer"><span>Sywen's Space · 项目计划 v1.0 · 完整 29 章</span><a class="back-link" href="#top">返回文档顶部 ↑</a></footer>
 </main>
 </div>

@@ -9,9 +9,12 @@
   const form = document.getElementById('search-form');
   const count = document.getElementById('result-count');
   const categories = document.getElementById('blog-categories');
+  const emptyTitle = document.getElementById('empty-title');
+  const emptyText = empty ? empty.querySelector('.empty-state__text') : null;
   const reset = document.getElementById('reset-filters');
   const emptyReset = document.getElementById('empty-reset');
-  if (!filters || !results || !fallback || !empty || !input || !form || !count || !categories || !reset || !emptyReset) return;
+  if (!filters || !results || !fallback || !empty || !input || !form || !count || !categories
+      || !emptyTitle || !emptyText || !reset || !emptyReset) return;
   let category = 'all';
   let composing = false;
   let timer;
@@ -32,11 +35,16 @@
     // Validate the complete dataset before revealing any controls, including filtered-out entries.
     site.posts.forEach((post) => site.createPostEntry(post, 2));
     const buttons = Array.from(categories.querySelectorAll('button[data-category]'));
-    const isCategory = (value) => site.categories.some((item) => item.id === value);
+    const legacyCategories = Object.freeze({ ai: 'study', coding: 'study', research: 'study' });
+    const isCategory = (value) => value === 'all' || site.categories.some((item) => item.id === value);
+    let normalizeUrl = false;
     function readUrl() {
       const params = new URL(location.href).searchParams;
       input.value = params.get('q') || '';
-      category = isCategory(params.get('category')) ? params.get('category') : 'all';
+      const rawCategory = params.get('category');
+      const mappedCategory = legacyCategories[rawCategory] || rawCategory;
+      category = isCategory(mappedCategory) ? mappedCategory : 'all';
+      normalizeUrl = Boolean(rawCategory && mappedCategory !== rawCategory && category !== 'all');
     }
     function render(syncUrl = true) {
       const query = input.value.trim();
@@ -51,6 +59,11 @@
       results.replaceChildren(list);
       results.hidden = matches.length === 0;
       empty.hidden = matches.length !== 0;
+      const favoriteEmpty = category === 'favorites' && !query && matches.length === 0;
+      emptyTitle.textContent = favoriteEmpty ? '这里还没有文章' : '没找到匹配的文章';
+      emptyText.textContent = favoriteEmpty
+        ? '之后在这里记录喜欢的美食、游戏、动漫，还有一些杂谈。'
+        : '试试其他关键词，或重置筛选。';
       buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
       clearTimeout(timer);
       const message = '找到 ' + matches.length + ' 篇文章';
@@ -70,7 +83,7 @@
       try { render(); } catch (_) { restoreStatic(); }
     }
     readUrl();
-    render(false);
+    render(normalizeUrl);
     input.addEventListener('compositionstart', () => { composing = true; });
     input.addEventListener('compositionend', () => { composing = false; update(); });
     input.addEventListener('input', (event) => { if (!composing && !event.isComposing) update(); });
@@ -90,7 +103,7 @@
     emptyReset.addEventListener('click', clear);
     window.addEventListener('popstate', () => {
       if (!initialized) return;
-      try { readUrl(); render(false); } catch (_) { restoreStatic(); }
+      try { readUrl(); render(normalizeUrl); } catch (_) { restoreStatic(); }
     });
     fallback.hidden = true;
     filters.hidden = false;

@@ -68,27 +68,64 @@ async function core(browser, label) {
     await p.goto(base + 'blog.html');
     await p.locator('#search-input').waitFor({ state: 'visible' });
     assert.equal(await visibleCount(p), 4);
+    assert.deepEqual(await p.locator('#blog-categories [data-category]').evaluateAll((els) => els.map((el) => el.dataset.category)),
+      ['all', 'study', 'life', 'favorites']);
+    await p.locator('[data-category="study"]').click();
+    assert.equal(await visibleCount(p), 3);
+    await p.locator('[data-category="life"]').click();
+    assert.equal(await visibleCount(p), 1);
+    await p.locator('[data-category="favorites"]').click();
+    assert.equal(await p.locator('#blog-empty').isVisible(), true);
+    assert.equal(await p.locator('#empty-title').innerText(), '这里还没有文章');
+    assert.equal(await p.locator('.empty-state__text').innerText(), '之后在这里记录喜欢的美食、游戏、动漫，还有一些杂谈。');
+    await p.locator('#search-input').fill('美食');
+    assert.equal(await p.locator('#empty-title').innerText(), '没找到匹配的文章');
+    await p.locator('[data-category="all"]').click();
+    await p.locator('#reset-filters').click();
+    assert.equal(await visibleCount(p), 4);
     await p.locator('#search-input').fill('  JAVASCRIPT   dom  ');
     assert.equal(await visibleCount(p), 1);
     assert.match(await p.locator('#blog-results').innerText(), /原生 JavaScript/);
     assert.equal(new URL(p.url()).searchParams.get('q'), 'JAVASCRIPT   dom');
     await p.locator('[data-category="life"]').click();
     assert.equal(await p.locator('#blog-empty').isVisible(), true);
+    assert.equal(await p.locator('#empty-title').innerText(), '没找到匹配的文章');
     await p.locator('#empty-reset').click();
     assert.equal(await visibleCount(p), 4);
     assert.equal(await p.locator('#search-input').evaluate((el) => el === document.activeElement), true);
     await p.locator('#search-input').fill('论文');
-    await p.locator('[data-category="research"]').click();
+    await p.locator('[data-category="study"]').click();
     assert.equal(await visibleCount(p), 1);
     await p.reload();
     assert.equal(await visibleCount(p), 1);
-    assert.equal(await p.locator('[data-category="research"]').getAttribute('aria-pressed'), 'true');
+    assert.equal(await p.locator('[data-category="study"]').getAttribute('aria-pressed'), 'true');
     await p.goto(base + 'blog.html?category=unknown&focus=search');
     assert.equal(await visibleCount(p), 4);
     assert.equal(await p.locator('#search-input').evaluate((el) => el === document.activeElement), true);
     await p.keyboard.type('javascript');
     await p.keyboard.press('Enter');
     assert.equal(await visibleCount(p), 1);
+    await p.goto(base + 'blog.html?category=study&q=JavaScript');
+    assert.equal(await visibleCount(p), 1);
+    await p.goto(base + 'blog.html?category=life');
+    assert.equal(await visibleCount(p), 1);
+    await p.goBack();
+    await p.locator('#search-input').waitFor({ state: 'visible' });
+    assert.equal(await visibleCount(p), 1);
+    assert.equal(await p.locator('[data-category="study"]').getAttribute('aria-pressed'), 'true');
+    await p.goForward();
+    await p.locator('#search-input').waitFor({ state: 'visible' });
+    assert.equal(await visibleCount(p), 1);
+    assert.equal(await p.locator('[data-category="life"]').getAttribute('aria-pressed'), 'true');
+  });
+  await check(label + ': legacy category parameters map to study', async () => {
+    for (const legacy of ['ai', 'coding', 'research']) {
+      await p.goto(base + 'blog.html?q=论文&category=' + legacy);
+      assert.equal(await visibleCount(p), 1, legacy);
+      assert.equal(await p.locator('[data-category="study"]').getAttribute('aria-pressed'), 'true', legacy);
+      assert.equal(new URL(p.url()).searchParams.get('category'), 'study', legacy);
+      assert.equal(new URL(p.url()).searchParams.get('q'), '论文', legacy);
+    }
   });
   await check(label + ': composition and text-only query', async () => {
     await p.goto(base + 'blog.html');
@@ -277,6 +314,8 @@ try {
         const p = await browser.newPage();
         await p.goto(base + 'course/blog/blog.html?q=DOM&category=coding');
         assert.equal(await visibleCount(p), 1);
+        assert.equal(await p.locator('[data-category="study"]').getAttribute('aria-pressed'), 'true');
+        assert.equal(new URL(p.url()).searchParams.get('category'), 'study');
         const link = p.locator('#blog-results .post-entry__link');
         assert.ok((await link.getAttribute('href')).includes('/course/blog/posts/'));
         await link.click();
@@ -345,6 +384,10 @@ try {
         const p = await browser.newPage({ viewport: { width: 390, height: 900 }, colorScheme: 'dark' });
         await p.goto(base + 'blog.html?q=no-results');
         await shot(p, 'blog-empty-390-dark');
+        await p.goto(base + 'blog.html?category=favorites');
+        assert.equal(await p.locator('#empty-title').innerText(), '这里还没有文章');
+        assert.equal(await p.locator('.empty-state__text').innerText(), '之后在这里记录喜欢的美食、游戏、动漫，还有一些杂谈。');
+        await shot(p, 'blog-favorites-empty-390-dark');
         await p.close();
       });
     } catch (error) {
