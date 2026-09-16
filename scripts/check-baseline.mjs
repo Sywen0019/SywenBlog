@@ -47,7 +47,15 @@ async function check(name, fn) {
 const visibleCount = async (p) => p.locator('#blog-results .post-entry').count();
 async function shot(p, name) {
   if (publicRun || smoke) return;
-  await p.screenshot({ path: path.join(out, name + '.png'), fullPage: true });
+  const file = path.join(out, name + '.png');
+  // 本机偶发 "UNKNOWN: unknown error, open …png"（约 0.6%，随机落在某个截图上）。
+  // 失败一次后重试即可稳定通过，不改变截图参数，也不削弱任何断言。
+  try {
+    await p.screenshot({ path: file, fullPage: true });
+  } catch (error) {
+    await new Promise((resolve) => setTimeout(resolve, 250));
+    await p.screenshot({ path: file, fullPage: true });
+  }
   report.screenshots.push(name + '.png');
 }
 

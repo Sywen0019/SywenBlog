@@ -1,0 +1,390 @@
+{
+  "task": "E03",
+  "browser": "chrome",
+  "browserVersion": "152.0.7977.83",
+  "baseUrl": "http://127.0.0.1:8199/",
+  "baseCommit": "a0ed6339193d65c4712c9d48f5113caa2057735d",
+  "at": "2026-09-16T03:07:27.971Z",
+  "checks": [
+    {
+      "name": "1. 七页 reading.js 加载顺序与资源",
+      "pass": true,
+      "detail": {
+        "index.html": 4,
+        "blog.html": 5,
+        "about.html": 4,
+        "posts/attention-intuition.html": 4,
+        "posts/dom-search-notes.html": 4,
+        "posts/paper-reading-notes.html": 4,
+        "posts/leave-some-space.html": 4
+      }
+    },
+    {
+      "name": "2. 进度元素语义与揭示",
+      "pass": true,
+      "detail": {
+        "barHeight": "2px",
+        "titleTag": "H1",
+        "footerPaddingBottom": "96px",
+        "outstandingHidden": []
+      }
+    },
+    {
+      "name": "3. 进度值符合公式（顶/中/底）",
+      "pass": true,
+      "detail": [
+        {
+          "where": "top",
+          "value": 0,
+          "aria": "0",
+          "expected": 0
+        },
+        {
+          "where": "mid",
+          "value": 50,
+          "aria": "50",
+          "expected": 50
+        },
+        {
+          "where": "bottom",
+          "value": 100,
+          "aria": "100",
+          "expected": 100
+        }
+      ]
+    },
+    {
+      "name": "4. 进度线实际绘制宽度与百分比一致",
+      "pass": true,
+      "detail": [
+        {
+          "ratio": 0.25,
+          "value": 25,
+          "paintPx": 90,
+          "trackPx": 360
+        },
+        {
+          "ratio": 0.6,
+          "value": 60,
+          "paintPx": 518.4,
+          "trackPx": 864
+        },
+        {
+          "ratio": 1,
+          "value": 100,
+          "paintPx": 1440,
+          "trackPx": 1440
+        }
+      ]
+    },
+    {
+      "name": "5. 480px 阈值显隐",
+      "pass": true,
+      "detail": [
+        {
+          "requested": 0,
+          "scrollTop": 0,
+          "visibility": "hidden",
+          "display": "flex",
+          "pointer": "none",
+          "isVisible": false
+        },
+        {
+          "requested": 300,
+          "scrollTop": 300,
+          "visibility": "hidden",
+          "display": "flex",
+          "pointer": "none",
+          "isVisible": false
+        },
+        {
+          "requested": 1200,
+          "scrollTop": 1200,
+          "visibility": "visible",
+          "display": "flex",
+          "pointer": "auto",
+          "isVisible": true
+        }
+      ]
+    },
+    {
+      "name": "6. 命中区≥44×44 且距边缘 16px",
+      "pass": true,
+      "detail": {
+        "width": 84,
+        "height": 44,
+        "right": 16,
+        "bottom": 16
+      }
+    },
+    {
+      "name": "7. 滚到底时返回顶部不遮挡页脚内容",
+      "pass": true,
+      "detail": {
+        "posts/attention-intuition.html@390px": {
+          "buttonTop": 784,
+          "buttonBottom": 16,
+          "footerTop": 567.88,
+          "footerBottom": 843.83,
+          "footerContentBottom": 747.83,
+          "clearance": 36.17,
+          "scrollTop": 2131
+        },
+        "blog.html@390px": {
+          "buttonTop": 784,
+          "buttonBottom": 16,
+          "footerTop": 568.11,
+          "footerBottom": 844.06,
+          "footerContentBottom": 748.06,
+          "clearance": 35.94,
+          "scrollTop": 1057
+        },
+        "about.html@390px": {
+          "buttonTop": 784,
+          "buttonBottom": 16,
+          "footerTop": 567.98,
+          "footerBottom": 843.94,
+          "footerContentBottom": 747.94,
+          "clearance": 36.06,
+          "scrollTop": 1698
+        },
+        "index.html@390px": {
+          "buttonTop": 784,
+          "buttonBottom": 16,
+          "footerTop": 568.17,
+          "footerBottom": 844.13,
+          "footerContentBottom": 748.13,
+          "clearance": 35.87,
+          "scrollTop": 1792
+        },
+        "posts/attention-intuition.html@1440px": {
+          "buttonTop": 840,
+          "buttonBottom": 16,
+          "footerTop": 750.09,
+          "footerBottom": 900.48,
+          "footerContentBottom": 804.48,
+          "clearance": 35.52,
+          "scrollTop": 1337
+        },
+        "blog.html@1440px": {
+          "buttonTop": 840,
+          "buttonBottom": 16,
+          "footerTop": 750.08,
+          "footerBottom": 900.47,
+          "footerContentBottom": 804.47,
+          "clearance": 35.53,
+          "scrollTop": 540
+        },
+        "about.html@1440px": {
+          "buttonTop": 840,
+          "buttonBottom": 16,
+          "footerTop": 749.58,
+          "footerBottom": 899.97,
+          "footerContentBottom": 803.97,
+          "clearance": 36.03,
+          "scrollTop": 1039
+        },
+        "index.html@1440px": {
+          "buttonTop": 840,
+          "buttonBottom": 16,
+          "footerTop": 749.86,
+          "footerBottom": 900.25,
+          "footerContentBottom": 804.25,
+          "clearance": 35.75,
+          "scrollTop": 1136
+        }
+      }
+    },
+    {
+      "name": "8. 点击与键盘返回顶部并聚焦主标题",
+      "pass": true,
+      "detail": {
+        "click-390": {
+          "focus": "H1.page-title",
+          "progress": 0,
+          "button": "hidden"
+        },
+        "keyboard-390": {
+          "focus": "H1",
+          "progress": 0
+        },
+        "click-1440": {
+          "focus": "H1.page-title",
+          "progress": 0,
+          "button": "hidden"
+        },
+        "keyboard-1440": {
+          "focus": "H1",
+          "progress": 0
+        }
+      }
+    },
+    {
+      "name": "9. 减少动态效果下即时回到顶部",
+      "pass": true,
+      "detail": {
+        "top": 0,
+        "behavior": "auto",
+        "helper": true
+      }
+    },
+    {
+      "name": "10. 视口变化与延迟图片加载后重算",
+      "pass": true,
+      "detail": {
+        "resize": {
+          "before": 1337,
+          "after": 1737
+        },
+        "hero": {
+          "earlyHeight": 2036,
+          "lateHeight": 2036,
+          "lateProgress": 0
+        }
+      }
+    },
+    {
+      "name": "11. 深链接定位下进度一致",
+      "pass": true,
+      "detail": {
+        "scrollTop": 144,
+        "maxScroll": 2275,
+        "progress": 6,
+        "expected": 6
+      }
+    },
+    {
+      "name": "12. 无脚本时控件保持 hidden",
+      "pass": true,
+      "detail": {
+        "pages": 7,
+        "allHidden": true,
+        "noScriptFooterPadding": "32px"
+      }
+    },
+    {
+      "name": "13. 子目录 /course/blog/ 下可用",
+      "pass": true,
+      "detail": {
+        "progress": 44,
+        "button": "visible",
+        "script": "../js/reading.js"
+      }
+    },
+    {
+      "name": "14. 七页无页面异常、无失败请求",
+      "pass": true,
+      "detail": {
+        "pages": 7,
+        "errors": 0,
+        "failedRequests": 0
+      }
+    },
+    {
+      "name": "15. 等效 200% 重排无横向溢出",
+      "pass": true,
+      "detail": {
+        "posts/attention-intuition.html": {
+          "overflow": 0,
+          "right": 16,
+          "left": 620
+        },
+        "blog.html": {
+          "overflow": 0,
+          "right": 16,
+          "left": 620
+        },
+        "index.html": {
+          "overflow": 0,
+          "right": 16,
+          "left": 620
+        }
+      }
+    },
+    {
+      "name": "16. E03 未改动 assets/ 中的非 Hero 资产",
+      "pass": true,
+      "detail": {
+        "unchanged": 6,
+        "preexistingHeroRevision": [],
+        "baseline": "docs/evidence/baseline/checks.json（B05 快照）"
+      }
+    },
+    {
+      "name": "17. 归档截图",
+      "pass": true,
+      "detail": [
+        "e03-post-1440-light-mid",
+        "e03-post-1440-light-bottom",
+        "e03-post-390-light-bottom",
+        "e03-baseline-blog-1440-light",
+        "e03-post-1440-dark-mid",
+        "e03-post-1440-dark-bottom",
+        "e03-post-390-dark-bottom",
+        "e03-baseline-blog-1440-dark",
+        "e03-post-1440-light-nojs",
+        "e03-baseline-blog-1440-light-nojs"
+      ]
+    },
+    {
+      "name": "18. 与 B05 基线同视口截图对照（默认态）",
+      "pass": true,
+      "detail": {
+        "e03-baseline-blog-1440-light.png": {
+          "baseline": "docs/evidence/baseline/blog-1440-light.png",
+          "size": [
+            1440,
+            1440
+          ],
+          "diffPixels": 0,
+          "bands": [],
+          "colors": [],
+          "note": "默认态逐像素对照：忽略顶部 3px 进度线。Blog 页面高度由视口决定，页脚预留空间（96px，仍小于内容高度）没有改变文档高度，因此其余区域应为 0 差异。"
+        },
+        "e03-baseline-blog-1440-dark.png": {
+          "baseline": "docs/evidence/baseline/blog-1440-dark.png",
+          "size": [
+            1440,
+            1440
+          ],
+          "diffPixels": 0,
+          "bands": [],
+          "colors": [],
+          "note": "默认态逐像素对照：忽略顶部 3px 进度线。Blog 页面高度由视口决定，页脚预留空间（96px，仍小于内容高度）没有改变文档高度，因此其余区域应为 0 差异。"
+        },
+        "e03-baseline-blog-390-light.png": {
+          "baseline": "docs/evidence/baseline/blog-390-light.png",
+          "size": [
+            390,
+            1901
+          ],
+          "diffPixels": 0,
+          "bands": [],
+          "colors": [],
+          "note": "默认态逐像素对照：忽略顶部 3px 进度线。Blog 页面高度由视口决定，页脚预留空间（96px，仍小于内容高度）没有改变文档高度，因此其余区域应为 0 差异。"
+        }
+      }
+    }
+  ],
+  "screenshots": [
+    "e03-post-1440-light-mid.png",
+    "e03-post-1440-light-bottom.png",
+    "e03-post-390-light-bottom.png",
+    "e03-baseline-blog-1440-light.png",
+    "e03-post-1440-dark-mid.png",
+    "e03-post-1440-dark-bottom.png",
+    "e03-post-390-dark-bottom.png",
+    "e03-baseline-blog-1440-dark.png",
+    "e03-post-1440-light-nojs.png",
+    "e03-baseline-blog-1440-light-nojs.png",
+    "e03-baseline-blog-1440-light.png",
+    "e03-baseline-blog-1440-dark.png",
+    "e03-baseline-blog-390-light.png"
+  ],
+  "limitations": [
+    "未使用实体手机与屏幕阅读器；移动端为浏览器视口模拟。",
+    "观感类判据由 E06 的 VC2 正式判定，本脚本只记录可测量事实。"
+  ],
+  "passed": 18,
+  "failed": 0
+}

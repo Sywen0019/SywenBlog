@@ -1,5 +1,29 @@
 {
-  "at": "2026-09-16T02:05:22.648Z",
+  "baseCommit": "a0ed6339193d65c4712c9d48f5113caa2057735d",
+  "sourceFilesSha256": {
+    "about.html": "85a374786fef7bca9aea602bba17749964359b5e2092d340033edfb9a39484f7",
+    "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+    "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
+    "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
+    "assets/images/hero-desk-1280.webp": "5f65ba72011cfd3879a1f9a2b47e1e78cc124bf7ab099f0059db4109b910dce4",
+    "assets/images/hero-desk-640.webp": "353f99348022af821974dcd1c8f922efbc4704a454c28380a03d6bf25b768ee5",
+    "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
+    "blog.html": "726f79bc1302428342ffdbfab2c76fad1a522d35a3fdd0e065bb2c874b7a82b3",
+    "css/base.css": "0a8d95a0cf7f0963b5b63b284076336c5d20e78505594a638a721666628177e5",
+    "css/components.css": "0fa6fbdebc9b443f1107b9fa373058a1b167b1e1a5103828fddfdeb3f5491286",
+    "css/pages.css": "1c70ff6635781482acc12e3e85cb9dbda6cfaba4c665458e997fcf871597c1aa",
+    "index.html": "2183f3f40266dd965125e0320274b41cf1ddb7c4b3fb460dddff2e1ef1a38c28",
+    "js/blog.js": "d2099590e3f730f1b57b265ee3a412bef41d12911c01bc03ea9b39e875c1c989",
+    "js/posts-data.js": "6e7b2f6427cd07888d13ec35ac0716d57bfd8834b21a44a96a2f870acfc5713d",
+    "js/reading.js": "4b8600cf726aaab240f7757b772db0e9a31fe877b7f1540811f80e4746e8a3fa",
+    "js/site.js": "059fd9422cc47ca487f59d52f9eb276c05181b44ca9e23a8709e092fae09b913",
+    "js/theme.js": "ad877786a2e8007e5a4892470fe60d30876f8de8320306337cc20139f278dcff",
+    "posts/attention-intuition.html": "fafe9c07dceb1db31942999a3ebdbc7cbe4a51b988e4716e37aaf469a71a0951",
+    "posts/dom-search-notes.html": "2aab7e1edfbf6dba4887f8628417dd05063d2910274fecc371ee9028522d8a9e",
+    "posts/leave-some-space.html": "d9c2b4adce5b702c08839c090041ad39330c0ef68714b6a839b25606562a7289",
+    "posts/paper-reading-notes.html": "d9d71520c9ae46d522e2be3ece5bfc2a8f83f0736f6d5b16e762cc828f413c6c"
+  },
+  "at": "2026-09-16T03:06:20.164Z",
   "mode": "full",
   "checks": [
     {
@@ -594,8 +618,8 @@
       "name": "Cold-cache homepage transfer and slow loading",
       "pass": true,
       "detail": {
-        "initialSubresourcesBytes": 101864,
-        "totalSubresourcesBytes": 101864
+        "initialSubresourcesBytes": 104896,
+        "totalSubresourcesBytes": 104896
       }
     },
     {
@@ -673,31 +697,7 @@
   "limitations": [
     "No physical phone test; mobile and 200% layout checks are browser emulations."
   ],
+  "baseUrl": "http://127.0.0.1:43236/",
   "passed": 158,
-  "failed": 0,
-  "baseCommit": "1c17346a97e463f3029ac9242721b3ee15522699",
-  "testedSiteCommit": "e3191ba0d59bec3f38a96ed43ebbc6a8e0a8359a",
-  "snapshotNote": "The run tested the working tree based on baseCommit. The unchanged site files were subsequently committed as testedSiteCommit; hashes recorded after the run, before any further site edit.",
-  "sourceFilesSha256": {
-    "about.html": "05850710c2231bc9de4f8aa635307f0bb9c83644a96c4fb585290d2bb27cfd6f",
-    "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
-    "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
-    "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
-    "assets/images/hero-desk-1280.webp": "2db1270f48aed3c82a663e228307419d0510dd0858b293f70763c6e643a938d0",
-    "assets/images/hero-desk-640.webp": "7b2a4fc21ad350d5ccce3cb4fb89a925fb7f0d18257f7785d956bfc862417759",
-    "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
-    "blog.html": "0fd349e02e64a3c0f4a15b26c6dfde4da6f8887de6e63b18201f2f1e4982bc4a",
-    "css/base.css": "ac63d19ea1fdaf1a2ed1d877b070626c4f0380dba40195c4c092cce4594c6f73",
-    "css/components.css": "2bebd96ba63c4c91ff2a3ea2e469007628554de55874653398321b382d7e073b",
-    "css/pages.css": "4611b1b5722f9bc1f97083d236c65e587439fa9c3d77ebfe346779aa77be2368",
-    "index.html": "e38651bc6e7d6316ec51190eebf7613d6362d7574a76998e956aaacfd952c349",
-    "js/blog.js": "d2099590e3f730f1b57b265ee3a412bef41d12911c01bc03ea9b39e875c1c989",
-    "js/posts-data.js": "6e7b2f6427cd07888d13ec35ac0716d57bfd8834b21a44a96a2f870acfc5713d",
-    "js/site.js": "059fd9422cc47ca487f59d52f9eb276c05181b44ca9e23a8709e092fae09b913",
-    "js/theme.js": "ad877786a2e8007e5a4892470fe60d30876f8de8320306337cc20139f278dcff",
-    "posts/attention-intuition.html": "5392e1d8fda26949bfe31a14b0da37435fd4945654de2206e7ac0afe23ad803a",
-    "posts/dom-search-notes.html": "5d80830a0e97e33efc4f2fd94766155f8938b7be0a62633a2eaa32858cdc402e",
-    "posts/leave-some-space.html": "f99d3fe260d4ec52e212b80b1f201ca18b6a1e760c1fb7a1710d9087c6efa586",
-    "posts/paper-reading-notes.html": "7aa2ac2c7e886c38eda62c16232ff5ebc39f8c988b0c463d6a9e8df3b29bdeeb"
-  }
+  "failed": 0
 }
