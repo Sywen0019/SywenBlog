@@ -1,5 +1,15 @@
 # Agent 交接记录（H）
 
+## 当前交接摘要 · 2026-09-16
+
+B00–B05 已完成；当前执行 B06，E01–E06 全部 Deferred。站点运行时源码里程碑 e3191ba，正式发布走 Cloudflare https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的候选 D；旧 B 仅历史记录。
+
+theme/site/blog 已接入，保留 ID/data 契约与静态降级；reading/context-menu 未接入。新报告见 evidence/baseline/checks.json，158 项通过，VC0/VC1-B 当前结论见 visual-review.md。下方 T 阶段内容仅是历史，不得用其中“尚无 JS/待 T05”等旧状态覆盖本摘要。
+
+当前冻结补充：hero-desk-640/1280.webp 已产出（D）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；不加载任何增强脚本。B/E 当前负责人为本次 Codex 执行者。
+
+---
+
 本文件是 Plan.md §2.2 规定的统一交接记录 H 的索引与正文，只作为执行记录，不增加产品功能或运行时依赖。
 
 集成负责人：DeepSeek（归入 T00、T11、T17、T21、T22）。并行任务只返回交接内容，不直接编辑本文件。

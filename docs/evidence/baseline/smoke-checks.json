@@ -1,0 +1,60 @@
+{
+  "sourceCommit": "1c17346a97e463f3029ac9242721b3ee15522699",
+  "at": "2026-09-15T15:12:59.941Z",
+  "mode": "smoke",
+  "checks": [
+    {
+      "name": "Edge version",
+      "pass": true,
+      "detail": "153.0.4234.32"
+    },
+    {
+      "name": "Edge: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Edge: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Edge: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Edge: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "Chrome version",
+      "pass": true,
+      "detail": "152.0.7977.83"
+    },
+    {
+      "name": "Chrome: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Chrome: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Chrome: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Chrome: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "Firefox availability",
+      "pass": false,
+      "error": "browserType.launch: Executable doesn't exist at C:\\Users\\sywen\\AppData\\Local\\ms-playwright\\firefox-1543\\firefox\\firefox.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     pnpm exec playwright install                           ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+    }
+  ],
+  "screenshots": [],
+  "limitations": [
+    "No physical phone test; mobile and 200% layout checks are browser emulations."
+  ],
+  "passed": 10,
+  "failed": 1
+}

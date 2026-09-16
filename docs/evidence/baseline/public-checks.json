@@ -1,0 +1,99 @@
+{
+  "baseCommit": "655e8c4c92144f20b1f2fd67d464ad06fccb4747",
+  "sourceFilesSha256": {
+    "about.html": "05850710c2231bc9de4f8aa635307f0bb9c83644a96c4fb585290d2bb27cfd6f",
+    "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+    "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
+    "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
+    "assets/images/hero-desk-1280.webp": "2db1270f48aed3c82a663e228307419d0510dd0858b293f70763c6e643a938d0",
+    "assets/images/hero-desk-640.webp": "7b2a4fc21ad350d5ccce3cb4fb89a925fb7f0d18257f7785d956bfc862417759",
+    "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
+    "blog.html": "0fd349e02e64a3c0f4a15b26c6dfde4da6f8887de6e63b18201f2f1e4982bc4a",
+    "css/base.css": "ac63d19ea1fdaf1a2ed1d877b070626c4f0380dba40195c4c092cce4594c6f73",
+    "css/components.css": "2bebd96ba63c4c91ff2a3ea2e469007628554de55874653398321b382d7e073b",
+    "css/pages.css": "4611b1b5722f9bc1f97083d236c65e587439fa9c3d77ebfe346779aa77be2368",
+    "index.html": "e38651bc6e7d6316ec51190eebf7613d6362d7574a76998e956aaacfd952c349",
+    "js/blog.js": "d2099590e3f730f1b57b265ee3a412bef41d12911c01bc03ea9b39e875c1c989",
+    "js/posts-data.js": "6e7b2f6427cd07888d13ec35ac0716d57bfd8834b21a44a96a2f870acfc5713d",
+    "js/site.js": "059fd9422cc47ca487f59d52f9eb276c05181b44ca9e23a8709e092fae09b913",
+    "js/theme.js": "ad877786a2e8007e5a4892470fe60d30876f8de8320306337cc20139f278dcff",
+    "posts/attention-intuition.html": "5392e1d8fda26949bfe31a14b0da37435fd4945654de2206e7ac0afe23ad803a",
+    "posts/dom-search-notes.html": "5d80830a0e97e33efc4f2fd94766155f8938b7be0a62633a2eaa32858cdc402e",
+    "posts/leave-some-space.html": "f99d3fe260d4ec52e212b80b1f201ca18b6a1e760c1fb7a1710d9087c6efa586",
+    "posts/paper-reading-notes.html": "7aa2ac2c7e886c38eda62c16232ff5ebc39f8c988b0c463d6a9e8df3b29bdeeb"
+  },
+  "at": "2026-09-16T02:14:46.020Z",
+  "mode": "public",
+  "checks": [
+    {
+      "name": "Edge version",
+      "pass": true,
+      "detail": "153.0.4234.32"
+    },
+    {
+      "name": "Edge: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Edge: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Edge: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Edge: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "Chrome version",
+      "pass": true,
+      "detail": "152.0.7977.83"
+    },
+    {
+      "name": "Chrome: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Chrome: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Chrome: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Chrome: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "Firefox version",
+      "pass": true,
+      "detail": "155.0"
+    },
+    {
+      "name": "Firefox: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Firefox: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Firefox: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Firefox: no uncaught JS exceptions",
+      "pass": true
+    }
+  ],
+  "screenshots": [],
+  "limitations": [
+    "No physical phone test; mobile and 200% layout checks are browser emulations."
+  ],
+  "baseUrl": "https://sywen-blog.pages.dev/",
+  "passed": 15,
+  "failed": 0
+}

@@ -11,7 +11,7 @@
 |B02 美术基调与 Hero|Passed|[B02](01-baseline/b02.md)|
 |B03 基线视觉融合|Passed|[B03](01-baseline/b03.md)|
 |B04 核心 JavaScript|Passed|[B04](01-baseline/b04.md)|
-|B05 作业基线验收|Ready|[B05](01-baseline/b05.md)|
+|B05 作业基线验收|Passed|[B05](01-baseline/b05.md)|
 |B06 Gitee 与正式公开交付|Ready|[B06](01-baseline/b06.md)|
 
 ════════ 作业完成基线：B06 Passed 后可停止并提交 ════════

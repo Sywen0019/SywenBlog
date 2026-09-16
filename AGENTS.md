@@ -15,12 +15,16 @@ Follow the planned structure when adding code:
 
 ## Build, Test, and Development Commands
 
-No build step, package manifest, production dependencies, or automated test command exists.
+No compilation step, root package manifest or production dependencies exist. `scripts/build-site.sh` assembles a whitelist into `dist/` for Cloudflare Pages and generates version metadata and a plain missing-page response. Optional browser checks use an ignored local Playwright installation (see README).
 
 - `Start-Process .\PROJECT_PLAN.html`: open the specification locally in the default browser on Windows.
 - `py -m http.server 8000 --bind 127.0.0.1`: serve the repository locally if Python is installed. Visit `http://127.0.0.1:8000/PROJECT_PLAN.html`; use `/index.html` once implemented.
 
 Use HTTP for functional checks and HTTPS for deployment acceptance.
+
+- `node scripts/check-baseline.mjs`: local browser/layout/failure checks after installing the README verification tools.
+- `node scripts/check-baseline.mjs --public`: core checks against the public Cloudflare site.
+- `py scripts/check-release.py`: compare public files with the Git source recorded in `version.json`.
 
 ## Coding Style & Naming Conventions
 
@@ -32,7 +36,7 @@ Enhanced controls that require JavaScript (theme toggle, quick menu, back to top
 
 ## Testing Guidelines
 
-No test framework, test naming convention, or coverage threshold is established. Follow section 26 of the plan and record results in `docs/acceptance.md` as implementation proceeds. Check navigation, article deep links, search/category combinations, theme persistence and storage failures, reading progress, clipboard fallback, keyboard access, responsive layouts, and reduced motion.
+Baseline browser checks live in `scripts/check-baseline.mjs`; no coverage threshold is established. Follow the current B/E plan and record results in `docs/acceptance.md`. Check navigation, article deep links, search/category combinations, theme persistence and storage failures, keyboard access, responsive layouts, and reduced motion. Reading progress and clipboard/menu checks apply only after the corresponding Deferred tasks are implemented. Real phone and browser-UI zoom are not certified by viewport emulation.
 
 ## Commit & Pull Request Guidelines
 

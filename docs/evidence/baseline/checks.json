@@ -1,0 +1,703 @@
+{
+  "at": "2026-09-16T02:05:22.648Z",
+  "mode": "full",
+  "checks": [
+    {
+      "name": "Edge version",
+      "pass": true,
+      "detail": "153.0.4234.32"
+    },
+    {
+      "name": "Edge: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Edge: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Edge: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Edge: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "All seven pages: local targets and unique headings",
+      "pass": true,
+      "detail": {
+        "internalTargets": 30
+      }
+    },
+    {
+      "name": "light index.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/dom-search-notes.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/attention-intuition.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/paper-reading-notes.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light: no resource/JS failures in layout matrix",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/dom-search-notes.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/attention-intuition.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/paper-reading-notes.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark: no resource/JS failures in layout matrix",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: seven pages and static index",
+      "pass": true
+    },
+    {
+      "name": "Initialization fallback: missing posts-data.js",
+      "pass": true
+    },
+    {
+      "name": "Initialization fallback: missing site.js",
+      "pass": true
+    },
+    {
+      "name": "Initialization fallback: missing blog.js",
+      "pass": true
+    },
+    {
+      "name": "Malformed article data preserves static list",
+      "pass": true
+    },
+    {
+      "name": "Storage read/write failures and system follow",
+      "pass": true
+    },
+    {
+      "name": "Invalid saved theme follows system",
+      "pass": true
+    },
+    {
+      "name": "URL update failure does not stop filtering",
+      "pass": true
+    },
+    {
+      "name": "Subdirectory, tags and article assets",
+      "pass": true
+    },
+    {
+      "name": "Images fail without collapsing the Hero",
+      "pass": true
+    },
+    {
+      "name": "Keyboard, focus and reduced motion",
+      "pass": true
+    },
+    {
+      "name": "200% equivalent layout and long text",
+      "pass": true
+    },
+    {
+      "name": "Cold-cache homepage transfer and slow loading",
+      "pass": true,
+      "detail": {
+        "initialSubresourcesBytes": 101864,
+        "totalSubresourcesBytes": 101864
+      }
+    },
+    {
+      "name": "Default / no-result screenshots",
+      "pass": true
+    },
+    {
+      "name": "Chrome version",
+      "pass": true,
+      "detail": "152.0.7977.83"
+    },
+    {
+      "name": "Chrome: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Chrome: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Chrome: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Chrome: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "Firefox version",
+      "pass": true,
+      "detail": "155.0"
+    },
+    {
+      "name": "Firefox: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Firefox: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Firefox: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Firefox: no uncaught JS exceptions",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    "home-390-light.png",
+    "home-1440-light.png",
+    "blog-390-light.png",
+    "blog-1440-light.png",
+    "about-390-light.png",
+    "about-1440-light.png",
+    "post-390-light.png",
+    "post-1440-light.png",
+    "attention-intuition.png",
+    "paper-reading-notes.png",
+    "leave-some-space.png",
+    "home-390-dark.png",
+    "home-1440-dark.png",
+    "blog-390-dark.png",
+    "blog-1440-dark.png",
+    "about-390-dark.png",
+    "about-1440-dark.png",
+    "post-390-dark.png",
+    "post-1440-dark.png",
+    "home-nojs-390-dark.png",
+    "home-image-failed-390.png",
+    "keyboard-focus.png",
+    "blog-empty-390-dark.png"
+  ],
+  "limitations": [
+    "No physical phone test; mobile and 200% layout checks are browser emulations."
+  ],
+  "passed": 158,
+  "failed": 0,
+  "baseCommit": "1c17346a97e463f3029ac9242721b3ee15522699",
+  "testedSiteCommit": "e3191ba0d59bec3f38a96ed43ebbc6a8e0a8359a",
+  "snapshotNote": "The run tested the working tree based on baseCommit. The unchanged site files were subsequently committed as testedSiteCommit; hashes recorded after the run, before any further site edit.",
+  "sourceFilesSha256": {
+    "about.html": "05850710c2231bc9de4f8aa635307f0bb9c83644a96c4fb585290d2bb27cfd6f",
+    "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+    "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
+    "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
+    "assets/images/hero-desk-1280.webp": "2db1270f48aed3c82a663e228307419d0510dd0858b293f70763c6e643a938d0",
+    "assets/images/hero-desk-640.webp": "7b2a4fc21ad350d5ccce3cb4fb89a925fb7f0d18257f7785d956bfc862417759",
+    "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
+    "blog.html": "0fd349e02e64a3c0f4a15b26c6dfde4da6f8887de6e63b18201f2f1e4982bc4a",
+    "css/base.css": "ac63d19ea1fdaf1a2ed1d877b070626c4f0380dba40195c4c092cce4594c6f73",
+    "css/components.css": "2bebd96ba63c4c91ff2a3ea2e469007628554de55874653398321b382d7e073b",
+    "css/pages.css": "4611b1b5722f9bc1f97083d236c65e587439fa9c3d77ebfe346779aa77be2368",
+    "index.html": "e38651bc6e7d6316ec51190eebf7613d6362d7574a76998e956aaacfd952c349",
+    "js/blog.js": "d2099590e3f730f1b57b265ee3a412bef41d12911c01bc03ea9b39e875c1c989",
+    "js/posts-data.js": "6e7b2f6427cd07888d13ec35ac0716d57bfd8834b21a44a96a2f870acfc5713d",
+    "js/site.js": "059fd9422cc47ca487f59d52f9eb276c05181b44ca9e23a8709e092fae09b913",
+    "js/theme.js": "ad877786a2e8007e5a4892470fe60d30876f8de8320306337cc20139f278dcff",
+    "posts/attention-intuition.html": "5392e1d8fda26949bfe31a14b0da37435fd4945654de2206e7ac0afe23ad803a",
+    "posts/dom-search-notes.html": "5d80830a0e97e33efc4f2fd94766155f8938b7be0a62633a2eaa32858cdc402e",
+    "posts/leave-some-space.html": "f99d3fe260d4ec52e212b80b1f201ca18b6a1e760c1fb7a1710d9087c6efa586",
+    "posts/paper-reading-notes.html": "7aa2ac2c7e886c38eda62c16232ff5ebc39f8c988b0c463d6a9e8df3b29bdeeb"
+  }
+}
