@@ -1,0 +1,42 @@
+{
+  "at": "2026-09-16T08:24:19.261Z",
+  "asset": "J",
+  "checks": [
+    {
+      "width": 1440,
+      "theme": "light",
+      "naturalWidth": 519,
+      "aspect": 1.3333333333333333,
+      "overflow": false,
+      "src": "http://127.0.0.1:29616/assets/images/hero-desk-640.webp",
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "naturalWidth": 519,
+      "aspect": 1.3333333333333333,
+      "overflow": false,
+      "src": "http://127.0.0.1:29616/assets/images/hero-desk-640.webp",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "naturalWidth": 342,
+      "aspect": 1.3305785123966942,
+      "overflow": false,
+      "src": "http://127.0.0.1:29616/assets/images/hero-desk-640.webp",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "naturalWidth": 342,
+      "aspect": 1.3305785123966942,
+      "overflow": false,
+      "src": "http://127.0.0.1:29616/assets/images/hero-desk-640.webp",
+      "pass": true
+    }
+  ]
+}
