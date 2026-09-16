@@ -18,7 +18,7 @@
 
 ════════ 作业完成基线：已达到，可停止并提交 ════════
 
-- [E01 文章小画体系](02-after-baseline/e01.md)：Deferred。
+- [E01 文章小画体系](02-after-baseline/e01.md)：**Passed（本地，2026-09-16）**。study/life/favorites 三张无人物分类小画（`assets/images/cat-*.webp`，640×480）融合到首页分类入口卡与 Blog 条目缩略图，首页「最近文章」保持纯文字；确定性导出脚本、清单与三浏览器各 49 项检查见 [验收记录](../acceptance.md)与 [证据](../evidence/e01/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
 - [E02 About 与转场](02-after-baseline/e02.md)：Deferred。
 - [E03 简单阅读增强](02-after-baseline/e03.md)：**Passed（本地，2026-09-16）**。`js/reading.js`、七页接入、页脚预留空间、三浏览器各 18 项检查与截图见 [验收记录](../acceptance.md)与 [证据](../evidence/e03/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
 - [E04 复制与快捷菜单](02-after-baseline/e04.md)：**Passed（本地，2026-09-16）**。`js/context-menu.js`（能力门、菜单内容、定位与关闭、键盘、复制与降级面板）、`js/site.js` 共享动作、七页接入与复制面板标记、三浏览器各 19 项检查与 39 张截图见 [验收记录](../acceptance.md)与 [证据](../evidence/e04/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
@@ -27,6 +27,6 @@
 
 - [Backlog](03-backlog/README.md)：Deferred。
 - 基线原估算18–24h，当前已完成；不将Agent运行时间冒充人工等效工时。之后先考虑6–12h，不自动花完36–48h。
-- E 类每次领取一包：E03 与 E04 已于 2026-09-16 本地完成并通过；E01／E02／E05 保持 Deferred，E06 负责增强版 VC2、回归与发布。
+- E 类每次领取一包：E03、E04 与 E01 已于 2026-09-16 本地完成并通过；E02／E05 保持 Deferred，E06 负责增强版 VC2、回归与发布。
 - T00/T01/T02/T04 保留历史 Passed。B00 外部阻塞只阻止 B06，不阻止独立本地工作。
 - 任务状态与证据每阶段更新；Git/Gitee 推送和公开网站验收分开记录。

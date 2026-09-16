@@ -12,6 +12,26 @@
 
 **范围说明**：本轮仅更新本地源码与验收证据，未推送 Gitee、未重新部署 Cloudflare；公开站点仍是现有部署版本，发布与线上验收沿用 E06 流程。历史 T/B/E 验收章节保留原记录。
 
+## E01 · 文章小画体系 · 2026-09-16
+
+**结论：本地通过。** study/life/favorites 三张无人物分类小画已产出并融合到首页分类入口卡与 Blog 文章条目缩略图，首页「最近文章」保持纯文字；不破坏基线内容、键盘、主题、路径与既有功能。VC2 正式判定与线上发布属于 E06，本记录不替代它们，且本轮**未推送 Gitee、未部署 Cloudflare**。
+
+**美术（用户逐张确认）**：以 Hero J 书桌成图为画风/暖纸参考，用 Seedream 5.0 Pro 的图生图延续漫画线稿语言，4:3 母版 2364×1773（存于 gitignored 的 `art-work/categories/`，不发布）。study 为 2–3 本叠放的书＋书签＋合上的笔记本电脑（candidate-3；candidate-2 因电脑被裁切否决），life 为摊开的手账本＋斜搭的笔＋冒热气的咖啡（candidate-1），favorites 为单盆居中向日葵盆栽（candidate-2；含红色耳机与杨枝甘露的 candidate-1 被用户判定「违和感太强」后移除）。study/life 纯墨线＋暖纸、不上红、仅极淡蓝点缀；favorites 向日葵克制上色。三张均无人物、无文字。
+
+**确定性导出**：`scripts/export-category-art.py` 用 Pillow Lanczos 等比缩放到 640×480、WebP q88 method 6、不写元数据，校验精确 4:3 与单文件 ≤40KB，并生成清单 `docs/category-assets.json`。产物 `cat-study.webp` 18406B、`cat-life.webp` 18234B、`cat-favorites.webp` 29072B（SHA256 见清单）。
+
+**融合契约**：分类对象新增 `image`（站点根相对路径）；`Sywen.createPostEntry(post, headingLevel, options)` 新增第三参，仅 `js/blog.js` 动态列表传 `{thumbnail:true}`，首页「最近文章」仍调用两参版本保持纯文字；Blog 无脚本静态列表四条均补缩略图（study×3、life×1）。缩略图为 `span.art-frame.art-frame--thumb.post-entry__thumb[aria-hidden="true"]` 内的 `img.art-frame__image`，`alt=""`、`width/height=640/480`、`loading="lazy"`、`decoding="async"`；首页分类入口为 `a.category-link.category-link--card`（图框 `.category-link__art.art-frame.art-frame--category`＋文本 `.category-link__body`），手机横卡、≥768px 三列上图下文。图框 1px 规则色边框、暖纸底、`object-fit:cover`；图片失败时 `.is-failed` 收起图框，文字链接与计数完整。
+
+**E01 证据**：`node docs/evidence/e01/illustration-checks.mjs`（Edge 153／Chrome 152／Firefox 155）三浏览器各 **49 项通过、0 失败**（报告 [illustration-report.txt](evidence/e01/illustration-report.txt)，逐浏览器 JSON 与 6 张桌面/手机/深色/失败态/无脚本截图同目录）。覆盖资产格式/尺寸/字节/sha、动态与静态缩略的分类映射、桌面 128×96 与手机 80×60、首页手机 96×72 与桌面通宽 4:3、装饰图不可聚焦且 alt 为空、懒加载、失败收起、无脚本、子目录、浅深色与 320–1440px 溢出矩阵。
+
+**全量基线回归**：`node scripts/check-baseline.mjs` 在 E01 构建上重跑为 **161 项通过、0 失败**（`docs/evidence/baseline/checks.json`，baseline 截图随之刷新为 E01 后状态）。
+
+**E03/E04 回归与证据脚本的最小兼容更新**（不改产品行为，沿用 E04 当年最小更新 E03 的先例）：
+- E03 `reading-checks.mjs` 第 18 项原与 B05 博客列表像素基线逐像素对照；E01 有意重排博客列表并增高页面，旧基线失效。改为与 E01 后基线 `docs/evidence/e01/references/blog-{1440-light,1440-dark,390-light}.png`（Chromium 整页截图、截图前强制懒加载就位）对照，仍要求同尺寸、忽略页头带后页脚 64px 之外 **0 差异**；390px 档沿用 E04 起的记录项处理；Firefox 仍跳过像素项。另修复第 8 项一处测试时序竞态：键盘返回顶部在瞬时跳转后立即聚焦按钮，可能命中仍 `visibility:hidden` 的按钮导致 Enter 落空，现先等 `is-visible` 生效再聚焦（与真实 Tab 顺序一致，断言强度不变）。结果三浏览器各 **18/0**。
+- E04 `menu-checks.mjs` 第 19 项「显示/隐藏快捷菜单按钮零布局位移」原把视口高度写死为旧文档高度（1440/1903）；改为先实测当前博客文档高度再对齐，并在截图前稳定懒加载，严格的「忽略页头带外 0 差异」守卫不变。结果三浏览器各 **19/0**（首轮在高负载下 Chrome 第 8 项「滚动关闭菜单」曾超时一次，隔离复跑未复现，判定为环境抖动）。
+
+**未验证项/已知限制**：640px 源图在桌面首页卡（约 365 CSS px、DPR2 约 730px）有轻微放大，线稿观感可接受；真实手机、浏览器 UI 缩放与屏幕阅读器未测（沿用既有 OB-03，移动端为视口模拟）；VC2、Gitee 推送与 Cloudflare 部署留 E06。
+
 ## E04 · 复制与快捷菜单 · 2026-09-16
 
 **结论：本地通过。** 复制成功／失败两条路径、单层右键菜单的启用范围、内容、定位、关闭时机、键盘与原生菜单豁免全部符合 `PROJECT_PLAN.html` §15.1–§15.6、§16.1／§16.3／§16.4；B05 基线回归在 E04 后重跑保持 158 项通过；E03 阅读增强检查按新契约最小更新后仍全部通过。VC2 正式判定与线上发布属于 E06，本记录不替代它们。

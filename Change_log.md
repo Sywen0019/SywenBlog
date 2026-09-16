@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-09-16 · E01 文章小画体系（本地，未发布）
+
+- 为 study/life/favorites 三个一级分类各产出一张无人物、无文字 4:3 小画（Seedream 5.0 Pro 图生图，以 Hero J 为画风/暖纸参考）：study 为叠放的书＋书签＋合上的笔记本电脑，life 为摊开手账＋笔＋咖啡，favorites 为单盆向日葵盆栽（耳机与杨枝甘露经用户反馈移除）；study/life 纯墨线不上红、仅极淡蓝点缀，favorites 克制上色。母版存 gitignored 的 `art-work/categories/`。
+- 新增 `scripts/export-category-art.py` 确定性导出 640×480 WebP（q88 method 6、无元数据、≤40KB）并生成 `docs/category-assets.json`；产物 `assets/images/cat-{study,life,favorites}.webp`（18406/18234/29072 字节）。
+- 融合：分类数据新增 `image`；`Sywen.createPostEntry(post, headingLevel, options)` 新增第三参，Blog 动态列表与无脚本静态列表渲染分类缩略图，首页分类入口改为上图下文卡片（手机横卡、桌面三列），首页「最近文章」保持纯文字；缩略图装饰性空 alt、懒加载、失败收起。
+- 验证：新增 `docs/evidence/e01/illustration-checks.mjs`，Edge/Chrome/Firefox 各 49/0；全量基线 161/0；E03 阅读增强回归各 18/0（第 18 项改对 E01 后博客列表像素基线、第 8 项补按钮可见性等待）、E04 复制与菜单回归各 19/0（第 19 项改实测文档高度）。未推送 Gitee、未部署 Cloudflare、不宣布 VC2，发布留 E06。
+
 ## 2026-09-16 · 分类调整后的任务计划同步
 
 - 同步实施计划、29 节总规格与视觉规范：三类定位、3／1／0 篇数、旧参数兼容、空分类提示及文章归属；保留四类页面与已有标签。

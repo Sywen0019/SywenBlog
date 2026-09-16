@@ -1,10 +1,12 @@
 # Agent 交接记录（H）
 
-## 当前交接摘要 · 2026-09-16（E04 之后）
+## 当前交接摘要 · 2026-09-16（E01 之后）
 
-B00–B06 已完成并保持可提交；E03「简单阅读增强」与 E04「复制与快捷菜单」已本地完成（均 Passed，见下方记录），E01／E02／E05／E06 仍 Deferred。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的 D；工作区另有一批未提交的 Hero 线稿修订（E05 式美术产物），不属于 E03／E04。
+B00–B06 已完成并保持可提交；E01「文章小画体系」、E03「简单阅读增强」与 E04「复制与快捷菜单」均已本地完成（Passed，见下方记录），E02／E05／E06 仍 Deferred。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的 D；工作区另有一批未提交的 A07/A08 装饰贴纸探索（E02 方向），不属于 E01。
 
 theme/site/blog/reading/context-menu 已全部接入，保留 ID/data 契约与静态降级。E04 之后 `#quick-menu-button`、`#copy-panel`、`#site-notice`、`#context-menu` 由 `js/context-menu.js` 接管：仅在 `(hover: hover) and (pointer: fine)` 下显示按钮并按需构建菜单，复制失败时显示手动复制面板。E04 证据见 `docs/evidence/e04/`，三浏览器各 19 项通过；E03 的 `reading-checks.mjs` 按新契约最小更新后三浏览器各 18 项仍通过；B05 的 158 项基线回归在 E04 后重跑保持通过。VC0/VC1-B 结论见 visual-review.md，VC2 仍待 E06。
+
+E01 之后首页分类入口为上图下文卡片、Blog 文章条目带分类缩略图（首页「最近文章」保持纯文字）；三张分类小画为 `assets/images/cat-study.webp`、`cat-life.webp`、`cat-favorites.webp`（均 640×480，字节/SHA256/来源母版见 `docs/category-assets.json`，母版存于 gitignored 的 `art-work/categories/`，不发布）。E01 证据见 `docs/evidence/e01/`，三浏览器各 49 项通过；全量基线 161/0；E03 的 `reading-checks.mjs`（第 18 项改对 E01 后博客列表基线、第 8 项补按钮可见性等待）与 E04 的 `menu-checks.mjs`（第 19 项改为实测文档高度）做了最小兼容更新后三浏览器分别 18/0、19/0。E01 仅本地完成，不推送、不部署，VC2 仍待 E06。
 
 当前冻结补充：hero-desk-640/1280.webp 已产出（D）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；发布白名单含 `js/`，因此 reading.js 与 context-menu.js 会随下次构建进入 dist，但 E04 本身不推送、不部署（留给 E06）。
 
@@ -37,6 +39,7 @@ theme/site/blog/reading/context-menu 已全部接入，保留 ID/data 契约与�
 | T04 Tokens、公共组件与响应式基础 | DeepSeek | Passed | `4f91102` | 见 T04 |
 | E03 简单阅读增强 | DeepSeek | Passed（本地） | `a0ed633` | 见 E03 |
 | E04 复制与快捷菜单 | DeepSeek | Passed（本地） | `fddead5` | 见 E04 |
+| E01 文章小画体系 | 豆包 | Passed（本地） | `a11d9c3` | 见 E01 |
 
 ---
 
@@ -452,3 +455,61 @@ E05（状态与精修）或 E06（增强版验收发布）按用户领取。接�
 - 复制入口保持唯一：任何新的复制需求都走 `Sywen.copyText()` + 降级面板，不要另写剪贴板代码。
 - 修改页头工具行或断点前先看 `docs/evidence/e04/` 的 A/B 对照脚本，页头是当前唯一允许出现差异的水平带。
 - E06 发布前需重跑 `scripts/check-baseline.mjs` 与两个证据脚本，并按 VC2 复核观感。
+
+## E01 — 文章小画体系
+
+**模型：** 豆包（出图 Seedream 5.0 Pro；工程融合与验收同会话）｜**状态：** Passed（本地，未推送/未部署）
+
+### 2. 基础版本
+
+- 起始 commit：`a11d9c3`（分类调整，本地未推送）。起始工作区另有未提交的 A07/A08 装饰贴纸探索（E02 方向），已显式排除、不纳入 E01。
+- 仅本地完成：不推 Gitee、不部署 Cloudflare、不宣布 VC2 通过；发布与 VC2 留 E06。
+
+### 3. 实际修改文件
+
+| 文件 | 摘要 |
+|---|---|
+| `assets/images/cat-study.webp` `cat-life.webp` `cat-favorites.webp` | 新增三张分类小画，640×480、q88、18406/18234/29072 字节；随 `scripts/build-site.sh` 整体拷贝 `assets/` 发布 |
+| `scripts/export-category-art.py` | 新增确定性导出：Lanczos→640×480、WebP q88 method 6、无元数据，校验 4:3 与 ≤40KB，生成清单 |
+| `docs/category-assets.json` | 新增资产清单：分类、来源母版、尺寸、q、字节、SHA256 |
+| `js/posts-data.js` | 三个分类对象新增 `image` 字段（站点根相对路径 `assets/images/cat-{id}.webp`） |
+| `js/site.js` | `createPostEntry(post, headingLevel, options)` 新增第三参（向后兼容）；静态图片 watcher 抽成函数声明 `watchImage(img)` 供动态缩略图复用 |
+| `js/blog.js` | 动态列表渲染传 `{thumbnail:true}`；全量数据校验调用仍不传缩略 |
+| `blog.html` | 无脚本静态列表四条加 `post-entry--with-thumb` 与缩略图（study×3、life×1） |
+| `index.html` | `#home-categories` 三个入口改为 `category-link--card` 卡片（图＋文）；`#home-recent` 最近文章保持纯文字 |
+| `css/base.css` `components.css` `pages.css` | 新增缩略/分类卡尺寸 token、`.art-frame--thumb/--category`、带缩略条目网格、失败收起、首页卡片响应式 |
+| `docs/evidence/e01/illustration-checks.mjs` | 新增 E01 证据脚本（49 项）与三浏览器 JSON、合并报告、6 张截图、`references/` 像素基线 |
+| `docs/evidence/e03/reading-checks.mjs` | 最小兼容更新：第 18 项改对 E01 后博客列表基线；第 8 项键盘返回顶部前先等按钮可见 |
+| `docs/evidence/e04/menu-checks.mjs` | 最小兼容更新：第 19 项改为实测当前博客文档高度再对齐视口 |
+
+母版 `art-work/categories/*.png`（study/life/favorites 候选与终稿，2364×1773）在 gitignored 的 `art-work/`，不发布、不入源码版本。
+
+### 4. 新增 DOM 约定、数据字段与函数签名（后续任务沿用，改名先改本契约）
+
+- 数据：分类对象新增可选 `image`（字符串，站点根相对路径，经 `Sywen.resolveUrl` 解析）；无 `image` 的分类不渲染缩略/卡画。
+- 函数：`Sywen.createPostEntry(post, headingLevel, options)`；`options.thumbnail` 为真且 `category.image` 存在时，`li.post-entry` 增加 `post-entry--with-thumb`，最前插入缩略图。两参调用行为不变（首页最近文章据此保持纯文字）。
+- Blog 条目缩略：`span.art-frame.art-frame--thumb.post-entry__thumb[aria-hidden="true"]` > `img.art-frame__image[alt=""][width=640][height=480][loading="lazy"][decoding="async"]`。
+- 首页分类卡：`a.category-link.category-link--card[href]` 内含 `span.category-link__art.art-frame.art-frame--category[aria-hidden="true"]` > `img.art-frame__image`，与 `span.category-link__body`（`.category-link__name`、计数 `[data-category-count]`）。
+- 图框：无 padding、1px `var(--color-rule)` 边框、`var(--radius-small)`、暖纸底、`overflow:hidden`，img `object-fit:cover`；加载失败给 `.art-frame` 加 `.is-failed`（`display:none` 收起），文字链接与计数保持完整。
+- 尺寸 token：手机 `--entry-thumb-w:80px`/`-h:60px`、`--category-art-w:96px`/`-h:72px`；≥768px 条目缩略 128×96，首页分类卡宽度 100%、`aspect-ratio:4/3`、三列上图下文。
+- 图片 watcher：`watchImage(img)` 为函数声明（可被 `createPostEntry` 提前引用），静态图 `document.querySelectorAll('img').forEach(watchImage)`，动态缩略图创建后手动调用。
+
+### 5. 自检步骤与结果
+
+1. `py scripts/export-category-art.py`（Pillow 12.3.0 / Python 3.13.2）：三张 WebP 640×480、均 ≤40KB，清单 SHA256 与文件一致 —— 通过。
+2. `node --check` 三个改动 JS：语法通过。
+3. `node docs/evidence/e01/illustration-checks.mjs`：Edge/Chrome/Firefox 各 **49/0**。
+4. `node scripts/check-baseline.mjs`（E01 构建全量）：**161/0**。
+5. `node docs/evidence/e03/reading-checks.mjs`：三浏览器各 **18/0**；`node docs/evidence/e04/menu-checks.mjs`：各 **19/0**。
+6. 实际查看 Home/Blog 桌面/手机/深色/失败态/无脚本截图：最近文章纯文字，分类卡与缩略图布局正确，favorites 向日葵在浅深色均可见彩色，失败时图框收起、文字完整。
+
+### 6. 未验证项与已知问题
+
+- 640px 源图在桌面首页卡（约 365 CSS px、DPR2≈730px）有轻微放大，线稿观感可接受；如需更高清可后续导出 2x。
+- 真实手机、浏览器 UI 实际 200% 缩放、屏幕阅读器未测（沿用 OB-03，移动端为视口模拟）。
+- E03 第 8 项曾在高负载下偶发键盘返回顶部超时，根因为测试在按钮 `is-visible` 生效前聚焦，已在证据脚本修正（非产品缺陷）；E04 第 8 项首轮高负载下 Chrome 超时一次，隔离复跑未复现。
+- 工作区未提交的 A07/A08 PNG 与 `scripts/lineart-key-transparent.py` 属 E02 探索，E01 未触碰、未提交。
+
+### 7. 下一任务
+
+E02（About 与转场）、E05（状态与精修）或 E06（增强版验收发布）。接手者注意：分类小画按分类复用、装饰性空 alt，勿在首页最近文章渲染缩略；新增分类只需在分类对象补 `image` 并放入 `assets/images/`；改图后重跑 `export-category-art.py` 与 E01/E03/E04 证据脚本；E01 后博客列表像素基线在 `docs/evidence/e01/references/`，不要回退到 B05 blog 基线。

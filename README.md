@@ -2,7 +2,7 @@
 
 原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Study · Life · Favorites。
 
-**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E03／E04（阅读增强、复制与快捷菜单）已在本地完成并通过检查，E01／E02／E05／E06 保持 Deferred。
+**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01（分类小画）、E03（阅读增强）、E04（复制与快捷菜单）已在本地完成并通过检查，E02／E05／E06 保持 Deferred。
 
 - [访问网站](https://sywen-blog.pages.dev/)
 - [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
@@ -44,13 +44,13 @@ py -m http.server 8000 --bind 127.0.0.1
 
 主题优先级为保存的有效选择→系统→浅色，存储键 `sywen.theme`；存储失败时仍可当页切换。搜索按空白拆分、多词AND，与分类同时生效；保留 `q` / `category` 和中文组合输入，旧 `ai`／`coding`／`research` 分类参数映射到 `study`。列表准备成功才隐藏静态索引，失败仍可读。
 
-资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。返回顶部与顶部阅读进度已实施（E03，`js/reading.js`），复制与快捷菜单已实施（E04，`js/context-menu.js`）。
+资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。分类小画已实施（E01，首页分类卡与 Blog 条目缩略图，`assets/images/cat-*.webp`，首页「最近文章」保持纯文字）。返回顶部与顶部阅读进度已实施（E03，`js/reading.js`），复制与快捷菜单已实施（E04，`js/context-menu.js`）。
 
 ## 验收与复现
 
-2026-09-16：本地 **158项**、线上三浏览器核心 **15项**、线上源码/路径 **25项**均通过。报告与23张截图见[验收记录](docs/acceptance.md)，[演示录像](docs/evidence/baseline/baseline-demo.webm)展示实际线上操作。
+2026-09-16：本地 **161项**（E01 后全量回归）、线上三浏览器核心 **15项**、线上源码/路径 **25项**均通过（线上仍为既有部署，增强版待 E06 发布后复验）。报告与截图见[验收记录](docs/acceptance.md)，[演示录像](docs/evidence/baseline/baseline-demo.webm)展示实际线上操作。
 
-E03 阅读增强单独复验（三浏览器各 18 项、0 失败，含与 B05 基线的同视口逐像素对照）：
+E03 阅读增强复验（三浏览器各 18 项、0 失败；E01 后博客列表像素基线在 `docs/evidence/e01/references/`）：
 
 ```powershell
 $env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
@@ -58,6 +58,15 @@ node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox
 ```
 
 报告写入 `docs/evidence/e03/`，截图 `e03-*.png`。
+
+E01 分类小画复验（三浏览器各 49 项、0 失败）：
+
+```powershell
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
+node docs/evidence/e01/illustration-checks.mjs --browser=edge,chrome,firefox
+```
+
+报告写入 `docs/evidence/e01/`，含合并报告与桌面/手机/深色/失败态截图；分类 WebP 由 `py scripts/export-category-art.py` 从 `art-work/` 母版确定性导出。
 
 网站运行不依赖以下工具。复验需要Node.js 24、Edge/Chrome及Python3：
 
