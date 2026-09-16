@@ -1,0 +1,32 @@
+[
+  {
+    "file": "assets/images/cat-study.webp",
+    "category": "study",
+    "source": "art-work/categories/study-candidate-3.png",
+    "width": 640,
+    "height": 480,
+    "quality": 88,
+    "bytes": 18406,
+    "sha256": "10ccf6898fb2b9619f290e38383241bd3a8c429367b3057cf605445334b9f06d"
+  },
+  {
+    "file": "assets/images/cat-life.webp",
+    "category": "life",
+    "source": "art-work/categories/life-candidate-1.png",
+    "width": 640,
+    "height": 480,
+    "quality": 88,
+    "bytes": 18234,
+    "sha256": "43a8b67f48fcbf72d03e90c490b0a0c1be14fe06b5a5cf2d72ab7415da74547b"
+  },
+  {
+    "file": "assets/images/cat-favorites.webp",
+    "category": "favorites",
+    "source": "art-work/categories/favorites-candidate-2.png",
+    "width": 640,
+    "height": 480,
+    "quality": 88,
+    "bytes": 29072,
+    "sha256": "ead74902c15a3436097a5ab4765bee0accd1d84e92823b1b62cc6ec362f094d0"
+  }
+]
