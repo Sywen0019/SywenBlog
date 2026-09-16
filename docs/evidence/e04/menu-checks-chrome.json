@@ -1,8 +1,8 @@
 {
   "browser": "chrome",
   "browserVersion": "152.0.7977.83",
-  "baseCommit": "fddead528471be085946b61252161fc0674a653c",
-  "at": "2026-09-16T07:21:36.055Z",
+  "baseCommit": "a11d9c3c23205504b7b670e539503e6f6c765a60",
+  "at": "2026-09-16T11:13:21.419Z",
   "checks": [
     {
       "name": "1. 七页脚本顺序与资源",
@@ -231,9 +231,9 @@
       "pass": true,
       "detail": {
         "notice": "链接已复制",
-        "copied": "http://127.0.0.1:32927/posts/dom-search-notes.html",
-        "expected": "http://127.0.0.1:32927/posts/dom-search-notes.html",
-        "pageUrl": "http://127.0.0.1:32927/blog.html?q=DOM#main",
+        "copied": "http://127.0.0.1:21114/posts/dom-search-notes.html",
+        "expected": "http://127.0.0.1:21114/posts/dom-search-notes.html",
+        "pageUrl": "http://127.0.0.1:21114/blog.html?q=DOM#main",
         "noticeAutoHidden": true
       }
     },
@@ -241,7 +241,7 @@
       "name": "11. 复制失败降级面板",
       "pass": true,
       "detail": {
-        "value": "http://127.0.0.1:32927/posts/attention-intuition.html",
+        "value": "http://127.0.0.1:21114/posts/attention-intuition.html",
         "selection": "whole",
         "nativeMenu": false
       }
@@ -266,7 +266,7 @@
       "pass": true,
       "detail": {
         "blogSearch": "search-input",
-        "otherPageSearch": "http://127.0.0.1:32927/blog.html?focus=search",
+        "otherPageSearch": "http://127.0.0.1:21114/blog.html?focus=search",
         "topFocus": "",
         "theme": {
           "before": "light",
@@ -325,8 +325,8 @@
       "name": "17. 子目录路径与地址",
       "pass": true,
       "detail": {
-        "blog": "http://127.0.0.1:32927/course/blog/index.html",
-        "post": "http://127.0.0.1:32927/course/blog/posts/dom-search-notes.html"
+        "blog": "http://127.0.0.1:21114/course/blog/index.html",
+        "post": "http://127.0.0.1:21114/course/blog/posts/dom-search-notes.html"
       }
     },
     {
@@ -372,16 +372,18 @@
           "1440-light": {
             "size": [
               1440,
-              1440
+              1947
             ],
+            "viewportHeight": 1947,
             "diffOutsideHeader": 0,
             "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
           },
           "390-light": {
             "size": [
               390,
-              1903
+              2056
             ],
+            "viewportHeight": 2056,
             "diffOutsideHeader": 0,
             "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
           }
@@ -394,37 +396,37 @@
               390,
               1901
             ],
-            "diffPixels": 81442,
+            "diffPixels": 130585,
             "firstBands": [
               {
+                "from": 54,
+                "to": 63,
+                "pixels": 642
+              },
+              {
                 "from": 83,
-                "to": 87,
-                "pixels": 202
+                "to": 131,
+                "pixels": 5023
               },
               {
-                "from": 99,
-                "to": 111,
-                "pixels": 545
+                "from": 237,
+                "to": 251,
+                "pixels": 2297
               },
               {
-                "from": 123,
-                "to": 127,
-                "pixels": 202
+                "from": 262,
+                "to": 277,
+                "pixels": 3503
               },
               {
-                "from": 143,
-                "to": 143,
-                "pixels": 390
+                "from": 289,
+                "to": 303,
+                "pixels": 772
               },
               {
-                "from": 145,
-                "to": 145,
-                "pixels": 390
-              },
-              {
-                "from": 183,
-                "to": 215,
-                "pixels": 1055
+                "from": 464,
+                "to": 610,
+                "pixels": 7123
               }
             ],
             "note": "记录项：既有基线截图与当前构建渲染存在差异（1440 基线含全选高亮），不作为 E04 通过条件。"
@@ -436,12 +438,12 @@
               1440,
               900
             ],
-            "diffPixels": 48199,
+            "diffPixels": 39520,
             "firstBands": [
               {
-                "from": 30,
-                "to": 75,
-                "pixels": 10830
+                "from": 29,
+                "to": 77,
+                "pixels": 8208
               },
               {
                 "from": 161,
@@ -451,22 +453,22 @@
               {
                 "from": 225,
                 "to": 240,
-                "pixels": 3562
+                "pixels": 3849
               },
               {
-                "from": 303,
-                "to": 306,
+                "from": 252,
+                "to": 267,
+                "pixels": 723
+              },
+              {
+                "from": 329,
+                "to": 332,
                 "pixels": 20
               },
               {
-                "from": 318,
-                "to": 334,
+                "from": 344,
+                "to": 360,
                 "pixels": 2420
-              },
-              {
-                "from": 345,
-                "to": 348,
-                "pixels": 20
               }
             ],
             "note": "记录项：既有基线截图与当前构建渲染存在差异（1440 基线含全选高亮），不作为 E04 通过条件。"
@@ -523,6 +525,7 @@
   "passed": 19,
   "failed": 0,
   "recoveredToggles": [
+    "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）"
   ]

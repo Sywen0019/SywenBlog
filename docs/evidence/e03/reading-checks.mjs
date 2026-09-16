@@ -424,6 +424,12 @@ async function run(browserName, browser) {
       detail['click-' + width] = { focus: state.active, progress: state.progress, button: state.buttonVisibility };
 
       await scrollToTop(page, 1600);
+      // 键盘路径与真实 Tab 一致：先等滚动驱动的 is-visible 生效（按钮可见、可获焦），再聚焦回车。
+      // 否则瞬时跳转后立即 focus，可能命中仍 visibility:hidden 的按钮，Enter 合成 click 落空（时序竞态）。
+      await page.waitForFunction(() => {
+        const button = document.getElementById('back-to-top');
+        return Boolean(button) && button.classList.contains('is-visible') && getComputedStyle(button).visibility === 'visible';
+      }, null, { timeout: 5000 });
       await page.locator('#back-to-top').focus();
       await page.keyboard.press('Enter');
       await page.waitForFunction(() => (document.scrollingElement || document.documentElement).scrollTop === 0, null, { timeout: 5000 });
@@ -675,51 +681,74 @@ async function run(browserName, browser) {
   // 与 B05 基线截图逐像素对照。B05 基线截图在 Chromium 下采集，文本抗锯齿与 Firefox 不同，
   // 因此本项只在 Edge/Chrome 下执行；Firefox 的 1–17 项照常全部执行。
   if (browserName === 'firefox') {
-    report.checks.push({ name: '18. 与 B05 基线同视口截图对照（默认态）', pass: true, detail: '跳过：B05 基线为 Chromium 渲染；Firefox 文本抗锯齿不同，逐像素对照不适用（1–17 项照常执行）。' });
-  } else await check('18. 与 B05 基线同视口截图对照（默认态）', async () => {
+    report.checks.push({ name: '18. 与 E01 后博客列表基线同视口截图对照（默认态）', pass: true, detail: '跳过：基线为 Chromium 渲染；Firefox 文本抗锯齿不同，逐像素对照不适用（1–17 项照常执行）。' });
+  } else await check('18. 与 E01 后博客列表基线同视口截图对照（默认态）', async () => {
+    // E01 为博客文章条目加入分类缩略图，列表页整体重排、整页高度增加，B05 的 blog-* 像素基线
+    // 被 E01 有意取代；新基线（Chromium 采集、整页截图）存于 docs/evidence/e01/references/。
+    // E03 拥有的文章页表面（进度线、返回顶部）由 1–17 项功能断言覆盖；本项继续作为
+    // 「默认态重渲染确定性 + 页头/页脚稳定」的像素守卫：除页头工具行与页脚预留带外应为 0 差异。
+    // 采集新基线：$env:E01_REBASE='1'; node docs/evidence/e03/reading-checks.mjs --browser=edge
+    const rebase = process.env.E01_REBASE === '1';
     const pairs = [
-      ['docs/evidence/baseline/blog-1440-light.png', 'e03-baseline-blog-1440-light.png', 'light', 1440, 1440],
-      ['docs/evidence/baseline/blog-1440-dark.png', 'e03-baseline-blog-1440-dark.png', 'dark', 1440, 1440],
-      ['docs/evidence/baseline/blog-390-light.png', 'e03-baseline-blog-390-light.png', 'light', 390, 1901],
+      ['docs/evidence/e01/references/blog-1440-light.png', 'e03-cmp-blog-1440-light.png', 'light', 1440, 900, false],
+      ['docs/evidence/e01/references/blog-1440-dark.png', 'e03-cmp-blog-1440-dark.png', 'dark', 1440, 900, false],
+      ['docs/evidence/e01/references/blog-390-light.png', 'e03-cmp-blog-390-light.png', 'light', 390, 844, true],
     ];
     const detail = {};
-    for (const [oldRel, newName, theme, width, height] of pairs) {
+    for (const [oldRel, newName, theme, width, vpHeight, recorded] of pairs) {
       const oldFile = path.join(root, oldRel);
       const newFile = path.join(out, newName);
-      const oldSize = decodeSize(oldFile);
-      assert.equal(oldSize[0], width, `${oldRel} 基线与预期宽度不一致`);
-      // 用与基线相同的视口（含基线全页高度）截图，保证尺寸可直接比较；基线为整页截图。
-      const ctx = await browser.newContext({ viewport: { width, height }, colorScheme: theme });
+      const ctx = await browser.newContext({ viewport: { width, height: vpHeight }, colorScheme: theme });
       const cp = await ctx.newPage();
       await cp.goto(base + 'blog.html');
       await revealed(cp);
-      await cp.screenshot({ path: newFile, clip: { x: 0, y: 0, width, height }, animations: 'disabled' });
+      // 整页截图前强制懒加载缩略图解码就位并回到顶部，保证参考图与对照图渲染状态一致（像素确定性）。
+      await cp.evaluate(async () => {
+        document.documentElement.style.scrollBehavior = 'auto';
+        document.querySelectorAll('img').forEach((img) => { img.loading = 'eager'; });
+        const se = document.scrollingElement;
+        for (let y = 0; y <= se.scrollHeight; y += Math.max(200, se.clientHeight)) {
+          se.scrollTop = y;
+          await new Promise((r) => setTimeout(r, 20));
+        }
+        se.scrollTop = 0;
+        await Promise.all([...document.images].map((img) => (img.complete && img.naturalWidth > 0)
+          ? null
+          : new Promise((res) => { img.addEventListener('load', res, { once: true }); img.addEventListener('error', res, { once: true }); })));
+      });
+      await cp.waitForTimeout(120);
+      await cp.screenshot({ path: newFile, fullPage: true, animations: 'disabled' });
       report.screenshots.push(newName);
       await ctx.close();
+      if (rebase) {
+        fs.mkdirSync(path.dirname(oldFile), { recursive: true });
+        fs.copyFileSync(newFile, oldFile);
+        detail[newName] = { rebased: oldRel };
+        continue;
+      }
       // 忽略：顶部进度线（0–2px，取整可能到 3px）与页头工具行——
       // E04 之后页头多了「快捷菜单」按钮，按钮所在的水平带（含窄屏换行后的第二行）不再可比。
       const diff = comparePng(oldFile, newFile, {
         ignore: [{ x: 0, y: 0, w: width, h: 3 }, { x: 0, y: 18, w: width, h: 122 }],
       });
-      assert.equal(diff.sameSize, true, `${newName} 与基线尺寸不同 ${JSON.stringify(diff.sizeA)}/${JSON.stringify(diff.sizeB)}`);
-      // 允许页脚预留空间（+32px）带来的底部位移：差异必须全部落在最后 64 行内。
-      // 390px 的基线截图在非页脚区域也存在差异（E04 复核时实测：选区高亮等既有渲染状态差异），
-      // 该档只作为可复核的记录项，不参与通过判定；1440px 两档仍按严格标准断言。
-      const unexpected = diff.bands.filter((band) => band.from < height - 64);
-      if (width === 390) {
+      assert.equal(diff.sameSize, true, `${newName} 与 E01 基线尺寸不同 ${JSON.stringify(diff.sizeA)}/${JSON.stringify(diff.sizeB)}`);
+      // 页脚预留空间（+32px）允许底部位移：差异必须全部落在最后 64 行内。
+      const unexpected = diff.bands.filter((band) => band.from < diff.size[1] - 64);
+      if (recorded) {
         detail[newName] = {
           baseline: oldRel, size: diff.size, diffPixels: diff.diff, bands: diff.bands.length, recorded: true,
-          note: '记录项：390px 基线在非页脚区域存在既有渲染状态差异（E04 实测，与快捷菜单按钮无关），不参与通过判定。',
+          note: '记录项：390px 档沿用 E04 起的既有处理，存在选区高亮等渲染状态差异，不参与通过判定。',
         };
         continue;
       }
       assert.equal(unexpected.length, 0,
-        `${newName} 在非页脚区域出现基线外差异：${JSON.stringify(unexpected)}，色值 ${JSON.stringify(diff.colors)}`);
+        `${newName} 在页头/页脚忽略带之外出现差异：${JSON.stringify(unexpected)}，色值 ${JSON.stringify(diff.colors)}`);
       detail[newName] = {
-        baseline: oldRel, size: diff.size, diffPixels: diff.diff, ignoredDiff: diff.ignoredDiff, bands: diff.bands, colors: diff.colors,
-        note: '默认态逐像素对照：忽略顶部 3px 进度线与页头 18–140px 工具行（E04 新增的快捷菜单按钮）。Blog 页面高度由视口决定，页脚预留空间没有改变文档高度，因此其余区域应为 0 差异。',
+        baseline: oldRel, size: diff.size, diffPixels: diff.diff, ignoredDiff: diff.ignoredDiff, bands: diff.bands.length, colors: diff.colors,
+        note: '默认态整页逐像素对照 E01 后基线；忽略顶部 3px 进度线与页头 18–140px 工具行，页脚预留 64px，其余区域应为 0 差异。',
       };
     }
+    if (rebase) detail.rebase = '已写入 E01 博客列表基线；仅在 Edge 下执行一次，并提交新参考图。';
     return detail;
   });
 

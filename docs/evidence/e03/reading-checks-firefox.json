@@ -3,8 +3,8 @@
   "browser": "firefox",
   "browserVersion": "155.0",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "fddead528471be085946b61252161fc0674a653c",
-  "at": "2026-09-16T07:26:09.780Z",
+  "baseCommit": "a11d9c3c23205504b7b670e539503e6f6c765a60",
+  "at": "2026-09-16T11:08:58.043Z",
   "checks": [
     {
       "name": "1. 七页 reading.js 加载顺序与资源",
@@ -133,29 +133,29 @@
         "blog.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.75,
-          "footerBottom": 843.75,
-          "footerContentBottom": 747.75,
-          "clearance": 36.25,
-          "scrollTop": 1060
+          "footerTop": 567.55,
+          "footerBottom": 843.55,
+          "footerContentBottom": 747.55,
+          "clearance": 36.45,
+          "scrollTop": 1213
         },
         "about.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.05,
-          "footerBottom": 844.05,
-          "footerContentBottom": 748.05,
-          "clearance": 35.95,
-          "scrollTop": 1709
+          "footerTop": 567.65,
+          "footerBottom": 843.65,
+          "footerContentBottom": 747.65,
+          "clearance": 36.35,
+          "scrollTop": 1739
         },
         "index.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.83,
-          "footerBottom": 843.83,
-          "footerContentBottom": 747.83,
-          "clearance": 36.17,
-          "scrollTop": 1795
+          "footerTop": 567.63,
+          "footerBottom": 843.63,
+          "footerContentBottom": 747.63,
+          "clearance": 36.37,
+          "scrollTop": 2010
         },
         "posts/attention-intuition.html@1440px": {
           "buttonTop": 840,
@@ -169,11 +169,11 @@
         "blog.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.2,
-          "footerBottom": 899.6,
-          "footerContentBottom": 803.6,
-          "clearance": 36.4,
-          "scrollTop": 541
+          "footerTop": 749.6,
+          "footerBottom": 900,
+          "footerContentBottom": 804,
+          "clearance": 36,
+          "scrollTop": 1047
         },
         "about.html@1440px": {
           "buttonTop": 840,
@@ -187,11 +187,11 @@
         "index.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 750,
-          "footerBottom": 900.4,
-          "footerContentBottom": 804.4,
-          "clearance": 35.6,
-          "scrollTop": 1136
+          "footerTop": 749.5,
+          "footerBottom": 899.9,
+          "footerContentBottom": 803.9,
+          "clearance": 36.1,
+          "scrollTop": 1397
         }
       }
     },
@@ -237,8 +237,8 @@
           "after": 1744
         },
         "hero": {
-          "earlyHeight": 2036,
-          "lateHeight": 2036,
+          "earlyHeight": 2297,
+          "lateHeight": 2297,
           "lateProgress": 0
         }
       }
@@ -266,7 +266,7 @@
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 38,
+        "progress": 39,
         "button": "visible",
         "script": "../js/context-menu.js"
       }
@@ -305,7 +305,7 @@
       "name": "16. E03 未改动 assets/ 中的非 Hero 资产",
       "pass": true,
       "detail": {
-        "unchanged": 6,
+        "unchanged": 23,
         "preexistingHeroRevision": [],
         "baseline": "docs/evidence/baseline/checks.json（B05 快照）"
       }
@@ -327,9 +327,9 @@
       ]
     },
     {
-      "name": "18. 与 B05 基线同视口截图对照（默认态）",
+      "name": "18. 与 E01 后博客列表基线同视口截图对照（默认态）",
       "pass": true,
-      "detail": "跳过：B05 基线为 Chromium 渲染；Firefox 文本抗锯齿不同，逐像素对照不适用（1–17 项照常执行）。"
+      "detail": "跳过：基线为 Chromium 渲染；Firefox 文本抗锯齿不同，逐像素对照不适用（1–17 项照常执行）。"
     }
   ],
   "screenshots": [

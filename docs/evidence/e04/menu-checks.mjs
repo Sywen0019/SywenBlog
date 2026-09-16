@@ -1232,22 +1232,50 @@ async function run(browserName, browser) {
     // 用 visibility 隐藏而非 display:none，保证按钮所占宽度不变，只比较绘制结果。
     const detail = { screenshots: made.length };
     const hideButton = (target) => target.addStyleTag({ content: '#quick-menu-button{visibility:hidden !important}' });
-    const shootPair = async (theme, width, height) => {
+    // E01 后博客列表加入缩略图、文档高度随构建变化；视口高度改为先实测当前文档高度再对齐，
+    // 既保留「整页一屏、懒加载全部就位」的原采集条件，也不再依赖写死的 1440/1903。
+    const settleBlog = async (cp) => {
+      await cp.waitForFunction(() => Boolean(window.Sywen), null, { timeout: 5000 });
+      await cp.evaluate(async () => {
+        document.documentElement.style.scrollBehavior = 'auto';
+        document.querySelectorAll('img').forEach((img) => { img.loading = 'eager'; });
+        const se = document.scrollingElement;
+        for (let y = 0; y <= se.scrollHeight; y += Math.max(200, se.clientHeight)) {
+          se.scrollTop = y;
+          await new Promise((r) => setTimeout(r, 20));
+        }
+        se.scrollTop = 0;
+        await Promise.all([...document.images].map((img) => (img.complete && img.naturalWidth > 0)
+          ? null
+          : new Promise((res) => { img.addEventListener('load', res, { once: true }); img.addEventListener('error', res, { once: true }); })));
+      });
+    };
+    const measureBlogHeight = async (width) => {
+      const mctx = await browser.newContext({ viewport: { width, height: width === 390 ? 844 : 900 }, colorScheme: 'light' });
+      const mp = await mctx.newPage();
+      await mp.goto(base + 'blog.html');
+      await settleBlog(mp);
+      const measured = await mp.evaluate(() => document.documentElement.scrollHeight);
+      await mctx.close();
+      return measured;
+    };
+    const shootPair = async (theme, width) => {
+      const height = await measureBlogHeight(width);
       const shownFile = path.join(out, `e04-compare-${width}-${theme}-shown.png`);
       const hiddenFile = path.join(out, `e04-compare-${width}-${theme}-hidden.png`);
       for (const [file, hide] of [[shownFile, false], [hiddenFile, true]]) {
         const ctx = await browser.newContext({ viewport: { width, height }, colorScheme: theme });
         const cp = await ctx.newPage();
-        // 与基线相同的视口高度：让文档高度等于待比较的图片高度，整页截图即可逐像素对齐。
+        // 视口高度对齐实测文档高度：整页一屏，整页截图即可逐像素对齐；懒加载缩略图先就位。
         await cp.goto(base + 'blog.html');
-        await cp.waitForFunction(() => Boolean(window.Sywen), null, { timeout: 5000 });
+        await settleBlog(cp);
         if (hide) await hideButton(cp);
         // 截图前清除任何文本选区：选中态会改变链接前景色，污染逐像素对照。
         await cp.evaluate(() => { const selection = window.getSelection(); if (selection) selection.removeAllRanges(); });
         await cp.waitForTimeout(120);
         const size = await cp.evaluate(() => document.documentElement.scrollHeight);
         // Firefox 的滚动条占位会让文档高度与视口差 1px 左右；同浏览器内的两张对照仍可比。
-        assert.ok(Math.abs(size - height) <= 2, `${width}-${theme} 文档高度 ${size} 与对照高度 ${height} 相差过大`);
+        assert.ok(Math.abs(size - height) <= 2, `${width}-${theme} 文档高度 ${size} 与实测高度 ${height} 相差过大`);
         await cp.screenshot({ path: file, fullPage: true, animations: 'disabled' });
         await ctx.close();
       }
@@ -1258,11 +1286,11 @@ async function run(browserName, browser) {
       assert.equal(diff.sameSize, true, `${width}-${theme} 两张截图尺寸不同 ${JSON.stringify(diff.sizeA)}/${JSON.stringify(diff.sizeB)}`);
       assert.equal(diff.diff, 0,
         `${width}-${theme} 除页头按钮带外出现差异：${JSON.stringify(diff.bands)}｜色值 ${JSON.stringify(diff.colors)}`);
-      return { size: diff.size, diffOutsideHeader: diff.diff, ignoredBands: '顶部 3px 进度线与页头 18–140px 按钮带' };
+      return { size: diff.size, viewportHeight: height, diffOutsideHeader: diff.diff, ignoredBands: '顶部 3px 进度线与页头 18–140px 按钮带' };
     };
     detail.sameViewport = {
-      '1440-light': await shootPair('light', 1440, 1440),
-      '390-light': await shootPair('light', 390, 1903),
+      '1440-light': await shootPair('light', 1440),
+      '390-light': await shootPair('light', 390),
     };
 
     // 同视口对照 B：与 E03 冻结基线的差异只作记录，不设为通过条件。

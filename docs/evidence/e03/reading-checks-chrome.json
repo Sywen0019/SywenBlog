@@ -3,8 +3,8 @@
   "browser": "chrome",
   "browserVersion": "152.0.7977.83",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "fddead528471be085946b61252161fc0674a653c",
-  "at": "2026-09-16T07:24:51.653Z",
+  "baseCommit": "a11d9c3c23205504b7b670e539503e6f6c765a60",
+  "at": "2026-09-16T11:08:15.218Z",
   "checks": [
     {
       "name": "1. 七页 reading.js 加载顺序与资源",
@@ -133,29 +133,29 @@
         "blog.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.5,
-          "footerBottom": 844.45,
-          "footerContentBottom": 748.45,
-          "clearance": 35.55,
-          "scrollTop": 1059
+          "footerTop": 568.3,
+          "footerBottom": 844.25,
+          "footerContentBottom": 748.25,
+          "clearance": 35.75,
+          "scrollTop": 1212
         },
         "about.html@390px": {
+          "buttonTop": 784,
+          "buttonBottom": 16,
+          "footerTop": 567.97,
+          "footerBottom": 843.92,
+          "footerContentBottom": 747.92,
+          "clearance": 36.08,
+          "scrollTop": 1730
+        },
+        "index.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
           "footerTop": 568.38,
           "footerBottom": 844.33,
           "footerContentBottom": 748.33,
           "clearance": 35.67,
-          "scrollTop": 1700
-        },
-        "index.html@390px": {
-          "buttonTop": 784,
-          "buttonBottom": 16,
-          "footerTop": 567.56,
-          "footerBottom": 843.52,
-          "footerContentBottom": 747.52,
-          "clearance": 36.48,
-          "scrollTop": 1795
+          "scrollTop": 2009
         },
         "posts/attention-intuition.html@1440px": {
           "buttonTop": 840,
@@ -169,11 +169,11 @@
         "blog.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 750.08,
-          "footerBottom": 900.47,
-          "footerContentBottom": 804.47,
-          "clearance": 35.53,
-          "scrollTop": 540
+          "footerTop": 749.47,
+          "footerBottom": 899.86,
+          "footerContentBottom": 803.86,
+          "clearance": 36.14,
+          "scrollTop": 1047
         },
         "about.html@1440px": {
           "buttonTop": 840,
@@ -187,11 +187,11 @@
         "index.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.86,
-          "footerBottom": 900.25,
-          "footerContentBottom": 804.25,
-          "clearance": 35.75,
-          "scrollTop": 1136
+          "footerTop": 749.36,
+          "footerBottom": 899.75,
+          "footerContentBottom": 803.75,
+          "clearance": 36.25,
+          "scrollTop": 1397
         }
       }
     },
@@ -237,8 +237,8 @@
           "after": 1737
         },
         "hero": {
-          "earlyHeight": 2036,
-          "lateHeight": 2036,
+          "earlyHeight": 2297,
+          "lateHeight": 2297,
           "lateProgress": 0
         }
       }
@@ -305,7 +305,7 @@
       "name": "16. E03 未改动 assets/ 中的非 Hero 资产",
       "pass": true,
       "detail": {
-        "unchanged": 6,
+        "unchanged": 23,
         "preexistingHeroRevision": [],
         "baseline": "docs/evidence/baseline/checks.json（B05 快照）"
       }
@@ -327,43 +327,43 @@
       ]
     },
     {
-      "name": "18. 与 B05 基线同视口截图对照（默认态）",
+      "name": "18. 与 E01 后博客列表基线同视口截图对照（默认态）",
       "pass": true,
       "detail": {
-        "e03-baseline-blog-1440-light.png": {
-          "baseline": "docs/evidence/baseline/blog-1440-light.png",
+        "e03-cmp-blog-1440-light.png": {
+          "baseline": "docs/evidence/e01/references/blog-1440-light.png",
           "size": [
             1440,
-            1440
+            1947
           ],
           "diffPixels": 0,
-          "ignoredDiff": 9822,
-          "bands": [],
+          "ignoredDiff": 0,
+          "bands": 0,
           "colors": [],
-          "note": "默认态逐像素对照：忽略顶部 3px 进度线与页头 18–140px 工具行（E04 新增的快捷菜单按钮）。Blog 页面高度由视口决定，页脚预留空间没有改变文档高度，因此其余区域应为 0 差异。"
+          "note": "默认态整页逐像素对照 E01 后基线；忽略顶部 3px 进度线与页头 18–140px 工具行，页脚预留 64px，其余区域应为 0 差异。"
         },
-        "e03-baseline-blog-1440-dark.png": {
-          "baseline": "docs/evidence/baseline/blog-1440-dark.png",
+        "e03-cmp-blog-1440-dark.png": {
+          "baseline": "docs/evidence/e01/references/blog-1440-dark.png",
           "size": [
             1440,
-            1440
+            1947
           ],
           "diffPixels": 0,
-          "ignoredDiff": 9816,
-          "bands": [],
+          "ignoredDiff": 0,
+          "bands": 0,
           "colors": [],
-          "note": "默认态逐像素对照：忽略顶部 3px 进度线与页头 18–140px 工具行（E04 新增的快捷菜单按钮）。Blog 页面高度由视口决定，页脚预留空间没有改变文档高度，因此其余区域应为 0 差异。"
+          "note": "默认态整页逐像素对照 E01 后基线；忽略顶部 3px 进度线与页头 18–140px 工具行，页脚预留 64px，其余区域应为 0 差异。"
         },
-        "e03-baseline-blog-390-light.png": {
-          "baseline": "docs/evidence/baseline/blog-390-light.png",
+        "e03-cmp-blog-390-light.png": {
+          "baseline": "docs/evidence/e01/references/blog-390-light.png",
           "size": [
             390,
-            1901
+            2056
           ],
-          "diffPixels": 80493,
-          "bands": 59,
+          "diffPixels": 0,
+          "bands": 0,
           "recorded": true,
-          "note": "记录项：390px 基线在非页脚区域存在既有渲染状态差异（E04 实测，与快捷菜单按钮无关），不参与通过判定。"
+          "note": "记录项：390px 档沿用 E04 起的既有处理，存在选区高亮等渲染状态差异，不参与通过判定。"
         }
       }
     }
@@ -379,9 +379,9 @@
     "e03-baseline-blog-1440-dark.png",
     "e03-post-1440-light-nojs.png",
     "e03-baseline-blog-1440-light-nojs.png",
-    "e03-baseline-blog-1440-light.png",
-    "e03-baseline-blog-1440-dark.png",
-    "e03-baseline-blog-390-light.png"
+    "e03-cmp-blog-1440-light.png",
+    "e03-cmp-blog-1440-dark.png",
+    "e03-cmp-blog-390-light.png"
   ],
   "limitations": [
     "未使用实体手机与屏幕阅读器；移动端为浏览器视口模拟。",

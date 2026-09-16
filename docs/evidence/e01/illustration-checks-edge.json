@@ -1,0 +1,218 @@
+{
+  "task": "E01 category illustrations",
+  "browser": "edge",
+  "at": "2026-09-16T11:16:49.824Z",
+  "passed": 49,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "version",
+      "pass": true,
+      "detail": "153.0.4234.32"
+    },
+    {
+      "name": "home: three category cards map to study/life/favorites",
+      "pass": true
+    },
+    {
+      "name": "home: card art is decorative 640x480 lazy and loaded",
+      "pass": true
+    },
+    {
+      "name": "home: desktop card art is full-width 4:3 above the label",
+      "pass": true
+    },
+    {
+      "name": "home: recent articles stay text-only (no thumbnails)",
+      "pass": true
+    },
+    {
+      "name": "home: no resource/JS errors",
+      "pass": true
+    },
+    {
+      "name": "home: mobile card art is 96x72 to the left of label",
+      "pass": true
+    },
+    {
+      "name": "home: dark theme keeps warm art frame (no inversion)",
+      "pass": true
+    },
+    {
+      "name": "blog: JS renders dynamic list and hides static fallback",
+      "pass": true
+    },
+    {
+      "name": "blog: each dynamic thumbnail maps to its category image",
+      "pass": true
+    },
+    {
+      "name": "blog: desktop thumbnails render at 128x96",
+      "pass": true
+    },
+    {
+      "name": "blog: filtering keeps thumbnails consistent (study=3, life=1)",
+      "pass": true
+    },
+    {
+      "name": "blog: no resource/JS errors",
+      "pass": true
+    },
+    {
+      "name": "blog: mobile thumbnails render at 80x60",
+      "pass": true
+    },
+    {
+      "name": "blog: failed thumbnails collapse but entries/links remain",
+      "pass": true
+    },
+    {
+      "name": "home: failed card art collapses but cards/links remain",
+      "pass": true
+    },
+    {
+      "name": "no-js: static blog list shows four thumbnails mapped correctly",
+      "pass": true
+    },
+    {
+      "name": "no-js: home cards present with hardcoded counts",
+      "pass": true
+    },
+    {
+      "name": "subdirectory: dynamic thumbnails resolve under /course/blog/",
+      "pass": true
+    },
+    {
+      "name": "subdirectory: home card art resolves under /course/blog/",
+      "pass": true
+    },
+    {
+      "name": "subdirectory: no 404s",
+      "pass": true
+    },
+    {
+      "name": "light index.html 320px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light index.html 390px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light index.html 767px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light index.html 768px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light index.html 769px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1024px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1440px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 320px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 390px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 767px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 768px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 769px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1024px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1440px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 320px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 390px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 767px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 768px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 769px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1024px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1440px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 320px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 390px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 767px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 768px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 769px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1024px no horizontal overflow / no broken art",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1440px no horizontal overflow / no broken art",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    "e01-home-1440-light.png",
+    "e01-home-390-dark.png",
+    "e01-blog-1440-light.png",
+    "e01-blog-390-light.png",
+    "e01-image-failed-1440.png",
+    "e01-home-nojs-390-dark.png"
+  ],
+  "limitations": [
+    "未使用实体手机与屏幕阅读器；移动端为浏览器视口模拟。",
+    "观感类判据（线条协调、卡片节奏）由 E06 的 VC2 正式判定，本脚本只记录可测量事实；本轮仅本地，不宣告 VC2 通过。"
+  ]
+}

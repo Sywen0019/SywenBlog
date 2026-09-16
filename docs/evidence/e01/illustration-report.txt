@@ -1,0 +1,21 @@
+E01 illustration checks
+PASS  [file] assets/images/cat-study.webp exists
+PASS  [file] assets/images/cat-study.webp <=40KB
+PASS  [file] assets/images/cat-study.webp is WebP (RIFF/WEBP)
+PASS  [file] assets/images/cat-study.webp manifest bytes/sha/4:3
+PASS  [file] assets/images/cat-life.webp exists
+PASS  [file] assets/images/cat-life.webp <=40KB
+PASS  [file] assets/images/cat-life.webp is WebP (RIFF/WEBP)
+PASS  [file] assets/images/cat-life.webp manifest bytes/sha/4:3
+PASS  [file] assets/images/cat-favorites.webp exists
+PASS  [file] assets/images/cat-favorites.webp <=40KB
+PASS  [file] assets/images/cat-favorites.webp is WebP (RIFF/WEBP)
+PASS  [file] assets/images/cat-favorites.webp manifest bytes/sha/4:3
+
+## edge: 49 passed, 0 failed
+
+## chrome: 49 passed, 0 failed
+
+## firefox: 49 passed, 0 failed
+
+ALL CHECKS PASSED
