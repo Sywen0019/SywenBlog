@@ -1,12 +1,12 @@
 # Agent 交接记录（H）
 
-## 当前交接摘要 · 2026-09-16（E03 之后）
+## 当前交接摘要 · 2026-09-16（E04 之后）
 
-B00–B06 已完成并保持可提交；E03「简单阅读增强」已本地完成（Passed，见下方 E03 记录），E01／E02／E04／E05／E06 仍 Deferred。运行时里程碑 e3191ba，部署修正655e8c4已在线验收。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的 D；工作区另有一批未提交的 Hero 线稿修订（E05 式美术产物），不属于 E03。
+B00–B06 已完成并保持可提交；E03「简单阅读增强」与 E04「复制与快捷菜单」已本地完成（均 Passed，见下方记录），E01／E02／E05／E06 仍 Deferred。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的 D；工作区另有一批未提交的 Hero 线稿修订（E05 式美术产物），不属于 E03／E04。
 
-theme/site/blog/reading 已接入，保留 ID/data 契约与静态降级；context-menu 与复制面板仍未接入（`#quick-menu-button`、`#site-notice`、`#copy-panel`、`#context-menu` 保持 `hidden`）。E03 证据见 `docs/evidence/e03/`，三浏览器各 17 项通过；B05 的 158 项基线回归在 E03 后重新执行并保持通过。VC0/VC1-B 结论见 visual-review.md，VC2 仍待 E06。
+theme/site/blog/reading/context-menu 已全部接入，保留 ID/data 契约与静态降级。E04 之后 `#quick-menu-button`、`#copy-panel`、`#site-notice`、`#context-menu` 由 `js/context-menu.js` 接管：仅在 `(hover: hover) and (pointer: fine)` 下显示按钮并按需构建菜单，复制失败时显示手动复制面板。E04 证据见 `docs/evidence/e04/`，三浏览器各 19 项通过；E03 的 `reading-checks.mjs` 按新契约最小更新后三浏览器各 18 项仍通过；B05 的 158 项基线回归在 E04 后重跑保持通过。VC0/VC1-B 结论见 visual-review.md，VC2 仍待 E06。
 
-当前冻结补充：hero-desk-640/1280.webp 已产出（D）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；发布白名单含 `js/`，因此 reading.js 会随下次构建进入 dist，但 E03 本身不推送、不部署（留给 E06）。
+当前冻结补充：hero-desk-640/1280.webp 已产出（D）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；发布白名单含 `js/`，因此 reading.js 与 context-menu.js 会随下次构建进入 dist，但 E04 本身不推送、不部署（留给 E06）。
 
 ---
 
@@ -34,6 +34,7 @@ theme/site/blog/reading 已接入，保留 ID/data 契约与静态降级；conte
 | T03 最小版本部署验证 | — | Blocked（外部阻塞，用户决定延期） | — | 见「延期与未开始任务」 |
 | T04 Tokens、公共组件与响应式基础 | DeepSeek | Passed | `4f91102` | 见 T04 |
 | E03 简单阅读增强 | DeepSeek | Passed（本地） | `a0ed633` | 见 E03 |
+| E04 复制与快捷菜单 | DeepSeek | Passed（本地） | `fddead5` | 见 E04 |
 
 ---
 
@@ -363,3 +364,89 @@ B04加载：theme.js于CSS前同步；posts-data.js→site.js→仅Blog的blog.j
 ### 7. 下一任务
 
 E04（复制与快捷菜单）或 E05（状态与精修）按用户领取；E06 负责 VC2 与增强版发布。接手者注意：菜单里的百分比应直接复用 `Sywen.getReadingProgress()`，不要维护第二套滚动计算；「返回顶部」动作也应复用 `js/reading.js` 的行为（可调用 `window.scrollTo` 后聚焦主标题），不要在菜单里复制实现。
+
+---
+
+## E04 — 复制与快捷菜单
+
+**模型：** DeepSeek（本会话）｜**状态：** Passed（本地）｜**原阶段：** 基线后 E 类第二包（任务卡输出 T13／T14）
+
+### 2. 基础版本
+
+- 起始 commit：`fddead5`（`feat: add copy fallback panel and shared site actions`，本任务第一步自身提交）；再往前为 `c0534bd`（E03 收尾，与 `origin/main` 一致）。起始工作区**不干净**：Hero 线稿修订批次（`DESIGN_SPEC.md`、`docs/art-direction.md`、`docs/hero-prompts.md`、`docs/hero-assets.json`、`assets/images/hero-desk-640/1280.webp`、`Change_log.md` 顶部既有条目、`docs/hero-lineart-correction.md`、`docs/evidence/hero-lineart-e/`）按用户决定原样保留，**不纳入 E04 提交**。
+- 输入：`Plan.md`「基线之后」E04 行、`PROJECT_PLAN.html` §15（§15.1～§15.6）、§16.1／§16.3／§16.4、§20.2／§20.3、`PROJECT_PLAN.html` §12.2／§12.3 的视觉与层级。
+
+### 3. 实际修改文件
+
+| 文件 | 摘要 |
+|---|---|
+| `js/site.js` | 新增共享动作：`notify()`／`hideNotice()`（统一状态区，默认 3s 自动收起）、`copyText()`（仅安全上下文调用 Clipboard API，失败转 `false` 不抛出）、`siteUrl()`／`publicUrl()`、`focusSearch()`、`goTop()` |
+| `js/reading.js` | 暴露 `site.requestTop`（返回顶部唯一实现），供菜单与浮动按钮共用 |
+| `js/context-menu.js` | 新增。能力门、菜单构建、定位夹取、关闭时机、键盘（WAI-ARIA 菜单按钮模式）、复制与降级面板、只读进度 |
+| 七页 HTML | `#copy-panel` 静态降级标记（`role="dialog"`、标题、只读地址输入框、说明、关闭按钮）；`context-menu.js` 以 `defer` 接入（`reading.js` 之后） |
+| `css/components.css` | 第 8 节新增 `.copy-panel__field`／`.copy-panel__input`／`.copy-panel__note`；`.context-menu__item` 加 `user-select: none`。复用既有 `.field__label`／`.field__input` 规格 |
+| `scripts/check-baseline.mjs` | 把 `#quick-menu-button` 不可见断言改为能力相关等价断言（可见性＝`(hover:hover) and (pointer:fine)`，且 `aria-haspopup="menu"`、`aria-expanded="false"`、菜单初始 `hidden`） |
+| `docs/evidence/e03/reading-checks.mjs` | 兼容更新：脚本顺序加入 `context-menu.js`；`outstandingHidden` 改为仍须隐藏的三项并单独校验菜单按钮；第 18 项忽略页头工具行、390px 档改为记录项 |
+| `docs/evidence/e04/` | 新增 `menu-checks.mjs`、三浏览器 `menu-checks-*.json`、`menu-report.txt`、39 张截图 |
+| `docs/acceptance.md`／`docs/agent-handoffs.md`／`Change_log.md`／`docs/tasks/*` | 验收结果、交接、变更记录与任务索引同步 |
+
+未改动：既有 id／类名／data 属性语义、Header／Footer 文本、资源路径、`assets/`（哈希逐项与 B05 快照一致，仅两张 Hero 保持既有未提交修订）、`scripts/build-site.sh`。
+
+### 4. 新增 DOM 约定、函数签名与加载顺序
+
+**加载顺序（七页一致）**：`theme.js`（头部同步）→ `posts-data.js` → `site.js` →（仅 Blog）`blog.js` → `reading.js` → `context-menu.js`，除主题外全部 `defer`。
+
+**新增接口（`window.Sywen`）**
+
+| 签名 | 说明 |
+|---|---|
+| `notify(message, options?)` | 写入 `#site-notice` 并显示，默认 3000ms 后收起；`options.duration` 可覆盖（面板缺失时用 6000ms 兜底提示） |
+| `hideNotice()` | 立即收起提示并清理计时器 |
+| `copyText(text)` | 返回 `Promise<boolean>`；仅 `http(s):` 且存在 `navigator.clipboard.writeText` 时调用，拒绝/异常一律转 `false` |
+| `siteUrl()` | 当前完整地址（含查询与片段） |
+| `publicUrl()` | 当前地址去掉查询与片段（文章地址） |
+| `focusSearch()` | 页内存在 `#search-input` 则聚焦并返回 `true`，否则跳 `blog.html?focus=search` |
+| `goTop()` | 转调 `reading.js` 的 `requestTop`（缺失时回退 `window.scrollTo(0,0)`） |
+| `requestTop`（由 `reading.js` 提供） | 返回顶部的唯一实现：平滑滚动、减少动态效果即时、结束后聚焦主标题 |
+
+**新增标记与类名**
+
+- `#copy-panel` 内部：`#copy-panel-title`、`.copy-panel__field`、`#copy-panel-input`（`readonly`、`type="text"`、`spellcheck="false"`）、`.copy-panel__note`、`.copy-panel__actions`、`#copy-panel-close`；面板保持 `hidden` 直到复制失败。
+- `#context-menu` 内部（首次打开时由脚本构建一次，之后复用）：`.context-menu__group`（`role="group"` + `aria-labelledby` 指向内部 `.sr-only` 组名）＋ `[role="menuitem"]`（`button`，`tabindex="-1"`，含 `svg.icon`）＋ 文章页的 `.context-menu__progress`（`role="status"`、`aria-live="off"`、`<p>`，不参与键盘循环）。
+- 菜单项文案：首页／文章（文章页为「返回文章列表」）／关于／搜索文章／返回顶部／切换至深色·浅色／复制页面链接（文章页为「复制文章链接」）。
+- 菜单状态：`#context-menu[hidden][inert]` 表示关闭；`#quick-menu-button` 的 `aria-expanded` 与菜单同步。菜单为 `position: fixed`、`z-index: var(--z-menu)`，面板为 `var(--z-panel)`，鼠标 `clientX/clientY` 定位并夹到视口内 8px。
+
+**交互契约（实现时务必沿用）**
+
+- 能力门：`matchMedia('(hover: hover) and (pointer: fine)')`；不满足时按钮保持 `hidden`、不注册 `contextmenu` 拦截，媒体条件变化时关闭菜单并撤销拦截。
+- 原生菜单豁免（沿祖先链判定）：`input/textarea/select/[contenteditable]`、`a/img/video/audio`、`#copy-panel` 内、`[data-menu-exempt]`、`Shift` 右键、存在非空文本选区。
+- 关闭时机：点击外部（`pointerdown`）、Esc、页面／元素滚动、`resize`、窗口 `blur`、能力变化、菜单项执行后；菜单内部滚动不关闭。关闭监听在初始化时一次性注册，处理器内部按 `shown()` 判断。
+- 键盘：打开后焦点在第一个可执行项（键盘／右键入口）或留在按钮上（鼠标按下入口）；↑↓ 循环、Home/End、Enter/Space 执行、Esc 关闭并归还焦点、Tab 关闭且不 `preventDefault`（交给浏览器继续移动焦点）。
+- 文件协议：`file://` 下不调用剪贴板，直接显示面板并提示「请在公开网站中复制可分享链接」。
+- 焦点归还：面板与菜单关闭后按微任务 + `setTimeout(0/16/60/200)` 补设焦点；目标必须是「关闭后仍可聚焦」的元素（菜单项会随菜单 `inert`，因此回退到菜单按钮）。此时不要改写为同步 `focus()`。
+
+### 5. 自检步骤与结果
+
+- `node docs/evidence/e04/menu-checks.mjs --browser=edge,chrome,firefox`：Edge 153.0.4234.32、Chrome 152.0.7977.83、Firefox 155.0 各 **19 项通过、0 失败**（Firefox 走 `PLAYWRIGHT_BROWSERS_PATH` 指向工作区忽略目录；其剪贴板权限不可申请，相关断言自动退回可见事实）。报告 `docs/evidence/e04/menu-checks-<browser>.json` 与 `menu-report.txt`。
+- `node scripts/check-baseline.mjs`（`PLAYWRIGHT_BROWSERS_PATH` 指向 Firefox）：**158 项通过、0 失败**，见 `docs/evidence/baseline/checks.json`。
+- `node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox`：兼容更新后各 **18 项通过、0 失败**，E03 证据已按当前构建刷新。
+- 实测要点：菜单宽 224px、项高 ≥40px、四角取点后仍在视口 8px 内；再次右键不叠加实例；页面滚动关闭而菜单内部滚动不关闭；复制成功写入不含查询与片段的文章地址并提示「链接已复制」；复制失败显示面板且输入框聚焦并全选；同视口 A/B（隐藏／显示按钮）除页头按钮带外逐像素零差异；无脚本时四个控件保持 `hidden`，`context-menu.js` 加载失败时页面功能与静态降级不变。
+
+### 6. 未验证项与已知问题
+
+- 未使用实体手机与屏幕阅读器（沿用 OB-03）；混合输入设备（触摸为主 + 外接鼠标）按 §15.1 的「主指针」判定不显示按钮，本轮未在真实混合设备上验证。
+- 观感类判据（菜单/面板与页头的视觉分量）留给 E06 的 VC2；本会话已逐张查看 39 张截图。
+- 本机 Firefox 在整套检查中偶发丢失鼠标点击（单独复现 12 次均正常），`menu-checks.mjs` 在等待 150ms 后若无状态变化会补一次合成 click 并在报告中计数（`recoveredToggles`），断言未削弱。
+- E03／B05 的冻结基线截图存在既有渲染差异（1440 基线含全选高亮、390 基线在非页脚区域有大面积差异），E04 的逐像素对照改为「当前构建内隐藏/显示按钮」的 A/B，并把与旧基线的差值记录为记录项，不改写历史证据。
+- 修改 `css/components.css` 共享区段时注意：E04 只改第 8 节与 `.context-menu__item` 一处，未重命名既有类名。
+- 未执行：推送、部署、VC2、E06（按用户决定，留待后续任务）。
+- 无阻塞后续任务的已知问题。
+
+### 7. 下一任务
+
+E05（状态与精修）或 E06（增强版验收发布）按用户领取。接手者注意：
+
+- 菜单与面板的关闭/焦点逻辑集中在 `js/context-menu.js`，新增菜单项只需在 `buildMenu()` 里加 `item(文案, 图标名, 动作)`，动作必须调用 `window.Sywen` 的共享实现。
+- 复制入口保持唯一：任何新的复制需求都走 `Sywen.copyText()` + 降级面板，不要另写剪贴板代码。
+- 修改页头工具行或断点前先看 `docs/evidence/e04/` 的 A/B 对照脚本，页头是当前唯一允许出现差异的水平带。
+- E06 发布前需重跑 `scripts/check-baseline.mjs` 与两个证据脚本，并按 VC2 复核观感。

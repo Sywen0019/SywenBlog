@@ -3,20 +3,20 @@
   "browser": "firefox",
   "browserVersion": "155.0",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "a0ed6339193d65c4712c9d48f5113caa2057735d",
-  "at": "2026-09-16T03:07:46.249Z",
+  "baseCommit": "fddead528471be085946b61252161fc0674a653c",
+  "at": "2026-09-16T07:26:09.780Z",
   "checks": [
     {
       "name": "1. 七页 reading.js 加载顺序与资源",
       "pass": true,
       "detail": {
-        "index.html": 4,
-        "blog.html": 5,
-        "about.html": 4,
-        "posts/attention-intuition.html": 4,
-        "posts/dom-search-notes.html": 4,
-        "posts/paper-reading-notes.html": 4,
-        "posts/leave-some-space.html": 4
+        "index.html": 5,
+        "blog.html": 6,
+        "about.html": 5,
+        "posts/attention-intuition.html": 5,
+        "posts/dom-search-notes.html": 5,
+        "posts/paper-reading-notes.html": 5,
+        "posts/leave-some-space.html": 5
       }
     },
     {
@@ -124,38 +124,38 @@
         "posts/attention-intuition.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.1,
-          "footerBottom": 844.1,
-          "footerContentBottom": 748.1,
-          "clearance": 35.9,
-          "scrollTop": 2136
+          "footerTop": 567.5,
+          "footerBottom": 843.5,
+          "footerContentBottom": 747.5,
+          "clearance": 36.5,
+          "scrollTop": 2139
         },
         "blog.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.35,
-          "footerBottom": 844.35,
-          "footerContentBottom": 748.35,
-          "clearance": 35.65,
-          "scrollTop": 1057
+          "footerTop": 567.75,
+          "footerBottom": 843.75,
+          "footerContentBottom": 747.75,
+          "clearance": 36.25,
+          "scrollTop": 1060
         },
         "about.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.65,
-          "footerBottom": 843.65,
-          "footerContentBottom": 747.65,
-          "clearance": 36.35,
-          "scrollTop": 1707
+          "footerTop": 568.05,
+          "footerBottom": 844.05,
+          "footerContentBottom": 748.05,
+          "clearance": 35.95,
+          "scrollTop": 1709
         },
         "index.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.43,
-          "footerBottom": 844.43,
-          "footerContentBottom": 748.43,
-          "clearance": 35.57,
-          "scrollTop": 1792
+          "footerTop": 567.83,
+          "footerBottom": 843.83,
+          "footerContentBottom": 747.83,
+          "clearance": 36.17,
+          "scrollTop": 1795
         },
         "posts/attention-intuition.html@1440px": {
           "buttonTop": 840,
@@ -247,8 +247,8 @@
       "name": "11. 深链接定位下进度一致",
       "pass": true,
       "detail": {
-        "scrollTop": 144,
-        "maxScroll": 2280,
+        "scrollTop": 146,
+        "maxScroll": 2283,
         "progress": 6,
         "expected": 6
       }
@@ -266,9 +266,9 @@
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 41,
+        "progress": 38,
         "button": "visible",
-        "script": "../js/reading.js"
+        "script": "../js/context-menu.js"
       }
     },
     {

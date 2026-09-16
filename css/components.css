@@ -920,6 +920,8 @@ a.tag:hover {
   line-height: var(--leading-ui);
   text-align: left;
   text-decoration: none;
+  /* 菜单项是命令而不是文本：避免双击时选中标签 */
+  user-select: none;
   cursor: pointer;
 }
 

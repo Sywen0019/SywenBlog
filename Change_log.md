@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-09-16 · E04 复制与快捷菜单
+
+- 新增 `js/context-menu.js`：按 §15.1 仅在 `(hover: hover) and (pointer: fine)` 下启用；构建单层菜单（导航／页面动作／复制与只读状态三组，共 7 项，含内联 SVG 图标与中文文字），按 `clientX/clientY` 定位并夹到视口内 8px；点击外部、Esc、滚动、Resize、失焦时关闭，菜单自身滚动不关闭；键盘遵循 WAI-ARIA 菜单按钮模式（↑↓ 循环、Home/End、Enter/Space、Esc 归还焦点、Tab 关闭不困住焦点）；`input`／链接／媒体／选区／Shift／`[data-menu-exempt]` 保留原生菜单。
+- 复制按 §15.6：优先 Clipboard API，失败或不可用时显示手动复制面板（只读地址 + 关闭按钮，聚焦并全选，Esc 与关闭按钮退出后焦点回到菜单按钮）；`file://` 下不复制本地路径，提示「请在公开网站中复制可分享链接」。
+- `js/site.js` 新增共享动作 `notify`／`hideNotice`（统一状态区，3s 自动收起）、`copyText`、`siteUrl`／`publicUrl`、`focusSearch`、`goTop`；`js/reading.js` 暴露 `requestTop`，菜单的「返回顶部」与主题、搜索、进度全部复用既有实现，不写第二套。
+- 七页写入 `#copy-panel` 静态降级标记并在 `reading.js` 之后以 `defer` 接入 `context-menu.js`；`css/components.css` 第 8 节补面板字段/输入框/说明样式（复用 `.field__*` 规格），菜单项加 `user-select: none`。既有 ID、类名、路径与无脚本降级不变。
+- 新增可复验检查 `docs/evidence/e04/menu-checks.mjs`：Edge 153／Chrome 152／Firefox 155 各 **19 项通过、0 失败**，39 张截图；同视口 A/B（隐藏／显示按钮）在 1440 与 390 两档差异均为 0，证明按钮与菜单容器不改变页面布局。
+- 回归：`node scripts/check-baseline.mjs` 158 项通过、0 失败（`#quick-menu-button` 的可见性断言改为与 `(hover:hover) and (pointer:fine)` 能力一致）；`docs/evidence/e03/reading-checks.mjs` 按新契约最小更新后三浏览器各 18 项通过。
+- 本地提交，未推送、未部署；VC2 与线上增强版仍属 E06。
+
 ## 2026-09-16 · E03 简单阅读增强（返回顶部与阅读进度）
 
 - 新增 `js/reading.js`：按 §16.3 计算页面滚动进度（贴顶 2px 墨线，`aria-valuenow` 同步，不设 `aria-live`），按 §16.2 在滚动 480px 后显示「返回顶部」，点击或键盘执行后先回到顶部再聚焦主标题；`prefers-reduced-motion` 下即时滚动。通过 `Sywen.getReadingProgress()` 暴露当前值，供后续菜单复用。
@@ -8,6 +18,13 @@
 - 新增可复验检查 `docs/evidence/e03/reading-checks.mjs`（含自写 PNG 解码对照）：Edge 153／Chrome 152／Firefox 155 各 18 项、0 失败；与 B05 基线同视口逐像素对照，忽略顶部进度线后差异为 0。
 - 基线回归 `node scripts/check-baseline.mjs` 收紧后 158 项通过、0 失败；`shot()` 增加一次重试以规避本机偶发截图写入失败（不改变截图参数与断言）。
 - 本地提交，未推送、未部署；VC2 与线上增强版仍属 E06。
+
+## 2026-09-16 · Hero 下半框眼镜与线稿纠正
+
+- 按用户反馈重新实际核对三视图：明确红色下半框、上缘无红框；纠正旧提示词过宽和验收遗漏。
+- 内置出图新增一次定向修订 E，去除电脑/键盘/平板/笔杆/植物的涂色灰面，以线条和留白表现；保留低头书写构图。
+- 更新正式640/1280 WebP（40260/126590字节）、资源哈希、规范与提示词；旧D和旧验收截图保留为历史。
+- 本次仅做Hero四种桌面/手机浅深的定向复核，不重复全站功能测试；基线标签不移动，E类任务仍延期。
 
 ## 2026-09-16 · B06 作业基线交付
 

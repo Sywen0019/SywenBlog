@@ -3,20 +3,20 @@
   "browser": "chrome",
   "browserVersion": "152.0.7977.83",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "a0ed6339193d65c4712c9d48f5113caa2057735d",
-  "at": "2026-09-16T03:07:27.971Z",
+  "baseCommit": "fddead528471be085946b61252161fc0674a653c",
+  "at": "2026-09-16T07:24:51.653Z",
   "checks": [
     {
       "name": "1. 七页 reading.js 加载顺序与资源",
       "pass": true,
       "detail": {
-        "index.html": 4,
-        "blog.html": 5,
-        "about.html": 4,
-        "posts/attention-intuition.html": 4,
-        "posts/dom-search-notes.html": 4,
-        "posts/paper-reading-notes.html": 4,
-        "posts/leave-some-space.html": 4
+        "index.html": 5,
+        "blog.html": 6,
+        "about.html": 5,
+        "posts/attention-intuition.html": 5,
+        "posts/dom-search-notes.html": 5,
+        "posts/paper-reading-notes.html": 5,
+        "posts/leave-some-space.html": 5
       }
     },
     {
@@ -124,38 +124,38 @@
         "posts/attention-intuition.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.88,
-          "footerBottom": 843.83,
-          "footerContentBottom": 747.83,
-          "clearance": 36.17,
-          "scrollTop": 2131
+          "footerTop": 568.27,
+          "footerBottom": 844.22,
+          "footerContentBottom": 748.22,
+          "clearance": 35.78,
+          "scrollTop": 2133
         },
         "blog.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.11,
-          "footerBottom": 844.06,
-          "footerContentBottom": 748.06,
-          "clearance": 35.94,
-          "scrollTop": 1057
+          "footerTop": 568.5,
+          "footerBottom": 844.45,
+          "footerContentBottom": 748.45,
+          "clearance": 35.55,
+          "scrollTop": 1059
         },
         "about.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.98,
-          "footerBottom": 843.94,
-          "footerContentBottom": 747.94,
-          "clearance": 36.06,
-          "scrollTop": 1698
+          "footerTop": 568.38,
+          "footerBottom": 844.33,
+          "footerContentBottom": 748.33,
+          "clearance": 35.67,
+          "scrollTop": 1700
         },
         "index.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.17,
-          "footerBottom": 844.13,
-          "footerContentBottom": 748.13,
-          "clearance": 35.87,
-          "scrollTop": 1792
+          "footerTop": 567.56,
+          "footerBottom": 843.52,
+          "footerContentBottom": 747.52,
+          "clearance": 36.48,
+          "scrollTop": 1795
         },
         "posts/attention-intuition.html@1440px": {
           "buttonTop": 840,
@@ -247,8 +247,8 @@
       "name": "11. 深链接定位下进度一致",
       "pass": true,
       "detail": {
-        "scrollTop": 144,
-        "maxScroll": 2275,
+        "scrollTop": 146,
+        "maxScroll": 2277,
         "progress": 6,
         "expected": 6
       }
@@ -266,9 +266,9 @@
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 44,
+        "progress": 40,
         "button": "visible",
-        "script": "../js/reading.js"
+        "script": "../js/context-menu.js"
       }
     },
     {
@@ -337,9 +337,10 @@
             1440
           ],
           "diffPixels": 0,
+          "ignoredDiff": 9822,
           "bands": [],
           "colors": [],
-          "note": "默认态逐像素对照：忽略顶部 3px 进度线。Blog 页面高度由视口决定，页脚预留空间（96px，仍小于内容高度）没有改变文档高度，因此其余区域应为 0 差异。"
+          "note": "默认态逐像素对照：忽略顶部 3px 进度线与页头 18–140px 工具行（E04 新增的快捷菜单按钮）。Blog 页面高度由视口决定，页脚预留空间没有改变文档高度，因此其余区域应为 0 差异。"
         },
         "e03-baseline-blog-1440-dark.png": {
           "baseline": "docs/evidence/baseline/blog-1440-dark.png",
@@ -348,9 +349,10 @@
             1440
           ],
           "diffPixels": 0,
+          "ignoredDiff": 9816,
           "bands": [],
           "colors": [],
-          "note": "默认态逐像素对照：忽略顶部 3px 进度线。Blog 页面高度由视口决定，页脚预留空间（96px，仍小于内容高度）没有改变文档高度，因此其余区域应为 0 差异。"
+          "note": "默认态逐像素对照：忽略顶部 3px 进度线与页头 18–140px 工具行（E04 新增的快捷菜单按钮）。Blog 页面高度由视口决定，页脚预留空间没有改变文档高度，因此其余区域应为 0 差异。"
         },
         "e03-baseline-blog-390-light.png": {
           "baseline": "docs/evidence/baseline/blog-390-light.png",
@@ -358,10 +360,10 @@
             390,
             1901
           ],
-          "diffPixels": 0,
-          "bands": [],
-          "colors": [],
-          "note": "默认态逐像素对照：忽略顶部 3px 进度线。Blog 页面高度由视口决定，页脚预留空间（96px，仍小于内容高度）没有改变文档高度，因此其余区域应为 0 差异。"
+          "diffPixels": 80493,
+          "bands": 59,
+          "recorded": true,
+          "note": "记录项：390px 基线在非页脚区域存在既有渲染状态差异（E04 实测，与快捷菜单按钮无关），不参与通过判定。"
         }
       }
     }

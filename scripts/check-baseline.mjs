@@ -117,7 +117,25 @@ async function core(browser, label) {
     assert.equal(await p.locator('#theme-toggle').innerText(), '切换至浅色');
     await p.emulateMedia({ colorScheme: 'light' });
     assert.equal(await p.locator('html').getAttribute('data-theme'), 'dark');
-    assert.equal(await p.locator('#quick-menu-button').isVisible(), false);
+    // E04 起「快捷菜单」按钮在具备 (hover: hover) and (pointer: fine) 的页面上会显示；
+    // 断言改为与浏览器实际报告的能力一致，触摸/键盘设备上仍须保持 hidden 且不参与布局。
+    const menuState = await p.evaluate(() => {
+      const button = document.getElementById('quick-menu-button');
+      if (!button) return null;
+      const style = getComputedStyle(button);
+      return {
+        capable: window.matchMedia('(hover: hover) and (pointer: fine)').matches,
+        visible: style.display !== 'none' && style.visibility !== 'hidden',
+        haspopup: button.getAttribute('aria-haspopup'),
+        expanded: button.getAttribute('aria-expanded'),
+        menuHidden: document.getElementById('context-menu').hasAttribute('hidden'),
+      };
+    });
+    assert.ok(menuState, 'missing #quick-menu-button');
+    assert.equal(menuState.haspopup, 'menu');
+    assert.equal(menuState.expanded, 'false');
+    assert.equal(menuState.visible, menuState.capable, `quick-menu-button visibility ${menuState.visible} vs capability ${menuState.capable}`);
+    assert.equal(menuState.menuHidden, true);
   });
   await check(label + ': no uncaught JS exceptions', async () => assert.deepEqual(exceptions, []));
   await context.close();

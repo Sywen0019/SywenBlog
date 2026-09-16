@@ -1,0 +1,503 @@
+{
+  "browser": "edge",
+  "browserVersion": "153.0.4234.32",
+  "baseCommit": "fddead528471be085946b61252161fc0674a653c",
+  "at": "2026-09-16T07:27:38.662Z",
+  "checks": [
+    {
+      "name": "1. 七页脚本顺序与资源",
+      "pass": true,
+      "detail": {
+        "index.html": 5,
+        "blog.html": 6,
+        "about.html": 5,
+        "posts/attention-intuition.html": 5,
+        "posts/dom-search-notes.html": 5,
+        "posts/paper-reading-notes.html": 5,
+        "posts/leave-some-space.html": 5
+      }
+    },
+    {
+      "name": "2. 能力门与按钮初始状态",
+      "pass": true,
+      "detail": {
+        "index.html": {
+          "capable": true,
+          "buttonVisible": true
+        },
+        "blog.html": {
+          "capable": true,
+          "buttonVisible": true
+        },
+        "about.html": {
+          "capable": true,
+          "buttonVisible": true
+        },
+        "posts/attention-intuition.html": {
+          "capable": true,
+          "buttonVisible": true
+        },
+        "posts/dom-search-notes.html": {
+          "capable": true,
+          "buttonVisible": true
+        },
+        "posts/paper-reading-notes.html": {
+          "capable": true,
+          "buttonVisible": true
+        },
+        "posts/leave-some-space.html": {
+          "capable": true,
+          "buttonVisible": true
+        }
+      }
+    },
+    {
+      "name": "3. 反向能力门（模拟触摸为主）",
+      "pass": true,
+      "detail": {
+        "capable": false,
+        "hidden": true,
+        "display": "none",
+        "prevented": false,
+        "menuHidden": true
+      }
+    },
+    {
+      "name": "4. 菜单内容与分组",
+      "pass": true,
+      "detail": {
+        "index.html": {
+          "items": [
+            "首页",
+            "文章",
+            "关于",
+            "搜索文章",
+            "返回顶部",
+            "切换至深色",
+            "复制页面链接"
+          ],
+          "progress": null
+        },
+        "blog.html": {
+          "items": [
+            "首页",
+            "文章",
+            "关于",
+            "搜索文章",
+            "返回顶部",
+            "切换至深色",
+            "复制页面链接"
+          ],
+          "progress": null
+        },
+        "about.html": {
+          "items": [
+            "首页",
+            "文章",
+            "关于",
+            "搜索文章",
+            "返回顶部",
+            "切换至深色",
+            "复制页面链接"
+          ],
+          "progress": null
+        },
+        "posts/attention-intuition.html": {
+          "items": [
+            "首页",
+            "返回文章列表",
+            "关于",
+            "搜索文章",
+            "返回顶部",
+            "切换至深色",
+            "复制文章链接"
+          ],
+          "progress": "阅读进度：0%"
+        }
+      }
+    },
+    {
+      "name": "5. 按钮键盘入口与焦点恢复",
+      "pass": true,
+      "detail": "Enter/Esc 与点击两条路径均同步 aria-expanded 并恢复焦点"
+    },
+    {
+      "name": "6. 菜单键盘循环",
+      "pass": true,
+      "detail": "↑↓ 循环、Home/End、Tab 关闭且不困住焦点均成立"
+    },
+    {
+      "name": "7. 右键定位与视口夹取",
+      "pass": true,
+      "detail": {
+        "20,20": {
+          "left": 20,
+          "top": 20,
+          "width": 224,
+          "height": 405.13
+        },
+        "1420,20": {
+          "left": 1208,
+          "top": 20,
+          "width": 224,
+          "height": 405.13
+        },
+        "20,880": {
+          "left": 20,
+          "top": 487,
+          "width": 224,
+          "height": 405.13
+        },
+        "1420,880": {
+          "left": 1208,
+          "top": 487,
+          "width": 224,
+          "height": 405.13
+        },
+        "720,450": {
+          "left": 720,
+          "top": 450,
+          "width": 224,
+          "height": 405.13
+        }
+      }
+    },
+    {
+      "name": "8. 关闭时机",
+      "pass": true,
+      "detail": {
+        "outsidePointerDown": "main",
+        "pageScroll": true,
+        "menuScroll": true,
+        "resize": true,
+        "blur": true,
+        "escape": true,
+        "pageErrors": []
+      }
+    },
+    {
+      "name": "9. 原生菜单豁免",
+      "pass": true,
+      "detail": {
+        "正文段落": {
+          "target": "P",
+          "prevented": true,
+          "inBody": true,
+          "inFooterLinks": false
+        },
+        "正文区块": {
+          "target": "P",
+          "prevented": true,
+          "inBody": true,
+          "inFooterLinks": false
+        },
+        "正文链接": {
+          "target": "A",
+          "prevented": false,
+          "inBody": true,
+          "inFooterLinks": false
+        },
+        "页脚链接": {
+          "target": "A",
+          "prevented": false,
+          "inBody": false,
+          "inFooterLinks": true
+        },
+        "搜索框": {
+          "target": "search-input",
+          "prevented": false,
+          "inBody": false,
+          "inFooterLinks": false
+        },
+        "主题按钮": {
+          "target": "theme-toggle",
+          "prevented": true,
+          "inBody": false,
+          "inFooterLinks": false
+        },
+        "快捷菜单按钮": {
+          "target": "quick-menu-button",
+          "prevented": true,
+          "inBody": false,
+          "inFooterLinks": false
+        },
+        "Shift 右键": false,
+        "文本选区": false,
+        "data-menu-exempt": false
+      }
+    },
+    {
+      "name": "10. 复制成功路径与状态反馈",
+      "pass": true,
+      "detail": {
+        "notice": "链接已复制",
+        "copied": "http://127.0.0.1:40488/posts/dom-search-notes.html",
+        "expected": "http://127.0.0.1:40488/posts/dom-search-notes.html",
+        "pageUrl": "http://127.0.0.1:40488/blog.html?q=DOM#main",
+        "noticeAutoHidden": true
+      }
+    },
+    {
+      "name": "11. 复制失败降级面板",
+      "pass": true,
+      "detail": {
+        "value": "http://127.0.0.1:40488/posts/attention-intuition.html",
+        "selection": "whole",
+        "nativeMenu": false
+      }
+    },
+    {
+      "name": "12. 无 Clipboard API 时同样降级",
+      "pass": true,
+      "detail": "navigator.clipboard 缺失时进入手动复制面板"
+    },
+    {
+      "name": "13. file:// 模式不复制本地路径",
+      "pass": true,
+      "detail": {
+        "notice": "请在公开网站中复制可分享链接",
+        "noticeHidden": false,
+        "value": "file:///L:/Sywen-Blog/index.html",
+        "protocol": "file:"
+      }
+    },
+    {
+      "name": "14. 共享动作复用",
+      "pass": true,
+      "detail": {
+        "blogSearch": "search-input",
+        "otherPageSearch": "http://127.0.0.1:40488/blog.html?focus=search",
+        "topFocus": "",
+        "theme": {
+          "before": "light",
+          "after": "dark",
+          "headerText": "切换至浅色",
+          "headerPressed": "true"
+        },
+        "menuThemeLabel": "切换至浅色"
+      }
+    },
+    {
+      "name": "15. 文章页只读进度",
+      "pass": true,
+      "detail": {
+        "first": 0,
+        "second": 50,
+        "api": 50,
+        "scrolled": {
+          "applied": 669,
+          "max": 1337
+        },
+        "closedByScroll": true
+      }
+    },
+    {
+      "name": "16. 无脚本与初始化失败降级",
+      "pass": true,
+      "detail": {
+        "nojs": {
+          "quick-menu-button": {
+            "hidden": true,
+            "display": "none",
+            "items": 0
+          },
+          "site-notice": {
+            "hidden": true,
+            "display": "none",
+            "items": 0
+          },
+          "copy-panel": {
+            "hidden": true,
+            "display": "none",
+            "items": 0
+          },
+          "context-menu": {
+            "hidden": true,
+            "display": "none",
+            "items": 0
+          }
+        },
+        "searchStillWorks": 1,
+        "buttonHidden": true
+      }
+    },
+    {
+      "name": "17. 子目录路径与地址",
+      "pass": true,
+      "detail": {
+        "blog": "http://127.0.0.1:40488/course/blog/index.html",
+        "post": "http://127.0.0.1:40488/course/blog/posts/dom-search-notes.html"
+      }
+    },
+    {
+      "name": "18. 布局不变量",
+      "pass": true,
+      "detail": {
+        "390px": {
+          "width": 224,
+          "height": 405.13,
+          "overflow": 0
+        },
+        "768px": {
+          "width": 224,
+          "height": 405.13,
+          "overflow": 0
+        },
+        "1440px": {
+          "width": 224,
+          "height": 405.13,
+          "overflow": 0
+        },
+        "390px-touch": {
+          "capability": false,
+          "hidden": true,
+          "overflow": 0
+        },
+        "panel390": {
+          "left": 16,
+          "top": 64,
+          "right": 374,
+          "bottom": 347.56,
+          "width": 358,
+          "height": 283.56
+        }
+      }
+    },
+    {
+      "name": "19. 截图与同视口对照",
+      "pass": true,
+      "detail": {
+        "screenshots": 32,
+        "sameViewport": {
+          "1440-light": {
+            "size": [
+              1440,
+              1440
+            ],
+            "diffOutsideHeader": 0,
+            "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
+          },
+          "390-light": {
+            "size": [
+              390,
+              1903
+            ],
+            "diffOutsideHeader": 0,
+            "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
+          }
+        },
+        "frozenBaseline": {
+          "390px": {
+            "baseline": "docs/evidence/e03/e03-baseline-blog-390-light.png",
+            "sameSize": true,
+            "size": [
+              390,
+              1901
+            ],
+            "diffPixels": 5023,
+            "firstBands": [
+              {
+                "from": 83,
+                "to": 131,
+                "pixels": 5023
+              }
+            ],
+            "note": "记录项：既有基线截图与当前构建渲染存在差异（1440 基线含全选高亮），不作为 E04 通过条件。"
+          },
+          "1440px": {
+            "baseline": "docs/evidence/e03/e03-baseline-blog-1440-light.png",
+            "sameSize": true,
+            "size": [
+              1440,
+              900
+            ],
+            "diffPixels": 45562,
+            "firstBands": [
+              {
+                "from": 29,
+                "to": 77,
+                "pixels": 8193
+              },
+              {
+                "from": 161,
+                "to": 202,
+                "pixels": 1005
+              },
+              {
+                "from": 225,
+                "to": 240,
+                "pixels": 3562
+              },
+              {
+                "from": 303,
+                "to": 306,
+                "pixels": 20
+              },
+              {
+                "from": 318,
+                "to": 334,
+                "pixels": 2420
+              },
+              {
+                "from": 345,
+                "to": 348,
+                "pixels": 20
+              }
+            ],
+            "note": "记录项：既有基线截图与当前构建渲染存在差异（1440 基线含全选高亮），不作为 E04 通过条件。"
+          }
+        }
+      }
+    }
+  ],
+  "screenshots": [
+    "e04-home-1440-light-menu.png",
+    "e04-blog-1440-light-menu.png",
+    "e04-about-1440-light-menu.png",
+    "e04-attention-intuition-1440-light-menu.png",
+    "e04-dom-search-notes-1440-light-menu.png",
+    "e04-paper-reading-notes-1440-light-menu.png",
+    "e04-leave-some-space-1440-light-menu.png",
+    "e04-post-1440-light-copy-panel.png",
+    "e04-post-1440-light-notice.png",
+    "e04-home-1440-dark-menu.png",
+    "e04-blog-1440-dark-menu.png",
+    "e04-about-1440-dark-menu.png",
+    "e04-attention-intuition-1440-dark-menu.png",
+    "e04-dom-search-notes-1440-dark-menu.png",
+    "e04-paper-reading-notes-1440-dark-menu.png",
+    "e04-leave-some-space-1440-dark-menu.png",
+    "e04-post-1440-dark-copy-panel.png",
+    "e04-post-1440-dark-notice.png",
+    "e04-home-390-light-touch.png",
+    "e04-blog-390-light-touch.png",
+    "e04-about-390-light-touch.png",
+    "e04-attention-intuition-390-light-touch.png",
+    "e04-dom-search-notes-390-light-touch.png",
+    "e04-paper-reading-notes-390-light-touch.png",
+    "e04-leave-some-space-390-light-touch.png",
+    "e04-home-390-dark-touch.png",
+    "e04-blog-390-dark-touch.png",
+    "e04-about-390-dark-touch.png",
+    "e04-attention-intuition-390-dark-touch.png",
+    "e04-dom-search-notes-390-dark-touch.png",
+    "e04-paper-reading-notes-390-dark-touch.png",
+    "e04-leave-some-space-390-dark-touch.png",
+    "e04-compare-1440-light-shown.png",
+    "e04-compare-1440-light-hidden.png",
+    "e04-compare-390-light-shown.png",
+    "e04-compare-390-light-hidden.png",
+    "e04-diagnostic-baseline-390.png",
+    "e04-diagnostic-baseline-1440.png"
+  ],
+  "limitations": [
+    "未使用实体手机与屏幕阅读器；移动端为浏览器视口模拟。",
+    "混合输入设备（触摸为主 + 外接鼠标）按 §15.1 的主指针判定不显示菜单按钮，本轮未在真实混合设备上验证。",
+    "观感类判据由 E06 的 VC2 正式判定，本脚本只记录可测量事实。"
+  ],
+  "passed": 19,
+  "failed": 0,
+  "recoveredToggles": [
+    "补发合成 click（鼠标点击未到达按钮）"
+  ]
+}

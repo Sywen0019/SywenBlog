@@ -1,29 +1,30 @@
 {
-  "baseCommit": "a0ed6339193d65c4712c9d48f5113caa2057735d",
+  "baseCommit": "fddead528471be085946b61252161fc0674a653c",
   "sourceFilesSha256": {
-    "about.html": "85a374786fef7bca9aea602bba17749964359b5e2092d340033edfb9a39484f7",
+    "about.html": "48a31e4e6acd037d3295fd32c72f2bcacc9f16f56bd59686efe75c72a23a5ffc",
     "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
     "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
     "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
     "assets/images/hero-desk-1280.webp": "5f65ba72011cfd3879a1f9a2b47e1e78cc124bf7ab099f0059db4109b910dce4",
     "assets/images/hero-desk-640.webp": "353f99348022af821974dcd1c8f922efbc4704a454c28380a03d6bf25b768ee5",
     "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
-    "blog.html": "726f79bc1302428342ffdbfab2c76fad1a522d35a3fdd0e065bb2c874b7a82b3",
+    "blog.html": "fcca9f320dbd63cc501685623911f52230be692bf617fd329c11ebbcaba30869",
     "css/base.css": "0a8d95a0cf7f0963b5b63b284076336c5d20e78505594a638a721666628177e5",
-    "css/components.css": "0fa6fbdebc9b443f1107b9fa373058a1b167b1e1a5103828fddfdeb3f5491286",
+    "css/components.css": "772997163d1c64b66e965933080baa1a1d735560527bce982d536b1074b17d13",
     "css/pages.css": "1c70ff6635781482acc12e3e85cb9dbda6cfaba4c665458e997fcf871597c1aa",
-    "index.html": "2183f3f40266dd965125e0320274b41cf1ddb7c4b3fb460dddff2e1ef1a38c28",
+    "index.html": "00be5b07fe714686694799597d7961168efccf36806a5f7a2b17fb6978c6758c",
     "js/blog.js": "d2099590e3f730f1b57b265ee3a412bef41d12911c01bc03ea9b39e875c1c989",
+    "js/context-menu.js": "e641c1815eb9522e304e2788c6b76038f5f8992bc5c543cf2a5cd8972604a6f3",
     "js/posts-data.js": "6e7b2f6427cd07888d13ec35ac0716d57bfd8834b21a44a96a2f870acfc5713d",
-    "js/reading.js": "4b8600cf726aaab240f7757b772db0e9a31fe877b7f1540811f80e4746e8a3fa",
-    "js/site.js": "059fd9422cc47ca487f59d52f9eb276c05181b44ca9e23a8709e092fae09b913",
+    "js/reading.js": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
+    "js/site.js": "eee7e694178e04936576c269cc66ece5bb6923220c8a1f492f04772a758735e1",
     "js/theme.js": "ad877786a2e8007e5a4892470fe60d30876f8de8320306337cc20139f278dcff",
-    "posts/attention-intuition.html": "fafe9c07dceb1db31942999a3ebdbc7cbe4a51b988e4716e37aaf469a71a0951",
-    "posts/dom-search-notes.html": "2aab7e1edfbf6dba4887f8628417dd05063d2910274fecc371ee9028522d8a9e",
-    "posts/leave-some-space.html": "d9c2b4adce5b702c08839c090041ad39330c0ef68714b6a839b25606562a7289",
-    "posts/paper-reading-notes.html": "d9d71520c9ae46d522e2be3ece5bfc2a8f83f0736f6d5b16e762cc828f413c6c"
+    "posts/attention-intuition.html": "d0b465088b6f1eb7a1dfca40f97345be4c12e51652dc57d36b58e3f9d326c2ee",
+    "posts/dom-search-notes.html": "2fc006f7f3dbf6d219db7a5644fc521d450d3560cd758c75a932aa4ccb72c5f8",
+    "posts/leave-some-space.html": "423b2901c0692d66841a839c921151d88ef5b53a137da01dbe8690763a1ca7b7",
+    "posts/paper-reading-notes.html": "a6eb10ffe6ced17c8fe7509d90fe4f3e38f97030d26fb83947a71eba1d42042c"
   },
-  "at": "2026-09-16T03:06:20.164Z",
+  "at": "2026-09-16T07:25:39.010Z",
   "mode": "full",
   "checks": [
     {
@@ -618,8 +619,8 @@
       "name": "Cold-cache homepage transfer and slow loading",
       "pass": true,
       "detail": {
-        "initialSubresourcesBytes": 104896,
-        "totalSubresourcesBytes": 104896
+        "initialSubresourcesBytes": 133502,
+        "totalSubresourcesBytes": 133502
       }
     },
     {
@@ -697,7 +698,7 @@
   "limitations": [
     "No physical phone test; mobile and 200% layout checks are browser emulations."
   ],
-  "baseUrl": "http://127.0.0.1:43236/",
+  "baseUrl": "http://127.0.0.1:47816/",
   "passed": 158,
   "failed": 0
 }
