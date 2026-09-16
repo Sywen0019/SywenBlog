@@ -1,16 +1,18 @@
 [
   {
-    "file": "assets\\images\\hero-desk-640.webp",
+    "file": "assets/images/hero-desk-640.webp",
+    "candidate": "D",
     "width": 640,
     "height": 480,
-    "bytes": 42696,
-    "sha256": "81fc4431b369b74909f4660de7212a39716cdad1440b75c988eac0127fcffefe"
+    "bytes": 43512,
+    "sha256": "7b2a4fc21ad350d5ccce3cb4fb89a925fb7f0d18257f7785d956bfc862417759"
   },
   {
-    "file": "assets\\images\\hero-desk-1280.webp",
+    "file": "assets/images/hero-desk-1280.webp",
+    "candidate": "D",
     "width": 1280,
     "height": 960,
-    "bytes": 144680,
-    "sha256": "8f321c1f083a47ce40fd30fd526b587c7d3962b2d5449152024ad0c7ab8d470c"
+    "bytes": 152086,
+    "sha256": "2db1270f48aed3c82a663e228307419d0510dd0858b293f70763c6e643a938d0"
   }
 ]

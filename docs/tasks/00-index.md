@@ -10,7 +10,7 @@
 |B01 七页内容与链接|Passed|[B01](01-baseline/b01.md)|
 |B02 美术基调与 Hero|Passed|[B02](01-baseline/b02.md)|
 |B03 基线视觉融合|Passed|[B03](01-baseline/b03.md)|
-|B04 核心 JavaScript|Ready|[B04](01-baseline/b04.md)|
+|B04 核心 JavaScript|Passed|[B04](01-baseline/b04.md)|
 |B05 作业基线验收|Ready|[B05](01-baseline/b05.md)|
 |B06 Gitee 与正式公开交付|Ready|[B06](01-baseline/b06.md)|
 

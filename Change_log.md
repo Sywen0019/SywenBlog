@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-09-16 · B04 核心交互与 Hero 场景修订
+
+- 完成主题持久化、标题/摘要/标签多词 AND 搜索与分类组合；保留中文输入、URL 状态、数量/无结果/重置、存储失败和初始化失败降级。
+- 按用户习惯将 Hero 改为笔记本电脑、平板与手写笔；两次定向修订后采用 D，人物低头看向平板。四次出图总量内完成，未开启 E 类素材。
+- Home/About 作者简介明确计算机专业身份，更新提示词、资源哈希、视觉规范与 VC0 记录。
+- 本地 Edge/Chrome/Firefox 核心检查及 7 页双主题 9 尺寸矩阵等共 158 项通过；完整证据由 B05 单独归档。
+- 正式地址由用户确认为 https://sywen-blog.pages.dev/；Cloudflare 构建新增 version.json 记录源提交，待 B06 核验。
+
 ## 2026-09-15 · 部署配置：Cloudflare Pages 自动部署
 
 - 新增 `scripts/build-site.sh`：清理并重建 `dist/`，按白名单复制三个顶层页面与 `css/`、`js/`、`posts/`、`assets/`；`index.html` 缺失即失败，可选目录缺失只记录不失败。

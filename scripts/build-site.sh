@@ -66,5 +66,11 @@ for dir in $DIRS; do
   fi
 done
 
+# Expose the exact source revision for deployment acceptance (no credentials).
+commit=${CF_PAGES_COMMIT_SHA:-$(git -C "$root" rev-parse HEAD)}
+case "$commit" in ''|*[!0-9a-fA-F]*) fail 'invalid source commit';; esac
+published_at=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+printf '{"source_commit":"%s","published_at":"%s"}\n' "$commit" "$published_at" > "$dist/version.json"
+
 count=$(find "$dist" -type f | wc -l | tr -d ' ')
 log "done: $count files in dist/"
