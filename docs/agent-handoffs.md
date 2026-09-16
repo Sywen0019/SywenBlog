@@ -1,12 +1,12 @@
 # Agent 交接记录（H）
 
-## 当前交接摘要 · 2026-09-16
+## 当前交接摘要 · 2026-09-16（E03 之后）
 
-B00–B06 已完成，可停止并提交；E01–E06 全部 Deferred。运行时里程碑 e3191ba，部署修正655e8c4已在线验收。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的 D；旧 B 仅历史记录。交付版本、演示与后续边界见 delivery.md。
+B00–B06 已完成并保持可提交；E03「简单阅读增强」已本地完成（Passed，见下方 E03 记录），E01／E02／E04／E05／E06 仍 Deferred。运行时里程碑 e3191ba，部署修正655e8c4已在线验收。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的 D；工作区另有一批未提交的 Hero 线稿修订（E05 式美术产物），不属于 E03。
 
-theme/site/blog 已接入，保留 ID/data 契约与静态降级；reading/context-menu 未接入。新报告见 evidence/baseline/checks.json，158 项通过，VC0/VC1-B 当前结论见 visual-review.md。下方 T 阶段内容仅是历史，不得用其中“尚无 JS/待 T05”等旧状态覆盖本摘要。
+theme/site/blog/reading 已接入，保留 ID/data 契约与静态降级；context-menu 与复制面板仍未接入（`#quick-menu-button`、`#site-notice`、`#copy-panel`、`#context-menu` 保持 `hidden`）。E03 证据见 `docs/evidence/e03/`，三浏览器各 17 项通过；B05 的 158 项基线回归在 E03 后重新执行并保持通过。VC0/VC1-B 结论见 visual-review.md，VC2 仍待 E06。
 
-当前冻结补充：hero-desk-640/1280.webp 已产出（D）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；不加载任何增强脚本。B/E 当前负责人为本次 Codex 执行者。
+当前冻结补充：hero-desk-640/1280.webp 已产出（D）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；发布白名单含 `js/`，因此 reading.js 会随下次构建进入 dist，但 E03 本身不推送、不部署（留给 E06）。
 
 ---
 
@@ -33,6 +33,7 @@ theme/site/blog 已接入，保留 ID/data 契约与静态降级；reading/conte
 | T02 指定视觉资产派生 | Codex | Passed | `2866ce8` | 见 T02 |
 | T03 最小版本部署验证 | — | Blocked（外部阻塞，用户决定延期） | — | 见「延期与未开始任务」 |
 | T04 Tokens、公共组件与响应式基础 | DeepSeek | Passed | `4f91102` | 见 T04 |
+| E03 简单阅读增强 | DeepSeek | Passed（本地） | `a0ed633` | 见 E03 |
 
 ---
 
@@ -299,3 +300,66 @@ T05（Home 与 Blog 静态视觉实现）。接手者注意：
 保留全部既有ID/data标记。新增类：post-entry__content/meta、hero__eyebrow、hero-art--desk、hero-art__picture、section-header__number、about-intro__copy、post-table-scroll、post-figure、post-nav__label。装饰aria-hidden。hero-desk-640.webp / hero-desk-1280.webp 是待B02产出路径，文件存在后才接入；picture设置固有4:3比例。
 
 B04加载：theme.js于CSS前同步；posts-data.js→site.js→仅Blog的blog.js均defer。不加载reading/context-menu。Sywen提供posts/categories、resolveUrl(path)、createPostEntry(post, headingLevel)、getTheme()/toggleTheme()。列表渲染成功才显示筛选并隐藏静态索引，失败保持静态。
+
+---
+
+## E03 — 简单阅读增强（返回顶部与阅读进度）
+
+**模型：** DeepSeek（本会话）｜**状态：** Passed（本地）｜**原阶段：** 基线后 E 类第一包
+
+### 2. 基础版本
+
+- 起始 commit：`a0ed633`（`docs: deliver verified coursework baseline and demonstration`，与 `origin/main` 一致）。起始工作区**不干净**：Hero 线稿修订批次（`DESIGN_SPEC.md`、`docs/art-direction.md`、`docs/hero-prompts.md`、`docs/hero-assets.json`、`assets/images/hero-desk-640/1280.webp`、`Change_log.md` 顶部条目、`docs/hero-lineart-correction.md`、`docs/evidence/hero-lineart-e/`）按用户决定原样保留，**不纳入 E03 提交**。
+- 输入：`Plan.md`「基线之后」E03 行、`PROJECT_PLAN.html` §16.2／§16.3／§20.2、`DESIGN_SPEC.md` §5。
+
+### 3. 实际修改文件
+
+| 文件 | 摘要 |
+|---|---|
+| `js/reading.js` | 新增。返回顶部显隐与页面滚动进度；`Sywen.getReadingProgress()`／`Sywen.prefersReducedMotion()` |
+| `css/components.css` | 第 1 节：`.reading-progress` 补 `transform: scaleX(0)` 与 `pointer-events: none`；`.back-to-top` 补 `visibility/opacity/pointer-events` 隐藏态与 `.is-visible` 显示态 |
+| `css/base.css` | 新增 token `--footer-reserve: 32px`（§16.2 页尾预留空间） |
+| `css/pages.css` | 新增 `html.has-reading .site-footer__inner` 底部留白；无脚本时不改变基线留白 |
+| 七页 HTML | `reading.js` 按契约顺序加入：site.js 之后、blog.html 的 blog.js 之后 |
+| `docs/evidence/e03/` | 新增 `reading-checks.mjs`、三浏览器 `reading-checks-*.json`、`reading-report.txt`、12 张截图 |
+
+未改动：既有 id／类名／data 属性、Header／Footer 文本、资源路径、`assets/`（哈希逐项与 B05 快照一致，仅两张 Hero 保持既有的未提交修订）、`scripts/build-site.sh`。
+
+### 4. 新增 DOM 约定、函数签名与加载顺序
+
+**加载顺序（七页一致）**：`theme.js`（头部同步）→ `posts-data.js` → `site.js` →（仅 Blog）`blog.js` → `reading.js`，除主题外全部 `defer`。
+
+**新增接口（`window.Sywen`）**
+
+| 签名 | 说明 |
+|---|---|
+| `getReadingProgress()` | 当前页面滚动进度整数 `0..100`；未初始化或脚本被禁用时为 `null` |
+| `prefersReducedMotion()` | 是否处于 `prefers-reduced-motion: reduce` |
+| `updateReadingProgress()` | 请求一次进度重算（`requestAnimationFrame` 合并），供后续菜单等调用者使用 |
+
+**新增类名与标记**
+
+- `.back-to-top.is-visible`：显示态；隐藏态为 `visibility: hidden` + `opacity: 0` + `pointer-events: none`（元素仍可聚焦，故脚本在按钮持焦时保持显示）。
+- `html.has-reading`：`reading.js` 初始化成功后在 `<html>` 上加；用于页脚预留空间（`--footer-reserve`）。
+- `#reading-progress` 不切 `hidden`；只写 `style.transform = scaleX(百分比)` 与 `aria-valuenow`。
+- 页面主标题（`.page-title`，Home 为 `.hero__title`）初始化时补 `tabindex="-1"`，作为返回顶部后的焦点目标；缺失时回退 `#main`（已有 `tabindex="-1"`）。程序化聚焦不会触发 `:focus-visible`，不改视觉。
+
+**数值契约**：进度＝`scrollTop ÷ (scrollHeight − clientHeight)`，取整到整数，限制 0～100，分母 ≤0 时为 100%；返回顶部在 `scrollTop ≥ 480` 时显示；点击／Enter 后平滑回到顶部（减少动态效果时即时），滚动停止（`scrollend`，兜底 700ms）后聚焦主标题并重算一次。
+
+### 5. 自检步骤与结果
+
+- `node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox`：Edge 153.0.4234.32、Chrome 152.0.7977.83、Firefox 155.0 各 **17 项通过、0 失败**；报告 `docs/evidence/e03/reading-checks-<browser>.json` 与 `reading-report.txt`。
+- `node scripts/check-baseline.mjs`：B05 的 158 项基线回归在 E03 后重跑，结果见 `docs/acceptance.md`「E03」章节与 `docs/evidence/baseline/checks.json`。
+- 实测要点：进度线 `2px`、贴顶、实际绘制宽度与百分比一致；按钮 390/1440 两档均 44×44、距右下各 16px；滚到底时与页脚内容矩形零相交、净空 ≥8px；键鼠两条路径都回到顶部并把焦点交给主标题；减少动态效果下同一帧内 `scrollY === 0`；无脚本时两个控件与 `has-reading` 均不存在，页脚留白保持基线 32px。
+
+### 6. 未验证项与已知问题
+
+- 未使用实体手机与屏幕阅读器（沿用 OB-03）；移动端为视口模拟。
+- 观感类判据（进度线在短页 100% 时的观感、按钮与页脚的视觉平衡）已在同视口对照中记录差异，正式判定留给 E06 的 VC2。
+- 修改 `css/components.css`／`css/base.css`／`css/pages.css` 共享区段时注意：E03 只改「增强控件」与页脚留白两处，新增状态类沿用 `.is-…`／`html.has-reading`，未重命名任何既有类名。
+- 未执行：推送、部署、VC2、E06（按用户决定，留待后续任务）。
+- 无阻塞后续任务的已知问题。
+
+### 7. 下一任务
+
+E04（复制与快捷菜单）或 E05（状态与精修）按用户领取；E06 负责 VC2 与增强版发布。接手者注意：菜单里的百分比应直接复用 `Sywen.getReadingProgress()`，不要维护第二套滚动计算；「返回顶部」动作也应复用 `js/reading.js` 的行为（可调用 `window.scrollTo` 后聚焦主标题），不要在菜单里复制实现。

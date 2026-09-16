@@ -35,3 +35,13 @@ Git阶段包含计划、内容、视觉、核心交互、发布修正与验收�
 B00–B06完成。E01–E06及Backlog保持Deferred，不为清空任务目录继续消耗额度。Hero总共4次生成/修订，只有正式WebP进入网站。
 
 限制：未使用实体手机或屏幕阅读器；200%为等效视口重排，输入法为组合事件模拟。线上记录代表本次检查时刻。
+
+## E03 本地交付 · 2026-09-16
+
+E03「简单阅读增强」已本地完成：`js/reading.js`（返回顶部与页面滚动进度）接入七页，控件仍默认 `hidden`，无脚本时保持基线。
+
+- 复验：`node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox` —— Edge 153／Chrome 152／Firefox 155 各 18 项、0 失败（Firefox 的逐像素对照项按 Chromium 专用跳过）。
+- 回归：`node scripts/check-baseline.mjs` —— 158 项通过、0 失败。
+- 对照：默认态与 `docs/evidence/baseline/blog-*.png` 同视口逐像素比较，忽略顶部 3px 进度线后差异为 0。
+- 报告与截图：[docs/evidence/e03/](evidence/e03/)；结论见 [验收记录](acceptance.md)「E03」章节。
+- 仍属 E06：Gitee/GitHub 推送、Cloudflare 新版本发布、VC2 判定、增强版回归与录像更新。E03 的提交只落在本地历史，未改变线上版本。

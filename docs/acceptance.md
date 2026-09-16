@@ -1,5 +1,62 @@
 # 验收记录
 
+## E03 · 简单阅读增强（返回顶部与阅读进度）· 2026-09-16
+
+**结论：本地通过。** 新增两个增强控件的可测量行为全部符合 `PROJECT_PLAN.html` §16.2／§16.3；B05 基线回归在 E03 后重新执行并保持通过；默认态与 B05 截图逐像素对照无基线外差异。VC2 正式判定与线上发布属于 E06，本记录不替代它们。
+
+**基线版本**：`a0ed633`（起始工作区含未提交的 Hero 线稿修订，未纳入本次改动）
+**浏览器**：Edge 153.0.4234.32、Chrome 152.0.7977.83、Firefox 155.0（Playwright 1.63.0；Firefox 位于工作区忽略目录，用 `PLAYWRIGHT_BROWSERS_PATH` 指向）
+**命令**：`node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox`
+**报告**：[Edge](evidence/e03/reading-checks-edge.json)｜[Chrome](evidence/e03/reading-checks-chrome.json)｜[Firefox](evidence/e03/reading-checks-firefox.json)｜摘要 [reading-report.txt](evidence/e03/reading-report.txt)
+**截图**：`docs/evidence/e03/e03-*.png`（12 张：1440/390 × 浅/深 × 中途/到底、无脚本两态、B05 对照 4 张）
+
+三浏览器各 **18 项通过、0 失败**（Firefox 的第 18 项为 Chromium 专用对照，按跳过记录）。逐项结果：
+
+| 检查 | 预期 | 实际 |
+|---|---|---|
+| 1. 七页脚本顺序与资源 | `theme → posts-data → site →（blog）→ reading`，除主题外 `defer`，无 404 | 七页一致，0 失败请求、0 页面异常 |
+| 2. 进度元素语义 | 初始化后移除 `hidden`，`role/aria-label/min/max` 不变，其他增强控件仍 `hidden` | 全部成立；`display: block`、`height: 2px`、`position: fixed`、`pointer-events: none`；`quick-menu-button`／`site-notice`／`copy-panel`／`context-menu` 仍 `hidden` |
+| 3. 进度值公式 | 顶 0%、中段＝`round(scrollTop/max×100)`、底 100%，`aria-valuenow` 同步 | 三档全部一致（取整容差 ≤1） |
+| 4. 实际绘制宽度 | `scaleX` 与百分比一致，绘制像素＝轨道宽×百分比 | 25%/60%/100% 三档实测一致 |
+| 5. 480px 阈值 | `scrollTop ≥ 480` 显示，之前隐藏且不可点 | 0/300/1200px 三档正确；隐藏态 `visibility: hidden`、`pointer-events: none` |
+| 6. 命中区与位置 | ≥44×44，距右下各 16px | 390 与 1440 两档均为 84×44（文本宽度），右 16、下 16 |
+| 7. 页尾不遮挡 | 滚到底时按钮矩形与页脚内容矩形零相交 | 4 页 × 2 视口共 8 组全部零相交，净空 ≥8px（实测 ≥20px） |
+| 8. 键鼠返回顶部 | 点击与 Tab+Enter 都回到顶部并聚焦主标题 | 390/1440 两档均回到 `scrollTop 0`，焦点落在 `h1.page-title`，按钮随后隐藏 |
+| 9. 减少动态效果 | 同一帧内回到顶部，`scroll-behavior` 仍为 `auto` | 通过；`Sywen.prefersReducedMotion()` 返回 `true` |
+| 10. 重算 | resize 与延迟图片加载后按新尺寸重算 | 视口 900→500 后 `maxScroll` 变大且进度按新值重算；Hero 延迟 700ms 加载后仍一致 |
+| 11. 深链接 | `#main` 定位下进度与位置一致 | 390×700 视口：`scrollTop 106 / max 2211 → 5%`，与公式一致 |
+| 12. 无脚本 | `#reading-progress`、`#back-to-top` 保持 `hidden` 且 `display: none` | 七页全部成立；页脚留白保持基线 32px（`html.has-reading` 未加入） |
+| 13. 子目录 | `/course/blog/` 下可用 | 进度与按钮正常，资源相对路径正确 |
+| 14. 控制台 | 七页 0 异常、0 失败请求 | 通过 |
+| 15. 200% 等效 | 720px 视口 + DPR2 无横向溢出，按钮不越界 | 三页通过 |
+| 16. 资产未改动 | 除既有的两张 Hero 修订外，`assets/` 与 B05 记录哈希一致 | 全部一致，仅 `hero-desk-640/1280.webp` 保持既有的未提交修订 |
+| 17. 截图归档 | — | 12 张写入 `docs/evidence/e03/` |
+| 18. 与 B05 对照 | 默认态（未滚动）除顶部进度线外无差异 | Edge/Chrome 通过；Firefox 记为「跳过：基线为 Chromium 渲染，文本抗锯齿不同，逐像素对照不适用」，1–17 项照常执行 |
+
+**第 18 项逐像素对照**（自写解码器，忽略顶部 3px 进度线；仅 Edge/Chrome，原因见上）：
+
+| 对照 | 尺寸 | 忽略区外差异像素 |
+|---|---|---|
+| `baseline/blog-1440-light.png` ↔ `e03-baseline-blog-1440-light.png` | 1440×1440 | 0 |
+| `baseline/blog-1440-dark.png` ↔ `e03-baseline-blog-1440-dark.png` | 1440×1440 | 0 |
+| `baseline/blog-390-light.png` ↔ `e03-baseline-blog-390-light.png` | 390×1901 | 0 |
+
+Blog 页面高度由视口决定（1440×1440 与 390×1901 下文档高度分别恰为 1440 与 1901），页脚预留空间未改变文档高度，因此除顶部进度线外应无差异 —— 实测一致。
+
+**实际看图（本会话）**：`e03-post-1440-{light,dark}-{mid,bottom}.png` 与 `e03-post-390-{light,dark}-bottom.png` 已逐张查看 —— 桌面进度线在浅深两主题下都是贴顶 2px 墨线、长度与进度一致；右下「返回顶部」按钮为纸面底 + 2px 墨框 + 硬阴影，与既有按钮族一致；手机版页脚最后一行（版权）与按钮之间留有明显净空，未被覆盖。观感类结论（例如短页 100% 时满宽进度线的视觉分量）留给 E06 的 VC2。
+
+**回归**：`node scripts/check-baseline.mjs`（Edge 全量 + Chrome/Firefox 核心）在 E03 后重新执行，收紧后的结果为 **158 项通过、0 失败**（`docs/evidence/baseline/checks.json`）。首次复跑时本机出现随机单张截图写入失败（`UNKNOWN: unknown error, open …png`，每次随机落在不同 PNG，页面对应的测量断言均已通过）；已在 `shot()` 中加入一次重试（不改变截图参数、不削弱断言）后稳定通过，该环境现象记入下方「已知问题」。
+
+**B05 基线证据截图被本次回归刷新**（可复核）：回归脚本会重写 `docs/evidence/baseline/*.png`，因此这些图片现在记录的是 E03 之后的状态。逐项尺寸对照：
+
+- 22 张有脚本截图的文档高度**恰好增加 64px**（页脚 `--footer-reserve: 32px` 在块方向上下各计入一次，32+32=64）；`home-nojs-390-dark.png` 高度**完全不变（+0）**，反向印证 `html.has-reading` 只在脚本就绪时生效。
+- 新增可见内容只有贴顶 2px 进度线；其余差异是这 64px 的整体下移，不含任何文本、栅格、间距或图片改动。
+- Home 相关截图中的 Hero 与提交版不同，原因是工作区存在未提交的 Hero 线稿修订（E05 式，本任务之前就存在、E03 未触碰）；E03 的证据对照使用 Blog 页面，不受该修订影响。
+
+**限制**：未使用实体手机与屏幕阅读器（沿用 OB-03）；移动端为浏览器视口模拟；观感判定不替代 E06 的 VC2。
+
+**未执行**：推送、部署、VC2、E06 —— 按用户决定留待后续任务。
+
 ## 当前基线验收 · 2026-09-16
 
 B00–B06 完成，作业基线已达到。以下 T 阶段条目保留历史；当前证据以本节及 docs/evidence/baseline/ 为准。
@@ -231,6 +288,7 @@ Footer 一致性: 一致
 |---|---|---|---|
 | KN-01 | 仓库无 `.gitattributes`，Git 提示 `LF will be replaced by CRLF` | 可能造成换行符反复变化 | `.gitattributes` 不在 T00 允许修改清单内，本轮不新增，仅记录，供后续任务决定 |
 | KN-02 | 原 T00／T01 会话模型不支持图片输入（历史限制） | 当前 Codex 会话支持图片查看，已核对 T02 原图、裁切及 favicon | 本轮 T02 已解决；VC1／VC2 仍按各自门槛执行 |
+| KN-03 | 本机 Playwright 截图偶发写入失败：`UNKNOWN: unknown error, open '…\*.png'`（E03 期间约每轮 158 项中随机出现 1 次，落在不同 PNG 上；同一路径重复写入 40 次无复现） | 只影响证据图片落盘，同轮页面对应的测量断言均通过 | E03 已在 `scripts/check-baseline.mjs` 的 `shot()` 内加入一次重试（参数与断言不变），E03 后回归稳定 158/0；若后续再次出现，按环境问题记录并复跑该文件 |
 
 
 ## B01 内容基线 · 2026-09-15

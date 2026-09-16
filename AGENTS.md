@@ -2,13 +2,13 @@
 
 ## Project Structure & Module Organization
 
-Sywen's Space is a manga line-art personal blog built with native HTML, CSS, and JavaScript. `PROJECT_PLAN.html` holds the 29-section specification, `DESIGN_SPEC.md` the visual rules, `Plan.md` the implementation baseline, and `参考素材/` five reference PNGs that are never published. T01 established the seven semantic HTML pages, T02 added two character WebP assets and an SVG favicon, and T04 (Stage 2) added the three stylesheets, the light/dark theme contract, and the page-level asset references. The current implementation follows B00–B06 in `docs/tasks/00-index.md`; E01–E06 are Deferred. The coursework baseline requires content, CSS, theme/search/filter JavaScript, a desk Hero, Gitee, and verified public HTTPS. Never gate that baseline on deferred reading tools, menus, or the full art library.
+Sywen's Space is a manga line-art personal blog built with native HTML, CSS, and JavaScript. `PROJECT_PLAN.html` holds the 29-section specification, `DESIGN_SPEC.md` the visual rules, `Plan.md` the implementation baseline, and `参考素材/` five reference PNGs that are never published. T01 established the seven semantic HTML pages, T02 added two character WebP assets and an SVG favicon, and T04 (Stage 2) added the three stylesheets, the light/dark theme contract, and the page-level asset references. The current implementation follows B00–B06 in `docs/tasks/00-index.md`; the coursework baseline is delivered, and among the E tasks E03 (back to top and reading progress) is done locally while E01, E02, E04, E05, and E06 stay Deferred. The coursework baseline requires content, CSS, theme/search/filter JavaScript, a desk Hero, Gitee, and verified public HTTPS. Never gate that baseline on deferred reading tools, menus, or the full art library.
 
 Follow the planned structure when adding code:
 
 - `index.html`, `blog.html`, `about.html`: top-level pages; `posts/`: four article pages with descriptive kebab-case filenames.
 - `css/`: `base.css` for foundations and themes, `components.css` for shared controls, `pages.css` for page layouts.
-- `js/`: classic scripts organized by feature, including `theme.js`, `posts-data.js`, `site.js`, `blog.js`, `reading.js`, and `context-menu.js`.
+- `js/`: classic scripts organized by feature — `theme.js`, `posts-data.js`, `site.js`, `blog.js`, and `reading.js` (back to top and scroll progress) are implemented; `context-menu.js` is still deferred.
 - `assets/images/` and `assets/icons/`: published artwork; keep reference material in `参考素材/`.
 - `docs/`: execution records — `agent-handoffs.md` for task handoffs and the frozen DOM/path contract, `acceptance.md` for manual verification results, `visual-review.md` for the VC1/VC2 checkpoints.
 - `Change_log.md`: project change log, newest entries first.
@@ -36,7 +36,7 @@ Enhanced controls that require JavaScript (theme toggle, quick menu, back to top
 
 ## Testing Guidelines
 
-Baseline browser checks live in `scripts/check-baseline.mjs`; no coverage threshold is established. Follow the current B/E plan and record results in `docs/acceptance.md`. Check navigation, article deep links, search/category combinations, theme persistence and storage failures, keyboard access, responsive layouts, and reduced motion. Reading progress and clipboard/menu checks apply only after the corresponding Deferred tasks are implemented. Real phone and browser-UI zoom are not certified by viewport emulation.
+Baseline browser checks live in `scripts/check-baseline.mjs`; no coverage threshold is established. Follow the current B/E plan and record results in `docs/acceptance.md`. Check navigation, article deep links, search/category combinations, theme persistence and storage failures, keyboard access, responsive layouts, and reduced motion. `docs/evidence/e03/reading-checks.mjs` covers the implemented reading enhancement (progress values and paint width, the 480px threshold, footer clearance, keyboard focus after returning to top, reduced motion, no-script fallback, subdirectory, and pixel comparison against the B05 baseline); clipboard and context-menu checks apply only after E04 is implemented. Real phone and browser-UI zoom are not certified by viewport emulation.
 
 ## Commit & Pull Request Guidelines
 

@@ -2,7 +2,7 @@
 
 原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Code · Research · Life。
 
-**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01–E06 保持 Deferred。
+**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E03（返回顶部与阅读进度）已在本地完成并通过检查，E01／E02／E04／E05／E06 保持 Deferred。
 
 - [访问网站](https://sywen-blog.pages.dev/)
 - [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
@@ -35,18 +35,27 @@ py -m http.server 8000 --bind 127.0.0.1
 ## 目录与约定
 
 - 顶层三个HTML与 `posts/` 四篇文章；`css/`：base / components / pages。
-- `js/`：theme / posts-data / site / blog，经典脚本通过 `window.Sywen` 共享。
+- `js/`：theme / posts-data / site / blog / reading，经典脚本通过 `window.Sywen` 共享。
 - `assets/`：已采用图片与SVG；`参考素材/`：用户参考，不发布。
 - `scripts/`：发布、验收、录像；`docs/`：任务、交接、美术、验收和证据。
 - `PROJECT_PLAN.html` / `Plan.md` / `DESIGN_SPEC.md`：规格、当前B/E计划和视觉边界。
 
 主题优先级为保存的有效选择→系统→浅色，存储键 `sywen.theme`；存储失败时仍可当页切换。搜索按空白拆分、多词AND，与分类同时生效；保留 `q` / `category` 和中文组合输入。列表准备成功才隐藏静态索引，失败仍可读。
 
-资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。阅读进度、返回顶部、复制和快捷菜单未实施，控件继续隐藏。
+资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。返回顶部与顶部阅读进度已实施（E03，`js/reading.js`）；复制与快捷菜单未实施，相关控件继续隐藏。
 
 ## 验收与复现
 
 2026-09-16：本地 **158项**、线上三浏览器核心 **15项**、线上源码/路径 **25项**均通过。报告与23张截图见[验收记录](docs/acceptance.md)，[演示录像](docs/evidence/baseline/baseline-demo.webm)展示实际线上操作。
+
+E03 阅读增强单独复验（三浏览器各 18 项、0 失败，含与 B05 基线的同视口逐像素对照）：
+
+```powershell
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
+node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox
+```
+
+报告写入 `docs/evidence/e03/`，截图 `e03-*.png`。
 
 网站运行不依赖以下工具。复验需要Node.js 24、Edge/Chrome及Python3：
 
@@ -79,4 +88,4 @@ git -c http.sslBackend=openssl push github main
 
 重点在Hero，阅读区克制；用户参考保持原样。复杂人物由Codex内置出图，正式导出已入仓库，原始候选不发布。工具未提供可核实版本，不把实际调用写成已验证的“GPT-image2.5”。
 
-详见[美术记录](docs/art-direction.md)、[提示词](docs/hero-prompts.md)、[视觉验收](docs/visual-review.md)。后续文章小画、About新人物和阅读工具按E类逐项领取，完成一项再决定下一项。
+详见[美术记录](docs/art-direction.md)、[提示词](docs/hero-prompts.md)、[视觉验收](docs/visual-review.md)。后续 About新人物、复制与菜单、状态精修按E类逐项领取，完成一项再决定下一项；增强版发布与 VC2 由 E06 统一执行。
