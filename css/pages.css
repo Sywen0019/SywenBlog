@@ -627,25 +627,23 @@ html.has-reading .site-footer__inner {
   margin-bottom: 0;
 }
 
+/* About「最近在做」：纸面语气放在页面自己的容器上，而不是复用到全局的
+   .note-panel 上——.note-panel 只负责分组，纸面与网点属于 Narrative。
+   这里刻意不使用网点：Home 的 Currently 才是笔记本封面，About 更像内页，
+   两页因此保留不同气质（docs/visual-architecture.md §7、§9）。 */
 .about-now__panel {
   position: relative;
-}
-
-.about-now .note-panel {
-  position: relative;
   padding: var(--space-6);
-  border: 1px solid var(--color-rule);
-  border-top: 2px solid var(--color-ink);
+  border: var(--line-thin) solid var(--color-rule);
+  border-top: var(--line-strong) solid var(--color-ink);
   background-color: var(--color-surface);
-  background-image: radial-gradient(var(--color-rule) 0.6px, transparent 0.6px);
-  background-size: 12px 12px;
-  box-shadow: 4px 4px 0 var(--color-shadow);
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--color-shadow) 16%, transparent);
 }
 
-.about-now .note-panel::after {
+.about-now__panel::after {
   position: absolute;
   inset: 8px;
-  border: 1px solid color-mix(in srgb, var(--color-rule) 55%, transparent);
+  border: var(--line-thin) solid color-mix(in srgb, var(--color-rule) 55%, transparent);
   content: "";
   pointer-events: none;
 }
@@ -671,19 +669,6 @@ html.has-reading .site-footer__inner {
   letter-spacing: 0.04em;
 }
 
-.about-now__decoration {
-  position: absolute;
-  z-index: 2;
-  inset-inline-end: 0;
-  inset-block-start: calc(100% + 2px);
-  width: 40px;
-  background: transparent;
-}
-
-.about-now__decoration img {
-  display: block;
-}
-
 @media (min-width: 768px) {
   .about-section h2 {
     font-size: var(--text-h2);
@@ -691,12 +676,6 @@ html.has-reading .site-footer__inner {
 
   .about-now .note-panel__item {
     min-height: 104px;
-  }
-}
-
-@media (max-width: 767px) {
-  .about-now__decoration {
-    display: none;
   }
 }
 

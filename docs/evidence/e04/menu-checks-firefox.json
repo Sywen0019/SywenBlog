@@ -1,8 +1,8 @@
 {
   "browser": "firefox",
   "browserVersion": "155.0",
-  "baseCommit": "6c454f2847088265e5fcb626da4d3f9f970d144e",
-  "at": "2026-09-17T14:59:04.223Z",
+  "baseCommit": "f6e59fa9bfff12af1fb78994d2674ab5fc817476",
+  "at": "2026-09-17T15:06:08.310Z",
   "checks": [
     {
       "name": "1. 七页脚本顺序与资源",
@@ -231,9 +231,9 @@
       "pass": true,
       "detail": {
         "notice": "链接已复制",
-        "copied": "http://127.0.0.1:16746/posts/dom-search-notes.html",
-        "expected": "http://127.0.0.1:16746/posts/dom-search-notes.html",
-        "pageUrl": "http://127.0.0.1:16746/blog.html?q=DOM#main",
+        "copied": "http://127.0.0.1:44160/posts/dom-search-notes.html",
+        "expected": "http://127.0.0.1:44160/posts/dom-search-notes.html",
+        "pageUrl": "http://127.0.0.1:44160/blog.html?q=DOM#main",
         "noticeAutoHidden": true
       }
     },
@@ -241,7 +241,7 @@
       "name": "11. 复制失败降级面板",
       "pass": true,
       "detail": {
-        "value": "http://127.0.0.1:16746/posts/attention-intuition.html",
+        "value": "http://127.0.0.1:44160/posts/attention-intuition.html",
         "selection": "whole",
         "nativeMenu": false
       }
@@ -266,7 +266,7 @@
       "pass": true,
       "detail": {
         "blogSearch": "search-input",
-        "otherPageSearch": "http://127.0.0.1:16746/blog.html?focus=search",
+        "otherPageSearch": "http://127.0.0.1:44160/blog.html?focus=search",
         "topFocus": "",
         "theme": {
           "before": "light",
@@ -325,8 +325,8 @@
       "name": "17. 子目录路径与地址",
       "pass": true,
       "detail": {
-        "blog": "http://127.0.0.1:16746/course/blog/index.html",
-        "post": "http://127.0.0.1:16746/course/blog/posts/dom-search-notes.html"
+        "blog": "http://127.0.0.1:44160/course/blog/index.html",
+        "post": "http://127.0.0.1:44160/course/blog/posts/dom-search-notes.html"
       }
     },
     {

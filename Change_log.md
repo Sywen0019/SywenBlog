@@ -7,7 +7,8 @@
 - Blog 缩略图决策：取消按分类重复的小画作为默认文章封面。删除 `.post-entry--with-thumb`、`.art-frame--thumb`、`--entry-thumb-w/-h` 与 `js/site.js` 的缩略图分支；Blog 条目改为日期＋档案编号＋标题＋摘要＋分类 mark。首页分类小画保留。
 - Phase 2 Narrative 词汇：`css/narrative.css` 提供 `.narrative`、`.hand-note`、`.paper-slip`、`.paper-panel`、`.short-rule`、`.section-end`、page-rail 原型、胶带、网点、转场枝叶与植物容器；`assets/icons/marks.svg` 提供 14 个 Editorial Mark（24×24 viewBox、`currentColor`、`fill:none`）。`--font-hand` 只用本机字体，楷体优先，避免中文旁白落到细衬线回退。mark 定位为 editorial annotation，不进入按钮与控件。
 - Phase 3 只做样板区域（用户确认范围）：Header、Home Hero／Recent／Categories／Now、Blog Header＋筛选＋条目、About 各区块、Article Header＋正文 rail、Footer。其它页面内容未铺开。
-- 验证：新增 `docs/evidence/visual/narrative-checks.mjs` 契约检查 22/22；`capture.mjs` 产出 1440／1200／1024／768／390 × 浅深共 40 张 before/after 对照，无横向溢出；基线 161/0；E01 Firefox 48/0；E03 Firefox 18/0；E04 Firefox 20/0。修复过程中发现并修掉三处：手写字体栈、390px 首页植物跨边界造成的 8px 横向溢出、档案编号应跟随文章而不是跟随筛选结果。未推送、未部署；正式 VC2 与全域扩展仍属 Phase 4／5 与 E06。
+- 验证：新增 `docs/evidence/visual/narrative-checks.mjs` 契约检查 22/22；`capture.mjs` 产出 1440／1200／1024／768／390 × 浅深共 40 张 before/after 对照，无横向溢出；基线 161/0；E01 Firefox 48/0；E03 Firefox 18/0；E04 Firefox 20/0。修复过程中发现并修掉三处：手写字体栈、390px 首页植物跨边界造成的 8px 横向溢出、档案编号应跟随文章而不是跟随筛选结果。
+- 复核补齐：`.note-panel` 在 About 仍带着 E02 时期的边框、网点与阴影，与 Phase 1「`.note-panel` 只负责分组」冲突。纸面改由页面自己的 `.about-now__panel` 声明，并**不再使用网点**——Home 的 Currently 才是笔记本封面，About 更像内页，两页因此保留不同气质；顺带删除已无引用的 `.about-now__decoration` 规则。契约表同步修正为实际实现的 `.section-header__number`／`.post-entry__number`／`.post-header__index`／`.post-rail`（原先误记为 `.section-number`）。改后重跑全部套件仍为 22/22、161/0、E01 48/0、E03 18/0、E04 20/0。未推送、未部署；正式 VC2 与全域扩展仍属 Phase 4／5 与 E06。
 
 ## 2026-09-17 · About 页面视觉节奏优化（本地，未发布）
 

@@ -111,14 +111,19 @@
 | `.narrative` | Narrative | 装饰容器基类：`aria-hidden`、不可聚焦、`pointer-events: none` |
 | `.hand-note` | Narrative | 短手写旁白（CSS 手写体栈，不加载远程字体） |
 | `.paper-slip` | Narrative | 纸签：Current status、短旁白、Demo note |
-| `.paper-panel` | Narrative | 纸面 panel：About「最近在做」等 |
+| `.paper-panel` | Narrative | 纸面 panel：需要纸面语气的容器显式叠加 |
 | `.short-rule` | Narrative | 短分隔 rule，替代无条件全宽 `border-bottom` |
-| `.section-number` | Narrative | 编号（`01`、`02`），`aria-hidden` |
+| `.section-header__number` | Narrative | 区块编号（`01`、`02`），`aria-hidden` |
+| `.post-entry__number` | Narrative | 档案编号（`A-01`…）；编号跟随文章，不跟随筛选结果 |
+| `.post-header__index` | Narrative | Article 页文章编号（`A-01`…），`aria-hidden` |
 | `.mark` / `.mark--{name}` | Narrative | Editorial mark；`<svg class="mark mark--book-stack" aria-hidden="true">` |
 | `.page-rail` | Narrative | 宽屏极窄 editorial margin（原型，非 TOC、非导航、非第二正文列） |
+| `.post-rail` | Narrative | Article 的 rail 落点容器，只在 ≥1200px 出现 |
 | `.section-header--ruled` | Content | 需要完整横线时的 `.section-header` modifier |
 
-Blog 缩略图：按本轮决策**取消**重复的分类缩略图作为默认文章封面，Blog 默认采用"日期 + 编号 + 标题 + 摘要 + 分类 mark"。`.post-entry--with-thumb`、`.art-frame--thumb`、`--entry-thumb-w`、`--entry-thumb-h` 及 `js/site.js` 中对应的缩略图渲染分支在 Phase 1 删除；首页分类卡的小画（`.art-frame--category`、`--category-art-w/h`）保留。
+**Paper Panel 不是纯装饰。** `.paper-panel` 承载内容（例如 Home 的 Current status 条目），因此**不加** `aria-hidden`；只有它内部真正的装饰（网点、纸签、植物）才是 Narrative。About 的「最近在做」也不使用共享 `.note-panel` 承载纸面，而是在页面自己的 `.about-now__panel` 上声明纸面与内框，两页因此保留不同气质。
+
+Blog 缩略图：按本轮决策**取消**重复的分类缩略图作为默认文章封面，Blog 默认采用"日期 + 编号 + 标题 + 摘要 + 分类 mark"。`.post-entry--with-thumb`、`.art-frame--thumb`、`--entry-thumb-w`、`--entry-thumb-h`、`.category-link--card` 及 `js/site.js` 中对应的缩略图渲染分支已在 Phase 1 删除，`options.thumbnail` 不再是 `Sywen.createPostEntry` 的参数；首页分类入口的小画（`.art-frame--category`、`--category-art-w/h`）保留。
 
 ## 10. 实施阶段与样板范围
 

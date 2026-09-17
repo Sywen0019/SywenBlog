@@ -3,8 +3,8 @@
   "browser": "firefox",
   "browserVersion": "155.0",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "6c454f2847088265e5fcb626da4d3f9f970d144e",
-  "at": "2026-09-17T14:58:42.025Z",
+  "baseCommit": "f6e59fa9bfff12af1fb78994d2674ab5fc817476",
+  "at": "2026-09-17T15:05:45.904Z",
   "checks": [
     {
       "name": "1. 七页 reading.js 加载顺序与资源",
@@ -146,7 +146,7 @@
           "footerBottom": 843.9,
           "footerContentBottom": 747.9,
           "clearance": 36.1,
-          "scrollTop": 2153
+          "scrollTop": 2185
         },
         "index.html@390px": {
           "buttonTop": 784,
@@ -182,7 +182,7 @@
           "footerBottom": 900.22,
           "footerContentBottom": 804.22,
           "clearance": 35.78,
-          "scrollTop": 1352
+          "scrollTop": 1400
         },
         "index.html@1440px": {
           "buttonTop": 840,
@@ -266,7 +266,7 @@
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 35,
+        "progress": 36,
         "button": "visible",
         "script": "../js/context-menu.js"
       }
