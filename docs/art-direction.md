@@ -1,5 +1,14 @@
 # 美术生产与交接
 
+## E02 About 与静态转场 · 2026-09-17（本地）
+
+- A02 使用 Codex 内置 image_gen，以三视图锁身份、Hero J 参考线稿；共一个初稿、两次定向修订，采用 candidate-3。短发呆毛、格纹、红色下半框上缘无红线；人物自然坐着、双手托平板并低头阅读，画内保留纸白。候选 1 透明异常、候选 2 顶边不足，均不采用。最终头顶约 11% 留白，手和平板完整；椅腿/裤腿为有意的下缘局部构图，无关节和设备裁切。提示词见 [about-prompts.md](about-prompts.md)。
+- 正式导出 640×480／1280×960，26786／83194 字节；工程只等比缩放、WebP 编码，不程序重画。脚本 `scripts/export-about-art.py`；来源哈希、导出参数与哈希见 [about-assets.json](about-assets.json)。
+- 豆包 A07 铃兰 v04（原记录已获用户风格确认）与 A08 横枝 v01 通过实际缩小与背景边缘复核，导出 14930／14476 字节。分别接入 About「最近在做」标题旁、介绍至学业区块之间；深色使用小块暖纸承载黑线，无反色或降透明度。A08 双叶 v02 与早期版本只归档，不增加第三组装饰。
+- 14 张豆包 PNG 原始/透明大图已按 SHA256 无损迁至 `art-work/decorations/`；A02 原始与选稿在 `art-work/about/`，均 gitignored、不上线。迁移凭据在 `evidence/e02/master-migration.json`。原工具输出另保留于 Codex generated_images。
+- 外部交接仍缺：豆包逐次完整原始提示词与可独立核验的工具回执；已有 Change_log 只记摘要及自述模型参数，不当作完整提示词。无需再等待图片回传，正式发布仍由 E06 处理。
+- 1440／390 浅深已实际看图；320px 与失败降级见 [E02 证据](evidence/e02/README.md)。不把生成完成直接当作通过。
+
 日期：2026-09-15 初稿，2026-09-16 按用户反馈修订；任务B02（A01）。执行：Codex / Astra 美术任务，实际出图工具为内置 image_gen；工具未返回可核实模型版本，不写成 GPT-image2.5。
 
 ## 参考与Brief
@@ -37,6 +46,6 @@
 
 母版 2364×1773 RGB、精确 4:3，存于 gitignored 的 `art-work/categories/`（`study-candidate-1..3.png`、`life-candidate-1.png`、`favorites-candidate-1..2.png`，不发布、不入源码版本）。网页侧由 `scripts/export-category-art.py` 确定性导出 640×480 WebP（q88 method 6、无元数据、单张 ≤40KB），清单见 `category-assets.json`；工程只做等比缩放与格式转换，不程序绘制元素。
 
-## 后续豆包任务（Deferred）
+## 后续豆包任务（历史状态，已由上方 E02 记录更新）
 
 E01 已本地完成（见上）。E02（About 与转场）开启时提供资产 ID、参考及用途、提示词、禁用项、比例/背景/安全区、命名与版本、验收。工作区现有一批未提交的 A07 铃兰盆栽贴纸与 A08 枝叶/转场素材探索，属 E02 方向，待用户确认后再继续。外部回传原始输出、实际提示词和可确认工具信息；未回传不影响作业基线。

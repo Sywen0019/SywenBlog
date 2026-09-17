@@ -1,0 +1,42 @@
+[
+  {
+    "file": "assets/images/about-reading-640.webp",
+    "source": "art-work/about/selected.png",
+    "width": 640,
+    "height": 480,
+    "bytes": 26786,
+    "quality": 90,
+    "sha256": "284f391cd36b3452016b3ec6d9edc7c4e75fd050c6c10ecbc57f988d1d4c4cfe",
+    "sourceSha256": "ac6476058c912c5b4fe42d7ac7b97651221d1570dcfe7693149229bd4091afc3"
+  },
+  {
+    "file": "assets/images/about-reading-1280.webp",
+    "source": "art-work/about/selected.png",
+    "width": 1280,
+    "height": 960,
+    "bytes": 83194,
+    "quality": 90,
+    "sha256": "cbf8864a10759261c949f408529c1aa7af01bfb5aea9537075de3347fa82686a",
+    "sourceSha256": "ac6476058c912c5b4fe42d7ac7b97651221d1570dcfe7693149229bd4091afc3"
+  },
+  {
+    "file": "assets/images/a07-plant.webp",
+    "source": "art-work/decorations/a07-plant-v04.png",
+    "width": 330,
+    "height": 330,
+    "bytes": 14930,
+    "quality": 90,
+    "sha256": "0f12a98ee8c6879fc4b52a1ae23e8105f22f794339671bf6e2390089e35aaf88",
+    "sourceSha256": "1b4205d14be704ac114fc2237322951ddfb527e58cb67f0b26ff72d94042e4af"
+  },
+  {
+    "file": "assets/images/a08-transition-branch.webp",
+    "source": "art-work/decorations/a08-transition-branch-v01.png",
+    "width": 720,
+    "height": 239,
+    "bytes": 14476,
+    "quality": 90,
+    "sha256": "4d6e42aa17bb382eb1fb0a4e690cfd85db7a91cec32fd5150114009c39bb818c",
+    "sourceSha256": "744f788a3175baa5de333cc40f72cfcb30913f698f6f064bcfebf67596a75bf5"
+  }
+]

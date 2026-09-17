@@ -611,7 +611,16 @@ async function run(browserName, browser) {
     const same = [];
     for (const [rel, hash] of Object.entries(baseline)) {
       if (!rel.startsWith('assets/')) continue;
-      const file = path.join(root, rel);
+      let file = path.join(root, rel);
+      // E02 archives unpublished A07/A08 masters outside assets. Verify the
+      // same original bytes at the recorded destination; never waive a hash.
+      if (!fs.existsSync(file) && /^assets\/images\/a0[78]-.*\.png$/.test(rel)) {
+        const migration = JSON.parse(fs.readFileSync(path.join(root, 'docs/evidence/e02/master-migration.json'), 'utf8').replace(/^\uFEFF/, ''));
+        const entry = migration.find((item) => item.name === path.basename(rel));
+        if (entry && entry.sha256.toLowerCase() === hash.toLowerCase()) {
+          file = path.join(root, 'art-work/decorations', entry.name);
+        }
+      }
       if (!fs.existsSync(file)) { changed.push(`${rel}（缺失）`); continue; }
       const now = createHash('sha256').update(fs.readFileSync(file)).digest('hex');
       if (now === hash) same.push(rel); else changed.push(rel);

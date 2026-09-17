@@ -53,18 +53,18 @@
       <p>我是一名计算机专业学生，学习和工作围绕笔记本电脑展开，书写时常用平板与手写笔。这个站点记录学业中的探索、生活里的近况，也聊聊喜欢的美食、游戏和动漫。</p>
       <p>这里像一本慢慢写下去的笔记本：把学业笔记、生活近况和兴趣杂谈放在一起，也给阅读和生活留一点空白。站内文章目前为示例内容，之后随经历逐步补充。</p>
       </div>
-      <figure class="hero-art about-hero-art about-intro__second-column">
+      <figure class="hero-art about-hero-art about-hero-art--reading about-intro__second-column">
         <div class="hero-art__frame">
           <span class="hero-art__tape" aria-hidden="true"></span>
           <div class="art-frame">
-            <img class="art-frame__image" src="./assets/images/character-front-upper.webp" width="320" height="600" alt="Sywen 的漫画角色形象：短发、红框眼镜和格纹衬衫" decoding="async">
+            <img class="art-frame__image" src="./assets/images/about-reading-1280.webp" srcset="./assets/images/about-reading-640.webp 640w, ./assets/images/about-reading-1280.webp 1280w" sizes="(min-width: 1200px) 428px, (min-width: 1024px) 38vw, (min-width: 488px) 428px, calc(100vw - 60px)" width="1280" height="960" alt="Sywen 的漫画角色：短发与呆毛，戴红色下半框眼镜、穿格纹衬衫，放松坐着，双手托住平板低头阅读" decoding="async">
             <span class="art-frame__fallback">Sywen</span>
           </div>
         </div>
       </figure>
     </section>
 
-    <section class="about-section" aria-labelledby="about-study-title">
+    <section class="about-section about-study" aria-labelledby="about-study-title">
       <h2 id="about-study-title">学业方向</h2>
       <ul class="text-list">
         <li>正在学习：Transformer 与注意力机制的基本原理。</li>
@@ -73,7 +73,7 @@
       </ul>
     </section>
 
-    <section class="about-section" aria-labelledby="about-interest-title">
+    <section class="about-section about-interests" aria-labelledby="about-interest-title">
       <h2 id="about-interest-title">我喜欢的</h2>
       <ul class="text-list">
         <li>美食与值得回味的小店。</li>
@@ -82,23 +82,30 @@
       </ul>
     </section>
 
-    <section class="about-section" aria-labelledby="about-now-title">
-      <h2 id="about-now-title">最近在做</h2>
-      <div class="note-panel">
-        <ul class="note-panel__list">
-          <li class="note-panel__item">
-            <p class="note-panel__label">正在学习</p>
-            <p class="note-panel__text">理解 Transformer。</p>
-          </li>
-          <li class="note-panel__item">
-            <p class="note-panel__label">正在整理</p>
-            <p class="note-panel__text">学习与阅读笔记。</p>
-          </li>
-          <li class="note-panel__item">
-            <p class="note-panel__label">保持兴趣</p>
-            <p class="note-panel__text">美食、动画与游戏。</p>
-          </li>
-        </ul>
+    <section class="about-section about-now" aria-labelledby="about-now-title">
+      <div class="about-section__heading">
+        <h2 id="about-now-title">最近在做</h2>
+      </div>
+      <div class="about-now__panel">
+        <div class="note-panel">
+          <ul class="note-panel__list">
+            <li class="note-panel__item">
+              <p class="note-panel__label">正在学习</p>
+              <p class="note-panel__text">理解 Transformer。</p>
+            </li>
+            <li class="note-panel__item">
+              <p class="note-panel__label">正在整理</p>
+              <p class="note-panel__text">学习与阅读笔记。</p>
+            </li>
+            <li class="note-panel__item">
+              <p class="note-panel__label">保持兴趣</p>
+              <p class="note-panel__text">美食、动画与游戏。</p>
+            </li>
+          </ul>
+        </div>
+        <span class="about-decoration about-now__decoration" aria-hidden="true">
+          <img src="./assets/images/a07-plant.webp" width="330" height="330" alt="" decoding="async" loading="lazy">
+        </span>
       </div>
     </section>
 

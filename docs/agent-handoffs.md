@@ -1,14 +1,32 @@
 # Agent 交接记录（H）
 
-## 当前交接摘要 · 2026-09-16（E01 之后）
+## E02 接口登记 · 2026-09-17（Passed，本地）
 
-B00–B06 已完成并保持可提交；E01「文章小画体系」、E03「简单阅读增强」与 E04「复制与快捷菜单」均已本地完成（Passed，见下方记录），E02／E05／E06 仍 Deferred。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用低头在平板书写的 D；工作区另有一批未提交的 A07/A08 装饰贴纸探索（E02 方向），不属于 E01。
+- A02：About 平板阅读人物；`assets/images/about-reading-640.webp`、`about-reading-1280.webp`，4:3，每次请求 ≤200KB。三视图为唯一身份依据，Hero J 仅为画法参考。
+- A07：植物，采用候选铃兰 v04；网页路径 `assets/images/a07-plant.webp`。A08：静态转场，候选横枝 v01，网页路径 `assets/images/a08-transition-branch.webp`。单张 ≤25KB；双叶小枝 v02 仅归档备用。
+- 新增 `.about-hero-art--reading`（完整等比阅读图）、`.about-decoration`（纯装饰纸面容器）、`.about-transition`（介绍至学业的静态衔接）、`.about-section__heading`（标题与植物的正常流布局）。不增加 JS API 或页面动画。
+- 保留 `.art-frame` / `.art-frame__image` / `.art-frame__fallback` 及失败状态合同；人物 alt 描述实际动作。装饰空 alt、aria-hidden、不可聚焦、pointer-events:none。
+- 所有原始 PNG、透明大图与候选保存在 gitignored `art-work/about/` 或 `art-work/decorations/`，不得进入发布 assets；保留既有用户改动与素材历史。
+- 当前采用的首页 Hero 是 J，摘要中的 D 已纠正；历史任务中的 D 记录保留。
+
+### E02 执行交接
+
+- 基础版本：`7e7c1c9`。执行：Codex 内置 image_gen 人物、已回传豆包植物/贴纸。未调用外部豆包服务，未发送外部消息。
+- 运行时修改为 `about.html`、`css/pages.css`、四张正式 WebP，以及回归发现的 `js/context-menu.js` 延迟打开取消修复；新增导出脚本、清单、提示词与 E02 验收脚本。首页 Hero 与分类资源未改；菜单关闭时取消尚未执行的键盘打开请求，避免立即 Esc 后重开。
+- 采用 A02 candidate-3（1 初稿、2 次具体修订），A07 v04、A08 横枝 v01；双叶 v02 和其余探索归档。候选不合格理由与逐次提示词见 about-prompts.md。
+- 专项18/0、基线161/0、E03各浏览器18/0；E04 最终回归及初次失败记录见 acceptance 的 E02 条目。1440/390 浅深前后实际看图通过，320px 与降级检查完成。构建产物31文件，无母版候选，正文文字保持一致。
+- 本轮 E03 测试仅增加归档路径的原哈希核验；E04 测试将截图对照固定到同页已解码图片，零像素差标准保留，并增加同一事件任务内打开再 Esc 的竞态回归。
+- 待交接：豆包完整原始提示词、可核实工具回执；实体手机/真实UI缩放/屏幕阅读器未验证。下一步 E06 统一正式 VC2、发布及公开核验。本轮不推送、不部署。
+
+## 当前交接摘要 · 2026-09-17（E02 之后）
+
+B00–B06 已完成并保持可提交；E01「文章小画体系」、E03「简单阅读增强」与 E04「复制与快捷菜单」均已本地完成（Passed，见下方记录），E02 已于 2026-09-17 本地完成，E05／E06 仍 Deferred。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用 J；E02 采用 A02 平板阅读候选 3、A07 铃兰 v04 与 A08 横枝 v01，豆包大图已归档 art-work/decorations，不进入发布目录。
 
 theme/site/blog/reading/context-menu 已全部接入，保留 ID/data 契约与静态降级。E04 之后 `#quick-menu-button`、`#copy-panel`、`#site-notice`、`#context-menu` 由 `js/context-menu.js` 接管：仅在 `(hover: hover) and (pointer: fine)` 下显示按钮并按需构建菜单，复制失败时显示手动复制面板。E04 证据见 `docs/evidence/e04/`，三浏览器各 19 项通过；E03 的 `reading-checks.mjs` 按新契约最小更新后三浏览器各 18 项仍通过；B05 的 158 项基线回归在 E04 后重跑保持通过。VC0/VC1-B 结论见 visual-review.md，VC2 仍待 E06。
 
 E01 之后首页分类入口为上图下文卡片、Blog 文章条目带分类缩略图（首页「最近文章」保持纯文字）；三张分类小画为 `assets/images/cat-study.webp`、`cat-life.webp`、`cat-favorites.webp`（均 640×480，字节/SHA256/来源母版见 `docs/category-assets.json`，母版存于 gitignored 的 `art-work/categories/`，不发布）。E01 证据见 `docs/evidence/e01/`，三浏览器各 49 项通过；全量基线 161/0；E03 的 `reading-checks.mjs`（第 18 项改对 E01 后博客列表基线、第 8 项补按钮可见性等待）与 E04 的 `menu-checks.mjs`（第 19 项改为实测文档高度）做了最小兼容更新后三浏览器分别 18/0、19/0。E01 仅本地完成，不推送、不部署，VC2 仍待 E06。
 
-当前冻结补充：hero-desk-640/1280.webp 已产出（D）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；发布白名单含 `js/`，因此 reading.js 与 context-menu.js 会随下次构建进入 dist，但 E04 本身不推送、不部署（留给 E06）。
+当前冻结补充：hero-desk-640/1280.webp 已产出（J）；.art-frame 的 is-failed 状态保证图片失败时原占位与文字 fallback 可用。发布目录额外生成 version.json 与最小 404.html；发布白名单含 `js/`，因此 reading.js 与 context-menu.js 会随下次构建进入 dist，但 E04 本身不推送、不部署（留给 E06）。
 
 当前分类契约：一级分类按 `study`（学业）、`life`（生活）、`favorites`（我喜欢的）排列；现有三篇学习示例使用 `study`，生活随笔使用 `life`，`favorites` 可为空。Blog 兼容旧 `?category=ai|coding|research`，统一映射并规范化为 `?category=study`；未知分类回到全部。标签仍是独立搜索字段，旧“科研”等标签不因一级分类迁移而删除。
 
@@ -40,6 +58,7 @@ E01 之后首页分类入口为上图下文卡片、Blog 文章条目带分类�
 | E03 简单阅读增强 | DeepSeek | Passed（本地） | `a0ed633` | 见 E03 |
 | E04 复制与快捷菜单 | DeepSeek | Passed（本地） | `fddead5` | 见 E04 |
 | E01 文章小画体系 | 豆包 | Passed（本地） | `a11d9c3` | 见 E01 |
+| E02 About 与转场 | Codex + 豆包回传素材 | Passed（本地） | `7e7c1c9` | 见文件顶部 E02 |
 
 ---
 

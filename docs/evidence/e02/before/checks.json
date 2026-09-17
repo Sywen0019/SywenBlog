@@ -1,0 +1,69 @@
+{
+  "at": "2026-09-17T02:10:53.757Z",
+  "checks": [
+    {
+      "name": "1440/light: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:7014/assets/images/character-front-upper.webp",
+        "width": 160,
+        "height": 300,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "1440/dark: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:7014/assets/images/character-front-upper.webp",
+        "width": 160,
+        "height": 300,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "390/light: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:7014/assets/images/character-front-upper.webp",
+        "width": 117.328125,
+        "height": 220,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "390/dark: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:7014/assets/images/character-front-upper.webp",
+        "width": 117.328125,
+        "height": 220,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    }
+  ]
+}

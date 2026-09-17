@@ -3,8 +3,8 @@
   "browser": "edge",
   "browserVersion": "153.0.4234.32",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "a11d9c3c23205504b7b670e539503e6f6c765a60",
-  "at": "2026-09-16T11:07:29.480Z",
+  "baseCommit": "7e7c1c963b9bc8bab0a267811c7e61c19733eb94",
+  "at": "2026-09-17T02:28:55.388Z",
   "checks": [
     {
       "name": "1. 七页 reading.js 加载顺序与资源",
@@ -142,11 +142,11 @@
         "about.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.97,
-          "footerBottom": 843.92,
-          "footerContentBottom": 747.92,
-          "clearance": 36.08,
-          "scrollTop": 1730
+          "footerTop": 568.23,
+          "footerBottom": 844.19,
+          "footerContentBottom": 748.19,
+          "clearance": 35.81,
+          "scrollTop": 1880
         },
         "index.html@390px": {
           "buttonTop": 784,
@@ -178,11 +178,11 @@
         "about.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.58,
-          "footerBottom": 899.97,
-          "footerContentBottom": 803.97,
-          "clearance": 36.03,
-          "scrollTop": 1039
+          "footerTop": 749.25,
+          "footerBottom": 899.64,
+          "footerContentBottom": 803.64,
+          "clearance": 36.36,
+          "scrollTop": 1191
         },
         "index.html@1440px": {
           "buttonTop": 840,
@@ -266,7 +266,7 @@
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 40,
+        "progress": 44,
         "button": "visible",
         "script": "../js/context-menu.js"
       }
@@ -305,7 +305,7 @@
       "name": "16. E03 未改动 assets/ 中的非 Hero 资产",
       "pass": true,
       "detail": {
-        "unchanged": 23,
+        "unchanged": 13,
         "preexistingHeroRevision": [],
         "baseline": "docs/evidence/baseline/checks.json（B05 快照）"
       }

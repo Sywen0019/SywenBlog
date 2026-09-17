@@ -1,8 +1,8 @@
 {
   "browser": "firefox",
   "browserVersion": "155.0",
-  "baseCommit": "a11d9c3c23205504b7b670e539503e6f6c765a60",
-  "at": "2026-09-16T11:14:04.129Z",
+  "baseCommit": "7e7c1c963b9bc8bab0a267811c7e61c19733eb94",
+  "at": "2026-09-17T02:28:15.295Z",
   "checks": [
     {
       "name": "1. 七页脚本顺序与资源",
@@ -231,9 +231,9 @@
       "pass": true,
       "detail": {
         "notice": "链接已复制",
-        "copied": "http://127.0.0.1:21326/posts/dom-search-notes.html",
-        "expected": "http://127.0.0.1:21326/posts/dom-search-notes.html",
-        "pageUrl": "http://127.0.0.1:21326/blog.html?q=DOM#main",
+        "copied": "http://127.0.0.1:58793/posts/dom-search-notes.html",
+        "expected": "http://127.0.0.1:58793/posts/dom-search-notes.html",
+        "pageUrl": "http://127.0.0.1:58793/blog.html?q=DOM#main",
         "noticeAutoHidden": true
       }
     },
@@ -241,7 +241,7 @@
       "name": "11. 复制失败降级面板",
       "pass": true,
       "detail": {
-        "value": "http://127.0.0.1:21326/posts/attention-intuition.html",
+        "value": "http://127.0.0.1:58793/posts/attention-intuition.html",
         "selection": "whole",
         "nativeMenu": false
       }
@@ -266,7 +266,7 @@
       "pass": true,
       "detail": {
         "blogSearch": "search-input",
-        "otherPageSearch": "http://127.0.0.1:21326/blog.html?focus=search",
+        "otherPageSearch": "http://127.0.0.1:58793/blog.html?focus=search",
         "topFocus": "",
         "theme": {
           "before": "light",
@@ -325,8 +325,8 @@
       "name": "17. 子目录路径与地址",
       "pass": true,
       "detail": {
-        "blog": "http://127.0.0.1:21326/course/blog/index.html",
-        "post": "http://127.0.0.1:21326/course/blog/posts/dom-search-notes.html"
+        "blog": "http://127.0.0.1:58793/course/blog/index.html",
+        "post": "http://127.0.0.1:58793/course/blog/posts/dom-search-notes.html"
       }
     },
     {
@@ -390,6 +390,10 @@
         },
         "frozenBaseline": "跳过：E03 冻结基线为 Chromium 渲染，文本抗锯齿不同。"
       }
+    },
+    {
+      "name": "20. 键盘打开后立即 Esc 不被延迟回调重新打开",
+      "pass": true
     }
   ],
   "screenshots": [
@@ -436,9 +440,11 @@
     "观感类判据由 E06 的 VC2 正式判定，本脚本只记录可测量事实。"
   ],
   "permissionFallback": "剪贴板权限申请失败（browser.newContext: Unknown permission: clipboard-read），改为仅验证可见事实。",
-  "passed": 19,
+  "passed": 20,
   "failed": 0,
   "recoveredToggles": [
+    "补发合成 click（鼠标点击未到达按钮）",
+    "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",

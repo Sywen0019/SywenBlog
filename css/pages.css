@@ -244,6 +244,46 @@ html.has-reading .site-footer__inner {
   margin-top: var(--section-gap);
 }
 
+.about-section {
+  max-width: 1160px;
+  margin-inline: auto;
+}
+
+.about-section + .about-section {
+  margin-top: var(--space-12);
+}
+
+.about-section:not(.about-intro) {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.about-section h2 {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-h2);
+  line-height: var(--leading-title);
+}
+
+.about-section .text-list {
+  line-height: var(--leading-body);
+}
+
+.about-study {
+  margin-top: var(--space-16);
+}
+
+.about-interests {
+  margin-top: var(--space-12) !important;
+}
+
+.about-now {
+  margin-top: var(--space-16) !important;
+}
+
+.about-faq {
+  margin-top: var(--space-12) !important;
+}
+
 .about-intro > * {
   min-width: 0;
 }
@@ -429,9 +469,135 @@ html.has-reading .site-footer__inner {
   line-height: 1.85;
 }
 
-.about-section:not(.about-intro) {
-  padding-top: var(--space-6);
-  border-top: 1px solid var(--color-rule);
+/* E02: a complete reading scene, with paper preserved in both themes. */
+.about-hero-art--reading {
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+.about-hero-art--reading .hero-art__frame,
+.about-hero-art--reading .art-frame {
+  display: block;
+  width: 100%;
+}
+
+.about-hero-art--reading .art-frame {
+  padding: 4px;
+}
+
+.about-hero-art--reading .art-frame__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+.about-hero-art--reading .art-frame.is-failed .art-frame__fallback {
+  inset: 4px;
+  height: auto;
+}
+
+.about-decoration {
+  display: block;
+  flex: none;
+  width: 80px;
+  background: #f7f3ea;
+  border-radius: var(--radius-small);
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-decoration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about-decoration img[hidden] {
+  display: none;
+}
+
+.about-section__heading {
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.about-section__heading h2 {
+  margin-bottom: 0;
+}
+
+.about-now__panel {
+  position: relative;
+}
+
+.about-now .note-panel {
+  position: relative;
+  padding: var(--space-6);
+  border: 1px solid var(--color-rule);
+  border-top: 2px solid var(--color-ink);
+  background-color: var(--color-surface);
+  background-image: radial-gradient(var(--color-rule) 0.6px, transparent 0.6px);
+  background-size: 12px 12px;
+  box-shadow: 4px 4px 0 var(--color-shadow);
+}
+
+.about-now .note-panel::after {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid color-mix(in srgb, var(--color-rule) 55%, transparent);
+  content: "";
+  pointer-events: none;
+}
+
+.about-now .note-panel__list {
+  position: relative;
+  z-index: 1;
+  gap: var(--space-6);
+}
+
+.about-now .note-panel__item {
+  min-height: 88px;
+  padding: var(--space-4);
+  border-left: 2px solid var(--color-accent);
+  background-color: color-mix(in srgb, var(--color-surface) 88%, var(--color-paper));
+}
+
+.about-now .note-panel__label {
+  margin-bottom: var(--space-3);
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: var(--text-meta);
+  letter-spacing: 0.04em;
+}
+
+.about-now__decoration {
+  position: absolute;
+  z-index: 2;
+  inset-inline-end: 0;
+  inset-block-start: calc(100% + 2px);
+  width: 40px;
+  background: transparent;
+}
+
+.about-now__decoration img {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .about-section h2 {
+    font-size: var(--text-h2);
+  }
+
+  .about-now .note-panel__item {
+    min-height: 104px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-now__decoration {
+    display: none;
+  }
 }
 
 .post-back {

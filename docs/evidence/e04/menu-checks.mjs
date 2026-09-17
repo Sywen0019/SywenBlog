@@ -164,10 +164,15 @@ async function withRetry(label, fn, diagnose) {
 // 按钮滚回视口，而滚动关闭菜单是 §15.4 的正确行为。这里先把滚动位置稳定在 0 再操作，
 // 让「菜单打开」的检查只测菜单本身，不与被测试的滚动关闭规则互相干扰。
 async function stabilizeScroll(page) {
-  await page.evaluate(() => {
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     document.documentElement.style.scrollBehavior = 'auto';
     const scroller = document.scrollingElement || document.documentElement;
     scroller.scrollTop = 0;
+    // Let hash/focus scroll events finish before opening a menu that correctly
+    // closes on scroll. Reading scrollTop alone does not flush those events.
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
   });
   await page.waitForFunction(() => ((document.scrollingElement || document.documentElement).scrollTop === 0), null, { timeout: 5000 })
     .catch(() => { /* 存在锚点定位时允许非零，后续断言会记录实际值 */ });
@@ -1263,12 +1268,18 @@ async function run(browserName, browser) {
       const height = await measureBlogHeight(width);
       const shownFile = path.join(out, `e04-compare-${width}-${theme}-shown.png`);
       const hiddenFile = path.join(out, `e04-compare-${width}-${theme}-hidden.png`);
+      // Use the same decoded images and document for this one-variable test.
+      // Separate Chrome contexts can rasterize scaled WebP thumbnails differently.
+      const ctx = await browser.newContext({ viewport: { width, height }, colorScheme: theme });
+      const cp = await ctx.newPage();
+      await cp.goto(base + 'blog.html');
+      await settleBlog(cp);
+      await cp.evaluate(async () => {
+        await Promise.all([...document.images].map(img => img.decode()));
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      });
       for (const [file, hide] of [[shownFile, false], [hiddenFile, true]]) {
-        const ctx = await browser.newContext({ viewport: { width, height }, colorScheme: theme });
-        const cp = await ctx.newPage();
         // 视口高度对齐实测文档高度：整页一屏，整页截图即可逐像素对齐；懒加载缩略图先就位。
-        await cp.goto(base + 'blog.html');
-        await settleBlog(cp);
         if (hide) await hideButton(cp);
         // 截图前清除任何文本选区：选中态会改变链接前景色，污染逐像素对照。
         await cp.evaluate(() => { const selection = window.getSelection(); if (selection) selection.removeAllRanges(); });
@@ -1277,8 +1288,8 @@ async function run(browserName, browser) {
         // Firefox 的滚动条占位会让文档高度与视口差 1px 左右；同浏览器内的两张对照仍可比。
         assert.ok(Math.abs(size - height) <= 2, `${width}-${theme} 文档高度 ${size} 与实测高度 ${height} 相差过大`);
         await cp.screenshot({ path: file, fullPage: true, animations: 'disabled' });
-        await ctx.close();
       }
+      await ctx.close();
       report.screenshots.push(path.basename(shownFile), path.basename(hiddenFile));
       // 忽略顶部阅读进度线（0–3px）与页头按钮所在的水平带（390px 下工具行换到第二行，
       // 按钮可能落在 y≈85–131，因此忽略带到 140px）。
@@ -1327,6 +1338,22 @@ async function run(browserName, browser) {
     }
     detail.frozenBaseline = frozen;
     return detail;
+  });
+
+  await check('20. 键盘打开后立即 Esc 不被延迟回调重新打开', async () => {
+    await open('about.html');
+    const closedImmediately = await page.evaluate(() => {
+      const button = document.getElementById('quick-menu-button');
+      button.focus();
+      button.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+      button.click();
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+      return document.getElementById('context-menu').hidden;
+    });
+    assert.equal(closedImmediately, true);
+    await page.waitForTimeout(250);
+    assert.equal(await shownNow(page), false);
+    assert.equal(await page.locator('#quick-menu-button').getAttribute('aria-expanded'), 'false');
   });
 
   report.passed = report.checks.filter((item) => item.pass).length;

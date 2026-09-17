@@ -23,6 +23,8 @@
   let capability = null;
   let listening = false;
   let open = false;
+  // Closing must also cancel a keyboard-open callback queued for the next task.
+  let deferredActivate = false;
 
   // ---------------------------------------------------------------------------
   // 菜单内容（§15.2）：导航 1 组、页面动作 1 组、复制与只读状态 1 组。
@@ -195,6 +197,7 @@
   }
 
   function closeMenu(restore) {
+    deferredActivate = false;
     if (!open) return;
     open = false;
     if (menu) {
@@ -466,7 +469,6 @@
     let pointerToggle = false;      // 本次交互由指针按下处理
     let keyboardActivate = false;   // 本次交互由键盘触发
     let deferScheduled = false;
-    let deferredActivate = false;
     const scheduleDeferred = () => {
       if (deferScheduled) return;
       deferScheduled = true;

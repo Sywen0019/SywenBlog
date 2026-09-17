@@ -2,7 +2,7 @@
 
 原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Study · Life · Favorites。
 
-**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01（分类小画）、E03（阅读增强）、E04（复制与快捷菜单）已在本地完成并通过检查，E02／E05／E06 保持 Deferred。
+**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01（分类小画）、E02（About 阅读人物与静态转场）、E03（阅读增强）、E04（复制与快捷菜单）已在本地完成并通过检查，E05／E06 保持 Deferred。
 
 - [访问网站](https://sywen-blog.pages.dev/)
 - [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
@@ -99,4 +99,4 @@ git -c http.sslBackend=openssl push github main
 
 重点在Hero，阅读区克制；用户参考保持原样。复杂人物由Codex内置出图，正式导出已入仓库，原始候选不发布。工具未提供可核实版本，不把实际调用写成已验证的“GPT-image2.5”。
 
-详见[美术记录](docs/art-direction.md)、[提示词](docs/hero-prompts.md)、[视觉验收](docs/visual-review.md)。后续 About新人物、复制与菜单、状态精修按E类逐项领取，完成一项再决定下一项；增强版发布与 VC2 由 E06 统一执行。
+详见[美术记录](docs/art-direction.md)、[提示词](docs/hero-prompts.md)、[视觉验收](docs/visual-review.md)。About 阅读人物与静态转场已完成，素材与提示词见 [A02 记录](docs/about-prompts.md)；后续状态精修按 E05 领取；增强版发布与 VC2 由 E06 统一执行。

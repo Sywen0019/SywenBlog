@@ -1,0 +1,243 @@
+{
+  "at": "2026-09-17T13:49:29.820Z",
+  "checks": [
+    {
+      "name": "1440/light: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 416.796875,
+        "height": 312.59375,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "1440/dark: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 416.796875,
+        "height": 312.59375,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "390/light: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 346,
+        "height": 259.5,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "390/dark: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 346,
+        "height": 259.5,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "320/light: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 276,
+        "height": 207,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "320/dark: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 276,
+        "height": 207,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "768/light: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 428,
+        "height": 321,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "768/dark: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 428,
+        "height": 321,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "1023/light: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 428,
+        "height": 321,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "1023/dark: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 428,
+        "height": 321,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "1024/light: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 352.796875,
+        "height": 264.59375,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "1024/dark: layout and art",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:3352/assets/images/about-reading-640.webp",
+        "width": 352.796875,
+        "height": 264.59375,
+        "headings": [
+          "关于我",
+          "学业方向",
+          "我喜欢的",
+          "最近在做",
+          "常见问答"
+        ]
+      }
+    },
+    {
+      "name": "DPR 2 requests, budgets and stable failure frame",
+      "pass": true,
+      "detail": {
+        "source": "http://127.0.0.1:3352/assets/images/about-reading-1280.webp",
+        "bytes": [
+          {
+            "file": "assets/images/about-reading-640.webp",
+            "bytes": 26786
+          },
+          {
+            "file": "assets/images/about-reading-1280.webp",
+            "bytes": 83194
+          },
+          {
+            "file": "assets/images/a07-plant.webp",
+            "bytes": 14930
+          },
+          {
+            "file": "assets/images/a08-transition-branch.webp",
+            "bytes": 14476
+          }
+        ],
+        "height": 324.59375
+      }
+    },
+    {
+      "name": "failed-images",
+      "pass": true
+    },
+    {
+      "name": "no-script",
+      "pass": true
+    },
+    {
+      "name": "no-script-failed",
+      "pass": true
+    },
+    {
+      "name": "subdirectory",
+      "pass": true
+    },
+    {
+      "name": "storage-failed",
+      "pass": true
+    }
+  ]
+}
