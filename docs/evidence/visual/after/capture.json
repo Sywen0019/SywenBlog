@@ -4,7 +4,7 @@
     "width": 1440,
     "theme": "light",
     "overflow": false,
-    "height": 2488,
+    "height": 2514,
     "file": "home-1440-light.png"
   },
   {
@@ -12,7 +12,7 @@
     "width": 1440,
     "theme": "light",
     "overflow": false,
-    "height": 1609,
+    "height": 1615,
     "file": "blog-1440-light.png"
   },
   {
@@ -20,7 +20,7 @@
     "width": 1440,
     "theme": "light",
     "overflow": false,
-    "height": 2300,
+    "height": 2306,
     "file": "about-1440-light.png"
   },
   {
@@ -28,7 +28,7 @@
     "width": 1440,
     "theme": "light",
     "overflow": false,
-    "height": 2376,
+    "height": 2382,
     "file": "post-1440-light.png"
   },
   {
@@ -36,7 +36,7 @@
     "width": 1440,
     "theme": "dark",
     "overflow": false,
-    "height": 2488,
+    "height": 2514,
     "file": "home-1440-dark.png"
   },
   {
@@ -44,7 +44,7 @@
     "width": 1440,
     "theme": "dark",
     "overflow": false,
-    "height": 1609,
+    "height": 1615,
     "file": "blog-1440-dark.png"
   },
   {
@@ -52,7 +52,7 @@
     "width": 1440,
     "theme": "dark",
     "overflow": false,
-    "height": 2300,
+    "height": 2306,
     "file": "about-1440-dark.png"
   },
   {
@@ -60,7 +60,7 @@
     "width": 1440,
     "theme": "dark",
     "overflow": false,
-    "height": 2376,
+    "height": 2382,
     "file": "post-1440-dark.png"
   },
   {
@@ -68,7 +68,7 @@
     "width": 1200,
     "theme": "light",
     "overflow": false,
-    "height": 2488,
+    "height": 2514,
     "file": "home-1200-light.png"
   },
   {
@@ -76,7 +76,7 @@
     "width": 1200,
     "theme": "light",
     "overflow": false,
-    "height": 1609,
+    "height": 1615,
     "file": "blog-1200-light.png"
   },
   {
@@ -84,7 +84,7 @@
     "width": 1200,
     "theme": "light",
     "overflow": false,
-    "height": 2300,
+    "height": 2306,
     "file": "about-1200-light.png"
   },
   {
@@ -92,7 +92,7 @@
     "width": 1200,
     "theme": "light",
     "overflow": false,
-    "height": 2376,
+    "height": 2382,
     "file": "post-1200-light.png"
   },
   {
@@ -100,7 +100,7 @@
     "width": 1200,
     "theme": "dark",
     "overflow": false,
-    "height": 2488,
+    "height": 2514,
     "file": "home-1200-dark.png"
   },
   {
@@ -108,7 +108,7 @@
     "width": 1200,
     "theme": "dark",
     "overflow": false,
-    "height": 1609,
+    "height": 1615,
     "file": "blog-1200-dark.png"
   },
   {
@@ -116,7 +116,7 @@
     "width": 1200,
     "theme": "dark",
     "overflow": false,
-    "height": 2300,
+    "height": 2306,
     "file": "about-1200-dark.png"
   },
   {
@@ -124,7 +124,7 @@
     "width": 1200,
     "theme": "dark",
     "overflow": false,
-    "height": 2376,
+    "height": 2382,
     "file": "post-1200-dark.png"
   },
   {
@@ -132,7 +132,7 @@
     "width": 1024,
     "theme": "light",
     "overflow": false,
-    "height": 2388,
+    "height": 2414,
     "file": "home-1024-light.png"
   },
   {
@@ -140,7 +140,7 @@
     "width": 1024,
     "theme": "light",
     "overflow": false,
-    "height": 1609,
+    "height": 1615,
     "file": "blog-1024-light.png"
   },
   {
@@ -148,7 +148,7 @@
     "width": 1024,
     "theme": "light",
     "overflow": false,
-    "height": 2252,
+    "height": 2258,
     "file": "about-1024-light.png"
   },
   {
@@ -156,7 +156,7 @@
     "width": 1024,
     "theme": "light",
     "overflow": false,
-    "height": 2376,
+    "height": 2382,
     "file": "post-1024-light.png"
   },
   {
@@ -164,7 +164,7 @@
     "width": 1024,
     "theme": "dark",
     "overflow": false,
-    "height": 2388,
+    "height": 2414,
     "file": "home-1024-dark.png"
   },
   {
@@ -172,7 +172,7 @@
     "width": 1024,
     "theme": "dark",
     "overflow": false,
-    "height": 1609,
+    "height": 1615,
     "file": "blog-1024-dark.png"
   },
   {
@@ -180,7 +180,7 @@
     "width": 1024,
     "theme": "dark",
     "overflow": false,
-    "height": 2252,
+    "height": 2258,
     "file": "about-1024-dark.png"
   },
   {
@@ -188,7 +188,7 @@
     "width": 1024,
     "theme": "dark",
     "overflow": false,
-    "height": 2376,
+    "height": 2382,
     "file": "post-1024-dark.png"
   },
   {
@@ -196,7 +196,7 @@
     "width": 768,
     "theme": "light",
     "overflow": false,
-    "height": 2330,
+    "height": 2356,
     "file": "home-768-light.png"
   },
   {
@@ -204,7 +204,7 @@
     "width": 768,
     "theme": "light",
     "overflow": false,
-    "height": 1571,
+    "height": 1578,
     "file": "blog-768-light.png"
   },
   {
@@ -212,7 +212,7 @@
     "width": 768,
     "theme": "light",
     "overflow": false,
-    "height": 2754,
+    "height": 2760,
     "file": "about-768-light.png"
   },
   {
@@ -220,7 +220,7 @@
     "width": 768,
     "theme": "light",
     "overflow": false,
-    "height": 2338,
+    "height": 2344,
     "file": "post-768-light.png"
   },
   {
@@ -228,7 +228,7 @@
     "width": 768,
     "theme": "dark",
     "overflow": false,
-    "height": 2330,
+    "height": 2356,
     "file": "home-768-dark.png"
   },
   {
@@ -236,7 +236,7 @@
     "width": 768,
     "theme": "dark",
     "overflow": false,
-    "height": 1571,
+    "height": 1578,
     "file": "blog-768-dark.png"
   },
   {
@@ -244,7 +244,7 @@
     "width": 768,
     "theme": "dark",
     "overflow": false,
-    "height": 2754,
+    "height": 2760,
     "file": "about-768-dark.png"
   },
   {
@@ -252,7 +252,7 @@
     "width": 768,
     "theme": "dark",
     "overflow": false,
-    "height": 2338,
+    "height": 2344,
     "file": "post-768-dark.png"
   },
   {
@@ -260,7 +260,7 @@
     "width": 390,
     "theme": "light",
     "overflow": false,
-    "height": 2935,
+    "height": 2941,
     "file": "home-390-light.png"
   },
   {
@@ -268,7 +268,7 @@
     "width": 390,
     "theme": "light",
     "overflow": false,
-    "height": 1950,
+    "height": 1957,
     "file": "blog-390-light.png"
   },
   {
@@ -276,7 +276,7 @@
     "width": 390,
     "theme": "light",
     "overflow": false,
-    "height": 3028,
+    "height": 3035,
     "file": "about-390-light.png"
   },
   {
@@ -284,7 +284,7 @@
     "width": 390,
     "theme": "light",
     "overflow": false,
-    "height": 3074,
+    "height": 3081,
     "file": "post-390-light.png"
   },
   {
@@ -292,7 +292,7 @@
     "width": 390,
     "theme": "dark",
     "overflow": false,
-    "height": 2935,
+    "height": 2941,
     "file": "home-390-dark.png"
   },
   {
@@ -300,7 +300,7 @@
     "width": 390,
     "theme": "dark",
     "overflow": false,
-    "height": 1950,
+    "height": 1957,
     "file": "blog-390-dark.png"
   },
   {
@@ -308,7 +308,7 @@
     "width": 390,
     "theme": "dark",
     "overflow": false,
-    "height": 3028,
+    "height": 3035,
     "file": "about-390-dark.png"
   },
   {
@@ -316,7 +316,7 @@
     "width": 390,
     "theme": "dark",
     "overflow": false,
-    "height": 3074,
+    "height": 3081,
     "file": "post-390-dark.png"
   }
 ]

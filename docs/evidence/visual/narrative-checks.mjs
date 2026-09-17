@@ -25,7 +25,7 @@ const PAGES = [
 const WIDTHS = [1440, 1200, 1024, 768, 390];
 
 const NARRATIVE_SELECTOR = [
-  '.narrative', '.hand-note', '.paper-slip', '.short-rule', '.post-rail', '.mark',
+  '.narrative', '.side-note', '.paper-slip', '.short-rule', '.post-rail', '.mark',
   '.narrative-tape', '.narrative-dots', '.narrative-branch', '.narrative-plant',
   '.section-header__note', '.post-entry__number', '.category-mark', '.page-header__eyebrow',
   '.now-slip__stamp', '.study-notes__index', '.section-header__number'

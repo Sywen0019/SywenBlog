@@ -3,7 +3,7 @@
    1. 装饰基础（.narrative / .short-rule）
    2. Editorial Marks（不是 UI 图标库）
    3. 纸签与纸面（.paper-slip / .paper-panel）
-   4. 手写旁白（.hand-note）
+   4. 旁注（.side-note）
    5. 页面边缘叙事（.page-rail 原型）
    6. 网点与转场
 
@@ -158,44 +158,57 @@
 }
 
 /* ==========================================================================
-   4. 手写旁白
-   不加载远程字体：使用系统手写/楷体栈，中文落在楷体上，西文落在手写体上。
-   手写体只用于短旁白，绝不用于正文与标题。
+   4. 旁注（.side-note）
+   刻意不使用手写体：中文没有可靠的本机手写字体，楷体与手写体回退都不好看。
+   旁注的语气改由更小字号、静音色与一条短引线承担，不与正文、标题争字体。
+   侧边语气只允许出现在旁注上，正文与标题永远使用正文字体。
    ========================================================================== */
 
-.hand-note {
+.side-note {
   margin: 0;
   color: var(--color-muted);
-  font-family: var(--font-hand);
-  font-size: 15px;
+  font-size: 14px;
   font-style: normal;
   line-height: 1.7;
   letter-spacing: 0.01em;
   pointer-events: none;
 }
 
-.hand-note--ink {
+.side-note--ink {
   color: var(--color-ink);
 }
 
-.hand-note--tilt {
-  transform: rotate(var(--note-angle, -1.5deg));
-}
-
-/* 带引线的手写旁注：短横线 + 手写短句，用于列表或区块旁的窄旁注。 */
-.hand-note--aside {
+/* 带引线的旁注：短横线 + 一句短旁白，用于列表或区块旁的窄旁注。 */
+.side-note--aside {
   display: flex;
   align-items: baseline;
   gap: var(--space-2);
 }
 
-.hand-note--aside::before {
+.side-note--aside::before {
   flex: none;
   width: var(--space-6);
   height: var(--line-thin);
   background-color: var(--color-rule);
   content: "";
   transform: translateY(-0.4em);
+}
+
+/* 旁注下的一条短 mark 线：用极短的手画感线段代替手写体提供"随手记"的观感。 */
+.side-note--marked {
+  position: relative;
+  padding-block-end: var(--space-2);
+}
+
+.side-note--marked::after {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  width: 38px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: color-mix(in srgb, var(--color-rule) 80%, transparent);
+  content: "";
 }
 
 /* ==========================================================================
@@ -329,7 +342,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .paper-slip--tilt,
-  .hand-note--tilt,
   .narrative-tape {
     transform: none;
   }

@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-09-18 · 取消手写体，旁注改用正文字体
+
+- 用户反馈手写字体不好看。彻底移除手写体的全部实现：删除 `--font-hand` token、`.hand-note` 与 `.hand-note--tilt`，不保留任何手写体回退栈。
+- 旁注词汇改为 `.side-note`：正文字体、14px、静音色 `--color-muted`，语气改由字号与颜色承担；新增 `.side-note--marked`（旁注下一条 38×3px 的极短 mark 线）替代手写体提供的"随手记"观感。侧边语气只允许出现在旁注上，正文与标题永远使用正文字体。
+- 重命名：`.hand-note` → `.side-note`、`.site-footer__hand-note` → `.site-footer__note-line`。HTML、CSS、契约、交接记录与证据脚本同步更新，仓库内无残留。
+- 验证：改后重跑 narrative contract 22/0、baseline 161/0、E01 48/0、E03 18/0、E04 20/0；截图矩阵与对照图重新生成。
+
 ## 2026-09-18 · 视觉架构重构：Narrative Layer 与 Visual Vertical Slice（本地，未发布）
 
 - 建立 Content Layer / Narrative Layer 两层结构并先记录契约：[docs/visual-architecture.md](docs/visual-architecture.md)。可访问性合同为 `aria-hidden`、不可聚焦、`pointer-events: none`、不覆盖交互元素、不进入 Post 740px 阅读列、图片失败不破坏布局、不依赖 JavaScript。

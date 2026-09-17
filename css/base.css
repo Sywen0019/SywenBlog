@@ -33,11 +33,6 @@
   --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   --font-brand: Georgia, "Times New Roman", serif;
   --font-code: Consolas, "SFMono-Regular", "Liberation Mono", monospace;
-  /* Narrative Layer 手写旁白：只用本机字体，不请求远程字体。
-     顺序经过实测：Windows 上 Segoe Script/Bradley Hand 缺中文时会让浏览器落到
-     NSimSun 等衬线回退，中文旁白会变成又细又散的字距；因此把楷体放在最前，
-     中文走楷体，西文与数字落回 UI 栈。见 docs/visual-architecture.md §7。 */
-  --font-hand: "KaiTi", "STKaiti", "Kaiti SC", "楷体", "Segoe Script", "Bradley Hand", var(--font-ui);
 
   /* 字号（§5.2，移动优先；Tablet/Desktop 在 §2 覆盖） */
   --text-hero: clamp(34px, calc(7.222px + 8.368vw), 60px);

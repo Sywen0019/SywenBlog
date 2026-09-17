@@ -3,8 +3,8 @@
   "browser": "firefox",
   "browserVersion": "155.0",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "f6e59fa9bfff12af1fb78994d2674ab5fc817476",
-  "at": "2026-09-17T15:05:45.904Z",
+  "baseCommit": "80a13fb5f4388ce6381d96f935c0f73c58ca9600",
+  "at": "2026-09-17T15:34:10.309Z",
   "checks": [
     {
       "name": "1. 七页 reading.js 加载顺序与资源",
@@ -124,74 +124,74 @@
         "posts/attention-intuition.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 490.25,
-          "footerBottom": 843.75,
-          "footerContentBottom": 747.75,
-          "clearance": 36.25,
-          "scrollTop": 2236
+          "footerTop": 484.25,
+          "footerBottom": 844.05,
+          "footerContentBottom": 748.05,
+          "clearance": 35.95,
+          "scrollTop": 2242
         },
         "blog.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 490.1,
-          "footerBottom": 843.6,
-          "footerContentBottom": 747.6,
-          "clearance": 36.4,
-          "scrollTop": 1107
+          "footerTop": 484.1,
+          "footerBottom": 843.9,
+          "footerContentBottom": 747.9,
+          "clearance": 36.1,
+          "scrollTop": 1113
         },
         "about.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 490.4,
-          "footerBottom": 843.9,
-          "footerContentBottom": 747.9,
-          "clearance": 36.1,
-          "scrollTop": 2185
+          "footerTop": 484.4,
+          "footerBottom": 844.2,
+          "footerContentBottom": 748.2,
+          "clearance": 35.8,
+          "scrollTop": 2191
         },
         "index.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 490.88,
-          "footerBottom": 844.38,
-          "footerContentBottom": 748.38,
-          "clearance": 35.62,
-          "scrollTop": 2091
+          "footerTop": 483.88,
+          "footerBottom": 843.68,
+          "footerContentBottom": 747.68,
+          "clearance": 36.32,
+          "scrollTop": 2098
         },
         "posts/attention-intuition.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 637.45,
-          "footerBottom": 899.75,
-          "footerContentBottom": 803.75,
-          "clearance": 36.25,
-          "scrollTop": 1482
+          "footerTop": 631.45,
+          "footerBottom": 900.05,
+          "footerContentBottom": 804.05,
+          "clearance": 35.95,
+          "scrollTop": 1488
         },
         "blog.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 637.75,
-          "footerBottom": 900.05,
-          "footerContentBottom": 804.05,
-          "clearance": 35.95,
-          "scrollTop": 709
+          "footerTop": 631.75,
+          "footerBottom": 900.35,
+          "footerContentBottom": 804.35,
+          "clearance": 35.65,
+          "scrollTop": 715
         },
         "about.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 637.92,
-          "footerBottom": 900.22,
-          "footerContentBottom": 804.22,
-          "clearance": 35.78,
-          "scrollTop": 1400
+          "footerTop": 630.92,
+          "footerBottom": 899.52,
+          "footerContentBottom": 803.52,
+          "clearance": 36.48,
+          "scrollTop": 1407
         },
         "index.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 637.85,
-          "footerBottom": 900.15,
-          "footerContentBottom": 804.15,
-          "clearance": 35.85,
-          "scrollTop": 1588
+          "footerTop": 631.75,
+          "footerBottom": 900.35,
+          "footerContentBottom": 804.35,
+          "clearance": 35.65,
+          "scrollTop": 1613
         }
       }
     },
@@ -233,12 +233,12 @@
       "pass": true,
       "detail": {
         "resize": {
-          "before": 1482,
-          "after": 1882
+          "before": 1488,
+          "after": 1888
         },
         "hero": {
-          "earlyHeight": 2488,
-          "lateHeight": 2488,
+          "earlyHeight": 2513,
+          "lateHeight": 2513,
           "lateProgress": 0
         }
       }
@@ -248,7 +248,7 @@
       "pass": true,
       "detail": {
         "scrollTop": 140,
-        "maxScroll": 2380,
+        "maxScroll": 2386,
         "progress": 6,
         "expected": 6
       }

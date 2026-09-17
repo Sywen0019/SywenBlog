@@ -7,7 +7,7 @@
 | 层 | 负责 | 判定 |
 |---|---|---|
 | **Content Layer** | 标题、正文、日期与元信息、搜索与筛选、文章摘要、CTA、代码、表格、图示、标签、导航、响应式布局、无脚本降级、图片失败状态 | 缺它页面就不完整 |
-| **Narrative Layer** | 人物、学习与生活物件、植物、纸签、网点、短手写旁白、章节编号、小型线稿 mark、页面边缘叙事、区块之间的视觉连接 | 缺它页面仍然完整 |
+| **Narrative Layer** | 人物、学习与生活物件、植物、纸签、网点、短旁白、章节编号、小型线稿 mark、页面边缘叙事、区块之间的视觉连接 | 缺它页面仍然完整 |
 
 合同：
 
@@ -92,7 +92,8 @@
 - **红色**：只用于角色身份与极少量身份细节；不新增大面积粉红或额外品牌色。
 - **淡蓝**：承担 current、selected、action、structural highlight。
 - **硬边框**：只用于主视觉纸框、交互控件、真正需要框定的 panel、少量状态区。普通 section 优先使用留白、编号、短 rule、背景变化。
-- **不规则**：只允许纸签轻微旋转、装饰轻微偏移、编号 / hand-note 非对称落点三种；不制造随机草稿感。
+- **不规则**：只允许纸签轻微旋转、装饰轻微偏移、编号 / 旁注非对称落点三种；不制造随机草稿感。
+- **不使用手写体**：中文没有可靠的本机手写字体，楷体与手写体回退都不好看（用户 2026-09-18 指出）。旁注的语气改由更小字号、静音色与一条短 mark 线承担；侧边语气只允许出现在旁注上，正文与标题永远使用正文字体。
 
 ## 8. CSS 职责
 
@@ -109,7 +110,7 @@
 | 新增 | 层 | 用途 |
 |---|---|---|
 | `.narrative` | Narrative | 装饰容器基类：`aria-hidden`、不可聚焦、`pointer-events: none` |
-| `.hand-note` | Narrative | 短手写旁白（CSS 手写体栈，不加载远程字体） |
+| `.side-note` | Narrative | 短旁注（正文字体 + 静音色 + 短 mark 线；**不使用手写体**） |
 | `.paper-slip` | Narrative | 纸签：Current status、短旁白、Demo note |
 | `.paper-panel` | Narrative | 纸面 panel：需要纸面语气的容器显式叠加 |
 | `.short-rule` | Narrative | 短分隔 rule，替代无条件全宽 `border-bottom` |
@@ -131,7 +132,7 @@ Blog 缩略图：按本轮决策**取消**重复的分类缩略图作为默认�
 |---|---|---|
 | Phase 0 | 本文件与 handoff 登记 | 进行中 |
 | Phase 1 | 基础 CSS 去构图化：`.section-header`、`.note-panel`、`.art-frame`、Header tools、Blog thumbnail legacy | 待办 |
-| Phase 2 | Narrative 词汇：hand-note、paper-slip、short rule、page-rail 原型、mark system、transition assets | 待办 |
+| Phase 2 | Narrative 词汇：side-note、paper-slip、short rule、page-rail 原型、mark system、transition assets | 待办 |
 | Phase 3 | Visual Vertical Slice：Header、Home Hero、Home Recent Posts、Blog Header + 筛选 + 2 条文章、About Intro、Article Header + 第一节、Footer | 待办 |
 | Phase 4 | 样板通过后扩展到全部页面 | 待办 |
 | Phase 5 | Responsive / Dark / Failure States | 待办 |

@@ -1,8 +1,8 @@
 {
   "browser": "firefox",
   "browserVersion": "155.0",
-  "baseCommit": "f6e59fa9bfff12af1fb78994d2674ab5fc817476",
-  "at": "2026-09-17T15:06:08.310Z",
+  "baseCommit": "80a13fb5f4388ce6381d96f935c0f73c58ca9600",
+  "at": "2026-09-17T15:34:35.492Z",
   "checks": [
     {
       "name": "1. 七页脚本顺序与资源",
@@ -231,9 +231,9 @@
       "pass": true,
       "detail": {
         "notice": "链接已复制",
-        "copied": "http://127.0.0.1:44160/posts/dom-search-notes.html",
-        "expected": "http://127.0.0.1:44160/posts/dom-search-notes.html",
-        "pageUrl": "http://127.0.0.1:44160/blog.html?q=DOM#main",
+        "copied": "http://127.0.0.1:40086/posts/dom-search-notes.html",
+        "expected": "http://127.0.0.1:40086/posts/dom-search-notes.html",
+        "pageUrl": "http://127.0.0.1:40086/blog.html?q=DOM#main",
         "noticeAutoHidden": true
       }
     },
@@ -241,7 +241,7 @@
       "name": "11. 复制失败降级面板",
       "pass": true,
       "detail": {
-        "value": "http://127.0.0.1:44160/posts/attention-intuition.html",
+        "value": "http://127.0.0.1:40086/posts/attention-intuition.html",
         "selection": "whole",
         "nativeMenu": false
       }
@@ -266,7 +266,7 @@
       "pass": true,
       "detail": {
         "blogSearch": "search-input",
-        "otherPageSearch": "http://127.0.0.1:44160/blog.html?focus=search",
+        "otherPageSearch": "http://127.0.0.1:40086/blog.html?focus=search",
         "topFocus": "",
         "theme": {
           "before": "light",
@@ -285,8 +285,8 @@
         "second": 50,
         "api": 50,
         "scrolled": {
-          "applied": 741,
-          "max": 1482
+          "applied": 744,
+          "max": 1488
         },
         "closedByScroll": true
       }
@@ -325,8 +325,8 @@
       "name": "17. 子目录路径与地址",
       "pass": true,
       "detail": {
-        "blog": "http://127.0.0.1:44160/course/blog/index.html",
-        "post": "http://127.0.0.1:44160/course/blog/posts/dom-search-notes.html"
+        "blog": "http://127.0.0.1:40086/course/blog/index.html",
+        "post": "http://127.0.0.1:40086/course/blog/posts/dom-search-notes.html"
       }
     },
     {
@@ -372,18 +372,18 @@
           "1440-light": {
             "size": [
               1440,
-              1609
+              1615
             ],
-            "viewportHeight": 1609,
+            "viewportHeight": 1615,
             "diffOutsideHeader": 0,
             "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
           },
           "390-light": {
             "size": [
               390,
-              1951
+              1957
             ],
-            "viewportHeight": 1951,
+            "viewportHeight": 1957,
             "diffOutsideHeader": 0,
             "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
           }

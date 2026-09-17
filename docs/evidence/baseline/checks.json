@@ -1,7 +1,7 @@
 {
-  "baseCommit": "f6e59fa9bfff12af1fb78994d2674ab5fc817476",
+  "baseCommit": "80a13fb5f4388ce6381d96f935c0f73c58ca9600",
   "sourceFilesSha256": {
-    "about.html": "0ce83522ef3298d414be238712da6229cc1325c356532835c6c08ea39930a0da",
+    "about.html": "321ca848fc43695e343ceebb1d23e4639d6d4a64ac3ea1558d275c2eb438e996",
     "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
     "assets/icons/marks.svg": "29c921bfd4ef07183c9b85c7e0e93896215bc5c33fc1ce87ecfe62c7abcccf35",
     "assets/images/a07-plant.webp": "0f12a98ee8c6879fc4b52a1ae23e8105f22f794339671bf6e2390089e35aaf88",
@@ -16,24 +16,24 @@
     "assets/images/hero-desk-1280.webp": "437a4db0633276fcd13a2c62f3e897ea511639ea82e5b10c2955602ba10cda54",
     "assets/images/hero-desk-640.webp": "9d5418b2b4f55f9f2c6d72decd23c829d4919d43463bdb8ceeb357081c471615",
     "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
-    "blog.html": "1c4624cf9f1c9043b9d3110335f0723c733fe225a57ed6745b9b468ca7c38c61",
-    "css/base.css": "48debd558eb1b6265767dfe62e926b66cc736fd41215b0969cd14f9f58a89dd7",
+    "blog.html": "9df0d2a4b4804b131cc8cb4d3f05de1781aa88458fc0d046d33745f9fea7507f",
+    "css/base.css": "ed579bfce44d564d245207199e86babefb5c809fcd1082f04066de6059e7f818",
     "css/components.css": "7d0719e04d6c6a5976d4dcabce60f31e7c87c3bad91da706fba239182831b5a1",
-    "css/narrative.css": "c0bd1e25ced95c62706e2f53cd8ba070421d30ba114fe408aeae2204e8f978c3",
-    "css/pages.css": "1bab1542ff197d58371a2a2119acbcecbea0e48203395ceff36048c2f2349d7b",
-    "index.html": "f7fcbffd278cfb3d1f09ca96fcfd7e7d47bf68bd933cc9cc3f199de8d6b1ef71",
+    "css/narrative.css": "6ca63889c5cfbc74d96c38de402ec407828a28c6145ab68f59cae7f94b09807d",
+    "css/pages.css": "da661556523b751e6a8f1b1f0a85b91c0b8376144101a9316bb5b3aacc90b06e",
+    "index.html": "ce0c2752a03e65430cba446bc24b4444d457af1e8703eafb77402dbfe1839939",
     "js/blog.js": "a33befe31ff863e9bc763fc0c181b7559d42eb41431d440280e84312b343f567",
     "js/context-menu.js": "f43ff8dcaab910b35ce38aa72e8c84a18f3d944367a2d675d5cce1982511f1ba",
     "js/posts-data.js": "4ee7b50d4430516e0ae6b0dd6e812034dda8f35c8d122898af3a55d83565c270",
     "js/reading.js": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
     "js/site.js": "9bbbeffcee668468485c88eeceb7fba2b3955b6569378a0b4a01167de22153ff",
     "js/theme.js": "1b62e5e02a8d5ea3c6f5788f292f2edf247d2b59c7fb497690b59f32f87bb3db",
-    "posts/attention-intuition.html": "3734b6d6752c90e40a262b5ce37c6cda3b9b6c151e325ecb130028cb4d6f8403",
-    "posts/dom-search-notes.html": "be62af6732bd8dc724b2d3f789452fa23aa046f59da26b3609b6090f392b2e66",
-    "posts/leave-some-space.html": "b1b61df9f50c7065e2a9fddeaff1bf158b82e5bf952e79c1a4968dcf1726bf9b",
-    "posts/paper-reading-notes.html": "6e34ca6da023869a5d7e57948d1b3a4daa0671e8d8f56c364fa60b48db57b2e2"
+    "posts/attention-intuition.html": "14dfb5350c0c00f3ac33378bc55ef40b52ba98276b629f6ae9e4da7dbb1a7967",
+    "posts/dom-search-notes.html": "112a5ef5a3e367f08cac194b9b841e291db047cf68600cb334131e44d561792c",
+    "posts/leave-some-space.html": "a0ebd5b5dd6bb5bb30ffc615cd61412c9224c3804c80422082375870d2641f46",
+    "posts/paper-reading-notes.html": "d9e7936aba313406f2295e80a3708036ff31750ba6c6ba5f9b391cb49f5c7f04"
   },
-  "at": "2026-09-17T15:04:06.770Z",
+  "at": "2026-09-17T15:31:37.522Z",
   "mode": "full",
   "checks": [
     {
@@ -632,8 +632,8 @@
       "name": "Cold-cache homepage transfer and slow loading",
       "pass": true,
       "detail": {
-        "initialSubresourcesBytes": 257846,
-        "totalSubresourcesBytes": 257846
+        "initialSubresourcesBytes": 258038,
+        "totalSubresourcesBytes": 258038
       }
     },
     {
@@ -720,7 +720,7 @@
   "limitations": [
     "No physical phone test; mobile and 200% layout checks are browser emulations."
   ],
-  "baseUrl": "http://127.0.0.1:5759/",
+  "baseUrl": "http://127.0.0.1:37975/",
   "passed": 161,
   "failed": 0
 }

@@ -3,7 +3,7 @@
 ## 视觉架构重构（Narrative Layer）契约登记 · 2026-09-18
 
 - 契约正文见 [visual-architecture.md](visual-architecture.md)。本文件只登记接口，不重复解释。
-- 新增冻结命名：`.narrative`、`.hand-note`、`.paper-slip`、`.paper-panel`、`.short-rule`、`.section-number`、`.mark` / `.mark--{name}`、`.page-rail`、`.section-header--ruled`。改名须先改契约。
+- 新增冻结命名：`.narrative`、`.side-note`、`.paper-slip`、`.paper-panel`、`.short-rule`、`.section-header__number`、`.mark` / `.mark--{name}`、`.page-rail`、`.post-rail`、`.section-header--ruled`。改名须先改契约。
 - Narrative Layer 合同：装饰容器 `aria-hidden="true"`、不可聚焦、`pointer-events: none`、不覆盖交互元素、不进入 Post `740px` 阅读列、图片失败不破坏布局、不依赖 JavaScript。
 - Blog 缩略图决策：取消分类缩略图作为默认文章封面。Phase 1 删除 `.post-entry--with-thumb`、`.art-frame--thumb`、`--entry-thumb-w`、`--entry-thumb-h` 与 `js/site.js` 的缩略图分支；分类小画与首页分类卡保留。
 - 本轮样板范围（用户确认）：Header → Home Hero / Recent → Blog 两条文章 → About Intro → Article Header + 第一节 → Footer。不铺开全部页面。
@@ -14,10 +14,10 @@
 - 基础版本：`6c454f2`（E02 之后）。运行时改动：`css/base.css`、`css/components.css`、`css/pages.css`、新增 `css/narrative.css`、新增 `assets/icons/marks.svg`、`js/site.js`、`js/blog.js`、`js/theme.js`、`js/posts-data.js`、七页 HTML。文档：`docs/visual-architecture.md`，证据：`docs/evidence/visual/`。
 - 新增函数：`Sywen.createMark(name, modifier)` 返回装饰性 `<svg class="mark">`（aria-hidden、focusable=false）；`Sywen.archiveNumber(post)` 按 `site.posts` 顺序返回 1 基编号。`Sywen.createPostEntry(post, headingLevel, options)` 的 `options.thumbnail` 已删除；`options.index` 可覆盖编号，缺省用 `archiveNumber`。分类对象新增 `mark`（marks.svg 的 symbol id）与 `note`（短辅助描述）。
 - 档案编号语义：编号跟随文章本身，不跟随当前筛选结果；静态 HTML 与动态渲染都使用 `A-01`…`A-04`。
-- 页脚基线变更：`.site-footer__inner` 由 flex 改为 grid，底部基线留白由 32px 改为 64px（`--space-16`），并新增 `.site-footer__hand-note` 与 `.site-footer__mark`。`reading.js` 仍在其上追加 `--footer-reserve`。E03 第 12 项据此更新断言。
+- 页脚基线变更：`.site-footer__inner` 由 flex 改为 grid，底部基线留白由 32px 改为 64px（`--space-16`），并新增 `.site-footer__note-line` 与 `.site-footer__mark`。`reading.js` 仍在其上追加 `--footer-reserve`。E03 第 12 项据此更新断言。
 - E01 检查已更新到新契约：Blog 断言列表 `img` 数为 0、编号为 `A-01`…`A-04`、筛选后 life 仍为 `A-04`；首页断言改用 `.category-link` 与 `.category-link--{study,life,favorites}`，并新增编号 `C-01`…`C-03`。
 - 实测结果：narrative contract 22/22（`docs/evidence/visual/narrative-checks.mjs`）；截图矩阵 1440／1200／1024／768／390 × 浅深各 40 张（`docs/evidence/visual/reference/` 与 `after/`），全程无横向溢出；基线 161/0；E01 Firefox 48/0；E03 Firefox 18/0；E04 Firefox 20/0。
-- 本轮修掉：手写字体栈落到细衬线（改为楷体优先）；390px 首页因植物跨出纸片边界产生 8px 横向溢出（手机与平板改为面板内落点）；Blog 条目标题 `data-rail` 只给首个 h2。
+- 本轮修掉：手写字体栈落到细衬线（后按用户 2026-09-18 反馈**彻底取消手写体**，旁注改用正文字体 + 静音色 + 短 mark 线）；390px 首页因植物跨出纸片边界产生 8px 横向溢出（手机与平板改为面板内落点）；Blog 条目标题 `data-rail` 只给首个 h2。
 - 未验证／已知局限：只覆盖样板区域，Home Hero、Blog 其余区块、About 窄屏细节与 Article 正文其余小节仍待 Phase 4；page-rail 的固定 1200px 断点尚未由用户视觉审核确认；未使用实体手机与屏幕阅读器。未推送、未部署。
 
 ## E02 接口登记 · 2026-09-17（Passed，本地）

@@ -36,8 +36,8 @@
 }
 
 /* 页脚是全站最后一个视觉收束点（docs/visual-architecture.md §9）：
-   一句手写旁白 + 一个微型 mark，不增加复杂插画。 */
-.site-footer__hand-note {
+   一句短旁白 + 一个微型 mark，不增加复杂插画，也不使用手写体。 */
+.site-footer__note-line {
   margin: 0;
   color: var(--color-muted);
 }
@@ -71,7 +71,7 @@
     grid-row: 1;
   }
 
-  .site-footer__hand-note {
+  .site-footer__note-line {
     grid-column: 1 / -1;
   }
 
@@ -737,7 +737,8 @@ html.has-reading .site-footer__inner {
    pointer-events: none，且不进入 Post 的 740px 阅读列。
    ========================================================================== */
 
-/* 区块标题：编号 + 标题 + 一条手写旁注，取代无条件全宽横线。 */
+/* 区块标题：编号 + 标题 + 一条旁注，取代无条件全宽横线。
+   旁注的语气来自静音色与短 mark 线，不使用手写体。 */
 .section-header__main {
   display: flex;
   flex-wrap: wrap;
@@ -748,12 +749,14 @@ html.has-reading .site-footer__inner {
 
 .section-header__note {
   display: none;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
   .section-header__note {
     display: block;
+    /* 与标题拉开一点距离，让旁注像是写在标题旁边而不是标题的一部分。 */
+    margin-inline-start: var(--space-2);
   }
 }
 
