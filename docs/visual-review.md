@@ -1,5 +1,17 @@
 # 当前视觉验收：B/E 修订版
 
+## Visual Vertical Slice 自检 · 2026-09-18 · 待用户视觉审核
+
+范围：用户确认的样板区域（Header、Home Hero／Recent／Categories／Now、Blog Header＋筛选＋条目、About 各区块、Article Header＋正文 rail、Footer）。本轮**没有铺开全部页面**。
+
+实际查看 `docs/evidence/visual/reference/`（改动前）与 `after/`（样板后）各 40 张 1440／1200／1024／768／390 浅深对照，并查看 390 深色、图片失败与无脚本截图。
+
+**可测量结论（已通过）**：Narrative 契约 22/22（`aria-hidden`、不可聚焦、`pointer-events:none`、不覆盖交互元素）；Article 的 Narrative 元素全部落在 740px 阅读列之外；Blog 列表 `img` 数为 0、条目数与结果计数一致、filter／reset／无脚本继续工作；40 张截图无横向溢出；基线 161/0，E01 48/0，E03 18/0，E04 20/0。
+
+**已修问题**：手写旁白的中文落到细衬线回退（改为楷体优先）；390px 首页因植物跨出纸片边界产生 8px 横向溢出（手机与平板改为面板内落点）；`data-rail` 只落在首个 h2。
+
+**尚未判定**：Editorial Notebook 是否成立、Research mark 是否过于工程化、纸签是否过多、Article 是否过装饰、Blog 是否产生 sidebar／dashboard 感、Narrative Density 是否合理、深色主题是否仍然成立。这些属于用户视觉审核，本文件不据此宣布 VC2 通过；Phase 4 全域扩展在样板通过后才开始。
+
 ## E02 局部视觉复核 · 2026-09-17 · 本地通过，正式 VC2 留 E06
 
 实际查看新捕获的 `evidence/e02/before/` 与 `after/` 中 1440×900／390×900 浅深四组整页对照，另查看 320 深色、图片失败和无脚本失败截图。A02 从窄站姿图换为横幅平板阅读；短发呆毛与格纹身份一致，红色下半框上缘无红线，目光朝向阅读对象，双手与设备完整。头顶约 11% 留白；缩小后仍能辨认阅读动作，细格纹为次要细节。

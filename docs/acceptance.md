@@ -1,5 +1,24 @@
 # 验收记录
 
+## 视觉架构重构 · Narrative Layer Visual Vertical Slice · 2026-09-18
+
+**本地验收；样板只覆盖用户确认区域，正式 VC2 与全域扩展留 Phase 4／5 与 E06。** 契约见 [视觉架构契约](visual-architecture.md)，证据见 [evidence/visual](evidence/visual/README.md)，观感结论见 visual-review 同名条目。
+
+|检查|结果与证据|
+|---|---|
+|Narrative 契约|22/0：`docs/evidence/visual/narrative-checks.mjs`。逐元素验证 `aria-hidden` 祖先、不可聚焦、不含可聚焦元素、`pointer-events` 解析为 `none`、不与交互元素重叠|
+|Article 阅读列|Post 页 Narrative 元素全部位于 740px 阅读列之外（bounding box 断言，属于同一 22 项）|
+|Blog 新契约|列表 `img` 0 张、条目 4 条、计数「找到 4 篇文章」；`life` 筛选 1 条且编号仍为 `A-04`（编号跟随文章）；重置回 4 条；无脚本静态列表 4 条、0 图、4 个可见链接|
+|截图矩阵|1440／1200／1024／768／390 × 浅深 × 4 类页面 = 40 张，`reference/`（改动前）与 `after/` 对照，全部 `overflow=false`；`capture.mjs` 可再生|
+|基线|`node scripts/check-baseline.mjs`：161/0，Edge／Chrome／Firefox|
+|E01|Firefox 48/0。断言已更新到新契约：Blog 无缩略图、编号 `A-01`…`A-04`、首页分类入口改用 `.category-link--{study,life,favorites}` 并断言 `C-01`…`C-03`|
+|E03|Firefox 18/0。第 12 项由「无脚本页脚留白 32px」改为 64px，对应页脚升级为视觉收束点后的新基线|
+|E04|Firefox 20/0|
+
+过程中修复：手写字体栈使中文旁白落到细衬线（改为楷体优先）；390px 首页 8px 横向溢出（植物跨出纸片边界，手机与平板改为面板内落点）；首页档案编号未渲染、以及编号跟随筛选结果而非文章本身。
+
+**未验证**：实体手机、屏幕阅读器、真实浏览器 UI 缩放；`page-rail` 的固定 1200px 断点仍为原型，待用户视觉审核确认。未推送、未部署。
+
 ## E02 About 与转场 · 2026-09-17
 
 **本地验收；正式 VC2 与公开发布留 E06。** A02 采用候选 3，A07 铃兰 v04、A08 横枝 v01；实际看图结论见 visual-review 的 E02 条目。代码与资产基于 `7e7c1c9` 工作区，原有豆包日志和脚本保留。

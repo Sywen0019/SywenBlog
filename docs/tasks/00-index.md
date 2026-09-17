@@ -18,7 +18,9 @@
 
 ════════ 作业完成基线：已达到，可停止并提交 ════════
 
-- [E01 文章小画体系](02-after-baseline/e01.md)：**Passed（本地，2026-09-16）**。study/life/favorites 三张无人物分类小画（`assets/images/cat-*.webp`，640×480）融合到首页分类入口卡与 Blog 条目缩略图，首页「最近文章」保持纯文字；确定性导出脚本、清单与三浏览器各 49 项检查见 [验收记录](../acceptance.md)与 [证据](../evidence/e01/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
+**视觉架构重构（Narrative Layer）：Phase 0–3 本地完成（2026-09-18），待用户视觉审核。** 契约见 [docs/visual-architecture.md](../visual-architecture.md)，证据见 [docs/evidence/visual](../evidence/visual/README.md)。本轮只做用户确认的样板区域（Header、Home Hero／Recent／Categories／Now、Blog Header＋筛选＋条目、About 各区块、Article Header＋正文 rail、Footer），**没有铺开全部页面**。Phase 4 全域扩展与 Phase 5 响应式／降级复检在样板通过后才开始；正式 VC2 与发布仍属 E06。
+
+- [E01 文章小画体系](02-after-baseline/e01.md)：**Passed（本地，2026-09-16）**。study/life/favorites 三张无人物分类小画（`assets/images/cat-*.webp`，640×480）融合到首页分类入口；Blog 条目缩略图已于 2026-09-18 视觉架构重构中取消（改为日期＋编号＋标题＋摘要＋分类 mark），E01 检查同步更新。三浏览器各 49 项检查见 [验收记录](../acceptance.md)与 [证据](../evidence/e01/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
 - [E02 About 与转场](02-after-baseline/e02.md)：**Passed（本地，2026-09-17）**。A02 平板阅读人物、A07 铃兰与 A08 静态横枝；证据见 `docs/evidence/e02/`，发布留 E06。
 - [E03 简单阅读增强](02-after-baseline/e03.md)：**Passed（本地，2026-09-16）**。`js/reading.js`、七页接入、页脚预留空间、三浏览器各 18 项检查与截图见 [验收记录](../acceptance.md)与 [证据](../evidence/e03/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
 - [E04 复制与快捷菜单](02-after-baseline/e04.md)：**Passed（本地，2026-09-16）**。`js/context-menu.js`（能力门、菜单内容、定位与关闭、键盘、复制与降级面板）、`js/site.js` 共享动作、七页接入与复制面板标记、三浏览器各 19 项检查与 39 张截图见 [验收记录](../acceptance.md)与 [证据](../evidence/e04/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。

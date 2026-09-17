@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-09-18 · 视觉架构重构：Narrative Layer 与 Visual Vertical Slice（本地，未发布）
+
+- 建立 Content Layer / Narrative Layer 两层结构并先记录契约：[docs/visual-architecture.md](docs/visual-architecture.md)。可访问性合同为 `aria-hidden`、不可聚焦、`pointer-events: none`、不覆盖交互元素、不进入 Post 740px 阅读列、图片失败不破坏布局、不依赖 JavaScript。
+- Phase 1 基础 CSS 去构图化：`.section-header` 去掉无条件全宽横线（默认编号＋短 rule，需要时用 `.section-header--ruled`）；`.note-panel` 降为纯分组容器，纸面移到 Narrative 的 `.paper-panel`；`.art-frame` 移除写死的 320/600，比例改由页面用 `--art-ratio` 声明；Header 工具按钮改为紧凑图标按钮（手机 40px、≥768px 44px，保留 accessible name、title 与焦点环）。
+- Blog 缩略图决策：取消按分类重复的小画作为默认文章封面。删除 `.post-entry--with-thumb`、`.art-frame--thumb`、`--entry-thumb-w/-h` 与 `js/site.js` 的缩略图分支；Blog 条目改为日期＋档案编号＋标题＋摘要＋分类 mark。首页分类小画保留。
+- Phase 2 Narrative 词汇：`css/narrative.css` 提供 `.narrative`、`.hand-note`、`.paper-slip`、`.paper-panel`、`.short-rule`、`.section-end`、page-rail 原型、胶带、网点、转场枝叶与植物容器；`assets/icons/marks.svg` 提供 14 个 Editorial Mark（24×24 viewBox、`currentColor`、`fill:none`）。`--font-hand` 只用本机字体，楷体优先，避免中文旁白落到细衬线回退。mark 定位为 editorial annotation，不进入按钮与控件。
+- Phase 3 只做样板区域（用户确认范围）：Header、Home Hero／Recent／Categories／Now、Blog Header＋筛选＋条目、About 各区块、Article Header＋正文 rail、Footer。其它页面内容未铺开。
+- 验证：新增 `docs/evidence/visual/narrative-checks.mjs` 契约检查 22/22；`capture.mjs` 产出 1440／1200／1024／768／390 × 浅深共 40 张 before/after 对照，无横向溢出；基线 161/0；E01 Firefox 48/0；E03 Firefox 18/0；E04 Firefox 20/0。修复过程中发现并修掉三处：手写字体栈、390px 首页植物跨边界造成的 8px 横向溢出、档案编号应跟随文章而不是跟随筛选结果。未推送、未部署；正式 VC2 与全域扩展仍属 Phase 4／5 与 E06。
+
 ## 2026-09-17 · About 页面视觉节奏优化（本地，未发布）
 
 - 删除“关于我”与“学业方向”之间独立悬浮的 A08 枝条贴纸；保留右上人物阅读插画作为 About 页主视觉锚点。
