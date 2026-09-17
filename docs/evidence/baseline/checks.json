@@ -1,8 +1,9 @@
 {
-  "baseCommit": "7e7c1c963b9bc8bab0a267811c7e61c19733eb94",
+  "baseCommit": "6c454f2847088265e5fcb626da4d3f9f970d144e",
   "sourceFilesSha256": {
-    "about.html": "d2ebe0da8977c5367c79a56f8adba8d8de17235293a91b1175e6f7a5d0f75ac6",
+    "about.html": "0ce83522ef3298d414be238712da6229cc1325c356532835c6c08ea39930a0da",
     "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+    "assets/icons/marks.svg": "29c921bfd4ef07183c9b85c7e0e93896215bc5c33fc1ce87ecfe62c7abcccf35",
     "assets/images/a07-plant.webp": "0f12a98ee8c6879fc4b52a1ae23e8105f22f794339671bf6e2390089e35aaf88",
     "assets/images/a08-transition-branch.webp": "4d6e42aa17bb382eb1fb0a4e690cfd85db7a91cec32fd5150114009c39bb818c",
     "assets/images/about-reading-1280.webp": "cbf8864a10759261c949f408529c1aa7af01bfb5aea9537075de3347fa82686a",
@@ -15,23 +16,24 @@
     "assets/images/hero-desk-1280.webp": "437a4db0633276fcd13a2c62f3e897ea511639ea82e5b10c2955602ba10cda54",
     "assets/images/hero-desk-640.webp": "9d5418b2b4f55f9f2c6d72decd23c829d4919d43463bdb8ceeb357081c471615",
     "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
-    "blog.html": "d22ed40e6845cd50b1b51c6e716c046da11dcbd432131d9556a85e52b03510fe",
-    "css/base.css": "fefd24873305268f3b40d39ae44ceda313239c5ac5d8a7b8e6861819f453197f",
-    "css/components.css": "3e4b27172e4f4aff6390edd36007f206c4f36a48a6092a71c422a7cf480f589d",
-    "css/pages.css": "deff1b487fa5d6753e8b70a88e0069ba56c926ece07df76e9160f9f15f19856c",
-    "index.html": "e9c982e7c1b8fa3b6841b6679eb440643cd77267475e8c515f3d974b68d59e40",
-    "js/blog.js": "16b0221afb87b44f332d55b5a3a9fdafcb66c0031f2f9331606bf0eedabbfaac",
+    "blog.html": "1c4624cf9f1c9043b9d3110335f0723c733fe225a57ed6745b9b468ca7c38c61",
+    "css/base.css": "48debd558eb1b6265767dfe62e926b66cc736fd41215b0969cd14f9f58a89dd7",
+    "css/components.css": "7d0719e04d6c6a5976d4dcabce60f31e7c87c3bad91da706fba239182831b5a1",
+    "css/narrative.css": "c0bd1e25ced95c62706e2f53cd8ba070421d30ba114fe408aeae2204e8f978c3",
+    "css/pages.css": "6d461638de46c32c56e9b530054215ad7e95ec9e853bcf451169430699328586",
+    "index.html": "f7fcbffd278cfb3d1f09ca96fcfd7e7d47bf68bd933cc9cc3f199de8d6b1ef71",
+    "js/blog.js": "a33befe31ff863e9bc763fc0c181b7559d42eb41431d440280e84312b343f567",
     "js/context-menu.js": "f43ff8dcaab910b35ce38aa72e8c84a18f3d944367a2d675d5cce1982511f1ba",
-    "js/posts-data.js": "21f9bddbd05f5a6f2cce5898bc384c340bcf28ee8111aeb2e1065f3545e507a6",
+    "js/posts-data.js": "4ee7b50d4430516e0ae6b0dd6e812034dda8f35c8d122898af3a55d83565c270",
     "js/reading.js": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
-    "js/site.js": "ceef1a55bf297b1aef649e78f3c8dd04334f81488d2be454fbe6c6d29a41d9d6",
-    "js/theme.js": "ad877786a2e8007e5a4892470fe60d30876f8de8320306337cc20139f278dcff",
-    "posts/attention-intuition.html": "835187222dbceda4cd8f3ace799d2a5f4af97d9f7416559a21e2e8d1e8b1100e",
-    "posts/dom-search-notes.html": "1678c3377622858a23d90d69d112ca9451d6c77a0f41031c88b4b6c3361a7846",
-    "posts/leave-some-space.html": "aff51db428cae94e8116ee1c60487832605473515bbdf44632c835e1c9580de1",
-    "posts/paper-reading-notes.html": "071afc1a5ca13c8eded4af951778b5a2da597481ddeafca47931e9d60ef3b9b8"
+    "js/site.js": "9bbbeffcee668468485c88eeceb7fba2b3955b6569378a0b4a01167de22153ff",
+    "js/theme.js": "1b62e5e02a8d5ea3c6f5788f292f2edf247d2b59c7fb497690b59f32f87bb3db",
+    "posts/attention-intuition.html": "3734b6d6752c90e40a262b5ce37c6cda3b9b6c151e325ecb130028cb4d6f8403",
+    "posts/dom-search-notes.html": "be62af6732bd8dc724b2d3f789452fa23aa046f59da26b3609b6090f392b2e66",
+    "posts/leave-some-space.html": "b1b61df9f50c7065e2a9fddeaff1bf158b82e5bf952e79c1a4968dcf1726bf9b",
+    "posts/paper-reading-notes.html": "6e34ca6da023869a5d7e57948d1b3a4daa0671e8d8f56c364fa60b48db57b2e2"
   },
-  "at": "2026-09-17T13:49:39.864Z",
+  "at": "2026-09-17T14:57:32.512Z",
   "mode": "full",
   "checks": [
     {
@@ -630,8 +632,8 @@
       "name": "Cold-cache homepage transfer and slow loading",
       "pass": true,
       "detail": {
-        "initialSubresourcesBytes": 214934,
-        "totalSubresourcesBytes": 214934
+        "initialSubresourcesBytes": 257882,
+        "totalSubresourcesBytes": 257882
       }
     },
     {
@@ -718,7 +720,7 @@
   "limitations": [
     "No physical phone test; mobile and 200% layout checks are browser emulations."
   ],
-  "baseUrl": "http://127.0.0.1:21675/",
+  "baseUrl": "http://127.0.0.1:18156/",
   "passed": 161,
   "failed": 0
 }

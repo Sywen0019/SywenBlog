@@ -8,6 +8,7 @@
 <script src="../js/theme.js"></script>
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/narrative.css">
 <link rel="stylesheet" href="../css/pages.css">
 <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
 <noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
@@ -26,8 +27,8 @@
   <div class="site-header__inner container">
     <p class="site-title"><a class="brand" href="../index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
     <div class="site-tools">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
-      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
     </div>
     <nav class="site-nav" aria-label="主导航">
       <ul class="site-nav__list">
@@ -46,22 +47,27 @@
 
     <article class="post" data-post-id="leave-some-space">
       <header class="post-header">
+        <p class="post-header__index" aria-hidden="true">A-04</p>
         <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=life">生活</a><time class="post-meta__date" datetime="2026-09-15">2026-09-15</time><span class="post-meta__time">约 2 分钟</span></p>
-        <h1 class="page-title">给学习留一点空白</h1>
+        <h1 class="page-title post-header__title">给学习留一点空白</h1>
         <p class="post-demo-note">示例文章</p>
       </header>
+            <div class="post-rail narrative" aria-hidden="true">
+        <span class="post-rail__mark"><svg class="mark" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-coffee"></use></svg></span>
+        <span class="post-rail__number">A-04</span>
+      </div>
       <div class="post-body">
         <p>一张排满的计划表很容易给人踏实感：每个小时都有任务，每个任务都有勾选框。但学习并不总沿着直线推进。一个概念可能需要回头想，一段代码可能需要放下再看，一页笔记也可能要等到另一篇文章出现后才连起来。给学习留空白，是为这些真实的过程留位置。</p>
-<h2>把推进和整理分开</h2>
+<h2 data-rail="01">把推进和整理分开</h2>
 <p>推进是读新内容、写新代码、完成练习；整理则是重新命名文件、解释昨天的错误、删掉不再需要的记录。后者不总能带来醒目的进度，却决定了前面的投入是否容易再次使用。计划里可以分别留一小段时间，而不是等一切结束才“有空再整理”。</p>
 <p>比如，完成一个搜索功能后，不急着加下一个按钮。先记下一个边界情况，说明数据从哪里来，把复现步骤写清楚。下次遇到相似问题，就不用重新猜自己当时为什么这样做。这种整理也是学习的一部分。</p>
-<h2>给一天一个足够小的目标</h2>
+<h2 data-rail="02">给一天一个足够小的目标</h2>
 <p>“学会机器学习”很难让人知道今天从哪里开始。“手算一次三个向量的加权和”则容易执行，也容易判断是否完成。目标可以连接到更大的方向，但今天的动作最好足够具体。没有完成时，记录卡在何处，往往比简单地把任务顺延更有帮助。</p>
 <blockquote><p>空白不一定是计划失效，也可能是下一次理解发生的位置。</p></blockquote>
-<h2>用三行手账收尾</h2>
+<h2 data-rail="03">用三行手账收尾</h2>
 <ul><li>今天推进了什么：只写实际发生的一件事。</li><li>现在还不清楚什么：留下一个具体问题。</li><li>下一次从哪里开始：写一个小动作，而不是新的大目标。</li></ul>
 <p>这些记录不需要漂亮的模板，也不用为了补齐页面而制造成就。一句“分类筛选保留关键词，但刷新后状态丢失”就足够具体。它既承认已经完成的部分，也告诉下一次工作该检查哪里。</p>
-<h2>休息不必变成另一份考核</h2>
+<h2 data-rail="04">休息不必变成另一份考核</h2>
 <p>散步、看漫画、听音乐，或者什么都不做，都可以只是生活。没有必要把每一段休息换算成效率收益，也不需要将别人的节奏复制成自己的标准。计划的作用是帮助行动，而不是把所有时间都变成等待评判的格子。</p>
 <p>这篇生活随笔是站点示例，不是一套必须遵循的方法。可以从一个很小的改变开始：下一次安排任务时，留下一格不写满。到了那一格，再根据当天真正遇到的问题决定做什么。让计划有一点弹性，也给自己的注意力一点回来的空间。</p>
       </div>
@@ -82,6 +88,10 @@
       <a href="../about.html">关于</a>
       <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
     </nav>
+    <div class="site-footer__mark narrative" aria-hidden="true">
+      <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-flower"></use></svg>
+    </div>
+    <p class="hand-note site-footer__hand-note" aria-hidden="true">慢慢写，慢慢长。</p>
     <p class="site-footer__copyright">© 2026 Sywen's Space</p>
   </div>
 </footer>

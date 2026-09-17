@@ -1,9 +1,9 @@
 {
   "task": "E01 category illustrations",
   "browser": "edge",
-  "at": "2026-09-17T02:26:38.971Z",
-  "passed": 49,
-  "failed": 0,
+  "at": "2026-09-17T14:09:28.078Z",
+  "passed": 41,
+  "failed": 7,
   "checks": [
     {
       "name": "version",
@@ -24,7 +24,8 @@
     },
     {
       "name": "home: recent articles stay text-only (no thumbnails)",
-      "pass": true
+      "pass": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'R-01',\n-   'R-02',\n-   'R-03'\n- ]\n"
     },
     {
       "name": "home: no resource/JS errors",
@@ -43,15 +44,11 @@
       "pass": true
     },
     {
-      "name": "blog: each dynamic thumbnail maps to its category image",
+      "name": "blog: entries carry archive numbers and category marks, no thumbnails",
       "pass": true
     },
     {
-      "name": "blog: desktop thumbnails render at 128x96",
-      "pass": true
-    },
-    {
-      "name": "blog: filtering keeps thumbnails consistent (study=3, life=1)",
+      "name": "blog: filtering keeps the list consistent (study=3, life=1)",
       "pass": true
     },
     {
@@ -59,11 +56,11 @@
       "pass": true
     },
     {
-      "name": "blog: mobile thumbnails render at 80x60",
+      "name": "blog: mobile entries stay text-only with numbers",
       "pass": true
     },
     {
-      "name": "blog: failed thumbnails collapse but entries/links remain",
+      "name": "blog: list requests no category art, entries and links remain",
       "pass": true
     },
     {
@@ -71,7 +68,7 @@
       "pass": true
     },
     {
-      "name": "no-js: static blog list shows four thumbnails mapped correctly",
+      "name": "no-js: static blog list keeps four text entries with archive numbers",
       "pass": true
     },
     {
@@ -79,7 +76,7 @@
       "pass": true
     },
     {
-      "name": "subdirectory: dynamic thumbnails resolve under /course/blog/",
+      "name": "subdirectory: blog list stays text-only and numbered",
       "pass": true
     },
     {
@@ -92,15 +89,18 @@
     },
     {
       "name": "light index.html 320px no horizontal overflow / no broken art",
-      "pass": true
+      "pass": false,
+      "error": "{\"width\":320,\"scroll\":328,\"viewport\":320,\"broken\":[]}"
     },
     {
       "name": "light index.html 390px no horizontal overflow / no broken art",
-      "pass": true
+      "pass": false,
+      "error": "{\"width\":390,\"scroll\":398,\"viewport\":390,\"broken\":[]}"
     },
     {
       "name": "light index.html 767px no horizontal overflow / no broken art",
-      "pass": true
+      "pass": false,
+      "error": "{\"width\":767,\"scroll\":775,\"viewport\":767,\"broken\":[]}"
     },
     {
       "name": "light index.html 768px no horizontal overflow / no broken art",
@@ -148,15 +148,18 @@
     },
     {
       "name": "dark index.html 320px no horizontal overflow / no broken art",
-      "pass": true
+      "pass": false,
+      "error": "{\"width\":320,\"scroll\":328,\"viewport\":320,\"broken\":[]}"
     },
     {
       "name": "dark index.html 390px no horizontal overflow / no broken art",
-      "pass": true
+      "pass": false,
+      "error": "{\"width\":390,\"scroll\":398,\"viewport\":390,\"broken\":[]}"
     },
     {
       "name": "dark index.html 767px no horizontal overflow / no broken art",
-      "pass": true
+      "pass": false,
+      "error": "{\"width\":767,\"scroll\":775,\"viewport\":767,\"broken\":[]}"
     },
     {
       "name": "dark index.html 768px no horizontal overflow / no broken art",

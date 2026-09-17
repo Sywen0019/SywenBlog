@@ -3,8 +3,8 @@
   "browser": "firefox",
   "browserVersion": "155.0",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "7e7c1c963b9bc8bab0a267811c7e61c19733eb94",
-  "at": "2026-09-17T02:29:36.291Z",
+  "baseCommit": "6c454f2847088265e5fcb626da4d3f9f970d144e",
+  "at": "2026-09-17T14:58:42.025Z",
   "checks": [
     {
       "name": "1. 七页 reading.js 加载顺序与资源",
@@ -124,74 +124,74 @@
         "posts/attention-intuition.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.5,
-          "footerBottom": 843.5,
-          "footerContentBottom": 747.5,
-          "clearance": 36.5,
-          "scrollTop": 2139
+          "footerTop": 490.25,
+          "footerBottom": 843.75,
+          "footerContentBottom": 747.75,
+          "clearance": 36.25,
+          "scrollTop": 2236
         },
         "blog.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.55,
-          "footerBottom": 843.55,
-          "footerContentBottom": 747.55,
-          "clearance": 36.45,
-          "scrollTop": 1213
+          "footerTop": 490.1,
+          "footerBottom": 843.6,
+          "footerContentBottom": 747.6,
+          "clearance": 36.4,
+          "scrollTop": 1107
         },
         "about.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.6,
-          "footerBottom": 843.6,
-          "footerContentBottom": 747.6,
-          "clearance": 36.4,
-          "scrollTop": 1890
+          "footerTop": 490.4,
+          "footerBottom": 843.9,
+          "footerContentBottom": 747.9,
+          "clearance": 36.1,
+          "scrollTop": 2153
         },
         "index.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 567.63,
-          "footerBottom": 843.63,
-          "footerContentBottom": 747.63,
-          "clearance": 36.37,
-          "scrollTop": 2010
+          "footerTop": 490.88,
+          "footerBottom": 844.38,
+          "footerContentBottom": 748.38,
+          "clearance": 35.62,
+          "scrollTop": 2091
         },
         "posts/attention-intuition.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.3,
-          "footerBottom": 899.7,
-          "footerContentBottom": 803.7,
-          "clearance": 36.3,
-          "scrollTop": 1344
+          "footerTop": 637.45,
+          "footerBottom": 899.75,
+          "footerContentBottom": 803.75,
+          "clearance": 36.25,
+          "scrollTop": 1482
         },
         "blog.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.6,
-          "footerBottom": 900,
-          "footerContentBottom": 804,
-          "clearance": 36,
-          "scrollTop": 1047
+          "footerTop": 637.75,
+          "footerBottom": 900.05,
+          "footerContentBottom": 804.05,
+          "clearance": 35.95,
+          "scrollTop": 709
         },
         "about.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.47,
-          "footerBottom": 899.87,
-          "footerContentBottom": 803.87,
-          "clearance": 36.13,
-          "scrollTop": 1200
+          "footerTop": 637.92,
+          "footerBottom": 900.22,
+          "footerContentBottom": 804.22,
+          "clearance": 35.78,
+          "scrollTop": 1352
         },
         "index.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.5,
-          "footerBottom": 899.9,
-          "footerContentBottom": 803.9,
-          "clearance": 36.1,
-          "scrollTop": 1397
+          "footerTop": 637.85,
+          "footerBottom": 900.15,
+          "footerContentBottom": 804.15,
+          "clearance": 35.85,
+          "scrollTop": 1588
         }
       }
     },
@@ -233,12 +233,12 @@
       "pass": true,
       "detail": {
         "resize": {
-          "before": 1344,
-          "after": 1744
+          "before": 1482,
+          "after": 1882
         },
         "hero": {
-          "earlyHeight": 2297,
-          "lateHeight": 2297,
+          "earlyHeight": 2488,
+          "lateHeight": 2488,
           "lateProgress": 0
         }
       }
@@ -247,8 +247,8 @@
       "name": "11. 深链接定位下进度一致",
       "pass": true,
       "detail": {
-        "scrollTop": 146,
-        "maxScroll": 2283,
+        "scrollTop": 140,
+        "maxScroll": 2380,
         "progress": 6,
         "expected": 6
       }
@@ -259,14 +259,14 @@
       "detail": {
         "pages": 7,
         "allHidden": true,
-        "noScriptFooterPadding": "32px"
+        "noScriptFooterPadding": "64px"
       }
     },
     {
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 41,
+        "progress": 35,
         "button": "visible",
         "script": "../js/context-menu.js"
       }
@@ -305,7 +305,7 @@
       "name": "16. E03 未改动 assets/ 中的非 Hero 资产",
       "pass": true,
       "detail": {
-        "unchanged": 13,
+        "unchanged": 14,
         "preexistingHeroRevision": [],
         "baseline": "docs/evidence/baseline/checks.json（B05 快照）"
       }

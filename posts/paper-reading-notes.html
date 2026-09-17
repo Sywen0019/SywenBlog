@@ -8,6 +8,7 @@
 <script src="../js/theme.js"></script>
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/narrative.css">
 <link rel="stylesheet" href="../css/pages.css">
 <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
 <noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
@@ -26,8 +27,8 @@
   <div class="site-header__inner container">
     <p class="site-title"><a class="brand" href="../index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
     <div class="site-tools">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
-      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
     </div>
     <nav class="site-nav" aria-label="主导航">
       <ul class="site-nav__list">
@@ -46,22 +47,27 @@
 
     <article class="post" data-post-id="paper-reading-notes">
       <header class="post-header">
+        <p class="post-header__index" aria-hidden="true">A-03</p>
         <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=study">学业</a><time class="post-meta__date" datetime="2026-09-15">2026-09-15</time><span class="post-meta__time">约 2 分钟</span></p>
-        <h1 class="page-title">一次论文阅读如何留下可复用笔记</h1>
+        <h1 class="page-title post-header__title">一次论文阅读如何留下可复用笔记</h1>
         <p class="post-demo-note">示例文章</p>
       </header>
+            <div class="post-rail narrative" aria-hidden="true">
+        <span class="post-rail__mark"><svg class="mark" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-book-stack"></use></svg></span>
+        <span class="post-rail__number">A-03</span>
+      </div>
       <div class="post-body">
         <p>论文读完后，最容易留下的是一串句子：作者提出了什么，模型叫什么，结果看起来如何。可当下一周想复用这些信息时，摘抄常常无法回答“这个结论靠什么成立”。一份可复用的笔记，应该帮助未来的自己回到问题、证据与限制之间，而不只是回到摘要。</p>
-<h2>第一遍，先建立地图</h2>
+<h2 data-rail="01">第一遍，先建立地图</h2>
 <p>先看标题、摘要、章节和主要图表，写下研究问题、输入输出与作者声称的贡献。此时允许有很多空白，不急着把每个术语解释完整。把不理解的词列在旁边，并标明它出现在什么位置，后面再判断哪些值得深入。</p>
 <p>第一遍结束时，用自己的话写三句：它要解决什么问题；主要改动在哪里；哪些证据值得第二遍检查。如果只能照抄摘要，说明地图还不够清楚，可以回看问题设定，而不是直接进入公式推导。</p>
-<h2>第二遍，顺着证据走</h2>
+<h2 data-rail="02">第二遍，顺着证据走</h2>
 <p>阅读方法和实验时，每看到一个结论，就寻找支撑它的图、表、定义或推导。在笔记旁保留页码、章节名和图号。PDF 阅读器页码可能与论文印刷页码不同，最好写清采用哪一种，避免下次寻找时反复翻页。</p>
 <blockquote><p>把“作者报告的结果”“自己的解释”和“尚未验证的猜想”分开写。</p></blockquote>
 <p>例如，一张表显示某个数据集上的指标更高，只能先记录这个比较条件下的结果。它是否来自方法本身，是否依赖额外数据或计算量，还需要检查设置。不要把局部比较直接扩写成“普遍更好”，也不要把没有消融的推测写成已证实机制。</p>
-<h2>第三遍，只深入当前需要的部分</h2>
+<h2 data-rail="03">第三遍，只深入当前需要的部分</h2>
 <p>不是每篇论文都需要逐行精读。准备复现时，可以深入预处理、超参数和评估流程；准备讨论理论时，可以重做关键推导；只是了解方向时，保留明确的问题与证据入口可能已经足够。阅读深度应该回应当前任务，而不是为了完成一个形式上的三遍流程。</p>
-<h2>一页可继续使用的结构</h2>
+<h2 data-rail="04">一页可继续使用的结构</h2>
 <ol><li>问题与适用条件：什么输入，期待什么输出。</li><li>方法变化：与比较对象相比，真正改了哪一步。</li><li>证据位置：图表、章节及页码，写出比较条件。</li><li>局限与疑问：哪些假设未被验证，哪些信息缺失。</li><li>下一步：一个能实际执行的检查或小实验。</li></ol>
 <p>最后加一段自己的重述，并保留原论文地址和版本。隔几天只看这页笔记，试着向别人解释方法。如果解释中出现断点，就把断点变成下一次阅读的问题。笔记的价值不在于一次写得完整，而在于它能把下一次工作接起来。</p>
       </div>
@@ -82,6 +88,10 @@
       <a href="../about.html">关于</a>
       <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
     </nav>
+    <div class="site-footer__mark narrative" aria-hidden="true">
+      <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-flower"></use></svg>
+    </div>
+    <p class="hand-note site-footer__hand-note" aria-hidden="true">慢慢写，慢慢长。</p>
     <p class="site-footer__copyright">© 2026 Sywen's Space</p>
   </div>
 </footer>

@@ -1,0 +1,173 @@
+{
+  "task": "Narrative Layer Visual Vertical Slice",
+  "at": "2026-09-17T15:00:32.591Z",
+  "passed": 22,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "home@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 29
+      }
+    },
+    {
+      "name": "about@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "home@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 29
+      }
+    },
+    {
+      "name": "about@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "home@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 29
+      }
+    },
+    {
+      "name": "about@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "home@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 29
+      }
+    },
+    {
+      "name": "about@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "home@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 29
+      }
+    },
+    {
+      "name": "about@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "blog: no images in list, count matches, filter and reset work",
+      "pass": true,
+      "detail": {
+        "images": 0,
+        "entries": 4,
+        "countText": "找到 4 篇文章",
+        "life": 1,
+        "afterReset": 4
+      }
+    },
+    {
+      "name": "blog no-JS: static list complete without images",
+      "pass": true,
+      "detail": {
+        "entries": 4,
+        "images": 0,
+        "links": 4
+      }
+    }
+  ],
+  "limitations": [
+    "未使用实体手机、屏幕阅读器与真实浏览器 UI 缩放；移动端为浏览器视口模拟。",
+    "观感类判据（是否成立 Editorial Notebook、mark 是否过于工程化）由用户视觉审核判定，本脚本只记录可测量事实。",
+    "本轮只覆盖样板区域，全域页面仍待 Phase 4／Phase 5。"
+  ]
+}

@@ -1,6 +1,8 @@
-# Sywen’s Space｜视觉设计规范 v1.1
+# Sywen’s Space｜视觉设计规范 v1.2
 
-更新日期：2026-09-16（分类同步）。用户批准的 B/E 作业基线优先；v1 历史由 Git 保留。
+更新日期：2026-09-18（新增 Content / Narrative 两层结构）。用户批准的 B/E 作业基线优先；v1 历史由 Git 保留。
+
+> 本轮视觉架构重构的契约记录在 [docs/visual-architecture.md](docs/visual-architecture.md)：Content Layer 与 Narrative Layer 的职责划分、Narrative 可访问性合同、Narrative Density、Mark System、CSS 职责与新增 DOM 契约。本文件继续负责整体视觉规范。
 
 ## 1. 定位与范围
 
@@ -27,7 +29,7 @@ minimal manga / comic / line art / editorial / paper。全站 70% minimal + 30% 
 ## 4. 逐页完成度
 
 - Home：Hero → 最近三篇 → 三类入口（学业／生活／我喜欢的）→ 三格近况。Hero 桌面约等宽两列，4:3书桌场景约440–520px；手机文案和CTA后显示。标题、品牌、旁白均为HTML真实文字。Hero使用空alt，邻近文本承担介绍。
-- Blog：标题→搜索→分类→结果工具→单列条目/无结果。基线条目必须日期、分类、标题、摘要、阅读时间；E01才加入小画，桌面128×96、手机80×60。
+- Blog：标题→搜索→分类→结果工具→单列条目/无结果。基线条目必须日期、分类、标题、摘要、阅读时间；E01 加入的分类小画在 2026-09-18 视觉架构重构中停止作为默认文章封面（同分类重复、视觉作用弱），Blog 条目改为日期＋编号＋标题＋摘要＋分类 mark；分类小画继续用于首页分类入口卡。见 [视觉架构契约](docs/visual-architecture.md) §9。
 - About：连续介绍文本块与 E02 平板阅读人物排两列，窄屏单列；学习/兴趣/近况/静态FAQ；图alt准确描述漫画形象，不编造履历。
 - Post：阅读列740px，正文无背景纹理或人物；代码局部滚动，引用/表格/图注/相邻链接完整。长内容自然换行。
 - 未完成主题/筛选以外增强控件保持hidden；菜单和阅读工具留E类。

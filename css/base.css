@@ -33,6 +33,11 @@
   --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   --font-brand: Georgia, "Times New Roman", serif;
   --font-code: Consolas, "SFMono-Regular", "Liberation Mono", monospace;
+  /* Narrative Layer 手写旁白：只用本机字体，不请求远程字体。
+     顺序经过实测：Windows 上 Segoe Script/Bradley Hand 缺中文时会让浏览器落到
+     NSimSun 等衬线回退，中文旁白会变成又细又散的字距；因此把楷体放在最前，
+     中文走楷体，西文与数字落回 UI 栈。见 docs/visual-architecture.md §7。 */
+  --font-hand: "KaiTi", "STKaiti", "Kaiti SC", "楷体", "Segoe Script", "Bradley Hand", var(--font-ui);
 
   /* 字号（§5.2，移动优先；Tablet/Desktop 在 §2 覆盖） */
   --text-hero: clamp(34px, calc(7.222px + 8.368vw), 60px);
@@ -82,9 +87,7 @@
   --about-art-height: 220px;
   --status-art-height: 180px;
   --avatar-size: 64px;
-  /* E01 分类小画：Blog 条目缩略（手机档）与首页分类卡固定小图，均为 4:3 */
-  --entry-thumb-w: 80px;
-  --entry-thumb-h: 60px;
+  /* 首页分类卡小画（4:3）：手机横向小图 */
   --category-art-w: 96px;
   --category-art-h: 72px;
 
@@ -124,6 +127,9 @@
   --dot-size: 1px;
   --dot-gap: 8px;
   --dot-opacity: 0.08;
+  --rule-short-width: 72px;
+  --mark-size: 20px;
+  --mark-stroke: 1.5;
 
   /* 动效（§15、§16.2） */
   --motion-fast: 120ms;
@@ -132,7 +138,8 @@
   --press-shift: 1px;
   --press-shift-strong: 2px;
 
-  /* 层级（§16.3） */
+  /* 层级（§16.3）：页面外壳保持 z-index:auto，装订线用负层级沉到内容之下 */
+  --z-decoration: -10;
   --z-content: 0;
   --z-floating: 30;
   --z-progress: 40;
@@ -210,9 +217,6 @@
     --text-code: 15px;
     --text-brand: 28px;
     --avatar-size: 80px;
-    /* E01 Blog 条目缩略桌面档 128×96（§11 Blog） */
-    --entry-thumb-w: 128px;
-    --entry-thumb-h: 96px;
   }
 }
 

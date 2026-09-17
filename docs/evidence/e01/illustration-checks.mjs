@@ -134,16 +134,23 @@ async function runBrowser(label, launch) {
       await page.goto(base + 'index.html');
       await settleImages(page, '#home-categories img');
       await check('home: three category cards map to study/life/favorites', async () => {
-        const cards = await page.$$eval('#home-categories .category-link--card', (els) => els.map((a) => ({
+        const cards = await page.$$eval('#home-categories .category-link', (els) => els.map((a) => ({
           href: a.getAttribute('href'),
           img: a.querySelector('img')?.getAttribute('src'),
           name: a.querySelector('.category-link__name')?.textContent,
           count: a.querySelector('[data-category-count]')?.textContent,
+          tone: ['study', 'life', 'favorites'].find((id) => a.classList.contains('category-link--' + id)) || null,
+          number: a.querySelector('.category-link__number')?.textContent || null,
         })));
         assert.deepEqual(cards.map((c) => c.img), CATEGORIES.map((c) => `./assets/images/${c.file}`));
         assert.deepEqual(cards.map((c) => c.name), CATEGORIES.map((c) => c.name));
         assert.deepEqual(cards.map((c) => c.count), CATEGORIES.map((c) => String(c.count)));
-        cards.forEach((c, i) => assert.ok(c.href.includes(`category=${CATEGORIES[i].id}`)));
+        cards.forEach((c, i) => {
+          assert.ok(c.href.includes(`category=${CATEGORIES[i].id}`));
+          // 2026-09-18 起分类入口不再使用完整卡片外框，改用编号 + 结构线 + 分类气质类。
+          assert.equal(c.tone, CATEGORIES[i].id);
+          assert.equal(c.number, `C-0${i + 1}`);
+        });
       });
       await check('home: card art is decorative 640x480 lazy and loaded', async () => {
         const facts = await page.$$eval('#home-categories .art-frame--category', (frames) => frames.map((f) => {
@@ -166,21 +173,27 @@ async function runBrowser(label, launch) {
         });
       });
       await check('home: desktop card art is full-width 4:3 above the label', async () => {
-        const boxes = await page.$$eval('#home-categories .category-link--card', (els) => els.map((a) => {
+        const boxes = await page.$$eval('#home-categories .category-link', (els) => els.map((a) => {
           const art = a.querySelector('.category-link__art').getBoundingClientRect();
           const body = a.querySelector('.category-link__body').getBoundingClientRect();
-          return { aw: art.width, ah: art.height, artBottom: art.bottom, bodyTop: body.top, aw2: a.getBoundingClientRect().width };
+          const num = a.querySelector('.category-link__number').getBoundingClientRect();
+          return { aw: art.width, ah: art.height, artBottom: art.bottom, bodyTop: body.top,
+            aw2: a.getBoundingClientRect().width, numBottom: num.bottom, artTop: art.top };
         }));
         boxes.forEach((b) => {
           assert.ok(Math.abs(b.ah - b.aw * 0.75) <= 2, `aspect ${b.aw}x${b.ah}`);
-          // 卡片内边距 16px×2 加图框 1px 边框×2，图框应占满其余宽度。
-          assert.ok(Math.abs(b.aw - (b.aw2 - 34)) <= 2, `art width ${b.aw} vs card ${b.aw2}`);
+          // 去卡片化后小画通栏占满分类入口宽度，只受图框 1px 边框影响。
+          assert.ok(Math.abs(b.aw - (b.aw2 - 2)) <= 2, `art width ${b.aw} vs entry ${b.aw2}`);
           assert.ok(b.artBottom <= b.bodyTop + 4, 'art should sit above label');
+          assert.ok(b.numBottom <= b.artTop + 4, 'number should sit above art');
         });
       });
       await check('home: recent articles stay text-only (no thumbnails)', async () => {
+        assert.equal(await page.locator('#home-recent img').count(), 0);
         assert.equal(await page.locator('#home-recent .post-entry__thumb').count(), 0);
-        assert.equal(await page.locator('#home-recent .post-entry--with-thumb').count(), 0);
+        // 归档编号是 Narrative 装饰，不承担信息；Home 与 Blog 共用同一套档案编号。
+        const numbers = await page.locator('#home-recent .post-entry__number').allInnerTexts();
+        assert.deepEqual(numbers, ['A-01', 'A-02', 'A-03']);
       });
       await check('home: no resource/JS errors', () => assert.deepEqual(errors, []));
       screenshots.push(await shot(page, 'e01-home-1440-light'));
@@ -194,7 +207,7 @@ async function runBrowser(label, launch) {
       await page.goto(base + 'index.html');
       await settleImages(page, '#home-categories img');
       await check('home: mobile card art is 96x72 to the left of label', async () => {
-        const boxes = await page.$$eval('#home-categories .category-link--card', (els) => els.map((a) => {
+        const boxes = await page.$$eval('#home-categories .category-link', (els) => els.map((a) => {
           const art = a.querySelector('.category-link__art').getBoundingClientRect();
           const body = a.querySelector('.category-link__body').getBoundingClientRect();
           return { aw: art.width, ah: art.height, artRight: art.right, bodyLeft: body.left, overlap: !(art.bottom < body.top || art.top > body.bottom) };
@@ -231,39 +244,32 @@ async function runBrowser(label, launch) {
         assert.equal(await page.locator('#blog-static-list').isHidden(), true);
         assert.equal(await page.locator('#blog-results .post-entry').count(), 4);
       });
-      await check('blog: each dynamic thumbnail maps to its category image', async () => {
+      await check('blog: entries carry archive numbers and category marks, no thumbnails', async () => {
+        // 2026-09-18 视觉架构重构：取消分类缩略图作为默认文章封面，
+        // Blog 条目改为日期 + 编号 + 标题 + 摘要 + 分类 mark。
         const rows = await page.$$eval('#blog-results .post-entry', (els) => els.map((li) => ({
           slug: li.dataset.postId,
+          images: li.querySelectorAll('img').length,
           withThumb: li.classList.contains('post-entry--with-thumb'),
-          img: li.querySelector('.post-entry__thumb img')?.getAttribute('src'),
-          natural: (() => { const i = li.querySelector('.post-entry__thumb img'); return i ? [i.naturalWidth, i.naturalHeight] : null; })(),
+          number: li.querySelector('.post-entry__number')?.textContent || null,
+          mark: li.querySelector('.category-mark svg use')?.getAttribute('href') || null,
         })));
-        const expected = await page.evaluate(() => {
-          const map = {};
-          window.Sywen.posts.forEach((p) => { map[p.slug] = window.Sywen.categories.find((c) => c.id === p.category).image; });
-          return map;
-        });
         assert.equal(rows.length, 4);
+        assert.deepEqual(rows.map((r) => r.number), ['A-01', 'A-02', 'A-03', 'A-04']);
         rows.forEach((r) => {
-          assert.equal(r.withThumb, true, r.slug);
-          assert.ok(r.img.endsWith(expected[r.slug]), `${r.slug}: ${r.img} vs ${expected[r.slug]}`);
-          assert.deepEqual(r.natural, [640, 480], r.slug);
+          assert.equal(r.images, 0, r.slug);
+          assert.equal(r.withThumb, false, r.slug);
+          assert.ok(r.mark && r.mark.includes('marks.svg#mark-'), `${r.slug}: ${r.mark}`);
         });
       });
-      await check('blog: desktop thumbnails render at 128x96', async () => {
-        const sizes = await page.$$eval('#blog-results .art-frame--thumb', (els) => els.map((e) => {
-          const b = e.getBoundingClientRect(); return [Math.round(b.width), Math.round(b.height)];
-        }));
-        assert.equal(sizes.length, 4);
-        sizes.forEach(([w, h]) => { assert.ok(Math.abs(w - 128) <= 1, `w ${w}`); assert.ok(Math.abs(h - 96) <= 1, `h ${h}`); });
-      });
-      await check('blog: filtering keeps thumbnails consistent (study=3, life=1)', async () => {
+      await check('blog: filtering keeps the list consistent (study=3, life=1)', async () => {
         await page.locator('[data-category="study"]').click();
         assert.equal(await page.locator('#blog-results .post-entry').count(), 3);
-        assert.equal(await page.locator('#blog-results img[src$="cat-study.webp"]').count(), 3);
+        assert.equal(await page.locator('#blog-results img').count(), 0);
         await page.locator('[data-category="life"]').click();
         assert.equal(await page.locator('#blog-results .post-entry').count(), 1);
-        assert.equal(await page.locator('#blog-results img[src$="cat-life.webp"]').count(), 1);
+        // 编号跟着文章本身，不跟着筛选结果，因此 life 那篇仍是 A-04。
+        assert.deepEqual(await page.locator('#blog-results .post-entry__number').allInnerTexts(), ['A-04']);
         await page.locator('[data-category="all"]').click();
       });
       await check('blog: no resource/JS errors', () => assert.deepEqual(errors, []));
@@ -278,11 +284,9 @@ async function runBrowser(label, launch) {
       await page.goto(base + 'blog.html');
       await page.locator('#search-input').waitFor({ state: 'visible' });
       await settleImages(page, '#blog-results img');
-      await check('blog: mobile thumbnails render at 80x60', async () => {
-        const sizes = await page.$$eval('#blog-results .art-frame--thumb', (els) => els.map((e) => {
-          const b = e.getBoundingClientRect(); return [Math.round(b.width), Math.round(b.height)];
-        }));
-        sizes.forEach(([w, h]) => { assert.ok(Math.abs(w - 80) <= 1, `w ${w}`); assert.ok(Math.abs(h - 60) <= 1, `h ${h}`); });
+      await check('blog: mobile entries stay text-only with numbers', async () => {
+        assert.equal(await page.locator('#blog-results img').count(), 0);
+        assert.deepEqual(await page.locator('#blog-results .post-entry__number').allInnerTexts(), ['A-01', 'A-02', 'A-03', 'A-04']);
       });
       screenshots.push(await shot(page, 'e01-blog-390-light'));
       await ctx.close();
@@ -295,12 +299,8 @@ async function runBrowser(label, launch) {
       await page.route('**/cat-*.webp', (route) => route.abort());
       await page.goto(base + 'blog.html');
       await page.locator('#search-input').waitFor({ state: 'visible' });
-      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-      await page.waitForFunction(() => Array.from(document.querySelectorAll('#blog-results .art-frame--thumb')).length === 4
-        && Array.from(document.querySelectorAll('#blog-results .art-frame--thumb')).every((f) => f.classList.contains('is-failed')), null, { timeout: 8000 });
-      await check('blog: failed thumbnails collapse but entries/links remain', async () => {
-        const hidden = await page.$$eval('#blog-results .art-frame--thumb', (els) => els.map((e) => getComputedStyle(e).display === 'none'));
-        assert.deepEqual(hidden, [true, true, true, true]);
+      await check('blog: list requests no category art, entries and links remain', async () => {
+        assert.equal(await page.locator('#blog-results img').count(), 0);
         assert.equal(await page.locator('#blog-results .post-entry__link:visible').count(), 4);
       });
       await page.goto(base + 'index.html');
@@ -309,7 +309,7 @@ async function runBrowser(label, launch) {
       await check('home: failed card art collapses but cards/links remain', async () => {
         const hidden = await page.$$eval('#home-categories .art-frame--category', (els) => els.map((e) => getComputedStyle(e).display === 'none'));
         assert.deepEqual(hidden, [true, true, true]);
-        assert.equal(await page.locator('#home-categories .category-link--card:visible').count(), 3);
+        assert.equal(await page.locator('#home-categories .category-link:visible').count(), 3);
         const names = await page.locator('#home-categories .category-link__name').allInnerTexts();
         assert.deepEqual(names, ['学业', '生活', '我喜欢的']);
       });
@@ -322,20 +322,15 @@ async function runBrowser(label, launch) {
       const ctx = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 900 }, colorScheme: 'dark' });
       const page = await ctx.newPage();
       await page.goto(base + 'blog.html');
-      await check('no-js: static blog list shows four thumbnails mapped correctly', async () => {
+      await check('no-js: static blog list keeps four text entries with archive numbers', async () => {
         assert.equal(await page.locator('#blog-filters').isVisible(), false);
-        assert.equal(await page.locator('#blog-static-list .post-entry--with-thumb').count(), 4);
-        const rows = await page.$$eval('#blog-static-list .post-entry', (els) => els.map((li) => ({
-          slug: li.dataset.postId, img: li.querySelector('.post-entry__thumb img')?.getAttribute('src'),
-        })));
-        rows.forEach((r) => {
-          const cat = { 'attention-intuition': 'study', 'dom-search-notes': 'study', 'paper-reading-notes': 'study', 'leave-some-space': 'life' }[r.slug];
-          assert.equal(r.img, `./assets/images/cat-${cat}.webp`, r.slug);
-        });
+        assert.equal(await page.locator('#blog-static-list img').count(), 0);
+        assert.deepEqual(await page.locator('#blog-static-list .post-entry__number').allInnerTexts(), ['A-01', 'A-02', 'A-03', 'A-04']);
+        assert.equal(await page.locator('#blog-static-list .post-entry__link:visible').count(), 4);
       });
       await page.goto(base + 'index.html');
       await check('no-js: home cards present with hardcoded counts', async () => {
-        assert.equal(await page.locator('#home-categories .category-link--card').count(), 3);
+        assert.equal(await page.locator('#home-categories .category-link').count(), 3);
         const counts = await page.locator('#home-categories [data-category-count]').allInnerTexts();
         assert.deepEqual(counts, ['3', '1', '0']);
       });
@@ -351,13 +346,9 @@ async function runBrowser(label, launch) {
       page.on('response', (r) => { if (r.status() >= 400) errors.push(r.status() + ' ' + r.url()); });
       await page.goto(base + 'course/blog/blog.html');
       await page.locator('#search-input').waitFor({ state: 'visible' });
-      await settleImages(page, '#blog-results img');
-      await check('subdirectory: dynamic thumbnails resolve under /course/blog/', async () => {
-        const srcs = await page.$$eval('#blog-results .post-entry__thumb img', (els) => els.map((i) => i.src).filter(Boolean));
-        assert.ok(srcs.length >= 1);
-        srcs.forEach((s) => assert.ok(s.includes('/course/blog/assets/images/cat-'), s));
-        const ok = await page.$$eval('#blog-results .post-entry__thumb img', (els) => els.every((i) => i.complete && i.naturalWidth === 640));
-        assert.equal(ok, true);
+      await check('subdirectory: blog list stays text-only and numbered', async () => {
+        assert.equal(await page.locator('#blog-results img').count(), 0);
+        assert.equal(await page.locator('#blog-results .post-entry').count(), 4);
       });
       await page.goto(base + 'course/blog/index.html');
       await settleImages(page, '#home-categories img');

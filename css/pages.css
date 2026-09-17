@@ -31,17 +31,57 @@
 
 .site-footer {
   border-top: var(--line-thin) solid var(--color-rule);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 页脚是全站最后一个视觉收束点（docs/visual-architecture.md §9）：
+   一句手写旁白 + 一个微型 mark，不增加复杂插画。 */
+.site-footer__hand-note {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.site-footer__mark {
+  color: var(--color-rule);
+}
+
+.site-footer__mark .mark {
+  display: block;
 }
 
 .site-footer__inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
   gap: var(--space-3) var(--space-6);
   padding-block: var(--space-8) calc(var(--space-16) + env(safe-area-inset-bottom, 0px));
   color: var(--color-muted);
   font-size: var(--text-meta);
   line-height: var(--leading-meta);
+}
+
+@media (min-width: 768px) {
+  .site-footer__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .site-footer__mark {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .site-footer__hand-note {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer__links {
+    justify-content: flex-end;
+  }
+
+  .site-footer__note {
+    max-width: 28em;
+  }
 }
 
 /* 返回顶部就绪后为右下角浮动按钮留出空间，避免覆盖页脚最后一行（§16.2）。
@@ -68,7 +108,7 @@ html.has-reading .site-footer__inner {
 }
 
 .site-footer__copyright {
-  margin-inline-start: auto;
+  margin-inline-start: 0;
 }
 
 @media (min-width: 768px) {
@@ -95,6 +135,15 @@ html.has-reading .site-footer__inner {
   font-size: var(--text-page-title);
   font-weight: var(--weight-bold);
   line-height: var(--leading-title);
+}
+
+/* 页面身份眉标：归档页与研究笔记页的 editorial 定位语，不承担关键内容。 */
+.page-header__eyebrow {
+  margin: 0 0 var(--space-3);
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 11px;
+  letter-spacing: 0.18em;
 }
 
 .page-intro {
@@ -388,7 +437,9 @@ html.has-reading .site-footer__inner {
   font-size: 12px;
 }
 
-.section-header {
+/* 完整横线只在页面真正需要框定区块时才加，默认由编号与短 rule 组织节奏。
+   见 docs/visual-architecture.md §8、§9。 */
+.section-header--ruled {
   padding-bottom: var(--space-4);
   border-bottom: var(--line-thin) solid var(--color-ink);
 }
@@ -402,6 +453,8 @@ html.has-reading .site-footer__inner {
   vertical-align: middle;
 }
 
+/* Home 分类入口：不使用完整卡片外框，改由共享结构线 + 编号 + 小画 + 短描述组织，
+   Study / Life / Favorites 各自保留不同气质（见 docs/visual-architecture.md §9）。 */
 #home-categories {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -412,20 +465,31 @@ html.has-reading .site-footer__inner {
   margin: 0;
 }
 
-/* E01 分类卡（手机）：小图在左、名称与计数在右的横向卡 */
 #home-categories .category-link {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto var(--category-art-w) minmax(0, 1fr);
   align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-3);
+  gap: var(--space-3) var(--space-4);
   height: 100%;
-  border: 1px solid var(--color-rule);
+  padding: var(--space-4) 0;
+  border-top: var(--line-thin) solid var(--color-rule);
   text-decoration: none;
+  transition: background-color var(--motion-fast) var(--motion-ease);
+}
+
+#home-categories > li:last-child .category-link {
+  border-bottom: var(--line-thin) solid var(--color-rule);
 }
 
 #home-categories .category-link:hover {
-  background: var(--color-accent);
-  border-color: var(--color-ink);
+  background: color-mix(in srgb, var(--color-accent) 48%, transparent);
+}
+
+#home-categories .category-link__number {
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+  letter-spacing: 0.08em;
 }
 
 #home-categories .category-link__art {
@@ -433,22 +497,58 @@ html.has-reading .site-footer__inner {
 }
 
 #home-categories .category-link__body {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--space-1);
   min-width: 0;
-  color: var(--color-ink);
-  font-size: var(--text-ui);
 }
 
 #home-categories .category-link__name {
+  display: block;
+  color: var(--color-ink);
+  font-size: var(--text-entry-title);
   font-weight: var(--weight-bold);
+  line-height: var(--leading-heading);
 }
 
+#home-categories .category-link__meta {
+  display: block;
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+  font-size: var(--text-meta);
+  line-height: var(--leading-meta);
+}
+
+#home-categories .category-link__desc {
+  display: none;
+  color: var(--color-muted);
+  font-size: var(--text-meta);
+  line-height: var(--leading-meta);
+}
+
+/* 分类气质：学业偏研究、生活偏手账、我喜欢的保留一点彩色记忆点 */
+#home-categories .category-link--study {
+  --category-tone: var(--color-accent);
+}
+
+#home-categories .category-link--life {
+  --category-tone: var(--color-note);
+}
+
+#home-categories .category-link--favorites {
+  --category-tone: var(--color-note);
+}
+
+#home-categories .category-link__number::after {
+  display: inline-block;
+  width: var(--space-4);
+  height: var(--line-thin);
+  margin-inline-start: var(--space-2);
+  background-color: var(--category-tone, var(--color-rule));
+  content: "";
+  vertical-align: middle;
+}
+
+/* Current status：一张真正属于个人手账的状态纸片，植物可以跨出边界。 */
 .note-panel {
-  border-width: 1px;
-  border-top-width: 2px;
+  position: relative;
 }
 
 .page-header {
@@ -604,15 +704,6 @@ html.has-reading .site-footer__inner {
   display: block;
 }
 
-.site-footer__inner {
-  align-items: start;
-  padding-block: var(--space-8);
-}
-
-.site-footer__note {
-  max-width: 28em;
-}
-
 @media (min-width: 768px) {
   .hero {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -625,24 +716,27 @@ html.has-reading .site-footer__inner {
 
   #home-categories {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
   }
 
-  /* E01 分类卡（桌面）：上图下文的竖向卡，小图 4:3 通宽 */
+  /* 分类入口（桌面）：编号 + 小画 + 名称 + 短描述，用结构线与留白分隔，不做完整卡片框。 */
   #home-categories .category-link {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
     gap: var(--space-3);
-    padding: var(--space-4);
+    padding: var(--space-4) 0 0;
+    border-top-width: var(--line-strong);
+    border-top-color: var(--color-ink);
   }
 
   #home-categories .category-link__art {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
   }
 
-  #home-categories .category-link__body {
-    justify-content: flex-start;
+  #home-categories .category-link__desc {
+    display: block;
+    margin-top: var(--space-2);
   }
 }
 
@@ -654,5 +748,331 @@ html.has-reading .site-footer__inner {
 
   .hero-art--desk {
     max-width: 520px;
+  }
+}
+
+/* ==========================================================================
+   7. Narrative Layer 构图（Visual Vertical Slice）
+   词汇与可访问性合同在 css/narrative.css 与 docs/visual-architecture.md §2、§9；
+   这里只摆放具体页面的落点。所有 Narrative 元素都 aria-hidden、不可聚焦、
+   pointer-events: none，且不进入 Post 的 740px 阅读列。
+   ========================================================================== */
+
+/* 区块标题：编号 + 标题 + 一条手写旁注，取代无条件全宽横线。 */
+.section-header__main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  min-width: 0;
+}
+
+.section-header__note {
+  display: none;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .section-header__note {
+    display: block;
+  }
+}
+
+/* Blog 归档页：眉标 + 归档旁注。旁注落在标题区右侧，而不是在筛选区上方单独占一行。 */
+.blog-archive-note {
+  display: none;
+  margin: var(--space-2) 0 0;
+  text-align: end;
+}
+
+@media (min-width: 768px) {
+  .blog-archive-note {
+    display: block;
+    position: absolute;
+    inset-block-start: var(--space-6);
+    inset-inline-end: 0;
+  }
+
+  .page-header {
+    position: relative;
+  }
+}
+
+/* 条目编号：Home 用 R-nn、Blog 用 A-nn，属于 editorial 归档语法，不承担信息。 */
+.post-entry__number {
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.post-entry:hover .post-entry__number {
+  color: var(--color-ink);
+}
+
+@media (min-width: 768px) {
+  .post-entry__number {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .post-entry__content {
+    grid-column: 2;
+  }
+}
+
+/* 条目分类行内的分类 mark：装饰性，与分类名同基线。 */
+.post-entry__category .category-mark {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  margin-inline-end: var(--space-1);
+  vertical-align: -3px;
+}
+
+.post-entry__category .mark {
+  --mark-size: 18px;
+}
+
+/* Home「最近在做」：一张真正的手账状态纸片，植物跨出面板边界。
+   手机与平板保留纸片气质但收起跨边界植物，避免窄屏产生横向溢出。 */
+.now-slip {
+  position: relative;
+  max-width: 880px;
+}
+
+.now-slip__stamp {
+  margin: 0 0 var(--space-4);
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.now-slip__plant {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .now-slip {
+    padding-inline-end: var(--space-8);
+  }
+
+  .now-slip__plant {
+    display: block;
+    position: absolute;
+    inset-block-end: var(--space-4);
+    inset-inline-end: var(--space-4);
+    z-index: var(--z-content);
+    width: 72px;
+    height: auto;
+  }
+
+  .now-slip__plant img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .now-slip {
+    padding-inline-end: var(--space-12);
+  }
+
+  .now-slip__plant {
+    inset-block-end: 50%;
+    inset-inline-end: calc(-1 * var(--space-2));
+    width: 120px;
+    transform: translateY(50%);
+  }
+}
+
+/* About「学业方向」：编号笔记条目 + 小型 mark，轻量 Research Sketchbook 语言。 */
+.study-notes {
+  display: grid;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.study-notes__item {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-4);
+  margin: 0;
+  padding-block: var(--space-4);
+  border-top: var(--line-thin) solid var(--color-rule);
+}
+
+.study-notes__item:last-child {
+  border-bottom: var(--line-thin) solid var(--color-rule);
+}
+
+.study-notes__index {
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.study-notes__mark {
+  color: var(--color-muted);
+}
+
+.study-notes__mark .mark {
+  display: block;
+}
+
+.study-notes__text {
+  margin: 0;
+  line-height: var(--leading-body);
+}
+
+.study-notes__label {
+  display: block;
+  margin-bottom: var(--space-1);
+  color: var(--color-muted);
+  font-size: var(--text-meta);
+  line-height: var(--leading-meta);
+  letter-spacing: 0.04em;
+}
+
+/* About「我喜欢的」：横向兴趣标签 + 物件符号，比正文列表更轻松。 */
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.interest-tags__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: var(--line-thin) solid var(--color-rule);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--text-ui);
+  line-height: var(--leading-ui);
+}
+
+.interest-tags__item .mark {
+  color: var(--color-muted);
+}
+
+/* About「学业方向 → 我喜欢的」转场：横枝作为真正的连接，而不是孤立贴图。
+   收窄尺寸并贴近下一区块，避免在 section 之间留下过大的空白带。 */
+.about-transition {
+  display: none;
+  margin: var(--space-8) 0 0;
+}
+
+.about-transition .narrative-branch {
+  width: 168px;
+  margin-inline: auto;
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  .about-transition {
+    display: flex;
+    justify-content: flex-end;
+    padding-inline-end: var(--space-12);
+  }
+}
+
+/* 紧接转场的区块不再叠加整段间距，让枝叶成为它的开场而不是孤岛。 */
+.about-transition + .about-section {
+  margin-top: var(--space-6);
+}
+
+/* About「最近在做」：植物跨出纸片边界（生长 / ongoing 隐喻）。 */
+.about-now__plant {
+  position: absolute;
+  z-index: 2;
+  inset-inline-end: var(--space-6);
+  inset-block-start: calc(-1 * var(--space-8));
+  width: 72px;
+}
+
+.about-now__plant img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .about-now__plant {
+    inset-block-start: calc(-1 * var(--space-12));
+    width: 104px;
+  }
+}
+
+/* Article Header：文章编号 + 小节编号 + 分类 mark，正文背景保持干净。 */
+.post-header__index {
+  margin: 0 0 var(--space-2);
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+.post {
+  position: relative;
+}
+
+.post-header__title--long {
+  text-wrap: pretty;
+}
+
+/* Edge Rail：极窄 editorial margin，只承载分类 mark、文章编号与小节编号。
+   它不是 TOC、不是导航、不是第二正文列，因此不进入 740px 阅读列。 */
+.post-rail {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .post-rail {
+    position: absolute;
+    inset-block-start: var(--space-4);
+    inset-inline-end: calc(100% + var(--space-8));
+    display: grid;
+    gap: var(--space-3);
+    justify-items: end;
+    width: max-content;
+    color: var(--color-muted);
+  }
+
+  .post-rail__mark .mark {
+    --mark-size: 22px;
+    display: block;
+  }
+
+  .post-rail__number {
+    font-family: var(--font-code);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
+  .post-body h2 {
+    position: relative;
+  }
+
+  .post-body h2[data-rail]::before {
+    position: absolute;
+    inset-inline-end: calc(100% + var(--space-6));
+    inset-block-start: 0.45em;
+    color: var(--color-muted);
+    font-family: var(--font-code);
+    font-size: 11px;
+    font-weight: var(--weight-regular);
+    letter-spacing: 0.12em;
+    content: attr(data-rail);
   }
 }

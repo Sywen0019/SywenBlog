@@ -1,5 +1,14 @@
 # Agent 交接记录（H）
 
+## 视觉架构重构（Narrative Layer）契约登记 · 2026-09-18
+
+- 契约正文见 [visual-architecture.md](visual-architecture.md)。本文件只登记接口，不重复解释。
+- 新增冻结命名：`.narrative`、`.hand-note`、`.paper-slip`、`.paper-panel`、`.short-rule`、`.section-number`、`.mark` / `.mark--{name}`、`.page-rail`、`.section-header--ruled`。改名须先改契约。
+- Narrative Layer 合同：装饰容器 `aria-hidden="true"`、不可聚焦、`pointer-events: none`、不覆盖交互元素、不进入 Post `740px` 阅读列、图片失败不破坏布局、不依赖 JavaScript。
+- Blog 缩略图决策：取消分类缩略图作为默认文章封面。Phase 1 删除 `.post-entry--with-thumb`、`.art-frame--thumb`、`--entry-thumb-w`、`--entry-thumb-h` 与 `js/site.js` 的缩略图分支；分类小画与首页分类卡保留。
+- 本轮样板范围（用户确认）：Header → Home Hero / Recent → Blog 两条文章 → About Intro → Article Header + 第一节 → Footer。不铺开全部页面。
+- 无脚本契约不变：增强控件继续 `hidden`，由各自模块移除；Narrative Layer 全部由静态 HTML + CSS 承担。
+
 ## E02 接口登记 · 2026-09-17（Passed，本地）
 
 - A02：About 平板阅读人物；`assets/images/about-reading-640.webp`、`about-reading-1280.webp`，4:3，每次请求 ≤200KB。三视图为唯一身份依据，Hero J 仅为画法参考。

@@ -556,7 +556,10 @@ async function run(browserName, browser) {
       await probe.close();
       return padding;
     })();
-    assert.equal(parseFloat(nojsReserve), 32, '无脚本页脚留白应保持基线 32px，实际 ' + nojsReserve);
+    // 2026-09-18 视觉架构重构：页脚升级为全站视觉收束点（多一句手写旁白与一个
+    // 微型 mark），基线底部留白由 32px 改为 64px（--space-16）。reading.js 就绪后
+    // 仍在其上再加 --footer-reserve，无脚本时保持这个新的基线值不变。
+    assert.equal(parseFloat(nojsReserve), 64, '无脚本页脚留白应保持基线 64px，实际 ' + nojsReserve);
     return { pages: pages.length, allHidden: true, noScriptFooterPadding: nojsReserve };
   });
 

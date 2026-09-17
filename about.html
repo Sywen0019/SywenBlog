@@ -8,6 +8,7 @@
 <script src="./js/theme.js"></script>
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/components.css">
+<link rel="stylesheet" href="./css/narrative.css">
 <link rel="stylesheet" href="./css/pages.css">
 <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
 <noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
@@ -26,8 +27,8 @@
   <div class="site-header__inner container">
     <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
     <div class="site-tools">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
-      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
     </div>
     <nav class="site-nav" aria-label="主导航">
       <ul class="site-nav__list">
@@ -43,6 +44,7 @@
   <div class="container">
 
     <header class="page-header">
+      <p class="page-header__eyebrow" aria-hidden="true">PERSONAL SPACE</p>
       <h1 class="page-title">关于</h1>
       <p class="page-intro">这里是我和这个站点的简单介绍，也会说明学业、生活和兴趣内容。</p>
     </header>
@@ -66,19 +68,35 @@
 
     <section class="about-section about-study" aria-labelledby="about-study-title">
       <h2 id="about-study-title">学业方向</h2>
-      <ul class="text-list">
-        <li>正在学习：Transformer 与注意力机制的基本原理。</li>
-        <li>正在练习：原生 JavaScript 与浏览器基础，尽量不依赖框架。</li>
-        <li>正在整理：论文阅读方法与可复用的笔记结构。</li>
-      </ul>
+      <ol class="study-notes">
+        <li class="study-notes__item">
+          <span class="study-notes__index" aria-hidden="true">01</span>
+          <span class="study-notes__mark" aria-hidden="true"><svg class="mark" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-notebook"></use></svg></span>
+          <p class="study-notes__text"><span class="study-notes__label">正在学习</span>Transformer 与注意力机制的基本原理。</p>
+        </li>
+        <li class="study-notes__item">
+          <span class="study-notes__index" aria-hidden="true">02</span>
+          <span class="study-notes__mark" aria-hidden="true"><svg class="mark" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-laptop"></use></svg></span>
+          <p class="study-notes__text"><span class="study-notes__label">正在练习</span>原生 JavaScript 与浏览器基础，尽量不依赖框架。</p>
+        </li>
+        <li class="study-notes__item">
+          <span class="study-notes__index" aria-hidden="true">03</span>
+          <span class="study-notes__mark" aria-hidden="true"><svg class="mark" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-reading"></use></svg></span>
+          <p class="study-notes__text"><span class="study-notes__label">正在整理</span>论文阅读方法与可复用的笔记结构。</p>
+        </li>
+      </ol>
     </section>
+
+    <div class="narrative about-transition" aria-hidden="true">
+      <span class="narrative-branch"><img src="./assets/images/a08-transition-branch.webp" width="3960" height="1316" alt="" loading="lazy" decoding="async"></span>
+    </div>
 
     <section class="about-section about-interests" aria-labelledby="about-interest-title">
       <h2 id="about-interest-title">我喜欢的</h2>
-      <ul class="text-list">
-        <li>美食与值得回味的小店。</li>
-        <li>最近看的动漫与漫画，也喜欢线稿风格。</li>
-        <li>最近玩的游戏与交互设计。</li>
+      <ul class="interest-tags">
+        <li class="interest-tags__item"><svg class="mark" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-coffee"></use></svg><span>美食与值得回味的小店</span></li>
+        <li class="interest-tags__item"><svg class="mark" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-reading"></use></svg><span>动漫与漫画，也喜欢线稿风格</span></li>
+        <li class="interest-tags__item"><svg class="mark" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-headphones"></use></svg><span>游戏与交互设计</span></li>
       </ul>
     </section>
 
@@ -103,7 +121,7 @@
             </li>
           </ul>
         </div>
-        <span class="about-decoration about-now__decoration" aria-hidden="true">
+        <span class="narrative narrative-plant about-now__plant" aria-hidden="true">
           <img src="./assets/images/a07-plant.webp" width="330" height="330" alt="" decoding="async" loading="lazy">
         </span>
       </div>
@@ -134,6 +152,10 @@
       <a href="./about.html">关于</a>
       <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
     </nav>
+    <div class="site-footer__mark narrative" aria-hidden="true">
+      <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-flower"></use></svg>
+    </div>
+    <p class="hand-note site-footer__hand-note" aria-hidden="true">慢慢写，慢慢长。</p>
     <p class="site-footer__copyright">© 2026 Sywen's Space</p>
   </div>
 </footer>

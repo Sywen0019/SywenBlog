@@ -17,7 +17,14 @@
     root.dataset.theme = theme;
     const button = document.getElementById('theme-toggle');
     if (button) {
-      button.textContent = theme === 'dark' ? '切换至浅色' : '切换至深色';
+      const label = theme === 'dark' ? '切换至浅色' : '切换至深色';
+      // 工具按钮是紧凑图标按钮：可见文字收进 .theme-toggle__label（视觉隐藏），
+      // 无障碍名称由 aria-label 承担，tooltip 由 title 承担，两者始终同步。
+      const span = button.querySelector('.theme-toggle__label');
+      if (span) span.textContent = label;
+      else button.textContent = label;
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
       button.setAttribute('aria-pressed', String(theme === 'dark'));
     }
     return theme;

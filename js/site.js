@@ -72,6 +72,26 @@
     else window.scrollTo(0, 0);
   };
 
+  // Editorial Marks（docs/visual-architecture.md §6）：装饰性线稿符号，
+  // 永远 aria-hidden、不可聚焦，只作 editorial annotation。
+  site.createMark = function (name, modifier) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'mark' + (modifier ? ' mark--' + modifier : ''));
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    use.setAttribute('href', site.resolveUrl('assets/icons/marks.svg#mark-' + name));
+    svg.append(use);
+    return svg;
+  };
+
+  // 档案编号：编号跟着文章本身，不跟着当前筛选结果，避免同一篇在筛选后换号。
+  site.archiveNumber = function (post) {
+    const list = Array.isArray(site.posts) ? site.posts : [];
+    const position = list.findIndex((item) => item.slug === post.slug);
+    return position < 0 ? null : position + 1;
+  };
+
   site.createPostEntry = function (post, headingLevel, options) {
     const category = site.categories.find((item) => item.id === post.category);
     if (!category || typeof post.title !== 'string' || typeof post.summary !== 'string'
@@ -79,28 +99,12 @@
         || !/^posts\/[a-z0-9-]+\.html$/.test(post.url) || !/^\d{4}-\d{2}-\d{2}$/.test(post.date)) {
       throw new Error('Invalid registered article');
     }
+    const index = options && Number.isInteger(options.index)
+      ? options.index
+      : (site.archiveNumber(post) || 1) - 1;
     const entry = document.createElement('li');
     entry.className = 'post-entry';
     entry.dataset.postId = post.slug;
-    // E01：分类小画是按分类复用的装饰缩略（无人物、空替代文本），仅调用方要求时渲染。
-    const withThumb = Boolean(options && options.thumbnail && category.image);
-    if (withThumb) entry.classList.add('post-entry--with-thumb');
-    let thumb = null;
-    if (withThumb) {
-      thumb = document.createElement('span');
-      thumb.className = 'art-frame art-frame--thumb post-entry__thumb';
-      thumb.setAttribute('aria-hidden', 'true');
-      const thumbImg = document.createElement('img');
-      thumbImg.className = 'art-frame__image';
-      thumbImg.src = site.resolveUrl(category.image);
-      thumbImg.alt = '';
-      thumbImg.width = 640;
-      thumbImg.height = 480;
-      thumbImg.loading = 'lazy';
-      thumbImg.decoding = 'async';
-      thumb.append(thumbImg);
-      watchImage(thumbImg);
-    }
     const date = document.createElement('time');
     date.className = 'post-entry__date';
     date.dateTime = post.date;
@@ -109,7 +113,20 @@
     content.className = 'post-entry__content';
     const label = document.createElement('p');
     label.className = 'post-entry__category';
-    label.textContent = category.name + ' ';
+    // Blog 条目按档案页语法带上编号与分类 mark；两者都是装饰，不承担信息。
+    const number = document.createElement('span');
+    number.className = 'post-entry__number';
+    number.setAttribute('aria-hidden', 'true');
+    number.textContent = 'A-' + String(index + 1).padStart(2, '0');
+    label.append(number);
+    if (category.mark && typeof site.createMark === 'function') {
+      const mark = document.createElement('span');
+      mark.className = 'category-mark';
+      mark.setAttribute('aria-hidden', 'true');
+      mark.append(site.createMark(category.mark, 'small'));
+      label.append(mark);
+    }
+    label.append(document.createTextNode(category.name + ' '));
     const meta = document.createElement('span');
     meta.className = 'post-entry__meta';
     meta.textContent = '/ ' + post.readingTime + ' 分钟' + (post.isDemo ? ' · 示例' : '');
@@ -126,7 +143,6 @@
     summary.textContent = post.summary;
     content.append(label, heading, summary);
     entry.append(date, content);
-    if (thumb) entry.prepend(thumb);
     return entry;
   };
 

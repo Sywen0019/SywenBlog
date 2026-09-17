@@ -8,6 +8,7 @@
 <script src="./js/theme.js"></script>
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/components.css">
+<link rel="stylesheet" href="./css/narrative.css">
 <link rel="stylesheet" href="./css/pages.css">
 <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
 <noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
@@ -26,8 +27,8 @@
   <div class="site-header__inner container">
     <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
     <div class="site-tools">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
-      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
     </div>
     <nav class="site-nav" aria-label="主导航">
       <ul class="site-nav__list">
@@ -69,11 +70,15 @@
 
     <section class="home-section" aria-labelledby="recent-title">
       <div class="section-header">
+        <div class="section-header__main">
         <h2 class="section-header__title" id="recent-title"><span class="section-header__number" aria-hidden="true">01</span>最近文章</h2>
+        <p class="hand-note section-header__note" aria-hidden="true">最近的几页。</p>
+        </div>
         <a class="section-header__link" href="./blog.html">查看全部文章</a>
       </div>
       <ol class="post-list" id="home-recent">
         <li class="post-entry" data-post-id="attention-intuition">
+          <span class="post-entry__number" aria-hidden="true">A-01</span>
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
             <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
@@ -82,6 +87,7 @@
           </div>
         </li>
         <li class="post-entry" data-post-id="dom-search-notes">
+          <span class="post-entry__number" aria-hidden="true">A-02</span>
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
             <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
@@ -90,6 +96,7 @@
           </div>
         </li>
         <li class="post-entry" data-post-id="paper-reading-notes">
+          <span class="post-entry__number" aria-hidden="true">A-03</span>
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
             <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
@@ -102,25 +109,43 @@
 
     <section class="home-section" aria-labelledby="categories-title">
       <div class="section-header">
+        <div class="section-header__main">
         <h2 class="section-header__title" id="categories-title"><span class="section-header__number" aria-hidden="true">02</span>分类</h2>
+        <p class="hand-note section-header__note" aria-hidden="true">三条常走的路。</p>
+        </div>
       </div>
       <ul class="category-list" id="home-categories">
         <li class="category-list__item">
-          <a class="category-link category-link--card" href="./blog.html?category=study">
+          <a class="category-link category-link--study" href="./blog.html?category=study">
+            <span class="category-link__number" aria-hidden="true">C-01</span>
             <span class="category-link__art art-frame art-frame--category" aria-hidden="true"><img class="art-frame__image" src="./assets/images/cat-study.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></span>
-            <span class="category-link__body"><span class="category-link__name">学业</span> <span class="category-count" data-category-count="study">3</span> 篇</span>
+            <span class="category-link__body">
+              <span class="category-link__name">学业</span>
+              <span class="category-link__meta"><span class="category-count" data-category-count="study">3</span> 篇</span>
+              <span class="category-link__desc">课程、笔记与慢慢弄懂的概念。</span>
+            </span>
           </a>
         </li>
         <li class="category-list__item">
-          <a class="category-link category-link--card" href="./blog.html?category=life">
+          <a class="category-link category-link--life" href="./blog.html?category=life">
+            <span class="category-link__number" aria-hidden="true">C-02</span>
             <span class="category-link__art art-frame art-frame--category" aria-hidden="true"><img class="art-frame__image" src="./assets/images/cat-life.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></span>
-            <span class="category-link__body"><span class="category-link__name">生活</span> <span class="category-count" data-category-count="life">1</span> 篇</span>
+            <span class="category-link__body">
+              <span class="category-link__name">生活</span>
+              <span class="category-link__meta"><span class="category-count" data-category-count="life">1</span> 篇</span>
+              <span class="category-link__desc">日常节奏、手账与留白。</span>
+            </span>
           </a>
         </li>
         <li class="category-list__item">
-          <a class="category-link category-link--card" href="./blog.html?category=favorites">
+          <a class="category-link category-link--favorites" href="./blog.html?category=favorites">
+            <span class="category-link__number" aria-hidden="true">C-03</span>
             <span class="category-link__art art-frame art-frame--category" aria-hidden="true"><img class="art-frame__image" src="./assets/images/cat-favorites.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></span>
-            <span class="category-link__body"><span class="category-link__name">我喜欢的</span> <span class="category-count" data-category-count="favorites">0</span> 篇</span>
+            <span class="category-link__body">
+              <span class="category-link__name">我喜欢的</span>
+              <span class="category-link__meta"><span class="category-count" data-category-count="favorites">0</span> 篇</span>
+              <span class="category-link__desc">美食、动漫与游戏里的偏爱。</span>
+            </span>
           </a>
         </li>
       </ul>
@@ -128,9 +153,14 @@
 
     <section class="home-section" aria-labelledby="now-title">
       <div class="section-header">
+        <div class="section-header__main">
         <h2 class="section-header__title" id="now-title"><span class="section-header__number" aria-hidden="true">03</span>最近在做</h2>
+        <p class="hand-note section-header__note" aria-hidden="true">持续进行中。</p>
+        </div>
       </div>
-      <div class="note-panel">
+      <div class="now-slip">
+      <div class="note-panel paper-panel paper-panel--dots">
+        <p class="now-slip__stamp" aria-hidden="true">CURRENTLY</p>
         <ul class="note-panel__list">
           <li class="note-panel__item">
             <p class="note-panel__label">正在学习</p>
@@ -145,6 +175,8 @@
             <p class="note-panel__text">美食、动画与游戏。</p>
           </li>
         </ul>
+      </div>
+      <span class="narrative narrative-plant now-slip__plant" aria-hidden="true"><img src="./assets/images/a07-plant.webp" width="330" height="330" alt="" loading="lazy" decoding="async"></span>
       </div>
     </section>
 
@@ -161,6 +193,10 @@
       <a href="./about.html">关于</a>
       <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
     </nav>
+    <div class="site-footer__mark narrative" aria-hidden="true">
+      <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-flower"></use></svg>
+    </div>
+    <p class="hand-note site-footer__hand-note" aria-hidden="true">慢慢写，慢慢长。</p>
     <p class="site-footer__copyright">© 2026 Sywen's Space</p>
   </div>
 </footer>

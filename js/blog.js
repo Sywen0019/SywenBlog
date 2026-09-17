@@ -55,7 +55,7 @@
       });
       const list = document.createElement('ol');
       list.className = 'post-list';
-      matches.forEach((post) => list.append(site.createPostEntry(post, 2, { thumbnail: true })));
+      matches.forEach((post) => list.append(site.createPostEntry(post, 2)));
       results.replaceChildren(list);
       results.hidden = matches.length === 0;
       empty.hidden = matches.length !== 0;

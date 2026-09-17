@@ -1,0 +1,336 @@
+/* ==========================================================================
+   narrative.css — Narrative Layer 词汇与 Editorial Marks
+   1. 装饰基础（.narrative / .short-rule）
+   2. Editorial Marks（不是 UI 图标库）
+   3. 纸签与纸面（.paper-slip / .paper-panel）
+   4. 手写旁白（.hand-note）
+   5. 页面边缘叙事（.page-rail 原型）
+   6. 网点与转场
+
+   契约见 docs/visual-architecture.md §5–§9。
+   本文件只提供词汇与工具类，不摆放具体页面构图；页面构图一律在 pages.css。
+   本文件所有元素都属于 Narrative Layer：不承载关键内容，且必须
+   aria-hidden="true"、不可聚焦、pointer-events: none。
+   ========================================================================== */
+
+/* ==========================================================================
+   1. 装饰基础
+   ========================================================================== */
+
+/* 装饰容器：任何 Narrative Layer 元素都应显式加上这个类。 */
+.narrative {
+  pointer-events: none;
+}
+
+/* 短分隔 rule：替代无条件全宽 border-bottom，用于区块之间的轻量停顿。 */
+.short-rule {
+  display: block;
+  width: var(--rule-short-width, 72px);
+  height: var(--line-thin);
+  border: 0;
+  margin: var(--space-6) 0;
+  background-color: var(--color-rule);
+}
+
+.short-rule--ink {
+  background-color: var(--color-ink);
+}
+
+.short-rule--center {
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   2. Editorial Marks
+   24×24 viewBox、currentColor、fill:none、圆头线稿；与人物线稿粗细协调。
+   只作 editorial annotation，不承担整套产品 UI iconography。
+   ========================================================================== */
+
+.mark {
+  display: inline-block;
+  width: var(--mark-size, 20px);
+  height: var(--mark-size, 20px);
+  flex: none;
+  color: inherit;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--mark-stroke, 1.5);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+.mark--muted {
+  color: var(--color-muted);
+}
+
+.mark--small {
+  --mark-size: 16px;
+}
+
+.mark--large {
+  --mark-size: 28px;
+}
+
+/* 分类 mark：与分类名称同基线，不抢标题权重 */
+.category-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   3. 纸签与纸面
+   ========================================================================== */
+
+/* Paper Slip：Current status、短旁白、Demo note、FAQ 少量强调。
+   不允许每个内容模块都变成纸片。 */
+.paper-slip {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: var(--line-thin) solid var(--color-rule);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--text-meta);
+  line-height: var(--leading-meta);
+}
+
+.paper-slip--tilt {
+  transform: rotate(var(--slip-angle, -1.2deg));
+}
+
+.paper-slip--accent {
+  background-color: var(--color-note);
+  border-color: color-mix(in srgb, var(--color-ink) 20%, transparent);
+}
+
+/* Paper Panel：纸面语气的容器。它承载内容（Current status 的条目），
+   因此**不是**纯装饰，不加 aria-hidden；只有它内部的纸签、网点、植物才是
+   Narrative。基础分组用 .note-panel，纸面由这里叠加。 */
+.paper-panel {
+  position: relative;
+  padding: var(--space-6);
+  border: var(--line-thin) solid var(--color-rule);
+  border-top: var(--line-strong) solid var(--color-ink);
+  background-color: var(--color-surface);
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--color-shadow) 16%, transparent);
+}
+
+.paper-panel--dots {
+  background-image: radial-gradient(var(--color-rule) 0.6px, transparent 0.6px);
+  background-size: 12px 12px;
+}
+
+/* 装饰性排版细节：编号与眉标是 editorial annotation，不可点击、不参与命中测试。 */
+.section-header__number,
+.post-entry__number,
+.category-mark,
+.post-header__index,
+.page-header__eyebrow,
+.now-slip__stamp,
+.study-notes__index {
+  pointer-events: none;
+}
+
+/* 学业方向的小型物件 mark：editorial annotation，不是控件。 */
+.study-notes__mark {
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+/* 胶带：只用于固定纸片或纸框，每页最多一处主视觉 + 一处辅助。 */
+.narrative-tape {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: var(--tape-width);
+  height: var(--tape-height);
+  background-color: var(--color-accent);
+  transform: rotate(var(--decoration-angle));
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   4. 手写旁白
+   不加载远程字体：使用系统手写/楷体栈，中文落在楷体上，西文落在手写体上。
+   手写体只用于短旁白，绝不用于正文与标题。
+   ========================================================================== */
+
+.hand-note {
+  margin: 0;
+  color: var(--color-muted);
+  font-family: var(--font-hand);
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+.hand-note--ink {
+  color: var(--color-ink);
+}
+
+.hand-note--tilt {
+  transform: rotate(var(--note-angle, -1.5deg));
+}
+
+/* 带引线的手写旁注：短横线 + 手写短句，用于列表或区块旁的窄旁注。 */
+.hand-note--aside {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.hand-note--aside::before {
+  flex: none;
+  width: var(--space-6);
+  height: var(--line-thin);
+  background-color: var(--color-rule);
+  content: "";
+  transform: translateY(-0.4em);
+}
+
+/* ==========================================================================
+   5. 页面边缘叙事（page-rail 原型）
+   极窄 editorial margin：分类 mark、小节编号、微型旁注。
+   它不是 TOC、不是导航栏、不是第二正文列，因此只在宽视口出现，
+   且不承载任何必要信息。是否固定 1200px 断点由样板截图决定。
+   ========================================================================== */
+
+.page-rail {
+  display: none;
+}
+
+.rail-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-muted);
+  font-family: var(--font-code);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+.rail-item + .rail-item {
+  margin-top: var(--space-4);
+}
+
+/* ==========================================================================
+   6. 网点与转场
+   ========================================================================== */
+
+/* 网点：视觉停顿与局部 texture；只用于小块装饰，禁止铺满正文。 */
+.narrative-dots {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  width: var(--dot-area-size);
+  height: var(--dot-area-size);
+  background-color: var(--color-ink);
+  background-image: radial-gradient(var(--color-ink) calc(var(--dot-size) / 2), transparent calc(var(--dot-size) / 2));
+  background-size: var(--dot-gap) var(--dot-gap);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='.5' fill='%23fff'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='.5' fill='%23fff'/%3E%3C/svg%3E");
+  -webkit-mask-size: var(--dot-gap) var(--dot-gap);
+  mask-size: var(--dot-gap) var(--dot-gap);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  opacity: var(--dot-opacity);
+  pointer-events: none;
+}
+
+/* 转场枝叶：连接 section 的静态衔接素材，保持原始线稿纸面。 */
+.narrative-branch {
+  display: block;
+  width: var(--branch-width, 200px);
+  margin: 0;
+  background: var(--color-art-paper);
+  border-radius: var(--radius-small);
+  pointer-events: none;
+}
+
+.narrative-branch img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 植物：只允许出现在 About、Currently、Footer 与成长 / ongoing 语义区域。 */
+.narrative-plant {
+  display: block;
+  background: transparent;
+  pointer-events: none;
+}
+
+.narrative-plant img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 装饰图片失败：收起装饰本身，不破坏布局。 */
+.narrative-branch img[hidden],
+.narrative-plant img[hidden] {
+  display: none;
+}
+
+/* 兴趣标签里的物件符号是 Narrative；标签本身属于 Content Layer。 */
+.interest-tags__item .mark {
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   7. 分页与区块结尾标记
+   ========================================================================== */
+
+.section-end {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+  color: var(--color-muted);
+}
+
+.section-end::before,
+.section-end::after {
+  flex: 1 1 auto;
+  height: var(--line-thin);
+  background-color: var(--color-rule);
+  content: "";
+}
+
+/* ==========================================================================
+   8. 响应式与降级
+   移动端减少 Narrative，而不是机械缩放。
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+  /* 原型：是否采用固定 1200px 断点由 Phase 3 样板截图决定。 */
+  .page-rail {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: calc(100% + var(--space-6));
+    display: block;
+    width: max-content;
+    max-width: 88px;
+    text-align: end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paper-slip--tilt,
+  .hand-note--tilt,
+  .narrative-tape {
+    transform: none;
+  }
+}

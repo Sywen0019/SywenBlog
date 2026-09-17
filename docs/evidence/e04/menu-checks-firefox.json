@@ -1,8 +1,8 @@
 {
   "browser": "firefox",
   "browserVersion": "155.0",
-  "baseCommit": "7e7c1c963b9bc8bab0a267811c7e61c19733eb94",
-  "at": "2026-09-17T02:28:15.295Z",
+  "baseCommit": "6c454f2847088265e5fcb626da4d3f9f970d144e",
+  "at": "2026-09-17T14:59:04.223Z",
   "checks": [
     {
       "name": "1. 七页脚本顺序与资源",
@@ -216,7 +216,7 @@
           "inFooterLinks": false
         },
         "快捷菜单按钮": {
-          "target": "quick-menu-button",
+          "target": {},
           "prevented": true,
           "inBody": false,
           "inFooterLinks": false
@@ -231,9 +231,9 @@
       "pass": true,
       "detail": {
         "notice": "链接已复制",
-        "copied": "http://127.0.0.1:58793/posts/dom-search-notes.html",
-        "expected": "http://127.0.0.1:58793/posts/dom-search-notes.html",
-        "pageUrl": "http://127.0.0.1:58793/blog.html?q=DOM#main",
+        "copied": "http://127.0.0.1:16746/posts/dom-search-notes.html",
+        "expected": "http://127.0.0.1:16746/posts/dom-search-notes.html",
+        "pageUrl": "http://127.0.0.1:16746/blog.html?q=DOM#main",
         "noticeAutoHidden": true
       }
     },
@@ -241,7 +241,7 @@
       "name": "11. 复制失败降级面板",
       "pass": true,
       "detail": {
-        "value": "http://127.0.0.1:58793/posts/attention-intuition.html",
+        "value": "http://127.0.0.1:16746/posts/attention-intuition.html",
         "selection": "whole",
         "nativeMenu": false
       }
@@ -266,7 +266,7 @@
       "pass": true,
       "detail": {
         "blogSearch": "search-input",
-        "otherPageSearch": "http://127.0.0.1:58793/blog.html?focus=search",
+        "otherPageSearch": "http://127.0.0.1:16746/blog.html?focus=search",
         "topFocus": "",
         "theme": {
           "before": "light",
@@ -285,8 +285,8 @@
         "second": 50,
         "api": 50,
         "scrolled": {
-          "applied": 672,
-          "max": 1344
+          "applied": 741,
+          "max": 1482
         },
         "closedByScroll": true
       }
@@ -325,8 +325,8 @@
       "name": "17. 子目录路径与地址",
       "pass": true,
       "detail": {
-        "blog": "http://127.0.0.1:58793/course/blog/index.html",
-        "post": "http://127.0.0.1:58793/course/blog/posts/dom-search-notes.html"
+        "blog": "http://127.0.0.1:16746/course/blog/index.html",
+        "post": "http://127.0.0.1:16746/course/blog/posts/dom-search-notes.html"
       }
     },
     {
@@ -372,18 +372,18 @@
           "1440-light": {
             "size": [
               1440,
-              1947
+              1609
             ],
-            "viewportHeight": 1947,
+            "viewportHeight": 1609,
             "diffOutsideHeader": 0,
             "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
           },
           "390-light": {
             "size": [
               390,
-              2057
+              1951
             ],
-            "viewportHeight": 2057,
+            "viewportHeight": 1951,
             "diffOutsideHeader": 0,
             "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
           }
@@ -443,11 +443,6 @@
   "passed": 20,
   "failed": 0,
   "recoveredToggles": [
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",

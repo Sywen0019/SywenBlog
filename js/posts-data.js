@@ -1,21 +1,28 @@
 (function () {
   'use strict';
   const site = window.Sywen = window.Sywen || {};
+  // mark 对应 assets/icons/marks.svg 中的 symbol id；note 是分类的短辅助描述。
   site.categories = [
   {
     "id": "study",
     "name": "学业",
-    "image": "assets/images/cat-study.webp"
+    "image": "assets/images/cat-study.webp",
+    "mark": "book-stack",
+    "note": "课程、笔记与慢慢弄懂的概念。"
   },
   {
     "id": "life",
     "name": "生活",
-    "image": "assets/images/cat-life.webp"
+    "image": "assets/images/cat-life.webp",
+    "mark": "coffee",
+    "note": "日常节奏、手账与留白。"
   },
   {
     "id": "favorites",
     "name": "我喜欢的",
-    "image": "assets/images/cat-favorites.webp"
+    "image": "assets/images/cat-favorites.webp",
+    "mark": "flower",
+    "note": "美食、动漫与游戏里的偏爱。"
   }
 ];
   site.posts = [

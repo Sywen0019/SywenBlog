@@ -8,6 +8,7 @@
 <script src="./js/theme.js"></script>
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/components.css">
+<link rel="stylesheet" href="./css/narrative.css">
 <link rel="stylesheet" href="./css/pages.css">
 <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
 <noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
@@ -27,8 +28,8 @@
   <div class="site-header__inner container">
     <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
     <div class="site-tools">
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" hidden>切换至深色</button>
-      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" hidden>快捷菜单</button>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
     </div>
     <nav class="site-nav" aria-label="主导航">
       <ul class="site-nav__list">
@@ -44,8 +45,10 @@
   <div class="container">
 
     <header class="page-header">
+      <p class="page-header__eyebrow" aria-hidden="true">ARCHIVE · SYWEN'S SPACE</p>
       <h1 class="page-title">文章</h1>
       <p class="page-intro">四篇示例文章分为学业与生活两类，之后也会加入我喜欢的内容；可以按标题、摘要或标签搜索，也可以只看某一类。</p>
+      <p class="blog-archive-note hand-note narrative" aria-hidden="true">目前共四篇示例，按时间归档。</p>
     </header>
 
     <div class="blog-filters" id="blog-filters" hidden>
@@ -75,8 +78,9 @@
     </section>
 
     <ol class="post-list" id="blog-static-list">
-        <li class="post-entry post-entry--with-thumb" data-post-id="attention-intuition">
-          <span class="art-frame art-frame--thumb post-entry__thumb" aria-hidden="true"><img class="art-frame__image" src="./assets/images/cat-study.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></span>
+        <li class="post-entry" data-post-id="attention-intuition">
+          <span class="post-entry__number" aria-hidden="true">A-01</span>
+          <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-book-stack"></use></svg></span>
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
             <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
@@ -84,8 +88,9 @@
             <p class="post-entry__summary">从阅读一句话时如何寻找线索出发，理解 Query、Key 和 Value 的分工。先建立加权汇总的直觉，再区分这个比喻能解释什么、不能解释什么。</p>
           </div>
         </li>
-        <li class="post-entry post-entry--with-thumb" data-post-id="dom-search-notes">
-          <span class="art-frame art-frame--thumb post-entry__thumb" aria-hidden="true"><img class="art-frame__image" src="./assets/images/cat-study.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></span>
+        <li class="post-entry" data-post-id="dom-search-notes">
+          <span class="post-entry__number" aria-hidden="true">A-02</span>
+          <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-book-stack"></use></svg></span>
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
             <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
@@ -93,8 +98,9 @@
             <p class="post-entry__summary">用一个小型文章列表拆解搜索流程：整理数据、组合条件、创建 DOM，再处理中文输入与失败降级。让交互保持简单，也让没有脚本的页面依然可读。</p>
           </div>
         </li>
-        <li class="post-entry post-entry--with-thumb" data-post-id="paper-reading-notes">
-          <span class="art-frame art-frame--thumb post-entry__thumb" aria-hidden="true"><img class="art-frame__image" src="./assets/images/cat-study.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></span>
+        <li class="post-entry" data-post-id="paper-reading-notes">
+          <span class="post-entry__number" aria-hidden="true">A-03</span>
+          <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-book-stack"></use></svg></span>
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
             <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
@@ -102,8 +108,9 @@
             <p class="post-entry__summary">把论文笔记从摘抄改成问题、证据与局限的连接。通过三次阅读逐步建立地图，保留页码和图号，为下一次验证、复现与讨论留下入口。</p>
           </div>
         </li>
-        <li class="post-entry post-entry--with-thumb" data-post-id="leave-some-space">
-          <span class="art-frame art-frame--thumb post-entry__thumb" aria-hidden="true"><img class="art-frame__image" src="./assets/images/cat-life.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></span>
+        <li class="post-entry" data-post-id="leave-some-space">
+          <span class="post-entry__number" aria-hidden="true">A-04</span>
+          <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-coffee"></use></svg></span>
           <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
           <div class="post-entry__content">
             <p class="post-entry__category">生活 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
@@ -126,6 +133,10 @@
       <a href="./about.html">关于</a>
       <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
     </nav>
+    <div class="site-footer__mark narrative" aria-hidden="true">
+      <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-flower"></use></svg>
+    </div>
+    <p class="hand-note site-footer__hand-note" aria-hidden="true">慢慢写，慢慢长。</p>
     <p class="site-footer__copyright">© 2026 Sywen's Space</p>
   </div>
 </footer>
