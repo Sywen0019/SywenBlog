@@ -1,5 +1,33 @@
 # Agent 交接记录（H）
 
+## 两篇 skill 设计文章与五篇内容当前契约 · 2026-09-18
+
+- 当前站点为八页、五篇文章：Home、Blog、About，以及 `posts/` 下 `ncs-figure-design`、`research-reading`、`deskmate-with-firefly`、`leave-some-space`、`scrna-grn-notes`。分类统计为 `study` 3、`life` 1、`favorites` 1。
+- 新增 `posts/ncs-figure-design.html` 与 `posts/research-reading.html`，页面分别使用 `data-post="ncs-figure-design"`、`data-post="research-reading"`；标题严格为《ncs-figure-design 的设计思路》《research-reading 的设计思路》。两篇均为纯文字正式长文，日期 `2026-09-18`、`readingTime: 4`、`isDemo: false`，不新增配图。
+- `window.Sywen.posts` 的字段与排序合同不变，仍按发布日期倒序、同日 `id` 升序。当前顺序与档案编号固定为：`ncs-figure-design`／`id: 1`／`A-01`，`research-reading`／`id: 2`／`A-02`，`deskmate-with-firefly`／`id: 5`／`A-03`，`leave-some-space`／`id: 4`／`A-04`，`scrna-grn-notes`／`id: 6`／`A-05`。`blog.html` 无脚本静态索引与脚本动态列表必须保持同一顺序。
+- `posts/attention-intuition.html`、`posts/dom-search-notes.html`、`posts/paper-reading-notes.html` 与仅供旧 JavaScript 文章使用的 `assets/images/search-flow.svg` 已永久删除。旧 URL 不提供兼容页、不创建重定向，也不得重新进入静态索引或发布产物。
+- 两个新 slug 已加入 `scripts/check-baseline.mjs`、E01／E03／E04 与 visual harness 的当前页列表；E03／E04 与 visual 的代表文章路径使用 `posts/ncs-figure-design.html`。`docs/evidence/**` 中的历史 JSON、截图和结论保留为当时真实记录，不按当前五篇状态回写。
+- 搜索字段、分类筛选、文章深链接与 `ai`／`coding`／`research` 到 `study` 的旧分类映射保持兼容；未新增 `window.Sywen` 属性或 API。
+
+## 文档发布测试样例的契约登记 · 2026-09-18
+
+- 新增可选数据字段 `isTestSample`（boolean）。为 `true` 时，`Sywen.createPostEntry` 在条目标签后追加 `· 测试样例`（与既有 `isDemo` → `· 示例` 并列，两者可同时为真）。字段是附加项，`createPostEntry` 的既有校验（`title`／`summary`／`tags`／`url`／`date`／分类）不变。
+- `.post-demo-note` 现在承载两种文章页标注：示例文章为「示例文章」，测试样例为「测试样例 · 用于验证文档发布流程」。**类名不变**，后续任务不要另立 `.post-test-note`。
+- 新页 `posts/scrna-grn-notes.html` 使用既有冻结结构：`data-post="scrna-grn-notes"`、`A-0N` 档案编号同时出现在 `post-header__index` 与 `post-rail__number`、study 的 mark 为 `#mark-book-stack`、标签链接按既有做法 percent-encode。
+- 编号规则未变：`Sywen.archiveNumber` 仍按 `site.posts` 位置返回 1 基编号。该文日期为 `2025-06-27`，在「日期倒序、同日 id 升序」中恒为最末，因此新增它本身不触发任何既有文章的重新编号；后续内容调整导致的实际编号以 `site.posts` 与 `blog.html` 静态索引为准（当前 `A-05`）。
+- 受影响检查的页列表与计数断言已同步：`scripts/check-baseline.mjs`（`pages`）、`docs/evidence/e01/illustration-checks.mjs`、`docs/evidence/visual/narrative-checks.mjs`、`docs/evidence/e03/reading-checks.mjs`、`docs/evidence/e04/menu-checks.mjs`。新增文章页会自动进入这些套件的逐页循环，无需其它登记。
+- 规格同步：`Plan.md` 的文章字段清单、`PROJECT_PLAN.html` §19.2 数据模型表都已加入该字段。
+
+## 纸齿（paper grain）契约登记 · 2026-09-18
+
+- 契约正文见 [visual-architecture.md](visual-architecture.md) §9 的"纸齿层级契约"。本文件只登记接口。
+- 新增/变更冻结 token：`--paper-grain-layer`（带强度的 grain 层，含 SVG data-URI）、`--paper-grain-size: 256px 256px`。**已删除** `--paper-grain-opacity`（旧值 `0.015`）：浓度改由 SVG 的 alpha 承担，层上不再有 `opacity`。
+- 浅色色值变更（**合成前**底色，均已做亮度补偿）：`--color-paper: #F6F8FA`、`--color-surface: #FFFEFB`、`--color-subtle: #F1EFEA`、`--color-note: #EDEAE5`。判据是渲染后纸色，不是 token 字面值——改一处必须同步另一处。
+- 深色主题不再关闭纸纹：`--paper-lighting` / `--paper-background` 仍为 `none`，但 `--paper-grain-layer` 覆盖为中性灰、alpha 0.1 的弱版本。`DESIGN_SPEC.md` §3 已同步改写。
+- 纸面容器共用一条规则（`css/narrative.css`）：`.paper-panel, .paper-slip, .note-panel, .art-frame` 加 `background-image: var(--paper-grain-layer)`。`.paper-panel--dots` 显式把 grain 串在网点层之前。
+- 两条硬约束（改动前必读）：① 不使用 `mix-blend-mode`（在 `html::after` 上实测振幅恒为 0）；② 不使用元素 `opacity` 承载纸齿（会让整张卡片透出背景色，实测约 −14 亮度漂移）。
+- 检查：`node docs/evidence/visual/paper-texture-checks.mjs` — **168/0**，其中新增像素断言"纸齿可感知（band-passed rms ≥ 1.0）"实测 1.230，形态断言 lag1 −0.073 / lag2 −0.001，渲染纸色 240.79/242.56/244.06。
+
 ## 视觉架构重构（Narrative Layer）契约登记 · 2026-09-18
 
 - 契约正文见 [visual-architecture.md](visual-architecture.md)。本文件只登记接口，不重复解释。

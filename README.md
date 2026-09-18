@@ -2,7 +2,7 @@
 
 原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Study · Life · Favorites。
 
-**作业基线已完成。** 七页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01（分类小画）、E02（About 阅读人物与静态转场）、E03（阅读增强）、E04（复制与快捷菜单）已在本地完成并通过检查，E05／E06 保持 Deferred。
+**作业基线已完成。** 八页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01（分类小画）、E02（About 阅读人物与静态转场）、E03（阅读增强）、E04（复制与快捷菜单）已在本地完成并通过检查，E05／E06 保持 Deferred。
 
 - [访问网站](https://sywen-blog.pages.dev/)
 - [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
@@ -13,16 +13,16 @@
 
 |要求|实现与证据|
 |---|---|
-|HTML|Home、Blog、About 与四篇完整示例文章，导航和文章深链接|
+|HTML|Home、Blog、About 与五篇完整文章（两篇 skill 设计长文、一篇生活随笔、一篇示例、一篇测试样例），导航和文章深链接|
 |CSS|三份样式表，纸面/线稿语言、浅深主题、手机重排、740px阅读列|
 |JavaScript|主题切换保存；标题/摘要/标签多词AND搜索；分类组合、数量、无结果与重置|
 |Git/Gitee|真实分阶段历史；main推送至Gitee，基线标签 coursework-baseline|
-|公开网站|Cloudflare Pages HTTPS；七页与资源和源提交逐文件核对|
+|公开网站|Cloudflare Pages HTTPS；八页与资源和源提交逐文件核对|
 |美术|电脑旁低头用平板与手写笔书写；640/1280 WebP，当前本地采用J，红色下半框与设备纯线稿；线上仍是旧D|
 
-四篇文章标为示例，不冒充科研成果。作者的计算机专业与设备习惯来自本人说明。
+两篇 skill 设计长文介绍 `ncs-figure-design` 与 `research-reading` 的工作流；《给学习留一点空白》标为示例；《和流萤做同桌》是本人随笔；《六月：单细胞与基因调控网络笔记》由文档转换发布，列表与文章页标注「测试样例」。作者的计算机专业与设备习惯来自本人说明。
 
-当前本地一级分类为「学业／生活／我喜欢的」（`study`／`life`／`favorites`），文章数量为 3／1／0；旧 `ai`、`coding`、`research` 查询参数会兼容到 `study`。线上地址仍按现有发布流程更新。
+当前本地一级分类为「学业／生活／我喜欢的」（`study`／`life`／`favorites`），文章数量为 3／1／1；旧 `ai`、`coding`、`research` 查询参数会兼容到 `study`。线上地址仍按现有发布流程更新。
 
 ## 本地预览
 
@@ -36,8 +36,8 @@ py -m http.server 8000 --bind 127.0.0.1
 
 ## 目录与约定
 
-- 顶层三个HTML与 `posts/` 四篇文章；`css/`：base / components / pages。
-- `js/`：theme / posts-data / site / blog / reading，经典脚本通过 `window.Sywen` 共享。
+- 顶层三个 HTML 与 `posts/` 五篇文章；`css/`：base / components / narrative / pages。
+- `js/`：theme / posts-data / site / blog / motion / reading / context-menu，经典脚本通过 `window.Sywen` 共享。
 - `assets/`：已采用图片与SVG；`参考素材/`：用户参考，不发布。
 - `scripts/`：发布、验收、录像；`docs/`：任务、交接、美术、验收和证据。
 - `PROJECT_PLAN.html` / `Plan.md` / `DESIGN_SPEC.md`：规格、当前B/E计划和视觉边界。

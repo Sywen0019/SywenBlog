@@ -112,6 +112,6 @@ git -c http.sslBackend=openssl push origin main
 ## 四、部署验收要点
 
 - 构建日志以 `[build] done:` 结束，Cloudflare 部署状态为成功。
-- 线上 `index.html`、`blog.html`、`about.html`、`posts/` 四篇文章均可访问。
+- 线上 `index.html`、`blog.html`、`about.html`、`posts/` 五篇文章均可访问。
 - CSS、图片、favicon、JS 全部 200，无 404 静态资源。
 - 资源路径全部为相对路径，Cloudflare 与子目录部署均可用；Linux 文件系统区分大小写，引用与文件名大小写必须一致。

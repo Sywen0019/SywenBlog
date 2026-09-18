@@ -1,5 +1,99 @@
 # Change Log
 
+## 2026-09-18 · 用两篇 skill 设计长文替换旧示例
+
+- 永久删除 `posts/attention-intuition.html`、`posts/dom-search-notes.html`、`posts/paper-reading-notes.html`，不提供兼容页或重定向；同时删除仅由旧 JavaScript 文章引用的 `assets/images/search-flow.svg`。
+- 新增 `posts/ncs-figure-design.html`《ncs-figure-design 的设计思路》与 `posts/research-reading.html`《research-reading 的设计思路》。两篇均为纯文字五部分长文，正文约 1544／1540 个中文字；沿用现有文章骨架、样式和脚本，不修改 CSS 或 JavaScript 行为。
+- 新文均为 `study`、日期 `2026-09-18`、`isDemo: false`、`readingTime: 4`。NCS 文使用 `id: 1` 和标签 `ncs-figure-design / 科研绘图 / 视觉规范`；research-reading 文使用 `id: 2` 和标签 `research-reading / 论文阅读 / 科研工作流`。`window.Sywen.posts` 字段与排序合同不变。
+- 当前五篇顺序为 `ncs-figure-design`、`research-reading`、`deskmate-with-firefly`、`leave-some-space`、`scrna-grn-notes`，对应 `A-01` 至 `A-05`；分类统计为 3／1／1。首页最近三篇与 Blog 静态索引、保留文章的相邻导航已同步。
+- 同步 README、Plan、PROJECT_PLAN、AGENTS、DESIGN_SPEC、当前交接与视觉架构说明；E01／E03／E04、baseline 和 visual harness 已改用当前页列表与新文代表路径。历史 `docs/evidence/**`、旧 T04 harness、截图和既有结论不改写。
+- **验证：** baseline **179/0**；E01 Edge／Chrome／Firefox 各 **48/0**；E03 各 **18/0**；E04 各 **20/0**；Narrative **24/0**；paper texture **168/0**。`bash scripts/build-site.sh` 成功生成 36 个文件，`dist/` 含两篇新文且不含三篇旧文或 `search-flow.svg`。当前运行时、索引与仍需执行的 harness 无旧 slug 残留。
+- **未验证：** 实体手机、屏幕阅读器、真实浏览器 UI 缩放、公开部署与 VC2；本轮不推送、不部署，也不宣告 E06 通过。
+
+## 2026-09-18 · 「我喜欢的」新增随笔《和流萤做同桌》
+
+- **新增文章**：`posts/deskmate-with-firefly.html`，分类 `favorites`（我喜欢的），日期 `2026-09-18`，标签「崩坏：星穹铁道／流萤／手办」，阅读时间约 1 分钟。正文严格按用户提供的四行文案排列（用 `<br>` 保留原始断行，「[练剑.jpg]」与「(〃∇〃)」等原始字符未改写），其后接两张配图。文章不是示例，因此文章页不带示例标注，列表元信息也不追加「· 示例」。
+- **配图**：两张照片按原字节复制为 `assets/images/deskmate-firefly-01.jpg`（747×640，76,397 B，SHA256 `843a82fe…4cf05f`）与 `deskmate-firefly-02.jpg`（640×944，87,845 B，SHA256 `5de3f442…a79aa906`），复制后哈希与来源逐位一致，未重编码。按用户决定**保留相机水印**（含拍摄时间与 GPS 坐标），不裁剪。这是本仓库第一次在文章正文里放照片，此前 `.post-figure` 只承载过一张 680×180 的流程 SVG。
+- **CSS（已实测的等价改动，不是缺陷修复）**：`css/components.css` 的 `.post-figure img` 增加 `height: auto`。在 Edge 153、Chrome 153、Firefox 155 下分别以 1440px 与 390px 运行「保留 `width: 100%`、运行时删掉 `height` 声明」的对照：三个引擎的渲染盒完全相同（740×634 与 740×1092，比例 1.1672／0.6780，与源图 747:640、640:944 四位小数一致）。**原因是这些引擎已从 `width`／`height` 属性推导宽高比，属性提示并不会把高度钉死**，所以这条声明只是把响应式图片的意图写进规则本身，不依赖属性提示；保留它不改变任何已测渲染结果。
+- **文案与计数同步**：把「篇数写死在文案里」的说法换成不会随篇数失效的写法——页脚说明由「四篇文章均为示例。」改为「示例文章另有标注。」（各页共用同一条），Blog 页 `page-intro`、归档旁注与 `meta description` 改为按分类描述，About 问答同步，首页分类计数「我喜欢的」由 0 改为 1。
+- **编号与排序**：本篇日期为全站最新，按「日期倒序、同日按 id 升序」排在最前；同日另有 `ncs-figure-design`（id 1）与 `research-reading`（id 2，见下一条），因此最终档案编号为 **A-03**。`blog.html` 静态索引、`index.html` 最近文章、文章页 `post-header__index`／`post-rail__number`／相邻导航都从同一顺序推导。
+- **验证**：文章页实测（1440／768／390）阅读列分别为 740／720／358px，两张配图各自按固有比例缩放，1440px 下为 740×634 与 740×1092；无横向溢出、无脚本错误、无 4xx。全量复跑：baseline **179/0**、E01 三浏览器各 **48/0**、E03 各 **18/0**、E04 各 **20/0**、Narrative **24/0**、paper texture **168/0**。
+- **已知取舍**：保留水印意味着公开页面会显示拍摄时间与 `26°24'12"N 112°50'53"E`，这是用户明确的选择；若之后要移除，替换两张 JPG 即可，尺寸与哈希记在 `docs/acceptance.md`。
+
+## 2026-09-18 · 发布文档转换的「测试样例」文章
+
+- 把用户提供的 `六月.docx`（单细胞 RNA 测序的稀疏与噪声 + GRN 推断术语笔记）转成文章 `posts/scrna-grn-notes.html`：标题《六月：单细胞与基因调控网络笔记》，分类 `study`，日期取文档创建日 `2025-06-27`，正文 3190 字符按 400 字／分钟核定为 8 分钟。正文按 docx 的 14 个编号条目映射为 14 个 `h2[data-rail]`，「定义／成因／影响／示例」与术语子概念用 `h3`，只做中英文间距、引号与句末标点的规范化，不改写内容。
+- 新增可选文章字段 `isTestSample`（boolean）；`js/site.js` 的 `createPostEntry` 在 meta 追加 `· 测试样例`，文章页复用已冻结的 `.post-demo-note` 显示「测试样例 · 用于验证文档发布流程」。未新增或重命名任何 id、类名与 `data-*`。
+- 日期 `2025-06-27` 使新文在「日期倒序、同日 id 升序」中位于最末，因此登记时现有文章编号不变；随后同一工作区的并行内容调整撤下三篇示例文、新增两篇，本站当前为五篇，新文编号随之变为 `A-05`，`blog.html` 静态索引、`posts/leave-some-space.html` 的「上一篇 · 更早」与 `index.html` 分类计数已与该顺序一致。
+- 契约与规格同步：`Plan.md`（字段与当前篇数 3／1／1）、`PROJECT_PLAN.html` §19.2 数据模型表新增 `isTestSample` 行、`README.md`、`docs/agent-handoffs.md`，以及 `docs/evidence/e01`、`visual/narrative-checks`、`e03/reading-checks`、`e04/menu-checks`、`scripts/check-baseline.mjs` 中受影响页列表与计数断言。
+- **验证**：定向检查通过——Blog 动态与无脚本静态列表均为 `A-01`…`A-05`，测试样例条目显示「/ 8 分钟 · 测试样例」；文章页 `post-header__index` 与 `post-rail__number` 同为 `A-05`，正文 14 个 `h2`／12 个 `h3`，1440 与 390 无横向溢出、无资源与脚本错误；首页分类计数 3／1／1 与已登记数据一致。本地构建 `bash scripts/build-site.sh` 成功。完整的基线／E01／E03／E04 套件由同一工作区的并行会话重跑，本条目只记录本次可复核的定向结果。
+
+## 2026-09-18 · 让冷灰素描纸的纸齿真正可见
+
+- **根因（像素实测）**：此前 grain 层三处缺陷叠加——① `opacity: 0.015` 时 1–8px 带内亮度标准差仅 0.494，低于 8bit 可感知下限；② `background-size: cover` 把纹理放大约 2.8 倍，细颗粒被插值抹平（同 opacity 改 1:1 平铺后高频振幅 0.665 → 1.388）；③ 纸面容器用不透明实色，把最底层的 grain 完全挡住，凡有内容处都没有纹理。
+- **grain 配方**：改为把浓度烘进 SVG alpha（`feColorMatrix type='matrix'`，恒定 45% 灰 + `alpha = 0.16 × 湍流 alpha`），因此不需要元素 `opacity`、也不使用任何混合模式。强度自 0.06 起逐级实测：带内标准差 0.06→0.56、0.09→0.91、0.12→0.96、**0.16→1.11（首个越过门槛 1.0 的档位，故取之）**。
+- **平铺取代 cover**：`--paper-grain-size: 256px 256px` + `repeat`。确认 `stitchTiles='stitch'` 有效——1024×768 场地上接缝列 z ≈ −2.0，行列均无接缝。历史"周期性条纹"成因是 `linear-gradient` + 160px 瓦片，不是平铺本身。
+- **纸面加纸齿**：`.paper-panel`／`.paper-slip`／`.note-panel`／`.art-frame` 共用一条 `background-image` 规则；`.paper-panel--dots` 把 grain 显式串在网点层之前。
+- **亮度补偿**：grain 只能压暗，实测浅色底纸被压暗约 4 个亮度单位；据此把 token 提亮为 `--color-paper: #F6F8FA`、`--color-surface: #FFFEFB`、`--color-subtle: #F1EFEA`、`--color-note: #EDEAE5`。**token 是合成前底色、比最终显示略亮**；渲染后仍落在原先确认的冷灰纸色上（实测 `rgb(240.79, 242.56, 244.06)`，与 `rgb(241, 243, 245)` 每通道差 < 0.5）。
+- **深色主题**：不再关闭纸纹，改为中性灰 + 更低强度，避免浅色有纸感而深色完全平坦；`DESIGN_SPEC.md` §3 同步改写。
+- **排除的错误路径（均已实测，勿重走）**：`mix-blend-mode: overlay/soft-light` 作用在 `html::after` 上振幅恒为 0（混合背景是画布白底）；`background-blend-mode` 放在 `html` 上造成 −21 ~ −94 亮度偏移；用元素 `opacity` 承载纸齿造成约 −14 漂移。
+- **验证**：`paper-texture-checks.mjs` **168/0**（新增纸齿像素与形态断言）；32 场景无横向溢出、文档高度与基线一致；其余回归见 `docs/acceptance.md`。
+- **顺带修复既有缺陷**：`css/base.css` 的中文注释此前已被双重 mojibake 损坏（UTF-8 被按 CP936 读回再以 UTF-8 重写；字节证据 `E2 80 94` → `E9 88 A5 3F`）。自动可逆修复不可行（残留 PUA 码位，强制往返会引入 108 个 `U+FFFD`），故逐行重建 65 行受损注释、**CSS 代码逐字保留**（受损 0 行代码），复验 grain 像素数值与修复前完全一致。行尾统一为 LF。
+- **操作约束**：不要用 PowerShell 的 `Get-Content -Raw` / `Set-Content` / `WriteAllText` 修改含中文的源码文件（Windows PowerShell 5.1 按系统 ANSI 代码页读写，会损坏 UTF-8 中文）；批量替换请用 Node/Python 并显式指定 UTF-8。
+
+## 2026-09-18 · 实现冷灰素描纸纹理层
+
+- 将纸面材质从 `html/body` 的直接背景改为两个固定 CSS overlay：极弱 radial tonal variation 与独立 SVG grain；不参与布局、不拦截指针、无动画。
+- grain 使用 inline SVG `feTurbulence`：`fractalNoise`、`baseFrequency=.85`、`numOctaves=2`、`seed=21`、`stitchTiles=stitch`，灰度处理，最终 overlay opacity 为 `0.015`。
+- 保留浅色主纸面 `#F1F3F5`；Dark Theme 与系统暗色同时关闭 tonal/grain 层；未修改页面结构、交互、surface 配色或 JavaScript。
+- 验证：纸纹专项 `164/0`；baseline `161/0`（使用工作区 Firefox 路径）；Narrative 契约 `24/0`；Home/Blog/About/Article × 390/768/1024/1440 × 浅深共 32 张截图均无横向溢出。
+- 视觉证据见 `docs/evidence/visual/paper-texture/final/`，包含 Home 与 Article 的 1440px 浅色截图。
+
+## 2026-09-18 · 浅色主纸面试色为 #F1F3F5
+
+- 将 Light Theme 的 `--color-paper` 从诊断红色调整为偏冷的 `#F1F3F5`。
+- 保持 Panel、Note、纹理实现、Dark Theme、页面结构和交互逻辑不变。
+
+## 2026-09-18 · 浅色主纸面试色为 #F7F7F5
+
+- 将 Light Theme 的 `--color-paper` 从 `#F2F2EF` 调整为更接近中性白的 `#F7F7F5`。
+- 保持 Panel、Note、纹理实现、Dark Theme、页面结构和交互逻辑不变。
+
+## 2026-09-18 · 浅色主纸面微调为 #F2F2EF
+
+- 将 Light Theme 的 `--color-paper` 从 `#F2F0EC` 调整为更中性的 `#F2F2EF`。
+- 保持 Panel、Note、纹理实现、Dark Theme、页面结构和交互逻辑不变。
+
+## 2026-09-18 · 清理运行时暖黄色残留（本地）
+
+- 定位到 `css/pages.css` 的 `.about-decoration` 仍使用旧暖纸 `#f7f3ea`，改为 `var(--color-paper)`。
+- 同步 `PROJECT_PLAN.html` 独立预览 token，避免规格页继续显示旧暖黄色。
+- CSS 旧暖色值搜索为 0；未修改插画资产自身纸面或页面结构。
+
+## 2026-09-18 · 修复冷白纸纹理的周期性条纹（本地）
+
+- 定位并移除全局 `linear-gradient(180deg, ...)` 与 `160px` 固定平铺造成的方向性带状/栅格观感。
+- 改为单一大尺度 radial lighting，加上 512×512、`feTurbulence`、约 0.025 alpha 的灰度随机 grain；背景禁止重复并使用 `cover`。
+- Home、About、Article 1440px 与 Home 390px 人工复核：纸面宏观平坦，未见横向/纵向条纹或网格，长文阅读不受干扰。
+
+## 2026-09-18 · 冷白素描纸主题升级（本地）
+
+- 将浅色页面背景从暖黄色纸面调整为 `#F2F0EC` 冷白灰素描纸；Panel、Note、墨色、辅助文字与分割线同步更新为新的语义 token。
+- 新增静态 CSS/SVG paper lighting 与 grain 层，纹理约 0.04 强度，不参与布局、不拦截指针、不使用图片或 JavaScript；Article 正文不铺局部网点。
+- Dark Theme 明确关闭浅色纸面背景层，保留原有深色主题结构；页面结构、内容、插画、导航、数据和交互逻辑未改。
+- 验证：baseline 161/0、Narrative 24/0；视觉矩阵 40 张（1440/1200/1024/768/390 × 浅深）全部无横向溢出；Light 对比度与 Dark 纹理隔离通过。旧 T04 harness 在历史 `.category-button` 探针处中止，详见验收记录。
+
+## 2026-09-18 · 修复 About「最近在做」植物越界
+
+- 将 About 页植物改为卡片右下角内置定位，在 768px 以上为卡片右侧预留空间，避免越过卡片边界或遮挡第三项状态内容。
+- 390px 移动端隐藏 About 植物，与当前窄屏装饰策略一致；新增 About 双色多视口植物回归断言。
+
+## 2026-09-18 · 修复 Home「最近在做」植物与卡片重叠
+
+- 将 Home 页 `.now-slip__plant` 移入 `.paper-panel`，保留植物装饰与现有资源、语义属性及 About 页独立植物布局。
+- 在 768px 以上为卡片右侧预留植物宽度，植物按 72px／120px 断点固定在卡片内侧，避免遮挡状态条目、越过卡片边界或制造横向溢出。
+- 新增视觉回归断言，覆盖 390／768／1024／1440px 的浅色与深色布局，并复核 About 页植物作用域。
+
 ## 2026-09-18 · 取消手写体，旁注改用正文字体
 
 - 用户反馈手写字体不好看。彻底移除手写体的全部实现：删除 `--font-hand` token、`.hand-note` 与 `.hand-note--tilt`，不保留任何手写体回退栈。
@@ -16,6 +110,12 @@
 - Phase 3 只做样板区域（用户确认范围）：Header、Home Hero／Recent／Categories／Now、Blog Header＋筛选＋条目、About 各区块、Article Header＋正文 rail、Footer。其它页面内容未铺开。
 - 验证：新增 `docs/evidence/visual/narrative-checks.mjs` 契约检查 22/22；`capture.mjs` 产出 1440／1200／1024／768／390 × 浅深共 40 张 before/after 对照，无横向溢出；基线 161/0；E01 Firefox 48/0；E03 Firefox 18/0；E04 Firefox 20/0。修复过程中发现并修掉三处：手写字体栈、390px 首页植物跨边界造成的 8px 横向溢出、档案编号应跟随文章而不是跟随筛选结果。
 - 复核补齐：`.note-panel` 在 About 仍带着 E02 时期的边框、网点与阴影，与 Phase 1「`.note-panel` 只负责分组」冲突。纸面改由页面自己的 `.about-now__panel` 声明，并**不再使用网点**——Home 的 Currently 才是笔记本封面，About 更像内页，两页因此保留不同气质；顺带删除已无引用的 `.about-now__decoration` 规则。契约表同步修正为实际实现的 `.section-header__number`／`.post-entry__number`／`.post-header__index`／`.post-rail`（原先误记为 `.section-number`）。改后重跑全部套件仍为 22/22、161/0、E01 48/0、E03 18/0、E04 20/0。未推送、未部署；正式 VC2 与全域扩展仍属 Phase 4／5 与 E06。
+
+## 2026-09-17 · 修复本地直开时头部工具图标空白
+
+- 修复直接打开 `index.html` 等页面时，外部 SVG `<use>` 在 `file://` 下无法渲染导致主题与快捷菜单按钮只剩空边框的问题；`js/site.js` 为静态与动态 Editorial Marks 增加同源内联降级，HTTP/HTTPS 仍使用 SVG sprite。
+- 提高主题图标切换选择器优先级，浅色只显示月亮、深色只显示太阳。
+- 验证：Chrome／Firefox 的 `file://` 与 HTTP 定向检查通过，主题切换与快捷菜单可用；Edge／Chrome smoke 检查通过，Firefox 标准启动器的环境级 `spawn UNKNOWN` 另以仓库内 Firefox 可执行文件定向复核通过。
 
 ## 2026-09-17 · About 页面视觉节奏优化（本地，未发布）
 
