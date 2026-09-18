@@ -1,5 +1,5 @@
 {
-  "baseCommit": "545117f245c5a401b59b87c49cf551b6e263db58",
+  "baseCommit": "80ed416b5db06c0f1325dfbdf39ae55e9e2686b1",
   "sourceFilesSha256": {
     "about.html": "16620ce26ecb303f2f84d07fa24d42effd1b55acd6ec0788ba24fbe36d233489",
     "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
@@ -36,7 +36,7 @@
     "posts/research-reading.html": "8fce6225c45b925d3593a74831f6897c6465561987ee36ef19d0ac550121cc34",
     "posts/scrna-grn-notes.html": "3261d4680c745f40403895f216cf02b9bea894ebb8b062a0ca5ed3bda8c8b842"
   },
-  "at": "2026-09-18T16:34:22.653Z",
+  "at": "2026-09-18T16:42:57.971Z",
   "mode": "full",
   "checks": [
     {
@@ -796,7 +796,7 @@
   "limitations": [
     "No physical phone test; mobile and 200% layout checks are browser emulations."
   ],
-  "baseUrl": "http://127.0.0.1:31331/",
+  "baseUrl": "http://127.0.0.1:49753/",
   "passed": 179,
   "failed": 0
 }

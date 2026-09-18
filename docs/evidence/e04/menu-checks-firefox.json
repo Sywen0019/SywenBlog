@@ -1,8 +1,8 @@
 {
   "browser": "firefox",
   "browserVersion": "155.0",
-  "baseCommit": "545117f245c5a401b59b87c49cf551b6e263db58",
-  "at": "2026-09-18T16:39:02.808Z",
+  "baseCommit": "275833a1146bad3613d7a25747ce2afa9a0d3c1c",
+  "at": "2026-09-18T16:48:52.816Z",
   "checks": [
     {
       "name": "1. 八页脚本顺序与资源",
@@ -236,9 +236,9 @@
       "pass": true,
       "detail": {
         "notice": "链接已复制",
-        "copied": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
-        "expected": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
-        "pageUrl": "http://127.0.0.1:28675/blog.html?q=ncs-figure-design#main",
+        "copied": "http://127.0.0.1:52905/posts/ncs-figure-design.html",
+        "expected": "http://127.0.0.1:52905/posts/ncs-figure-design.html",
+        "pageUrl": "http://127.0.0.1:52905/blog.html?q=ncs-figure-design#main",
         "noticeAutoHidden": true
       }
     },
@@ -246,7 +246,7 @@
       "name": "11. 复制失败降级面板",
       "pass": true,
       "detail": {
-        "value": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
+        "value": "http://127.0.0.1:52905/posts/ncs-figure-design.html",
         "selection": "whole",
         "nativeMenu": false
       }
@@ -271,7 +271,7 @@
       "pass": true,
       "detail": {
         "blogSearch": "search-input",
-        "otherPageSearch": "http://127.0.0.1:28675/blog.html?focus=search",
+        "otherPageSearch": "http://127.0.0.1:52905/blog.html?focus=search",
         "topFocus": "",
         "theme": {
           "before": "light",
@@ -330,8 +330,8 @@
       "name": "17. 子目录路径与地址",
       "pass": true,
       "detail": {
-        "blog": "http://127.0.0.1:28675/course/blog/index.html",
-        "post": "http://127.0.0.1:28675/course/blog/posts/ncs-figure-design.html"
+        "blog": "http://127.0.0.1:52905/course/blog/index.html",
+        "post": "http://127.0.0.1:52905/course/blog/posts/ncs-figure-design.html"
       }
     },
     {
@@ -452,13 +452,6 @@
   "passed": 20,
   "failed": 0,
   "recoveredToggles": [
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
-    "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）"

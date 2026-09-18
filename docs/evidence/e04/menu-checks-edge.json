@@ -1,8 +1,8 @@
 {
   "browser": "edge",
   "browserVersion": "153.0.4234.32",
-  "baseCommit": "545117f245c5a401b59b87c49cf551b6e263db58",
-  "at": "2026-09-18T16:37:52.001Z",
+  "baseCommit": "275833a1146bad3613d7a25747ce2afa9a0d3c1c",
+  "at": "2026-09-18T16:47:18.153Z",
   "checks": [
     {
       "name": "1. 八页脚本顺序与资源",
@@ -236,9 +236,9 @@
       "pass": true,
       "detail": {
         "notice": "链接已复制",
-        "copied": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
-        "expected": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
-        "pageUrl": "http://127.0.0.1:28675/blog.html?q=ncs-figure-design#main",
+        "copied": "http://127.0.0.1:26533/posts/ncs-figure-design.html",
+        "expected": "http://127.0.0.1:26533/posts/ncs-figure-design.html",
+        "pageUrl": "http://127.0.0.1:26533/blog.html?q=ncs-figure-design#main",
         "noticeAutoHidden": true
       }
     },
@@ -246,7 +246,7 @@
       "name": "11. 复制失败降级面板",
       "pass": true,
       "detail": {
-        "value": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
+        "value": "http://127.0.0.1:26533/posts/ncs-figure-design.html",
         "selection": "whole",
         "nativeMenu": false
       }
@@ -271,7 +271,7 @@
       "pass": true,
       "detail": {
         "blogSearch": "search-input",
-        "otherPageSearch": "http://127.0.0.1:28675/blog.html?focus=search",
+        "otherPageSearch": "http://127.0.0.1:26533/blog.html?focus=search",
         "topFocus": "",
         "theme": {
           "before": "light",
@@ -330,8 +330,8 @@
       "name": "17. 子目录路径与地址",
       "pass": true,
       "detail": {
-        "blog": "http://127.0.0.1:28675/course/blog/index.html",
-        "post": "http://127.0.0.1:28675/course/blog/posts/ncs-figure-design.html"
+        "blog": "http://127.0.0.1:26533/course/blog/index.html",
+        "post": "http://127.0.0.1:26533/course/blog/posts/ncs-figure-design.html"
       }
     },
     {
@@ -418,37 +418,17 @@
               1440,
               900
             ],
-            "diffPixels": 106778,
+            "diffPixels": 1224479,
             "firstBands": [
               {
-                "from": 30,
-                "to": 73,
-                "pixels": 260
+                "from": 3,
+                "to": 103,
+                "pixels": 125729
               },
               {
-                "from": 360,
-                "to": 415,
-                "pixels": 32588
-              },
-              {
-                "from": 430,
-                "to": 532,
-                "pixels": 23914
-              },
-              {
-                "from": 583,
-                "to": 606,
-                "pixels": 2109
-              },
-              {
-                "from": 615,
-                "to": 648,
-                "pixels": 5879
-              },
-              {
-                "from": 660,
-                "to": 686,
-                "pixels": 12279
+                "from": 105,
+                "to": 899,
+                "pixels": 1098750
               }
             ],
             "note": "记录项：既有基线截图与当前构建渲染存在差异（1440 基线含全选高亮），不作为 E04 通过条件。"
@@ -513,6 +493,7 @@
   "passed": 20,
   "failed": 0,
   "recoveredToggles": [
+    "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）"

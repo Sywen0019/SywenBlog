@@ -3,8 +3,8 @@
   "browser": "firefox",
   "browserVersion": "155.0",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "545117f245c5a401b59b87c49cf551b6e263db58",
-  "at": "2026-09-18T16:41:13.716Z",
+  "baseCommit": "275833a1146bad3613d7a25747ce2afa9a0d3c1c",
+  "at": "2026-09-18T16:46:56.769Z",
   "checks": [
     {
       "name": "1. 八页 reading.js 加载顺序与资源",
@@ -267,7 +267,7 @@
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 21,
+        "progress": 22,
         "button": "visible",
         "script": "../js/context-menu.js"
       }
