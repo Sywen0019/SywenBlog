@@ -61,7 +61,7 @@
 |---|---|---|
 | **Identity Assets** | "这是 Sywen" | Hero 人物、About 阅读人物、avatar、favicon、红色眼镜 |
 | **Narrative Assets** | "Sywen 在这里做什么" | 分类小画、书、平板、咖啡、耳机、植物、学习/阅读/生活物件 |
-| **Content Assets** | 解释具体内容 | `search-flow.svg`、代码、表格、流程图、文章级小图 |
+| **Content Assets** | 解释具体内容 | 代码、表格、流程图、文章级 SVG 图示 |
 | **Decorative Assets** | 只负责节奏 | 胶带、网点、小箭头、纸签、极轻量线条 |
 | **Transitional Assets** | 连接 section | 横向枝叶、短线、编号、页面结尾标记 |
 
@@ -123,6 +123,18 @@
 | `.section-header--ruled` | Content | 需要完整横线时的 `.section-header` modifier |
 
 **Paper Panel 不是纯装饰。** `.paper-panel` 承载内容（例如 Home 的 Current status 条目），因此**不加** `aria-hidden`；只有它内部真正的装饰（网点、纸签、植物）才是 Narrative。About 的「最近在做」也不使用共享 `.note-panel` 承载纸面，而是在页面自己的 `.about-now__panel` 上声明纸面与内框，两页因此保留不同气质。
+
+**纸齿（paper grain）层级契约。** 纸齿有两条落点，不要混淆：
+
+| 落点 | 实现 | 说明 |
+|---|---|---|
+| 页面底纸 | `html::after`，`background-image: var(--paper-grain-layer)` + `repeat` + `var(--paper-grain-size)` | 固定层，`z-index: 0`，`pointer-events: none`，无动画；`body` 透明且在其上方 |
+| 纸面容器 | `.paper-panel`／`.paper-slip`／`.note-panel`／`.art-frame` 共用规则，同一条 `background-image` | `background-image` 绘制在 `background-color` 之上、子内容之下，**因此不需要给任何子元素加 z-index** |
+
+两条硬约束（改动前必读）：
+
+1. **浓淡烘在 SVG 的 alpha 里**（`feColorMatrix` 第 4 行 = 系数 × 湍流 alpha），所以**不使用元素 `opacity`、不使用任何 `mix-blend-mode`**。实测 `mix-blend-mode: overlay/soft-light` 作用在 `html::after` 上振幅恒为 0（混合背景是画布白底）；元素 `opacity` 会把整张卡片连底色一起变透明，造成约 −14 的亮度漂移。
+2. **浅色 token 是合成前的底色**，已按纸齿的压暗量做等量亮度补偿（`--color-paper: #F6F8FA` 等）。改这些 token 或改 grain 强度常数时，必须**成对**调整，否则最终渲染的纸色会漂移。判据是像素级"渲染后纸色"，不是 token 字面值——见 `docs/acceptance.md`。
 
 Blog 缩略图：按本轮决策**取消**重复的分类缩略图作为默认文章封面，Blog 默认采用"日期 + 编号 + 标题 + 摘要 + 分类 mark"。`.post-entry--with-thumb`、`.art-frame--thumb`、`--entry-thumb-w`、`--entry-thumb-h`、`.category-link--card` 及 `js/site.js` 中对应的缩略图渲染分支已在 Phase 1 删除，`options.thumbnail` 不再是 `Sywen.createPostEntry` 的参数；首页分类入口的小画（`.art-frame--category`、`--category-art-w/h`）保留。
 

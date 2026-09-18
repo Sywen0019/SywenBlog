@@ -124,8 +124,29 @@
 }
 
 .paper-panel--dots {
-  background-image: radial-gradient(var(--color-rule) 0.6px, transparent 0.6px);
-  background-size: 12px 12px;
+  background-color: var(--color-surface);
+  /* grain 必须显式串在网点层之前：这层已有自己的 background-image，
+     不依赖层叠去"叠加"，size/repeat 也各自列全。 */
+  background-image: var(--paper-grain-layer),
+    radial-gradient(color-mix(in srgb, var(--color-ink) 14%, transparent) 0.6px, transparent 0.6px);
+  background-size: var(--paper-grain-size), 12px 12px;
+  background-repeat: repeat, repeat;
+}
+
+/* 纸面材质：所有"像纸"的容器共用一层纸齿。
+   用 background-image 而不是伪元素或元素 opacity：
+   - background-image 天然绘制在 background-color 之上、子内容之下，
+     所以不需要给任何子元素加 z-index；
+   - 元素 opacity 会把整张卡片连同底色一起变透明，卡片会被后面的纸色"透"出来，
+     实测导致约 −14 的亮度漂移，是错的写法。
+   该层的浓淡已烘进 SVG 的 alpha（见 css/base.css），无需 opacity。 */
+.paper-panel,
+.paper-slip,
+.note-panel,
+.art-frame {
+  background-image: var(--paper-grain-layer);
+  background-size: var(--paper-grain-size);
+  background-repeat: repeat;
 }
 
 /* 装饰性排版细节：编号与眉标是 editorial annotation，不可点击、不参与命中测试。 */

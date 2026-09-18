@@ -466,6 +466,7 @@ html.has-reading .site-footer__inner {
 }
 
 #home-categories .category-link {
+  position: relative;
   display: grid;
   grid-template-columns: auto var(--category-art-w) minmax(0, 1fr);
   align-items: center;
@@ -474,7 +475,9 @@ html.has-reading .site-footer__inner {
   padding: var(--space-4) 0;
   border-top: var(--line-thin) solid var(--color-rule);
   text-decoration: none;
-  transition: background-color var(--motion-fast) var(--motion-ease);
+  transition: background-color var(--motion-normal) var(--ease-standard),
+    border-color var(--motion-normal) var(--ease-standard),
+    transform var(--motion-normal) var(--ease-emphasis);
 }
 
 #home-categories > li:last-child .category-link {
@@ -483,6 +486,8 @@ html.has-reading .site-footer__inner {
 
 #home-categories .category-link:hover {
   background: color-mix(in srgb, var(--color-accent) 48%, transparent);
+  border-color: var(--color-ink);
+  transform: translateY(-2px);
 }
 
 #home-categories .category-link__number {
@@ -546,7 +551,7 @@ html.has-reading .site-footer__inner {
   vertical-align: middle;
 }
 
-/* Current status：一张真正属于个人手账的状态纸片，植物可以跨出边界。 */
+/* Current status：一张真正属于个人手账的状态纸片，植物由页面构图负责安置。 */
 .note-panel {
   position: relative;
 }
@@ -602,7 +607,7 @@ html.has-reading .site-footer__inner {
   display: block;
   flex: none;
   width: 80px;
-  background: #f7f3ea;
+  background: var(--color-paper);
   border-radius: var(--radius-small);
   pointer-events: none;
   user-select: none;
@@ -658,7 +663,7 @@ html.has-reading .site-footer__inner {
   min-height: 88px;
   padding: var(--space-4);
   border-left: 2px solid var(--color-accent);
-  background-color: color-mix(in srgb, var(--color-surface) 88%, var(--color-paper));
+  background-color: var(--color-subtle);
 }
 
 .about-now .note-panel__label {
@@ -817,8 +822,7 @@ html.has-reading .site-footer__inner {
   --mark-size: 18px;
 }
 
-/* Home「最近在做」：一张真正的手账状态纸片，植物跨出面板边界。
-   手机与平板保留纸片气质但收起跨边界植物，避免窄屏产生横向溢出。 */
+/* Home「最近在做」：植物收进纸片内部，避免装饰越过卡片或遮挡状态内容。 */
 .now-slip {
   position: relative;
   max-width: 880px;
@@ -838,7 +842,11 @@ html.has-reading .site-footer__inner {
 
 @media (min-width: 768px) {
   .now-slip {
-    padding-inline-end: var(--space-8);
+    --now-plant-size: 72px;
+  }
+
+  .now-slip .paper-panel {
+    padding-inline-end: calc(var(--space-6) + var(--now-plant-size) + var(--space-4));
   }
 
   .now-slip__plant {
@@ -847,7 +855,7 @@ html.has-reading .site-footer__inner {
     inset-block-end: var(--space-4);
     inset-inline-end: var(--space-4);
     z-index: var(--z-content);
-    width: 72px;
+    width: var(--now-plant-size);
     height: auto;
   }
 
@@ -859,14 +867,11 @@ html.has-reading .site-footer__inner {
 
 @media (min-width: 1024px) {
   .now-slip {
-    padding-inline-end: var(--space-12);
+    --now-plant-size: 120px;
   }
 
-  .now-slip__plant {
-    inset-block-end: 50%;
-    inset-inline-end: calc(-1 * var(--space-2));
-    width: 120px;
-    transform: translateY(50%);
+  .now-slip .paper-panel {
+    padding-inline-end: calc(var(--space-6) + var(--now-plant-size) + var(--space-4));
   }
 }
 
@@ -975,13 +980,13 @@ html.has-reading .site-footer__inner {
   margin-top: var(--space-6);
 }
 
-/* About「最近在做」：植物跨出纸片边界（生长 / ongoing 隐喻）。 */
+/* About「最近在做」：植物收进纸片内部，避免装饰越过卡片或遮挡状态内容。 */
 .about-now__plant {
+  display: none;
   position: absolute;
   z-index: 2;
-  inset-inline-end: var(--space-6);
-  inset-block-start: calc(-1 * var(--space-8));
-  width: 72px;
+  inset-inline-end: var(--space-4);
+  inset-block-end: var(--space-4);
 }
 
 .about-now__plant img {
@@ -990,9 +995,14 @@ html.has-reading .site-footer__inner {
 }
 
 @media (min-width: 768px) {
+  .about-now__panel {
+    --about-plant-size: 104px;
+    padding-inline-end: calc(var(--space-6) + var(--about-plant-size) + var(--space-4));
+  }
+
   .about-now__plant {
-    inset-block-start: calc(-1 * var(--space-12));
-    width: 104px;
+    display: block;
+    width: var(--about-plant-size);
   }
 }
 

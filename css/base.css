@@ -15,19 +15,43 @@
    ========================================================================== */
 
 :root {
-  /* 颜色：浅色主题（DESIGN_SPEC §4） */
-  --color-paper: #F7F3EA;
-  --color-surface: #FFFCF5;
-  --color-ink: #242424;
-  --color-muted: #625F59;
-  --color-rule: #D6CFC2;
+  /* 颜色：冷白素描纸主题
+     注意：浅色主纸面与纸面层级已按 grain 的压暗量做亮度补偿（见下方纸面材质，
+     以及 docs/acceptance.md 的实测记录）。这里是**合成前**的底色，页面实际显示
+     的仍然是原先确认的冷灰纸色，不要单独改动其中一个而不同步另一个。 */
+  --color-paper: #F6F8FA;
+  --color-surface: #FFFEFB;
+  --color-subtle: #F1EFEA;
+  --color-ink: #272522;
+  --color-muted: #5E5A54;
+  --color-rule: #CFCCC5;
   --color-accent: #D9E8EC;
-  --color-note: #F0E1AC;
-  --color-shadow: #242424;
+  --color-note: #EDEAE5;
+  --color-shadow: #272522;
   --color-art-paper: #FFFFFF;
   --color-focus: var(--color-ink);
   --color-link: var(--color-ink);
   --color-selection: var(--color-note);
+
+  /* 纸面材质
+     lighting 提供极弱的大尺度明暗变化；grain 才是"纸齿"。
+     grain 的浓淡直接烘进 SVG 的 alpha 通道（颜色矩阵第 4 行 = 系数 × 湍流 alpha），
+     因此它既不需要元素 opacity，也不需要混合模式——元素自身的 background-color
+     照常保留，子内容天然绘制在其上方。禁止改用 mix-blend-mode：在 html::after 上
+     其混合背景是画布白底而非页面底色，实测振幅恒为 0。 */
+  --paper-lighting: radial-gradient(ellipse 85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 76%);
+  /* 下面这层 grain 的两个常数必须成对理解，调强度时同时改：
+     0 0 0 0 0.45 → 恒定的 45% 灰，决定单颗纸齿有多深（越大越柔和、压暗越少）；
+     0 0 0 0.16 0 → alpha = 0.16 × 湍流 alpha，决定纸齿整体浓淡。
+     实测选取：0.16 是"可感知微观纸齿"的最低强度。1–8px 带内亮度标准差
+     0.06≈0.56、0.09≈0.91、0.12≈0.96、0.16≈1.11，门槛 1.0（8bit 下相邻像素
+     差满一级）自 0.16 起达成。把 0.16 调小会让纸纹重新不可见，此时必须按同一
+     比例回收下方 --color-paper 系列的亮度补偿，否则纸会偏暗。 */
+  --paper-grain-layer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E");
+  /* 256×256 且 1:1 平铺（不再用 cover 放大——cover 会把纹理拉大约 2.8 倍，把细颗粒
+     抹平）。stitchTiles='stitch' 保证瓦片无缝平铺，实测接缝 z ≈ −2.0（比内部更平滑）。 */
+  --paper-grain-size: 256px 256px;
+  --paper-background: var(--paper-lighting);
 
   /* 字体（§5.1）：不加载远程字体 */
   --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
@@ -126,10 +150,16 @@
   --mark-size: 20px;
   --mark-stroke: 1.5;
 
-  /* 动效（§15、§16.2） */
-  --motion-fast: 120ms;
-  --motion-normal: 180ms;
-  --motion-ease: ease-out;
+  /* 动效（MOTION_SPEC.md：Level 1 interaction / Level 2 reading / Level 3 ambient） */
+  --motion-fast: 160ms;
+  --motion-normal: 220ms;
+  --motion-slow: 520ms;
+  --motion-ambient: 10s;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter: cubic-bezier(0.22, 0.8, 0.24, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease: var(--ease-standard);
   --press-shift: 1px;
   --press-shift-strong: 2px;
 
@@ -142,21 +172,24 @@
   --z-panel: 110;
 }
 
-/* 颜色：显式浅色主题。值同 :root 默认，保留用于表达“已主动选择浅色”。 */
+/* 颜色：显式浅色主题。色值同 :root 默认（含 grain 亮度补偿），
+   保留用于表达“已主动选择浅色”。 */
 :root[data-theme="light"] {
   color-scheme: light;
-  --color-paper: #F7F3EA;
-  --color-surface: #FFFCF5;
-  --color-ink: #242424;
-  --color-muted: #625F59;
-  --color-rule: #D6CFC2;
+  --color-paper: #F6F8FA;
+  --color-surface: #FFFEFB;
+  --color-subtle: #F1EFEA;
+  --color-ink: #272522;
+  --color-muted: #5E5A54;
+  --color-rule: #CFCCC5;
   --color-accent: #D9E8EC;
-  --color-note: #F0E1AC;
-  --color-shadow: #242424;
+  --color-note: #EDEAE5;
+  --color-shadow: #272522;
   --color-art-paper: #FFFFFF;
   --color-focus: var(--color-ink);
   --color-link: var(--color-ink);
   --color-selection: var(--color-note);
+  --paper-background: var(--paper-lighting);
 }
 
 /* 颜色：深色主题（用户或页面显式选择，优先于系统偏好） */
@@ -164,6 +197,7 @@
   color-scheme: dark;
   --color-paper: #202223;
   --color-surface: #292C2E;
+  --color-subtle: #34383A;
   --color-ink: #F2EEE5;
   --color-muted: #BBB6AC;
   --color-rule: #494D4F;
@@ -174,6 +208,12 @@
   --color-focus: var(--color-ink);
   --color-link: var(--color-ink);
   --color-selection: var(--color-note);
+  /* 深色主题：保持"不出现浅色纸纹"的原意——lighting 仍为 none，
+     但纸齿沿用同一层 grain，只降低强度并改用中性灰，避免浅色有纸感、
+     深色完全平坦的不一致。（DESIGN_SPEC §3 的对应条目已同步改写。） */
+  --paper-lighting: none;
+  --paper-background: none;
+  --paper-grain-layer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E");
 }
 
 /* 颜色：未主动选择时跟随系统（原规划主题顺序第二级），放在最后以保证优先于默认浅色 */
@@ -182,6 +222,7 @@
     color-scheme: dark;
     --color-paper: #202223;
     --color-surface: #292C2E;
+    --color-subtle: #34383A;
     --color-ink: #F2EEE5;
     --color-muted: #BBB6AC;
     --color-rule: #494D4F;
@@ -192,6 +233,9 @@
     --color-focus: var(--color-ink);
     --color-link: var(--color-ink);
     --color-selection: var(--color-note);
+    --paper-lighting: none;
+    --paper-background: none;
+    --paper-grain-layer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E");
   }
 }
 
@@ -244,6 +288,35 @@ html {
   color-scheme: light;
 }
 
+/* 底纸材质层：固定在视口内，不参与布局、不拦截指针，也不随滚动产生动画。
+   lighting 是单张大图（cover）；grain 是 1:1 平铺的小瓦片，两者共用选择器但
+   各自声明 background-repeat/size，不要在这里写死成同一组值。 */
+html::before,
+html::after {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+}
+
+/* 极弱的非周期 tonal variation；没有 linear/repeating pattern。 */
+html::before {
+  background-image: var(--paper-background);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 纸齿：固定 seed 的灰度 SVG noise，浓淡已烘进 SVG 的 alpha，
+   因此这里不需要 opacity，也不使用任何混合模式（理由见 :root 的说明）。
+   1:1 平铺，让颗粒保持原始尺度。 */
+html::after {
+  background-image: var(--paper-grain-layer);
+  background-repeat: repeat;
+  background-size: var(--paper-grain-size);
+}
+
 /* 隐藏属性始终生效：增强控件在被脚本显示前不参与布局与 Tab 顺序（Plan.md 一·2、§15） */
 [hidden] {
   display: none !important;
@@ -252,7 +325,9 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  background-color: var(--color-paper);
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
   color: var(--color-ink);
   font-family: var(--font-ui);
   font-size: var(--text-ui);
@@ -360,7 +435,7 @@ strong {
   color: var(--color-ink);
 }
 
-/* 内联图标统一 24×24 视框、2px 描边（§3.3、§7） */
+/* 内联图标统一 24×24 视框、2px 描边（§8.3、§9） */
 .icon {
   width: var(--icon-size);
   height: var(--icon-size);
@@ -410,7 +485,7 @@ strong {
   transform: none;
 }
 
-/* 跳过链接的目标：可编程聚焦但不显示轮廓，避免误导为可操作控件 */
+/* 跳转链接的目标：可编程聚焦但不显示轮廓，避免误导为可操作控件 */
 main:focus {
   outline: none;
 }
@@ -425,6 +500,27 @@ main:focus {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+/* Reading Rhythm：脚本成功后才隐藏待进入模块，避免无脚本留下空白。 */
+.motion-ready .motion-reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--motion-slow) var(--ease-enter),
+    transform var(--motion-slow) var(--ease-enter);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.motion-ready .hero-art.motion-reveal:not(.is-visible) {
+  transform: translateX(10px);
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--motion-slow) var(--ease-enter),
+    transform var(--motion-slow) var(--ease-enter);
+  transition-delay: var(--motion-delay, 0ms);
 }
 
 /* ==========================================================================
@@ -442,6 +538,11 @@ main:focus {
 
   html {
     scroll-behavior: auto;
+  }
+
+  .motion-ready .motion-reveal:not(.is-visible) {
+    opacity: 1;
+    transform: none;
   }
 
   *,

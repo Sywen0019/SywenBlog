@@ -215,6 +215,7 @@
 }
 
 .site-nav__link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   min-height: var(--control-min-height);
@@ -223,16 +224,30 @@
   text-decoration: none;
 }
 
-.site-nav__link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+.site-nav__link::after {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 4px;
+  height: 2px;
+  background-color: var(--color-ink);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--motion-fast) var(--ease-emphasis);
+}
+
+.site-nav__link:hover::after,
+.site-nav__link:focus-visible::after {
+  transform: scaleX(1);
 }
 
 /* 当前页与当前分区：字重 700 与 2px 下划线同时表达 */
 .site-nav__link[aria-current] {
   font-weight: var(--weight-bold);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+}
+
+.site-nav__link[aria-current]::after {
+  transform: scaleX(1);
 }
 
 @media (min-width: 768px) {
@@ -282,11 +297,11 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color var(--motion-fast) var(--motion-ease),
-    border-color var(--motion-fast) var(--motion-ease),
-    color var(--motion-fast) var(--motion-ease),
-    box-shadow var(--motion-fast) var(--motion-ease),
-    transform var(--motion-fast) var(--motion-ease);
+  transition: background-color var(--motion-fast) var(--ease-standard),
+    border-color var(--motion-fast) var(--ease-standard),
+    color var(--motion-fast) var(--ease-standard),
+    box-shadow var(--motion-fast) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-emphasis);
 }
 
 .button:hover,
@@ -417,7 +432,7 @@
 .category-count {
   padding: 0 var(--space-1);
   border-radius: var(--radius-small);
-  background-color: var(--color-note);
+  background-color: var(--color-subtle);
   color: var(--color-ink);
   font-size: var(--text-meta);
   font-weight: var(--weight-medium);
@@ -493,6 +508,13 @@ a.tag:hover {
 .post-entry {
   padding-block: var(--space-6);
   border-bottom: var(--line-thin) solid var(--color-rule);
+  transition: border-color var(--motion-normal) var(--ease-standard),
+    transform var(--motion-normal) var(--ease-emphasis);
+}
+
+.post-entry:hover {
+  border-color: var(--color-ink);
+  transform: translateY(-2px);
 }
 
 .post-entry + .post-entry {
@@ -517,13 +539,13 @@ a.tag:hover {
 }
 
 .post-entry__link {
+  position: relative;
   color: var(--color-ink);
   text-decoration: none;
 }
 
 .post-entry__link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  color: var(--color-ink);
 }
 
 .post-entry__summary {
@@ -1161,24 +1183,24 @@ a.tag:hover {
 }
 
 /* 图标按主题与菜单状态切换，不使用两套按钮标记。 */
-.theme-toggle__icon--sun {
+.theme-toggle__icon.theme-toggle__icon--sun {
   display: none;
 }
 
-:root[data-theme="dark"] .theme-toggle__icon--sun {
+:root[data-theme="dark"] .theme-toggle__icon.theme-toggle__icon--sun {
   display: inline-block;
 }
 
-:root[data-theme="dark"] .theme-toggle__icon--moon {
+:root[data-theme="dark"] .theme-toggle__icon.theme-toggle__icon--moon {
   display: none;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .theme-toggle__icon--sun {
+  :root:not([data-theme]) .theme-toggle__icon.theme-toggle__icon--sun {
     display: inline-block;
   }
 
-  :root:not([data-theme]) .theme-toggle__icon--moon {
+  :root:not([data-theme]) .theme-toggle__icon.theme-toggle__icon--moon {
     display: none;
   }
 }
@@ -1271,6 +1293,7 @@ a.tag:hover {
 .post-figure img {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 .post-figure figcaption {
