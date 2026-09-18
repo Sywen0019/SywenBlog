@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-site-root="../" data-page="post" data-post="ncs-figure-design">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ncs-figure-design 的设计思路 · Sywen's Space</title>
+<meta name="description" content="科研绘图的风格不该来自一组没有出处的默认参数。这套 skill 从官方指南、真实论文图和学术色板文献中学习，并把来源、校验与诚实降级写进工作流。">
+<script src="../js/theme.js"></script>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/narrative.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
+<script src="../js/posts-data.js" defer></script>
+<script src="../js/site.js" defer></script>
+<script src="../js/motion.js" defer></script>
+<script src="../js/reading.js" defer></script>
+<script src="../js/context-menu.js" defer></script>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden></div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    <p class="site-title"><a class="brand" href="../index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
+    <div class="site-tools">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
+    </div>
+    <nav class="site-nav" aria-label="主导航">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="../index.html">首页</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="../blog.html" aria-current="true">文章</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="../about.html">关于</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main" id="main" tabindex="-1">
+  <div class="container">
+
+    <a class="post-back" href="../blog.html">返回文章列表</a>
+
+    <article class="post" data-post-id="ncs-figure-design">
+      <header class="post-header">
+        <p class="post-header__index" aria-hidden="true">A-01</p>
+        <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=study">学业</a><time class="post-meta__date" datetime="2026-09-18">2026-09-18</time><span class="post-meta__time">约 4 分钟</span></p>
+        <h1 class="page-title post-header__title">ncs-figure-design 的设计思路</h1>
+      </header>
+            <div class="post-rail narrative" aria-hidden="true">
+        <span class="post-rail__mark"><svg class="mark" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-book-stack"></use></svg></span>
+        <span class="post-rail__number">A-01</span>
+      </div>
+      <div class="post-body">
+        <p>科研绘图里最容易走的一条捷径，是把某种“顶刊风格”写成一包固定参数：几个颜色、一组字号、几条线宽，然后套到所有图上。结果往往不算难看，却很难回答一个更基本的问题：为什么应该是这个样子？<code>ncs-figure-design</code> 的设计出发点，正是拒绝这种没有来源的默认答案。</p>
+<h2 data-rail="01">风格不是预设出来的</h2>
+<p>这套 skill 把“学习优先”放在最高位置。Nature、Cell、Science 并不是一套统一模板，不同期刊、栏目、图表类型和年份都会有差异。如果代码里预先硬编码一套所谓 NCS 配色，它只能称为某种审美偏好，不能称为从真实出版物中归纳出的规范。</p>
+<p>因此，任何颜色、字体、线宽或布局参数，都必须能追溯到实际来源。没有用户指定期刊时，也不能自动宣称“这就是顶刊风格”；只有已经保存过一份带完整来源声明的通用 NCS 学习成果，才允许暂时使用。没有学习成果，就先学习，再绘图。</p>
+<h2 data-rail="02">三类来源，各回答不同问题</h2>
+<p>第一类是期刊官方 Artwork 或 Figure Guidelines。它们提供规则：栏宽、分辨率、最小字号、允许的格式和可访问性要求。它们权威，但通常只给约束，不会告诉你一张特定类型的结果图应该怎样安排视觉重心。</p>
+<p>第二类是真实论文图，来源可以是开放论文、预印本、期刊公开 figure 页或用户提供的 PDF。它们提供观感：面板如何排布、留白留多少、图例放在哪里、哪些颜色承担分组含义、线宽与标注怎样形成层级。这是主要学习来源，也最需要人工观察。</p>
+<p>第三类是学术色板与色图研究，例如色觉友好色板、知觉均匀色图以及通用色板文献。它们回答的是颜色背后的科学依据：两个类别能否被色觉差异人群区分，连续变量映射到颜色时是否保持感知顺序，灰度打印后是否仍然可读。</p>
+<p>三类来源不能互相替代。只看官方指南会得到合规但缺乏观感的模板；只照抄一张论文图会把偶然选择误当普遍规律；只追求漂亮色板则可能忽略期刊约束。学习成果需要记录每条知识的出处与提取方式，形成可复查的 provenance。</p>
+<h2 data-rail="03">quick 与 explore 的区别</h2>
+<p><code>quick</code> 适用于图表类型已经明确的场景。用户知道自己要柱状图、折线图或箱线图，skill 就不再讨论“换一种图会不会更好”，而是快速匹配目标期刊的近期风格。指定期刊时优先检查缓存；没有缓存，就从一张近期代表性图中提取关键参数，再人工补充图例、panel 标签和配色语义等观察。</p>
+<p><code>explore</code> 适用于有数据但还不确定如何展示的情况。它会先理解变量类型、分组结构、样本量、统计意图和目标期刊，再给出两到三种图表方案，说明各自适合什么、局限在哪里，等待用户确认后才进入绘图。风格学习也更深，通常比较至少两到三张不同文章的参考图，并输出逐项对照，最后合成一份有出处的新样式。</p>
+<p>两种模式都必须经过学习模块，只是深度不同；一次任务也只加载一种模式，避免在已经确定图表类型后，又混入重新设计 Figure 的环节。这个边界让“快速”真的是快速，而“探索”保留充分讨论。</p>
+<h2 data-rail="04">工具辅助，但判断仍由人完成</h2>
+<p>提取工具可以做颜色量化、读取 SVG 的 fill 与 stroke，或者尝试从 PDF 中提取字体和字号。它适合把图像里的显性参数转成结构化结果，但无法仅凭像素可靠判断“这个颜色代表对照组还是实验组”，也很难解释留白为什么形成某种层级。</p>
+<p>所以自动提取只是起点。布局、图例、配色语义和视觉层级必须留给人工观察，并写进 <code>manual_observations</code>。学习成果缓存需要包含来源类型、URL 或 DOI、文章名、Figure 编号和访问日期；缺 provenance 的 JSON 直接视为无效。缓存超过十二个月，或者官方指南更新，就重新学习。若是在色觉校验后微调过色板，还要把调整原因和验证结论写回来源记录。</p>
+<h2 data-rail="05">用校验完成交付，也接受停下来的结果</h2>
+<p>图生成出来并不意味着工作结束。连续数据禁用 jet 和彩虹色图，分类对比不能只依赖纯红与纯绿；色觉模拟和投稿清单会检查色板、标注、字号、格式和导出分辨率。发现问题就调整，而不是在交付说明里轻轻带过。最终交付还应包含生成脚本和完整样式来源说明，让另一个人能够复核或重新运行。</p>
+<p>最值得保留的，是“学习失败时也诚实”的设计。网络不可用或来源不足，不能悄悄回退到无出处的默认样式。系统应说明本轮学习没有完成，再询问是否使用一份带来源的缓存成果；用户拒绝或缓存不存在，就暂停绘图。这个选择看似降低了自动化程度，却守住了一个更重要的事实：科研图的风格应当有证据，而不是凭生成器替作者猜。</p>
+<p>如果把这套方法迁移到其他创作流程，问题也可能同样成立：哪些规则来自权威指南，哪些判断来自真实样本，哪些参数只是过去的偶然选择？这也和<a href="./research-reading.html">论文伴读</a>中的证据意识相通。先把来源与推断分开，后面的自动化才有可靠的基础。</p>
+      </div>
+      <ul class="tag-list" aria-label="文章标签"><li><a class="tag" href="../blog.html?q=ncs-figure-design">ncs-figure-design</a></li><li><a class="tag" href="../blog.html?q=%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE">科研绘图</a></li><li><a class="tag" href="../blog.html?q=%E8%A7%86%E8%A7%89%E8%A7%84%E8%8C%83">视觉规范</a></li></ul>
+      <nav class="post-nav" aria-label="相邻文章"><a href="./research-reading.html"><span class="post-nav__label">上一篇 · 更早</span>research-reading 的设计思路</a></nav>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner container">
+    <p class="site-footer__brand">Sywen's Space · 学业 · 生活 · 我喜欢的</p>
+    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。示例文章另有标注。</p>
+    <nav class="site-footer__links" aria-label="页脚导航">
+      <a href="../index.html">首页</a>
+      <a href="../blog.html">文章</a>
+      <a href="../about.html">关于</a>
+      <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
+    </nav>
+    <div class="site-footer__mark narrative" aria-hidden="true">
+      <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-flower"></use></svg>
+    </div>
+    <p class="side-note site-footer__note-line side-note--marked" aria-hidden="true">慢慢写，慢慢长。</p>
+    <p class="site-footer__copyright">© 2026 Sywen's Space</p>
+  </div>
+</footer>
+
+<p class="status-notice" id="site-notice" role="status" aria-live="polite" hidden></p>
+<div class="copy-panel" id="copy-panel" role="dialog" aria-labelledby="copy-panel-title" tabindex="-1" hidden>
+  <h2 class="copy-panel__title" id="copy-panel-title">手动复制链接</h2>
+  <div class="copy-panel__field">
+    <label class="field__label" for="copy-panel-input">可分享地址</label>
+    <input class="field__input copy-panel__input" id="copy-panel-input" type="text" readonly spellcheck="false" autocomplete="off">
+  </div>
+  <p class="copy-panel__note" id="copy-panel-note">自动复制不可用，请按 Ctrl/Cmd+C 手动复制，或按 Esc 关闭。</p>
+  <div class="copy-panel__actions">
+    <button type="button" class="button button--quiet" id="copy-panel-close">关闭</button>
+  </div>
+</div>
+<div class="context-menu" id="context-menu" role="menu" aria-label="页面快捷菜单" hidden></div>
+<button type="button" class="back-to-top" id="back-to-top" hidden>返回顶部</button>
+
+</body>
+</html>

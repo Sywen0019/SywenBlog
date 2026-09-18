@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>文章 · Sywen's Space</title>
-<meta name="description" content="Sywen's Space 的文章列表，四篇示例文章记录学业与生活，后续将加入美食、游戏和动漫等兴趣杂谈，可按标题、摘要或标签搜索并筛选分类。">
+<meta name="description" content="Sywen's Space 的文章列表，按学业、生活与我喜欢的三个方向记录；可按标题、摘要或标签搜索，也可以只看某一类。">
 <script src="./js/theme.js"></script>
 <link rel="stylesheet" href="./css/base.css">
 <link rel="stylesheet" href="./css/components.css">
@@ -15,6 +15,7 @@
 <script src="./js/posts-data.js" defer></script>
 <script src="./js/site.js" defer></script>
 <script src="./js/blog.js" defer></script>
+<script src="./js/motion.js" defer></script>
 <script src="./js/reading.js" defer></script>
 <script src="./js/context-menu.js" defer></script>
 </head>
@@ -47,8 +48,8 @@
     <header class="page-header">
       <p class="page-header__eyebrow" aria-hidden="true">ARCHIVE · SYWEN'S SPACE</p>
       <h1 class="page-title">文章</h1>
-      <p class="page-intro">四篇示例文章分为学业与生活两类，之后也会加入我喜欢的内容；可以按标题、摘要或标签搜索，也可以只看某一类。</p>
-      <p class="blog-archive-note side-note narrative side-note--marked" aria-hidden="true">目前共四篇示例，按时间归档。</p>
+      <p class="page-intro">五篇文章分为学业、生活与我喜欢的三类，其中标注为示例或测试样例的仍是练习稿；可以按标题、摘要或标签搜索，也可以只看某一类。</p>
+      <p class="blog-archive-note side-note narrative side-note--marked" aria-hidden="true">目前共五篇，按时间归档。</p>
     </header>
 
     <div class="blog-filters" id="blog-filters" hidden>
@@ -78,34 +79,34 @@
     </section>
 
     <ol class="post-list" id="blog-static-list">
-        <li class="post-entry" data-post-id="attention-intuition">
+        <li class="post-entry" data-post-id="ncs-figure-design">
           <span class="post-entry__number" aria-hidden="true">A-01</span>
           <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-book-stack"></use></svg></span>
-          <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
+          <time class="post-entry__date" datetime="2026-09-18">2026-09-18</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
-            <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/attention-intuition.html">用直觉理解注意力机制</a></h2>
-            <p class="post-entry__summary">从阅读一句话时如何寻找线索出发，理解 Query、Key 和 Value 的分工。先建立加权汇总的直觉，再区分这个比喻能解释什么、不能解释什么。</p>
+            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 4 分钟</span></p>
+            <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/ncs-figure-design.html">ncs-figure-design 的设计思路</a></h2>
+            <p class="post-entry__summary">科研绘图的风格不该来自一组没有出处的默认参数。这套 skill 从官方指南、真实论文图和学术色板文献中学习，并把来源、校验与诚实降级写进工作流。</p>
           </div>
         </li>
-        <li class="post-entry" data-post-id="dom-search-notes">
+        <li class="post-entry" data-post-id="research-reading">
           <span class="post-entry__number" aria-hidden="true">A-02</span>
           <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-book-stack"></use></svg></span>
-          <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
+          <time class="post-entry__date" datetime="2026-09-18">2026-09-18</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
-            <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/dom-search-notes.html">原生 JavaScript 搜索与筛选笔记</a></h2>
-            <p class="post-entry__summary">用一个小型文章列表拆解搜索流程：整理数据、组合条件、创建 DOM，再处理中文输入与失败降级。让交互保持简单，也让没有脚本的页面依然可读。</p>
+            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 4 分钟</span></p>
+            <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/research-reading.html">research-reading 的设计思路</a></h2>
+            <p class="post-entry__summary">论文伴读不应该自动替研究者总结。这套 skill 用低负担的三遍阅读、六类证据标记和材料边界，陪读者形成可靠、可追溯、有适用边界的理解。</p>
           </div>
         </li>
-        <li class="post-entry" data-post-id="paper-reading-notes">
+        <li class="post-entry" data-post-id="deskmate-with-firefly">
           <span class="post-entry__number" aria-hidden="true">A-03</span>
-          <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-book-stack"></use></svg></span>
-          <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
+          <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-flower"></use></svg></span>
+          <time class="post-entry__date" datetime="2026-09-18">2026-09-18</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
-            <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/paper-reading-notes.html">一次论文阅读如何留下可复用笔记</a></h2>
-            <p class="post-entry__summary">把论文笔记从摘抄改成问题、证据与局限的连接。通过三次阅读逐步建立地图，保留页码和图号，为下一次验证、复现与讨论留下入口。</p>
+            <p class="post-entry__category">我喜欢的 <span class="post-entry__meta">/ 1 分钟</span></p>
+            <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/deskmate-with-firefly.html">和流萤做同桌</a></h2>
+            <p class="post-entry__summary">如果是和流萤一起做同桌的话，再读高中三年也不是不行。放两只流萤手办的照片，顺便记下关于南华、清华和上交的玩笑。</p>
           </div>
         </li>
         <li class="post-entry" data-post-id="leave-some-space">
@@ -118,6 +119,16 @@
             <p class="post-entry__summary">计划里没有排满的时间，也可以有自己的用途。用一页简单的手账区分推进、整理与休息，让学习留下回顾的空间，而不是只累积待办。</p>
           </div>
         </li>
+        <li class="post-entry" data-post-id="scrna-grn-notes">
+          <span class="post-entry__number" aria-hidden="true">A-05</span>
+          <span class="category-mark" aria-hidden="true"><svg class="mark mark--small" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-book-stack"></use></svg></span>
+          <time class="post-entry__date" datetime="2025-06-27">2025-06-27</time>
+          <div class="post-entry__content">
+            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 8 分钟 · 测试样例</span></p>
+            <h2 class="post-entry__title"><a class="post-entry__link" href="./posts/scrna-grn-notes.html">六月：单细胞与基因调控网络笔记</a></h2>
+            <p class="post-entry__summary">从单细胞 RNA 测序数据的稀疏与噪声讲起，再逐条整理基因调控网络推断里的常见概念：先验知识、贝叶斯网络、高斯图模型、L1 正则化与图自编码器。</p>
+          </div>
+        </li>
       </ol>
 
   </div>
@@ -126,7 +137,7 @@
 <footer class="site-footer">
   <div class="site-footer__inner container">
     <p class="site-footer__brand">Sywen's Space · 学业 · 生活 · 我喜欢的</p>
-    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。四篇文章均为示例。</p>
+    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。示例文章另有标注。</p>
     <nav class="site-footer__links" aria-label="页脚导航">
       <a href="./index.html">首页</a>
       <a href="./blog.html">文章</a>

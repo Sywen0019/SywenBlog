@@ -4,6 +4,46 @@
   const base = new URL(document.documentElement.dataset.siteRoot || './', location.href);
   site.resolveUrl = (path) => new URL(path, base).href;
 
+  // Chromium and Firefox do not consistently allow a file:// document to use
+  // an external SVG symbol through <use>. Keep the normal sprite for HTTP(S),
+  // but provide the same small mark set inline when the site is opened from a
+  // local file, so the functional header controls do not become empty boxes.
+  const LOCAL_FILE = location.protocol === 'file:';
+  const MARK_FALLBACKS = Object.freeze({
+    'mark-book-stack': '<path d="M3 8.5h13.5v4H3z"/><path d="M5 8.5V6h13.5v2.5"/><path d="M4 12.5h13v4H4z"/><path d="M17 14.5h3.5v4H17"/><path d="M6.6 10.5h1.4M7.6 14.5h1.4"/>',
+    'mark-notebook': '<path d="M6.5 3.5h11v17h-11z"/><path d="M6.5 3.5v17"/><path d="M9.5 7.5h5M9.5 11h5M9.5 14.5h3"/><path d="M4.5 7h2M4.5 12h2M4.5 17h2"/>',
+    'mark-flower': '<path d="M12 12.5c-3.4-1-4.6-3-3.7-4.8.9-1.8 3-1.6 3.7 1.2"/><path d="M12 12.5c3.4-1 4.6-3 3.7-4.8-.9-1.8-3-1.6-3.7 1.2"/><path d="M12 12.5c-.6 3.5 0 5.4 2 5.7 2 .3 2.8-1.6.6-3.6"/><path d="M12 12.5c-.6-3.5-2.4-4.9-4.2-4.1-1.8.8-1.4 2.9 1.4 3.5"/><circle cx="12" cy="12.5" r="1.3"/>',
+    'mark-laptop': '<path d="M5.5 6.5h13v9h-13z"/><path d="M3.5 17.5h17"/><path d="M10.5 15.5h3"/>',
+    'mark-tablet-pen': '<path d="M4.5 4.5h11v15h-11z"/><path d="M7.5 8h5M7.5 11.5h5M7.5 15h3"/><path d="M18.4 6.2l1.4 1.4-6.6 6.6-1.9.5.5-1.9z"/>',
+    'mark-reading': '<path d="M12 6.8C10.3 5.3 7.9 4.8 4.5 5.2v12.6c3.4-.4 5.8.1 7.5 1.6"/><path d="M12 6.8c1.7-1.5 4.1-2 7.5-1.6v12.6c-3.4-.4-5.8.1-7.5 1.6"/><path d="M12 6.8v12.6"/>',
+    'mark-coffee': '<path d="M4.5 8.5h12v6a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4z"/><path d="M16.5 10h1.8a2.2 2.2 0 0 1 0 4.4h-1.8"/><path d="M4.5 21h12"/><path d="M8 5.5c0-1 .8-1 .8-2M11.6 5.5c0-1 .8-1 .8-2"/>',
+    'mark-headphones': '<path d="M4.5 15v-3a7.5 7.5 0 0 1 15 0v3"/><path d="M4.5 13.5h2.2v5H5.6a1.1 1.1 0 0 1-1.1-1.1z"/><path d="M19.5 13.5h-2.2v5h1.1a1.1 1.1 0 0 0 1.1-1.1z"/>',
+    'mark-arrow-right': '<path d="M4.5 12h14"/><path d="M13.5 7l5 5-5 5"/>',
+    'mark-archive': '<path d="M4 5.5h16v3.5H4z"/><path d="M5.5 9v9.5h13V9"/><path d="M10 12.5h4"/>',
+    'mark-grid': '<path d="M4 4h6.5v6.5H4zM13.5 4H20v6.5h-6.5zM4 13.5h6.5V20H4zM13.5 13.5H20V20h-6.5z"/>',
+    'mark-sun': '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8"/>',
+    'mark-moon': '<path d="M19 14.6A8 8 0 0 1 9.4 5a8 8 0 1 0 9.6 9.6z"/>',
+    'mark-menu': '<path d="M4 7h16M4 12h16M4 17h16"/>'
+  });
+
+  function useLocalMark(svg, symbol) {
+    const markup = MARK_FALLBACKS[symbol];
+    if (!markup) return false;
+    if (!svg.hasAttribute('viewBox')) svg.setAttribute('viewBox', '0 0 24 24');
+    svg.innerHTML = markup;
+    return true;
+  }
+
+  function hydrateLocalMarks() {
+    if (!LOCAL_FILE) return;
+    document.querySelectorAll('svg > use').forEach((use) => {
+      const href = use.getAttribute('href') || use.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || '';
+      const hash = href.lastIndexOf('#');
+      if (hash < 0) return;
+      useLocalMark(use.parentElement, href.slice(hash + 1));
+    });
+  }
+
   // 统一状态提示与复制（PROJECT_PLAN §15.6、§16.4）。
   // 这里是唯一的提示与剪贴板入口：菜单、复制面板等都调用同一份实现，不维护第二套。
   const NOTICE_MS = 3000;
@@ -79,6 +119,7 @@
     svg.setAttribute('class', 'mark' + (modifier ? ' mark--' + modifier : ''));
     svg.setAttribute('aria-hidden', 'true');
     svg.setAttribute('focusable', 'false');
+    if (LOCAL_FILE && useLocalMark(svg, 'mark-' + name)) return svg;
     const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
     use.setAttribute('href', site.resolveUrl('assets/icons/marks.svg#mark-' + name));
     svg.append(use);
@@ -129,7 +170,7 @@
     label.append(document.createTextNode(category.name + ' '));
     const meta = document.createElement('span');
     meta.className = 'post-entry__meta';
-    meta.textContent = '/ ' + post.readingTime + ' 分钟' + (post.isDemo ? ' · 示例' : '');
+    meta.textContent = '/ ' + post.readingTime + ' 分钟' + (post.isDemo ? ' · 示例' : '') + (post.isTestSample ? ' · 测试样例' : '');
     label.append(meta);
     const heading = document.createElement(headingLevel === 3 ? 'h3' : 'h2');
     heading.className = 'post-entry__title';
@@ -161,6 +202,10 @@
       });
     }
   } catch (_) { /* Existing article links remain available. */ }
+
+  // Static marks are already in the DOM; dynamic marks use the same fallback
+  // in createMark above, so both Home and Blog remain complete under file://.
+  hydrateLocalMarks();
 
   // 图片加载状态：成功隐藏 Sywen 文本回退，失败隐藏破损图标并显示短文本。
   // 抽成函数，供 createPostEntry 动态生成的分类缩略图复用。

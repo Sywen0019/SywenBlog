@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-site-root="../" data-page="post" data-post="research-reading">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>research-reading 的设计思路 · Sywen's Space</title>
+<meta name="description" content="论文伴读不应该自动替研究者总结。这套 skill 用低负担的三遍阅读、六类证据标记和材料边界，陪读者形成可靠、可追溯、有适用边界的理解。">
+<script src="../js/theme.js"></script>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/narrative.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+<noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
+<script src="../js/posts-data.js" defer></script>
+<script src="../js/site.js" defer></script>
+<script src="../js/motion.js" defer></script>
+<script src="../js/reading.js" defer></script>
+<script src="../js/context-menu.js" defer></script>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden></div>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    <p class="site-title"><a class="brand" href="../index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
+    <div class="site-tools">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
+      <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
+    </div>
+    <nav class="site-nav" aria-label="主导航">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="../index.html">首页</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="../blog.html" aria-current="true">文章</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="../about.html">关于</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main" id="main" tabindex="-1">
+  <div class="container">
+
+    <a class="post-back" href="../blog.html">返回文章列表</a>
+
+    <article class="post" data-post-id="research-reading">
+      <header class="post-header">
+        <p class="post-header__index" aria-hidden="true">A-02</p>
+        <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=study">学业</a><time class="post-meta__date" datetime="2026-09-18">2026-09-18</time><span class="post-meta__time">约 4 分钟</span></p>
+        <h1 class="page-title post-header__title">research-reading 的设计思路</h1>
+      </header>
+            <div class="post-rail narrative" aria-hidden="true">
+        <span class="post-rail__mark"><svg class="mark" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-book-stack"></use></svg></span>
+        <span class="post-rail__number">A-02</span>
+      </div>
+      <div class="post-body">
+        <p>让 Agent 读一篇论文，看起来最常见的做法是等它输出一份摘要，再要求我们记住。但真实阅读不是这样发生的。读到方法时，我们可能突然需要补一个前置概念；看到实验结果时，又会回到图中的基线和误差线。研究者的疑问决定下一步读哪里，而不是一个固定模板决定每篇论文都按同样方式被压缩。</p>
+<p><code>research-reading</code> 因此把自己定位成陪读者，而不是替读者交作业的人。它的目标不是制造更多总结，而是帮助研究者形成可靠、可追溯、有适用边界的理解。</p>
+<h2 data-rail="01">阅读节奏由研究者掌握</h2>
+<p>伴读默认没有时间预算，不要求填写 Paper Map、证据矩阵或流程表，也不强制写一句话命题、章节总结和闭卷复述。用户可以直接停在某个 Pass，也可以跳过顺序，直接要求解释一个公式、核查一项实验或者规划复现。局部问题先得到回答，再回到原来的阅读位置。</p>
+<p>每个 Pass 完成后，系统只说明下一遍会增加什么，然后等待用户决定。它不会因为第一遍顺利就自动进入全文精读，也不会把轻量反问变成必须完成的测验。低负担并不等于随意，而是把精力留给真正需要理解的地方。</p>
+<h2 data-rail="02">先认清手里到底有什么材料</h2>
+<p>题名、DOI、摘要、全文、单张图、补充材料和用户转述，并不是同一种阅读范围。只有摘要时，可以分析作者声称了什么，却不能假装已经读过方法和实验结果；图表分辨率不足时，也不能凭正文的一句话说清趋势；补充材料没有提供时，更不能猜测其中存在哪些验证。</p>
+<p>系统需要明确当前材料边界，在不足处标记限制。需要判断具体图表时，应查看实际图像或论文页面，而不只依赖提取出来的文字。材料允许回答局部问题，就直接处理，不要求先完成一个完整 Pass。可追溯的准确性始终排在流程完整之前。</p>
+<h2 data-rail="03">六类证据，拆开“写了什么”和“能说明什么”</h2>
+<p>论文阅读最容易混淆的是作者主张、事实证据和我们的解释。为了保留这些差异，伴读对重要判断使用六类标记：</p>
+<ul><li><strong>[论文主张]</strong>：作者明确声称的内容，但不自动等于事实。</li><li><strong>[直接证据]</strong>：论文中的实验、数据、图表、证明、观察或统计分析直接支持的内容。</li><li><strong>[外部证据]</strong>：来自论文之外并且已经核查的资料。</li><li><strong>[Agent 推断]</strong>：基于现有材料作出的解释、连接或推测。</li><li><strong>[研究者假设]</strong>：用户提出、但仍待检验的判断。</li><li><strong>[未验证]</strong>：当前材料或证据不足以确认的内容。</li></ul>
+<p>这些标记无需贴到每个普通句子上，只用于真正影响理解的判断。关键结论还应带上页码、章节、Figure、Table、Equation 或补充材料位置；如果无法定位，就如实说明，而不是编一个看起来专业的引用。数据集、样本量、指标、Baseline、统计方法和适用范围也要一起保留，因为它们决定结论能走多远。</p>
+<h2 data-rail="04">三遍阅读各自解决不同问题</h2>
+<p>Pass 1 是快速巡览，路线固定为标题与摘要、Conclusion 或 Discussion、Method 与 Experiments 中的图表。它只建立“论文在讲什么、做了什么、结果大致朝哪个方向”的粗略印象，不细读 Introduction、公式推导和完整实验设置。完成后，系统说明 Pass 2 会从头顺读主文，但不会自动开始。</p>
+<p>Pass 2 按论文原有顺序读到主文结束，理解每一节、每个模块和主要论证关系。公式证明与复杂实现细节默认略过，但承载核心方法和主要结果的图表必须读清。遇到前置知识缺口时，先查找并解释缺失概念，再回到原论文；遇到关键引用时，记录它为什么影响理解，最后提供核实过的链接，而不是扩展成大规模文献综述。</p>
+<p>Pass 3 只在用户明确选择后启用。它从标题到主文结束逐句逐段推进，所有公式和证明都要逐步展开，重要图表重新结合正文精读。更特别的是，它会在作者方案展开前提出一次“如果是我来做”的思考提示：核心困难是什么，有哪些数据和先验，最简单的方案可能为何失败，又该怎样验证。这里不要求写长篇回答，用户可以只回复“继续”，随后再看作者的选择、其他实现路径和各自代价。</p>
+<h2 data-rail="05">终点不是一篇摘要</h2>
+<p>一次有效阅读结束时，留下来的应该是问题、证据、局限和下一步验证入口。哪些判断属于作者主张，哪些已有数据直接支持，哪些只是暂时推断，哪些地方需要新的实验，这些状态不能在一次漂亮总结里被抹平。</p>
+<p>只有用户明确希望整理或复用阅读所得，系统才进入知识沉淀。即使沉淀，也要继续区分观察、解释、假设、知识候选和已验证知识；一个观点不会因为被作者反复强调、被多篇论文引用或符合直觉，就自动变成验证过的知识。</p>
+<p>这套设计没有要求所有阅读都走到最难的一遍，也没有把笔记数量当成理解程度。它更像一种清楚的陪伴方式：研究者决定方向和节奏，系统负责守住材料边界、证据等级与中断后的位置。如果也把这套来源意识带回绘图流程，可以继续阅读<a href="./ncs-figure-design.html">ncs-figure-design 的设计思路</a>。</p>
+      </div>
+      <ul class="tag-list" aria-label="文章标签"><li><a class="tag" href="../blog.html?q=research-reading">research-reading</a></li><li><a class="tag" href="../blog.html?q=%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB">论文阅读</a></li><li><a class="tag" href="../blog.html?q=%E7%A7%91%E7%A0%94%E5%B7%A5%E4%BD%9C%E6%B5%81">科研工作流</a></li></ul>
+      <nav class="post-nav" aria-label="相邻文章"><a href="./ncs-figure-design.html"><span class="post-nav__label">下一篇 · 更新</span>ncs-figure-design 的设计思路</a><a href="./deskmate-with-firefly.html"><span class="post-nav__label">上一篇 · 更早</span>和流萤做同桌</a></nav>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner container">
+    <p class="site-footer__brand">Sywen's Space · 学业 · 生活 · 我喜欢的</p>
+    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。示例文章另有标注。</p>
+    <nav class="site-footer__links" aria-label="页脚导航">
+      <a href="../index.html">首页</a>
+      <a href="../blog.html">文章</a>
+      <a href="../about.html">关于</a>
+      <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
+    </nav>
+    <div class="site-footer__mark narrative" aria-hidden="true">
+      <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-flower"></use></svg>
+    </div>
+    <p class="side-note site-footer__note-line side-note--marked" aria-hidden="true">慢慢写，慢慢长。</p>
+    <p class="site-footer__copyright">© 2026 Sywen's Space</p>
+  </div>
+</footer>
+
+<p class="status-notice" id="site-notice" role="status" aria-live="polite" hidden></p>
+<div class="copy-panel" id="copy-panel" role="dialog" aria-labelledby="copy-panel-title" tabindex="-1" hidden>
+  <h2 class="copy-panel__title" id="copy-panel-title">手动复制链接</h2>
+  <div class="copy-panel__field">
+    <label class="field__label" for="copy-panel-input">可分享地址</label>
+    <input class="field__input copy-panel__input" id="copy-panel-input" type="text" readonly spellcheck="false" autocomplete="off">
+  </div>
+  <p class="copy-panel__note" id="copy-panel-note">自动复制不可用，请按 Ctrl/Cmd+C 手动复制，或按 Esc 关闭。</p>
+  <div class="copy-panel__actions">
+    <button type="button" class="button button--quiet" id="copy-panel-close">关闭</button>
+  </div>
+</div>
+<div class="context-menu" id="context-menu" role="menu" aria-label="页面快捷菜单" hidden></div>
+<button type="button" class="back-to-top" id="back-to-top" hidden>返回顶部</button>
+
+</body>
+</html>

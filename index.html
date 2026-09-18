@@ -14,6 +14,7 @@
 <noscript><style>#theme-toggle,#quick-menu-button{display:none}</style></noscript>
 <script src="./js/posts-data.js" defer></script>
 <script src="./js/site.js" defer></script>
+<script src="./js/motion.js" defer></script>
 <script src="./js/reading.js" defer></script>
 <script src="./js/context-menu.js" defer></script>
 </head>
@@ -77,31 +78,31 @@
         <a class="section-header__link" href="./blog.html">查看全部文章</a>
       </div>
       <ol class="post-list" id="home-recent">
-        <li class="post-entry" data-post-id="attention-intuition">
+        <li class="post-entry" data-post-id="ncs-figure-design">
           <span class="post-entry__number" aria-hidden="true">A-01</span>
-          <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
+          <time class="post-entry__date" datetime="2026-09-18">2026-09-18</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
-            <h3 class="post-entry__title"><a class="post-entry__link" href="./posts/attention-intuition.html">用直觉理解注意力机制</a></h3>
-            <p class="post-entry__summary">从阅读一句话时如何寻找线索出发，理解 Query、Key 和 Value 的分工。先建立加权汇总的直觉，再区分这个比喻能解释什么、不能解释什么。</p>
+            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 4 分钟</span></p>
+            <h3 class="post-entry__title"><a class="post-entry__link" href="./posts/ncs-figure-design.html">ncs-figure-design 的设计思路</a></h3>
+            <p class="post-entry__summary">科研绘图的风格不该来自一组没有出处的默认参数。这套 skill 从官方指南、真实论文图和学术色板文献中学习，并把来源、校验与诚实降级写进工作流。</p>
           </div>
         </li>
-        <li class="post-entry" data-post-id="dom-search-notes">
+        <li class="post-entry" data-post-id="research-reading">
           <span class="post-entry__number" aria-hidden="true">A-02</span>
-          <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
+          <time class="post-entry__date" datetime="2026-09-18">2026-09-18</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
-            <h3 class="post-entry__title"><a class="post-entry__link" href="./posts/dom-search-notes.html">原生 JavaScript 搜索与筛选笔记</a></h3>
-            <p class="post-entry__summary">用一个小型文章列表拆解搜索流程：整理数据、组合条件、创建 DOM，再处理中文输入与失败降级。让交互保持简单，也让没有脚本的页面依然可读。</p>
+            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 4 分钟</span></p>
+            <h3 class="post-entry__title"><a class="post-entry__link" href="./posts/research-reading.html">research-reading 的设计思路</a></h3>
+            <p class="post-entry__summary">论文伴读不应该自动替研究者总结。这套 skill 用低负担的三遍阅读、六类证据标记和材料边界，陪读者形成可靠、可追溯、有适用边界的理解。</p>
           </div>
         </li>
-        <li class="post-entry" data-post-id="paper-reading-notes">
+        <li class="post-entry" data-post-id="deskmate-with-firefly">
           <span class="post-entry__number" aria-hidden="true">A-03</span>
-          <time class="post-entry__date" datetime="2026-09-15">2026-09-15</time>
+          <time class="post-entry__date" datetime="2026-09-18">2026-09-18</time>
           <div class="post-entry__content">
-            <p class="post-entry__category">学业 <span class="post-entry__meta">/ 2 分钟 · 示例</span></p>
-            <h3 class="post-entry__title"><a class="post-entry__link" href="./posts/paper-reading-notes.html">一次论文阅读如何留下可复用笔记</a></h3>
-            <p class="post-entry__summary">把论文笔记从摘抄改成问题、证据与局限的连接。通过三次阅读逐步建立地图，保留页码和图号，为下一次验证、复现与讨论留下入口。</p>
+            <p class="post-entry__category">我喜欢的 <span class="post-entry__meta">/ 1 分钟</span></p>
+            <h3 class="post-entry__title"><a class="post-entry__link" href="./posts/deskmate-with-firefly.html">和流萤做同桌</a></h3>
+            <p class="post-entry__summary">如果是和流萤一起做同桌的话，再读高中三年也不是不行。放两只流萤手办的照片，顺便记下关于南华、清华和上交的玩笑。</p>
           </div>
         </li>
       </ol>
@@ -143,7 +144,7 @@
             <span class="category-link__art art-frame art-frame--category" aria-hidden="true"><img class="art-frame__image" src="./assets/images/cat-favorites.webp" alt="" width="640" height="480" loading="lazy" decoding="async"></span>
             <span class="category-link__body">
               <span class="category-link__name">我喜欢的</span>
-              <span class="category-link__meta"><span class="category-count" data-category-count="favorites">0</span> 篇</span>
+              <span class="category-link__meta"><span class="category-count" data-category-count="favorites">1</span> 篇</span>
               <span class="category-link__desc">美食、动漫与游戏里的偏爱。</span>
             </span>
           </a>
@@ -159,24 +160,24 @@
         </div>
       </div>
       <div class="now-slip">
-      <div class="note-panel paper-panel paper-panel--dots">
-        <p class="now-slip__stamp" aria-hidden="true">CURRENTLY</p>
-        <ul class="note-panel__list">
-          <li class="note-panel__item">
-            <p class="note-panel__label">正在学习</p>
-            <p class="note-panel__text">理解 Transformer。</p>
-          </li>
-          <li class="note-panel__item">
-            <p class="note-panel__label">正在整理</p>
-            <p class="note-panel__text">学习与阅读笔记。</p>
-          </li>
-          <li class="note-panel__item">
-            <p class="note-panel__label">保持兴趣</p>
-            <p class="note-panel__text">美食、动画与游戏。</p>
-          </li>
-        </ul>
-      </div>
-      <span class="narrative narrative-plant now-slip__plant" aria-hidden="true"><img src="./assets/images/a07-plant.webp" width="330" height="330" alt="" loading="lazy" decoding="async"></span>
+        <div class="note-panel paper-panel paper-panel--dots">
+          <p class="now-slip__stamp" aria-hidden="true">CURRENTLY</p>
+          <ul class="note-panel__list">
+            <li class="note-panel__item">
+              <p class="note-panel__label">正在学习</p>
+              <p class="note-panel__text">理解 Transformer。</p>
+            </li>
+            <li class="note-panel__item">
+              <p class="note-panel__label">正在整理</p>
+              <p class="note-panel__text">学习与阅读笔记。</p>
+            </li>
+            <li class="note-panel__item">
+              <p class="note-panel__label">保持兴趣</p>
+              <p class="note-panel__text">美食、动画与游戏。</p>
+            </li>
+          </ul>
+          <span class="narrative narrative-plant now-slip__plant" aria-hidden="true"><img src="./assets/images/a07-plant.webp" width="330" height="330" alt="" loading="lazy" decoding="async"></span>
+        </div>
       </div>
     </section>
 
@@ -186,7 +187,7 @@
 <footer class="site-footer">
   <div class="site-footer__inner container">
     <p class="site-footer__brand">Sywen's Space · 学业 · 生活 · 我喜欢的</p>
-    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。四篇文章均为示例。</p>
+    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。示例文章另有标注。</p>
     <nav class="site-footer__links" aria-label="页脚导航">
       <a href="./index.html">首页</a>
       <a href="./blog.html">文章</a>
