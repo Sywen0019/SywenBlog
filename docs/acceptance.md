@@ -1,5 +1,28 @@
 # 验收记录
 
+## 全量发布与公开部署验收 · 2026-09-19
+
+**范围：** 将基线 `a0ed633` 之后的全部本地工作发布到 Gitee、GitHub，并由 Cloudflare Pages 自动部署。发布区间共 27 个提交，最终运行时提交为 `44cad1c9b5832d13c7608442a0e2c381440fd3fd`。按用户要求，E05/E06 继续保持 `Deferred`，不实现其功能，也不修改任务完成状态。
+
+**远端与部署：**
+
+| 项目 | 结果 |
+|---|---|
+| Gitee `origin/main` | `44cad1c9b5832d13c7608442a0e2c381440fd3fd` |
+| GitHub `github/main` | `44cad1c9b5832d13c7608442a0e2c381440fd3fd` |
+| 推送方式 | `git -c http.sslBackend=openssl push`，未使用 force，未重写或压缩历史 |
+| Cloudflare Pages | 自动构建 `bash scripts/build-site.sh` 成功，部署版本为 `44cad1c` |
+| 线上 `version.json` | `source_commit = 44cad1c9b5832d13c7608442a0e2c381440fd3fd`，`published_at = 2026-09-18T16:53:33Z` |
+| 发布产物 | `dist/` 共 36 个文件；包含五篇当前文章，不包含三篇旧文章或 `search-flow.svg` |
+
+**推送前验证：** `git diff --check` 通过；`node scripts/check-baseline.mjs` **179/0**；E01 Edge／Chrome／Firefox 各 **48/0**；E03 各 **18/0**；E04 各 **20/0**；Narrative **24/0**；paper texture **168/0**；构建脚本生成 **36 个文件**。
+
+**公开验收：** `node scripts/check-baseline.mjs --public` 为 Edge 153／Chrome 153／Firefox 155 共 **18 项通过、0 失败**，报告保存在 [public-checks.json](evidence/baseline/public-checks.json)。首页、Blog、About、五篇文章页均返回 200；`posts/attention-intuition.html`、`posts/dom-search-notes.html`、`posts/paper-reading-notes.html` 与 `assets/images/search-flow.svg` 均返回 404。公开搜索、分类筛选、`ai/coding/research` 旧分类映射、主题持久化、深链接、键盘路径和无脚本降级均通过；三浏览器无未捕获 JavaScript 异常。
+
+**环境说明：** 首次公开检查在本机遇到 Playwright Firefox 的 Windows `spawn UNKNOWN`／`mozglue` 激活上下文错误，属于用户目录中的浏览器安装环境问题，不是页面失败。将验证浏览器放到被忽略的 `.tmp-browser/browsers/` 后，同一公开检查以 `18/0` 通过。
+
+**未验证项：** 实体手机、屏幕阅读器、真实浏览器 UI 缩放与 VC2；E05/E06 未实现。本记录将作为 docs-only 收尾提交推送，线上 `source_commit` 随后对应该收尾提交，但网站运行文件与已验证的 `44cad1c` 相同。
+
 ## 两篇 skill 设计文章替换旧示例 · 2026-09-18
 
 **范围：** 永久删除 `posts/attention-intuition.html`、`posts/dom-search-notes.html`、`posts/paper-reading-notes.html` 与 `assets/images/search-flow.svg`；新增 `posts/ncs-figure-design.html`、`posts/research-reading.html`；同步首页、Blog、数据、相邻导航、当前文档和仍需执行的验收 harness。历史证据和归档截图不改写。

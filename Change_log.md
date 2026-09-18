@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-09-19 · 全量发布到 Gitee、GitHub 与 Cloudflare
+
+- 将基线 `a0ed633` 之后的 27 个提交完整推送到 Gitee `origin/main` 与 GitHub `github/main`，最终均为 `44cad1c9b5832d13c7608442a0e2c381440fd3fd`；未压缩提交、未重写历史、未使用 force。
+- GitHub `main` 触发 Cloudflare Pages 自动构建，`bash scripts/build-site.sh` 成功生成 36 个发布文件。线上 `version.json` 的 `source_commit` 与 `44cad1c` 一致，`published_at` 为 `2026-09-18T16:53:33Z`。
+- 发布产物包含 `ncs-figure-design`、`research-reading`、`deskmate-with-firefly`、`leave-some-space`、`scrna-grn-notes` 五篇文章；三篇旧文章与 `assets/images/search-flow.svg` 均已永久移除并从线上返回 404。
+- **验证：** 推送前 baseline **179/0**、E01 三浏览器各 **48/0**、E03 各 **18/0**、E04 各 **20/0**、Narrative **24/0**、paper texture **168/0**；公开三浏览器检查 **18/0**，覆盖搜索、分类、旧分类映射、主题、深链接、键盘、无脚本降级和未捕获异常。首页、Blog、About 与五篇文章线上均为 200。报告见 [public-checks.json](docs/evidence/baseline/public-checks.json)。
+- **环境记录：** 两次公开检查因本机 Playwright Firefox 的 `spawn UNKNOWN`／`mozglue` 激活上下文错误未能启动浏览器；改用 gitignored 的 `.tmp-browser/browsers/` 安装后以 `18/0` 通过，未放宽任何断言。
+- **状态：** E05/E06 继续保持 `Deferred`，未实现其功能或改变完成状态。实体手机、屏幕阅读器、真实浏览器 UI 缩放与 VC2 仍未验证。收尾 docs commit 推送后线上 `source_commit` 将指向该提交，运行时文件与已验证的 `44cad1c` 相同。
+
 ## 2026-09-18 · 用两篇 skill 设计长文替换旧示例
 
 - 永久删除 `posts/attention-intuition.html`、`posts/dom-search-notes.html`、`posts/paper-reading-notes.html`，不提供兼容页或重定向；同时删除仅由旧 JavaScript 文章引用的 `assets/images/search-flow.svg`。
