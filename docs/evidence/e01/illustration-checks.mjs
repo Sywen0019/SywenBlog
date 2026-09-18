@@ -20,13 +20,14 @@ const LIMIT_BYTES = 40 * 1024;
 const CATEGORIES = [
   { id: 'study', name: '学业', count: 3, file: 'cat-study.webp' },
   { id: 'life', name: '生活', count: 1, file: 'cat-life.webp' },
-  { id: 'favorites', name: '我喜欢的', count: 0, file: 'cat-favorites.webp' },
+  { id: 'favorites', name: '我喜欢的', count: 1, file: 'cat-favorites.webp' },
 ];
 const STATIC_CATEGORY = {
-  'attention-intuition': 'study',
-  'dom-search-notes': 'study',
-  'paper-reading-notes': 'study',
+  'ncs-figure-design': 'study',
+  'research-reading': 'study',
+  'deskmate-with-firefly': 'favorites',
   'leave-some-space': 'life',
+  'scrna-grn-notes': 'study',
 };
 const WIDTHS = [320, 390, 767, 768, 769, 1024, 1440];
 const LIMITATIONS = [
@@ -106,7 +107,10 @@ async function settleImages(page, selector) {
       pending().forEach((img) => img.scrollIntoView({ block: 'center' }));
       await new Promise((resolve) => setTimeout(resolve, 100));
     }
-    await Promise.all(nodes.map((img) => img.decode().catch(() => {})));
+    await Promise.all(nodes.map((img) => Promise.race([
+      img.decode().catch(() => {}),
+      new Promise((resolve) => setTimeout(resolve, 2000)),
+    ])));
     window.scrollTo(0, 0);
   }, selector);
 }
@@ -242,7 +246,7 @@ async function runBrowser(label, launch) {
       await check('blog: JS renders dynamic list and hides static fallback', async () => {
         assert.equal(await page.locator('#blog-results').isHidden(), false);
         assert.equal(await page.locator('#blog-static-list').isHidden(), true);
-        assert.equal(await page.locator('#blog-results .post-entry').count(), 4);
+        assert.equal(await page.locator('#blog-results .post-entry').count(), 5);
       });
       await check('blog: entries carry archive numbers and category marks, no thumbnails', async () => {
         // 2026-09-18 视觉架构重构：取消分类缩略图作为默认文章封面，
@@ -254,8 +258,8 @@ async function runBrowser(label, launch) {
           number: li.querySelector('.post-entry__number')?.textContent || null,
           mark: li.querySelector('.category-mark svg use')?.getAttribute('href') || null,
         })));
-        assert.equal(rows.length, 4);
-        assert.deepEqual(rows.map((r) => r.number), ['A-01', 'A-02', 'A-03', 'A-04']);
+        assert.equal(rows.length, 5);
+        assert.deepEqual(rows.map((r) => r.number), ['A-01', 'A-02', 'A-03', 'A-04', 'A-05']);
         rows.forEach((r) => {
           assert.equal(r.images, 0, r.slug);
           assert.equal(r.withThumb, false, r.slug);
@@ -286,7 +290,7 @@ async function runBrowser(label, launch) {
       await settleImages(page, '#blog-results img');
       await check('blog: mobile entries stay text-only with numbers', async () => {
         assert.equal(await page.locator('#blog-results img').count(), 0);
-        assert.deepEqual(await page.locator('#blog-results .post-entry__number').allInnerTexts(), ['A-01', 'A-02', 'A-03', 'A-04']);
+        assert.deepEqual(await page.locator('#blog-results .post-entry__number').allInnerTexts(), ['A-01', 'A-02', 'A-03', 'A-04', 'A-05']);
       });
       screenshots.push(await shot(page, 'e01-blog-390-light'));
       await ctx.close();
@@ -301,7 +305,7 @@ async function runBrowser(label, launch) {
       await page.locator('#search-input').waitFor({ state: 'visible' });
       await check('blog: list requests no category art, entries and links remain', async () => {
         assert.equal(await page.locator('#blog-results img').count(), 0);
-        assert.equal(await page.locator('#blog-results .post-entry__link:visible').count(), 4);
+        assert.equal(await page.locator('#blog-results .post-entry__link:visible').count(), 5);
       });
       await page.goto(base + 'index.html');
       await page.evaluate(() => document.querySelector('#home-categories').scrollIntoView());
@@ -322,17 +326,17 @@ async function runBrowser(label, launch) {
       const ctx = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 900 }, colorScheme: 'dark' });
       const page = await ctx.newPage();
       await page.goto(base + 'blog.html');
-      await check('no-js: static blog list keeps four text entries with archive numbers', async () => {
+      await check('no-js: static blog list keeps five text entries with archive numbers', async () => {
         assert.equal(await page.locator('#blog-filters').isVisible(), false);
         assert.equal(await page.locator('#blog-static-list img').count(), 0);
-        assert.deepEqual(await page.locator('#blog-static-list .post-entry__number').allInnerTexts(), ['A-01', 'A-02', 'A-03', 'A-04']);
-        assert.equal(await page.locator('#blog-static-list .post-entry__link:visible').count(), 4);
+        assert.deepEqual(await page.locator('#blog-static-list .post-entry__number').allInnerTexts(), ['A-01', 'A-02', 'A-03', 'A-04', 'A-05']);
+        assert.equal(await page.locator('#blog-static-list .post-entry__link:visible').count(), 5);
       });
       await page.goto(base + 'index.html');
       await check('no-js: home cards present with hardcoded counts', async () => {
         assert.equal(await page.locator('#home-categories .category-link').count(), 3);
         const counts = await page.locator('#home-categories [data-category-count]').allInnerTexts();
-        assert.deepEqual(counts, ['3', '1', '0']);
+        assert.deepEqual(counts, ['3', '1', '1']);
       });
       screenshots.push(await shot(page, 'e01-home-nojs-390-dark'));
       await ctx.close();
@@ -348,7 +352,7 @@ async function runBrowser(label, launch) {
       await page.locator('#search-input').waitFor({ state: 'visible' });
       await check('subdirectory: blog list stays text-only and numbered', async () => {
         assert.equal(await page.locator('#blog-results img').count(), 0);
-        assert.equal(await page.locator('#blog-results .post-entry').count(), 4);
+        assert.equal(await page.locator('#blog-results .post-entry').count(), 5);
       });
       await page.goto(base + 'course/blog/index.html');
       await settleImages(page, '#home-categories img');

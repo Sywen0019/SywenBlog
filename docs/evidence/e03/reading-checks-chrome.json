@@ -1,22 +1,23 @@
 {
   "task": "E03",
   "browser": "chrome",
-  "browserVersion": "152.0.7977.83",
+  "browserVersion": "153.0.8010.52",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "7e7c1c963b9bc8bab0a267811c7e61c19733eb94",
-  "at": "2026-09-17T02:29:16.804Z",
+  "baseCommit": "545117f245c5a401b59b87c49cf551b6e263db58",
+  "at": "2026-09-18T16:40:55.471Z",
   "checks": [
     {
-      "name": "1. 七页 reading.js 加载顺序与资源",
+      "name": "1. 八页 reading.js 加载顺序与资源",
       "pass": true,
       "detail": {
-        "index.html": 5,
-        "blog.html": 6,
-        "about.html": 5,
-        "posts/attention-intuition.html": 5,
-        "posts/dom-search-notes.html": 5,
-        "posts/paper-reading-notes.html": 5,
-        "posts/leave-some-space.html": 5
+        "index.html": 6,
+        "blog.html": 7,
+        "about.html": 6,
+        "posts/ncs-figure-design.html": 6,
+        "posts/research-reading.html": 6,
+        "posts/leave-some-space.html": 6,
+        "posts/deskmate-with-firefly.html": 6,
+        "posts/scrna-grn-notes.html": 6
       }
     },
     {
@@ -121,77 +122,77 @@
       "name": "7. 滚到底时返回顶部不遮挡页脚内容",
       "pass": true,
       "detail": {
-        "posts/attention-intuition.html@390px": {
+        "posts/ncs-figure-design.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.27,
-          "footerBottom": 844.22,
-          "footerContentBottom": 748.22,
-          "clearance": 35.78,
-          "scrollTop": 2133
+          "footerTop": 484.16,
+          "footerBottom": 843.91,
+          "footerContentBottom": 747.91,
+          "clearance": 36.09,
+          "scrollTop": 3766
         },
         "blog.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.3,
-          "footerBottom": 844.25,
-          "footerContentBottom": 748.25,
-          "clearance": 35.75,
-          "scrollTop": 1212
+          "footerTop": 484.63,
+          "footerBottom": 844.38,
+          "footerContentBottom": 748.38,
+          "clearance": 35.62,
+          "scrollTop": 1368
         },
         "about.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.23,
-          "footerBottom": 844.19,
-          "footerContentBottom": 748.19,
-          "clearance": 35.81,
-          "scrollTop": 1880
+          "footerTop": 484,
+          "footerBottom": 843.75,
+          "footerContentBottom": 747.75,
+          "clearance": 36.25,
+          "scrollTop": 2191
         },
         "index.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 568.38,
-          "footerBottom": 844.33,
-          "footerContentBottom": 748.33,
-          "clearance": 35.67,
-          "scrollTop": 2009
+          "footerTop": 484.63,
+          "footerBottom": 844.38,
+          "footerContentBottom": 748.38,
+          "clearance": 35.62,
+          "scrollTop": 2097
         },
-        "posts/attention-intuition.html@1440px": {
+        "posts/ncs-figure-design.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 750.09,
-          "footerBottom": 900.48,
-          "footerContentBottom": 804.48,
-          "clearance": 35.52,
-          "scrollTop": 1337
+          "footerTop": 631.86,
+          "footerBottom": 900.44,
+          "footerContentBottom": 804.44,
+          "clearance": 35.56,
+          "scrollTop": 2356
         },
         "blog.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.47,
-          "footerBottom": 899.86,
-          "footerContentBottom": 803.86,
-          "clearance": 36.14,
-          "scrollTop": 1047
+          "footerTop": 631.59,
+          "footerBottom": 900.17,
+          "footerContentBottom": 804.17,
+          "clearance": 35.83,
+          "scrollTop": 897
         },
         "about.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.25,
-          "footerBottom": 899.64,
-          "footerContentBottom": 803.64,
-          "clearance": 36.36,
-          "scrollTop": 1191
+          "footerTop": 631.72,
+          "footerBottom": 900.3,
+          "footerContentBottom": 804.3,
+          "clearance": 35.7,
+          "scrollTop": 1406
         },
         "index.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 749.36,
-          "footerBottom": 899.75,
-          "footerContentBottom": 803.75,
-          "clearance": 36.25,
-          "scrollTop": 1397
+          "footerTop": 631.52,
+          "footerBottom": 900.09,
+          "footerContentBottom": 804.09,
+          "clearance": 35.91,
+          "scrollTop": 1614
         }
       }
     },
@@ -233,12 +234,12 @@
       "pass": true,
       "detail": {
         "resize": {
-          "before": 1337,
-          "after": 1737
+          "before": 2356,
+          "after": 2756
         },
         "hero": {
-          "earlyHeight": 2297,
-          "lateHeight": 2297,
+          "earlyHeight": 2514,
+          "lateHeight": 2514,
           "lateProgress": 0
         }
       }
@@ -247,35 +248,35 @@
       "name": "11. 深链接定位下进度一致",
       "pass": true,
       "detail": {
-        "scrollTop": 146,
-        "maxScroll": 2277,
-        "progress": 6,
-        "expected": 6
+        "scrollTop": 140,
+        "maxScroll": 3910,
+        "progress": 4,
+        "expected": 4
       }
     },
     {
       "name": "12. 无脚本时控件保持 hidden",
       "pass": true,
       "detail": {
-        "pages": 7,
+        "pages": 8,
         "allHidden": true,
-        "noScriptFooterPadding": "32px"
+        "noScriptFooterPadding": "64px"
       }
     },
     {
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 44,
+        "progress": 22,
         "button": "visible",
         "script": "../js/context-menu.js"
       }
     },
     {
-      "name": "14. 七页无页面异常、无失败请求",
+      "name": "14. 八页无页面异常、无失败请求",
       "pass": true,
       "detail": {
-        "pages": 7,
+        "pages": 8,
         "errors": 0,
         "failedRequests": 0
       }
@@ -284,7 +285,7 @@
       "name": "15. 等效 200% 重排无横向溢出",
       "pass": true,
       "detail": {
-        "posts/attention-intuition.html": {
+        "posts/ncs-figure-design.html": {
           "overflow": 0,
           "right": 16,
           "left": 620
@@ -305,7 +306,7 @@
       "name": "16. E03 未改动 assets/ 中的非 Hero 资产",
       "pass": true,
       "detail": {
-        "unchanged": 13,
+        "unchanged": 15,
         "preexistingHeroRevision": [],
         "baseline": "docs/evidence/baseline/checks.json（B05 快照）"
       }
@@ -332,38 +333,42 @@
       "detail": {
         "e03-cmp-blog-1440-light.png": {
           "baseline": "docs/evidence/e01/references/blog-1440-light.png",
-          "size": [
+          "sizeA": [
             1440,
             1947
           ],
-          "diffPixels": 0,
-          "ignoredDiff": 0,
-          "bands": 0,
-          "colors": [],
-          "note": "默认态整页逐像素对照 E01 后基线；忽略顶部 3px 进度线与页头 18–140px 工具行，页脚预留 64px，其余区域应为 0 差异。"
+          "sizeB": [
+            1440,
+            1797
+          ],
+          "recorded": true,
+          "note": "记录项：E01 参考图早于五篇静态列表；本次按计划不改写归档截图，仅记录新增文章造成的整页高度变化。"
         },
         "e03-cmp-blog-1440-dark.png": {
           "baseline": "docs/evidence/e01/references/blog-1440-dark.png",
-          "size": [
+          "sizeA": [
             1440,
             1947
           ],
-          "diffPixels": 0,
-          "ignoredDiff": 0,
-          "bands": 0,
-          "colors": [],
-          "note": "默认态整页逐像素对照 E01 后基线；忽略顶部 3px 进度线与页头 18–140px 工具行，页脚预留 64px，其余区域应为 0 差异。"
+          "sizeB": [
+            1440,
+            1797
+          ],
+          "recorded": true,
+          "note": "记录项：E01 参考图早于五篇静态列表；本次按计划不改写归档截图，仅记录新增文章造成的整页高度变化。"
         },
         "e03-cmp-blog-390-light.png": {
           "baseline": "docs/evidence/e01/references/blog-390-light.png",
-          "size": [
+          "sizeA": [
             390,
             2056
           ],
-          "diffPixels": 0,
-          "bands": 0,
+          "sizeB": [
+            390,
+            2212
+          ],
           "recorded": true,
-          "note": "记录项：390px 档沿用 E04 起的既有处理，存在选区高亮等渲染状态差异，不参与通过判定。"
+          "note": "记录项：E01 参考图早于五篇静态列表；本次按计划不改写归档截图，仅记录新增文章造成的整页高度变化。"
         }
       }
     }

@@ -12,6 +12,10 @@ PASS  [file] assets/images/cat-favorites.webp <=40KB
 PASS  [file] assets/images/cat-favorites.webp is WebP (RIFF/WEBP)
 PASS  [file] assets/images/cat-favorites.webp manifest bytes/sha/4:3
 
+## edge: 48 passed, 0 failed
+
+## chrome: 48 passed, 0 failed
+
 ## firefox: 48 passed, 0 failed
 
 ALL CHECKS PASSED

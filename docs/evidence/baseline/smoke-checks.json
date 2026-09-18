@@ -1,6 +1,40 @@
 {
-  "sourceCommit": "1c17346a97e463f3029ac9242721b3ee15522699",
-  "at": "2026-09-15T15:12:59.941Z",
+  "baseCommit": "545117f245c5a401b59b87c49cf551b6e263db58",
+  "sourceFilesSha256": {
+    "about.html": "f0be008a2167f12677d7074d1c2ba7ec886c143fc11e8a1f0174333a743f5662",
+    "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+    "assets/icons/marks.svg": "3f6c6423e5ffa7c67b78c0d7879ba475b11a7750b21a05427cfde35ae91f3800",
+    "assets/images/a07-plant.webp": "0f12a98ee8c6879fc4b52a1ae23e8105f22f794339671bf6e2390089e35aaf88",
+    "assets/images/a08-transition-branch.webp": "4d6e42aa17bb382eb1fb0a4e690cfd85db7a91cec32fd5150114009c39bb818c",
+    "assets/images/about-reading-1280.webp": "cbf8864a10759261c949f408529c1aa7af01bfb5aea9537075de3347fa82686a",
+    "assets/images/about-reading-640.webp": "284f391cd36b3452016b3ec6d9edc7c4e75fd050c6c10ecbc57f988d1d4c4cfe",
+    "assets/images/cat-favorites.webp": "ead74902c15a3436097a5ab4765bee0accd1d84e92823b1b62cc6ec362f094d0",
+    "assets/images/cat-life.webp": "43a8b67f48fcbf72d03e90c490b0a0c1be14fe06b5a5cf2d72ab7415da74547b",
+    "assets/images/cat-study.webp": "10ccf6898fb2b9619f290e38383241bd3a8c429367b3057cf605445334b9f06d",
+    "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
+    "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
+    "assets/images/hero-desk-1280.webp": "437a4db0633276fcd13a2c62f3e897ea511639ea82e5b10c2955602ba10cda54",
+    "assets/images/hero-desk-640.webp": "9d5418b2b4f55f9f2c6d72decd23c829d4919d43463bdb8ceeb357081c471615",
+    "assets/images/search-flow.svg": "a8e388d6d1335b20dd9e583a3381e6f8bf7a23dd8649a0bc33d3c762fa813673",
+    "blog.html": "8712fdbade86e959e195b894366eb9efb348ebe4e9cd7560f0c6b9a86259caeb",
+    "css/base.css": "c901b6446d4dca9b837ca98c7313b5d8179edb619510ae8415ed5b96d208e5b3",
+    "css/components.css": "4cb12ab6a1830323df2036306afc9ddf8571665ce183c32bf172b931f86e99c2",
+    "css/narrative.css": "72d37454b311929ff90f51251dea6af49c5a8b62549b0551bfab7051c657ad6e",
+    "css/pages.css": "b70508cbcfd6d32e59fb29b9897d51a39f1e6428963d411016ba19a4ee50e028",
+    "index.html": "8f421844f3cbec58d2c793963a6cd65216a35df50d453ffb01db48ff1feeacb6",
+    "js/blog.js": "a33befe31ff863e9bc763fc0c181b7559d42eb41431d440280e84312b343f567",
+    "js/context-menu.js": "f43ff8dcaab910b35ce38aa72e8c84a18f3d944367a2d675d5cce1982511f1ba",
+    "js/motion.js": "cc9af7ae4092c4e3909d03441c5f62d2010e1e569483d6394ee3d7b36fb091bc",
+    "js/posts-data.js": "4ee7b50d4430516e0ae6b0dd6e812034dda8f35c8d122898af3a55d83565c270",
+    "js/reading.js": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
+    "js/site.js": "420434ac35cecfafbcfadfd9e031f1f099f0c2f08c15125c861d129992f6a686",
+    "js/theme.js": "1b62e5e02a8d5ea3c6f5788f292f2edf247d2b59c7fb497690b59f32f87bb3db",
+    "posts/attention-intuition.html": "aa8a0cc86ed9e60711afa963293f81b90cb3f06a2b76b786bea1824e2e7fbec1",
+    "posts/dom-search-notes.html": "d4015355cc382506377bc50ae4bd83cf63abfbfe75f5334608dc693e2679c824",
+    "posts/leave-some-space.html": "25ef1273e1ebee5ec38992a06a69cd89486b5c0c993eb9eb64aa00d42682e3ab",
+    "posts/paper-reading-notes.html": "9f1a09015c8e42597cc4db43a20a6098eee1d6b8ea8bdc3d5f75a83dbec6799d"
+  },
+  "at": "2026-09-18T02:46:30.849Z",
   "mode": "smoke",
   "checks": [
     {
@@ -10,6 +44,10 @@
     },
     {
       "name": "Edge: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Edge: legacy category parameters map to study",
       "pass": true
     },
     {
@@ -27,10 +65,14 @@
     {
       "name": "Chrome version",
       "pass": true,
-      "detail": "152.0.7977.83"
+      "detail": "153.0.8010.52"
     },
     {
       "name": "Chrome: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Chrome: legacy category parameters map to study",
       "pass": true
     },
     {
@@ -46,15 +88,37 @@
       "pass": true
     },
     {
-      "name": "Firefox availability",
+      "name": "Firefox version",
+      "pass": true,
+      "detail": "155.0"
+    },
+    {
+      "name": "Firefox: search/category/reset/URL/keyboard",
       "pass": false,
-      "error": "browserType.launch: Executable doesn't exist at C:\\Users\\sywen\\AppData\\Local\\ms-playwright\\firefox-1543\\firefox\\firefox.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     pnpm exec playwright install                           ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "Firefox: legacy category parameters map to study",
+      "pass": true
+    },
+    {
+      "name": "Firefox: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Firefox: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Firefox: no uncaught JS exceptions",
+      "pass": true
     }
   ],
   "screenshots": [],
   "limitations": [
     "No physical phone test; mobile and 200% layout checks are browser emulations."
   ],
-  "passed": 10,
+  "baseUrl": "http://127.0.0.1:55367/",
+  "passed": 17,
   "failed": 1
 }

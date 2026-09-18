@@ -3,20 +3,21 @@
   "browser": "firefox",
   "browserVersion": "155.0",
   "baseUrl": "http://127.0.0.1:8199/",
-  "baseCommit": "80a13fb5f4388ce6381d96f935c0f73c58ca9600",
-  "at": "2026-09-17T15:34:10.309Z",
+  "baseCommit": "545117f245c5a401b59b87c49cf551b6e263db58",
+  "at": "2026-09-18T16:41:13.716Z",
   "checks": [
     {
-      "name": "1. 七页 reading.js 加载顺序与资源",
+      "name": "1. 八页 reading.js 加载顺序与资源",
       "pass": true,
       "detail": {
-        "index.html": 5,
-        "blog.html": 6,
-        "about.html": 5,
-        "posts/attention-intuition.html": 5,
-        "posts/dom-search-notes.html": 5,
-        "posts/paper-reading-notes.html": 5,
-        "posts/leave-some-space.html": 5
+        "index.html": 6,
+        "blog.html": 7,
+        "about.html": 6,
+        "posts/ncs-figure-design.html": 6,
+        "posts/research-reading.html": 6,
+        "posts/leave-some-space.html": 6,
+        "posts/deskmate-with-firefly.html": 6,
+        "posts/scrna-grn-notes.html": 6
       }
     },
     {
@@ -121,23 +122,23 @@
       "name": "7. 滚到底时返回顶部不遮挡页脚内容",
       "pass": true,
       "detail": {
-        "posts/attention-intuition.html@390px": {
+        "posts/ncs-figure-design.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 484.25,
-          "footerBottom": 844.05,
-          "footerContentBottom": 748.05,
-          "clearance": 35.95,
-          "scrollTop": 2242
+          "footerTop": 484.45,
+          "footerBottom": 844.25,
+          "footerContentBottom": 748.25,
+          "clearance": 35.75,
+          "scrollTop": 3767
         },
         "blog.html@390px": {
           "buttonTop": 784,
           "buttonBottom": 16,
-          "footerTop": 484.1,
-          "footerBottom": 843.9,
-          "footerContentBottom": 747.9,
-          "clearance": 36.1,
-          "scrollTop": 1113
+          "footerTop": 483.9,
+          "footerBottom": 843.7,
+          "footerContentBottom": 747.7,
+          "clearance": 36.3,
+          "scrollTop": 1369
         },
         "about.html@390px": {
           "buttonTop": 784,
@@ -157,14 +158,14 @@
           "clearance": 36.32,
           "scrollTop": 2098
         },
-        "posts/attention-intuition.html@1440px": {
+        "posts/ncs-figure-design.html@1440px": {
           "buttonTop": 840,
           "buttonBottom": 16,
-          "footerTop": 631.45,
-          "footerBottom": 900.05,
-          "footerContentBottom": 804.05,
-          "clearance": 35.95,
-          "scrollTop": 1488
+          "footerTop": 631.15,
+          "footerBottom": 899.75,
+          "footerContentBottom": 803.75,
+          "clearance": 36.25,
+          "scrollTop": 2357
         },
         "blog.html@1440px": {
           "buttonTop": 840,
@@ -173,7 +174,7 @@
           "footerBottom": 900.35,
           "footerContentBottom": 804.35,
           "clearance": 35.65,
-          "scrollTop": 715
+          "scrollTop": 897
         },
         "about.html@1440px": {
           "buttonTop": 840,
@@ -233,8 +234,8 @@
       "pass": true,
       "detail": {
         "resize": {
-          "before": 1488,
-          "after": 1888
+          "before": 2357,
+          "after": 2757
         },
         "hero": {
           "earlyHeight": 2513,
@@ -248,16 +249,16 @@
       "pass": true,
       "detail": {
         "scrollTop": 140,
-        "maxScroll": 2386,
-        "progress": 6,
-        "expected": 6
+        "maxScroll": 3911,
+        "progress": 4,
+        "expected": 4
       }
     },
     {
       "name": "12. 无脚本时控件保持 hidden",
       "pass": true,
       "detail": {
-        "pages": 7,
+        "pages": 8,
         "allHidden": true,
         "noScriptFooterPadding": "64px"
       }
@@ -266,16 +267,16 @@
       "name": "13. 子目录 /course/blog/ 下可用",
       "pass": true,
       "detail": {
-        "progress": 36,
+        "progress": 21,
         "button": "visible",
         "script": "../js/context-menu.js"
       }
     },
     {
-      "name": "14. 七页无页面异常、无失败请求",
+      "name": "14. 八页无页面异常、无失败请求",
       "pass": true,
       "detail": {
-        "pages": 7,
+        "pages": 8,
         "errors": 0,
         "failedRequests": 0
       }
@@ -284,7 +285,7 @@
       "name": "15. 等效 200% 重排无横向溢出",
       "pass": true,
       "detail": {
-        "posts/attention-intuition.html": {
+        "posts/ncs-figure-design.html": {
           "overflow": 0,
           "right": 16,
           "left": 620
@@ -305,7 +306,7 @@
       "name": "16. E03 未改动 assets/ 中的非 Hero 资产",
       "pass": true,
       "detail": {
-        "unchanged": 14,
+        "unchanged": 15,
         "preexistingHeroRevision": [],
         "baseline": "docs/evidence/baseline/checks.json（B05 快照）"
       }

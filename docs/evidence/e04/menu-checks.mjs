@@ -23,8 +23,9 @@ const decodeSize = (file) => {
 const root = path.resolve(import.meta.dirname, '../../..');
 const out = import.meta.dirname;
 const pages = ['index.html', 'blog.html', 'about.html',
-  'posts/attention-intuition.html', 'posts/dom-search-notes.html',
-  'posts/paper-reading-notes.html', 'posts/leave-some-space.html'];
+  'posts/ncs-figure-design.html', 'posts/research-reading.html',
+  'posts/leave-some-space.html',
+  'posts/deskmate-with-firefly.html', 'posts/scrna-grn-notes.html'];
 const CAPABILITY = '(hover: hover) and (pointer: fine)';
 const LIMITATIONS = [
   '未使用实体手机与屏幕阅读器；移动端为浏览器视口模拟。',
@@ -342,7 +343,7 @@ async function run(browserName, browser) {
     return { x: Math.round(box.x + 40), y: Math.round(box.y + 24) };
   };
 
-  await check('1. 七页脚本顺序与资源', async () => {
+  await check('1. 八页脚本顺序与资源', async () => {
     const detail = {};
     for (const rel of pages) {
       await open(rel);
@@ -352,6 +353,11 @@ async function run(browserName, browser) {
         : rel === 'blog.html'
           ? ['./js/theme.js', './js/posts-data.js', './js/site.js', './js/blog.js', './js/reading.js', './js/context-menu.js']
           : ['./js/theme.js', './js/posts-data.js', './js/site.js', './js/reading.js', './js/context-menu.js'];
+      const motionIndex = order.indexOf(rel.startsWith('posts/') ? '../js/motion.js' : './js/motion.js');
+      if (motionIndex >= 0) {
+        const motionSrc = rel.startsWith('posts/') ? '../js/motion.js' : './js/motion.js';
+        expected.splice(rel === 'blog.html' ? 4 : 3, 0, motionSrc);
+      }
       assert.deepEqual(order, expected, `${rel} 脚本顺序不符`);
       const defer = await page.evaluate(() => Array.from(document.scripts)
         .filter((s) => s.getAttribute('src') && !s.getAttribute('src').endsWith('theme.js'))
@@ -418,7 +424,7 @@ async function run(browserName, browser) {
   await check('4. 菜单内容与分组', async () => {
     const detail = {};
     const nonPost = ['index.html', 'blog.html', 'about.html'];
-    for (const rel of [...nonPost, 'posts/attention-intuition.html']) {
+    for (const rel of [...nonPost, 'posts/ncs-figure-design.html']) {
       await open(rel);
       await openByButton(page);
       const state = await probe(page);
@@ -542,7 +548,7 @@ async function run(browserName, browser) {
   });
 
   await check('7. 右键定位与视口夹取', async () => {
-    await open('posts/attention-intuition.html');
+    await open('posts/ncs-figure-design.html');
     const detail = {};
     const spots = [[20, 20], [1420, 20], [20, 880], [1420, 880], [720, 450]];
     for (const [x, y] of spots) {
@@ -671,7 +677,7 @@ async function run(browserName, browser) {
   });
 
   await check('9. 原生菜单豁免', async () => {
-    await open('posts/attention-intuition.html');
+    await open('posts/ncs-figure-design.html');
     await stabilizeScroll(page);
     const detail = {};
     // 用真实右键手势，并在冒泡结束后记录 defaultPrevented —— 这就是「是否拦截了原生菜单」的事实。
@@ -695,17 +701,17 @@ async function run(browserName, browser) {
     // true = 应显示自定义菜单（被拦截）；false = 应保留浏览器原生菜单
     // [名称, 点击选择器, 页面, 期望是否自定义, 事件目标所属容器（默认为点击选择器）, 取点方式]
     const cases = [
-      ['正文段落', '.post-body p', 'posts/attention-intuition.html', true, null, 'center'],
-      ['正文区块', '.post-body p + p', 'posts/attention-intuition.html', true, null, 'center'],
-      ['正文链接', '.post-body a', 'posts/attention-intuition.html', false, null, 'center'],
-      ['页脚链接', '.site-footer__links a', 'posts/attention-intuition.html', false, null, 'center'],
+      ['正文段落', '.post-body p', 'posts/ncs-figure-design.html', true, null, 'center'],
+      ['正文区块', '.post-body p + p', 'posts/ncs-figure-design.html', true, null, 'center'],
+      ['正文链接', '.post-body a', 'posts/ncs-figure-design.html', false, null, 'center'],
+      ['页脚链接', '.site-footer__links a', 'posts/ncs-figure-design.html', false, null, 'center'],
       ['搜索框', '#search-input', 'blog.html', false, null, 'center'],
       // 按钮不属于 §15.1 的原生菜单清单（输入控件、链接、媒体、选区、Shift、豁免标记），
       // 因此按钮上仍显示自定义菜单。
       ['主题按钮', '#theme-toggle', 'blog.html', true, null, 'center'],
       ['快捷菜单按钮', '#quick-menu-button', 'blog.html', true, null, 'center'],
     ];
-    let current = 'posts/attention-intuition.html';
+    let current = 'posts/ncs-figure-design.html';
     for (const [name, selector, rel, custom, container, where] of cases) {
       if (current !== rel) { await open(rel); current = rel; }
       await stabilizeScroll(page);
@@ -813,7 +819,7 @@ async function run(browserName, browser) {
   });
 
   await check('10. 复制成功路径与状态反馈', async () => {
-    await open('posts/dom-search-notes.html');
+    await open('posts/ncs-figure-design.html');
     await openByButton(page);
     await menuAction(page, '复制文章链接');
     await hidden(page);
@@ -822,18 +828,18 @@ async function run(browserName, browser) {
     assert.equal(state.panel.hidden, true, '复制成功不应打开降级面板');
     assert.equal(state.notice.role, 'status', '状态提示缺少 role=status');
     const copied = await readClipboard(page);
-    const expected = base + 'posts/dom-search-notes.html';
+    const expected = base + 'posts/ncs-figure-design.html';
     if (copied === null) assert.match(state.notice.text, /复制/, '读取剪贴板不可用时，状态提示应反馈复制结果');
     else assert.equal(copied, expected, `剪贴板内容为 ${copied}`);
     const detail = { notice: state.notice.text, copied, expected };
     // 带查询与片段的非文章页复制的仍是完整地址
-    await open('blog.html?q=DOM#main');
+    await open('blog.html?q=ncs-figure-design#main');
     await openByButton(page);
     await menuAction(page, '复制页面链接');
     await page.waitForFunction(() => !document.getElementById('site-notice').hasAttribute('hidden'), null, { timeout: 5000 });
     const full = await readClipboard(page);
     if (full === null) assert.match((await probe(page)).notice.text, /复制/, '读取剪贴板不可用时，状态提示应反馈复制结果');
-    else assert.equal(full, base + 'blog.html?q=DOM#main', `非文章页应复制当前完整地址：${full}`);
+    else assert.equal(full, base + 'blog.html?q=ncs-figure-design#main', `非文章页应复制当前完整地址：${full}`);
     detail.pageUrl = full;
     // 提示自动收起
     await page.waitForFunction(() => document.getElementById('site-notice').hasAttribute('hidden'), null, { timeout: 6000 });
@@ -842,7 +848,7 @@ async function run(browserName, browser) {
   });
 
   await check('11. 复制失败降级面板', async () => {
-    await open('posts/attention-intuition.html');
+    await open('posts/ncs-figure-design.html');
     await page.evaluate(() => {
       window.__e04original = navigator.clipboard.writeText.bind(navigator.clipboard);
       navigator.clipboard.writeText = () => Promise.reject(new Error('denied'));
@@ -852,7 +858,7 @@ async function run(browserName, browser) {
     await hidden(page);
     await page.waitForFunction(() => !document.getElementById('copy-panel').hasAttribute('hidden'), null, { timeout: 5000 });
     let state = await probe(page);
-    const expected = base + 'posts/attention-intuition.html';
+    const expected = base + 'posts/ncs-figure-design.html';
     assert.equal(state.panel.inputValue, expected, `面板地址为 ${state.panel.inputValue}`);
     assert.equal(state.panel.inputReadonly, true, '面板输入框应为只读');
     assert.equal(state.panel.role, 'dialog', '面板缺少 dialog 语义');
@@ -959,7 +965,7 @@ async function run(browserName, browser) {
     await page.waitForFunction(() => document.activeElement && document.activeElement.id === 'search-input', null, { timeout: 5000 });
     detail.otherPageSearch = page.url();
     // 返回顶部：与浮动按钮同一实现
-    await open('posts/attention-intuition.html');
+    await open('posts/ncs-figure-design.html');
     await page.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; document.scrollingElement.scrollTop = 1600; });
     await openByButton(page);
     await menuAction(page, '返回顶部');
@@ -990,7 +996,7 @@ async function run(browserName, browser) {
   });
 
   await check('15. 文章页只读进度', async () => {
-    await open('posts/attention-intuition.html');
+    await open('posts/ncs-figure-design.html');
     await openByButton(page);
     let state = await probe(page);
     const first = Number(state.menu.progress.text.replace(/[^0-9]/g, ''));
@@ -1041,7 +1047,7 @@ async function run(browserName, browser) {
   await check('16. 无脚本与初始化失败降级', async () => {
     const nojs = await browser.newContext({ viewport: { width: 1440, height: 900 }, javaScriptEnabled: false });
     const np = await nojs.newPage();
-    await np.goto(base + 'posts/attention-intuition.html');
+    await np.goto(base + 'posts/ncs-figure-design.html');
     const state = await np.evaluate(() => {
       const ids = ['quick-menu-button', 'site-notice', 'copy-panel', 'context-menu'];
       return Object.fromEntries(ids.map((id) => {
@@ -1065,7 +1071,7 @@ async function run(browserName, browser) {
     const failed = [];
     bp.on('response', (res) => { if (res.status() >= 400 && !res.url().endsWith('context-menu.js')) failed.push(res.url()); });
     await bp.goto(base + 'blog.html');
-    await bp.locator('#search-input').fill('DOM');
+    await bp.locator('#search-input').fill('ncs-figure-design');
     const count = await bp.locator('#blog-results .post-entry').count();
     const buttonHidden = await bp.evaluate(() => {
       const button = document.getElementById('quick-menu-button');
@@ -1080,7 +1086,7 @@ async function run(browserName, browser) {
   });
 
   await check('17. 子目录路径与地址', async () => {
-    await page.goto(base + 'course/blog/blog.html?q=DOM&category=coding#main');
+    await page.goto(base + 'course/blog/blog.html?q=ncs-figure-design&category=coding#main');
     await page.waitForFunction(() => Boolean(window.Sywen), null, { timeout: 5000 });
     await stabilizeScroll(page);
     await openByButton(page);
@@ -1098,7 +1104,7 @@ async function run(browserName, browser) {
     if (copied === null) assert.match((await probe(page)).notice.text, /复制/);
     else assert.equal(copied, base + 'course/blog/index.html', `子目录复制地址为 ${copied}`);
     // 文章页在子目录下复制不含查询与片段的地址
-    await page.goto(base + 'course/blog/posts/dom-search-notes.html?from=menu#main');
+    await page.goto(base + 'course/blog/posts/ncs-figure-design.html?from=menu#main');
     await page.waitForFunction(() => Boolean(window.Sywen), null, { timeout: 5000 });
     await withState('子目录文章页复制', async () => {
       await openByButton(page);
@@ -1107,7 +1113,7 @@ async function run(browserName, browser) {
     });
     const postCopied = await readClipboard(page);
     if (postCopied === null) assert.match((await probe(page)).notice.text, /复制/);
-    else assert.equal(postCopied, base + 'course/blog/posts/dom-search-notes.html', `子目录文章地址为 ${postCopied}`);
+    else assert.equal(postCopied, base + 'course/blog/posts/ncs-figure-design.html', `子目录文章地址为 ${postCopied}`);
     return { blog: copied, post: postCopied };
   });
 
@@ -1115,7 +1121,7 @@ async function run(browserName, browser) {
     const detail = {};
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 900 });
-      await open('posts/attention-intuition.html');
+      await open('posts/ncs-figure-design.html');
       await openByButton(page);
       const state = await probe(page);
       assert.ok(state.overflow <= 1, `${width}px 打开菜单后横向溢出 ${state.overflow}px`);
@@ -1128,7 +1134,7 @@ async function run(browserName, browser) {
     // 390px 近似触摸能力时按钮不显示，菜单也不应出现
     const narrow = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
     const np = await narrow.newPage();
-    await np.goto(base + 'posts/attention-intuition.html');
+    await np.goto(base + 'posts/ncs-figure-design.html');
     const narrowState = await np.evaluate(() => ({
       capability: window.matchMedia('(hover: hover) and (pointer: fine)').matches,
       hidden: document.getElementById('quick-menu-button').hasAttribute('hidden'),
@@ -1166,7 +1172,7 @@ async function run(browserName, browser) {
       report.skippedScreenshots = true;
       return 'skipped';
     }
-    // 七页 × 1440 × 浅深：菜单打开态（能力可用）
+    // 八页 × 1440 × 浅深：菜单打开态（能力可用）
     for (const theme of ['light', 'dark']) {
       const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, colorScheme: theme });
       await injectProbe(ctx);
@@ -1184,7 +1190,7 @@ async function run(browserName, browser) {
         await p.keyboard.press('Escape');
       }
       // 复制降级面板 + 状态提示（三种状态在 1440 浅深各一张）
-      await p.goto(base + 'posts/attention-intuition.html');
+      await p.goto(base + 'posts/ncs-figure-design.html');
       await p.evaluate(() => {
         window.__e04original = navigator.clipboard.writeText.bind(navigator.clipboard);
         navigator.clipboard.writeText = () => Promise.reject(new Error('denied'));
@@ -1207,7 +1213,7 @@ async function run(browserName, browser) {
       made.push(noticeName);
       await ctx.close();
     }
-    // 七页 × 390 × 浅深：纯触摸上下文，按能力门应无按钮无菜单，且无横向溢出
+    // 八页 × 390 × 浅深：纯触摸上下文，按能力门应无按钮无菜单，且无横向溢出
     for (const theme of ['light', 'dark']) {
       const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: theme, hasTouch: true, isMobile: true });
       const p = await ctx.newPage();

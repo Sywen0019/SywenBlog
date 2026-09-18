@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = 'L:/Sywen-Blog';
-const cssFiles = ['css/base.css', 'css/components.css', 'css/pages.css'];
+const cssFiles = ['css/base.css', 'css/components.css', 'css/narrative.css', 'css/pages.css'];
 const css = Object.fromEntries(cssFiles.map((f) => [f, fs.readFileSync(path.join(root, f), 'utf8')]));
 const allCss = cssFiles.map((f) => css[f]).join('\n');
 const out = [];
@@ -71,17 +71,22 @@ const colorKeys = [...lightRoot.keys()].filter((k) => k.startsWith('--color-'));
 check('浅色默认与显式浅色块颜色一致', colorKeys.every((k) => lightRoot.get(k) === lightExplicit.get(k)), `${colorKeys.length} 个颜色 Token`);
 check('深色显式块与系统跟随块颜色一致', colorKeys.every((k) => dark.get(k) === darkSystem.get(k)), `${colorKeys.length} 个颜色 Token`);
 check('深色块颜色集合与浅色一致', colorKeys.every((k) => dark.has(k)), colorKeys.filter((k) => !dark.has(k)).join(', ') || 'ok');
+check('纸面纹理只作用于浅色主题', lightRoot.get('--paper-background') !== 'none'
+  && lightExplicit.get('--paper-background') !== 'none'
+  && dark.get('--paper-background') === 'none'
+  && darkSystem.get('--paper-background') === 'none', 'dark theme disables paper background layers');
 
 // ---------- 3. Token 注册表取值核对 ----------
 const expect = {
-  '--color-paper': ['#F7F3EA', '#202223'],
-  '--color-surface': ['#FFFCF5', '#292C2E'],
-  '--color-ink': ['#242424', '#F2EEE5'],
-  '--color-muted': ['#625F59', '#BBB6AC'],
-  '--color-rule': ['#D6CFC2', '#494D4F'],
+  '--color-paper': ['#F1F3F5', '#202223'],
+  '--color-surface': ['#FAF9F6', '#292C2E'],
+  '--color-subtle': ['#ECEAE5', '#34383A'],
+  '--color-ink': ['#272522', '#F2EEE5'],
+  '--color-muted': ['#5E5A54', '#BBB6AC'],
+  '--color-rule': ['#CFCCC5', '#494D4F'],
   '--color-accent': ['#D9E8EC', '#344B53'],
-  '--color-note': ['#F0E1AC', '#50482E'],
-  '--color-shadow': ['#242424', '#111314'],
+  '--color-note': ['#E8E6E0', '#50482E'],
+  '--color-shadow': ['#272522', '#111314'],
   '--color-art-paper': ['#FFFFFF', '#FFFFFF'],
   '--color-focus': ['var(--color-ink)', 'var(--color-ink)'],
   '--color-link': ['var(--color-ink)', 'var(--color-ink)'],

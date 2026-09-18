@@ -38,7 +38,12 @@ const server = http.createServer((req, res) => {
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
 const base = publicRun ? (process.env.SYWEN_PUBLIC_URL || 'https://sywen-blog.pages.dev/').replace(/\/?$/, '/') : `http://127.0.0.1:${server.address().port}/`;
 report.baseUrl = base;
-const pages = ['index.html', 'blog.html', 'about.html', 'posts/dom-search-notes.html', 'posts/attention-intuition.html', 'posts/paper-reading-notes.html', 'posts/leave-some-space.html'];
+const pages = [
+  'index.html', 'blog.html', 'about.html',
+  'posts/ncs-figure-design.html', 'posts/research-reading.html',
+  'posts/leave-some-space.html', 'posts/deskmate-with-firefly.html',
+  'posts/scrna-grn-notes.html'
+];
 let failures = 0;
 async function check(name, fn) {
   try { const detail = await fn(); report.checks.push({ name, pass: true, detail }); }
@@ -67,7 +72,12 @@ async function core(browser, label) {
   await check(label + ': search/category/reset/URL/keyboard', async () => {
     await p.goto(base + 'blog.html');
     await p.locator('#search-input').waitFor({ state: 'visible' });
-    assert.equal(await visibleCount(p), 4);
+    // js/motion.js 会给 .blog-filters 补一段 opacity/translateY(12px) 入场过渡，而 Playwright 的
+    // 「visible」不排除 opacity:0。等入场过渡结束后再交互，避免首次点击落在仍在位移的按钮上
+    // （2026-09-18 在 Firefox 上实测到一次 5 !== 3 的偶发失败；断言本身未放宽）。
+    await p.waitForFunction(() => document.querySelector('#blog-filters').classList.contains('is-visible'));
+    await p.evaluate(() => Promise.all(document.getAnimations().map((a) => a.finished.catch(() => {}))));
+    assert.equal(await visibleCount(p), 5);
     assert.deepEqual(await p.locator('#blog-categories [data-category]').evaluateAll((els) => els.map((el) => el.dataset.category)),
       ['all', 'study', 'life', 'favorites']);
     await p.locator('[data-category="study"]').click();
@@ -75,37 +85,38 @@ async function core(browser, label) {
     await p.locator('[data-category="life"]').click();
     assert.equal(await visibleCount(p), 1);
     await p.locator('[data-category="favorites"]').click();
-    assert.equal(await p.locator('#blog-empty').isVisible(), true);
-    assert.equal(await p.locator('#empty-title').innerText(), '这里还没有文章');
-    assert.equal(await p.locator('.empty-state__text').innerText(), '之后在这里记录喜欢的美食、游戏、动漫，还有一些杂谈。');
+    // 2026-09-18 起「我喜欢的」已有文章，空状态不再由该分类触发。
+    assert.equal(await visibleCount(p), 1);
+    assert.match(await p.locator('#blog-results').innerText(), /和流萤做同桌/);
     await p.locator('#search-input').fill('美食');
+    assert.equal(await p.locator('#blog-empty').isVisible(), true);
     assert.equal(await p.locator('#empty-title').innerText(), '没找到匹配的文章');
     await p.locator('[data-category="all"]').click();
     await p.locator('#reset-filters').click();
-    assert.equal(await visibleCount(p), 4);
-    await p.locator('#search-input').fill('  JAVASCRIPT   dom  ');
+    assert.equal(await visibleCount(p), 5);
+    await p.locator('#search-input').fill('  NCS-FIGURE-DESIGN  ');
     assert.equal(await visibleCount(p), 1);
-    assert.match(await p.locator('#blog-results').innerText(), /原生 JavaScript/);
-    assert.equal(new URL(p.url()).searchParams.get('q'), 'JAVASCRIPT   dom');
+    assert.match(await p.locator('#blog-results').innerText(), /ncs-figure-design 的设计思路/);
+    assert.equal(new URL(p.url()).searchParams.get('q'), 'NCS-FIGURE-DESIGN');
     await p.locator('[data-category="life"]').click();
     assert.equal(await p.locator('#blog-empty').isVisible(), true);
     assert.equal(await p.locator('#empty-title').innerText(), '没找到匹配的文章');
     await p.locator('#empty-reset').click();
-    assert.equal(await visibleCount(p), 4);
+    assert.equal(await visibleCount(p), 5);
     assert.equal(await p.locator('#search-input').evaluate((el) => el === document.activeElement), true);
-    await p.locator('#search-input').fill('论文');
+    await p.locator('#search-input').fill('research-reading');
     await p.locator('[data-category="study"]').click();
     assert.equal(await visibleCount(p), 1);
     await p.reload();
     assert.equal(await visibleCount(p), 1);
     assert.equal(await p.locator('[data-category="study"]').getAttribute('aria-pressed'), 'true');
     await p.goto(base + 'blog.html?category=unknown&focus=search');
-    assert.equal(await visibleCount(p), 4);
+    assert.equal(await visibleCount(p), 5);
     assert.equal(await p.locator('#search-input').evaluate((el) => el === document.activeElement), true);
-    await p.keyboard.type('javascript');
+    await p.keyboard.type('ncs-figure-design');
     await p.keyboard.press('Enter');
     assert.equal(await visibleCount(p), 1);
-    await p.goto(base + 'blog.html?category=study&q=JavaScript');
+    await p.goto(base + 'blog.html?category=study&q=NCS-FIGURE-DESIGN');
     assert.equal(await visibleCount(p), 1);
     await p.goto(base + 'blog.html?category=life');
     assert.equal(await visibleCount(p), 1);
@@ -120,21 +131,21 @@ async function core(browser, label) {
   });
   await check(label + ': legacy category parameters map to study', async () => {
     for (const legacy of ['ai', 'coding', 'research']) {
-      await p.goto(base + 'blog.html?q=论文&category=' + legacy);
+      await p.goto(base + 'blog.html?q=research-reading&category=' + legacy);
       assert.equal(await visibleCount(p), 1, legacy);
       assert.equal(await p.locator('[data-category="study"]').getAttribute('aria-pressed'), 'true', legacy);
       assert.equal(new URL(p.url()).searchParams.get('category'), 'study', legacy);
-      assert.equal(new URL(p.url()).searchParams.get('q'), '论文', legacy);
+      assert.equal(new URL(p.url()).searchParams.get('q'), 'research-reading', legacy);
     }
   });
   await check(label + ': composition and text-only query', async () => {
     await p.goto(base + 'blog.html');
     await p.locator('#search-input').evaluate((el) => {
       el.dispatchEvent(new CompositionEvent('compositionstart', { bubbles: true }));
-      el.value = '科研';
+      el.value = '科研绘图';
       el.dispatchEvent(new InputEvent('input', { bubbles: true, isComposing: true }));
     });
-    assert.equal(await visibleCount(p), 4);
+    assert.equal(await visibleCount(p), 5);
     await p.locator('#search-input').evaluate((el) => el.dispatchEvent(new CompositionEvent('compositionend', { bubbles: true })));
     assert.equal(await visibleCount(p), 1);
     await p.locator('#search-input').fill('<img src=x onerror=alert(1)>');
@@ -149,7 +160,7 @@ async function core(browser, label) {
     assert.equal(await p.locator('html').getAttribute('data-theme'), 'dark');
     await p.reload();
     assert.equal(await p.locator('html').getAttribute('data-theme'), 'dark');
-    await p.goto(base + 'posts/dom-search-notes.html');
+    await p.goto(base + 'posts/ncs-figure-design.html');
     assert.equal(await p.locator('html').getAttribute('data-theme'), 'dark');
     assert.equal(await p.locator('#theme-toggle').innerText(), '切换至浅色');
     await p.emulateMedia({ colorScheme: 'light' });
@@ -187,7 +198,7 @@ try {
       await core(browser, label);
       if (label !== 'Edge' || smoke) continue;
 
-      await check('All seven pages: local targets and unique headings', async () => {
+      await check('All eight pages: local targets and unique headings', async () => {
         const p = await browser.newPage();
         const targets = new Set();
         for (const name of pages) {
@@ -237,7 +248,7 @@ try {
         await context.close();
       }
 
-      await check('No JavaScript: seven pages and static index', async () => {
+      await check('No JavaScript: eight pages and static index', async () => {
         const c = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 900 }, colorScheme: 'dark' });
         const p = await c.newPage();
         for (const name of pages) {
@@ -245,7 +256,7 @@ try {
           assert.equal(await p.locator('#theme-toggle').isVisible(), false);
           assert.equal(await p.locator('.site-nav a').count(), 3);
           if (name === 'blog.html') {
-            assert.equal(await p.locator('#blog-static-list .post-entry').count(), 4);
+            assert.equal(await p.locator('#blog-static-list .post-entry').count(), 5);
             assert.equal(await p.locator('#blog-filters').isVisible(), false);
           }
         }
@@ -260,7 +271,7 @@ try {
           await p.route('**/js/' + script, (route) => route.abort());
           await p.goto(base + 'blog.html');
           assert.equal(await p.locator('#blog-static-list').isVisible(), true);
-          assert.equal(await p.locator('#blog-static-list .post-entry').count(), 4);
+          assert.equal(await p.locator('#blog-static-list .post-entry').count(), 5);
           assert.equal(await p.locator('#blog-filters').isVisible(), false);
           await p.close();
         });
@@ -305,22 +316,22 @@ try {
       await check('URL update failure does not stop filtering', async () => {
         const p = await browser.newPage();
         await p.addInitScript(() => { history.replaceState = () => { throw new Error('blocked'); }; });
-        await p.goto(base + 'blog.html'); await p.locator('#search-input').fill('DOM');
+        await p.goto(base + 'blog.html'); await p.locator('#search-input').fill('NCS-FIGURE-DESIGN');
         assert.equal(await visibleCount(p), 1);
         await p.close();
       });
 
       await check('Subdirectory, tags and article assets', async () => {
         const p = await browser.newPage();
-        await p.goto(base + 'course/blog/blog.html?q=DOM&category=coding');
+        await p.goto(base + 'course/blog/blog.html?q=ncs-figure-design&category=coding');
         assert.equal(await visibleCount(p), 1);
         assert.equal(await p.locator('[data-category="study"]').getAttribute('aria-pressed'), 'true');
         assert.equal(new URL(p.url()).searchParams.get('category'), 'study');
         const link = p.locator('#blog-results .post-entry__link');
         assert.ok((await link.getAttribute('href')).includes('/course/blog/posts/'));
         await link.click();
-        assert.match(p.url(), /course\/blog\/posts\/dom-search-notes.html/);
-        await p.locator('.tag').filter({ hasText: 'DOM' }).click();
+        assert.match(p.url(), /course\/blog\/posts\/ncs-figure-design.html/);
+        await p.locator('.tag').filter({ hasText: 'ncs-figure-design' }).click();
         assert.equal(await visibleCount(p), 1);
         await p.close();
       });
@@ -354,7 +365,7 @@ try {
 
       await check('200% equivalent layout and long text', async () => {
         const p = await browser.newPage({ viewport: { width: 720, height: 450 }, deviceScaleFactor: 2 });
-        for (const name of ['index.html', 'blog.html', 'posts/dom-search-notes.html']) {
+        for (const name of ['index.html', 'blog.html', 'posts/ncs-figure-design.html']) {
           await p.goto(base + name);
           await p.locator('h1').evaluate((el) => { el.textContent += ' LongTitleWithoutSpaces'.repeat(8); });
           assert.ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
@@ -385,9 +396,8 @@ try {
         await p.goto(base + 'blog.html?q=no-results');
         await shot(p, 'blog-empty-390-dark');
         await p.goto(base + 'blog.html?category=favorites');
-        assert.equal(await p.locator('#empty-title').innerText(), '这里还没有文章');
-        assert.equal(await p.locator('.empty-state__text').innerText(), '之后在这里记录喜欢的美食、游戏、动漫，还有一些杂谈。');
-        await shot(p, 'blog-favorites-empty-390-dark');
+        assert.equal(await visibleCount(p), 1);
+        await shot(p, 'blog-favorites-390-dark');
         await p.close();
       });
     } catch (error) {

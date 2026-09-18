@@ -1,14 +1,14 @@
 {
   "task": "E01 category illustrations",
   "browser": "chrome",
-  "at": "2026-09-16T10:45:52.039Z",
-  "passed": 49,
+  "at": "2026-09-18T16:36:36.179Z",
+  "passed": 48,
   "failed": 0,
   "checks": [
     {
       "name": "version",
       "pass": true,
-      "detail": "152.0.7977.83"
+      "detail": "153.0.8010.52"
     },
     {
       "name": "home: three category cards map to study/life/favorites",
@@ -43,15 +43,11 @@
       "pass": true
     },
     {
-      "name": "blog: each dynamic thumbnail maps to its category image",
+      "name": "blog: entries carry archive numbers and category marks, no thumbnails",
       "pass": true
     },
     {
-      "name": "blog: desktop thumbnails render at 128x96",
-      "pass": true
-    },
-    {
-      "name": "blog: filtering keeps thumbnails consistent (study=3, life=1)",
+      "name": "blog: filtering keeps the list consistent (study=3, life=1)",
       "pass": true
     },
     {
@@ -59,11 +55,11 @@
       "pass": true
     },
     {
-      "name": "blog: mobile thumbnails render at 80x60",
+      "name": "blog: mobile entries stay text-only with numbers",
       "pass": true
     },
     {
-      "name": "blog: failed thumbnails collapse but entries/links remain",
+      "name": "blog: list requests no category art, entries and links remain",
       "pass": true
     },
     {
@@ -71,7 +67,7 @@
       "pass": true
     },
     {
-      "name": "no-js: static blog list shows four thumbnails mapped correctly",
+      "name": "no-js: static blog list keeps five text entries with archive numbers",
       "pass": true
     },
     {
@@ -79,7 +75,7 @@
       "pass": true
     },
     {
-      "name": "subdirectory: dynamic thumbnails resolve under /course/blog/",
+      "name": "subdirectory: blog list stays text-only and numbered",
       "pass": true
     },
     {

@@ -19,16 +19,16 @@
 
 | 维度 | 取值 |
 |---|---|
-| 页面 | Home、Blog、About、Article（`posts/attention-intuition.html`） |
+| 页面 | Home、Blog、About、Article（`posts/ncs-figure-design.html`） |
 | 视口 | 1440、1200、1024、768、390 |
 | 主题 | 浅色、深色 |
 | 合计 | 40 张／组，共 80 张 |
 
 ## 结果
 
-- **Narrative 契约 22/22 通过**：每个 Narrative 元素都有 `aria-hidden` 祖先、不可聚焦且不含可聚焦元素、`pointer-events` 解析为 `none`、不与任何交互元素重叠。
+- **Narrative 契约 22/22 通过，Home／About 植物回归 2/2 通过**：每个 Narrative 元素都有 `aria-hidden` 祖先、不可聚焦且不含可聚焦元素、`pointer-events` 解析为 `none`、不与任何交互元素重叠；两页植物在桌面卡片内、不遮挡三项状态、移动端隐藏且无横向溢出。
 - **Article 阅读列**：Post 页 Narrative 元素全部位于 740px 阅读列之外（bounding box 断言）。
-- **Blog**：动态列表 `img` 数为 0，条目数为 4，结果计数为「找到 4 篇文章」；`life` 筛选返回 1 条且编号仍为 `A-04`；重置回到 4 条；无脚本静态列表 4 条、0 张图、4 个可见链接。
+- **Blog**：动态列表 `img` 数为 0，条目数为 5，结果计数为「找到 5 篇文章」；`life` 筛选返回 1 条且编号仍为 `A-04`；重置回到 5 条；无脚本静态列表 5 条、0 张图、5 个可见链接。
 - **横向溢出**：40 张截图全部 `overflow=false`。
 - **文档高度对照**（浅色，单位 px）：
 

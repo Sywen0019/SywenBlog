@@ -1,5 +1,151 @@
 # 验收记录
 
+## 两篇 skill 设计文章替换旧示例 · 2026-09-18
+
+**范围：** 永久删除 `posts/attention-intuition.html`、`posts/dom-search-notes.html`、`posts/paper-reading-notes.html` 与 `assets/images/search-flow.svg`；新增 `posts/ncs-figure-design.html`、`posts/research-reading.html`；同步首页、Blog、数据、相邻导航、当前文档和仍需执行的验收 harness。历史证据和归档截图不改写。
+
+**内容结果：** 当前为八页、五篇文章，分类统计 `study` 3／`life` 1／`favorites` 1。最终顺序为 `ncs-figure-design`、`research-reading`、`deskmate-with-firefly`、`leave-some-space`、`scrna-grn-notes`，对应 `A-01` 至 `A-05`。首页最近三篇为前两篇新文与 `deskmate-with-firefly`；Blog 静态索引与脚本排序一致。两篇新文均为纯文字、五部分长文，正文约 1540 个中文字，日期 `2026-09-18`，阅读时间 4 分钟。旧三篇 URL 未保留兼容页或重定向。
+
+**命令与结果：**
+
+| 命令 | 结果 |
+|---|---|
+| `node scripts/check-baseline.mjs` | **179 项通过、0 失败**；覆盖五篇文章页、总数 5、学业 3、首页最近文章、相邻导航、搜索、深链接、旧分类映射和响应式核心检查 |
+| `node docs/evidence/e01/illustration-checks.mjs --browser=edge,chrome,firefox` | Edge／Chrome／Firefox 各 **48 项通过、0 失败**；当前文章页列表与 `A-01`…`A-05` 断言通过 |
+| `node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox` | Edge／Chrome／Firefox 各 **18 项通过、0 失败**；代表页 `posts/ncs-figure-design.html` 的阅读进度、返回顶部、无脚本与子目录检查通过 |
+| `node docs/evidence/e04/menu-checks.mjs --browser=edge,chrome,firefox` | Edge／Chrome／Firefox 各 **20 项通过、0 失败**；代表页的快捷菜单、复制链接、搜索、键盘与降级检查通过 |
+| `node docs/evidence/visual/narrative-checks.mjs` | **24 项通过、0 失败** |
+| `node docs/evidence/visual/paper-texture-checks.mjs` | **168 项通过、0 失败** |
+| `bash scripts/build-site.sh` | 成功生成 **36 个文件** |
+
+**发布产物：** `dist/posts/` 含两篇新文和其余三篇保留文章，不含三篇旧文；`dist/` 不含 `search-flow.svg`。当前运行时、索引和仍需执行的 harness 中未发现三个旧 slug。
+
+**未执行项：** 实体手机、屏幕阅读器、真实浏览器 UI 缩放、公开部署核验与 VC2。本轮只记录本地自动化结果，不宣告 E06 或公开版本通过。
+
+## 文档发布的测试样例文章 · 2026-09-18
+
+**范围：** 把 `六月.docx` 作为一篇文章发布，并标注为测试样例。运行时改动为 `posts/scrna-grn-notes.html`（新增）、`js/posts-data.js`、`js/site.js`、`blog.html`、`index.html`、`posts/leave-some-space.html`。
+
+**契约变更：** 文章数据新增可选 `isTestSample`（boolean）。`Sywen.createPostEntry` 在条目 meta 追加 `· 测试样例`；文章页复用既有 `.post-demo-note` 显示「测试样例 · 用于验证文档发布流程」。无 id、类名、`data-*` 或路径重命名，`docs/agent-handoffs.md`、`Plan.md`、`PROJECT_PLAN.html` §19.2 已登记。
+
+**编号影响：** 新文日期为 `2025-06-27`（docx 创建日，呼应「六月」），在「日期倒序、同日 id 升序」中位于最末，登记时未触碰既有编号。同一工作区的并行内容调整随后撤下三篇示例文并新增两篇，本站现为五篇，新文编号为 `A-05`；`post-header__index`、`post-rail__number`、Blog 静态索引、相邻文章链接与首页分类计数均已与该顺序一致。
+
+**定向验证（Chromium/Edge，本地 HTTP；脚本为本次一次性检查，不入库）：**
+
+| 项 | 结果 |
+|---|---|
+| Blog 动态列表编号 | `A-01`…`A-05`；测试样例条目 meta 为「/ 8 分钟 · 测试样例」 |
+| Blog 无脚本静态列表 | `A-01`…`A-05`，测试样例条目为 `A-05`，可见链接数与条目数一致 |
+| 文章页结构 | `h1` 唯一且为《六月：单细胞与基因调控网络笔记》；`post-header__index` = `post-rail__number` = `A-05`；正文 14 个 `h2[data-rail]`、12 个 `h3` |
+| 标注 | 文章页 `.post-demo-note` 以「测试样例」开头 |
+| 布局 | 1440 与 390 均无横向溢出；无 4xx 资源、无未捕获脚本异常 |
+| 首页计数 | `data-category-count` 为 3／1／1，与 `Sywen.posts` 实际分组一致 |
+| 静态结构自检 | 新页标签配对、唯一 `h1`、无重复 id、八个增强控件挂载点齐全、全部内部链接目标存在（`node --check` 级以外的独立脚本） |
+| 本地构建 | `bash scripts/build-site.sh` → `[build] done: 38 files in dist/`，`dist/posts/scrna-grn-notes.html` 存在；docx 原件未被复制进仓库或 `dist/` |
+
+**未完成／不做：** 完整的 `scripts/check-baseline.mjs`、E01／E03／E04 套件由同一工作区的并行会话在其内容调整后重跑，本次未据其输出宣告通过；未做 git 提交与推送；VC2 仍属 E06，本条目不宣告 VC2。真实手机与屏幕阅读器未测（沿用既有局限）。
+
+## 冷灰素描纸纸齿强度修复 · 2026-09-18
+
+**问题：** 颜色正确，但"纸张的纹理感不够强"。此前已实现 grain 层，观感却仍像平色块。
+
+**根因（像素实测，非推断）：** 纹理存在的三个独立缺陷叠加。
+
+1. **强度低于可感知下限。** `html::after` 为 `opacity: 0.015`，实测 1–8px 带内亮度标准差仅 **0.494**——8bit 下要相邻像素差满 1 级才可见，0.494 意味着大量相邻像素取整到同一值，纹理在数学上不可见。
+2. **被 `cover` 放大抹平。** `background-size: cover` 把 512px 瓦片拉到约 2.8× 视口宽度（1440px 下约 1.4× 线性放大），细颗粒被插值糊掉。同一 opacity 改为 1:1 平铺后，高频振幅从 0.665 升到 1.388。
+3. **纸面容器把 grain 完全挡住。** `.paper-panel`／`.note-panel`／`.art-frame` 等使用不透明 `--color-surface` 实色，而 grain 只存在于最底层 `html::after`，因此**凡是有内容的地方一点纸纹都没有**。
+
+**顺带排除的两条错误路径（均已实测，不要再走）：**
+
+- `mix-blend-mode: overlay / soft-light` 作用在 `html::after` 上**完全无效**：该层的混合背景是画布白底而非 html 背景，实测 grain 振幅恒为 **0.000**。
+- `background-blend-mode` 放在 `html` 上会让整页均值偏移 **−21 ~ −94** 亮度单位（画布背景传播因子被去掉），不可用。
+
+**实现：**
+
+- **grain 配方改为"把浓淡烘进 SVG alpha"**：`feColorMatrix type='matrix'`，前三行输出恒定 45% 灰、第 4 行为 `alpha = 0.16 × 湍流 alpha`。这样一层 `background-image` 自带强度，因此**不需要元素 opacity，也不需要任何混合模式**，元素的 `background-color` 照常保留、子内容天然绘制在其上方（不需要额外 z-index）。
+- **颜色矩阵必须整体 URL 编码**：`values='…'` 里的空格需写成 `%20`，否则 Firefox 完全不渲染（实测 sd 0.000）。同时注意到**滤镜默认 linearRGB 插值比 `sRGB` 强约 2 倍**，两套参数不可互换。
+- **1:1 平铺取代 cover**：`--paper-grain-size: 256px 256px` + `repeat`。`stitchTiles='stitch'` 实测有效（1024×768 场地上接缝列 z ≈ **−2.0**，比内部更平滑，行列均无接缝）。历史上"周期性条纹"的成因是 `linear-gradient` + `160px` 固定瓦片，**不是平铺本身**。
+- **纸面容器加纸齿**：`.paper-panel`／`.paper-slip`／`.note-panel`／`.art-frame` 共用一条规则加 `background-image: var(--paper-grain-layer)`；`.paper-panel--dots` 显式把 grain 串在网点层之前。**不能用元素 opacity**：那会把整张卡片连底色一起变透明，卡片被后面的纸色透出，实测造成约 −14 的亮度漂移。
+- **强度实测选取**：从 0.06 起逐级上调，1–8px 带内标准差 0.06≈0.56、0.09≈0.91、0.12≈0.96、**0.16≈1.11**；门槛 1.0（8bit 下相邻像素差满一级），故取首个越过的档位 **0.16**。
+- **亮度补偿（token 反解）**：grain 只能压暗，视口底纸实测被压暗约 4.2 个亮度单位。浅色 token 据此提亮为 `--color-paper: #F6F8FA`、`--color-surface: #FFFEFB`、`--color-subtle: #F1EFEA`、`--color-note: #EDEAE5`。**这些是合成前的底色、比最终显示略亮**，渲染后与确认值每通道差 < 0.5；两者必须同步改动。
+- **深色主题**：lighting 仍为 `none`，但不再关闭 grain，改为中性灰 + 更低强度（alpha 0.1），避免浅色有纸感而深色完全平坦。`DESIGN_SPEC.md` §3 已同步改写。
+
+**验收（`node docs/evidence/visual/paper-texture-checks.mjs`，168/0）：**
+
+| 项 | 结果 |
+|---|---|
+| 纸齿可感知（band-passed rms ≥ 1.0） | **1.230**（修复前 0.494） |
+| 形态为纤维而非云斑（\|lag1\| ≤ 0.3、lag2 < 0.5） | −0.073 / −0.001，**PASS** |
+| 渲染后纸色保持已确认值 | `rgb(240.79, 242.56, 244.06)` vs `rgb(241, 243, 245)`，**差值 < 0.5** |
+| 平铺无接缝（1024×768，接缝列 \|z\|） | 2.0（优于阈值 4） |
+| 对比度不回退 | 正文 13.0:1、静音文字 5.8:1（门槛 4.5:1） |
+| 计算样式契约 | Light `repeat` / `256px 256px` / opacity `1`；Dark 同样带 grain |
+
+**回归：** `node scripts/check-baseline.mjs` 161/0（见下）。Light/Dark × Home/Blog/About/Article × 390/768/1024/1440 共 32 场景无横向溢出，文档高度与基线一致（补偿未改变布局）。
+
+**已知限制：** grain 只作用于页面底纸与纸面容器，不铺进正文段落；因此长文正文列仍保持 `DESIGN_SPEC.md` §4 要求的"无背景纹理"。
+
+**执行中发现的既有缺陷（已修）：`css/base.css` 中文注释乱码。** 该文件的中文注释曾被以 UTF-8 写入、再被按 CP936/GBK 读回并以 UTF-8 重写（字节证据：em dash `—` 的 UTF-8 序列 `E2 80 94` 在文件里是 `E9 88 A5 3F`），且经过两轮，属**双重 mojibake**。自动可逆修复不可行：解码后残留 `U+E74E` 等 PUA 码位，GBK 的 encoder 无法回写（Node 的 ICU 只提供完整 GBK *decoder*），强制往返会引入 108 个 `U+FFFD`，比原损坏更糟。
+
+处理方式：逐行重建 65 行受损中文注释，**CSS 代码逐字保留**（受损范围经检查为 0 行代码，全部在注释内）。复验 `paper-texture-checks` 168/0 且 grain 像素数值与修复前完全一致（`rms=1.2297`、`rgb(240.79, 242.56, 244.06)`），证明功能等价。文件行尾同时统一为 LF（原文件为 538 行 CRLF + 17 行裸 LF 的混合）。
+
+**教训（写入本记录以约束后续操作）：** 不要用 PowerShell 的 `Get-Content -Raw` / `Set-Content` / `[System.IO.File]::WriteAllText` 改带中文的源码文件——Windows PowerShell 5.1 默认按系统 ANSI 代码页（本机 CP936）读写，会损坏 UTF-8 中文。批量文本替换应使用 Node/Python 并显式指定 UTF-8，或直接用文件编辑工具。
+
+## 冷灰素描纸纹理层 · 2026-09-18
+
+**范围：** 只调整全局纸面材质层；保留 `--color-paper: #F1F3F5`，未修改 HTML 结构、页面布局、交互、动效、JavaScript、panel/card/note/article surface 配色或局部装饰网点。
+
+**实现：** `css/base.css` 使用两个固定 CSS overlay。`html::before` 提供 `radial-gradient` tonal variation（白色 alpha `0.06`，非周期、无 linear/repeating gradient）；`html::after` 提供 inline SVG 灰度 grain，`position: fixed; inset: 0; background-repeat: no-repeat; background-size: cover; pointer-events: none; opacity: 0.015`。SVG 参数为 `fractalNoise`、`baseFrequency=.85`、`numOctaves=2`、`seed=21`、`stitchTiles=stitch`，并通过 `feColorMatrix` 去色。
+
+**主题隔离：** Light 使用 `#F1F3F5` 与两层纸面材质；显式 Dark 和系统暗色均将 tonal/grain image 设为 `none`、grain opacity 设为 `0`，不继承浅色 overlay。`body` 保持透明并位于 overlay 之上，纹理不覆盖正文命中层。
+
+**专项检查：** `node docs/evidence/visual/paper-texture-checks.mjs` — **164/0**。覆盖 Light/Dark、Home/Blog/About/Article、390/768/1024/1440px；计算样式确认 Light 主色、grain opacity、fixed/no-repeat/cover/pointer-events、Dark 隔离；页面无横向溢出，文章列宽与既有文档高度保持一致。
+
+**截图矩阵：** `docs/evidence/visual/capture.mjs` 生成 32 张截图，证据见 [`docs/evidence/visual/paper-texture/final/`](evidence/visual/paper-texture/final/)，所有场景 `overflow=false`。重点人工查看 [`Home 1440 Light`](evidence/visual/paper-texture/final/home-1440-light.png)、[`Article 1440 Light`](evidence/visual/paper-texture/final/post-1440-light.png) 与 Home 1440 Dark：宏观平坦、无条纹/网格/seam，正文、卡片和人物线稿清晰；未发现需要下一轮微调的问题。
+
+**回归：** `node scripts/check-baseline.mjs` 使用工作区 Firefox 浏览器路径运行，**161/0**；`node docs/evidence/visual/narrative-checks.mjs`，**24/0**。首次未设置 Firefox 工作区路径时出现环境级 `spawn UNKNOWN`，未进入页面检查，随后按既有仓库方法重跑通过。
+
+## 清理运行时暖黄色残留 · 2026-09-18
+
+**根因：** 当时全局 `--color-paper` 为 `#F2F0EC`，但 `css/pages.css` 的 `.about-decoration` 仍硬编码 `background: #f7f3ea`，会在 About 页面形成独立暖黄色纸片；规格页 `PROJECT_PLAN.html` 也保留了旧的内联暖色 token。
+
+**修复：** `.about-decoration` 改用 `var(--color-paper)`；同时将 `PROJECT_PLAN.html` 的独立预览 token 同步为冷白 paper、surface、graphite ink、muted、rule 与灰纸签色。未修改插画资产自身的白色纸面、页面布局或交互。
+
+**静态检查：** `css/` 中旧暖黄色值 `#f7f3ea`、`#fffcf5`、`#f0e1ac` 搜索结果为 0。当前颜色微调后的浏览器 computed-style 应为 `rgb(242, 242, 239)`，三页横向溢出均为 0。
+
+**视觉复核：** 重新生成 Home/Blog/About/Article × 1440/390 × Light/Dark 共 16 张截图，证据见 `docs/evidence/visual/cold-paper-residual-fix/after/`；About 1440px 人工查看通过。
+
+**纸面微调：** 浅色主纸面进一步调整为 `#F2F2EF`，保持现有 surface、note、grain 和 Dark Theme 不变。
+
+**再次试色：** 浅色主纸面改试为 `#F7F7F5`，保持其余纸面层级与纹理参数不变。
+
+**当前试色：** 浅色主纸面改试为 `#F1F3F5`，保持其余纸面层级与纹理参数不变。
+
+## 冷白纸纹理针对性修复 · 2026-09-18
+
+**问题来源：** 原实现的 `--paper-lighting` 同时叠加了 `linear-gradient(180deg, ...)`，造成整页方向性明暗带；`--paper-grain` 又使用 `160px 160px` 固定背景尺寸并重复平铺，放大了周期性 seam。两者共同产生截图中的横向条纹/栅格感。
+
+**修复：** 删除全局线性渐变；保留一处大尺度、非周期性的 radial lighting。SVG grain 改为 `512×512` 的 `feTurbulence`（`numOctaves=3`、灰度、约 `0.025` alpha），背景禁止重复并使用 `cover`，不再使用 CSS repeating gradient 或固定小瓦片。Panel、Note、Ink 层级未重新设计。
+
+**视觉复核：** 重新捕获 Home、About、Article 的 1440px 浅色截图与 Home 390px 浅色截图，并同步生成两主题 16 张矩阵，证据见 `docs/evidence/visual/cold-paper-fix/after/`。人工检查确认无明显横向条纹、纵向条纹、网格或固定周期结构；页面宏观连续冷白，随机 grain 不干扰长文阅读，人物线稿保持清晰。
+
+## 冷白素描纸主题升级 · 2026-09-18
+
+**范围：** 仅升级浅色纸面 token、静态纸纹与共享 surface 层级；未修改页面结构、内容、插画、导航、数据逻辑、主题 JS 或交互。
+
+|检查|结果与证据|
+|---|---|
+|浅色主题 token|`--color-paper: #F2F2EF`、`--color-surface: #FAF9F6`、`--color-subtle: #ECEAE5`、`--color-ink: #272522`、`--color-muted: #5E5A54`、`--color-rule: #CFCCC5`、`--color-note: #E8E6E0`|
+|Paper Grain|`css/base.css` 使用 CSS lighting + 内联 SVG `feTurbulence`；noise alpha 约 0.04，静态、无布局、无 JS、无新增图片或依赖，`pointer-events` 不参与交互|
+|Dark Theme|`data-theme="dark"` 与系统暗色均使用 `background-image: none`；computed-style probe 实测 `#202223` 且无浅色纹理泄漏|
+|Surface 层级|Background → `surface` panel → `subtle` detail；局部 halftone 保留并降低为石墨混合色；Article 正文未新增独立纹理层|
+|Baseline|`node scripts/check-baseline.mjs`：**161/0**|
+|Narrative 与视觉矩阵|`node docs/evidence/visual/narrative-checks.mjs`：**24/0**；`capture.mjs`：Home/Blog/About/Article × 1440/1200/1024/768/390 × Light/Dark，共 **40 张**，全部 `overflow=false`，证据见 `docs/evidence/visual/cold-paper/`|
+|T04 渲染测量|主要场景完成：横向溢出 0，Post 正文/头部 ≥1024px 均 740px；Light 对比度 body 13.43:1、muted 6.02:1、panel 14.52:1。旧 harness 随后在现有页面缺少 `.category-button` 的组件状态探针处中止，属于验证脚本与当前契约不一致，非页面渲染错误|
+|人工视觉检查|已查看 1440px Home/Article、390px Home、1440px Dark Home：暖黄色消失，纸面保持冷白灰，grain 几乎不可见，长文可读，人物线稿清晰，Header/Footer 连续|
+
+**已知限制：** 旧 `docs/evidence/t04/audit.mjs` 仍包含历史 T04 的脚本、资源标记和断点假设，因此会报告与当前仓库状态无关的旧契约失败；本轮新增的 token 与浅深纹理断言已通过。分类插画自身的白色画布未修改，属于既有资产纸面而非页面背景。
+
 ## 视觉架构重构 · Narrative Layer Visual Vertical Slice · 2026-09-18
 
 **本地验收；样板只覆盖用户确认区域，正式 VC2 与全域扩展留 Phase 4／5 与 E06。** 契约见 [视觉架构契约](visual-architecture.md)，证据见 [evidence/visual](evidence/visual/README.md)，观感结论见 visual-review 同名条目。

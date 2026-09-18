@@ -1,0 +1,1691 @@
+{
+  "checks": [
+    {
+      "name": "SVG grain contract",
+      "pass": true,
+      "detail": "fixed SVG noise parameters plus alpha-baked intensity present"
+    },
+    {
+      "name": "No repeating gradient texture",
+      "pass": true,
+      "detail": "texture layer uses no repeating gradient"
+    },
+    {
+      "name": "Grain overlay contract",
+      "pass": true,
+      "detail": "native 1:1 tiled overlay, no opacity token"
+    },
+    {
+      "name": "No blend modes on the texture",
+      "pass": true,
+      "detail": "texture uses normal compositing only (overlay/soft-light measured to have zero effect on html::after)"
+    },
+    {
+      "name": "No texture animation",
+      "pass": true,
+      "detail": "overlay has no animation declaration"
+    },
+    {
+      "name": "light home 390px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390,\"height\":2941,\"postWidth\":null}"
+    },
+    {
+      "name": "light home 390px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "light home 390px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light home 390px: document height unchanged",
+      "pass": true,
+      "detail": "2941 vs 2941"
+    },
+    {
+      "name": "light home 390px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light blog 390px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390,\"height\":2212,\"postWidth\":null}"
+    },
+    {
+      "name": "light blog 390px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "light blog 390px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light blog 390px: document height unchanged",
+      "pass": true,
+      "detail": "2212 vs archived 1957; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "light blog 390px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light about 390px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390,\"height\":3035,\"postWidth\":null}"
+    },
+    {
+      "name": "light about 390px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "light about 390px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light about 390px: document height unchanged",
+      "pass": true,
+      "detail": "3035 vs 3035"
+    },
+    {
+      "name": "light about 390px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light post 390px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390,\"height\":4610,\"postWidth\":358}"
+    },
+    {
+      "name": "light post 390px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "light post 390px: article width",
+      "pass": true,
+      "detail": "358"
+    },
+    {
+      "name": "light post 390px: document height unchanged",
+      "pass": true,
+      "detail": "4610 vs archived 3081; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "light post 390px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light home 768px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768,\"height\":2356,\"postWidth\":null}"
+    },
+    {
+      "name": "light home 768px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768}"
+    },
+    {
+      "name": "light home 768px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light home 768px: document height unchanged",
+      "pass": true,
+      "detail": "2356 vs 2356"
+    },
+    {
+      "name": "light home 768px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light blog 768px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768,\"height\":1760,\"postWidth\":null}"
+    },
+    {
+      "name": "light blog 768px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768}"
+    },
+    {
+      "name": "light blog 768px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light blog 768px: document height unchanged",
+      "pass": true,
+      "detail": "1760 vs archived 1578; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "light blog 768px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light about 768px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768,\"height\":2760,\"postWidth\":null}"
+    },
+    {
+      "name": "light about 768px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768}"
+    },
+    {
+      "name": "light about 768px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light about 768px: document height unchanged",
+      "pass": true,
+      "detail": "2760 vs 2760"
+    },
+    {
+      "name": "light about 768px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light post 768px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768,\"height\":3285,\"postWidth\":720}"
+    },
+    {
+      "name": "light post 768px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768}"
+    },
+    {
+      "name": "light post 768px: article width",
+      "pass": true,
+      "detail": "720"
+    },
+    {
+      "name": "light post 768px: document height unchanged",
+      "pass": true,
+      "detail": "3285 vs archived 2344; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "light post 768px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light home 1024px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024,\"height\":2414,\"postWidth\":null}"
+    },
+    {
+      "name": "light home 1024px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024}"
+    },
+    {
+      "name": "light home 1024px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light home 1024px: document height unchanged",
+      "pass": true,
+      "detail": "2414 vs 2414"
+    },
+    {
+      "name": "light home 1024px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light blog 1024px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024,\"height\":1797,\"postWidth\":null}"
+    },
+    {
+      "name": "light blog 1024px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024}"
+    },
+    {
+      "name": "light blog 1024px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light blog 1024px: document height unchanged",
+      "pass": true,
+      "detail": "1797 vs archived 1615; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "light blog 1024px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light about 1024px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024,\"height\":2258,\"postWidth\":null}"
+    },
+    {
+      "name": "light about 1024px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024}"
+    },
+    {
+      "name": "light about 1024px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light about 1024px: document height unchanged",
+      "pass": true,
+      "detail": "2258 vs 2258"
+    },
+    {
+      "name": "light about 1024px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light post 1024px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024,\"height\":3256,\"postWidth\":740}"
+    },
+    {
+      "name": "light post 1024px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024}"
+    },
+    {
+      "name": "light post 1024px: article width",
+      "pass": true,
+      "detail": "740"
+    },
+    {
+      "name": "light post 1024px: document height unchanged",
+      "pass": true,
+      "detail": "3256 vs archived 2382; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "light post 1024px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light home 1440px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440,\"height\":2514,\"postWidth\":null}"
+    },
+    {
+      "name": "light home 1440px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440}"
+    },
+    {
+      "name": "light home 1440px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light home 1440px: document height unchanged",
+      "pass": true,
+      "detail": "2514 vs 2514"
+    },
+    {
+      "name": "light home 1440px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light blog 1440px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440,\"height\":1797,\"postWidth\":null}"
+    },
+    {
+      "name": "light blog 1440px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440}"
+    },
+    {
+      "name": "light blog 1440px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light blog 1440px: document height unchanged",
+      "pass": true,
+      "detail": "1797 vs archived 1615; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "light blog 1440px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light about 1440px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440,\"height\":2306,\"postWidth\":null}"
+    },
+    {
+      "name": "light about 1440px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440}"
+    },
+    {
+      "name": "light about 1440px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "light about 1440px: document height unchanged",
+      "pass": true,
+      "detail": "2306 vs 2306"
+    },
+    {
+      "name": "light about 1440px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "light post 1440px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(246, 248, 250)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"radial-gradient(85% 68% at 50% 0%, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0) 76%)\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0 0.45 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440,\"height\":3256,\"postWidth\":740}"
+    },
+    {
+      "name": "light post 1440px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440}"
+    },
+    {
+      "name": "light post 1440px: article width",
+      "pass": true,
+      "detail": "740"
+    },
+    {
+      "name": "light post 1440px: document height unchanged",
+      "pass": true,
+      "detail": "3256 vs archived 2382; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "light post 1440px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark home 390px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390,\"height\":2941,\"postWidth\":null}"
+    },
+    {
+      "name": "dark home 390px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "dark home 390px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark home 390px: document height unchanged",
+      "pass": true,
+      "detail": "2941 vs 2941"
+    },
+    {
+      "name": "dark home 390px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark blog 390px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390,\"height\":2212,\"postWidth\":null}"
+    },
+    {
+      "name": "dark blog 390px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "dark blog 390px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark blog 390px: document height unchanged",
+      "pass": true,
+      "detail": "2212 vs archived 1957; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "dark blog 390px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark about 390px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390,\"height\":3035,\"postWidth\":null}"
+    },
+    {
+      "name": "dark about 390px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "dark about 390px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark about 390px: document height unchanged",
+      "pass": true,
+      "detail": "3035 vs 3035"
+    },
+    {
+      "name": "dark about 390px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark post 390px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390,\"height\":4610,\"postWidth\":358}"
+    },
+    {
+      "name": "dark post 390px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":390,\"bodyScrollWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "dark post 390px: article width",
+      "pass": true,
+      "detail": "358"
+    },
+    {
+      "name": "dark post 390px: document height unchanged",
+      "pass": true,
+      "detail": "4610 vs archived 3081; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "dark post 390px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark home 768px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768,\"height\":2356,\"postWidth\":null}"
+    },
+    {
+      "name": "dark home 768px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768}"
+    },
+    {
+      "name": "dark home 768px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark home 768px: document height unchanged",
+      "pass": true,
+      "detail": "2356 vs 2356"
+    },
+    {
+      "name": "dark home 768px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark blog 768px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768,\"height\":1760,\"postWidth\":null}"
+    },
+    {
+      "name": "dark blog 768px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768}"
+    },
+    {
+      "name": "dark blog 768px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark blog 768px: document height unchanged",
+      "pass": true,
+      "detail": "1760 vs archived 1578; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "dark blog 768px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark about 768px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768,\"height\":2760,\"postWidth\":null}"
+    },
+    {
+      "name": "dark about 768px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768}"
+    },
+    {
+      "name": "dark about 768px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark about 768px: document height unchanged",
+      "pass": true,
+      "detail": "2760 vs 2760"
+    },
+    {
+      "name": "dark about 768px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark post 768px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768,\"height\":3285,\"postWidth\":720}"
+    },
+    {
+      "name": "dark post 768px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":768,\"bodyScrollWidth\":768,\"viewport\":768}"
+    },
+    {
+      "name": "dark post 768px: article width",
+      "pass": true,
+      "detail": "720"
+    },
+    {
+      "name": "dark post 768px: document height unchanged",
+      "pass": true,
+      "detail": "3285 vs archived 2344; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "dark post 768px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark home 1024px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024,\"height\":2414,\"postWidth\":null}"
+    },
+    {
+      "name": "dark home 1024px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024}"
+    },
+    {
+      "name": "dark home 1024px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark home 1024px: document height unchanged",
+      "pass": true,
+      "detail": "2414 vs 2414"
+    },
+    {
+      "name": "dark home 1024px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark blog 1024px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024,\"height\":1797,\"postWidth\":null}"
+    },
+    {
+      "name": "dark blog 1024px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024}"
+    },
+    {
+      "name": "dark blog 1024px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark blog 1024px: document height unchanged",
+      "pass": true,
+      "detail": "1797 vs archived 1615; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "dark blog 1024px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark about 1024px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024,\"height\":2258,\"postWidth\":null}"
+    },
+    {
+      "name": "dark about 1024px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024}"
+    },
+    {
+      "name": "dark about 1024px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark about 1024px: document height unchanged",
+      "pass": true,
+      "detail": "2258 vs 2258"
+    },
+    {
+      "name": "dark about 1024px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark post 1024px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024,\"height\":3256,\"postWidth\":740}"
+    },
+    {
+      "name": "dark post 1024px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1024,\"bodyScrollWidth\":1024,\"viewport\":1024}"
+    },
+    {
+      "name": "dark post 1024px: article width",
+      "pass": true,
+      "detail": "740"
+    },
+    {
+      "name": "dark post 1024px: document height unchanged",
+      "pass": true,
+      "detail": "3256 vs archived 2382; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "dark post 1024px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark home 1440px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440,\"height\":2514,\"postWidth\":null}"
+    },
+    {
+      "name": "dark home 1440px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440}"
+    },
+    {
+      "name": "dark home 1440px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark home 1440px: document height unchanged",
+      "pass": true,
+      "detail": "2514 vs 2514"
+    },
+    {
+      "name": "dark home 1440px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark blog 1440px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440,\"height\":1797,\"postWidth\":null}"
+    },
+    {
+      "name": "dark blog 1440px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440}"
+    },
+    {
+      "name": "dark blog 1440px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark blog 1440px: document height unchanged",
+      "pass": true,
+      "detail": "1797 vs archived 1615; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "dark blog 1440px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark about 1440px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440,\"height\":2306,\"postWidth\":null}"
+    },
+    {
+      "name": "dark about 1440px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440}"
+    },
+    {
+      "name": "dark about 1440px: article width",
+      "pass": true,
+      "detail": "null"
+    },
+    {
+      "name": "dark about 1440px: document height unchanged",
+      "pass": true,
+      "detail": "2306 vs 2306"
+    },
+    {
+      "name": "dark about 1440px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dark post 1440px: computed texture contract",
+      "pass": true,
+      "detail": "{\"rootBackground\":\"rgb(32, 34, 35)\",\"bodyBackground\":\"rgba(0, 0, 0, 0)\",\"beforeImage\":\"none\",\"beforePosition\":\"fixed\",\"beforePointerEvents\":\"none\",\"beforeRepeat\":\"no-repeat\",\"beforeSize\":\"cover\",\"afterImage\":\"url(\\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='paper-noise-dark'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper-noise-dark)'/%3E%3C/svg%3E\\\")\",\"afterOpacity\":\"1\",\"afterPosition\":\"fixed\",\"afterPointerEvents\":\"none\",\"afterRepeat\":\"repeat\",\"afterSize\":\"256px 256px\",\"afterAnimation\":\"none\",\"afterTransitionDuration\":\"0s\",\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440,\"height\":3256,\"postWidth\":740}"
+    },
+    {
+      "name": "dark post 1440px: no overflow",
+      "pass": true,
+      "detail": "{\"scrollWidth\":1440,\"bodyScrollWidth\":1440,\"viewport\":1440}"
+    },
+    {
+      "name": "dark post 1440px: article width",
+      "pass": true,
+      "detail": "740"
+    },
+    {
+      "name": "dark post 1440px: document height unchanged",
+      "pass": true,
+      "detail": "3256 vs archived 2382; recorded because the five-post list and new representative article intentionally changed the page height"
+    },
+    {
+      "name": "dark post 1440px: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Grain is perceptible (band-passed rms >= 1.0)",
+      "pass": true,
+      "detail": "rms=1.230 (shipped 0.015 layer measured ~0.49; below 1.0 is invisible in 8-bit)"
+    },
+    {
+      "name": "Grain reads as fibre, not cloud",
+      "pass": true,
+      "detail": "lag1=-0.073 lag2=-0.001"
+    },
+    {
+      "name": "Rendered paper tone preserved",
+      "pass": true,
+      "detail": "rgb(240.79, 242.56, 244.06) vs confirmed rgb(241, 243, 245)"
+    }
+  ],
+  "scenarios": [
+    {
+      "page": "home",
+      "theme": "light",
+      "width": 390,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "viewport": 390,
+      "height": 2941,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "blog",
+      "theme": "light",
+      "width": 390,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "viewport": 390,
+      "height": 2212,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "about",
+      "theme": "light",
+      "width": 390,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "viewport": 390,
+      "height": 3035,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "post",
+      "theme": "light",
+      "width": 390,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "viewport": 390,
+      "height": 4610,
+      "postWidth": 358,
+      "errors": []
+    },
+    {
+      "page": "home",
+      "theme": "light",
+      "width": 768,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "viewport": 768,
+      "height": 2356,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "blog",
+      "theme": "light",
+      "width": 768,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "viewport": 768,
+      "height": 1760,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "about",
+      "theme": "light",
+      "width": 768,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "viewport": 768,
+      "height": 2760,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "post",
+      "theme": "light",
+      "width": 768,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "viewport": 768,
+      "height": 3285,
+      "postWidth": 720,
+      "errors": []
+    },
+    {
+      "page": "home",
+      "theme": "light",
+      "width": 1024,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "viewport": 1024,
+      "height": 2414,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "blog",
+      "theme": "light",
+      "width": 1024,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "viewport": 1024,
+      "height": 1797,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "about",
+      "theme": "light",
+      "width": 1024,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "viewport": 1024,
+      "height": 2258,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "post",
+      "theme": "light",
+      "width": 1024,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "viewport": 1024,
+      "height": 3256,
+      "postWidth": 740,
+      "errors": []
+    },
+    {
+      "page": "home",
+      "theme": "light",
+      "width": 1440,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "viewport": 1440,
+      "height": 2514,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "blog",
+      "theme": "light",
+      "width": 1440,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "viewport": 1440,
+      "height": 1797,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "about",
+      "theme": "light",
+      "width": 1440,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "viewport": 1440,
+      "height": 2306,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "post",
+      "theme": "light",
+      "width": 1440,
+      "rootBackground": "rgb(246, 248, 250)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": true,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "viewport": 1440,
+      "height": 3256,
+      "postWidth": 740,
+      "errors": []
+    },
+    {
+      "page": "home",
+      "theme": "dark",
+      "width": 390,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "viewport": 390,
+      "height": 2941,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "blog",
+      "theme": "dark",
+      "width": 390,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "viewport": 390,
+      "height": 2212,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "about",
+      "theme": "dark",
+      "width": 390,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "viewport": 390,
+      "height": 3035,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "post",
+      "theme": "dark",
+      "width": 390,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "viewport": 390,
+      "height": 4610,
+      "postWidth": 358,
+      "errors": []
+    },
+    {
+      "page": "home",
+      "theme": "dark",
+      "width": 768,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "viewport": 768,
+      "height": 2356,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "blog",
+      "theme": "dark",
+      "width": 768,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "viewport": 768,
+      "height": 1760,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "about",
+      "theme": "dark",
+      "width": 768,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "viewport": 768,
+      "height": 2760,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "post",
+      "theme": "dark",
+      "width": 768,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "viewport": 768,
+      "height": 3285,
+      "postWidth": 720,
+      "errors": []
+    },
+    {
+      "page": "home",
+      "theme": "dark",
+      "width": 1024,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "viewport": 1024,
+      "height": 2414,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "blog",
+      "theme": "dark",
+      "width": 1024,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "viewport": 1024,
+      "height": 1797,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "about",
+      "theme": "dark",
+      "width": 1024,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "viewport": 1024,
+      "height": 2258,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "post",
+      "theme": "dark",
+      "width": 1024,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "viewport": 1024,
+      "height": 3256,
+      "postWidth": 740,
+      "errors": []
+    },
+    {
+      "page": "home",
+      "theme": "dark",
+      "width": 1440,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "viewport": 1440,
+      "height": 2514,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "blog",
+      "theme": "dark",
+      "width": 1440,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "viewport": 1440,
+      "height": 1797,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "about",
+      "theme": "dark",
+      "width": 1440,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "viewport": 1440,
+      "height": 2306,
+      "postWidth": null,
+      "errors": []
+    },
+    {
+      "page": "post",
+      "theme": "dark",
+      "width": 1440,
+      "rootBackground": "rgb(32, 34, 35)",
+      "bodyBackground": "rgba(0, 0, 0, 0)",
+      "beforeImage": false,
+      "beforePosition": "fixed",
+      "beforePointerEvents": "none",
+      "beforeRepeat": "no-repeat",
+      "beforeSize": "cover",
+      "afterImage": true,
+      "afterOpacity": "1",
+      "afterPosition": "fixed",
+      "afterPointerEvents": "none",
+      "afterRepeat": "repeat",
+      "afterSize": "256px 256px",
+      "afterAnimation": "none",
+      "afterTransitionDuration": "0s",
+      "scrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "viewport": 1440,
+      "height": 3256,
+      "postWidth": 740,
+      "errors": []
+    }
+  ],
+  "passed": 168,
+  "failed": 0,
+  "grainPixel": {
+    "rms": 1.229722379820878,
+    "ac1": -0.07329989432177793,
+    "ac2": -0.0007194747403185717,
+    "r": 240.7859,
+    "g": 242.56178888888888,
+    "b": 244.05650555555556,
+    "W": 600,
+    "H": 300,
+    "composite": "rgb(240.79, 242.56, 244.06)"
+  }
+}

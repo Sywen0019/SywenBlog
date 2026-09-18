@@ -18,7 +18,7 @@ const PAGES = [
   ['home', 'index.html'],
   ['blog', 'blog.html'],
   ['about', 'about.html'],
-  ['post', 'posts/attention-intuition.html']
+  ['post', 'posts/ncs-figure-design.html']
 ];
 
 const dest = path.join(outDir, label);

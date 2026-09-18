@@ -1,20 +1,21 @@
 {
   "browser": "firefox",
   "browserVersion": "155.0",
-  "baseCommit": "80a13fb5f4388ce6381d96f935c0f73c58ca9600",
-  "at": "2026-09-17T15:34:35.492Z",
+  "baseCommit": "545117f245c5a401b59b87c49cf551b6e263db58",
+  "at": "2026-09-18T16:39:02.808Z",
   "checks": [
     {
-      "name": "1. 七页脚本顺序与资源",
+      "name": "1. 八页脚本顺序与资源",
       "pass": true,
       "detail": {
-        "index.html": 5,
-        "blog.html": 6,
-        "about.html": 5,
-        "posts/attention-intuition.html": 5,
-        "posts/dom-search-notes.html": 5,
-        "posts/paper-reading-notes.html": 5,
-        "posts/leave-some-space.html": 5
+        "index.html": 6,
+        "blog.html": 7,
+        "about.html": 6,
+        "posts/ncs-figure-design.html": 6,
+        "posts/research-reading.html": 6,
+        "posts/leave-some-space.html": 6,
+        "posts/deskmate-with-firefly.html": 6,
+        "posts/scrna-grn-notes.html": 6
       }
     },
     {
@@ -33,19 +34,23 @@
           "capable": true,
           "buttonVisible": true
         },
-        "posts/attention-intuition.html": {
+        "posts/ncs-figure-design.html": {
           "capable": true,
           "buttonVisible": true
         },
-        "posts/dom-search-notes.html": {
-          "capable": true,
-          "buttonVisible": true
-        },
-        "posts/paper-reading-notes.html": {
+        "posts/research-reading.html": {
           "capable": true,
           "buttonVisible": true
         },
         "posts/leave-some-space.html": {
+          "capable": true,
+          "buttonVisible": true
+        },
+        "posts/deskmate-with-firefly.html": {
+          "capable": true,
+          "buttonVisible": true
+        },
+        "posts/scrna-grn-notes.html": {
           "capable": true,
           "buttonVisible": true
         }
@@ -102,7 +107,7 @@
           ],
           "progress": null
         },
-        "posts/attention-intuition.html": {
+        "posts/ncs-figure-design.html": {
           "items": [
             "首页",
             "返回文章列表",
@@ -210,7 +215,7 @@
           "inFooterLinks": false
         },
         "主题按钮": {
-          "target": "theme-toggle",
+          "target": {},
           "prevented": true,
           "inBody": false,
           "inFooterLinks": false
@@ -231,9 +236,9 @@
       "pass": true,
       "detail": {
         "notice": "链接已复制",
-        "copied": "http://127.0.0.1:40086/posts/dom-search-notes.html",
-        "expected": "http://127.0.0.1:40086/posts/dom-search-notes.html",
-        "pageUrl": "http://127.0.0.1:40086/blog.html?q=DOM#main",
+        "copied": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
+        "expected": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
+        "pageUrl": "http://127.0.0.1:28675/blog.html?q=ncs-figure-design#main",
         "noticeAutoHidden": true
       }
     },
@@ -241,7 +246,7 @@
       "name": "11. 复制失败降级面板",
       "pass": true,
       "detail": {
-        "value": "http://127.0.0.1:40086/posts/attention-intuition.html",
+        "value": "http://127.0.0.1:28675/posts/ncs-figure-design.html",
         "selection": "whole",
         "nativeMenu": false
       }
@@ -266,7 +271,7 @@
       "pass": true,
       "detail": {
         "blogSearch": "search-input",
-        "otherPageSearch": "http://127.0.0.1:40086/blog.html?focus=search",
+        "otherPageSearch": "http://127.0.0.1:28675/blog.html?focus=search",
         "topFocus": "",
         "theme": {
           "before": "light",
@@ -285,8 +290,8 @@
         "second": 50,
         "api": 50,
         "scrolled": {
-          "applied": 744,
-          "max": 1488
+          "applied": 1179,
+          "max": 2357
         },
         "closedByScroll": true
       }
@@ -325,8 +330,8 @@
       "name": "17. 子目录路径与地址",
       "pass": true,
       "detail": {
-        "blog": "http://127.0.0.1:40086/course/blog/index.html",
-        "post": "http://127.0.0.1:40086/course/blog/posts/dom-search-notes.html"
+        "blog": "http://127.0.0.1:28675/course/blog/index.html",
+        "post": "http://127.0.0.1:28675/course/blog/posts/ncs-figure-design.html"
       }
     },
     {
@@ -367,23 +372,23 @@
       "name": "19. 截图与同视口对照",
       "pass": true,
       "detail": {
-        "screenshots": 32,
+        "screenshots": 36,
         "sameViewport": {
           "1440-light": {
             "size": [
               1440,
-              1615
+              1797
             ],
-            "viewportHeight": 1615,
+            "viewportHeight": 1797,
             "diffOutsideHeader": 0,
             "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
           },
           "390-light": {
             "size": [
               390,
-              1957
+              2213
             ],
-            "viewportHeight": 1957,
+            "viewportHeight": 2213,
             "diffOutsideHeader": 0,
             "ignoredBands": "顶部 3px 进度线与页头 18–140px 按钮带"
           }
@@ -400,35 +405,39 @@
     "e04-home-1440-light-menu.png",
     "e04-blog-1440-light-menu.png",
     "e04-about-1440-light-menu.png",
-    "e04-attention-intuition-1440-light-menu.png",
-    "e04-dom-search-notes-1440-light-menu.png",
-    "e04-paper-reading-notes-1440-light-menu.png",
+    "e04-ncs-figure-design-1440-light-menu.png",
+    "e04-research-reading-1440-light-menu.png",
     "e04-leave-some-space-1440-light-menu.png",
+    "e04-deskmate-with-firefly-1440-light-menu.png",
+    "e04-scrna-grn-notes-1440-light-menu.png",
     "e04-post-1440-light-copy-panel.png",
     "e04-post-1440-light-notice.png",
     "e04-home-1440-dark-menu.png",
     "e04-blog-1440-dark-menu.png",
     "e04-about-1440-dark-menu.png",
-    "e04-attention-intuition-1440-dark-menu.png",
-    "e04-dom-search-notes-1440-dark-menu.png",
-    "e04-paper-reading-notes-1440-dark-menu.png",
+    "e04-ncs-figure-design-1440-dark-menu.png",
+    "e04-research-reading-1440-dark-menu.png",
     "e04-leave-some-space-1440-dark-menu.png",
+    "e04-deskmate-with-firefly-1440-dark-menu.png",
+    "e04-scrna-grn-notes-1440-dark-menu.png",
     "e04-post-1440-dark-copy-panel.png",
     "e04-post-1440-dark-notice.png",
     "e04-home-390-light-touch.png",
     "e04-blog-390-light-touch.png",
     "e04-about-390-light-touch.png",
-    "e04-attention-intuition-390-light-touch.png",
-    "e04-dom-search-notes-390-light-touch.png",
-    "e04-paper-reading-notes-390-light-touch.png",
+    "e04-ncs-figure-design-390-light-touch.png",
+    "e04-research-reading-390-light-touch.png",
     "e04-leave-some-space-390-light-touch.png",
+    "e04-deskmate-with-firefly-390-light-touch.png",
+    "e04-scrna-grn-notes-390-light-touch.png",
     "e04-home-390-dark-touch.png",
     "e04-blog-390-dark-touch.png",
     "e04-about-390-dark-touch.png",
-    "e04-attention-intuition-390-dark-touch.png",
-    "e04-dom-search-notes-390-dark-touch.png",
-    "e04-paper-reading-notes-390-dark-touch.png",
+    "e04-ncs-figure-design-390-dark-touch.png",
+    "e04-research-reading-390-dark-touch.png",
     "e04-leave-some-space-390-dark-touch.png",
+    "e04-deskmate-with-firefly-390-dark-touch.png",
+    "e04-scrna-grn-notes-390-dark-touch.png",
     "e04-compare-1440-light-shown.png",
     "e04-compare-1440-light-hidden.png",
     "e04-compare-390-light-shown.png",
@@ -443,6 +452,12 @@
   "passed": 20,
   "failed": 0,
   "recoveredToggles": [
+    "补发合成 click（鼠标点击未到达按钮）",
+    "补发合成 click（鼠标点击未到达按钮）",
+    "补发合成 click（鼠标点击未到达按钮）",
+    "补发合成 click（鼠标点击未到达按钮）",
+    "补发合成 click（鼠标点击未到达按钮）",
+    "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",
     "补发合成 click（鼠标点击未到达按钮）",

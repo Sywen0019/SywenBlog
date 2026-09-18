@@ -20,7 +20,7 @@ const PAGES = [
   ['home', 'index.html'],
   ['blog', 'blog.html'],
   ['about', 'about.html'],
-  ['post', 'posts/attention-intuition.html']
+  ['post', 'posts/ncs-figure-design.html']
 ];
 const WIDTHS = [1440, 1200, 1024, 768, 390];
 
@@ -112,8 +112,8 @@ await check('blog: no images in list, count matches, filter and reset work', asy
   const entries = await page.locator('#blog-results .post-entry').count();
   const countText = await page.locator('#result-count').innerText();
   if (images !== 0) throw new Error(`list contains ${images} images`);
-  if (entries !== 4) throw new Error(`list contains ${entries} entries`);
-  if (!/4/.test(countText)) throw new Error(`result count: ${countText}`);
+  if (entries !== 5) throw new Error(`list contains ${entries} entries`);
+  if (!/5/.test(countText)) throw new Error(`result count: ${countText}`);
   await page.locator('button[data-category="life"]').click();
   await page.waitForTimeout(400);
   const life = await page.locator('#blog-results .post-entry').count();
@@ -123,7 +123,7 @@ await check('blog: no images in list, count matches, filter and reset work', asy
   const afterReset = await page.locator('#blog-results .post-entry').count();
   await ctx.close();
   if (life !== 1) throw new Error(`life filter returned ${life}`);
-  if (afterReset !== 4) throw new Error(`reset returned ${afterReset}`);
+  if (afterReset !== 5) throw new Error(`reset returned ${afterReset}`);
   // Archive numbers follow the article, not the filtered result.
   if (lifeNumbers.join() !== 'A-04') throw new Error(`life numbers: ${lifeNumbers.join()}`);
   return { images, entries, countText, life, afterReset };
@@ -137,8 +137,118 @@ await check('blog no-JS: static list complete without images', async () => {
   const images = await page.locator('#blog-static-list img').count();
   const links = await page.locator('#blog-static-list .post-entry__link:visible').count();
   await ctx.close();
-  if (entries !== 4 || images !== 0 || links !== 4) throw new Error(`entries=${entries} images=${images} links=${links}`);
+  if (entries !== 5 || images !== 0 || links !== 5) throw new Error(`entries=${entries} images=${images} links=${links}`);
   return { entries, images, links };
+});
+
+await check('home: now plant stays inside panel without covering items', async () => {
+  const scenarios = [];
+  const failures = [];
+  for (const theme of ['light', 'dark']) {
+    for (const width of [390, 768, 1024, 1440]) {
+      const ctx = await browser.newContext({ viewport: { width, height: 900 } });
+      const page = await ctx.newPage();
+      try {
+        await page.goto(BASE + 'index.html', { waitUntil: 'load', timeout: 30000 });
+        if (theme === 'dark') {
+          await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
+        }
+        await page.waitForTimeout(100);
+        const result = await page.evaluate(() => {
+          const toBox = (element) => {
+            const rect = element.getBoundingClientRect();
+            return { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height };
+          };
+          const overlaps = (a, b) => Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1
+            && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1;
+          const plant = document.querySelector('.now-slip__plant');
+          const panel = document.querySelector('.now-slip .paper-panel');
+          const items = [...document.querySelectorAll('.now-slip .note-panel__item')];
+          const plantStyle = plant ? getComputedStyle(plant) : null;
+          const plantBox = plant ? toBox(plant) : null;
+          const panelBox = panel ? toBox(panel) : null;
+          const itemBoxes = items.map(toBox);
+          const overflow = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) > window.innerWidth + 1;
+          const visible = Boolean(plantStyle && plantStyle.display !== 'none' && plantBox.width > 0 && plantBox.height > 0);
+          const contained = Boolean(plantBox && panelBox
+            && plantBox.left >= panelBox.left - 1
+            && plantBox.right <= panelBox.right + 1
+            && plantBox.top >= panelBox.top - 1
+            && plantBox.bottom <= panelBox.bottom + 1);
+          const itemOverlaps = plantBox ? itemBoxes.filter((itemBox) => overlaps(plantBox, itemBox)).length : 0;
+          return {
+            visible,
+            contained,
+            itemOverlaps,
+            overflow,
+            plantParent: plant?.parentElement?.className || null,
+            plantBox,
+            panelBox
+          };
+        });
+        scenarios.push({ theme, width, ...result });
+        if (width < 768 && result.visible) failures.push(`${theme}@${width}: plant should be hidden`);
+        if (width >= 768 && !result.contained) failures.push(`${theme}@${width}: plant is outside panel`);
+        if (width >= 768 && result.itemOverlaps) failures.push(`${theme}@${width}: plant overlaps ${result.itemOverlaps} item(s)`);
+        if (result.overflow) failures.push(`${theme}@${width}: horizontal overflow`);
+      } finally {
+        await ctx.close();
+      }
+    }
+  }
+  if (failures.length) throw new Error(failures.join(' | '));
+  return { scenarios };
+});
+
+await check('about: now plant stays inside panel without covering items', async () => {
+  const scenarios = [];
+  const failures = [];
+  for (const theme of ['light', 'dark']) {
+    for (const width of [390, 768, 1024, 1440]) {
+      const ctx = await browser.newContext({ viewport: { width, height: 900 } });
+      const page = await ctx.newPage();
+      try {
+        await page.goto(BASE + 'about.html', { waitUntil: 'load', timeout: 30000 });
+        if (theme === 'dark') {
+          await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
+        }
+        await page.waitForTimeout(100);
+        const result = await page.evaluate(() => {
+          const toBox = (element) => {
+            const rect = element.getBoundingClientRect();
+            return { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, width: rect.width, height: rect.height };
+          };
+          const overlaps = (a, b) => Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1
+            && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1;
+          const plant = document.querySelector('.about-now__plant');
+          const panel = document.querySelector('.about-now__panel');
+          const items = [...document.querySelectorAll('.about-now .note-panel__item')];
+          const plantStyle = plant ? getComputedStyle(plant) : null;
+          const plantBox = plant ? toBox(plant) : null;
+          const panelBox = panel ? toBox(panel) : null;
+          const itemBoxes = items.map(toBox);
+          const overflow = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) > window.innerWidth + 1;
+          const visible = Boolean(plantStyle && plantStyle.display !== 'none' && plantBox.width > 0 && plantBox.height > 0);
+          const contained = Boolean(plantBox && panelBox
+            && plantBox.left >= panelBox.left - 1
+            && plantBox.right <= panelBox.right + 1
+            && plantBox.top >= panelBox.top - 1
+            && plantBox.bottom <= panelBox.bottom + 1);
+          const itemOverlaps = plantBox ? itemBoxes.filter((itemBox) => overlaps(plantBox, itemBox)).length : 0;
+          return { visible, contained, itemOverlaps, overflow, plantBox, panelBox };
+        });
+        scenarios.push({ theme, width, ...result });
+        if (width < 768 && result.visible) failures.push(`${theme}@${width}: plant should be hidden`);
+        if (width >= 768 && !result.contained) failures.push(`${theme}@${width}: plant is outside panel`);
+        if (width >= 768 && result.itemOverlaps) failures.push(`${theme}@${width}: plant overlaps ${result.itemOverlaps} item(s)`);
+        if (result.overflow) failures.push(`${theme}@${width}: horizontal overflow`);
+      } finally {
+        await ctx.close();
+      }
+    }
+  }
+  if (failures.length) throw new Error(failures.join(' | '));
+  return { scenarios };
 });
 
 await browser.close();

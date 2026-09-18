@@ -1,7 +1,7 @@
 {
   "task": "E01 category illustrations",
   "browser": "firefox",
-  "at": "2026-09-17T15:34:09.182Z",
+  "at": "2026-09-18T16:37:27.734Z",
   "passed": 48,
   "failed": 0,
   "checks": [
@@ -67,7 +67,7 @@
       "pass": true
     },
     {
-      "name": "no-js: static blog list keeps four text entries with archive numbers",
+      "name": "no-js: static blog list keeps five text entries with archive numbers",
       "pass": true
     },
     {
