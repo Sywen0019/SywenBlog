@@ -22,6 +22,46 @@
 
 **未执行项：** 实体手机、屏幕阅读器、真实浏览器 UI 缩放、公开部署核验与 VC2。本轮只记录本地自动化结果，不宣告 E06 或公开版本通过。
 
+## 「我喜欢的」首篇文章《和流萤做同桌》 · 2026-09-18
+
+**范围：** 新增一篇文章、两张配图，以及一处经实测判定为等价的图片 CSS；同时把几处「把篇数写死在文案里」的说法改成不会随篇数失效的写法。历史 `docs/evidence/**` 不改写。
+
+**内容：** `posts/deskmate-with-firefly.html`，分类 `favorites`（我喜欢的），日期 `2026-09-18`，阅读时间约 1 分钟。正文四行按用户文案原样保留——`<br>` 断行、「[练剑.jpg]」「(〃∇〃)」等原始字符都未改写；两张配图放在正文之后，各带一句说明性 `figcaption`，`alt` 描述照片中实际可见的内容（发型发色、服装、手中的花束与公文包、过膝袜与底座字样）。文章不是示例，因此没有 `.post-demo-note`，列表元信息也不追加「· 示例」。
+
+**资产（原字节复制，未重编码）：**
+
+| 文件 | 尺寸 | 字节 | SHA256（与来源一致） |
+|---|---|---:|---|
+| `assets/images/deskmate-firefly-01.jpg` | 747×640 | 76,397 | `843a82fe6793c56074d968c36b07ea6c3d31b660a3950bc94b1c7b22624cf05f` |
+| `assets/images/deskmate-firefly-02.jpg` | 640×944 | 87,845 | `5de3f44278ba8cb73a841a71aa22e6e503f2184d33be4e078dfab9b5a79aa906` |
+
+相机水印（REDMI K70、48mm f/1.6、拍摄日期与 GPS 坐标）完整保留：用户在「裁掉水印条」与「保留原图不动」之间明确选择了后者。因此公开页面上会出现 `26°24'12"N 112°50'53"E`。
+
+**编号与排序：** 本篇日期为全站最新，排在列表首位；同日另有 `ncs-figure-design`（id 1）与 `research-reading`（id 2），按「同日 id 升序」本篇列第三，最终档案编号 **A-03**。Blog 静态索引、首页最近文章、文章页编号与相邻导航均由同一顺序推导。
+
+**CSS 对照实测（`.post-figure img` 增加 `height: auto`）：**
+
+| 引擎 | 视口 | 保留 `height: auto` | 运行时删除 `height` 声明 |
+|---|---:|---|---|
+| Edge 153.0.4234.32 | 1440 / 390 | 740×634、740×1092 / 358×307、358×528 | 完全相同 |
+| Chrome 153.0.8010.52 | 1440 / 390 | 同上 | 完全相同 |
+| Firefox 155.0 | 1440 / 390 | 同上 | 完全相同 |
+
+渲染宽高比 1.1672（747:640）与 0.6780（640:944）与源图四位小数一致。结论：**这条声明是等价改动，不是缺陷修复**——三个引擎都从 `img` 的 `width`／`height` 属性推导宽高比，属性提示不会把高度钉死。保留它只是把响应式图片的意图写进规则本身，不依赖属性提示。此前「竖幅照片会被拉变形」的判断是未经实测的推断，已被本对照推翻。
+
+**验证命令与结果：**
+
+- `node .tmp-post-geometry.mjs`（临时脚本，已删除）：1440／768／390 下阅读列 740／720／358px，两张配图按固有比例缩放，`documentElement.scrollWidth` 等于视口宽，无 `pageerror`、无 4xx。
+- `node scripts/check-baseline.mjs`：**179/0**（Edge 153／Chrome 153／Firefox 155）。
+- `node docs/evidence/e01/illustration-checks.mjs`：三浏览器各 **48/0**。
+- `node docs/evidence/e03/reading-checks.mjs`：三浏览器各 **18/0**。首次运行在本机遇到一次已知的 Windows 文件占用偶发错误（`UNKNOWN: unknown error, open 'e03-cmp-blog-390-light.png'`，仓库注释记录约 0.6% 概率），原样重跑即通过；该项断言未放宽。
+- `node docs/evidence/e04/menu-checks.mjs`：三浏览器各 **20/0**。
+- `node docs/evidence/visual/narrative-checks.mjs`：**24/0**；`paper-texture-checks.mjs`：**168/0**（其中 Blog 与 post 的文档高度按「五篇列表 + 新代表文章」有意重锚，检查项已注明）。
+
+**测试夹具的一处加固（非产品改动）：** `scripts/check-baseline.mjs` 在首个交互前等待 `.blog-filters` 的入场过渡结束。`js/motion.js` 会给该容器补 `opacity/translateY(12px)` 过渡，而 Playwright 的「visible」不排除 `opacity: 0`，首次点击可能落在仍在位移的按钮上——2026-09-18 在 Firefox 上实测到一次 `5 !== 3` 的偶发失败。加固只增加等待，未放宽任何断言。
+
+**已知限制：** 未使用实体手机与屏幕阅读器，移动端为视口模拟；配图是手机拍摄，最长边 944px，在 1440px 视口下以阅读列宽 740px 显示，没有更高分辨率版本；观感类判据留给 E06 的 VC2。
+
 ## 文档发布的测试样例文章 · 2026-09-18
 
 **范围：** 把 `六月.docx` 作为一篇文章发布，并标注为测试样例。运行时改动为 `posts/scrna-grn-notes.html`（新增）、`js/posts-data.js`、`js/site.js`、`blog.html`、`index.html`、`posts/leave-some-space.html`。
