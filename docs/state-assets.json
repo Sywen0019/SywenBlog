@@ -1,0 +1,17 @@
+{
+  "file": "assets/images/a09-empty-state.webp",
+  "source": "art-work/states/a09-selected.png",
+  "sourceSha256": "3dcc28794c20db2862be81c49d71853e52aff4beacdf5ebc048e963f4419f4f5",
+  "crop": [
+    0,
+    0,
+    1254,
+    1254
+  ],
+  "width": 320,
+  "height": 320,
+  "quality": 90,
+  "alpha": "preserved; CSS paper background",
+  "bytes": 26112,
+  "sha256": "7e248a329f8264116d90b32a22b108748df911ff781099e463b1bd0e7a91865b"
+}

@@ -939,13 +939,10 @@ a.tag:hover {
   color: var(--color-muted);
 }
 
-/* 头像位于文案与重置操作之后，不占据操作之前的阅读顺序 */
+/* 状态图只作装饰；具体尺寸和落点由页面样式负责。 */
 .empty-state__avatar {
   display: block;
-  float: right;
-  width: var(--avatar-size);
-  height: var(--avatar-size);
-  margin: var(--space-6) 0 var(--space-2) var(--space-6);
+  pointer-events: none;
   background-color: var(--color-art-paper);
 }
 

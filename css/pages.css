@@ -251,7 +251,20 @@ html.has-reading .site-footer__inner {
   margin-bottom: var(--space-6);
 }
 
+/* A09 follows the reset action in DOM and visual order. */
+.empty-state__avatar {
+  width: 96px;
+  height: 96px;
+  margin: var(--space-6) 0 0;
+  object-fit: contain;
+}
+
 @media (min-width: 768px) {
+  .empty-state__avatar {
+    width: 120px;
+    height: 120px;
+  }
+
   .blog-filters {
     margin-bottom: var(--space-12);
   }
