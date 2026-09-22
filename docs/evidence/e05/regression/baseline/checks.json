@@ -1,0 +1,803 @@
+{
+  "baseCommit": "4c48537d5169689c49472c3d4f5ca11adb7e9265",
+  "sourceFilesSha256": {
+    "about.html": "16620ce26ecb303f2f84d07fa24d42effd1b55acd6ec0788ba24fbe36d233489",
+    "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+    "assets/icons/marks.svg": "3f6c6423e5ffa7c67b78c0d7879ba475b11a7750b21a05427cfde35ae91f3800",
+    "assets/images/a07-plant.webp": "0f12a98ee8c6879fc4b52a1ae23e8105f22f794339671bf6e2390089e35aaf88",
+    "assets/images/a08-transition-branch.webp": "4d6e42aa17bb382eb1fb0a4e690cfd85db7a91cec32fd5150114009c39bb818c",
+    "assets/images/a09-empty-state.webp": "7e248a329f8264116d90b32a22b108748df911ff781099e463b1bd0e7a91865b",
+    "assets/images/about-reading-1280.webp": "cbf8864a10759261c949f408529c1aa7af01bfb5aea9537075de3347fa82686a",
+    "assets/images/about-reading-640.webp": "284f391cd36b3452016b3ec6d9edc7c4e75fd050c6c10ecbc57f988d1d4c4cfe",
+    "assets/images/cat-favorites.webp": "ead74902c15a3436097a5ab4765bee0accd1d84e92823b1b62cc6ec362f094d0",
+    "assets/images/cat-life.webp": "43a8b67f48fcbf72d03e90c490b0a0c1be14fe06b5a5cf2d72ab7415da74547b",
+    "assets/images/cat-study.webp": "10ccf6898fb2b9619f290e38383241bd3a8c429367b3057cf605445334b9f06d",
+    "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
+    "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
+    "assets/images/deskmate-firefly-01.jpg": "843a82fe6793c56074d968c36b07ea6c3d31b660a3950bc94b1c7b22624cf05f",
+    "assets/images/deskmate-firefly-02.jpg": "5de3f44278ba8cb73a841a71aa22e6e503f2184d33be4e078dfab9b5a79aa906",
+    "assets/images/hero-desk-1280.webp": "437a4db0633276fcd13a2c62f3e897ea511639ea82e5b10c2955602ba10cda54",
+    "assets/images/hero-desk-640.webp": "9d5418b2b4f55f9f2c6d72decd23c829d4919d43463bdb8ceeb357081c471615",
+    "blog.html": "2060eb3c15e2f4e2e8989c5c8d10cbfd8dbc1d3d5fd375f2509c6222566c11f5",
+    "css/base.css": "e7af5cef3a30b70ca08b7437d68cfaece49909e231790d5877ad2c0bcf6a81f6",
+    "css/components.css": "49d6493388a94370c8df650d5536195ce8428a80abc868319554885e5cfee7c1",
+    "css/narrative.css": "edc0c6ed548f83a64e6179fad3f7518bfe17ba3ef803386c3cf740579b92e456",
+    "css/pages.css": "ea1e445ebf878f66ddb4bf6075e41b5154577273d13676c38772630df9b5c245",
+    "index.html": "da767b75d18bad5553e2f3ef0c90902750d2cd5ba2acc8bcbff82dd7ba621e8e",
+    "js/blog.js": "a33befe31ff863e9bc763fc0c181b7559d42eb41431d440280e84312b343f567",
+    "js/context-menu.js": "f43ff8dcaab910b35ce38aa72e8c84a18f3d944367a2d675d5cce1982511f1ba",
+    "js/motion.js": "cc9af7ae4092c4e3909d03441c5f62d2010e1e569483d6394ee3d7b36fb091bc",
+    "js/posts-data.js": "802c6822be1cad4c62050e384ae1aa7e04b4859aa7140b6e17531ade1981cab3",
+    "js/reading.js": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
+    "js/site.js": "751cc8d0284d01790edd5089d085372d1f779f9af25d43847963526de7ed341e",
+    "js/theme.js": "1b62e5e02a8d5ea3c6f5788f292f2edf247d2b59c7fb497690b59f32f87bb3db",
+    "posts/deskmate-with-firefly.html": "59acc58f2468ecbc325f35bc507c431a1b03d725700f4e3df55301ad7e2485e0",
+    "posts/leave-some-space.html": "9bc6f1b1d9a198dc01b7a79979853a734fd16eb8e7d326d27ca3071322a3689c",
+    "posts/ncs-figure-design.html": "edf4702be206d7fd0254f4ae41c2016bb265ea9f7f44eca22932241ea128423a",
+    "posts/research-reading.html": "8fce6225c45b925d3593a74831f6897c6465561987ee36ef19d0ac550121cc34",
+    "posts/scrna-grn-notes.html": "3261d4680c745f40403895f216cf02b9bea894ebb8b062a0ca5ed3bda8c8b842"
+  },
+  "at": "2026-09-22T04:44:08.336Z",
+  "mode": "full",
+  "checks": [
+    {
+      "name": "Edge version",
+      "pass": true,
+      "detail": "153.0.4234.48"
+    },
+    {
+      "name": "Edge: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Edge: legacy category parameters map to study",
+      "pass": true
+    },
+    {
+      "name": "Edge: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Edge: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Edge: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "All eight pages: local targets and unique headings",
+      "pass": true,
+      "detail": {
+        "internalTargets": 34
+      }
+    },
+    {
+      "name": "light index.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light index.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light blog.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light about.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/ncs-figure-design.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/research-reading.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/leave-some-space.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/deskmate-with-firefly.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 320px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 390px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 767px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 768px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 769px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "light posts/scrna-grn-notes.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "light: no resource/JS failures in layout matrix",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark index.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark blog.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark about.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/ncs-figure-design.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/research-reading.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/leave-some-space.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/deskmate-with-firefly.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 320px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 390px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 767px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 768px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 769px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 1023px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 1024px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 1025px",
+      "pass": true
+    },
+    {
+      "name": "dark posts/scrna-grn-notes.html 1440px",
+      "pass": true
+    },
+    {
+      "name": "dark: no resource/JS failures in layout matrix",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: eight pages and static index",
+      "pass": true
+    },
+    {
+      "name": "Initialization fallback: missing posts-data.js",
+      "pass": true
+    },
+    {
+      "name": "Initialization fallback: missing site.js",
+      "pass": true
+    },
+    {
+      "name": "Initialization fallback: missing blog.js",
+      "pass": true
+    },
+    {
+      "name": "Malformed article data preserves static list",
+      "pass": true
+    },
+    {
+      "name": "Storage read/write failures and system follow",
+      "pass": true
+    },
+    {
+      "name": "Invalid saved theme follows system",
+      "pass": true
+    },
+    {
+      "name": "URL update failure does not stop filtering",
+      "pass": true
+    },
+    {
+      "name": "Subdirectory, tags and article assets",
+      "pass": true
+    },
+    {
+      "name": "Images fail without collapsing the Hero",
+      "pass": true
+    },
+    {
+      "name": "Keyboard, focus and reduced motion",
+      "pass": true
+    },
+    {
+      "name": "200% equivalent layout and long text",
+      "pass": true
+    },
+    {
+      "name": "Cold-cache homepage transfer and slow loading",
+      "pass": true,
+      "detail": {
+        "initialSubresourcesBytes": 271671,
+        "totalSubresourcesBytes": 271671
+      }
+    },
+    {
+      "name": "Default / no-result screenshots",
+      "pass": true
+    },
+    {
+      "name": "Chrome version",
+      "pass": true,
+      "detail": "153.0.8010.53"
+    },
+    {
+      "name": "Chrome: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Chrome: legacy category parameters map to study",
+      "pass": true
+    },
+    {
+      "name": "Chrome: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Chrome: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Chrome: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "Firefox version",
+      "pass": true,
+      "detail": "155.0"
+    },
+    {
+      "name": "Firefox: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Firefox: legacy category parameters map to study",
+      "pass": true
+    },
+    {
+      "name": "Firefox: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Firefox: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Firefox: no uncaught JS exceptions",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    "home-390-light.png",
+    "home-1440-light.png",
+    "blog-390-light.png",
+    "blog-1440-light.png",
+    "about-390-light.png",
+    "about-1440-light.png",
+    "post-390-light.png",
+    "post-1440-light.png",
+    "research-reading.png",
+    "leave-some-space.png",
+    "deskmate-with-firefly.png",
+    "scrna-grn-notes.png",
+    "home-390-dark.png",
+    "home-1440-dark.png",
+    "blog-390-dark.png",
+    "blog-1440-dark.png",
+    "about-390-dark.png",
+    "about-1440-dark.png",
+    "post-390-dark.png",
+    "post-1440-dark.png",
+    "home-nojs-390-dark.png",
+    "home-image-failed-390.png",
+    "keyboard-focus.png",
+    "blog-empty-390-dark.png",
+    "blog-favorites-390-dark.png"
+  ],
+  "limitations": [
+    "No physical phone test; mobile and 200% layout checks are browser emulations."
+  ],
+  "baseUrl": "http://127.0.0.1:3612/",
+  "passed": 179,
+  "failed": 0
+}

@@ -6,6 +6,7 @@
 - 保留 `#blog-empty`、`#empty-title`、`.empty-state__text`、`#empty-reset` 与 `.empty-state__avatar`；图片在重置按钮之后，空 alt、`aria-hidden="true"`、不可聚焦、`pointer-events: none`。
 - 正式资源 `assets/images/a09-empty-state.webp`：320×320、≤40KB；显示尺寸桌面 120px、手机 96px。页面构图归 `css/pages.css`，取消旧浮动；复用 `site.js` 的图片失败隐藏。
 - 无新增公共 JS 接口，不修改筛选、URL、文章数据协议。E06、推送和部署不在本次范围。
+- 状态：Passed（本地）；26,112 字节，三浏览器 69/0、正常列表 8 张逐字节一致。提示词与资产哈希见 `docs/state-prompts.md`、`docs/state-assets.json`；完整回归与限制见 `docs/evidence/e05/README.md`。
 
 ## 两篇 skill 设计文章与五篇内容当前契约 · 2026-09-18
 
@@ -75,7 +76,7 @@
 
 ## 当前交接摘要 · 2026-09-17（E02 之后）
 
-B00–B06 已完成并保持可提交；E01「文章小画体系」、E03「简单阅读增强」与 E04「复制与快捷菜单」均已本地完成（Passed，见下方记录），E02 已于 2026-09-17 本地完成，E05／E06 仍 Deferred。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用 J；E02 采用 A02 平板阅读候选 3、A07 铃兰 v04 与 A08 横枝 v01，豆包大图已归档 art-work/decorations，不进入发布目录。
+B00–B06 已完成并保持可提交；E01「文章小画体系」、E03「简单阅读增强」与 E04「复制与快捷菜单」均已本地完成（Passed，见下方记录），E02 已于 2026-09-17 本地完成，E05 已于 2026-09-22 本地通过，E06 仍 Deferred。正式地址 https://sywen-blog.pages.dev/，Gitee 为源码主仓库。Hero 最终采用 J；E02 采用 A02 平板阅读候选 3、A07 铃兰 v04 与 A08 横枝 v01，豆包大图已归档 art-work/decorations，不进入发布目录。
 
 theme/site/blog/reading/context-menu 已全部接入，保留 ID/data 契约与静态降级。E04 之后 `#quick-menu-button`、`#copy-panel`、`#site-notice`、`#context-menu` 由 `js/context-menu.js` 接管：仅在 `(hover: hover) and (pointer: fine)` 下显示按钮并按需构建菜单，复制失败时显示手动复制面板。E04 证据见 `docs/evidence/e04/`，三浏览器各 19 项通过；E03 的 `reading-checks.mjs` 按新契约最小更新后三浏览器各 18 项仍通过；B05 的 158 项基线回归在 E04 后重跑保持通过。VC0/VC1-B 结论见 visual-review.md，VC2 仍待 E06。
 

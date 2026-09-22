@@ -1,0 +1,154 @@
+{
+  "stage": "before",
+  "at": "2026-09-22T04:42:16.929Z",
+  "parentCommit": "4c48537d5169689c49472c3d4f5ca11adb7e9265",
+  "checks": [
+    {
+      "browser": "edge",
+      "name": "320/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 64,
+        "height": 64,
+        "footerGap": 62.390625
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 64,
+        "height": 64,
+        "footerGap": 62.390625
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 64,
+        "height": 64,
+        "footerGap": 62.390625
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 64,
+        "height": 64,
+        "footerGap": 62.390625
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 80,
+        "height": 80,
+        "footerGap": 46.390625
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 80,
+        "height": 80,
+        "footerGap": 46.390625
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 80,
+        "height": 80,
+        "footerGap": 62.390625
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 80,
+        "height": 80,
+        "footerGap": 62.390625
+      }
+    }
+  ],
+  "limitations": [
+    "No physical phone, browser UI zoom or screen reader testing."
+  ]
+}
