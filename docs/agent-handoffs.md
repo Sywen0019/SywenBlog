@@ -1,5 +1,12 @@
 # Agent 交接记录（H）
 
+## E05 状态角色契约 · 2026-09-22
+
+- 用户确认 Blog 空状态可使用 A09；正常列表与页头仍无人物图。
+- 保留 `#blog-empty`、`#empty-title`、`.empty-state__text`、`#empty-reset` 与 `.empty-state__avatar`；图片在重置按钮之后，空 alt、`aria-hidden="true"`、不可聚焦、`pointer-events: none`。
+- 正式资源 `assets/images/a09-empty-state.webp`：320×320、≤40KB；显示尺寸桌面 120px、手机 96px。页面构图归 `css/pages.css`，取消旧浮动；复用 `site.js` 的图片失败隐藏。
+- 无新增公共 JS 接口，不修改筛选、URL、文章数据协议。E06、推送和部署不在本次范围。
+
 ## 两篇 skill 设计文章与五篇内容当前契约 · 2026-09-18
 
 - 当前站点为八页、五篇文章：Home、Blog、About，以及 `posts/` 下 `ncs-figure-design`、`research-reading`、`deskmate-with-firefly`、`leave-some-space`、`scrna-grn-notes`。分类统计为 `study` 3、`life` 1、`favorites` 1。

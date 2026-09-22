@@ -65,7 +65,7 @@
 | **Decorative Assets** | 只负责节奏 | 胶带、网点、小箭头、纸签、极轻量线条 |
 | **Transitional Assets** | 连接 section | 横向枝叶、短线、编号、页面结尾标记 |
 
-人物原则：人物只出现在 Home 与 About。Blog 不使用人物插画。
+人物原则：人物主要出现在 Home 与 About。E05（2026-09-22，用户确认）仅允许 Blog 无结果状态使用 A09 状态角色；正常文章列表与页头仍不使用人物插画。
 
 ## 6. Mark System
 
