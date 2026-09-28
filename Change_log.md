@@ -337,3 +337,9 @@
 - `.gitignore` 新增发布目录／打包产物（`/release/`、`/dist/`、`*.zip`）与编辑器缓存排除项。
 - 验证：五张参考 PNG 的 SHA256 与基线一致（未改动）；`git -c http.sslBackend=openssl ls-remote origin` 返回 `refs/heads/main`；新增文件与跟踪文件中未发现凭据；`docs/` 与 `参考素材/` 未被忽略规则误伤。
 - 未验证：Netlify 账号与公开 HTTPS 条件（外部阻塞，见 `docs/acceptance.md` OB-02）。Git 推送认证当时未验证（OB-01），已于同日关闭。
+# 2026-09-28 · E06 样板契约
+
+- 领取 E06，按用户要求先制作 Home、About、单细胞长文和流萤照片短文样板，审核后再全站扩展及发布。
+- 登记冷白纤维纸、深色透明装饰 alpha mask、文章编号与四页范围契约。
+- 已检查 A07/A08 的透明通道，可复用原资产；尚未执行样板验收、推送或部署。
+

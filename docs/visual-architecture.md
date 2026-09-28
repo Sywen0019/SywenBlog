@@ -2,6 +2,18 @@
 
 日期：2026-09-18。本文件是本轮视觉架构重构的**契约记录**，先于实现生效。基础版本 `6c454f2`（E02 之后）。`DESIGN_SPEC.md` 保留整体视觉规范，本文件只登记本轮新增的两层结构、可访问性合同、词汇体系与页面密度；两者冲突时以更能保护内容可读性的一条为准。
 
+## E06 样板契约 · 2026-09-28
+
+用户确认先制作四页样板、看图通过后再全站扩展。样板通过 `html[data-visual-stage="e06-sample"]` 启用，仅 Home、About、scrna-grn-notes、deskmate-with-firefly 使用；共享样式新增规则均限定该属性，不改变其余页面。
+
+- `--paper-fiber-layer`、`--paper-fiber-size` 定义冷白静态纤维纸；保留既有 grain，新增纤维的平均压暗量与底色成对补偿。`--reading-paper` 提供正文低纹理底纸，不以整体 opacity 或混合模式改变内容。
+- `--decoration-ink`、`--decoration-mask-display`、`--decoration-image-visibility` 同时覆盖显式与系统主题。`.line-art--plant` / `.line-art--branch` 使用原 WebP 的 alpha mask，浅色原图、深色浅灰轮廓；不得应用于人物、照片和彩色分类小画。
+- 装饰容器保留 aria-hidden、不可聚焦和 pointer-events:none。原图失败并被隐藏时伪元素也隐藏；mask 请求失败原生呈透明，不回退实心块。
+- `.post-section-number` 为显式 aria-hidden 的小节编号，保留 h2 的 data-rail 兼容属性；仅宽屏显示于阅读列外。≥1200px 档案编号只在页边显示，窄屏只在页头显示。
+- 正文、标签和相邻文章顺序不变。公开 JS API、文章路径、分类数据不变。
+
+上述登记是实施契约，不代表用户已通过样板或 VC2。浅色纤维属于用户本次要求，替代旧“仅细颗粒”的视觉验收口径；旧纸纹历史证据保留。
+
 ## 1. 两层结构
 
 | 层 | 负责 | 判定 |
