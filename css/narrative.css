@@ -369,21 +369,21 @@
 }
 
 /* E06: original alpha silhouettes, never a global image inversion. */
-html[data-visual-stage="e06-sample"] .line-art--plant {
+.line-art--plant {
   --line-art-mask: url("../assets/images/a07-plant.webp");
 }
 
-html[data-visual-stage="e06-sample"] .line-art--branch {
+.line-art--branch {
   --line-art-mask: url("../assets/images/a08-transition-branch.webp");
   position: relative;
   background: transparent;
 }
 
-html[data-visual-stage="e06-sample"] .line-art img {
+.line-art img {
   visibility: var(--decoration-image-visibility);
 }
 
-html[data-visual-stage="e06-sample"] .line-art::after {
+.line-art::after {
   position: absolute;
   inset: 0;
   display: var(--decoration-mask-display);
@@ -395,6 +395,6 @@ html[data-visual-stage="e06-sample"] .line-art::after {
   content: "";
 }
 
-html[data-visual-stage="e06-sample"] .line-art:has(img[hidden])::after {
+.line-art:has(img[hidden])::after {
   display: none;
 }
