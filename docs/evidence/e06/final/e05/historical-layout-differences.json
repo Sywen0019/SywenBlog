@@ -1,0 +1,531 @@
+{
+  "stage": "after",
+  "at": "2026-09-28T14:49:36.283Z",
+  "parentCommit": "55401d23f9b26458770c839203a44369bf507c77",
+  "checks": [
+    {
+      "browser": "edge",
+      "name": "320/light/list",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: normal list screenshot changed\n+ actual - expected\n\n+ '5ab7458102dde5a395e7e5b03b7ad44a5ed357d807e127a902c526f9b98583f8'\n- 'ce27c1ba5711ee7808e11617e4166a3962277235601550151ad24e106f75a9b4'\n\n    at file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:76:57\n    at async check (file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:29:65)\n    at async file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:44:13"
+    },
+    {
+      "browser": "edge",
+      "name": "320/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/dark/list",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: normal list screenshot changed\n+ actual - expected\n\n+ '5c94a679d372b50887ca58240747914645000450acce151a31b9a20c1bdcbb80'\n- '6b94ae827752e7481676f0ea6fdc369db28854af5745267c04f455994244ef51'\n\n    at file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:76:57\n    at async check (file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:29:65)\n    at async file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:44:13"
+    },
+    {
+      "browser": "edge",
+      "name": "320/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/light/list",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: normal list screenshot changed\n+ actual - expected\n\n+ '67948f41f74d51ee9e79428ad5ff7d971082d60a2f2ef7ad418ffe77addd4f72'\n- '8098cef6023fadbd9caf894938b2cef88be48816b5a205c3bd50d4b54958ab73'\n\n    at file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:76:57\n    at async check (file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:29:65)\n    at async file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:44:13"
+    },
+    {
+      "browser": "edge",
+      "name": "390/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/dark/list",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: normal list screenshot changed\n+ actual - expected\n\n+ '7f306ad8529f1a9af7eed543788c256d107b7e69e25f6d9242a110adab70b92b'\n- 'b58f8eb8591439cfb3dd99fcfc5ab5510f6c58efb91b75bf3502269167dc18d4'\n\n    at file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:76:57\n    at async check (file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:29:65)\n    at async file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:44:13"
+    },
+    {
+      "browser": "edge",
+      "name": "390/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/light/list",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: normal list screenshot changed\n+ actual - expected\n\n+ '73e03dc6c6b301e498421b220c0b55967d276f846a0b1575edeb676e9ec4422a'\n- 'afc7ed4534ea63d5afe1ad087cebffe5f282ed624a1a287b842d8cbe3f398101'\n\n    at file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:76:57\n    at async check (file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:29:65)\n    at async file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:44:13"
+    },
+    {
+      "browser": "edge",
+      "name": "768/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/dark/list",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: normal list screenshot changed\n+ actual - expected\n\n+ '287e44b7489115ae979be867135fc6fbb18e04516571f596995891055dc426c3'\n- '4bd5723426c4c76198f105298a1e0b88222820d8e7502b97e432e46d26dcf656'\n\n    at file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:76:57\n    at async check (file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:29:65)\n    at async file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:44:13"
+    },
+    {
+      "browser": "edge",
+      "name": "768/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/light/list",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: normal list screenshot changed\n+ actual - expected\n\n+ 'c1cc2b715c20c8fbf1c7aae85d8d54ade6d55a6d9d77c227d98be693916108fd'\n- 'c458fe8e2045d7a5e9c3c6a97cf86f5604e88f73a0c550b02863aac6ec8073b3'\n\n    at file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:76:57\n    at async check (file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:29:65)\n    at async file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:44:13"
+    },
+    {
+      "browser": "edge",
+      "name": "1440/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/dark/list",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: normal list screenshot changed\n+ actual - expected\n\n+ '4748e0f0501b0cfa0a6356ef4bfb99f247dd70e511212476c8499d98c54b2e61'\n- 'c147457f00f37af3248234dd5ea6d9b407685145e371130ce16d612f86a4847d'\n\n    at file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:76:57\n    at async check (file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:29:65)\n    at async file:///L:/Sywen-Blog/docs/evidence/e05/state-checks.mjs:44:13"
+    },
+    {
+      "browser": "edge",
+      "name": "1440/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "keyboard reset, category/query and history",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "Chinese composition waits until compositionend",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "empty favorites fixture and generic keyword empty state",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "image failure preserves text and reset",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "no script retains static content",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "initialization failure retains static content",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "subdirectory, reduced motion, resource budget",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "320/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "320/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "320/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "320/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "390/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "390/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "390/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "390/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "768/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "768/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "768/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "768/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "1440/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "1440/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "1440/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "1440/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "keyboard reset, category/query and history",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "Chinese composition waits until compositionend",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "empty favorites fixture and generic keyword empty state",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "image failure preserves text and reset",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "no script retains static content",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "initialization failure retains static content",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "subdirectory, reduced motion, resource budget",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "320/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "320/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 103.99993896484375
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "320/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "320/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 103.99993896484375
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "390/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "390/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "390/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "390/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "768/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "768/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "768/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "768/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "1440/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "1440/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "1440/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "1440/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "keyboard reset, category/query and history",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "Chinese composition waits until compositionend",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "empty favorites fixture and generic keyword empty state",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "image failure preserves text and reset",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "no script retains static content",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "initialization failure retains static content",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "subdirectory, reduced motion, resource budget",
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "No physical phone, browser UI zoom or screen reader testing."
+  ]
+}

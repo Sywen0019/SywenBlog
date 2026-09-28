@@ -1,0 +1,233 @@
+{
+  "task": "Narrative Layer Visual Vertical Slice",
+  "at": "2026-09-28T14:50:14.900Z",
+  "passed": 0,
+  "failed": 44,
+  "checks": [
+    {
+      "name": "home@1440 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/index.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/index.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "blog@1440 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/blog.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/blog.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "about@1440 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/about.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/about.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "post@1440 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/ncs-figure-design.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/ncs-figure-design.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "research@1440 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/research-reading.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/research-reading.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "life@1440 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/leave-some-space.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/leave-some-space.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "photo@1440 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/deskmate-with-firefly.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/deskmate-with-firefly.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "long@1440 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/scrna-grn-notes.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/scrna-grn-notes.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "home@1200 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/index.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/index.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "blog@1200 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/blog.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/blog.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "about@1200 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/about.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/about.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "post@1200 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/ncs-figure-design.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/ncs-figure-design.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "research@1200 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/research-reading.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/research-reading.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "life@1200 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/leave-some-space.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/leave-some-space.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "photo@1200 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/deskmate-with-firefly.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/deskmate-with-firefly.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "long@1200 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/scrna-grn-notes.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/scrna-grn-notes.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "home@1024 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/index.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/index.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "blog@1024 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/blog.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/blog.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "about@1024 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/about.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/about.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "post@1024 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/ncs-figure-design.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/ncs-figure-design.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "research@1024 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/research-reading.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/research-reading.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "life@1024 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/leave-some-space.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/leave-some-space.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "photo@1024 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/deskmate-with-firefly.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/deskmate-with-firefly.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "long@1024 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/scrna-grn-notes.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/scrna-grn-notes.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "home@768 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/index.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/index.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "blog@768 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/blog.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/blog.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "about@768 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/about.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/about.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "post@768 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/ncs-figure-design.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/ncs-figure-design.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "research@768 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/research-reading.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/research-reading.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "life@768 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/leave-some-space.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/leave-some-space.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "photo@768 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/deskmate-with-firefly.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/deskmate-with-firefly.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "long@768 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/scrna-grn-notes.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/scrna-grn-notes.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "home@390 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/index.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/index.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "blog@390 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/blog.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/blog.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "about@390 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/about.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/about.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "post@390 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/ncs-figure-design.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/ncs-figure-design.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "research@390 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/research-reading.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/research-reading.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "life@390 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/leave-some-space.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/leave-some-space.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "photo@390 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/deskmate-with-firefly.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/deskmate-with-firefly.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "long@390 narrative contract",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/posts/scrna-grn-notes.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/posts/scrna-grn-notes.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "blog: no images in list, count matches, filter and reset work",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/blog.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/blog.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "blog no-JS: static list complete without images",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/blog.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/blog.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "home: now plant stays inside panel without covering items",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/index.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/index.html\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "name": "about: now plant stays inside panel without covering items",
+      "pass": false,
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8766/about.html\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:8766/about.html\", waiting until \"load\"\u001b[22m\n"
+    }
+  ],
+  "limitations": [
+    "未使用实体手机、屏幕阅读器与真实浏览器 UI 缩放；移动端为浏览器视口模拟。",
+    "观感类判据（是否成立 Editorial Notebook、mark 是否过于工程化）由用户视觉审核判定，本脚本只记录可测量事实。",
+    "本轮只覆盖样板区域，全域页面仍待 Phase 4／Phase 5。"
+  ]
+}

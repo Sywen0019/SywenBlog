@@ -15,19 +15,24 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const BASE = process.env.SLICE_BASE || 'http://127.0.0.1:8123/';
-const out = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'));
+const out = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : import.meta.dirname;
+fs.mkdirSync(out, { recursive: true });
 const PAGES = [
   ['home', 'index.html'],
   ['blog', 'blog.html'],
   ['about', 'about.html'],
-  ['post', 'posts/ncs-figure-design.html']
+  ['post', 'posts/ncs-figure-design.html'],
+  ['research', 'posts/research-reading.html'],
+  ['life', 'posts/leave-some-space.html'],
+  ['photo', 'posts/deskmate-with-firefly.html'],
+  ['long', 'posts/scrna-grn-notes.html']
 ];
 const WIDTHS = [1440, 1200, 1024, 768, 390];
 
 const NARRATIVE_SELECTOR = [
   '.narrative', '.side-note', '.paper-slip', '.short-rule', '.post-rail', '.mark',
   '.narrative-tape', '.narrative-dots', '.narrative-branch', '.narrative-plant',
-  '.section-header__note', '.post-entry__number', '.category-mark', '.page-header__eyebrow',
+  '.post-section-number', '.section-header__note', '.post-entry__number', '.category-mark', '.page-header__eyebrow',
   '.now-slip__stamp', '.study-notes__index', '.section-header__number'
 ].join(', ');
 

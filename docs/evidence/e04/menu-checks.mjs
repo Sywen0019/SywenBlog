@@ -21,7 +21,8 @@ const decodeSize = (file) => {
 };
 
 const root = path.resolve(import.meta.dirname, '../../..');
-const out = import.meta.dirname;
+const out = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : import.meta.dirname;
+fs.mkdirSync(out, { recursive: true });
 const pages = ['index.html', 'blog.html', 'about.html',
   'posts/ncs-figure-design.html', 'posts/research-reading.html',
   'posts/leave-some-space.html',

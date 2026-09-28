@@ -1,0 +1,721 @@
+{
+  "task": "Narrative Layer Visual Vertical Slice",
+  "at": "2026-09-28T14:57:07.377Z",
+  "passed": 44,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "home@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "about@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "life@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "photo@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "long@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "home@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "about@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "life@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "photo@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "long@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "home@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "about@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "life@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "photo@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "long@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "home@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "about@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "life@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "photo@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "long@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "home@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 20
+      }
+    },
+    {
+      "name": "blog@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "about@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "post@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "life@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "photo@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "long@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "blog: no images in list, count matches, filter and reset work",
+      "pass": true,
+      "detail": {
+        "images": 0,
+        "entries": 5,
+        "countText": "找到 5 篇文章",
+        "life": 1,
+        "afterReset": 5
+      }
+    },
+    {
+      "name": "blog no-JS: static list complete without images",
+      "pass": true,
+      "detail": {
+        "entries": 5,
+        "images": 0,
+        "links": 5
+      }
+    },
+    {
+      "name": "home: now plant stays inside panel without covering items",
+      "pass": true,
+      "detail": {
+        "scenarios": [
+          {
+            "theme": "light",
+            "width": 390,
+            "visible": false,
+            "contained": false,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantParent": "note-panel paper-panel paper-panel--dots",
+            "plantBox": {
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "bottom": 0,
+              "width": 0,
+              "height": 0
+            },
+            "panelBox": {
+              "left": 16,
+              "right": 374,
+              "top": 2285.59716796875,
+              "bottom": 2589.08154296875,
+              "width": 358,
+              "height": 303.484375
+            }
+          },
+          {
+            "theme": "light",
+            "width": 768,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantParent": "note-panel paper-panel paper-panel--dots",
+            "plantBox": {
+              "left": 655,
+              "right": 727,
+              "top": 1982.0074462890625,
+              "bottom": 2054.00732421875,
+              "width": 72,
+              "height": 71.9998779296875
+            },
+            "panelBox": {
+              "left": 24,
+              "right": 744,
+              "top": 1767.5230712890625,
+              "bottom": 2071.00732421875,
+              "width": 720,
+              "height": 303.4842529296875
+            }
+          },
+          {
+            "theme": "light",
+            "width": 1024,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantParent": "note-panel paper-panel paper-panel--dots",
+            "plantBox": {
+              "left": 775,
+              "right": 895,
+              "top": 1975.6182861328125,
+              "bottom": 2095.6181640625,
+              "width": 120,
+              "height": 119.9998779296875
+            },
+            "panelBox": {
+              "left": 32,
+              "right": 912,
+              "top": 1970.6964111328125,
+              "bottom": 2112.6181640625,
+              "width": 880,
+              "height": 141.9217529296875
+            }
+          },
+          {
+            "theme": "light",
+            "width": 1440,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantParent": "note-panel paper-panel paper-panel--dots",
+            "plantBox": {
+              "left": 903,
+              "right": 1023,
+              "top": 2075.4267578125,
+              "bottom": 2195.4267578125,
+              "width": 120,
+              "height": 120
+            },
+            "panelBox": {
+              "left": 160,
+              "right": 1040,
+              "top": 2070.5048828125,
+              "bottom": 2212.4267578125,
+              "width": 880,
+              "height": 141.921875
+            }
+          },
+          {
+            "theme": "dark",
+            "width": 390,
+            "visible": false,
+            "contained": false,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantParent": "note-panel paper-panel paper-panel--dots",
+            "plantBox": {
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "bottom": 0,
+              "width": 0,
+              "height": 0
+            },
+            "panelBox": {
+              "left": 16,
+              "right": 374,
+              "top": 2285.9189453125,
+              "bottom": 2589.4033203125,
+              "width": 358,
+              "height": 303.484375
+            }
+          },
+          {
+            "theme": "dark",
+            "width": 768,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantParent": "note-panel paper-panel paper-panel--dots",
+            "plantBox": {
+              "left": 655,
+              "right": 727,
+              "top": 1981.6485595703125,
+              "bottom": 2053.6484375,
+              "width": 72,
+              "height": 71.9998779296875
+            },
+            "panelBox": {
+              "left": 24,
+              "right": 744,
+              "top": 1767.1641845703125,
+              "bottom": 2070.6484375,
+              "width": 720,
+              "height": 303.4842529296875
+            }
+          },
+          {
+            "theme": "dark",
+            "width": 1024,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantParent": "note-panel paper-panel paper-panel--dots",
+            "plantBox": {
+              "left": 775,
+              "right": 895,
+              "top": 1975.8009033203125,
+              "bottom": 2095.80078125,
+              "width": 120,
+              "height": 119.9998779296875
+            },
+            "panelBox": {
+              "left": 32,
+              "right": 912,
+              "top": 1970.8790283203125,
+              "bottom": 2112.80078125,
+              "width": 880,
+              "height": 141.9217529296875
+            }
+          },
+          {
+            "theme": "dark",
+            "width": 1440,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantParent": "note-panel paper-panel paper-panel--dots",
+            "plantBox": {
+              "left": 903,
+              "right": 1023,
+              "top": 2075.61376953125,
+              "bottom": 2195.61376953125,
+              "width": 120,
+              "height": 120
+            },
+            "panelBox": {
+              "left": 160,
+              "right": 1040,
+              "top": 2070.69189453125,
+              "bottom": 2212.61376953125,
+              "width": 880,
+              "height": 141.921875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "about: now plant stays inside panel without covering items",
+      "pass": true,
+      "detail": {
+        "scenarios": [
+          {
+            "theme": "light",
+            "width": 390,
+            "visible": false,
+            "contained": false,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantBox": {
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "bottom": 0,
+              "width": 0,
+              "height": 0
+            },
+            "panelBox": {
+              "left": 16,
+              "right": 374,
+              "top": 1849.6578369140625,
+              "bottom": 2259.00146484375,
+              "width": 358,
+              "height": 409.3436279296875
+            }
+          },
+          {
+            "theme": "light",
+            "width": 768,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantBox": {
+              "left": 623,
+              "right": 727,
+              "top": 2027.970703125,
+              "bottom": 2131.970703125,
+              "width": 104,
+              "height": 104
+            },
+            "panelBox": {
+              "left": 24,
+              "right": 744,
+              "top": 1689.970703125,
+              "bottom": 2148.970703125,
+              "width": 720,
+              "height": 459
+            }
+          },
+          {
+            "theme": "light",
+            "width": 1024,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantBox": {
+              "left": 871,
+              "right": 975,
+              "top": 1510.694091796875,
+              "bottom": 1614.694091796875,
+              "width": 104,
+              "height": 104
+            },
+            "panelBox": {
+              "left": 32,
+              "right": 992,
+              "top": 1428.694091796875,
+              "bottom": 1631.694091796875,
+              "width": 960,
+              "height": 203
+            }
+          },
+          {
+            "theme": "light",
+            "width": 1440,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantBox": {
+              "left": 1159,
+              "right": 1263,
+              "top": 1558.6937255859375,
+              "bottom": 1662.6937255859375,
+              "width": 104,
+              "height": 104
+            },
+            "panelBox": {
+              "left": 160,
+              "right": 1280,
+              "top": 1476.6937255859375,
+              "bottom": 1679.6937255859375,
+              "width": 1120,
+              "height": 203
+            }
+          },
+          {
+            "theme": "dark",
+            "width": 390,
+            "visible": false,
+            "contained": false,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantBox": {
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "bottom": 0,
+              "width": 0,
+              "height": 0
+            },
+            "panelBox": {
+              "left": 16,
+              "right": 374,
+              "top": 1850.42431640625,
+              "bottom": 2259.76806640625,
+              "width": 358,
+              "height": 409.34375
+            }
+          },
+          {
+            "theme": "dark",
+            "width": 768,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantBox": {
+              "left": 623,
+              "right": 727,
+              "top": 2028.588134765625,
+              "bottom": 2132.588134765625,
+              "width": 104,
+              "height": 104
+            },
+            "panelBox": {
+              "left": 24,
+              "right": 744,
+              "top": 1690.588134765625,
+              "bottom": 2149.588134765625,
+              "width": 720,
+              "height": 459
+            }
+          },
+          {
+            "theme": "dark",
+            "width": 1024,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantBox": {
+              "left": 871,
+              "right": 975,
+              "top": 1511.27001953125,
+              "bottom": 1615.27001953125,
+              "width": 104,
+              "height": 104
+            },
+            "panelBox": {
+              "left": 32,
+              "right": 992,
+              "top": 1429.27001953125,
+              "bottom": 1632.27001953125,
+              "width": 960,
+              "height": 203
+            }
+          },
+          {
+            "theme": "dark",
+            "width": 1440,
+            "visible": true,
+            "contained": true,
+            "itemOverlaps": 0,
+            "overflow": false,
+            "plantBox": {
+              "left": 1159,
+              "right": 1263,
+              "top": 1559.27490234375,
+              "bottom": 1663.27490234375,
+              "width": 104,
+              "height": 104
+            },
+            "panelBox": {
+              "left": 160,
+              "right": 1280,
+              "top": 1477.27490234375,
+              "bottom": 1680.27490234375,
+              "width": 1120,
+              "height": 203
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "未使用实体手机、屏幕阅读器与真实浏览器 UI 缩放；移动端为浏览器视口模拟。",
+    "观感类判据（是否成立 Editorial Notebook、mark 是否过于工程化）由用户视觉审核判定，本脚本只记录可测量事实。",
+    "本轮只覆盖样板区域，全域页面仍待 Phase 4／Phase 5。"
+  ]
+}

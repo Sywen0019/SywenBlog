@@ -7,7 +7,7 @@ import path from 'node:path';
 import { chromium } from '../../../.tmp-browser/node_modules/playwright/index.mjs';
 
 const root = path.resolve(import.meta.dirname, '../../..');
-const outDir = path.join(root, 'docs/evidence/visual/paper-texture');
+const outDir = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : path.join(root, 'docs/evidence/visual/paper-texture');
 const outFile = path.join(outDir, 'checks.json');
 const pages = [
   ['home', 'index.html'],
@@ -164,14 +164,19 @@ try {
           JSON.stringify({ scrollWidth: facts.scrollWidth, bodyScrollWidth: facts.bodyScrollWidth, viewport: width }));
         record(`${theme} ${name} ${width}px: article width`, facts.postWidth === null || facts.postWidth <= 741,
           String(facts.postWidth));
-        const referenceHeight = referenceHeights.get(`${name}|${width}|${theme}`);
-        if (referenceHeight !== undefined) {
-          const contentChanged = name === 'blog' || name === 'post';
-          record(`${theme} ${name} ${width}px: document height unchanged`, contentChanged || facts.height === referenceHeight,
-            contentChanged
-              ? `${facts.height} vs archived ${referenceHeight}; recorded because the five-post list and new representative article intentionally changed the page height`
-              : `${facts.height} vs ${referenceHeight}`);
-        }
+        // E06 intentionally changes page composition; test the material itself
+        // against the same layout with texture disabled, keeping archived heights as context.
+        const plainHeight = await page.evaluate(() => {
+          const node = document.documentElement;
+          node.style.setProperty('--paper-grain-layer', 'none');
+          node.style.setProperty('--paper-background', 'none');
+          const height = node.scrollHeight;
+          node.style.removeProperty('--paper-grain-layer');
+          node.style.removeProperty('--paper-background');
+          return height;
+        });
+        record(`${theme} ${name} ${width}px: texture does not change layout`, plainHeight === facts.height,
+          JSON.stringify({ textured: facts.height, plain: plainHeight, archived: referenceHeights.get(`${name}|${width}|${theme}`) }));
         record(`${theme} ${name} ${width}px: no page errors`, errors.length === 0, errors.join('; '));
         page.removeAllListeners('pageerror');
       }

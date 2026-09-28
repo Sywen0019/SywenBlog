@@ -10,7 +10,8 @@ import { execFileSync } from 'node:child_process';
 const root = path.resolve(import.meta.dirname, '../../..');
 const before = process.argv.includes('--before');
 const stage = before ? 'before' : 'after';
-const output = path.join(import.meta.dirname, stage);
+const evidenceRoot = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : import.meta.dirname;
+const output = path.join(evidenceRoot, stage);
 fs.mkdirSync(output, { recursive: true });
 const server = http.createServer((req, res) => {
   try {
@@ -72,7 +73,7 @@ try {
                 const filename = `blog-${state}-${width}-${theme}.png`;
                 const file = path.join(output, filename);
                 await page.screenshot({ path: file, fullPage: true, animations: 'disabled' });
-                if (!before && state === 'list') assert.equal(hash(file), hash(path.join(import.meta.dirname, 'before', filename)), 'normal list screenshot changed');
+                if (!before && state === 'list') assert.equal(hash(file), hash(path.join(evidenceRoot, 'before', filename)), 'normal list screenshot changed');
               }
               assert.deepEqual(errors, []);
               return details;
@@ -164,7 +165,7 @@ try {
   }
 } finally {
   server.close();
-  fs.writeFileSync(path.join(import.meta.dirname, `${stage}-checks.json`), JSON.stringify(report, null, 2) + '\n');
+  fs.writeFileSync(path.join(evidenceRoot, `${stage}-checks.json`), JSON.stringify(report, null, 2) + '\n');
 }
 const failures = report.checks.filter(item => !item.pass);
 console.log(JSON.stringify({ stage, passed: report.checks.length - failures.length, failed: failures.length, failures }, null, 2));

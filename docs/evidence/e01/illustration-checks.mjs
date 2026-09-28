@@ -15,7 +15,8 @@ import assert from 'node:assert/strict';
 import { chromium, firefox } from '../../../.tmp-browser/node_modules/playwright/index.mjs';
 
 const root = path.resolve(import.meta.dirname, '../../..');
-const out = import.meta.dirname;
+const out = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : import.meta.dirname;
+fs.mkdirSync(out, { recursive: true });
 const LIMIT_BYTES = 40 * 1024;
 const CATEGORIES = [
   { id: 'study', name: '学业', count: 3, file: 'cat-study.webp' },

@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 const root = path.resolve(import.meta.dirname, '../../..');
 const before = process.argv.includes('--before');
 const stage = before ? 'before' : 'after';
-const out = path.join(import.meta.dirname, stage);
+const out = path.join(process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : import.meta.dirname, stage);
 fs.mkdirSync(out, { recursive: true });
 const server = http.createServer((req, res) => {
   try {
