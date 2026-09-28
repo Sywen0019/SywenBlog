@@ -1,0 +1,146 @@
+{
+  "at": "2026-09-28T00:53:13.714Z",
+  "checks": [
+    {
+      "name": "Original raster assets unchanged",
+      "pass": true,
+      "detail": {
+        "assets": 14
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: blog.html/390/light",
+      "pass": true,
+      "detail": {
+        "sha256": "1cbbc91c3841ff85cfc592fdadbd9967c48c5c5492e13c42e1f603bd408fa710"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: blog.html/390/dark",
+      "pass": true,
+      "detail": {
+        "sha256": "3509d926bec8e7f222c5801c658dda84c13eb9e7262b026189b7e30a63b5e4f4"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: blog.html/1440/light",
+      "pass": true,
+      "detail": {
+        "sha256": "b06e61532028cc21baff2a5c835ad04b3c399e471057f28e0949b11e1460f719"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: blog.html/1440/dark",
+      "pass": true,
+      "detail": {
+        "sha256": "ef09184a714cd13211a59bee523ed30a95148445889a1f54985e37accf597523"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/ncs-figure-design.html/390/light",
+      "pass": true,
+      "detail": {
+        "sha256": "4fa3b8b594c65c268c2c28d03b8c943cadfc5bb34c3f976ccd187e5628e45826"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/ncs-figure-design.html/390/dark",
+      "pass": true,
+      "detail": {
+        "sha256": "799fd11439babe939c5686e72623f0bbd9294f07dddf9a17c40d4269b5d19b70"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/ncs-figure-design.html/1440/light",
+      "pass": true,
+      "detail": {
+        "sha256": "71828351474d335c12395f37c27d67e6c8dc4f48c42ef5c8652540e9d4053d2a"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/ncs-figure-design.html/1440/dark",
+      "pass": true,
+      "detail": {
+        "sha256": "e6d3551d972f087c735c54fdbc08a4671e4962cd412adc8e454876cb7074625b"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/research-reading.html/390/light",
+      "pass": true,
+      "detail": {
+        "sha256": "b35dc201a3183a85215120ad1041ae318406769e48020f30ea8b65644e43c9b4"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/research-reading.html/390/dark",
+      "pass": true,
+      "detail": {
+        "sha256": "5407f5ff65edde1feb8df5782a84bdf1defe91ea8d27ed03b7e1abc6df3b9461"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/research-reading.html/1440/light",
+      "pass": true,
+      "detail": {
+        "sha256": "a640e7838a3bf9ddd6e5e4dcf04f28b4cccd82866b0074539d8ebce29a9b219b"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/research-reading.html/1440/dark",
+      "pass": true,
+      "detail": {
+        "sha256": "a92d9a6df9ef1b9a8c6e7595e6022f9b7059214780572c839e3748ae3d8a84fa"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/leave-some-space.html/390/light",
+      "pass": true,
+      "detail": {
+        "sha256": "3e278961f80bcae10abded48ad33b584a58085ecdb95a8ae48fb68f6b9cc8be0"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/leave-some-space.html/390/dark",
+      "pass": true,
+      "detail": {
+        "sha256": "718ed44181949bf515f99dc6c25b9adf725ee53189d54b1ca971963e2aabe942"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/leave-some-space.html/1440/light",
+      "pass": true,
+      "detail": {
+        "sha256": "d2ff85af4f8ff743f36e8212fd83ce02d0acdb8978180e56021170bc79dceb51"
+      }
+    },
+    {
+      "name": "Unscoped page pixel equality: posts/leave-some-space.html/1440/dark",
+      "pass": true,
+      "detail": {
+        "sha256": "c185aebcc4de7ed63d57a9cefcb27642c34d46c313d55c2a6d9dd716ec0ebf33"
+      }
+    },
+    {
+      "name": "Sample contrast and decoration geometry: light",
+      "pass": true,
+      "detail": {
+        "ink": 14.481961986285235,
+        "muted": 6.4890340775988
+      }
+    },
+    {
+      "name": "Sample contrast and decoration geometry: dark",
+      "pass": true,
+      "detail": {
+        "ink": 13.797448749713903,
+        "muted": 7.911663194373741
+      }
+    },
+    {
+      "name": "Comparison viewer loads all default evidence",
+      "pass": true
+    }
+  ],
+  "passed": 20,
+  "failed": 0
+}

@@ -1,0 +1,189 @@
+{
+  "implementationCommit": "1d447f7eeea3f484d19cf65f45c1d5f1c2cc7eaa",
+  "baselineReport": "regression/baseline/checks.json",
+  "checks": [
+    {
+      "path": "about.html",
+      "sha256": "b0f625ba680992ebc9ebffe9c9c897219e8bae154f5962f234f8f607fc02daa2",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/icons/favicon.svg",
+      "sha256": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/icons/marks.svg",
+      "sha256": "3f6c6423e5ffa7c67b78c0d7879ba475b11a7750b21a05427cfde35ae91f3800",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/a07-plant.webp",
+      "sha256": "0f12a98ee8c6879fc4b52a1ae23e8105f22f794339671bf6e2390089e35aaf88",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/a08-transition-branch.webp",
+      "sha256": "4d6e42aa17bb382eb1fb0a4e690cfd85db7a91cec32fd5150114009c39bb818c",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/a09-empty-state.webp",
+      "sha256": "7e248a329f8264116d90b32a22b108748df911ff781099e463b1bd0e7a91865b",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/about-reading-1280.webp",
+      "sha256": "cbf8864a10759261c949f408529c1aa7af01bfb5aea9537075de3347fa82686a",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/about-reading-640.webp",
+      "sha256": "284f391cd36b3452016b3ec6d9edc7c4e75fd050c6c10ecbc57f988d1d4c4cfe",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/cat-favorites.webp",
+      "sha256": "ead74902c15a3436097a5ab4765bee0accd1d84e92823b1b62cc6ec362f094d0",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/cat-life.webp",
+      "sha256": "43a8b67f48fcbf72d03e90c490b0a0c1be14fe06b5a5cf2d72ab7415da74547b",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/cat-study.webp",
+      "sha256": "10ccf6898fb2b9619f290e38383241bd3a8c429367b3057cf605445334b9f06d",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/character-front-avatar.webp",
+      "sha256": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/character-front-upper.webp",
+      "sha256": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/deskmate-firefly-01.jpg",
+      "sha256": "843a82fe6793c56074d968c36b07ea6c3d31b660a3950bc94b1c7b22624cf05f",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/deskmate-firefly-02.jpg",
+      "sha256": "5de3f44278ba8cb73a841a71aa22e6e503f2184d33be4e078dfab9b5a79aa906",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/hero-desk-1280.webp",
+      "sha256": "437a4db0633276fcd13a2c62f3e897ea511639ea82e5b10c2955602ba10cda54",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/hero-desk-640.webp",
+      "sha256": "9d5418b2b4f55f9f2c6d72decd23c829d4919d43463bdb8ceeb357081c471615",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "assets/images/paper-fibers.svg",
+      "sha256": "8a043ac8d982beb1abf6287769dd783ba16624e19a9429933974426072fe1c16",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "blog.html",
+      "sha256": "2060eb3c15e2f4e2e8989c5c8d10cbfd8dbc1d3d5fd375f2509c6222566c11f5",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "css/base.css",
+      "sha256": "408e86a4b6db574fb42e4c555cf8352bf401cb26fea28945e8fa0d8c2f3ae228",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "css/components.css",
+      "sha256": "49d6493388a94370c8df650d5536195ce8428a80abc868319554885e5cfee7c1",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "css/narrative.css",
+      "sha256": "71e533176595e46b0bc315ca49eacd1619380a75995e7946abff4ce7b84275bb",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "css/pages.css",
+      "sha256": "3458e850359fc8eb298091e1cfeb93e9f0cfb5d7e2bec136a5c5cba40b23d1af",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "98be954ea13de0247849d2d2cf2cae52990afb9aecfda3de2475c1f08498aeee",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "js/blog.js",
+      "sha256": "a33befe31ff863e9bc763fc0c181b7559d42eb41431d440280e84312b343f567",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "js/context-menu.js",
+      "sha256": "f43ff8dcaab910b35ce38aa72e8c84a18f3d944367a2d675d5cce1982511f1ba",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "js/motion.js",
+      "sha256": "cc9af7ae4092c4e3909d03441c5f62d2010e1e569483d6394ee3d7b36fb091bc",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "js/posts-data.js",
+      "sha256": "802c6822be1cad4c62050e384ae1aa7e04b4859aa7140b6e17531ade1981cab3",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "js/reading.js",
+      "sha256": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "js/site.js",
+      "sha256": "751cc8d0284d01790edd5089d085372d1f779f9af25d43847963526de7ed341e",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "js/theme.js",
+      "sha256": "1b62e5e02a8d5ea3c6f5788f292f2edf247d2b59c7fb497690b59f32f87bb3db",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "posts/deskmate-with-firefly.html",
+      "sha256": "9478df655f772695f543fadd60c0747920c89c431c0b55115e3dc7275ced8597",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "posts/leave-some-space.html",
+      "sha256": "9bc6f1b1d9a198dc01b7a79979853a734fd16eb8e7d326d27ca3071322a3689c",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "posts/ncs-figure-design.html",
+      "sha256": "edf4702be206d7fd0254f4ae41c2016bb265ea9f7f44eca22932241ea128423a",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "posts/research-reading.html",
+      "sha256": "8fce6225c45b925d3593a74831f6897c6465561987ee36ef19d0ac550121cc34",
+      "matchesTestedFiles": true
+    },
+    {
+      "path": "posts/scrna-grn-notes.html",
+      "sha256": "099188c0dd1169487b67d27589e6a8c760c1b47a4e9ab5e5b2236e481bad7683",
+      "matchesTestedFiles": true
+    }
+  ],
+  "passed": 36,
+  "failed": 0,
+  "note": "Working-file hashes match the tested runtime, including the new SVG. Git may normalize line endings."
+}

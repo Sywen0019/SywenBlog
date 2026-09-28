@@ -1,5 +1,14 @@
 # Agent 交接记录（H）
 
+## E06 四页样板交接 · 2026-09-28
+
+- 状态 Review。按用户明确顺序，先看样板再全站扩展与发布；本轮未推送或部署。入口 docs/evidence/e06/review.html，完整结果见同目录 README。
+- 实现提交 1d447f7；仅 index、about、scrna-grn-notes、deskmate-with-firefly 带 `data-visual-stage="e06-sample"`。CSS 新规则均限定此属性；其余四页 16 组像素检查一致。不能在用户确认前去掉范围限制。
+- 新 paper-fibers.svg 由 scripts/export-paper-fibers.py 确定性生成；原图全部不变。A07/A08 有透明 alpha，line-art mask 只应用于这两图；深色通过 CSS token 显示浅灰，浅色保留原图。显式/系统主题、无脚本、失败态已测。
+- 文章新 `.post-section-number` 显式 aria-hidden，兼容原 data-rail。仅样板两篇宽屏隐藏页头档案编号，保留页边编号。全站推广时须覆盖其余三篇并扩展 Narrative 检查。
+- 基线 179/0，样板 93/0，独立审计 20/0，纸纹测量 3/0。Firefox harness no-JS 等待修复与报告合并来源如实登记。报告中的 parentCommit 是运行开始时已存在的提交，runtime-manifest.json 对照 36 个实际运行文件。
+- 后续：用户视觉确认 → 推广八页 → 完整 E01–E05/Narrative/纸纹回归与 VC2 → 为发布检查补 --expected-commit → Gitee/GitHub/Cloudflare → 新录像及最终文档。E06 不得提前 Passed。
+
 ## E05 状态角色契约 · 2026-09-22
 
 - 用户确认 Blog 空状态可使用 A09；正常列表与页头仍无人物图。

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E06 四页样板对照</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #edf0f2; color: #24282b; font: 16px/1.7 system-ui, sans-serif; }
+  main { max-width: 1560px; margin: auto; padding: 24px; }
+  h1 { margin: 0; font-size: 28px; } h2 { font-size: 19px; }
+  .intro { max-width: 80ch; }
+  .controls { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
+  select, button { font: inherit; padding: 6px 10px; border: 1px solid #89939b; border-radius: 4px; background: white; color: #24282b; }
+  label { display: grid; gap: 4px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  figure { margin: 0; min-width: 0; } figcaption { margin-bottom: 8px; font-weight: 650; }
+  .frame { background: white; border: 1px solid #c1c8cc; overflow: hidden; }
+  .frame img { display: block; width: 100%; height: auto; }
+  .detail { overflow: auto; background: #e3e7ea; border: 1px solid #c1c8cc; }
+  .detail img { display: block; max-width: none; }
+  .note { color: #4f5b63; font-size: 14px; }
+  a { color: #245c78; } :focus-visible { outline: 3px solid #245c78; outline-offset: 3px; }
+  @media(max-width: 650px) { main { padding: 16px; } .pair { grid-template-columns: 1fr; } }
+</style>
+<main>
+  <h1>E06 · 四页视觉样板</h1>
+  <p class="intro">重点查看冷白纤维纸、深色植物与横枝，以及长文和照片页的阅读节奏。人物、照片和彩色小画保留原色。当前只制作样板，尚未扩展其余页面或发布。</p>
+  <p>实时预览：<a href="../../../index.html" target="_blank">首页</a> · <a href="../../../about.html" target="_blank">About</a> · <a href="../../../posts/scrna-grn-notes.html" target="_blank">单细胞长文</a> · <a href="../../../posts/deskmate-with-firefly.html" target="_blank">照片短文</a></p>
+  <div class="controls">
+    <label>页面<select id="page"><option value="home">首页</option><option value="about">About</option><option value="long">单细胞长文</option><option value="photo">照片短文</option></select></label>
+    <label>主题<select id="theme"><option value="light">浅色</option><option value="dark">深色</option></select></label>
+    <label>宽度<select id="width"><option value="1440">桌面 1440</option><option value="390">手机 390</option></select></label>
+    <label>显示<select id="mode"><option value="viewport">首屏</option><option value="full">整页布局</option></select></label>
+  </div>
+  <div class="pair">
+    <figure><figcaption>修改前</figcaption><div class="frame" id="before-frame"><img id="before" alt="修改前页面"></div></figure>
+    <figure><figcaption>样板</figcaption><div class="frame" id="after-frame"><img id="after" alt="修改后页面"></div></figure>
+  </div>
+  <p class="note">整页截图用于检查排版；固定纸纹层在整页截图中只覆盖第一个视口。实际滚动时纹理始终覆盖当前屏幕，请通过实时预览检查整页纸感。以下细节图按原尺寸展示，可横向滚动。</p>
+  <h2>纸张细节 · 原尺寸</h2>
+  <div class="pair">
+    <figure><figcaption>修改前</figcaption><div class="detail"><img id="paper-before" alt="修改前纸张纹理"></div></figure>
+    <figure><figcaption>样板</figcaption><div class="detail"><img id="paper-after" alt="样板纸张纹理"></div></figure>
+  </div>
+  <h2>深色装饰 · 原尺寸</h2>
+  <div class="pair">
+    <figure><figcaption>修改前：铃兰</figcaption><div class="detail"><img src="before/home-now-dark.png" alt="修改前深色铃兰"></div></figure>
+    <figure><figcaption>样板：铃兰</figcaption><div class="detail"><img src="after/home-now-dark.png" alt="样板深色铃兰"></div></figure>
+    <figure><figcaption>修改前：横枝</figcaption><div class="detail"><img src="before/about-branch-dark.png" alt="修改前深色横枝"></div></figure>
+    <figure><figcaption>样板：横枝</figcaption><div class="detail"><img src="after/about-branch-dark.png" alt="样板深色横枝"></div></figure>
+  </div>
+  <p>样板通过后，将同一规则扩展到 Blog 和其余三篇文章，进行全站 VC2、完整回归、Gitee／GitHub 推送与 Cloudflare 发布。</p>
+</main>
+<script>
+  const controls = ['page', 'theme', 'width', 'mode'].map(id => document.getElementById(id));
+  function render() {
+    const [page, theme, width, mode] = controls.map(n => n.value);
+    for (const stage of ['before', 'after']) {
+      document.getElementById(stage).src = `${stage}/${page}-${width}-${theme}.png`;
+      document.getElementById(`${stage}-frame`).style.aspectRatio = mode === 'viewport' ? `${width} / 900` : 'auto';
+      document.getElementById(`paper-${stage}`).src = `${stage}/home-paper-${theme}.png`;
+    }
+  }
+  controls.forEach(n => n.addEventListener('change', render)); render();
+</script>
+</html>

@@ -16,7 +16,7 @@ const smoke = process.argv.includes('--smoke') || publicRun;
 const siteFiles = ['index.html', 'blog.html', 'about.html', ...['posts', 'css', 'js', 'assets'].flatMap((dir) =>
   fs.readdirSync(path.join(root, dir), { recursive: true, withFileTypes: true }).filter((item) => item.isFile()).map((item) =>
     path.relative(root, path.join(item.parentPath, item.name)).replaceAll('\\', '/')))];
-const out = path.join(root, 'docs/evidence/baseline');
+const out = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : path.join(root, 'docs/evidence/baseline');
 fs.mkdirSync(out, { recursive: true });
 const report = {
   baseCommit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(),
