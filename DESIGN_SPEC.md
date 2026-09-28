@@ -1,5 +1,9 @@
 # Sywen’s Space｜视觉设计规范 v1.2
 
+## E06 当前落地 · 2026-09-28
+
+获批样板已推广八页：冷白 #F6F8FA 与原细颗粒不变，正文无独立底色或纹理；深色透明单色 A07/A08 为柔和浅灰 alpha mask。人物、照片、带纸底和彩色小画保留原色，SVG 沿用 currentColor。文章编号 ≥1200px 在页边，窄屏在页头；小节编号仅宽屏在 740px 阅读列外。页面构图归 pages，主题归 base，装饰归 narrative。
+
 更新日期：2026-09-18（新增 Content / Narrative 两层结构）。用户批准的 B/E 作业基线优先；v1 历史由 Git 保留。
 
 > 本轮视觉架构重构的契约记录在 [docs/visual-architecture.md](docs/visual-architecture.md)：Content Layer 与 Narrative Layer 的职责划分、Narrative 可访问性合同、Narrative Density、Mark System、CSS 职责与新增 DOM 契约。本文件继续负责整体视觉规范。

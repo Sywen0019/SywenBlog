@@ -2,7 +2,7 @@
 
 原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Study · Life · Favorites。
 
-**作业基线已完成。** 八页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01（分类小画）、E02（About 阅读人物与静态转场）、E03（阅读增强）、E04（复制与快捷菜单）已在本地完成并通过检查，E05（状态角色与局部精修）已于 2026-09-22 本地通过，E06 已进入四页样板 Review（2026-09-28，待用户看图，未发布）。
+**作业基线已完成。** 八页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01（分类小画）、E02（About 阅读人物与静态转场）、E03（阅读增强）、E04（复制与快捷菜单）已在本地完成并通过检查，E05（状态角色与局部精修）已于 2026-09-22 本地通过，E06 全站本地验收通过，正式发布核验中（2026-09-28）。
 
 - [访问网站](https://sywen-blog.pages.dev/)
 - [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
@@ -14,15 +14,15 @@
 |要求|实现与证据|
 |---|---|
 |HTML|Home、Blog、About 与五篇完整文章（两篇 skill 设计长文、一篇生活随笔、一篇示例、一篇测试样例），导航和文章深链接|
-|CSS|三份样式表，纸面/线稿语言、浅深主题、手机重排、740px阅读列|
+|CSS|四份样式表，纸面/线稿语言、浅深主题、手机重排、740px阅读列|
 |JavaScript|主题切换保存；标题/摘要/标签多词AND搜索；分类组合、数量、无结果与重置|
 |Git/Gitee|真实分阶段历史；main推送至Gitee，基线标签 coursework-baseline|
 |公开网站|Cloudflare Pages HTTPS；八页与资源和源提交逐文件核对|
-|美术|电脑旁低头用平板与手写笔书写；640/1280 WebP，当前本地采用J，红色下半框与设备纯线稿；线上仍是旧D|
+|美术|电脑旁低头用平板与手写笔书写；640/1280 WebP，采用J，红色下半框与设备纯线稿|
 
 两篇 skill 设计长文介绍 `ncs-figure-design` 与 `research-reading` 的工作流；《给学习留一点空白》标为示例；《和流萤做同桌》是本人随笔；《六月：单细胞与基因调控网络笔记》由文档转换发布，列表与文章页标注「测试样例」。作者的计算机专业与设备习惯来自本人说明。
 
-当前本地一级分类为「学业／生活／我喜欢的」（`study`／`life`／`favorites`），文章数量为 3／1／1；旧 `ai`、`coding`、`research` 查询参数会兼容到 `study`。线上地址仍按现有发布流程更新。
+当前一级分类为「学业／生活／我喜欢的」（`study`／`life`／`favorites`），文章数量为 3／1／1；旧 `ai`、`coding`、`research` 查询参数会兼容到 `study`。线上地址仍按现有发布流程更新。
 
 ## 本地预览
 
@@ -44,11 +44,13 @@ py -m http.server 8000 --bind 127.0.0.1
 
 主题优先级为保存的有效选择→系统→浅色，存储键 `sywen.theme`；存储失败时仍可当页切换。搜索按空白拆分、多词AND，与分类同时生效；保留 `q` / `category` 和中文组合输入，旧 `ai`／`coding`／`research` 分类参数映射到 `study`。列表准备成功才隐藏静态索引，失败仍可读。
 
-资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。分类小画已实施（E01，首页分类卡与 Blog 条目缩略图，`assets/images/cat-*.webp`，首页「最近文章」保持纯文字）。返回顶部与顶部阅读进度已实施（E03，`js/reading.js`），复制与快捷菜单已实施（E04，`js/context-menu.js`）。
+资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。分类小画已实施（E01，首页分类入口；Blog 保持文字档案列表，`assets/images/cat-*.webp`，首页「最近文章」保持纯文字）。返回顶部与顶部阅读进度已实施（E03，`js/reading.js`），复制与快捷菜单已实施（E04，`js/context-menu.js`）。
 
 ## 验收与复现
 
-2026-09-16：本地 **161项**（E01 后全量回归）、线上三浏览器核心 **15项**、线上源码/路径 **25项**均通过（线上仍为既有部署，增强版待 E06 发布后复验）。报告与截图见[验收记录](docs/acceptance.md)，[演示录像](docs/evidence/baseline/baseline-demo.webm)展示实际线上操作。
+最新全站验收与发布状态见 [E06](docs/evidence/e06/README.md)。原冷白细颗粒保留，正文与背景连续；深色透明装饰改为柔和浅灰线稿。
+
+历史基线（2026-09-16）：本地 **161项**（E01 后全量回归）、线上三浏览器核心 **15项**、线上源码/路径 **25项**均通过（线上仍为既有部署，增强版待 E06 发布后复验）。报告与截图见[验收记录](docs/acceptance.md)，[演示录像](docs/evidence/baseline/baseline-demo.webm)展示实际线上操作。
 
 E03 阅读增强复验（三浏览器各 18 项、0 失败；E01 后博客列表像素基线在 `docs/evidence/e01/references/`）：
 
@@ -76,11 +78,11 @@ $env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
 node .tmp-browser/node_modules/playwright/cli.js install firefox
 node scripts/check-baseline.mjs
 node scripts/check-baseline.mjs --public
-py scripts/check-release.py
+py scripts/check-release.py --expected-commit HEAD
 node scripts/record-demo.mjs
 ```
 
-工具与浏览器位于忽略目录；报告写入 `docs/evidence/baseline/`，记录父提交和网站文件哈希。`SYWEN_PUBLIC_URL`可覆盖浏览器线上验收地址。
+工具与浏览器位于忽略目录；基线默认报告写入 `docs/evidence/baseline/`；本轮设置 `SYWEN_EVIDENCE_DIR=docs/evidence/e06/final/<suite>` 隔离证据。增强演示默认写入 `docs/evidence/e06/final/public/`。记录父提交和网站文件哈希。`SYWEN_PUBLIC_URL`可覆盖浏览器线上验收地址。
 
 限制：手机是视口模拟；200%为等效视口重排；未做实体手机、浏览器UI实际缩放或屏幕阅读器测试，中文输入法为组合事件模拟。
 

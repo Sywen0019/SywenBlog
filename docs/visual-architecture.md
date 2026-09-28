@@ -164,12 +164,12 @@ Blog 缩略图：按本轮决策**取消**重复的分类缩略图作为默认�
 
 | Phase | 内容 | 状态 |
 |---|---|---|
-| Phase 0 | 本文件与 handoff 登记 | 进行中 |
-| Phase 1 | 基础 CSS 去构图化：`.section-header`、`.note-panel`、`.art-frame`、Header tools、Blog thumbnail legacy | 待办 |
-| Phase 2 | Narrative 词汇：side-note、paper-slip、short rule、page-rail 原型、mark system、transition assets | 待办 |
-| Phase 3 | Visual Vertical Slice：Header、Home Hero、Home Recent Posts、Blog Header + 筛选 + 2 条文章、About Intro、Article Header + 第一节、Footer | 待办 |
-| Phase 4 | 样板通过后扩展到全部页面 | 待办 |
-| Phase 5 | Responsive / Dark / Failure States | 待办 |
+| Phase 0 | 本文件与 handoff 登记 | 已完成 |
+| Phase 1 | 基础 CSS 去构图化：`.section-header`、`.note-panel`、`.art-frame`、Header tools、Blog thumbnail legacy | 已完成（本地） |
+| Phase 2 | Narrative 词汇：side-note、paper-slip、short rule、page-rail 原型、mark system、transition assets | 已完成（本地） |
+| Phase 3 | Visual Vertical Slice：Header、Home Hero、Home Recent Posts、Blog Header + 筛选 + 2 条文章、About Intro、Article Header + 第一节、Footer | 已完成（本地） |
+| Phase 4 | 样板通过后扩展到全部页面 | 已完成（本地） |
+| Phase 5 | Responsive / Dark / Failure States | 已完成（本地） |
 
 Phase 3 **只实现代表区域**，禁止在此阶段把全部页面铺开；完成后做视觉截图审核，通过才进入 Phase 4。
 

@@ -4,7 +4,7 @@
 
 顺序：B00 → B01 → B02 / VC0 → B03 → B04 → B05 / VC1-B → B06。
 
-分类调整：**已本地完成，待发布（2026-09-16）**。学业／生活／我喜欢的对应 study／life／favorites，当前篇数 3／1／0；见 [验收记录](../acceptance.md)与 [本地检查报告](../evidence/baseline/checks.json)。下次发布由 [E06](02-after-baseline/e06.md)核验，不重新打开 B00–B06；[E01](02-after-baseline/e01.md)已按三类小画本地完成。
+当前分类：学业／生活／我喜欢的，study／life／favorites，3／1／1；八页五篇，全站本地验收通过，正式发布核验中。
 
 |任务|状态|任务卡|
 |---|---|---|
@@ -18,14 +18,14 @@
 
 ════════ 作业完成基线：已达到，可停止并提交 ════════
 
-**视觉架构重构（Narrative Layer）：Phase 0–3 本地完成（2026-09-18），待用户视觉审核。** 契约见 [docs/visual-architecture.md](../visual-architecture.md)，证据见 [docs/evidence/visual](../evidence/visual/README.md)。本轮只做用户确认的样板区域（Header、Home Hero／Recent／Categories／Now、Blog Header＋筛选＋条目、About 各区块、Article Header＋正文 rail、Footer），**没有铺开全部页面**。Phase 4 全域扩展与 Phase 5 响应式／降级复检在样板通过后才开始；正式 VC2 与发布仍属 E06。
+**视觉架构：Phase 0–4 已完成；Phase 5 本地响应式／深色／失败降级复检通过，正式发布核验中。** 证据见 [E06](../evidence/e06/README.md)。
 
-- [E01 文章小画体系](02-after-baseline/e01.md)：**Passed（本地，2026-09-16）**。study/life/favorites 三张无人物分类小画（`assets/images/cat-*.webp`，640×480）融合到首页分类入口；Blog 条目缩略图已于 2026-09-18 视觉架构重构中取消（改为日期＋编号＋标题＋摘要＋分类 mark），E01 检查同步更新。三浏览器各 49 项检查见 [验收记录](../acceptance.md)与 [证据](../evidence/e01/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
-- [E02 About 与转场](02-after-baseline/e02.md)：**Passed（本地，2026-09-17）**。A02 平板阅读人物、A07 铃兰与 A08 静态横枝；证据见 `docs/evidence/e02/`，发布留 E06。
-- [E03 简单阅读增强](02-after-baseline/e03.md)：**Passed（本地，2026-09-16）**。`js/reading.js`、七页接入、页脚预留空间、三浏览器各 18 项检查与截图见 [验收记录](../acceptance.md)与 [证据](../evidence/e03/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
-- [E04 复制与快捷菜单](02-after-baseline/e04.md)：**Passed（本地，2026-09-16）**。`js/context-menu.js`（能力门、菜单内容、定位与关闭、键盘、复制与降级面板）、`js/site.js` 共享动作、七页接入与复制面板标记、三浏览器各 19 项检查与 39 张截图见 [验收记录](../acceptance.md)与 [证据](../evidence/e04/)。Gitee 推送、线上发布与 VC2 属于 E06，未执行。
+- [E01 文章小画体系](02-after-baseline/e01.md)：**Passed（本地，2026-09-16）**。study/life/favorites 三张无人物分类小画（`assets/images/cat-*.webp`，640×480）融合到首页分类入口；Blog 条目缩略图已于 2026-09-18 视觉架构重构中取消（改为日期＋编号＋标题＋摘要＋分类 mark），E01 检查同步更新。三浏览器各 49 项检查见 [验收记录](../acceptance.md)与 [证据](../evidence/e01/)。原本地阶段记录；本轮全站验收与发布见 E06。
+- [E02 About 与转场](02-after-baseline/e02.md)：**Passed（本地，2026-09-17）**。A02 平板阅读人物、A07 铃兰与 A08 静态横枝；证据见 `docs/evidence/e02/`，本轮发布见 E06。
+- [E03 简单阅读增强](02-after-baseline/e03.md)：**Passed（本地，2026-09-16）**。`js/reading.js`、七页接入、页脚预留空间、三浏览器各 18 项检查与截图见 [验收记录](../acceptance.md)与 [证据](../evidence/e03/)。原本地阶段记录；本轮全站验收与发布见 E06。
+- [E04 复制与快捷菜单](02-after-baseline/e04.md)：**Passed（本地，2026-09-16）**。`js/context-menu.js`（能力门、菜单内容、定位与关闭、键盘、复制与降级面板）、`js/site.js` 共享动作、七页接入与复制面板标记、三浏览器各 19 项检查与 39 张截图见 [验收记录](../acceptance.md)与 [证据](../evidence/e04/)。原本地阶段记录；本轮全站验收与发布见 E06。
 - [E05 状态与精修](02-after-baseline/e05.md)：**Passed（本地，2026-09-22；未发布）**。A09 空状态角色、移动适配与失败降级已完成；三浏览器 69/0，32 张前后截图，正常列表 8 张逐字节一致。证据见 [E05](../evidence/e05/README.md)。
-- [E06 增强版验收发布](02-after-baseline/e06.md)：**Review（四页样板，2026-09-28）**。冷白底纸／细颗粒与深色透明装饰浅灰线稿样板已制作（新增纤维及正文独立底色已按后续意见撤除）；先用户看图，再全站扩展、VC2 和发布。[样板与证据](../evidence/e06/README.md)。
+- [E06 增强版验收发布](02-after-baseline/e06.md)：**Review（发布核验中）**。用户批准恢复冷白细颗粒、正文连续底色的样板；八页扩展及本地 VC2 已通过。
 
 - [Backlog](03-backlog/README.md)：Deferred。
 - 基线原估算18–24h，当前已完成；不将Agent运行时间冒充人工等效工时。之后先考虑6–12h，不自动花完36–48h。
