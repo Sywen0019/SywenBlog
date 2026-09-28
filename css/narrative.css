@@ -367,3 +367,46 @@
     transform: none;
   }
 }
+
+/* E06: original alpha silhouettes, never a global image inversion. */
+html[data-visual-stage="e06-sample"] .line-art--plant {
+  --line-art-mask: url("../assets/images/a07-plant.webp");
+}
+
+html[data-visual-stage="e06-sample"] .line-art--branch {
+  --line-art-mask: url("../assets/images/a08-transition-branch.webp");
+  position: relative;
+  background: transparent;
+}
+
+html[data-visual-stage="e06-sample"] .line-art img {
+  visibility: var(--decoration-image-visibility);
+}
+
+html[data-visual-stage="e06-sample"] .line-art::after {
+  position: absolute;
+  inset: 0;
+  display: var(--decoration-mask-display);
+  background-color: var(--decoration-ink);
+  -webkit-mask: var(--line-art-mask) center / 100% 100% no-repeat;
+  mask: var(--line-art-mask) center / 100% 100% no-repeat;
+  mask-mode: alpha;
+  pointer-events: none;
+  content: "";
+}
+
+html[data-visual-stage="e06-sample"] .line-art:has(img[hidden])::after {
+  display: none;
+}
+
+html[data-visual-stage="e06-sample"] :is(.paper-panel, .paper-slip, .art-frame, .about-now__panel) {
+  background-image: var(--paper-fiber-layer), var(--paper-grain-layer);
+  background-size: var(--paper-fiber-size), var(--paper-grain-size);
+  background-repeat: repeat;
+}
+
+html[data-visual-stage="e06-sample"] .paper-panel--dots {
+  background-image: var(--paper-fiber-layer), var(--paper-grain-layer),
+    radial-gradient(color-mix(in srgb, var(--color-ink) 14%, transparent) 0.6px, transparent 0.6px);
+  background-size: var(--paper-fiber-size), var(--paper-grain-size), 12px 12px;
+}

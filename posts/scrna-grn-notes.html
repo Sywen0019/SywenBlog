@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-site-root="../" data-page="post" data-post="scrna-grn-notes">
+<html lang="zh-CN" data-visual-stage="e06-sample" data-site-root="../" data-page="post" data-post="scrna-grn-notes">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +58,7 @@
         <span class="post-rail__number">A-05</span>
       </div>
       <div class="post-body">
-        <h2 data-rail="01">一、稀疏性（Sparsity）</h2>
+        <h2 data-rail="01"><span class="post-section-number" aria-hidden="true">01</span>一、稀疏性（Sparsity）</h2>
         <h3>定义</h3>
         <p>在 scRNA-seq 数据中，<strong>大多数基因在单个细胞中的表达量被检测为零（称为“dropout”），即使这些基因在生物学上可能低表达</strong>。</p>
         <h3>成因</h3>
@@ -79,7 +79,7 @@
         </ul>
         <h3>示例</h3>
         <p>假设某 TF 在 10 个细胞中实际表达，但因技术漏检，仅 3 个细胞检测到表达。其靶基因在另外 5 个细胞中表达，但因漏检仅 1 个细胞有数据。算法可能无法识别该 TF-TG 调控关系。</p>
-        <h2 data-rail="02">二、噪声（Noise）</h2>
+        <h2 data-rail="02"><span class="post-section-number" aria-hidden="true">02</span>二、噪声（Noise）</h2>
         <h3>定义</h3>
         <p><strong>数据中非生物学的随机波动，掩盖真实的基因表达信号</strong>。</p>
         <h3>来源</h3>
@@ -100,36 +100,36 @@
         </ul>
         <h3>示例</h3>
         <p>细胞周期基因 CCNA2 在分裂期高表达，非分裂期低表达。若未校正周期效应，算法可能误将 CCNA2 与无关基因（如糖酵解基因）关联。</p>
-        <h2 data-rail="03">三、鲁棒（Robust）</h2>
+        <h2 data-rail="03"><span class="post-section-number" aria-hidden="true">03</span>三、鲁棒（Robust）</h2>
         <p>是一个跨学科的核心概念，指<strong>系统在异常输入、噪声干扰或参数扰动下保持稳定功能和性能的能力</strong>。中文常译为“稳健性”或音译为“鲁棒性”，其本质是抗干扰的韧性。</p>
-        <h2 data-rail="04">四、Prior Knowledge（先验知识）</h2>
+        <h2 data-rail="04"><span class="post-section-number" aria-hidden="true">04</span>四、Prior Knowledge（先验知识）</h2>
         <p>在科学研究（尤其生物信息学）中，指<strong>在分析当前数据前，已存在的、来自外部来源的生物学信息或假设。它不是从当前数据中推导得出的，而是作为“背景知识”指导模型构建，以弥补数据的局限性</strong>。</p>
-        <h2 data-rail="05">五、约束解空间（Constraining the Solution Space）</h2>
+        <h2 data-rail="05"><span class="post-section-number" aria-hidden="true">05</span>五、约束解空间（Constraining the Solution Space）</h2>
         <p>是优化问题和统计推断中的核心策略，指<strong>利用先验知识限制模型参数的取值范围</strong>，从而<strong>降低问题的不确定性和计算复杂度</strong>。在 GRN 推断中，其本质是通过生物学先验将“盲搜大海”变为“靶向挖掘”。</p>
-        <h2 data-rail="06">六、统计依赖性（Statistical Dependencies）</h2>
+        <h2 data-rail="06"><span class="post-section-number" aria-hidden="true">06</span>六、统计依赖性（Statistical Dependencies）</h2>
         <p>指变量之间存在的非随机关联关系，即<strong>一个变量的变化会以某种可预测的方式影响另一个变量的概率分布</strong>。在 GRN 推断中，它用于捕捉基因间的潜在调控关系，但需与因果性严格区分。</p>
-        <h2 data-rail="07">七、贝叶斯网络（Bayesian Network）</h2>
+        <h2 data-rail="07"><span class="post-section-number" aria-hidden="true">07</span>七、贝叶斯网络（Bayesian Network）</h2>
         <p>是一种基于概率图模型的统计工具，用于表示变量间的依赖关系及不确定性。它通过<strong>有向无环图（DAG）和条件概率表</strong>（CPT）结合<strong>概率论与图论</strong>，模拟复杂系统的因果关系。贝叶斯网络的核心是“用图表达概率依赖关系”。比如在医学诊断中，发烧和咳嗽都可能是感冒的症状，但两者没有直接因果关系——它们都依赖于“是否感冒”这个父节点。这种结构正好能模拟基因调控中转录因子（父节点）同时调控多个靶基因（子节点）的场景。不过用户需注意它的两大<strong>局限</strong>：一是计算<strong>复杂度高</strong>，20 个基因就有百万级可能网络；二是<strong>无环假设不现实</strong>，因为生物调控普遍存在反馈回路。原文提到的 PriorPC 算法就属于贝叶斯网络框架，但通过引入先验知识部分缓解了这些问题。</p>
         <p>贝叶斯网络的<strong>优势</strong>——它能<strong>区分直接依赖和间接依赖</strong>。比如基因 A 和 C 本无直接关系，但因为都受 B 调控而表现出相关性，贝叶斯网络可以通过条件概率（给定 B 时 A 与 C 独立）识别出这点，而普通相关性分析会误判 A-C 关联。</p>
-        <h2 data-rail="08">八、高斯图模型（Gaussian Graphical Models, GGMs）</h2>
+        <h2 data-rail="08"><span class="post-section-number" aria-hidden="true">08</span>八、高斯图模型（Gaussian Graphical Models, GGMs）</h2>
         <p>是一种基于多元正态分布的概率图模型，用无向图表示变量间的条件依赖关系。在 GRN 推断中，它通过逆协方差矩阵的零元素识别基因间的直接调控，避免虚假关联。生物意义：“当所有其他基因保持恒定时，若两个基因仍协同变化，它们很可能存在功能关联。”</p>
-        <h2 data-rail="09">九、过度离散（Overdispersed）与零膨胀（Zero-inflated）</h2>
+        <h2 data-rail="09"><span class="post-section-number" aria-hidden="true">09</span>九、过度离散（Overdispersed）与零膨胀（Zero-inflated）</h2>
         <p>“overdispersed”（过度离散）和“zero-inflated”（零膨胀）是两个关键<strong>统计特性</strong>，它们直接影响算法设计的合理性。</p>
         <h3>过度离散（Overdispersed）</h3>
         <p>定义：<strong>数据的方差（variance）远大于均值（mean）</strong>，违反泊松分布（Poisson distribution）中“均值=方差”的假设。</p>
         <h3>零膨胀（Zero-inflated）</h3>
         <p>定义：<strong>数据中“零值”比例远超理论分布预期</strong>（如泊松或负二项分布预测的零值概率）。</p>
         <p>在 scRNA-seq 中的体现：由于技术限制（如 mRNA 捕获效率低），基因在部分细胞中未被检测到（“假零值”），导致一个高表达基因的理论零值概率为 5%，但实际观测到 40% 细胞中其表达量为 0。</p>
-        <h2 data-rail="10">十、L1 正则化（L1 Regularization）</h2>
+        <h2 data-rail="10"><span class="post-section-number" aria-hidden="true">10</span>十、L1 正则化（L1 Regularization）</h2>
         <p>是一种用于<strong>防止机器学习模型过拟合</strong>的技术，通过在损失函数中添加模型权重的绝对值之和作为惩罚项，强制模型生成稀疏解（即部分权重被压缩至零）。它在高维数据（如基因调控网络推断）中至关重要。L1 正则化是 GRN 推断的“净化器”，通过绝对值惩罚删除弱连接，使网络更稀疏、更生物合理。其优势在高维单细胞数据中无可替代。</p>
-        <h2 data-rail="11">十一、图自编码器与 Transformer</h2>
+        <h2 data-rail="11"><span class="post-section-number" aria-hidden="true">11</span>十一、图自编码器与 Transformer</h2>
         <p>在<strong>基因调控网络（GRN）</strong>推断中，<strong>图自编码器（Graph Autoencoder）</strong>和 <strong>Transformer</strong> 是两种先进的<strong>深度学习架构</strong>，用于从单细胞数据中学习基因间的复杂调控关系。</p>
         <h3>图自编码器（Graph Autoencoder）</h3>
         <p><strong>图自编码器</strong>是专为图结构数据设计的<strong>神经网络</strong>，包含两个核心组件：<strong>编码器（Encoder）：</strong>将图中节点（基因）的特征和拓扑关系压缩为低维向量（隐表示）；<strong>解码器（Decoder）：</strong>从隐表示重构原始图结构（如基因间的调控边）。</p>
         <h3>Transformer</h3>
         <p><strong>Transformer</strong> 依赖<strong>自注意力机制（Self-Attention）</strong>动态衡量所有输入元素间的重要性权重，擅长处理序列或图结构中的长程依赖关系。</p>
         <p>优势是避免<strong>强建模假设</strong>，直接<strong>从数据中学习复杂 GRN 拓扑</strong>。</p>
-        <h2 data-rail="12">十二、隐表示（Latent Representation）</h2>
+        <h2 data-rail="12"><span class="post-section-number" aria-hidden="true">12</span>十二、隐表示（Latent Representation）</h2>
         <p>是<strong>深度学习模型从原始数据中提取出的低维、稠密、抽象的数学表达</strong>，它捕捉数据的本质特征（如基因的调控功能），同时过滤噪声。</p>
         <p>想象你<strong>要描述一个人的“性格”</strong>：</p>
         <ul>
@@ -137,9 +137,9 @@
           <li><strong>隐表示：抽象特征向量</strong> [内向度=0.8, 学术倾向=0.9]</li>
           <li>应用：基于该向量预测此人是否适合科研工作（类似 GRN 中预测调控关系）。</li>
         </ul>
-        <h2 data-rail="13">十三、拓扑（Topology）</h2>
+        <h2 data-rail="13"><span class="post-section-number" aria-hidden="true">13</span>十三、拓扑（Topology）</h2>
         <p>在<strong>基因调控网络（GRN）</strong>中<strong>描述的是节点（基因）之间连接关系的整体结构模式</strong>，它<strong>抽象掉具体的生物分子细节</strong>，<strong>专注于网络的连接性、形状与全局特性</strong>。<strong>拓扑学</strong>的精髓：<strong>只保留连续变形下不变的性质。</strong></p>
-        <h2 data-rail="14">十四、预处理流程</h2>
+        <h2 data-rail="14"><span class="post-section-number" aria-hidden="true">14</span>十四、预处理流程</h2>
         <p><strong>单细胞 RNA 测序数据分析</strong>中的标准预处理流程：</p>
         <ol>
           <li><strong>质控（Quality Control）</strong>目标：<strong>过滤</strong>低质量细胞和技术噪声。</li>

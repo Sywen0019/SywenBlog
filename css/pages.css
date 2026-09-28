@@ -1081,3 +1081,103 @@ html.has-reading .site-footer__inner {
     content: attr(data-rail);
   }
 }
+
+/* E06: four-page review sample; promote only after user visual review. */
+html[data-visual-stage="e06-sample"] .home-section .section-header {
+  margin-bottom: var(--space-8);
+}
+
+html[data-visual-stage="e06-sample"] .about-section:not(.about-intro) > h2::after,
+html[data-visual-stage="e06-sample"] .about-section__heading h2::after {
+  display: block;
+  width: 48px;
+  height: 1px;
+  margin-top: var(--space-3);
+  background: var(--color-rule);
+  content: "";
+}
+
+html[data-visual-stage="e06-sample"] .about-section__heading {
+  margin-bottom: var(--space-4);
+}
+
+html[data-visual-stage="e06-sample"] .study-notes__item:first-child {
+  border-top: 0;
+}
+
+html[data-visual-stage="e06-sample"] .about-now .note-panel {
+  background: transparent;
+}
+
+html[data-visual-stage="e06-sample"] .post-body {
+  background-color: var(--reading-paper);
+}
+
+html[data-visual-stage="e06-sample"] .post-header {
+  margin-bottom: var(--space-12);
+}
+
+html[data-visual-stage="e06-sample"] .post-header__title {
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+html[data-visual-stage="e06-sample"] .post-section-number {
+  display: none;
+  pointer-events: none;
+}
+
+html[data-visual-stage="e06-sample"] .post-body h2[data-rail]::before {
+  content: none;
+}
+
+html[data-visual-stage="e06-sample"] .post-body h3 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+html[data-visual-stage="e06-sample"] .post-body > :last-child {
+  margin-bottom: 0;
+}
+
+html[data-visual-stage="e06-sample"] .post > .tag-list {
+  margin-top: var(--space-12);
+}
+
+html[data-visual-stage="e06-sample"] .post-nav {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+}
+
+html[data-visual-stage="e06-sample"] .post-nav a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+
+html[data-visual-stage="e06-sample"] .post-nav a:only-child {
+  grid-column: 1 / -1;
+}
+
+html[data-visual-stage="e06-sample"] .post-figure figcaption {
+  max-width: 60ch;
+  line-height: 1.7;
+}
+
+@media (min-width: 1200px) {
+  html[data-visual-stage="e06-sample"] .post-header__index {
+    display: none;
+  }
+
+  html[data-visual-stage="e06-sample"] .post-section-number {
+    position: absolute;
+    inset-inline-end: calc(100% + var(--space-6));
+    inset-block-start: 0.45em;
+    display: block;
+    color: var(--color-muted);
+    font-family: var(--font-code);
+    font-size: 11px;
+    font-weight: var(--weight-regular);
+    letter-spacing: 0.12em;
+  }
+}

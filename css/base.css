@@ -239,6 +239,36 @@
   }
 }
 
+/* E06 四页样板：纤维的平均压暗约一级，与底纸补偿共同调整。
+   不改变既有深色 grain；显式与系统主题使用同一组装饰规则。 */
+:root[data-visual-stage="e06-sample"] {
+  --color-paper: #F7F9FB;
+  --paper-fiber-layer: url("../assets/images/paper-fibers.svg");
+  --paper-fiber-size: 512px 512px;
+  --reading-paper: rgb(241 243 245 / 90%);
+  --decoration-ink: #C5CBD0;
+  --decoration-mask-display: none;
+  --decoration-image-visibility: visible;
+}
+
+:root[data-visual-stage="e06-sample"][data-theme="dark"] {
+  --color-paper: #202223;
+  --paper-fiber-layer: none;
+  --reading-paper: transparent;
+  --decoration-mask-display: block;
+  --decoration-image-visibility: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-visual-stage="e06-sample"]:not([data-theme]) {
+    --color-paper: #202223;
+    --paper-fiber-layer: none;
+    --reading-paper: transparent;
+    --decoration-mask-display: block;
+    --decoration-image-visibility: hidden;
+  }
+}
+
 /* ==========================================================================
    2. 响应式 Token（§5.2、§6、§14）：移动优先，只使用 768px / 1024px 断点
    ========================================================================== */
@@ -315,6 +345,11 @@ html::after {
   background-image: var(--paper-grain-layer);
   background-repeat: repeat;
   background-size: var(--paper-grain-size);
+}
+
+html[data-visual-stage="e06-sample"]::after {
+  background-image: var(--paper-fiber-layer), var(--paper-grain-layer);
+  background-size: var(--paper-fiber-size), var(--paper-grain-size);
 }
 
 /* 隐藏属性始终生效：增强控件在被脚本显示前不参与布局与 Tab 顺序（Plan.md 一·2、§15） */
