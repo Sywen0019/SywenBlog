@@ -1109,10 +1109,6 @@ html[data-visual-stage="e06-sample"] .about-now .note-panel {
   background: transparent;
 }
 
-html[data-visual-stage="e06-sample"] .post-body {
-  background-color: var(--reading-paper);
-}
-
 html[data-visual-stage="e06-sample"] .post-header {
   margin-bottom: var(--space-12);
 }

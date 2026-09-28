@@ -24,7 +24,7 @@
 </style>
 <main>
   <h1>E06 · 四页视觉样板</h1>
-  <p class="intro">重点查看冷白纤维纸、深色植物与横枝，以及长文和照片页的阅读节奏。人物、照片和彩色小画保留原色。当前只制作样板，尚未扩展其余页面或发布。</p>
+  <p class="intro">重点查看原有冷白底纸与细颗粒、深色植物与横枝，以及长文和照片页的阅读节奏。正文取消独立底色，与页面背景连续；人物、照片和彩色小画保留原色。当前只制作样板，尚未扩展其余页面或发布。</p>
   <p>实时预览：<a href="../../../index.html" target="_blank">首页</a> · <a href="../../../about.html" target="_blank">About</a> · <a href="../../../posts/scrna-grn-notes.html" target="_blank">单细胞长文</a> · <a href="../../../posts/deskmate-with-firefly.html" target="_blank">照片短文</a></p>
   <div class="controls">
     <label>页面<select id="page"><option value="home">首页</option><option value="about">About</option><option value="long">单细胞长文</option><option value="photo">照片短文</option></select></label>
@@ -45,9 +45,9 @@
   <h2>深色装饰 · 原尺寸</h2>
   <div class="pair">
     <figure><figcaption>修改前：铃兰</figcaption><div class="detail"><img src="before/home-now-dark.png" alt="修改前深色铃兰"></div></figure>
-    <figure><figcaption>样板：铃兰</figcaption><div class="detail"><img src="after/home-now-dark.png" alt="样板深色铃兰"></div></figure>
+    <figure><figcaption>样板：铃兰</figcaption><div class="detail"><img src="paper-revision/home-now-dark.png" alt="样板深色铃兰"></div></figure>
     <figure><figcaption>修改前：横枝</figcaption><div class="detail"><img src="before/about-branch-dark.png" alt="修改前深色横枝"></div></figure>
-    <figure><figcaption>样板：横枝</figcaption><div class="detail"><img src="after/about-branch-dark.png" alt="样板深色横枝"></div></figure>
+    <figure><figcaption>样板：横枝</figcaption><div class="detail"><img src="paper-revision/about-branch-dark.png" alt="样板深色横枝"></div></figure>
   </div>
   <p>样板通过后，将同一规则扩展到 Blog 和其余三篇文章，进行全站 VC2、完整回归、Gitee／GitHub 推送与 Cloudflare 发布。</p>
 </main>
@@ -56,9 +56,9 @@
   function render() {
     const [page, theme, width, mode] = controls.map(n => n.value);
     for (const stage of ['before', 'after']) {
-      document.getElementById(stage).src = `${stage}/${page}-${width}-${theme}.png`;
+      document.getElementById(stage).src = `${stage === 'after' ? 'paper-revision' : stage}/${page}-${width}-${theme}.png`;
       document.getElementById(`${stage}-frame`).style.aspectRatio = mode === 'viewport' ? `${width} / 900` : 'auto';
-      document.getElementById(`paper-${stage}`).src = `${stage}/home-paper-${theme}.png`;
+      document.getElementById(`paper-${stage}`).src = `${stage === 'after' ? 'paper-revision' : stage}/home-paper-${theme}.png`;
     }
   }
   controls.forEach(n => n.addEventListener('change', render)); render();

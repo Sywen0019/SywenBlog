@@ -13,7 +13,7 @@ const browserArgument = process.argv.find(arg => arg.startsWith('--browser='))?.
 const engines = stage === 'before' ? ['edge'] : browserArgument ? browserArgument.split(',') : ['edge', 'chrome', 'firefox'];
 assert.ok(engines.every(engine => ['edge', 'chrome', 'firefox'].includes(engine)));
 assert.ok(['before', 'after'].includes(stage));
-const out = path.join(import.meta.dirname, stage);
+const out = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : path.join(import.meta.dirname, stage);
 const reportName = browserArgument ? `checks-${engines.join('-')}` : 'checks';
 if (stage === 'before' && fs.existsSync(path.join(out, 'checks.json'))) throw Error('Before evidence is frozen.');
 fs.mkdirSync(out, { recursive: true });
