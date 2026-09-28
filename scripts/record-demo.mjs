@@ -60,12 +60,13 @@ try {
     await p.locator('#back-to-top').waitFor({ state: 'visible' }); await pause();
     assert.ok(await p.evaluate(() => Sywen.getReadingProgress()) > 0);
     await p.locator('#back-to-top').click(); await p.waitForFunction(() => scrollY < 2);
+    await p.waitForFunction(() => document.activeElement?.tagName === 'H1');
     assert.equal(await p.evaluate(() => document.activeElement.tagName), 'H1');
   });
   await step('Quick menu and copy URL', async () => {
     await p.locator('#quick-menu-button').click(); await pause();
     await p.getByRole('menuitem', { name: '复制文章链接', exact: true }).click(); await pause();
-    assert.equal(await p.evaluate(() => navigator.clipboard.readText()), base + 'posts/scrna-grn-notes.html');
+    assert.equal(await p.evaluate(() => navigator.clipboard.readText()), p.url());
     await p.locator('#theme-toggle').click();
     assert.equal(await p.locator('.post-body').evaluate(n => getComputedStyle(n).backgroundColor), 'rgba(0, 0, 0, 0)');
   });

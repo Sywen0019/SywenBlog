@@ -6,7 +6,7 @@
 
 用户已确认修订后的样板并要求扩展全站及发布。移除四页 `data-visual-stage="e06-sample"` 开关，将已审核规则推广为全站默认；所有五篇文章采用相同的页头/页边档案编号与显式 aria-hidden 小节编号。保留冷白底纸与原细颗粒，正文不设独立背景，深色 A07/A08 继续使用浅灰 alpha mask。Blog 保留无图单列档案，完善筛选工具的窄屏换行及静态条目与动态条目的结构一致性。公共 JS API、分类数据、文章 URL 不变。
 
-本轮推进 Phase 4/5、完整 E01–E05/Narrative/纸纹回归、VC2 和 Gitee/GitHub/Cloudflare 发布；公开版本必须等于指定目标提交才能验收，不需要再次请求发布许可。
+本轮已完成 Phase 4/5、完整 E01–E05/Narrative/纸纹回归、VC2 和 Gitee/GitHub/Cloudflare 发布；公开版本已核对等于指定目标提交。
 
 ## E06 纸面修订 · 2026-09-28
 
@@ -168,10 +168,10 @@ Blog 缩略图：按本轮决策**取消**重复的分类缩略图作为默认�
 | Phase 1 | 基础 CSS 去构图化：`.section-header`、`.note-panel`、`.art-frame`、Header tools、Blog thumbnail legacy | 已完成（本地） |
 | Phase 2 | Narrative 词汇：side-note、paper-slip、short rule、page-rail 原型、mark system、transition assets | 已完成（本地） |
 | Phase 3 | Visual Vertical Slice：Header、Home Hero、Home Recent Posts、Blog Header + 筛选 + 2 条文章、About Intro、Article Header + 第一节、Footer | 已完成（本地） |
-| Phase 4 | 样板通过后扩展到全部页面 | 已完成（本地） |
-| Phase 5 | Responsive / Dark / Failure States | 已完成（本地） |
+| Phase 4 | 样板通过后扩展到全部页面 | 已完成（公开核验） |
+| Phase 5 | Responsive / Dark / Failure States | 已完成（公开核验） |
 
-Phase 3 **只实现代表区域**，禁止在此阶段把全部页面铺开；完成后做视觉截图审核，通过才进入 Phase 4。
+Phase 3 的代表区域已在样板审核后扩展到全站；Phase 4/5 与公开验收记录在 E06 final 证据目录。
 
 ## 11. 验收补充
 

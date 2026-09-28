@@ -56,7 +56,9 @@ for (const engine of ['edge', 'chrome', 'firefox']) {
     await p.setViewportSize({ width: 390, height: 844 });
     await p.goto(base + 'posts/deskmate-with-firefly.html');
     await p.locator('#quick-menu-button').click();
-    assert.equal(await p.getByRole('menuitem', { name: '复制文章链接', exact: true }).isVisible(), true);
+    const copyItem = p.getByRole('menuitem', { name: '复制文章链接', exact: true });
+    await copyItem.waitFor({ state: 'visible' });
+    assert.equal(await copyItem.isVisible(), true);
     await p.keyboard.press('Escape');
     assert.equal(await p.locator('.post-body img').first().evaluate(n => getComputedStyle(n).filter), 'none');
     assert.equal(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);

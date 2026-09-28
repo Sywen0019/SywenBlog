@@ -2,7 +2,7 @@
 
 原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Study · Life · Favorites。
 
-**作业基线已完成。** 八页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01（分类小画）、E02（About 阅读人物与静态转场）、E03（阅读增强）、E04（复制与快捷菜单）已在本地完成并通过检查，E05（状态角色与局部精修）已于 2026-09-22 本地通过，E06 全站本地验收通过，正式发布核验中（2026-09-28）。
+**作业基线已完成。** 八页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01–E05 已通过本地回归，E06 已完成八页视觉扩展、VC2 和公开发布核验（2026-09-28）。
 
 - [访问网站](https://sywen-blog.pages.dev/)
 - [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
@@ -50,7 +50,7 @@ py -m http.server 8000 --bind 127.0.0.1
 
 最新全站验收与发布状态见 [E06](docs/evidence/e06/README.md)。原冷白细颗粒保留，正文与背景连续；深色透明装饰改为柔和浅灰线稿。
 
-历史基线（2026-09-16）：本地 **161项**（E01 后全量回归）、线上三浏览器核心 **15项**、线上源码/路径 **25项**均通过（线上仍为既有部署，增强版待 E06 发布后复验）。报告与截图见[验收记录](docs/acceptance.md)，[演示录像](docs/evidence/baseline/baseline-demo.webm)展示实际线上操作。
+历史基线（2026-09-16）：本地 **161项**（E01 后全量回归）、线上三浏览器核心 **15项**、线上源码/路径 **25项**均通过。增强版最终线上结果见 [E06 证据](docs/evidence/e06/README.md) 与 [新版演示](docs/evidence/e06/final/public/enhanced-demo.webm)；报告与历史演示仍保留。
 
 E03 阅读增强复验（三浏览器各 18 项、0 失败；E01 后博客列表像素基线在 `docs/evidence/e01/references/`）：
 

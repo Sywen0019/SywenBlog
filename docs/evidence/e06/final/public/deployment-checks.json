@@ -1,0 +1,350 @@
+{
+  "at": "2026-09-28T15:19:05.899085+00:00",
+  "url": "https://sywen-blog.pages.dev/",
+  "version": {
+    "source_commit": "b525cc063a4aa900c033a80b715ffb252d9da7a5",
+    "published_at": "2026-09-28T15:08:48Z"
+  },
+  "localHead": "b525cc063a4aa900c033a80b715ffb252d9da7a5",
+  "expectedSource": "b525cc063a4aa900c033a80b715ffb252d9da7a5",
+  "checks": [
+    {
+      "path": "about.html",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/about",
+      "bytes": 11667,
+      "sha256": "7c0c967a6a04d2cbd1a7fe51ed7980c4da8d479d6583f6a8fe36c43a2faa0b5e",
+      "pass": true
+    },
+    {
+      "path": "assets/icons/favicon.svg",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/icons/favicon.svg",
+      "bytes": 315,
+      "sha256": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+      "pass": true
+    },
+    {
+      "path": "assets/icons/marks.svg",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/icons/marks.svg",
+      "bytes": 3410,
+      "sha256": "3f6c6423e5ffa7c67b78c0d7879ba475b11a7750b21a05427cfde35ae91f3800",
+      "pass": true
+    },
+    {
+      "path": "assets/images/a07-plant.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/a07-plant.webp",
+      "bytes": 14930,
+      "sha256": "0f12a98ee8c6879fc4b52a1ae23e8105f22f794339671bf6e2390089e35aaf88",
+      "pass": true
+    },
+    {
+      "path": "assets/images/a08-transition-branch.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/a08-transition-branch.webp",
+      "bytes": 14476,
+      "sha256": "4d6e42aa17bb382eb1fb0a4e690cfd85db7a91cec32fd5150114009c39bb818c",
+      "pass": true
+    },
+    {
+      "path": "assets/images/a09-empty-state.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/a09-empty-state.webp",
+      "bytes": 26112,
+      "sha256": "7e248a329f8264116d90b32a22b108748df911ff781099e463b1bd0e7a91865b",
+      "pass": true
+    },
+    {
+      "path": "assets/images/about-reading-1280.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/about-reading-1280.webp",
+      "bytes": 83194,
+      "sha256": "cbf8864a10759261c949f408529c1aa7af01bfb5aea9537075de3347fa82686a",
+      "pass": true
+    },
+    {
+      "path": "assets/images/about-reading-640.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/about-reading-640.webp",
+      "bytes": 26786,
+      "sha256": "284f391cd36b3452016b3ec6d9edc7c4e75fd050c6c10ecbc57f988d1d4c4cfe",
+      "pass": true
+    },
+    {
+      "path": "assets/images/cat-favorites.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/cat-favorites.webp",
+      "bytes": 29072,
+      "sha256": "ead74902c15a3436097a5ab4765bee0accd1d84e92823b1b62cc6ec362f094d0",
+      "pass": true
+    },
+    {
+      "path": "assets/images/cat-life.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/cat-life.webp",
+      "bytes": 18234,
+      "sha256": "43a8b67f48fcbf72d03e90c490b0a0c1be14fe06b5a5cf2d72ab7415da74547b",
+      "pass": true
+    },
+    {
+      "path": "assets/images/cat-study.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/cat-study.webp",
+      "bytes": 18406,
+      "sha256": "10ccf6898fb2b9619f290e38383241bd3a8c429367b3057cf605445334b9f06d",
+      "pass": true
+    },
+    {
+      "path": "assets/images/character-front-avatar.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/character-front-avatar.webp",
+      "bytes": 8900,
+      "sha256": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
+      "pass": true
+    },
+    {
+      "path": "assets/images/character-front-upper.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/character-front-upper.webp",
+      "bytes": 28910,
+      "sha256": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
+      "pass": true
+    },
+    {
+      "path": "assets/images/deskmate-firefly-01.jpg",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/deskmate-firefly-01.jpg",
+      "bytes": 76397,
+      "sha256": "843a82fe6793c56074d968c36b07ea6c3d31b660a3950bc94b1c7b22624cf05f",
+      "pass": true
+    },
+    {
+      "path": "assets/images/deskmate-firefly-02.jpg",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/deskmate-firefly-02.jpg",
+      "bytes": 87845,
+      "sha256": "5de3f44278ba8cb73a841a71aa22e6e503f2184d33be4e078dfab9b5a79aa906",
+      "pass": true
+    },
+    {
+      "path": "assets/images/hero-desk-1280.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/hero-desk-1280.webp",
+      "bytes": 137542,
+      "sha256": "437a4db0633276fcd13a2c62f3e897ea511639ea82e5b10c2955602ba10cda54",
+      "pass": true
+    },
+    {
+      "path": "assets/images/hero-desk-640.webp",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/assets/images/hero-desk-640.webp",
+      "bytes": 44994,
+      "sha256": "9d5418b2b4f55f9f2c6d72decd23c829d4919d43463bdb8ceeb357081c471615",
+      "pass": true
+    },
+    {
+      "path": "blog.html",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/blog",
+      "bytes": 12389,
+      "sha256": "368469ba27e9f014e1aac263773db618495585860c85ece69a175f9d0cc12a4e",
+      "pass": true
+    },
+    {
+      "path": "css/base.css",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/css/base.css",
+      "bytes": 17994,
+      "sha256": "540603f005d16d61193766bec402f3b1ef1a7d698993f20d6ff6d4e3194d1275",
+      "pass": true
+    },
+    {
+      "path": "css/components.css",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/css/components.css",
+      "bytes": 32419,
+      "sha256": "3a031ef672dd1cec76434116647a15f42d8727839eeaf6ec6af881439a2e7b36",
+      "pass": true
+    },
+    {
+      "path": "css/narrative.css",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/css/narrative.css",
+      "bytes": 12120,
+      "sha256": "88a7c89eb1aaa914c399df7ae31b641e61373dd880affa02a316abf636faaa2e",
+      "pass": true
+    },
+    {
+      "path": "css/pages.css",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/css/pages.css",
+      "bytes": 26226,
+      "sha256": "347190e037822e10afbc043912a3a840e0e7e576105ef194d140da7a1b0737b3",
+      "pass": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/",
+      "bytes": 13965,
+      "sha256": "8f0d125e1d42fd0e335bb65eb0100f1bbc56f9f2f9eee052aab6874d282c3469",
+      "pass": true
+    },
+    {
+      "path": "js/blog.js",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/js/blog.js",
+      "bytes": 5503,
+      "sha256": "2512df3f961e17a1e492aaf9a67ef15b055d80de1ab7b2d89ee56923c3bead39",
+      "pass": true
+    },
+    {
+      "path": "js/context-menu.js",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/js/context-menu.js",
+      "bytes": 24939,
+      "sha256": "f43ff8dcaab910b35ce38aa72e8c84a18f3d944367a2d675d5cce1982511f1ba",
+      "pass": true
+    },
+    {
+      "path": "js/motion.js",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/js/motion.js",
+      "bytes": 1845,
+      "sha256": "79eb51b7ab30c56142444f3d6edda7c36fc4a387848d8258f0bcb915e15ffcd7",
+      "pass": true
+    },
+    {
+      "path": "js/posts-data.js",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/js/posts-data.js",
+      "bytes": 3433,
+      "sha256": "193cd28fe019df6246a33493595a92cad0121dc2f06b2e4fa5d4fb498cc88e19",
+      "pass": true
+    },
+    {
+      "path": "js/reading.js",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/js/reading.js",
+      "bytes": 5138,
+      "sha256": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
+      "pass": true
+    },
+    {
+      "path": "js/site.js",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/js/site.js",
+      "bytes": 11633,
+      "sha256": "751cc8d0284d01790edd5089d085372d1f779f9af25d43847963526de7ed341e",
+      "pass": true
+    },
+    {
+      "path": "js/theme.js",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/js/theme.js",
+      "bytes": 2184,
+      "sha256": "1b62e5e02a8d5ea3c6f5788f292f2edf247d2b59c7fb497690b59f32f87bb3db",
+      "pass": true
+    },
+    {
+      "path": "posts/deskmate-with-firefly.html",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/posts/deskmate-with-firefly",
+      "bytes": 7662,
+      "sha256": "59acc58f2468ecbc325f35bc507c431a1b03d725700f4e3df55301ad7e2485e0",
+      "pass": true
+    },
+    {
+      "path": "posts/leave-some-space.html",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/posts/leave-some-space",
+      "bytes": 9636,
+      "sha256": "c0947db7587678bc5b5d9069555dd37c9574a56ced3a46a1d61988fec9f9b849",
+      "pass": true
+    },
+    {
+      "path": "posts/ncs-figure-design.html",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/posts/ncs-figure-design",
+      "bytes": 12620,
+      "sha256": "922891b28016bb1d02e2748d98f174550209bd69205e028ab71c0a335f496ff3",
+      "pass": true
+    },
+    {
+      "path": "posts/research-reading.html",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/posts/research-reading",
+      "bytes": 12821,
+      "sha256": "90c34d2662aeddfb2f630486ae3d9b7ab5dce34d7d5eb32db73b49b4fa5d5c18",
+      "pass": true
+    },
+    {
+      "path": "posts/scrna-grn-notes.html",
+      "status": 200,
+      "finalUrl": "https://sywen-blog.pages.dev/posts/scrna-grn-notes",
+      "bytes": 18585,
+      "sha256": "8d4f242ddeec1fc92a0b6bf3212557496a8f2758031d52fc4a8b9234ace33381",
+      "pass": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "docs/acceptance.md",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "PROJECT_PLAN.html",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "posts/nonexistent-baseline-check.html",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "assets/missing.webp",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "posts/attention-intuition.html",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "posts/dom-search-notes.html",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "posts/paper-reading-notes.html",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "assets/images/search-flow.svg",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "assets/images/paper-fibers.svg",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "version.json (stable during verification)",
+      "pass": true,
+      "initialSource": "b525cc063a4aa900c033a80b715ffb252d9da7a5",
+      "finalSource": "b525cc063a4aa900c033a80b715ffb252d9da7a5"
+    }
+  ],
+  "passed": 46,
+  "failed": 0
+}

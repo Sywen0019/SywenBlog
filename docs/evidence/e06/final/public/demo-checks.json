@@ -1,0 +1,44 @@
+{
+  "at": "2026-09-28T15:20:56.952Z",
+  "url": "https://sywen-blog.pages.dev/",
+  "steps": [
+    {
+      "name": "Home and theme persistence",
+      "pass": true
+    },
+    {
+      "name": "Dark decoration and return to light",
+      "pass": true
+    },
+    {
+      "name": "AND search and empty state",
+      "pass": true
+    },
+    {
+      "name": "Reset and persistent reading query",
+      "pass": true
+    },
+    {
+      "name": "Favorites and original photo colors",
+      "pass": true
+    },
+    {
+      "name": "About reading art and dark plant",
+      "pass": true
+    },
+    {
+      "name": "Reading progress and return focus",
+      "pass": true
+    },
+    {
+      "name": "Quick menu and copy URL",
+      "pass": true
+    }
+  ],
+  "version": {
+    "source_commit": "b525cc063a4aa900c033a80b715ffb252d9da7a5",
+    "published_at": "2026-09-28T15:08:48Z"
+  },
+  "passed": true,
+  "video": "enhanced-demo.webm"
+}

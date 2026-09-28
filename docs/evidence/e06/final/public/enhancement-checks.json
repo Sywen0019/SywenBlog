@@ -1,0 +1,92 @@
+{
+  "at": "2026-09-28T15:16:20.537Z",
+  "url": "https://sywen-blog.pages.dev/",
+  "checks": [
+    {
+      "engine": "edge",
+      "name": "version, categories and system dark mask",
+      "pass": true
+    },
+    {
+      "engine": "edge",
+      "name": "AND search, A09 and keyboard reset",
+      "pass": true
+    },
+    {
+      "engine": "edge",
+      "name": "About gray branch, preserved character and theme switch",
+      "pass": true
+    },
+    {
+      "engine": "edge",
+      "name": "long reading, continuous paper, numbering and return focus",
+      "pass": true
+    },
+    {
+      "engine": "edge",
+      "name": "quick menu and original photo rendering at mobile width",
+      "pass": true
+    },
+    {
+      "engine": "chrome",
+      "name": "version, categories and system dark mask",
+      "pass": true
+    },
+    {
+      "engine": "chrome",
+      "name": "AND search, A09 and keyboard reset",
+      "pass": true
+    },
+    {
+      "engine": "chrome",
+      "name": "About gray branch, preserved character and theme switch",
+      "pass": true
+    },
+    {
+      "engine": "chrome",
+      "name": "long reading, continuous paper, numbering and return focus",
+      "pass": true
+    },
+    {
+      "engine": "chrome",
+      "name": "quick menu and original photo rendering at mobile width",
+      "pass": true
+    },
+    {
+      "engine": "firefox",
+      "name": "version, categories and system dark mask",
+      "pass": true
+    },
+    {
+      "engine": "firefox",
+      "name": "AND search, A09 and keyboard reset",
+      "pass": true
+    },
+    {
+      "engine": "firefox",
+      "name": "About gray branch, preserved character and theme switch",
+      "pass": true
+    },
+    {
+      "engine": "firefox",
+      "name": "long reading, continuous paper, numbering and return focus",
+      "pass": true
+    },
+    {
+      "engine": "firefox",
+      "name": "quick menu and original photo rendering at mobile width",
+      "pass": true
+    }
+  ],
+  "browsers": {
+    "edge": "154.0.4258.37",
+    "chrome": "153.0.8010.53",
+    "firefox": "155.0"
+  },
+  "version": {
+    "source_commit": "b525cc063a4aa900c033a80b715ffb252d9da7a5",
+    "published_at": "2026-09-28T15:08:48Z"
+  },
+  "passed": 15,
+  "failed": 0
+}
