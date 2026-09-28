@@ -8,7 +8,7 @@
 
 ## 当前纸面修订 · 2026-09-28
 
-用户在首次样板后决定撤掉新增纤维，恢复原冷白底纸和细颗粒；取消正文独立底色，使正文与页面背景连续。深色装饰浅灰线稿及其他样板排版保留。新增 SVG 与生成脚本已删除。最新截图和检查保存在 paper-revision/，交互对照已切换到该版；before/、after/ 与以下首次样板记录保留，不覆盖历史证据。E06 仍待样板审核，未发布。
+用户在首次样板后决定撤掉新增纤维，恢复原冷白底纸和细颗粒；取消正文独立底色，使正文与页面背景连续。深色装饰浅灰线稿及其他样板排版保留。新增 SVG 与生成脚本已删除。最新截图和检查保存在 paper-revision/，交互对照已切换到该版；before/、after/ 与以下首次样板记录保留，不覆盖历史证据。本轮 Edge 样板 31/0；paper-restoration.json 确认浅深正文透明、无独立背景图、无纤维资源请求。E06 仍待样板审核，未发布。
 
 复现：设置 `SYWEN_EVIDENCE_DIR=docs/evidence/e06/paper-revision` 后运行 `node docs/evidence/e06/sample-checks.mjs after --browser=edge`。
 

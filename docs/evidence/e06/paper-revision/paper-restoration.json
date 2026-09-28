@@ -1,0 +1,16 @@
+[
+  {
+    "theme": "light",
+    "paper": "#F6F8FA",
+    "bodyBackground": "rgba(0, 0, 0, 0)",
+    "bodyImage": "none",
+    "fibers": false
+  },
+  {
+    "theme": "dark",
+    "paper": "#202223",
+    "bodyBackground": "rgba(0, 0, 0, 0)",
+    "bodyImage": "none",
+    "fibers": false
+  }
+]
