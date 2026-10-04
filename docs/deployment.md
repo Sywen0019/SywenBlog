@@ -1,10 +1,10 @@
 # Cloudflare Pages 部署说明
 
-## V2 构建准备 · 2026-10-04
+## V2 构建与发布 · 2026-10-04
 
-用户已授权 V2 提交与双仓库推送；公开结果在核验后登记到 docs/evidence/v2/release/，旧 E06 证据保留。构建新增 Python 3.9+ 只读 preflight：先 `scripts/sync-content.py --check`，再从 content/pages.json 读取五页白名单；正式页缺失时失败。只有同步后的静态 HTML 和 css/js/posts/assets 被复制，content/templates/docs/reference 不发布。构建不重写生成输出，便于和源提交逐文件核对。
+用户授权的 V2 双仓库推送与 Cloudflare 自动发布已完成，运行时发布提交为 4835507；公开文件/路径 52/0、三浏览器核心 18/0，证据在 docs/evidence/v2/release/，旧 E06 证据保留。构建新增 Python 3.9+ 只读 preflight：先 `scripts/sync-content.py --check`，再从 content/pages.json 读取五页白名单；正式页缺失时失败。只有同步后的静态 HTML 和 css/js/posts/assets 被复制，content/templates/docs/reference 不发布。构建不重写生成输出，便于和源提交逐文件核对。
 
-Linux 构建使用 Python 3.9+（python3）；部署环境的版本需在正式发布准备时确认。Windows 使用 Git Bash，若其 PATH 中没有 python3，可在 PowerShell 设置 `$env:SYWEN_PYTHON = (py -c "import sys; print(sys.executable)").Trim().Replace('\','/')` 后调用 Git Bash。下文的旧三个页面列表和“没有构建依赖”描述为基线历史，V2 以本节为准。正式发布通路保持不变。
+Linux 构建使用 Python 3.9+（python3）；现有 Cloudflare 环境已通过本次实际自动构建的 Python preflight。Windows 使用 Git Bash，若其 PATH 中没有 python3，可在 PowerShell 设置 `$env:SYWEN_PYTHON = (py -c "import sys; print(sys.executable)").Trim().Replace('\','/')` 后调用 Git Bash。生成 JavaScript 通过 .gitattributes 固定 LF，两种检出均只读检查通过。下文的旧三个页面列表和“没有构建依赖”描述为基线历史，V2 以本节为准。正式发布通路保持不变。
 
 修订日期：2026-09-15。本文件记录 Sywen's Space 的正式发布通路与 Cloudflare Pages 配置。
 

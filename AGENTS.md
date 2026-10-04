@@ -4,7 +4,7 @@
 
 ### V2 current contract (2026-10-04)
 
-The V2 candidate has five top-level pages (`index.html`, `blog.html`, `research.html`, `profile.html`, `about.html`) plus the existing articles. On 2026-10-04 the user authorized committing and pushing V2 to both Gitee and GitHub, using the existing GitHub main → Cloudflare Pages pipeline. Release results belong in `docs/evidence/v2/release/`; the older E06 baseline remains historical evidence.
+V2 has five top-level pages (`index.html`, `blog.html`, `research.html`, `profile.html`, `about.html`) plus the existing articles. On 2026-10-04 the user authorized the dual-repository release; source `4835507` was pushed to Gitee and GitHub and publicly verified on Cloudflare Pages (52 file/path checks and 18 core browser checks passed). Release evidence belongs in `docs/evidence/v2/release/`; the older E06 baseline remains historical evidence.
 
 - `content/posts.json` is the only article/category metadata source; `content/identity.json` owns shared identity; `content/pages.json` owns the production page manifest. None are published. `templates/post.html` creates new articles.
 - `py scripts/sync-content.py --write` synchronizes marked regions; `--check` is read-only and required before build; `--new SLUG` creates only a registered, missing article. Never hand-edit generated `js/posts-data.js` or the `sywen:NAME` regions. Keep `.post-body` author-owned.

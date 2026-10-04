@@ -1,0 +1,129 @@
+{
+  "baseCommit": "48355077c33ff0e25f8e5c278c4f92a4ab048b3e",
+  "sourceFilesSha256": {
+    "about.html": "c65797d2e2fc732d758d43eff2f6cc2ea66a395525a6082587a30b8bc77a9db8",
+    "assets/icons/favicon.svg": "f7d8f10eda62d3bee820ebc70e54de49e5da68f8337cb2a283da6f492e4baa46",
+    "assets/icons/marks.svg": "3f6c6423e5ffa7c67b78c0d7879ba475b11a7750b21a05427cfde35ae91f3800",
+    "assets/images/a07-plant.webp": "0f12a98ee8c6879fc4b52a1ae23e8105f22f794339671bf6e2390089e35aaf88",
+    "assets/images/a08-transition-branch.webp": "4d6e42aa17bb382eb1fb0a4e690cfd85db7a91cec32fd5150114009c39bb818c",
+    "assets/images/a09-empty-state.webp": "7e248a329f8264116d90b32a22b108748df911ff781099e463b1bd0e7a91865b",
+    "assets/images/about-reading-1280.webp": "cbf8864a10759261c949f408529c1aa7af01bfb5aea9537075de3347fa82686a",
+    "assets/images/about-reading-640.webp": "284f391cd36b3452016b3ec6d9edc7c4e75fd050c6c10ecbc57f988d1d4c4cfe",
+    "assets/images/cat-favorites.webp": "ead74902c15a3436097a5ab4765bee0accd1d84e92823b1b62cc6ec362f094d0",
+    "assets/images/cat-life.webp": "43a8b67f48fcbf72d03e90c490b0a0c1be14fe06b5a5cf2d72ab7415da74547b",
+    "assets/images/cat-study.webp": "10ccf6898fb2b9619f290e38383241bd3a8c429367b3057cf605445334b9f06d",
+    "assets/images/character-front-avatar.webp": "538a55deb0dda5172f612798be502b1f8ed4de70655bce49c9fa4b3cb161b7d7",
+    "assets/images/character-front-upper.webp": "b439ccd011e39adcbf9dbb65702a97cca7e8e6ec12d28620b262f67576474b20",
+    "assets/images/deskmate-firefly-01.jpg": "843a82fe6793c56074d968c36b07ea6c3d31b660a3950bc94b1c7b22624cf05f",
+    "assets/images/deskmate-firefly-02.jpg": "5de3f44278ba8cb73a841a71aa22e6e503f2184d33be4e078dfab9b5a79aa906",
+    "assets/images/hero-desk-1280.webp": "437a4db0633276fcd13a2c62f3e897ea511639ea82e5b10c2955602ba10cda54",
+    "assets/images/hero-desk-640.webp": "9d5418b2b4f55f9f2c6d72decd23c829d4919d43463bdb8ceeb357081c471615",
+    "blog.html": "e691fc11a591ffb90552a55c0781064ed3e421244ed170cd10cb5f0ec4fe4024",
+    "css/base.css": "5cb6f4c9ce430e8c5f3627065d562e6dabe799ad019d466a76a8583179aeda47",
+    "css/components.css": "6a7aa2d986436270b01945dd8f90a0e0138a4abd4e0901bb01b3559cfdafc8c6",
+    "css/narrative.css": "4bc20635b09e21cd85dd0b7a7745279cf3fcde8453bf8643c35446764ad6a46b",
+    "css/pages.css": "e9072ba328eab582e049e917f754d71574e0afb43531b551bbe4520fb8e4b666",
+    "index.html": "aaa7f005274a50601e189be58e019049bae4d734d8e035a5798d210871dd2197",
+    "js/blog.js": "a33befe31ff863e9bc763fc0c181b7559d42eb41431d440280e84312b343f567",
+    "js/context-menu.js": "dba05bbe59e87e78bcefae4be37ce42fa6a715b4a553eaecd41363a69474cf08",
+    "js/hero.js": "a42aa88cf537a7693bb5d5cc02cd7a5537e9864634d3edee09800d09de3e7c51",
+    "js/motion.js": "cc9af7ae4092c4e3909d03441c5f62d2010e1e569483d6394ee3d7b36fb091bc",
+    "js/posts-data.js": "d69021454594840bd34cd0891735ee4ae16400768e72f53ff581db71aaac4c4d",
+    "js/reading.js": "d6c76dfb482007967092207f23b424acdeea10370a3ea78d778b136c4c76ee88",
+    "js/site.js": "ebc92487f8e408d066d59c95cfefbb9be82b9c3f9d82cc2cd3609ad39af6ee15",
+    "js/theme.js": "1b62e5e02a8d5ea3c6f5788f292f2edf247d2b59c7fb497690b59f32f87bb3db",
+    "posts/deskmate-with-firefly.html": "840d14ba20e3f651d8c88d1d8aed6e87644c49e403f638322dda55ce962ed9b3",
+    "posts/leave-some-space.html": "76bbcfb0a2cc302a056da92cadae726d37842733f925aee87f1e9a64f9bfd374",
+    "posts/ncs-figure-design.html": "e76b4c1bf02bfe65adaef9420c60066bcf53681d3ed8a6220cc61b09993e138e",
+    "posts/research-reading.html": "ab125f9d5b0c1d8ce06bb165781a4868ae9b2341904286a2ab4a115c6550c686",
+    "posts/scrna-grn-notes.html": "83fed932dfdd5af9128ff387a1601230f54f469241040d64fe983e98c2187398",
+    "profile.html": "e8da846b985fb9e71ea8c4592c906a5f038afe15403d2ffba2662e141fe70e27",
+    "research.html": "c35510d921850093bf522fb76990be21693d702cf5c0fac024972e8888bea5f0"
+  },
+  "at": "2026-10-04T14:31:23.488Z",
+  "mode": "public",
+  "checks": [
+    {
+      "name": "Edge version",
+      "pass": true,
+      "detail": "154.0.4258.53"
+    },
+    {
+      "name": "Edge: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Edge: legacy category parameters map to study",
+      "pass": true
+    },
+    {
+      "name": "Edge: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Edge: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Edge: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "Chrome version",
+      "pass": true,
+      "detail": "154.0.8037.97"
+    },
+    {
+      "name": "Chrome: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Chrome: legacy category parameters map to study",
+      "pass": true
+    },
+    {
+      "name": "Chrome: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Chrome: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Chrome: no uncaught JS exceptions",
+      "pass": true
+    },
+    {
+      "name": "Firefox version",
+      "pass": true,
+      "detail": "155.0"
+    },
+    {
+      "name": "Firefox: search/category/reset/URL/keyboard",
+      "pass": true
+    },
+    {
+      "name": "Firefox: legacy category parameters map to study",
+      "pass": true
+    },
+    {
+      "name": "Firefox: composition and text-only query",
+      "pass": true
+    },
+    {
+      "name": "Firefox: theme persistence and explicit selection",
+      "pass": true
+    },
+    {
+      "name": "Firefox: no uncaught JS exceptions",
+      "pass": true
+    }
+  ],
+  "screenshots": [],
+  "limitations": [
+    "No physical phone test; mobile and 200% layout checks are browser emulations."
+  ],
+  "baseUrl": "https://sywen-blog.pages.dev/",
+  "passed": 18,
+  "failed": 0
+}

@@ -15,4 +15,12 @@
 
 `initial-checkout-checks.json` 保留首次 0/6 的结果。Windows 的 Git archive 默认使用 core.autocrlf=true 转换换行，该轮错误地将它称为 LF 检出，并把正文换行变化判为正文修改；实际正文的 Git diff 没有变化。同步失败则揭示了真实问题：生成的 JavaScript 固定 LF，而全新 Windows 检出会把它转换为 CRLF。现以 .gitattributes 对 js/posts-data.js 强制 LF，两种检出分别重测通过，没有放宽同步一致性或正文比较。
 
-提交、推送和公开核验完成后在此追加结果。实体手机、真实浏览器 UI 缩放、真实输入法和读屏仍未认证。
+## 双仓库与公开核验（Passed）
+
+运行时发布提交：`48355077c33ff0e25f8e5c278c4f92a4ab048b3e`。Gitee origin/main、GitHub github/main 均对齐该提交，Cloudflare Pages check-run 为 completed/success；公开 version.json 记录同一提交，发布时间为 2026-10-04T14:29:49Z。
+
+- [public-files.json](public-files.json)：**52/0**，38 个运行文件与 Git 源字节一致，首页一致，12 个非发布/已删除路径返回 404，核验期间版本稳定。
+- [public-core/public-checks.json](public-core/public-checks.json)：Edge、Chrome、Firefox 核心检查 **18/0**。
+- [remote-heads.json](remote-heads.json)：两仓分支及 Cloudflare 构建状态。发布记录收尾只改文档和证据，运行文件与上述已核验提交相同；最新源提交以公开 version.json 为准。
+
+当前十页及文章模板提供 Gitee、GitHub 链接。Cloudflare 的实际自动构建已验证 Python preflight 可用；没有声称取得具体托管 Python 版本日志。论文/经历/真实近况仍按内容边界留空，实体手机、真实浏览器 UI 缩放、真实输入法和读屏仍未认证。

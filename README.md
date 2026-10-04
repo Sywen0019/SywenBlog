@@ -2,7 +2,7 @@
 
 原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Research · Code · Life。
 
-**V2 发布准备（2026-10-04）：** 首页、文章、研究、履历、关于五个正式页面共用既有文章体系；首页按 Hero → Latest → Selected + Now → Off the Desk → Footer 组织。用户已授权双仓库推送及既有 Cloudflare 自动发布，公开结果在核验后登记。V2 信息、内容缺口和边界见 [执行记录](docs/tasks/04-v2/README.md)。
+**V2 已发布（2026-10-04）：** 首页、文章、研究、履历、关于五个正式页面共用既有文章体系；首页按 Hero → Latest → Selected + Now → Off the Desk → Footer 组织。十页页脚同时提供 Gitee 和 GitHub 入口。V2 已推送双仓并由 Cloudflare 自动发布，公开文件/路径 52/0、核心浏览器 18/0；详见 [发布证据](docs/evidence/v2/release/README.md)。内容缺口和边界见 [执行记录](docs/tasks/04-v2/README.md)。
 
 **内容同步：** 一份文章 JSON 生成动态数据、无脚本索引、编号、元信息及相邻导航。身份共用一份来源，正文继续手写 HTML。Python 3 用于本地同步和构建检查，网站运行无依赖。详细步骤见 [发文说明](docs/publishing.md)。
 
