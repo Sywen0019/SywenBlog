@@ -1,11 +1,24 @@
 # Sywen's Space
 
-原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Study · Life · Favorites。
+原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Research · Code · Life。
+
+**V2 发布准备（2026-10-04）：** 首页、文章、研究、履历、关于五个正式页面共用既有文章体系；首页按 Hero → Latest → Selected + Now → Off the Desk → Footer 组织。用户已授权双仓库推送及既有 Cloudflare 自动发布，公开结果在核验后登记。V2 信息、内容缺口和边界见 [执行记录](docs/tasks/04-v2/README.md)。
+
+**内容同步：** 一份文章 JSON 生成动态数据、无脚本索引、编号、元信息及相邻导航。身份共用一份来源，正文继续手写 HTML。Python 3 用于本地同步和构建检查，网站运行无依赖。详细步骤见 [发文说明](docs/publishing.md)。
+
+```powershell
+py scripts/sync-content.py --write
+py scripts/sync-content.py --check
+py scripts/test-content.py
+```
+
+下面“作业要求对应”和 E06 结果记录原公开版本；当前源码以 V2 契约为准。V2 验收使用独立证据目录，不覆盖历史报告。原 E01 首页分类构图已退役，其资产与 Blog 无缩略图等有效检查由 V2 检查接续。
 
 **作业基线已完成。** 八页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01–E05 已通过本地回归，E06 已完成八页视觉扩展、VC2 和公开发布核验（2026-09-28）。
 
 - [访问网站](https://sywen-blog.pages.dev/)
 - [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
+- [GitHub 源码与提交历史](https://github.com/Sywen0019/SywenBlog)
 - [线上版本信息](https://sywen-blog.pages.dev/version.json)
 - [交付与演示](docs/delivery.md) · [任务索引](docs/tasks/00-index.md)
 
@@ -26,7 +39,7 @@
 
 ## 本地预览
 
-无需安装前端依赖，不需要编译：
+无需安装前端依赖；修改元数据后先同步，再预览：
 
 ```powershell
 py -m http.server 8000 --bind 127.0.0.1
@@ -36,8 +49,9 @@ py -m http.server 8000 --bind 127.0.0.1
 
 ## 目录与约定
 
-- 顶层三个 HTML 与 `posts/` 五篇文章；`css/`：base / components / narrative / pages。
-- `js/`：theme / posts-data / site / blog / motion / reading / context-menu，经典脚本通过 `window.Sywen` 共享。
+- 顶层五个正式 HTML 与 `posts/` 文章；`css/`：base / components / narrative / pages。
+- `js/`：theme / posts-data / site / blog / hero / motion / reading / context-menu，经典脚本通过 `window.Sywen` 共享；hero 仅首页加载。
+- `content/`：文章、分类、身份和正式页面清单；`templates/`：新文章骨架；两者都不发布。
 - `assets/`：已采用图片与SVG；`参考素材/`：用户参考，不发布。
 - `scripts/`：发布、验收、录像；`docs/`：任务、交接、美术、验收和证据。
 - `PROJECT_PLAN.html` / `Plan.md` / `DESIGN_SPEC.md`：规格、当前B/E计划和视觉边界。
@@ -61,14 +75,14 @@ node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox
 
 报告写入 `docs/evidence/e03/`，截图 `e03-*.png`。
 
-E01 分类小画复验（三浏览器各 49 项、0 失败）：
+E01 保留资产复验（原首页分类构图已退役；当前布局使用 scripts/check-v2.mjs）：
 
 ```powershell
 $env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
-node docs/evidence/e01/illustration-checks.mjs --browser=edge,chrome,firefox
+node docs/evidence/e01/illustration-checks.mjs --assets-only
 ```
 
-报告写入 `docs/evidence/e01/`，含合并报告与桌面/手机/深色/失败态截图；分类 WebP 由 `py scripts/export-category-art.py` 从 `art-work/` 母版确定性导出。
+报告应通过 `SYWEN_EVIDENCE_DIR` 写入本轮独立目录；分类 WebP 由 `py scripts/export-category-art.py` 从 `art-work/` 母版确定性导出。
 
 网站运行不依赖以下工具。复验需要Node.js 24、Edge/Chrome及Python3：
 
@@ -95,7 +109,7 @@ git -c http.sslBackend=openssl push origin main
 git -c http.sslBackend=openssl push github main
 ```
 
-白名单排除参考、母版、文档和测试工具；生成version.json记录源提交。最小404响应关闭默认SPA回落，完整插画404仍在Backlog。配置和Windows本地构建方法见[部署说明](docs/deployment.md)。GitHub Pages的codex/pages仅作历史备选，本轮不更新。
+构建先检查内容同步，按 content/pages.json 白名单打包；排除内容来源、模板、参考、母版、文档和测试工具；生成version.json记录源提交。最小404响应关闭默认SPA回落，完整插画404仍在Backlog。配置和Windows本地构建方法见[部署说明](docs/deployment.md)。GitHub Pages的codex/pages仅作历史备选，本轮不更新。
 
 ## 素材与后续
 

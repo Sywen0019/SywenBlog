@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-04T14:23:30.526736+00:00",
+  "sourceCommit": "cfe9b93932ec7b97f047e0be13085e461025713b",
+  "workingTree": false,
+  "python": "3.13.2",
+  "checks": [
+    {
+      "name": "Committed LF content passes read-only sync",
+      "pass": false,
+      "detail": "Stale generated output: js/posts-data.js"
+    },
+    {
+      "name": "posts/deskmate-with-firefly.html original committed body preserved",
+      "pass": false,
+      "sha256": "4be76a050c3e0a7ca77f9b4c66e40d66c665b68e4e4aafc680ac0c966452ac9c"
+    },
+    {
+      "name": "posts/leave-some-space.html original committed body preserved",
+      "pass": false,
+      "sha256": "6f0a9d3e97015d6ddf1a92f143671ecf00b7a95861eb03f94045bfbed97afb02"
+    },
+    {
+      "name": "posts/ncs-figure-design.html original committed body preserved",
+      "pass": false,
+      "sha256": "2274c86614a032e0f011c311a8c88cf36d03a6beddda76c9742f086cc1bf0539"
+    },
+    {
+      "name": "posts/research-reading.html original committed body preserved",
+      "pass": false,
+      "sha256": "d88b87551534297fce1502b87676d502bbb905395bee8496eba06a04f524fe82"
+    },
+    {
+      "name": "posts/scrna-grn-notes.html original committed body preserved",
+      "pass": false,
+      "sha256": "99c2aa01e71db8ef012cf84b40db9e788b658e641d9f1ebb3cb5a6f8fcadcb3c"
+    }
+  ],
+  "passed": 0,
+  "failed": 6
+}
