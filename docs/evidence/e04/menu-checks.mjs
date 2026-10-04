@@ -23,10 +23,9 @@ const decodeSize = (file) => {
 const root = path.resolve(import.meta.dirname, '../../..');
 const out = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : import.meta.dirname;
 fs.mkdirSync(out, { recursive: true });
-const pages = ['index.html', 'blog.html', 'about.html',
-  'posts/ncs-figure-design.html', 'posts/research-reading.html',
-  'posts/leave-some-space.html',
-  'posts/deskmate-with-firefly.html', 'posts/scrna-grn-notes.html'];
+const topPages = JSON.parse(fs.readFileSync(path.join(root, 'content/pages.json')));
+const metadata = JSON.parse(fs.readFileSync(path.join(root, 'content/posts.json')));
+const pages = [...topPages, ...metadata.posts.map(p => `posts/${p.slug}.html`)];
 const CAPABILITY = '(hover: hover) and (pointer: fine)';
 const LIMITATIONS = [
   '未使用实体手机与屏幕阅读器；移动端为浏览器视口模拟。',
@@ -344,7 +343,7 @@ async function run(browserName, browser) {
     return { x: Math.round(box.x + 40), y: Math.round(box.y + 24) };
   };
 
-  await check('1. 八页脚本顺序与资源', async () => {
+  await check('1. 已登记页面脚本顺序与资源', async () => {
     const detail = {};
     for (const rel of pages) {
       await open(rel);
@@ -359,6 +358,7 @@ async function run(browserName, browser) {
         const motionSrc = rel.startsWith('posts/') ? '../js/motion.js' : './js/motion.js';
         expected.splice(rel === 'blog.html' ? 4 : 3, 0, motionSrc);
       }
+      if (rel === 'index.html') expected.splice(3, 0, './js/hero.js');
       assert.deepEqual(order, expected, `${rel} 脚本顺序不符`);
       const defer = await page.evaluate(() => Array.from(document.scripts)
         .filter((s) => s.getAttribute('src') && !s.getAttribute('src').endsWith('theme.js'))
@@ -424,13 +424,13 @@ async function run(browserName, browser) {
 
   await check('4. 菜单内容与分组', async () => {
     const detail = {};
-    const nonPost = ['index.html', 'blog.html', 'about.html'];
+    const nonPost = topPages;
     for (const rel of [...nonPost, 'posts/ncs-figure-design.html']) {
       await open(rel);
       await openByButton(page);
       const state = await probe(page);
       assert.equal(state.menu.groups, 3, `${rel} 分组数 ${state.menu.groups}`);
-      assert.equal(state.menu.items.length, 7, `${rel} 菜单项数 ${state.menu.items.length}`);
+      assert.equal(state.menu.items.length, 9, `${rel} 菜单项数 ${state.menu.items.length}`);
       for (const item of state.menu.items) {
         assert.equal(item.role, 'menuitem', `${rel} 缺少 role=menuitem`);
         assert.equal(item.tabindex, '-1', `${rel} 菜单项不应进入 Tab 顺序`);
@@ -438,7 +438,7 @@ async function run(browserName, browser) {
         assert.ok(item.text.length > 0, `${rel} 菜单项缺少文字`);
       }
       const labels = state.menu.items.map((item) => item.text);
-      for (const wanted of ['首页', '返回顶部', '切换至深色', '搜索文章', '关于']) {
+      for (const wanted of ['首页', '返回顶部', '切换至深色', '搜索文章', '研究', '履历', '关于']) {
         assert.ok(labels.some((label) => label.includes(wanted)), `${rel} 缺少「${wanted}」：${labels.join(' / ')}`);
       }
       const listLabel = labels.find((label) => label.includes('文章列表') || label.includes('文章'));
@@ -1173,7 +1173,7 @@ async function run(browserName, browser) {
       report.skippedScreenshots = true;
       return 'skipped';
     }
-    // 八页 × 1440 × 浅深：菜单打开态（能力可用）
+    // 已登记页面 × 1440 × 浅深：菜单打开态（能力可用）
     for (const theme of ['light', 'dark']) {
       const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, colorScheme: theme });
       await injectProbe(ctx);
@@ -1214,7 +1214,7 @@ async function run(browserName, browser) {
       made.push(noticeName);
       await ctx.close();
     }
-    // 八页 × 390 × 浅深：纯触摸上下文，按能力门应无按钮无菜单，且无横向溢出
+    // 已登记页面 × 390 × 浅深：纯触摸上下文，按能力门应无按钮无菜单，且无横向溢出
     for (const theme of ['light', 'dark']) {
       const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: theme, hasTouch: true, isMobile: true });
       const p = await ctx.newPage();

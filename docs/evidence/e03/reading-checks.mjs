@@ -23,10 +23,9 @@ const decodeSize = (file) => {
 const root = path.resolve(import.meta.dirname, '../../..');
 const out = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : import.meta.dirname;
 fs.mkdirSync(out, { recursive: true });
-const pages = ['index.html', 'blog.html', 'about.html',
-  'posts/ncs-figure-design.html', 'posts/research-reading.html',
-  'posts/leave-some-space.html',
-  'posts/deskmate-with-firefly.html', 'posts/scrna-grn-notes.html'];
+const topPages = JSON.parse(fs.readFileSync(path.join(root, 'content/pages.json')));
+const metadata = JSON.parse(fs.readFileSync(path.join(root, 'content/posts.json')));
+const pages = [...topPages, ...metadata.posts.map(p => `posts/${p.slug}.html`)];
 const LIMITATIONS = [
   '未使用实体手机与屏幕阅读器；移动端为浏览器视口模拟。',
   '观感类判据由 E06 的 VC2 正式判定，本脚本只记录可测量事实。',
@@ -249,7 +248,7 @@ async function run(browserName, browser) {
   };
   const settle = async () => page.evaluate(`(${frames})`);
 
-  await check('1. 八页 reading.js 加载顺序与资源', async () => {
+  await check('1. 已登记页面 reading.js 加载顺序与资源', async () => {
     const detail = {};
     for (const rel of pages) {
       await open(rel);
@@ -264,6 +263,7 @@ async function run(browserName, browser) {
         const motionSrc = rel.startsWith('posts/') ? '../js/motion.js' : './js/motion.js';
         expected.splice(rel === 'blog.html' ? 4 : 3, 0, motionSrc);
       }
+      if (rel === 'index.html') expected.splice(3, 0, './js/hero.js');
       assert.deepEqual(order, expected, `${rel} 脚本顺序不符`);
       const defer = await page.evaluate(() => Array.from(document.scripts)
         .filter((s) => s.getAttribute('src') && !s.getAttribute('src').endsWith('theme.js'))
@@ -586,7 +586,7 @@ async function run(browserName, browser) {
     return { progress: state.progress, button: state.buttonVisibility, script: state.scriptOrder[state.scriptOrder.length - 1] };
   });
 
-  await check('14. 八页无页面异常、无失败请求', async () => {
+  await check('14. 已登记页面无页面异常、无失败请求', async () => {
     errors.length = 0;
     failedRequests.length = 0;
     for (const rel of pages) await open(rel);

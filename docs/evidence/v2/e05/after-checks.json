@@ -1,0 +1,547 @@
+{
+  "stage": "after",
+  "at": "2026-10-04T05:41:54.423Z",
+  "parentCommit": "9941b7bce9713570c1fd8db84ed8178accd21ad0",
+  "checks": [
+    {
+      "browser": "edge",
+      "name": "320/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "keyboard reset, category/query and history",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "Chinese composition waits until compositionend",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "empty favorites fixture and generic keyword empty state",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "image failure preserves text and reset",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "no script retains static content",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "initialization failure retains static content",
+      "pass": true
+    },
+    {
+      "browser": "edge",
+      "name": "subdirectory, reduced motion, resource budget",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "320/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "320/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "320/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "320/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "390/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "390/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "390/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "390/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "768/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "768/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "768/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "768/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "1440/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "1440/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "1440/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "1440/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "chrome",
+      "name": "keyboard reset, category/query and history",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "Chinese composition waits until compositionend",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "empty favorites fixture and generic keyword empty state",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "image failure preserves text and reset",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "no script retains static content",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "initialization failure retains static content",
+      "pass": true
+    },
+    {
+      "browser": "chrome",
+      "name": "subdirectory, reduced motion, resource budget",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "320/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "320/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104.00006103515625
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "320/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "320/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104.00006103515625
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "390/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "390/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104.00006103515625
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "390/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "390/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104.00006103515625
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "768/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "768/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 103.99993896484375
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "768/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "768/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 103.99993896484375
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "1440/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "1440/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "1440/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "1440/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "keyboard reset, category/query and history",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "Chinese composition waits until compositionend",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "empty favorites fixture and generic keyword empty state",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "image failure preserves text and reset",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "no script retains static content",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "initialization failure retains static content",
+      "pass": true
+    },
+    {
+      "browser": "firefox",
+      "name": "subdirectory, reduced motion, resource budget",
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "No physical phone, browser UI zoom or screen reader testing."
+  ]
+}

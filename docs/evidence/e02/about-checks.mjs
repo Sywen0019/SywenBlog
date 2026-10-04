@@ -82,7 +82,8 @@ try {
       await p.goto(base + (scenario === 'subdirectory' ? '/course/blog' : '') + '/about.html');
       await check(scenario, async () => {
         assert.equal(await p.locator('main h2').count(), 5);
-        assert.equal(await p.locator('main').innerText().then(x => x.includes('Transformer')), true);
+        assert.equal(await p.locator('main').innerText().then(x => x.includes('学习习惯')), true);
+        assert.equal(await p.locator('.about-now a[href="./index.html#home-now"]').count(), 1);
         assert.equal(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
         if (scenario === 'failed-images') {
           assert.equal(await p.locator('.about-hero-art .art-frame').evaluate(x => x.classList.contains('is-failed')), true);

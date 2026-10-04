@@ -77,6 +77,16 @@ for (const cat of CATEGORIES) {
 // ---------------------------------------------------------------------------
 // 本地服务器（含 /course/blog/ 子目录映射）
 // ---------------------------------------------------------------------------
+// V2 retired Home category placement. Keep the original browser scenarios for
+// historical checkouts; the current asset checks and V2 suite retain valid coverage.
+if (process.argv.includes('--assets-only')) {
+  const report = { at: new Date().toISOString(), checks: fileChecks,
+    passed: fileChecks.filter(c => c.pass).length, failed: fileChecks.filter(c => !c.pass).length };
+  fs.writeFileSync(path.join(out, 'asset-checks.json'), JSON.stringify(report, null, 2) + '\n');
+  console.log(JSON.stringify({ passed: report.passed, failed: report.failed }));
+  process.exit(report.failed ? 1 : 0);
+}
+
 const server = http.createServer((req, res) => {
   try {
     let name = decodeURIComponent(new URL(req.url, 'http://local').pathname);

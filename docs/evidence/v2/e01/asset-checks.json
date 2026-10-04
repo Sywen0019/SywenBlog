@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-04T05:30:27.015Z",
+  "checks": [
+    {
+      "name": "assets/images/cat-study.webp exists",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-study.webp <=40KB",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-study.webp is WebP (RIFF/WEBP)",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-study.webp manifest bytes/sha/4:3",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-life.webp exists",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-life.webp <=40KB",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-life.webp is WebP (RIFF/WEBP)",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-life.webp manifest bytes/sha/4:3",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-favorites.webp exists",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-favorites.webp <=40KB",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-favorites.webp is WebP (RIFF/WEBP)",
+      "pass": true
+    },
+    {
+      "name": "assets/images/cat-favorites.webp manifest bytes/sha/4:3",
+      "pass": true
+    }
+  ],
+  "passed": 12,
+  "failed": 0
+}

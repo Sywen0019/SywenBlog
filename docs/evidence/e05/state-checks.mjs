@@ -8,6 +8,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 
 const root = path.resolve(import.meta.dirname, '../../..');
+const articleCount = JSON.parse(fs.readFileSync(path.join(root, 'content/posts.json'))).posts.length;
 const before = process.argv.includes('--before');
 const stage = before ? 'before' : 'after';
 const evidenceRoot = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : import.meta.dirname;
@@ -45,13 +46,13 @@ try {
               await page.goto(base + '/blog.html' + (state === 'empty' ? '?q=e05-no-match-xyz' : ''));
               await page.locator('#blog-filters').waitFor({ state: 'visible' });
               if (state === 'empty') await page.locator('.empty-state__avatar').evaluate(img => img.decode());
-              const details = await page.evaluate(({ before, state, width }) => {
+              const details = await page.evaluate(({ before, state, width, articleCount }) => {
                 const ensure = (ok, message) => { if (!ok) throw Error(message); };
                 ensure(document.documentElement.scrollWidth <= innerWidth, 'overflow');
                 ensure(document.querySelectorAll('#blog-results img').length === 0, 'list images');
                 if (state === 'list') {
                   ensure(document.querySelector('#blog-empty').hidden, 'empty state visible');
-                  ensure(document.querySelectorAll('#blog-results .post-entry').length === 5, 'article count');
+                  ensure(document.querySelectorAll('#blog-results .post-entry').length === articleCount, 'article count');
                   return { count: 5 };
                 }
                 const img = document.querySelector('.empty-state__avatar');
@@ -68,7 +69,7 @@ try {
                   ensure(box.top >= reset.bottom && box.bottom < footer.top, 'art overlap');
                 }
                 return { width: box.width, height: box.height, footerGap: footer.top - box.bottom };
-              }, { before, state, width });
+              }, { before, state, width, articleCount });
               if (engine === 'edge') {
                 const filename = `blog-${state}-${width}-${theme}.png`;
                 const file = path.join(output, filename);
@@ -96,7 +97,7 @@ try {
         await page.locator('#empty-reset').focus();
         await page.keyboard.press('Enter');
         assert.equal(await page.locator('#search-input').evaluate(el => el === document.activeElement), true);
-        assert.equal(await page.locator('#blog-results .post-entry').count(), 5);
+        assert.equal(await page.locator('#blog-results .post-entry').count(), articleCount);
         assert.equal(new URL(page.url()).search, '');
         await page.locator('button[data-category="life"]').click();
         assert.equal(await page.locator('#blog-results .post-entry').count(), 1);
@@ -117,7 +118,7 @@ try {
           input.value = '完全不存在的文章';
           input.dispatchEvent(new InputEvent('input', { bubbles: true, isComposing: true }));
         });
-        assert.equal(await page.locator('#blog-results .post-entry').count(), 5);
+        assert.equal(await page.locator('#blog-results .post-entry').count(), articleCount);
         await page.locator('#search-input').dispatchEvent('compositionend');
         assert.equal(await page.locator('#blog-empty').isVisible(), true);
       });
@@ -138,7 +139,7 @@ try {
         await page.locator('.empty-state__avatar').waitFor({ state: 'hidden' });
         assert.equal(await page.locator('#empty-title').isVisible(), true);
         await page.locator('#empty-reset').click();
-        assert.equal(await page.locator('#blog-results .post-entry').count(), 5);
+        assert.equal(await page.locator('#blog-results .post-entry').count(), articleCount);
       });
       for (const js of [false, true]) {
         await scenario(js ? 'initialization failure retains static content' : 'no script retains static content', { javaScriptEnabled: js }, async page => {
@@ -147,7 +148,7 @@ try {
           assert.equal(await page.locator('#blog-empty').isVisible(), false);
           assert.equal(await page.locator('#blog-filters').isVisible(), false);
           assert.equal(await page.locator('#blog-static-list').isVisible(), true);
-          assert.equal(await page.locator('#blog-static-list .post-entry').count(), 5);
+          assert.equal(await page.locator('#blog-static-list .post-entry').count(), articleCount);
         });
       }
       await scenario('subdirectory, reduced motion, resource budget', { reducedMotion: 'reduce' }, async page => {

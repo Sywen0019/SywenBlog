@@ -1,0 +1,409 @@
+{
+  "task": "Narrative Layer Visual Vertical Slice",
+  "at": "2026-10-04T05:32:34.436Z",
+  "passed": 53,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "index@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "blog@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "research@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "profile@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "about@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "ncs-figure-design@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research-reading@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "deskmate-with-firefly@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "leave-some-space@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "scrna-grn-notes@1440 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "index@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "blog@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "research@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "profile@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "about@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "ncs-figure-design@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research-reading@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "deskmate-with-firefly@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "leave-some-space@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "scrna-grn-notes@1200 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "index@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "blog@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "research@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "profile@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "about@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "ncs-figure-design@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research-reading@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "deskmate-with-firefly@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "leave-some-space@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "scrna-grn-notes@1024 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "index@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "blog@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "research@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "profile@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "about@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "ncs-figure-design@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research-reading@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "deskmate-with-firefly@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "leave-some-space@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "scrna-grn-notes@768 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "index@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 16
+      }
+    },
+    {
+      "name": "blog@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 35
+      }
+    },
+    {
+      "name": "research@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "profile@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 3
+      }
+    },
+    {
+      "name": "about@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "ncs-figure-design@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "research-reading@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 10
+      }
+    },
+    {
+      "name": "deskmate-with-firefly@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 5
+      }
+    },
+    {
+      "name": "leave-some-space@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 9
+      }
+    },
+    {
+      "name": "scrna-grn-notes@390 narrative contract",
+      "pass": true,
+      "detail": {
+        "narrative": 19
+      }
+    },
+    {
+      "name": "blog: no images in list, count matches, filter and reset work",
+      "pass": true,
+      "detail": {
+        "images": 0,
+        "entries": 5,
+        "countText": "找到 5 篇文章",
+        "life": 1,
+        "afterReset": 5
+      }
+    },
+    {
+      "name": "blog no-JS: static list complete without images",
+      "pass": true,
+      "detail": {
+        "entries": 5,
+        "images": 0,
+        "links": 5
+      }
+    },
+    {
+      "name": "V2: Selected/Now are content; About links to the single current source",
+      "pass": true,
+      "detail": [
+        {
+          "width": 390,
+          "selectedLinks": 3,
+          "nowItems": 3
+        },
+        {
+          "width": 768,
+          "selectedLinks": 3,
+          "nowItems": 3
+        },
+        {
+          "width": 1024,
+          "selectedLinks": 3,
+          "nowItems": 3
+        },
+        {
+          "width": 1440,
+          "selectedLinks": 3,
+          "nowItems": 3
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "未使用实体手机、屏幕阅读器与真实浏览器 UI 缩放；移动端为浏览器视口模拟。",
+    "观感类判据（是否成立 Editorial Notebook、mark 是否过于工程化）由用户视觉审核判定，本脚本只记录可测量事实。",
+    "V2 本地十页检查；历史视觉证据不覆盖，公开版本未复验。"
+  ]
+}

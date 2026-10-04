@@ -1,0 +1,10 @@
+{
+  "recordType": "session-observations",
+  "initialFailuresResolved": true,
+  "notes": [
+    "Initial V2 checks compared dynamic motion class names and inter-element source whitespace; changed to stable class and individual content fields.",
+    "Media-query callbacks raced immediate pointer simulation; two animation frames before the next simulated pointer movement fixed the harness. Current mouse lens and reduced-motion resets pass all three engines.",
+    "Firefox no-script contexts do not run awaited page timers; static navigation/content assertions replace asynchronous decode waits in that scenario.",
+    "Initial Narrative 48/5 included invisible back-to-top boxes; the five findings involved Research footer, About transition and Profile footer. Visibility is now checked; E03 still verifies visible button clearance."
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "stage": "before",
+  "at": "2026-10-04T05:32:27.997Z",
+  "parentCommit": "9941b7bce9713570c1fd8db84ed8178accd21ad0",
+  "checks": [
+    {
+      "browser": "edge",
+      "name": "320/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "320/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "390/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 96,
+        "height": 96,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "768/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 104
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/light/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/light/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/dark/list",
+      "pass": true,
+      "detail": {
+        "count": 5
+      }
+    },
+    {
+      "browser": "edge",
+      "name": "1440/dark/empty",
+      "pass": true,
+      "detail": {
+        "width": 120,
+        "height": 120,
+        "footerGap": 120
+      }
+    }
+  ],
+  "limitations": [
+    "No physical phone, browser UI zoom or screen reader testing."
+  ]
+}

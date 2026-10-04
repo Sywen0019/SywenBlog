@@ -11,9 +11,13 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 
 const root = path.resolve(import.meta.dirname, '..');
+const content = JSON.parse(fs.readFileSync(path.join(root, 'content/posts.json'), 'utf8'));
+const topPages = JSON.parse(fs.readFileSync(path.join(root, 'content/pages.json'), 'utf8'));
+const articleCount = content.posts.length;
+const categoryCounts = Object.fromEntries(content.categories.map(c => [c.id, content.posts.filter(p => p.category === c.id).length]));
 const publicRun = process.argv.includes('--public');
 const smoke = process.argv.includes('--smoke') || publicRun;
-const siteFiles = ['index.html', 'blog.html', 'about.html', ...['posts', 'css', 'js', 'assets'].flatMap((dir) =>
+const siteFiles = [...topPages, ...['posts', 'css', 'js', 'assets'].flatMap((dir) =>
   fs.readdirSync(path.join(root, dir), { recursive: true, withFileTypes: true }).filter((item) => item.isFile()).map((item) =>
     path.relative(root, path.join(item.parentPath, item.name)).replaceAll('\\', '/')))];
 const out = process.env.SYWEN_EVIDENCE_DIR ? path.resolve(process.env.SYWEN_EVIDENCE_DIR) : path.join(root, 'docs/evidence/baseline');
@@ -38,12 +42,7 @@ const server = http.createServer((req, res) => {
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
 const base = publicRun ? (process.env.SYWEN_PUBLIC_URL || 'https://sywen-blog.pages.dev/').replace(/\/?$/, '/') : `http://127.0.0.1:${server.address().port}/`;
 report.baseUrl = base;
-const pages = [
-  'index.html', 'blog.html', 'about.html',
-  'posts/ncs-figure-design.html', 'posts/research-reading.html',
-  'posts/leave-some-space.html', 'posts/deskmate-with-firefly.html',
-  'posts/scrna-grn-notes.html'
-];
+const pages = [...topPages, ...content.posts.map(post => `posts/${post.slug}.html`)];
 let failures = 0;
 async function check(name, fn) {
   try { const detail = await fn(); report.checks.push({ name, pass: true, detail }); }
@@ -77,23 +76,23 @@ async function core(browser, label) {
     // （2026-09-18 在 Firefox 上实测到一次 5 !== 3 的偶发失败；断言本身未放宽）。
     await p.waitForFunction(() => document.querySelector('#blog-filters').classList.contains('is-visible'));
     await p.evaluate(() => Promise.all(document.getAnimations().map((a) => a.finished.catch(() => {}))));
-    assert.equal(await visibleCount(p), 5);
+    assert.equal(await visibleCount(p), articleCount);
     assert.deepEqual(await p.locator('#blog-categories [data-category]').evaluateAll((els) => els.map((el) => el.dataset.category)),
       ['all', 'study', 'life', 'favorites']);
     await p.locator('[data-category="study"]').click();
-    assert.equal(await visibleCount(p), 3);
+    assert.equal(await visibleCount(p), categoryCounts.study);
     await p.locator('[data-category="life"]').click();
-    assert.equal(await visibleCount(p), 1);
+    assert.equal(await visibleCount(p), categoryCounts.life);
     await p.locator('[data-category="favorites"]').click();
     // 2026-09-18 起「我喜欢的」已有文章，空状态不再由该分类触发。
-    assert.equal(await visibleCount(p), 1);
+    assert.equal(await visibleCount(p), categoryCounts.favorites);
     assert.match(await p.locator('#blog-results').innerText(), /和流萤做同桌/);
     await p.locator('#search-input').fill('美食');
     assert.equal(await p.locator('#blog-empty').isVisible(), true);
     assert.equal(await p.locator('#empty-title').innerText(), '没找到匹配的文章');
     await p.locator('[data-category="all"]').click();
     await p.locator('#reset-filters').click();
-    assert.equal(await visibleCount(p), 5);
+    assert.equal(await visibleCount(p), articleCount);
     await p.locator('#search-input').fill('  NCS-FIGURE-DESIGN  ');
     assert.equal(await visibleCount(p), 1);
     assert.match(await p.locator('#blog-results').innerText(), /ncs-figure-design 的设计思路/);
@@ -102,7 +101,7 @@ async function core(browser, label) {
     assert.equal(await p.locator('#blog-empty').isVisible(), true);
     assert.equal(await p.locator('#empty-title').innerText(), '没找到匹配的文章');
     await p.locator('#empty-reset').click();
-    assert.equal(await visibleCount(p), 5);
+    assert.equal(await visibleCount(p), articleCount);
     assert.equal(await p.locator('#search-input').evaluate((el) => el === document.activeElement), true);
     await p.locator('#search-input').fill('research-reading');
     await p.locator('[data-category="study"]').click();
@@ -111,7 +110,7 @@ async function core(browser, label) {
     assert.equal(await visibleCount(p), 1);
     assert.equal(await p.locator('[data-category="study"]').getAttribute('aria-pressed'), 'true');
     await p.goto(base + 'blog.html?category=unknown&focus=search');
-    assert.equal(await visibleCount(p), 5);
+    assert.equal(await visibleCount(p), articleCount);
     assert.equal(await p.locator('#search-input').evaluate((el) => el === document.activeElement), true);
     await p.keyboard.type('ncs-figure-design');
     await p.keyboard.press('Enter');
@@ -145,7 +144,7 @@ async function core(browser, label) {
       el.value = '科研绘图';
       el.dispatchEvent(new InputEvent('input', { bubbles: true, isComposing: true }));
     });
-    assert.equal(await visibleCount(p), 5);
+    assert.equal(await visibleCount(p), articleCount);
     await p.locator('#search-input').evaluate((el) => el.dispatchEvent(new CompositionEvent('compositionend', { bubbles: true })));
     assert.equal(await visibleCount(p), 1);
     await p.locator('#search-input').fill('<img src=x onerror=alert(1)>');
@@ -198,7 +197,7 @@ try {
       await core(browser, label);
       if (label !== 'Edge' || smoke) continue;
 
-      await check('All eight pages: local targets and unique headings', async () => {
+      await check('All registered pages: local targets and unique headings', async () => {
         const p = await browser.newPage();
         const targets = new Set();
         for (const name of pages) {
@@ -248,15 +247,15 @@ try {
         await context.close();
       }
 
-      await check('No JavaScript: eight pages and static index', async () => {
+      await check('No JavaScript: registered pages and static index', async () => {
         const c = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 900 }, colorScheme: 'dark' });
         const p = await c.newPage();
         for (const name of pages) {
           await p.goto(base + name);
           assert.equal(await p.locator('#theme-toggle').isVisible(), false);
-          assert.equal(await p.locator('.site-nav a').count(), 3);
+          assert.equal(await p.locator('.site-nav a').count(), topPages.length);
           if (name === 'blog.html') {
-            assert.equal(await p.locator('#blog-static-list .post-entry').count(), 5);
+            assert.equal(await p.locator('#blog-static-list .post-entry').count(), articleCount);
             assert.equal(await p.locator('#blog-filters').isVisible(), false);
           }
         }
@@ -271,7 +270,7 @@ try {
           await p.route('**/js/' + script, (route) => route.abort());
           await p.goto(base + 'blog.html');
           assert.equal(await p.locator('#blog-static-list').isVisible(), true);
-          assert.equal(await p.locator('#blog-static-list .post-entry').count(), 5);
+          assert.equal(await p.locator('#blog-static-list .post-entry').count(), articleCount);
           assert.equal(await p.locator('#blog-filters').isVisible(), false);
           await p.close();
         });

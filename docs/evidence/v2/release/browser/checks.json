@@ -1,0 +1,313 @@
+{
+  "at": "2026-10-04T14:19:33.685Z",
+  "sourceCommit": "9941b7bce9713570c1fd8db84ed8178accd21ad0",
+  "workingTree": true,
+  "checks": [
+    {
+      "name": "Category masters remain exported, valid and unchanged",
+      "pass": true,
+      "detail": {
+        "assets": 3,
+        "use": "Retained assets; retired Home category placement."
+      }
+    },
+    {
+      "name": "edge version",
+      "pass": true,
+      "detail": "154.0.4258.53"
+    },
+    {
+      "name": "edge/light/320: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/light/390: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/light/768: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/light/1024: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/light/1440: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/light: no page or resource failures",
+      "pass": true
+    },
+    {
+      "name": "edge/dark/320: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/dark/390: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/dark/768: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/dark/1024: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/dark/1440: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "edge/dark: no page or resource failures",
+      "pass": true
+    },
+    {
+      "name": "edge: ten static footers link both repositories without mobile overflow",
+      "pass": true,
+      "detail": {
+        "pages": 10,
+        "width": 320,
+        "javaScript": false
+      }
+    },
+    {
+      "name": "edge: static and dynamic lists match, including markers",
+      "pass": true
+    },
+    {
+      "name": "edge: independent search fixture checks AND/category/IME/legacy states",
+      "pass": true
+    },
+    {
+      "name": "edge: name lens reveals locally, resets and stays idle",
+      "pass": true
+    },
+    {
+      "name": "edge: touch/no-script/unsupported masks keep visible formal identity",
+      "pass": true
+    },
+    {
+      "name": "edge: new routes work under subdirectory and no scripts",
+      "pass": true
+    },
+    {
+      "name": "edge: Off the Desk image failure retains meaning and links",
+      "pass": true
+    },
+    {
+      "name": "edge: new page long content reflows and reading background stays continuous",
+      "pass": true
+    },
+    {
+      "name": "chrome version",
+      "pass": true,
+      "detail": "154.0.8037.97"
+    },
+    {
+      "name": "chrome/light/320: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/light/390: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/light/768: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/light/1024: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/light/1440: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/light: no page or resource failures",
+      "pass": true
+    },
+    {
+      "name": "chrome/dark/320: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/dark/390: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/dark/768: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/dark/1024: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/dark/1440: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "chrome/dark: no page or resource failures",
+      "pass": true
+    },
+    {
+      "name": "chrome: ten static footers link both repositories without mobile overflow",
+      "pass": true,
+      "detail": {
+        "pages": 10,
+        "width": 320,
+        "javaScript": false
+      }
+    },
+    {
+      "name": "chrome: static and dynamic lists match, including markers",
+      "pass": true
+    },
+    {
+      "name": "chrome: independent search fixture checks AND/category/IME/legacy states",
+      "pass": true
+    },
+    {
+      "name": "chrome: name lens reveals locally, resets and stays idle",
+      "pass": true
+    },
+    {
+      "name": "chrome: touch/no-script/unsupported masks keep visible formal identity",
+      "pass": true
+    },
+    {
+      "name": "chrome: new routes work under subdirectory and no scripts",
+      "pass": true
+    },
+    {
+      "name": "chrome: Off the Desk image failure retains meaning and links",
+      "pass": true
+    },
+    {
+      "name": "chrome: new page long content reflows and reading background stays continuous",
+      "pass": true
+    },
+    {
+      "name": "firefox version",
+      "pass": true,
+      "detail": "155.0"
+    },
+    {
+      "name": "firefox/light/320: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/light/390: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/light/768: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/light/1024: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/light/1440: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/light: no page or resource failures",
+      "pass": true
+    },
+    {
+      "name": "firefox/dark/320: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/dark/390: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/dark/768: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/dark/1024: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/dark/1440: V2 flow, navigation and formal pages",
+      "pass": true
+    },
+    {
+      "name": "firefox/dark: no page or resource failures",
+      "pass": true
+    },
+    {
+      "name": "firefox: ten static footers link both repositories without mobile overflow",
+      "pass": true,
+      "detail": {
+        "pages": 10,
+        "width": 320,
+        "javaScript": false
+      }
+    },
+    {
+      "name": "firefox: static and dynamic lists match, including markers",
+      "pass": true
+    },
+    {
+      "name": "firefox: independent search fixture checks AND/category/IME/legacy states",
+      "pass": true
+    },
+    {
+      "name": "firefox: name lens reveals locally, resets and stays idle",
+      "pass": true
+    },
+    {
+      "name": "firefox: touch/no-script/unsupported masks keep visible formal identity",
+      "pass": true
+    },
+    {
+      "name": "firefox: new routes work under subdirectory and no scripts",
+      "pass": true
+    },
+    {
+      "name": "firefox: Off the Desk image failure retains meaning and links",
+      "pass": true
+    },
+    {
+      "name": "firefox: new page long content reflows and reading background stays continuous",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    "index-390-light.png",
+    "blog-390-light.png",
+    "research-390-light.png",
+    "profile-390-light.png",
+    "about-390-light.png",
+    "index-1440-light.png",
+    "blog-1440-light.png",
+    "research-1440-light.png",
+    "profile-1440-light.png",
+    "about-1440-light.png",
+    "index-390-dark.png",
+    "blog-390-dark.png",
+    "research-390-dark.png",
+    "profile-390-dark.png",
+    "about-390-dark.png",
+    "index-1440-dark.png",
+    "blog-1440-dark.png",
+    "research-1440-dark.png",
+    "profile-1440-dark.png",
+    "about-1440-dark.png",
+    "hero-lens.png"
+  ],
+  "limitations": [
+    "No physical phone, screen reader, real IME or browser UI zoom certification. No public deployment."
+  ],
+  "passed": 64,
+  "failed": 0
+}
