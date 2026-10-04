@@ -1,118 +1,153 @@
 # Sywen's Space
 
-原生 HTML、CSS、JavaScript 的漫画线稿风个人博客。Research · Code · Life。
+Research · Code · Life。使用原生 HTML、CSS 和 JavaScript 构建的个人网站，以漫画线稿、冷白纸面和清晰的文字阅读为基础。
 
-**V2 已发布（2026-10-04）：** 首页、文章、研究、履历、关于五个正式页面共用既有文章体系；首页按 Hero → Latest → Selected + Now → Off the Desk → Footer 组织。十页页脚同时提供 Gitee 和 GitHub 入口。V2 已推送双仓并由 Cloudflare 自动发布，公开文件/路径 52/0、核心浏览器 18/0；详见 [发布证据](docs/evidence/v2/release/README.md)。内容缺口和边界见 [执行记录](docs/tasks/04-v2/README.md)。
+**V2 已发布（2026-10-04）。** 首页、文章、研究、履历、关于构成五个主页面，文章沿用原有地址。网站运行无需框架或生产依赖；Python 仅用于内容同步和构建前检查。
 
-**内容同步：** 一份文章 JSON 生成动态数据、无脚本索引、编号、元信息及相邻导航。身份共用一份来源，正文继续手写 HTML。Python 3 用于本地同步和构建检查，网站运行无依赖。详细步骤见 [发文说明](docs/publishing.md)。
+- [访问网站](https://sywen-blog.pages.dev/)
+- [Gitee 仓库](https://gitee.com/Sywen7777/Blog) · [GitHub 仓库](https://github.com/Sywen0019/SywenBlog)
+- [线上版本信息](https://sywen-blog.pages.dev/version.json) · [V2 发布核验](docs/evidence/v2/release/README.md)
+
+## 页面与功能
+
+| 页面 | 内容与职责 |
+|---|---|
+| [首页](index.html) | Hero → Latest → Selected + Now → Off the Desk → Footer；认识作者、发现更新、进入研究与履历 |
+| [文章](blog.html) | 学业／生活／我喜欢的三分类，文字档案、搜索和完整无脚本索引 |
+| [研究](research.html) | Research Interests、Publications、Research Notes 三个区块 |
+| [履历](profile.html) | 已确认的正式姓名、学校、专业及研究入口 |
+| [关于](about.html) | 人物介绍、兴趣和学习习惯；近况链接首页的唯一 Now 来源 |
+| `posts/*.html` | 文章正文、分类标签、档案编号、相邻文章及阅读增强 |
+
+页头、页脚和快捷菜单共用五项导航；所有页面页脚同时提供 Gitee 与 GitHub 仓库入口。窄屏导航保持可见并允许换行。
+
+- **搜索：** 标题、摘要、标签按多词 AND 匹配，可与分类组合；保留 URL 状态、中文组合输入和零结果重置。旧 `ai`、`coding`、`research` 分类参数兼容到 `study`。搜索不包含正文全文。
+- **主题：** 浅色／深色切换，优先采用已保存选择，其次跟随系统；存储不可用时仍可在当前页面切换。
+- **阅读：** 约 740px 阅读列、连续正文背景、阅读进度、返回顶部、复制链接与快捷菜单。
+- **首页姓名：** `Sywen / LuoWenxi` 局部透镜仅在支持精细悬停指针、未启用 reduced motion 时增强；触屏、无脚本和不支持的浏览器显示静态姓名，正式身份始终可通过履历入口读取。
+- **降级：** 禁用脚本仍可阅读和导航；搜索初始化失败时保留静态文章索引。核心资源本地托管，相对路径支持子目录部署。
+
+Research Notes 显式选用真实学业文章，链接原文，不复制正文或新增分类。目前论文条目尚未整理、研究笔记尚未收录，Profile 仅展示已确认资料，Now 保留“暂未更新”。示例文章与测试样例继续明确标注。
+
+## 本地预览
+
+需要 Python 3.9+，无需安装前端依赖。以下命令在仓库根目录执行；Windows 使用 `py`，Linux/macOS 可替换为 `python3`。
+
+```powershell
+py scripts/sync-content.py --check
+py -m http.server 8000 --bind 127.0.0.1
+```
+
+浏览器打开 [本地首页](http://127.0.0.1:8000/index.html)。修改内容来源后，先按下方流程同步。
+
+## 内容维护与发文
+
+| 人工维护位置 | 用途 |
+|---|---|
+| `content/posts.json` | 唯一文章与分类元数据来源，包括日期、标签、摘要、阅读时长及 `researchNote` |
+| `content/identity.json` | Hero、Research、Profile 共用的身份与兴趣文本 |
+| `content/pages.json` | 正式顶层页面清单，供构建和检查使用 |
+| `posts/*.html` 的 `.post-body` | 作者维护的正文、小节、图片和正文链接 |
+| `index.html` | Now 与 Off the Desk，只在首页维护 |
+| `research.html` | 正式论文条目和研究方向补充说明 |
+
+新增文章的顺序：
+
+1. 在 `content/posts.json` 登记元数据，使用未占用的整数 id 和 kebab-case slug。
+2. 运行 `py scripts/sync-content.py --new your-slug` 创建已登记、尚不存在的文章骨架。
+3. 编辑文章正文，将图片放入 `assets/images/`，填写替代文本和固有尺寸。
+4. 同步、检查并更新变更记录：
 
 ```powershell
 py scripts/sync-content.py --write
 py scripts/sync-content.py --check
+```
+
+生成器同步运行时文章数据、Latest、Blog 静态索引与分类数量、Research Notes、文章元信息、标签、编号和相邻导航。正文保持作者所有；不要手改 `js/posts-data.js` 或 `<!-- sywen:NAME:start -->` / `<!-- sywen:NAME:end -->` 之间的生成内容。
+
+文章按首次发布日期倒序、同日 id 升序排列，A-01 等编号表示当前排序位置。`researchNote: true` 仅用于作者确认具有真实科研关联的学业文章，示例和测试样例不得收录。完整规则见 [发文与内容维护](docs/publishing.md)。
+
+## 项目结构
+
+```text
+index.html / blog.html / research.html / profile.html / about.html
+posts/                 文章 HTML
+css/                   base、components、narrative、pages 四份样式表
+js/                    按功能划分的经典脚本，通过 window.Sywen 共享接口
+assets/                已采用的图片和 SVG 图标
+content/               文章、分类、身份和页面清单
+templates/post.html    新文章骨架
+scripts/               内容同步、构建、检查和录制工具
+docs/                  任务、契约、维护说明与历史验收证据
+Change_log.md          按时间倒序的变更记录
+```
+
+`js/hero.js` 仅首页加载。样式基础与主题由 `base.css` 管理，共享控件由 `components.css` 管理，Narrative 装饰由 `narrative.css` 管理，页面构图由 `pages.css` 管理。分类小画资产保留，首页原分类独立段已撤下，Blog 保持无缩略图的文字列表。
+
+`content/`、`templates/`、`docs/`、`参考素材/` 和美术母版不发布。页面路径、生成边界及公共接口见 [交接契约](docs/agent-handoffs.md)；视觉分层见 [视觉架构](docs/visual-architecture.md)。
+
+## 检查与验收
+
+V2 的既有验收结果见 [本地证据](docs/evidence/v2/README.md) 和 [发布证据](docs/evidence/v2/release/README.md)：发布前浏览器检查 64 项、内容生成 10 组、公开文件与路径 52 项、三浏览器核心 18 项均通过。历史 B/E 阶段及 E06 的报告、截图和演示保留在原目录。
+
+内容检查只需 Python：
+
+```powershell
+py scripts/sync-content.py --check
 py scripts/test-content.py
 ```
 
-下面“作业要求对应”和 E06 结果记录原公开版本；当前源码以 V2 契约为准。V2 验收使用独立证据目录，不覆盖历史报告。原 E01 首页分类构图已退役，其资产与 Blog 无缩略图等有效检查由 V2 检查接续。
-
-**作业基线已完成。** 八页内容、CSS、主题切换、搜索与分类组合、书桌 Hero、Gitee 源码与公开 HTTPS 均已验收。E01–E05 已通过本地回归，E06 已完成八页视觉扩展、VC2 和公开发布核验（2026-09-28）。
-
-- [访问网站](https://sywen-blog.pages.dev/)
-- [Gitee 源码与提交历史](https://gitee.com/Sywen7777/Blog)
-- [GitHub 源码与提交历史](https://github.com/Sywen0019/SywenBlog)
-- [线上版本信息](https://sywen-blog.pages.dev/version.json)
-- [交付与演示](docs/delivery.md) · [任务索引](docs/tasks/00-index.md)
-
-## 作业要求对应
-
-|要求|实现与证据|
-|---|---|
-|HTML|Home、Blog、About 与五篇完整文章（两篇 skill 设计长文、一篇生活随笔、一篇示例、一篇测试样例），导航和文章深链接|
-|CSS|四份样式表，纸面/线稿语言、浅深主题、手机重排、740px阅读列|
-|JavaScript|主题切换保存；标题/摘要/标签多词AND搜索；分类组合、数量、无结果与重置|
-|Git/Gitee|真实分阶段历史；main推送至Gitee，基线标签 coursework-baseline|
-|公开网站|Cloudflare Pages HTTPS；八页与资源和源提交逐文件核对|
-|美术|电脑旁低头用平板与手写笔书写；640/1280 WebP，采用J，红色下半框与设备纯线稿|
-
-两篇 skill 设计长文介绍 `ncs-figure-design` 与 `research-reading` 的工作流；《给学习留一点空白》标为示例；《和流萤做同桌》是本人随笔；《六月：单细胞与基因调控网络笔记》由文档转换发布，列表与文章页标注「测试样例」。作者的计算机专业与设备习惯来自本人说明。
-
-当前一级分类为「学业／生活／我喜欢的」（`study`／`life`／`favorites`），文章数量为 3／1／1；旧 `ai`、`coding`、`research` 查询参数会兼容到 `study`。线上地址仍按现有发布流程更新。
-
-## 本地预览
-
-无需安装前端依赖；修改元数据后先同步，再预览：
-
-```powershell
-py -m http.server 8000 --bind 127.0.0.1
-```
-
-访问 http://127.0.0.1:8000/index.html 。禁用脚本仍可阅读和导航。
-
-## 目录与约定
-
-- 顶层五个正式 HTML 与 `posts/` 文章；`css/`：base / components / narrative / pages。
-- `js/`：theme / posts-data / site / blog / hero / motion / reading / context-menu，经典脚本通过 `window.Sywen` 共享；hero 仅首页加载。
-- `content/`：文章、分类、身份和正式页面清单；`templates/`：新文章骨架；两者都不发布。
-- `assets/`：已采用图片与SVG；`参考素材/`：用户参考，不发布。
-- `scripts/`：发布、验收、录像；`docs/`：任务、交接、美术、验收和证据。
-- `PROJECT_PLAN.html` / `Plan.md` / `DESIGN_SPEC.md`：规格、当前B/E计划和视觉边界。
-
-主题优先级为保存的有效选择→系统→浅色，存储键 `sywen.theme`；存储失败时仍可当页切换。搜索按空白拆分、多词AND，与分类同时生效；保留 `q` / `category` 和中文组合输入，旧 `ai`／`coding`／`research` 分类参数映射到 `study`。列表准备成功才隐藏静态索引，失败仍可读。
-
-资源本地托管，相对路径支持子目录；Hero不懒加载并设固有尺寸。分类小画已实施（E01，首页分类入口；Blog 保持文字档案列表，`assets/images/cat-*.webp`，首页「最近文章」保持纯文字）。返回顶部与顶部阅读进度已实施（E03，`js/reading.js`），复制与快捷菜单已实施（E04，`js/context-menu.js`）。
-
-## 验收与复现
-
-最新全站验收与发布状态见 [E06](docs/evidence/e06/README.md)。原冷白细颗粒保留，正文与背景连续；深色透明装饰改为柔和浅灰线稿。
-
-历史基线（2026-09-16）：本地 **161项**（E01 后全量回归）、线上三浏览器核心 **15项**、线上源码/路径 **25项**均通过。增强版最终线上结果见 [E06 证据](docs/evidence/e06/README.md) 与 [新版演示](docs/evidence/e06/final/public/enhanced-demo.webm)；报告与历史演示仍保留。
-
-E03 阅读增强复验（三浏览器各 18 项、0 失败；E01 后博客列表像素基线在 `docs/evidence/e01/references/`）：
-
-```powershell
-$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
-node docs/evidence/e03/reading-checks.mjs --browser=edge,chrome,firefox
-```
-
-报告写入 `docs/evidence/e03/`，截图 `e03-*.png`。
-
-E01 保留资产复验（原首页分类构图已退役；当前布局使用 scripts/check-v2.mjs）：
-
-```powershell
-$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
-node docs/evidence/e01/illustration-checks.mjs --assets-only
-```
-
-报告应通过 `SYWEN_EVIDENCE_DIR` 写入本轮独立目录；分类 WebP 由 `py scripts/export-category-art.py` 从 `art-work/` 母版确定性导出。
-
-网站运行不依赖以下工具。复验需要Node.js 24、Edge/Chrome及Python3：
+可选浏览器检查使用 Node.js 24、已安装的 Edge/Chrome 和本地 Playwright。首次准备：
 
 ```powershell
 npm install --prefix .tmp-browser playwright@1.63.0
 $env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
 node .tmp-browser/node_modules/playwright/cli.js install firefox
-node scripts/check-baseline.mjs
-node scripts/check-baseline.mjs --public
-py scripts/check-release.py --expected-commit HEAD
-node scripts/record-demo.mjs
 ```
 
-工具与浏览器位于忽略目录；基线默认报告写入 `docs/evidence/baseline/`；本轮设置 `SYWEN_EVIDENCE_DIR=docs/evidence/e06/final/<suite>` 隔离证据。增强演示默认写入 `docs/evidence/e06/final/public/`。记录父提交和网站文件哈希。`SYWEN_PUBLIC_URL`可覆盖浏览器线上验收地址。
+每轮复验使用独立目录，保留历史证据：
 
-限制：手机是视口模拟；200%为等效视口重排；未做实体手机、浏览器UI实际缩放或屏幕阅读器测试，中文输入法为组合事件模拟。
+```powershell
+$V2EvidenceRoot = 'docs/evidence/v2/check-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
+$env:SYWEN_EVIDENCE_DIR = "$V2EvidenceRoot/baseline"
+node scripts/check-baseline.mjs
+$env:SYWEN_EVIDENCE_DIR = "$V2EvidenceRoot/browser"
+node scripts/check-v2.mjs
+```
 
-## 发布
+V2 检查覆盖页面分工、导航、响应式、主题、搜索、静态降级和姓名透镜。保留资产可用 `node docs/evidence/e01/illustration-checks.mjs --assets-only` 复验；阅读、复制与状态页专项仍在各 E 阶段目录，运行时同样设置新的 `SYWEN_EVIDENCE_DIR`。
 
-GitHub main → Cloudflare Pages → `bash scripts/build-site.sh` → dist。Gitee origin/main 是课程源码入口。
+手机视口、缩放重排和中文输入均包含模拟检查；实体手机、真实浏览器 UI 缩放、真实输入法与屏幕阅读器尚未完成实测。
+
+## 提交与发布
+
+保留真实、分阶段的 Git 历史。更新内容、检查和 `Change_log.md` 后提交，再推送两个 main：
 
 ```powershell
 git -c http.sslBackend=openssl push origin main
-git -c http.sslBackend=openssl push github main
+git push github main
 ```
 
-构建先检查内容同步，按 content/pages.json 白名单打包；排除内容来源、模板、参考、母版、文档和测试工具；生成version.json记录源提交。最小404响应关闭默认SPA回落，完整插画404仍在Backlog。配置和Windows本地构建方法见[部署说明](docs/deployment.md)。GitHub Pages的codex/pages仅作历史备选，本轮不更新。
+Gitee `origin/main` 与 GitHub `github/main` 保存源码；GitHub main 推送触发 Cloudflare Pages，执行 `bash scripts/build-site.sh` 并发布 `dist/`。构建先运行只读内容一致性检查，再按页面清单复制静态文件；缺失正式页面或内容未同步时失败。产物包含记录源提交的 `version.json` 和最小 404 页面。
 
-## 素材与后续
+Cloudflare 完成部署后核验公开版本：
 
-重点在Hero，阅读区克制；用户参考保持原样。复杂人物由Codex内置出图，正式导出已入仓库，原始候选不发布。工具未提供可核实版本，不把实际调用写成已验证的“GPT-image2.5”。
+```powershell
+$V2ReleaseEvidence = 'docs/evidence/v2/public-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.tmp-browser/browsers'
+$env:SYWEN_EVIDENCE_DIR = "$V2ReleaseEvidence/core"
+node scripts/check-baseline.mjs --public
+py scripts/check-release.py --expected-commit HEAD --output "$V2ReleaseEvidence/files.json"
+```
 
-详见[美术记录](docs/art-direction.md)、[提示词](docs/hero-prompts.md)、[视觉验收](docs/visual-review.md)。About 阅读人物与静态转场已完成，素材与提示词见 [A02 记录](docs/about-prompts.md)；E05 状态角色与局部精修已本地完成，提示词见 [A09 记录](docs/state-prompts.md)，验收见 [E05 证据](docs/evidence/e05/README.md)；增强版发布与 VC2 由 E06 统一执行。
+部署配置、Windows 本地构建方式和发布链路见 [部署说明](docs/deployment.md)。GitHub Pages 的 `codex/pages` 为历史备选，不是当前发布入口。
+
+## 项目文档与后续
+
+- [V2 执行记录](docs/tasks/04-v2/README.md) · [V2 reference](docs/v2-reference.html) · [任务索引](docs/tasks/00-index.md)
+- [设计规范](DESIGN_SPEC.md) · [视觉验收](docs/visual-review.md) · [美术记录](docs/art-direction.md)
+- [历史规格](PROJECT_PLAN.html) · [实施基线](Plan.md) · [作业交付与历史演示](docs/delivery.md)
+- [变更记录](Change_log.md) · [完整验收记录](docs/acceptance.md)
+
+V2 聚焦信息架构和长期维护体验。更明显的排版升级、精制身份字、生活拼贴及细化动效留给 V2.x；独立 Notes/论文页面、Topic/Series、RSS、评论、订阅和框架迁移仍属 Future，按真实维护需求再评估。

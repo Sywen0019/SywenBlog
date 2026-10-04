@@ -56,4 +56,4 @@ node scripts/check-v2.mjs
 
 构建前执行只读 --check，并从 content/pages.json 读取白名单，再复制 HTML/css/js/posts/assets。content、templates、docs、参考素材和 art-work 不发布。构建不会替作者改写过期生成区域；发现不同步即退出。Windows 用 Git Bash 构建，必要时设置 SYWEN_PYTHON 指向 Python 3。
 
-正式发布通路仍是 GitHub main → Cloudflare Pages；Gitee 保留完整源码历史。公开核验从 version.json 指向的提交读取页面清单并逐文件比较。当前本地 V2 未提交或部署；公开站仍以最新 E06 发布记录为准。
+正式发布通路为 GitHub main → Cloudflare Pages；Gitee 保留完整源码历史。公开核验从 version.json 指向的提交读取页面清单并逐文件比较。V2 已于 2026-10-04 完成双仓库推送和公开核验，结果见 [发布证据](evidence/v2/release/README.md)；E06 记录作为历史基线保留。
