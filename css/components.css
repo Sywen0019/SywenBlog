@@ -1350,3 +1350,37 @@ a.tag:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* V2: keep all five destinations visible with or without scripts. */
+.site-title,
+.site-nav,
+.site-tools {
+  min-width: 0;
+}
+
+.site-nav__list {
+  column-gap: var(--space-4);
+  row-gap: 0;
+}
+
+@media (max-width: 1023px) {
+  .site-header__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "title tools" "nav nav";
+    gap: var(--space-2) var(--space-3);
+  }
+
+  .site-tools {
+    grid-area: tools;
+  }
+
+  .site-nav {
+    grid-area: nav;
+    margin-inline-start: 0;
+  }
+
+  .site-nav__list {
+    justify-content: flex-start;
+  }
+}

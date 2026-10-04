@@ -33,6 +33,8 @@
   const ICONS = {
     home: '<path d="M3 8.5 8 4l5 4.5V13H3z"/><path d="M6.5 13V9.5h3V13"/>',
     blog: '<path d="M4 3.5h8v9H4z"/><path d="M6 6.5h4M6 9h4"/>',
+    research: '<path d="M6 3v4l-3 5a1 1 0 0 0 1 1.5h8a1 1 0 0 0 1-1.5l-3-5V3M5 3h6M5 10h6"/>',
+    profile: '<path d="M3 3.5h10v10H3z"/><circle cx="6" cy="6.5" r="1"/><path d="M4.5 10c.3-1 1-1.5 1.5-1.5S7.2 9 7.5 10M9 6h2M9 9h2"/>',
     back: '<path d="M12.5 8H4"/><path d="M7.5 4.5 4 8l3.5 3.5"/>',
     about: '<circle cx="8" cy="6" r="2.5"/><path d="M3.5 13c.6-2.2 2.3-3.3 4.5-3.3s3.9 1.1 4.5 3.3"/>',
     search: '<circle cx="7" cy="7" r="4"/><path d="M10 10l2.5 2.5"/>',
@@ -91,6 +93,8 @@
       post
         ? item('返回文章列表', 'back', () => { location.href = site.resolveUrl('blog.html'); })
         : item('文章', 'blog', () => { location.href = site.resolveUrl('blog.html'); }),
+      item('研究', 'research', () => { location.href = site.resolveUrl('research.html'); }),
+      item('履历', 'profile', () => { location.href = site.resolveUrl('profile.html'); }),
       item('关于', 'about', () => { location.href = site.resolveUrl('about.html'); })
     );
 

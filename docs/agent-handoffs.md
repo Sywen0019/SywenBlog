@@ -1,5 +1,18 @@
 # Agent 交接记录（H）
 
+## V2 实施契约 · 2026-10-04
+
+- 正式页新增 research.html（data-page=research）、profile.html（data-page=profile），两页 data-site-root 为 ./。五项主导航为首页／文章／研究／履历／关于；文章页继续使用文章分区。
+- 十页页脚和新文章模板同时保留 Gitee、GitHub 仓库链接；两者地址分别为 https://gitee.com/Sywen7777/Blog、https://github.com/Sywen0019/SywenBlog。
+- Home 固定 Hero → Latest（保留 #home-recent、#recent-title）→ Selected + Now（#home-selected-now、#selected-title、#home-now、#now-title）→ Off the Desk（#off-the-desk）→ Footer。
+- 原 #home-categories 及首页分类段退役；分类数据和资产保留，Blog 三分类及其 DOM 不变。About 的 #about-study-title 改为学习习惯，#about-now-title 改为单一来源的近况链接。
+- Research 锚点固定 #research-interests、#publications、#research-notes；笔记引用既有 Article，不新增分类。?category=research 仍兼容到 study。
+- 唯一文章来源 content/posts.json，生成 js/posts-data.js，保留 window.Sywen.posts/categories 的现有字段及 API，新增 researchNote（默认 false）。身份来源 content/identity.json。
+- <!-- sywen:NAME:start --> / <!-- sywen:NAME:end --> 为生成边界。文章受管区域为 post-head、post-header、post-rail、post-tags、post-nav；.post-body 和其余人工内容不受管。缺失/重复标记即失败。
+- 姓名使用 .hero-name、.hero-name__public、.hero-name__formal，独立 js/hero.js 仅首页加载；重复正式字层 aria-hidden，真实姓名有可见 Profile 入口。镜头属于 Content 增强，不能放进 Narrative 装饰容器。
+- 本轮英文 Sywen 身份字允许本地手写风格字体，例外不扩散到中文、旁注和正文。其余阅读、搜索、主题、复制及菜单 id/class/data/API 保留。
+- 当前专业内容只用已知信息；论文和研究笔记采用中性空状态。未实测的实体设备、读屏和公开版本不标为通过。
+
 ## E06 全站验收与发布 · 2026-09-28（Passed）
 
 用户已批准修订样板并授权扩展发布。运行时提交 `24710dc`：八页统一标题、文章编号和结尾节奏，Blog 静态索引与动态列表对齐；保留原冷白细颗粒，正文无独立底色；深色 A07/A08 使用原透明轮廓浅灰 mask，人物、照片和彩色小画不变。分类 3／1／1，五篇索引，地址与公共 JS 接口不变；精确线上 source commit 以发布核验报告为准。

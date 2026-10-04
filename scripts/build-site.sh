@@ -9,8 +9,8 @@
 # Local (Git Bash / WSL / Linux / macOS):
 #   bash scripts/build-site.sh
 #
-# The repository is a hand-written static site: this script only assembles a
-# clean publish directory. It never compiles, bundles or rewrites the pages.
+# Generated static regions must already be synchronized in the source. This
+# build checks them without rewriting, then assembles the publish whitelist.
 set -eu
 
 root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
@@ -19,7 +19,9 @@ dist="$root/dist"
 # Top-level pages that are part of the published website. Development
 # documents such as PROJECT_PLAN.html are deliberately excluded; add new
 # website pages to this list when they are created.
-PAGES='index.html blog.html about.html'
+PYTHON=${SYWEN_PYTHON:-python3}
+"$PYTHON" "$root/scripts/sync-content.py" --check
+PAGES=$("$PYTHON" "$root/scripts/sync-content.py" --list-pages)
 
 # Runtime directories. A missing directory is skipped, not an error.
 DIRS='css js posts assets'
@@ -42,7 +44,7 @@ for page in $PAGES; do
   if [ -f "$root/$page" ]; then
     cp -- "$root/$page" "$dist/$page"
   else
-    log "skipping missing $page"
+    fail "required page is missing: $page"
   fi
 done
 

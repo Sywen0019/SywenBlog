@@ -39,7 +39,11 @@ def main():
   # Source must exist locally and be part of this project's real main history.
   subprocess.run(['git', 'merge-base', '--is-ancestor', source, 'main'], cwd=ROOT, check=True)
   entries = git('ls-tree', '-r', '--name-only', source).decode().splitlines()
-  files = [p for p in entries if p in {'index.html','blog.html','about.html'} or p.split('/')[0] in {'posts','css','js','assets'}]
+  # Read the manifest from the exact deployed source, not the current checkout.
+  pages = json.loads(git('show', source + ':content/pages.json')) if 'content/pages.json' in entries else ['index.html', 'blog.html', 'about.html']
+  if not set(pages).issubset(entries):
+    raise SystemExit('Missing registered production page in source commit')
+  files = [p for p in entries if p in pages or p.split('/')[0] in {'posts','css','js','assets'}]
   def verify(file):
     status, content, url = get(file)
     expected = git('show', source + ':' + file)
@@ -50,7 +54,7 @@ def main():
     results = list(pool.map(verify, files))
   home_status, home, _ = get('')
   results.append({'path':'/', 'status':home_status, 'pass':home_status == 200 and home == git('show', source + ':index.html')})
-  for path in ['docs/acceptance.md', 'PROJECT_PLAN.html', 'posts/nonexistent-baseline-check.html', 'assets/missing.webp',
+  for path in ['docs/acceptance.md', 'docs/v2-reference.html', 'content/posts.json', 'templates/post.html', 'PROJECT_PLAN.html', 'posts/nonexistent-baseline-check.html', 'assets/missing.webp',
                'posts/attention-intuition.html', 'posts/dom-search-notes.html', 'posts/paper-reading-notes.html',
                'assets/images/search-flow.svg', 'assets/images/paper-fibers.svg']:
     status, _, _ = get(path)

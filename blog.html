@@ -27,7 +27,7 @@
 
 <header class="site-header">
   <div class="site-header__inner container">
-    <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
+    <p class="site-title"><a class="brand" href="./index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Research · Code · Life</span></a></p>
     <div class="site-tools">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
       <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
@@ -36,6 +36,8 @@
       <ul class="site-nav__list">
         <li class="site-nav__item"><a class="site-nav__link" href="./index.html">首页</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="./blog.html" aria-current="page">文章</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="./research.html">研究</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="./profile.html">履历</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="./about.html">关于</a></li>
       </ul>
     </nav>
@@ -48,9 +50,17 @@
     <header class="page-header">
       <p class="page-header__eyebrow" aria-hidden="true">ARCHIVE · SYWEN'S SPACE</p>
       <h1 class="page-title">文章</h1>
-      <p class="page-intro">五篇文章分为学业、生活与我喜欢的三类，其中标注为示例或测试样例的仍是练习稿；可以按标题、摘要或标签搜索，也可以只看某一类。</p>
-      <p class="blog-archive-note side-note narrative side-note--marked" aria-hidden="true">目前共五篇，按时间归档。</p>
+      <p class="page-intro">文章分为学业、生活与我喜欢的三类，其中标注为示例或测试样例的仍是练习稿；可以按标题、摘要或标签搜索，也可以只看某一类。</p>
+      <p class="blog-archive-note side-note narrative side-note--marked" aria-hidden="true">按时间，一页页归档。</p>
     </header>
+
+    <ul class="blog-category-summary" aria-label="分类文章数量">
+<!-- sywen:category-counts:start -->
+        <li><a href="./blog.html?category=study">学业</a> <span class="category-count" data-category-count="study">3</span> 篇</li>
+        <li><a href="./blog.html?category=life">生活</a> <span class="category-count" data-category-count="life">1</span> 篇</li>
+        <li><a href="./blog.html?category=favorites">我喜欢的</a> <span class="category-count" data-category-count="favorites">1</span> 篇</li>
+<!-- sywen:category-counts:end -->
+    </ul>
 
     <div class="blog-filters" id="blog-filters" hidden>
       <form class="blog-search" id="search-form" role="search" action="./blog.html" method="get">
@@ -79,6 +89,7 @@
     </section>
 
     <ol class="post-list" id="blog-static-list">
+<!-- sywen:archive:start -->
         <li class="post-entry" data-post-id="ncs-figure-design">
           <time class="post-entry__date" datetime="2026-09-18">2026-09-18</time>
           <div class="post-entry__content">
@@ -119,6 +130,7 @@
             <p class="post-entry__summary">从单细胞 RNA 测序数据的稀疏与噪声讲起，再逐条整理基因调控网络推断里的常见概念：先验知识、贝叶斯网络、高斯图模型、L1 正则化与图自编码器。</p>
           </div>
         </li>
+<!-- sywen:archive:end -->
       </ol>
 
   </div>
@@ -127,12 +139,15 @@
 <footer class="site-footer">
   <div class="site-footer__inner container">
     <p class="site-footer__brand">Sywen's Space · 学业 · 生活 · 我喜欢的</p>
-    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。示例文章另有标注。</p>
+    <p class="site-footer__note">记录研究、代码与生活。示例和测试样例另有标注。</p>
     <nav class="site-footer__links" aria-label="页脚导航">
       <a href="./index.html">首页</a>
       <a href="./blog.html">文章</a>
+      <a href="./research.html">研究</a>
+      <a href="./profile.html">履历</a>
       <a href="./about.html">关于</a>
       <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
+      <a href="https://github.com/Sywen0019/SywenBlog" rel="noopener">GitHub 仓库</a>
     </nav>
     <div class="site-footer__mark narrative" aria-hidden="true">
       <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="./assets/icons/marks.svg#mark-flower"></use></svg>

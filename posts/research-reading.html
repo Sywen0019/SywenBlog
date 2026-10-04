@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- sywen:post-head:start -->
 <title>research-reading 的设计思路 · Sywen's Space</title>
 <meta name="description" content="论文伴读不应该自动替研究者总结。这套 skill 用低负担的三遍阅读、六类证据标记和材料边界，陪读者形成可靠、可追溯、有适用边界的理解。">
+<!-- sywen:post-head:end -->
 <script src="../js/theme.js"></script>
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/components.css">
@@ -26,7 +28,7 @@
 
 <header class="site-header">
   <div class="site-header__inner container">
-    <p class="site-title"><a class="brand" href="../index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
+    <p class="site-title"><a class="brand" href="../index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Research · Code · Life</span></a></p>
     <div class="site-tools">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
       <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
@@ -35,6 +37,8 @@
       <ul class="site-nav__list">
         <li class="site-nav__item"><a class="site-nav__link" href="../index.html">首页</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="../blog.html" aria-current="true">文章</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="../research.html">研究</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="../profile.html">履历</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="../about.html">关于</a></li>
       </ul>
     </nav>
@@ -47,15 +51,19 @@
     <a class="post-back" href="../blog.html">返回文章列表</a>
 
     <article class="post" data-post-id="research-reading">
+      <!-- sywen:post-header:start -->
       <header class="post-header">
         <p class="post-header__index" aria-hidden="true">A-02</p>
         <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=study">学业</a><time class="post-meta__date" datetime="2026-09-18">2026-09-18</time><span class="post-meta__time">约 4 分钟</span></p>
         <h1 class="page-title post-header__title">research-reading 的设计思路</h1>
       </header>
-            <div class="post-rail narrative" aria-hidden="true">
+<!-- sywen:post-header:end -->
+            <!-- sywen:post-rail:start -->
+      <div class="post-rail narrative" aria-hidden="true">
         <span class="post-rail__mark"><svg class="mark" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-book-stack"></use></svg></span>
         <span class="post-rail__number">A-02</span>
       </div>
+<!-- sywen:post-rail:end -->
       <div class="post-body">
         <p>让 Agent 读一篇论文，看起来最常见的做法是等它输出一份摘要，再要求我们记住。但真实阅读不是这样发生的。读到方法时，我们可能突然需要补一个前置概念；看到实验结果时，又会回到图中的基线和误差线。研究者的疑问决定下一步读哪里，而不是一个固定模板决定每篇论文都按同样方式被压缩。</p>
 <p><code>research-reading</code> 因此把自己定位成陪读者，而不是替读者交作业的人。它的目标不是制造更多总结，而是帮助研究者形成可靠、可追溯、有适用边界的理解。</p>
@@ -78,8 +86,12 @@
 <p>只有用户明确希望整理或复用阅读所得，系统才进入知识沉淀。即使沉淀，也要继续区分观察、解释、假设、知识候选和已验证知识；一个观点不会因为被作者反复强调、被多篇论文引用或符合直觉，就自动变成验证过的知识。</p>
 <p>这套设计没有要求所有阅读都走到最难的一遍，也没有把笔记数量当成理解程度。它更像一种清楚的陪伴方式：研究者决定方向和节奏，系统负责守住材料边界、证据等级与中断后的位置。如果也把这套来源意识带回绘图流程，可以继续阅读<a href="./ncs-figure-design.html">ncs-figure-design 的设计思路</a>。</p>
       </div>
+      <!-- sywen:post-tags:start -->
       <ul class="tag-list" aria-label="文章标签"><li><a class="tag" href="../blog.html?q=research-reading">research-reading</a></li><li><a class="tag" href="../blog.html?q=%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB">论文阅读</a></li><li><a class="tag" href="../blog.html?q=%E7%A7%91%E7%A0%94%E5%B7%A5%E4%BD%9C%E6%B5%81">科研工作流</a></li></ul>
+<!-- sywen:post-tags:end -->
+      <!-- sywen:post-nav:start -->
       <nav class="post-nav" aria-label="相邻文章"><a href="./ncs-figure-design.html"><span class="post-nav__label">下一篇 · 更新</span>ncs-figure-design 的设计思路</a><a href="./deskmate-with-firefly.html"><span class="post-nav__label">上一篇 · 更早</span>和流萤做同桌</a></nav>
+<!-- sywen:post-nav:end -->
     </article>
 
   </div>
@@ -88,12 +100,15 @@
 <footer class="site-footer">
   <div class="site-footer__inner container">
     <p class="site-footer__brand">Sywen's Space · 学业 · 生活 · 我喜欢的</p>
-    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。示例文章另有标注。</p>
+    <p class="site-footer__note">记录研究、代码与生活。示例和测试样例另有标注。</p>
     <nav class="site-footer__links" aria-label="页脚导航">
       <a href="../index.html">首页</a>
       <a href="../blog.html">文章</a>
+      <a href="../research.html">研究</a>
+      <a href="../profile.html">履历</a>
       <a href="../about.html">关于</a>
       <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
+      <a href="https://github.com/Sywen0019/SywenBlog" rel="noopener">GitHub 仓库</a>
     </nav>
     <div class="site-footer__mark narrative" aria-hidden="true">
       <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-flower"></use></svg>

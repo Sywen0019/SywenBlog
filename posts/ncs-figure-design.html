@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- sywen:post-head:start -->
 <title>ncs-figure-design 的设计思路 · Sywen's Space</title>
 <meta name="description" content="科研绘图的风格不该来自一组没有出处的默认参数。这套 skill 从官方指南、真实论文图和学术色板文献中学习，并把来源、校验与诚实降级写进工作流。">
+<!-- sywen:post-head:end -->
 <script src="../js/theme.js"></script>
 <link rel="stylesheet" href="../css/base.css">
 <link rel="stylesheet" href="../css/components.css">
@@ -26,7 +28,7 @@
 
 <header class="site-header">
   <div class="site-header__inner container">
-    <p class="site-title"><a class="brand" href="../index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Study · Life · Favorites</span></a></p>
+    <p class="site-title"><a class="brand" href="../index.html"><span class="brand__name">Sywen's Space</span><span class="brand__tagline">Research · Code · Life</span></a></p>
     <div class="site-tools">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="切换至深色" title="切换至深色" hidden><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-moon"></use></svg><svg class="mark mark--small theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-sun"></use></svg><span class="theme-toggle__label" id="theme-toggle-label">切换至深色</span></button>
       <button type="button" class="menu-toggle" id="quick-menu-button" aria-haspopup="menu" aria-expanded="false" aria-label="快捷菜单" title="快捷菜单" hidden><svg class="mark mark--small menu-toggle__icon" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-menu"></use></svg><span class="menu-toggle__label">快捷菜单</span></button>
@@ -35,6 +37,8 @@
       <ul class="site-nav__list">
         <li class="site-nav__item"><a class="site-nav__link" href="../index.html">首页</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="../blog.html" aria-current="true">文章</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="../research.html">研究</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="../profile.html">履历</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="../about.html">关于</a></li>
       </ul>
     </nav>
@@ -47,15 +51,19 @@
     <a class="post-back" href="../blog.html">返回文章列表</a>
 
     <article class="post" data-post-id="ncs-figure-design">
+      <!-- sywen:post-header:start -->
       <header class="post-header">
         <p class="post-header__index" aria-hidden="true">A-01</p>
         <p class="post-meta"><a class="post-meta__category" href="../blog.html?category=study">学业</a><time class="post-meta__date" datetime="2026-09-18">2026-09-18</time><span class="post-meta__time">约 4 分钟</span></p>
         <h1 class="page-title post-header__title">ncs-figure-design 的设计思路</h1>
       </header>
-            <div class="post-rail narrative" aria-hidden="true">
+<!-- sywen:post-header:end -->
+            <!-- sywen:post-rail:start -->
+      <div class="post-rail narrative" aria-hidden="true">
         <span class="post-rail__mark"><svg class="mark" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-book-stack"></use></svg></span>
         <span class="post-rail__number">A-01</span>
       </div>
+<!-- sywen:post-rail:end -->
       <div class="post-body">
         <p>科研绘图里最容易走的一条捷径，是把某种“顶刊风格”写成一包固定参数：几个颜色、一组字号、几条线宽，然后套到所有图上。结果往往不算难看，却很难回答一个更基本的问题：为什么应该是这个样子？<code>ncs-figure-design</code> 的设计出发点，正是拒绝这种没有来源的默认答案。</p>
 <h2 data-rail="01"><span class="post-section-number" aria-hidden="true">01</span>风格不是预设出来的</h2>
@@ -78,8 +86,12 @@
 <p>最值得保留的，是“学习失败时也诚实”的设计。网络不可用或来源不足，不能悄悄回退到无出处的默认样式。系统应说明本轮学习没有完成，再询问是否使用一份带来源的缓存成果；用户拒绝或缓存不存在，就暂停绘图。这个选择看似降低了自动化程度，却守住了一个更重要的事实：科研图的风格应当有证据，而不是凭生成器替作者猜。</p>
 <p>如果把这套方法迁移到其他创作流程，问题也可能同样成立：哪些规则来自权威指南，哪些判断来自真实样本，哪些参数只是过去的偶然选择？这也和<a href="./research-reading.html">论文伴读</a>中的证据意识相通。先把来源与推断分开，后面的自动化才有可靠的基础。</p>
       </div>
+      <!-- sywen:post-tags:start -->
       <ul class="tag-list" aria-label="文章标签"><li><a class="tag" href="../blog.html?q=ncs-figure-design">ncs-figure-design</a></li><li><a class="tag" href="../blog.html?q=%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE">科研绘图</a></li><li><a class="tag" href="../blog.html?q=%E8%A7%86%E8%A7%89%E8%A7%84%E8%8C%83">视觉规范</a></li></ul>
+<!-- sywen:post-tags:end -->
+      <!-- sywen:post-nav:start -->
       <nav class="post-nav" aria-label="相邻文章"><a href="./research-reading.html"><span class="post-nav__label">上一篇 · 更早</span>research-reading 的设计思路</a></nav>
+<!-- sywen:post-nav:end -->
     </article>
 
   </div>
@@ -88,12 +100,15 @@
 <footer class="site-footer">
   <div class="site-footer__inner container">
     <p class="site-footer__brand">Sywen's Space · 学业 · 生活 · 我喜欢的</p>
-    <p class="site-footer__note">一页页积累，慢慢成为自己的知识花园。示例文章另有标注。</p>
+    <p class="site-footer__note">记录研究、代码与生活。示例和测试样例另有标注。</p>
     <nav class="site-footer__links" aria-label="页脚导航">
       <a href="../index.html">首页</a>
       <a href="../blog.html">文章</a>
+      <a href="../research.html">研究</a>
+      <a href="../profile.html">履历</a>
       <a href="../about.html">关于</a>
       <a href="https://gitee.com/Sywen7777/Blog" rel="noopener">Gitee 仓库</a>
+      <a href="https://github.com/Sywen0019/SywenBlog" rel="noopener">GitHub 仓库</a>
     </nav>
     <div class="site-footer__mark narrative" aria-hidden="true">
       <svg class="mark mark--large" aria-hidden="true" focusable="false"><use href="../assets/icons/marks.svg#mark-flower"></use></svg>

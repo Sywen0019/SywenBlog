@@ -1,5 +1,9 @@
 # Sywen’s Space｜视觉设计规范 v1.2
 
+## V2 架构衔接 · 2026-10-04
+
+保留现有冷白细颗粒、连续正文背景、主题和 740px 阅读列。首页五段为 Hero、Latest、Selected + Now、Off the Desk、Footer；新增 Research/Profile 采用文字检索排版；About 保留阅读人物。仅英文 Sywen 身份字允许本机手写风格字体，正式姓名透镜为 Content 的渐进增强。分类小画保留资产但撤下首页分类段。更明显的视觉改造留给 V2.x；历史章节中的旧首页结构以本节及 visual-architecture 的 V2 条目为准。
+
 ## E06 当前落地 · 2026-09-28
 
 获批样板已推广八页：冷白 #F6F8FA 与原细颗粒不变，正文无独立底色或纹理；深色透明单色 A07/A08 为柔和浅灰 alpha mask。人物、照片、带纸底和彩色小画保留原色，SVG 沿用 currentColor。文章编号 ≥1200px 在页边，窄屏在页头；小节编号仅宽屏在 740px 阅读列外。页面构图归 pages，主题归 base，装饰归 narrative。

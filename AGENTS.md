@@ -2,6 +2,18 @@
 
 ## Project Structure & Module Organization
 
+### V2 current contract (2026-10-04)
+
+The V2 candidate has five top-level pages (`index.html`, `blog.html`, `research.html`, `profile.html`, `about.html`) plus the existing articles. On 2026-10-04 the user authorized committing and pushing V2 to both Gitee and GitHub, using the existing GitHub main → Cloudflare Pages pipeline. Release results belong in `docs/evidence/v2/release/`; the older E06 baseline remains historical evidence.
+
+- `content/posts.json` is the only article/category metadata source; `content/identity.json` owns shared identity; `content/pages.json` owns the production page manifest. None are published. `templates/post.html` creates new articles.
+- `py scripts/sync-content.py --write` synchronizes marked regions; `--check` is read-only and required before build; `--new SLUG` creates only a registered, missing article. Never hand-edit generated `js/posts-data.js` or the `sywen:NAME` regions. Keep `.post-body` author-owned.
+- Home order is Hero → Latest → Selected + Now → Off the Desk → Footer. Retired Home categories no longer mount images; their assets stay available. Blog remains text-only with its three categories. About links to the one Now source on Home.
+- Research Notes is an explicit `researchNote` subset of genuine study posts and links to original article URLs; example/test posts are rejected. The legacy category=research mapping remains unchanged. Research and Profile use neutral empty/minimal content while public details are missing.
+- `js/hero.js` loads only on Home. The local lens is Content enhancement; duplicate name layer is aria-hidden. Only the English Sywen word permits a local handwritten font; all Chinese/body/side notes follow existing rules.
+- V2 tests and evidence use `docs/evidence/v2/`. `node scripts/check-v2.mjs` takes over the retired Home category placement tests while retaining asset integrity, no-thumbnails, fallback and new layout checks. E01 can still verify retained exports with `--assets-only`; historic visual reports are not rewritten.
+- Website runtime has no dependencies. Python 3 is now required for local content synchronization and the build's preflight check. Browser tests retain the ignored local Playwright installation.
+
 Sywen's Space is a manga line-art personal blog built with native HTML, CSS, and JavaScript. `PROJECT_PLAN.html` holds the 29-section specification, `DESIGN_SPEC.md` the visual rules, `Plan.md` the implementation baseline, and `参考素材/` five reference PNGs that are never published. T01 established the semantic HTML pages, T02 added two character WebP assets and an SVG favicon, and T04 (Stage 2) added the stylesheets, the light/dark theme contract, and the page-level asset references. The current implementation follows B00–B06 in `docs/tasks/00-index.md`; the coursework baseline is delivered, and E01–E06 are complete with E06 published and publicly verified on 2026-09-28. The current site has eight pages and five articles, grouped as three `study` (学业), one `life` (生活), and one `favorites` (我喜欢的). The coursework baseline requires content, CSS, theme/search/filter JavaScript, a desk Hero, Gitee, and verified public HTTPS. Never gate that baseline on deferred reading tools, menus, or the full art library.
 
 Follow the planned structure when adding code:

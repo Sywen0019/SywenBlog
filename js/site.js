@@ -208,7 +208,7 @@
   hydrateLocalMarks();
 
   // 图片加载状态：成功隐藏 Sywen 文本回退，失败隐藏破损图标并显示短文本。
-  // 抽成函数，供 createPostEntry 动态生成的分类缩略图复用。
+  // 装饰图失败时收起；内容图保留替代文本，列表继续保持纯文字。
   function watchImage(img) {
     function update() {
       const failed = img.naturalWidth === 0;
